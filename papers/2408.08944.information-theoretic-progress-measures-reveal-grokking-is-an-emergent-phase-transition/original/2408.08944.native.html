@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition</title>
+<!--Generated on Fri Aug 16 16:31:48 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv.0.7.9.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv-fonts.0.7.9.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/latexml_styles.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<meta content="Machine Learning,  ICML" lang="en" name="keywords"/>
+<base href="/html/2408.08944v1/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S1" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S2" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Related Work</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S3" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Methodology</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S4" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Evaluating grokking</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Grokking is an emergent phase transition</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.SS1" title="In 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1 </span>Low weight decay delays the emergence phase</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.SS2" title="In 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Increasing weight decay enhances emergence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.SS3" title="In 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3 </span>The role of weight initialization</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S6" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Early synergy peaks predict grokking</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S7" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Are the emergent synergistic sub-networks causally related to generalization?</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S8" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Limitations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S9" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Conclusion and Discussion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S10" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Author Contributions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#A1" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Training results for baseline model with weight decay</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#A2" title="In Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Training results for baseline model with weight initialization alpha</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_pruned_first">
+<h1 class="ltx_title ltx_title_document">Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Kenzo Clauw
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Sebastiano Stramaglia
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Daniele Marinazzo
+</span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p" id="id1.id1">This paper studies emergent phenomena in neural networks by focusing on grokking where models suddenly generalize after delayed memorization. To understand this phase transition, we utilize higher-order mutual information to analyze the collective behavior (synergy) and shared properties (redundancy) between neurons during training. We identify distinct phases before grokking allowing us to anticipate when it occurs. We attribute grokking to an emergent phase transition caused by the synergistic interactions between neurons as a whole. We show that weight decay and weight initialization can enhance the emergent phase.</p>
+</div>
+<div class="ltx_keywords">Machine Learning, ICML
+</div>
+<div class="ltx_para" id="p2">
+<br class="ltx_break"/>
+</div>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p" id="S1.p1.1">Grokking is a phenomenon where neural networks during training suddenly generalize after prolonged memorization with limited progress in the loss. Understanding this phase transition is vital for AI safety and alignment. While <cite class="ltx_cite ltx_citemacro_citep">(Wei et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib31" title="">2022</a>)</cite> claim these models exhibit emergent properties, others attribute it to the choice of evaluation metric <cite class="ltx_cite ltx_citemacro_citep">(<a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib27" title="">Schaeffer et al., </a>)</cite>. This lack of consensus poses a key question: Are neural networks internally learning emergent behavior?</p>
+</div>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p" id="S1.p2.1">To understand and predict emergent phase transitions, one approach is to identify hidden progress measures – metrics causally related to the loss <cite class="ltx_cite ltx_citemacro_citep">(Barak et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib1" title="">2023</a>)</cite> - to predict and understand grokking. Recent work found progress measures based on mechanistic interpretability by reverse engineering models into interpretable components (i.e. circuits of subnetworks) <cite class="ltx_cite ltx_citemacro_citep">(Nanda et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib24" title="">2023</a>)</cite>. However, this approach has several limitations. First, the reliance on human effort to identify circuits prevents scaling to larger models and it is susceptible to subjective bias. Second, these measures are task-specific. Lastly, it ignores the emergent interactions between components.</p>
+</div>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p" id="S1.p3.1">This work proposes information theory as a task-independent tool to identify emergent sub-networks in neural networks for mechanistic interpretability. Pairwise mutual information has been shown to identify important features <cite class="ltx_cite ltx_citemacro_citep">(Liu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib16" title="">2018</a>)</cite>. However, it can only measure the dependency between two variables. Multivariate mutual information provides a fine-grained analysis of the statistical interactions between multiple variables by decomposing the dependencies into synergy and redundancy. Synergy refers to the cooperative behavior between variables as a whole, where their combined statistical interactions exceed the sum of their contributions in isolation. Redundancy is the shared information between variables. Motivated by recent work identifying synergistic sub-networks for feature importance <cite class="ltx_cite ltx_citemacro_citep">(Clauw et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib2" title="">2022</a>)</cite>, we study higher-order interactions between neurons to understand grokking.</p>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p" id="S1.p4.1">In this paper, we hypothesize that grokking is a phase transition caused by the emergence of a generalizing sub-network due to the collective interactions between neurons as a whole, which cannot be quantified using pairwise metrics. To illustrate this, we study the simplest setting where grokking is observed - fully connected neural networks on modular arithmetic - as a case study for emergence. To understand grokking, we utilize the O-Information - a multivariate information theory measure that scales to multiple variables - to quantify the synergy and redundancy in a network <cite class="ltx_cite ltx_citemacro_citep">(Rosas et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib26" title="">2019</a>)</cite>. We study two strategies that impact grokking: weight decay and high initialization of the weights <cite class="ltx_cite ltx_citemacro_citep">(Liu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib18" title="">2022</a>)</cite>. Our contributions are as follows :</p>
+<ul class="ltx_itemize" id="S1.I1">
+<li class="ltx_item" id="S1.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i1.p1">
+<p class="ltx_p" id="S1.I1.i1.p1.1">Using the synergy and redundancy as progress measures, we identify three key phases during training: <span class="ltx_text ltx_font_bold" id="S1.I1.i1.p1.1.1">Feature Learning</span> of low-level patterns, <span class="ltx_text ltx_font_bold" id="S1.I1.i1.p1.1.2">Emergence</span> of a generalizing sub-network, and <span class="ltx_text ltx_font_bold" id="S1.I1.i1.p1.1.3">Decoupling</span> for compression.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i2.p1">
+<p class="ltx_p" id="S1.I1.i2.p1.1">We observe that a low weight decay value results in an additional <span class="ltx_text ltx_font_bold" id="S1.I1.i2.p1.1.1">divergent</span> and <span class="ltx_text ltx_font_bold" id="S1.I1.i2.p1.1.2">delayed</span> <span class="ltx_text ltx_font_bold" id="S1.I1.i2.p1.1.3">emergence</span> phase. We find that weight initialization and increasing weight decay directly leads to an emergent phase and reduces the delayed generalization gap</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i3.p1">
+<p class="ltx_p" id="S1.I1.i3.p1.1">We present preliminary findings indicating that the sub-networks at the emergent phase may be causally related to delayed generalization.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i4" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i4.p1">
+<p class="ltx_p" id="S1.I1.i4.p1.1">We show that early peaks of synergy can predict if grokking occurs</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Related Work</h2>
+<div class="ltx_para" id="S2.p1">
+<p class="ltx_p" id="S2.p1.1"><span class="ltx_text ltx_font_bold" id="S2.p1.1.1">Cause of Grokking</span> Several studies attribute the cause of grokking to properties related to the difficulty of representation learning the generalizing sub-network, including delayed feature learning <cite class="ltx_cite ltx_citemacro_citep">(Kumar et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib13" title="">2023</a>)</cite>, sparsity <cite class="ltx_cite ltx_citemacro_citep">(Merrill et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib21" title="">2023</a>)</cite>, and compression
+<cite class="ltx_cite ltx_citemacro_citep">(<a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib17" title="">Liu et al., </a>)</cite>. While these properties are observed in emergent complex systems, these interpretations do not consider the relationships between components as a whole.</p>
+</div>
+<div class="ltx_para" id="S2.p2">
+<p class="ltx_p" id="S2.p2.1"><span class="ltx_text ltx_font_bold" id="S2.p2.1.1">Progress Measures</span> Several progress measures have been proposed based on L2 norm <cite class="ltx_cite ltx_citemacro_citep">(Liu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib18" title="">2022</a>)</cite> or Fourier gap <cite class="ltx_cite ltx_citemacro_citep">(Barak et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib1" title="">2023</a>)</cite>. However, these are mostly heuristics. One study uses pairwise mutual information for measuring progress <cite class="ltx_cite ltx_citemacro_citep">(Tan &amp; Huang, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib29" title="">2023</a>)</cite>. None of these metrics quantify higher-order interactions between neurons.</p>
+</div>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Methodology</h2>
+<div class="ltx_para" id="S3.p1">
+<p class="ltx_p" id="S3.p1.13"><span class="ltx_text ltx_font_bold" id="S3.p1.13.1">Setup</span> We study the modular addition operation <math alttext="\mathbb{Z}_{p}" class="ltx_Math" display="inline" id="S3.p1.1.m1.1"><semantics id="S3.p1.1.m1.1a"><msub id="S3.p1.1.m1.1.1" xref="S3.p1.1.m1.1.1.cmml"><mi id="S3.p1.1.m1.1.1.2" xref="S3.p1.1.m1.1.1.2.cmml">ℤ</mi><mi id="S3.p1.1.m1.1.1.3" xref="S3.p1.1.m1.1.1.3.cmml">p</mi></msub><annotation-xml encoding="MathML-Content" id="S3.p1.1.m1.1b"><apply id="S3.p1.1.m1.1.1.cmml" xref="S3.p1.1.m1.1.1"><csymbol cd="ambiguous" id="S3.p1.1.m1.1.1.1.cmml" xref="S3.p1.1.m1.1.1">subscript</csymbol><ci id="S3.p1.1.m1.1.1.2.cmml" xref="S3.p1.1.m1.1.1.2">ℤ</ci><ci id="S3.p1.1.m1.1.1.3.cmml" xref="S3.p1.1.m1.1.1.3">𝑝</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.1.m1.1c">\mathbb{Z}_{p}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.1.m1.1d">blackboard_Z start_POSTSUBSCRIPT italic_p end_POSTSUBSCRIPT</annotation></semantics></math> by generating equations of the form <math alttext="(a+b)\%p=c" class="ltx_Math" display="inline" id="S3.p1.2.m2.1"><semantics id="S3.p1.2.m2.1a"><mrow id="S3.p1.2.m2.1.1" xref="S3.p1.2.m2.1.1.cmml"><mrow id="S3.p1.2.m2.1.1.1" xref="S3.p1.2.m2.1.1.1.cmml"><mrow id="S3.p1.2.m2.1.1.1.1" xref="S3.p1.2.m2.1.1.1.1.cmml"><mrow id="S3.p1.2.m2.1.1.1.1.1.1" xref="S3.p1.2.m2.1.1.1.1.1.1.1.cmml"><mo id="S3.p1.2.m2.1.1.1.1.1.1.2" stretchy="false" xref="S3.p1.2.m2.1.1.1.1.1.1.1.cmml">(</mo><mrow id="S3.p1.2.m2.1.1.1.1.1.1.1" xref="S3.p1.2.m2.1.1.1.1.1.1.1.cmml"><mi id="S3.p1.2.m2.1.1.1.1.1.1.1.2" xref="S3.p1.2.m2.1.1.1.1.1.1.1.2.cmml">a</mi><mo id="S3.p1.2.m2.1.1.1.1.1.1.1.1" xref="S3.p1.2.m2.1.1.1.1.1.1.1.1.cmml">+</mo><mi id="S3.p1.2.m2.1.1.1.1.1.1.1.3" xref="S3.p1.2.m2.1.1.1.1.1.1.1.3.cmml">b</mi></mrow><mo id="S3.p1.2.m2.1.1.1.1.1.1.3" stretchy="false" xref="S3.p1.2.m2.1.1.1.1.1.1.1.cmml">)</mo></mrow><mo id="S3.p1.2.m2.1.1.1.1.2" xref="S3.p1.2.m2.1.1.1.1.2.cmml">%</mo></mrow><mo id="S3.p1.2.m2.1.1.1.2" xref="S3.p1.2.m2.1.1.1.2.cmml">⁢</mo><mi id="S3.p1.2.m2.1.1.1.3" xref="S3.p1.2.m2.1.1.1.3.cmml">p</mi></mrow><mo id="S3.p1.2.m2.1.1.2" xref="S3.p1.2.m2.1.1.2.cmml">=</mo><mi id="S3.p1.2.m2.1.1.3" xref="S3.p1.2.m2.1.1.3.cmml">c</mi></mrow><annotation-xml encoding="MathML-Content" id="S3.p1.2.m2.1b"><apply id="S3.p1.2.m2.1.1.cmml" xref="S3.p1.2.m2.1.1"><eq id="S3.p1.2.m2.1.1.2.cmml" xref="S3.p1.2.m2.1.1.2"></eq><apply id="S3.p1.2.m2.1.1.1.cmml" xref="S3.p1.2.m2.1.1.1"><times id="S3.p1.2.m2.1.1.1.2.cmml" xref="S3.p1.2.m2.1.1.1.2"></times><apply id="S3.p1.2.m2.1.1.1.1.cmml" xref="S3.p1.2.m2.1.1.1.1"><csymbol cd="latexml" id="S3.p1.2.m2.1.1.1.1.2.cmml" xref="S3.p1.2.m2.1.1.1.1.2">percent</csymbol><apply id="S3.p1.2.m2.1.1.1.1.1.1.1.cmml" xref="S3.p1.2.m2.1.1.1.1.1.1"><plus id="S3.p1.2.m2.1.1.1.1.1.1.1.1.cmml" xref="S3.p1.2.m2.1.1.1.1.1.1.1.1"></plus><ci id="S3.p1.2.m2.1.1.1.1.1.1.1.2.cmml" xref="S3.p1.2.m2.1.1.1.1.1.1.1.2">𝑎</ci><ci id="S3.p1.2.m2.1.1.1.1.1.1.1.3.cmml" xref="S3.p1.2.m2.1.1.1.1.1.1.1.3">𝑏</ci></apply></apply><ci id="S3.p1.2.m2.1.1.1.3.cmml" xref="S3.p1.2.m2.1.1.1.3">𝑝</ci></apply><ci id="S3.p1.2.m2.1.1.3.cmml" xref="S3.p1.2.m2.1.1.3">𝑐</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.2.m2.1c">(a+b)\%p=c</annotation><annotation encoding="application/x-llamapun" id="S3.p1.2.m2.1d">( italic_a + italic_b ) % italic_p = italic_c</annotation></semantics></math> where <math alttext="p" class="ltx_Math" display="inline" id="S3.p1.3.m3.1"><semantics id="S3.p1.3.m3.1a"><mi id="S3.p1.3.m3.1.1" xref="S3.p1.3.m3.1.1.cmml">p</mi><annotation-xml encoding="MathML-Content" id="S3.p1.3.m3.1b"><ci id="S3.p1.3.m3.1.1.cmml" xref="S3.p1.3.m3.1.1">𝑝</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.3.m3.1c">p</annotation><annotation encoding="application/x-llamapun" id="S3.p1.3.m3.1d">italic_p</annotation></semantics></math> = 97. To reduce confounding factors, we study a simple 2-layer fully connected network with ReLU activation functions. The input <math alttext="(a,b)\in\mathbb{Z}_{p}\times\mathbb{Z}_{p}" class="ltx_Math" display="inline" id="S3.p1.4.m4.2"><semantics id="S3.p1.4.m4.2a"><mrow id="S3.p1.4.m4.2.3" xref="S3.p1.4.m4.2.3.cmml"><mrow id="S3.p1.4.m4.2.3.2.2" xref="S3.p1.4.m4.2.3.2.1.cmml"><mo id="S3.p1.4.m4.2.3.2.2.1" stretchy="false" xref="S3.p1.4.m4.2.3.2.1.cmml">(</mo><mi id="S3.p1.4.m4.1.1" xref="S3.p1.4.m4.1.1.cmml">a</mi><mo id="S3.p1.4.m4.2.3.2.2.2" xref="S3.p1.4.m4.2.3.2.1.cmml">,</mo><mi id="S3.p1.4.m4.2.2" xref="S3.p1.4.m4.2.2.cmml">b</mi><mo id="S3.p1.4.m4.2.3.2.2.3" stretchy="false" xref="S3.p1.4.m4.2.3.2.1.cmml">)</mo></mrow><mo id="S3.p1.4.m4.2.3.1" xref="S3.p1.4.m4.2.3.1.cmml">∈</mo><mrow id="S3.p1.4.m4.2.3.3" xref="S3.p1.4.m4.2.3.3.cmml"><msub id="S3.p1.4.m4.2.3.3.2" xref="S3.p1.4.m4.2.3.3.2.cmml"><mi id="S3.p1.4.m4.2.3.3.2.2" xref="S3.p1.4.m4.2.3.3.2.2.cmml">ℤ</mi><mi id="S3.p1.4.m4.2.3.3.2.3" xref="S3.p1.4.m4.2.3.3.2.3.cmml">p</mi></msub><mo id="S3.p1.4.m4.2.3.3.1" lspace="0.222em" rspace="0.222em" xref="S3.p1.4.m4.2.3.3.1.cmml">×</mo><msub id="S3.p1.4.m4.2.3.3.3" xref="S3.p1.4.m4.2.3.3.3.cmml"><mi id="S3.p1.4.m4.2.3.3.3.2" xref="S3.p1.4.m4.2.3.3.3.2.cmml">ℤ</mi><mi id="S3.p1.4.m4.2.3.3.3.3" xref="S3.p1.4.m4.2.3.3.3.3.cmml">p</mi></msub></mrow></mrow><annotation-xml encoding="MathML-Content" id="S3.p1.4.m4.2b"><apply id="S3.p1.4.m4.2.3.cmml" xref="S3.p1.4.m4.2.3"><in id="S3.p1.4.m4.2.3.1.cmml" xref="S3.p1.4.m4.2.3.1"></in><interval closure="open" id="S3.p1.4.m4.2.3.2.1.cmml" xref="S3.p1.4.m4.2.3.2.2"><ci id="S3.p1.4.m4.1.1.cmml" xref="S3.p1.4.m4.1.1">𝑎</ci><ci id="S3.p1.4.m4.2.2.cmml" xref="S3.p1.4.m4.2.2">𝑏</ci></interval><apply id="S3.p1.4.m4.2.3.3.cmml" xref="S3.p1.4.m4.2.3.3"><times id="S3.p1.4.m4.2.3.3.1.cmml" xref="S3.p1.4.m4.2.3.3.1"></times><apply id="S3.p1.4.m4.2.3.3.2.cmml" xref="S3.p1.4.m4.2.3.3.2"><csymbol cd="ambiguous" id="S3.p1.4.m4.2.3.3.2.1.cmml" xref="S3.p1.4.m4.2.3.3.2">subscript</csymbol><ci id="S3.p1.4.m4.2.3.3.2.2.cmml" xref="S3.p1.4.m4.2.3.3.2.2">ℤ</ci><ci id="S3.p1.4.m4.2.3.3.2.3.cmml" xref="S3.p1.4.m4.2.3.3.2.3">𝑝</ci></apply><apply id="S3.p1.4.m4.2.3.3.3.cmml" xref="S3.p1.4.m4.2.3.3.3"><csymbol cd="ambiguous" id="S3.p1.4.m4.2.3.3.3.1.cmml" xref="S3.p1.4.m4.2.3.3.3">subscript</csymbol><ci id="S3.p1.4.m4.2.3.3.3.2.cmml" xref="S3.p1.4.m4.2.3.3.3.2">ℤ</ci><ci id="S3.p1.4.m4.2.3.3.3.3.cmml" xref="S3.p1.4.m4.2.3.3.3.3">𝑝</ci></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.4.m4.2c">(a,b)\in\mathbb{Z}_{p}\times\mathbb{Z}_{p}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.4.m4.2d">( italic_a , italic_b ) ∈ blackboard_Z start_POSTSUBSCRIPT italic_p end_POSTSUBSCRIPT × blackboard_Z start_POSTSUBSCRIPT italic_p end_POSTSUBSCRIPT</annotation></semantics></math> is a vector <math alttext="x\in\mathbb{R}^{2p}" class="ltx_Math" display="inline" id="S3.p1.5.m5.1"><semantics id="S3.p1.5.m5.1a"><mrow id="S3.p1.5.m5.1.1" xref="S3.p1.5.m5.1.1.cmml"><mi id="S3.p1.5.m5.1.1.2" xref="S3.p1.5.m5.1.1.2.cmml">x</mi><mo id="S3.p1.5.m5.1.1.1" xref="S3.p1.5.m5.1.1.1.cmml">∈</mo><msup id="S3.p1.5.m5.1.1.3" xref="S3.p1.5.m5.1.1.3.cmml"><mi id="S3.p1.5.m5.1.1.3.2" xref="S3.p1.5.m5.1.1.3.2.cmml">ℝ</mi><mrow id="S3.p1.5.m5.1.1.3.3" xref="S3.p1.5.m5.1.1.3.3.cmml"><mn id="S3.p1.5.m5.1.1.3.3.2" xref="S3.p1.5.m5.1.1.3.3.2.cmml">2</mn><mo id="S3.p1.5.m5.1.1.3.3.1" xref="S3.p1.5.m5.1.1.3.3.1.cmml">⁢</mo><mi id="S3.p1.5.m5.1.1.3.3.3" xref="S3.p1.5.m5.1.1.3.3.3.cmml">p</mi></mrow></msup></mrow><annotation-xml encoding="MathML-Content" id="S3.p1.5.m5.1b"><apply id="S3.p1.5.m5.1.1.cmml" xref="S3.p1.5.m5.1.1"><in id="S3.p1.5.m5.1.1.1.cmml" xref="S3.p1.5.m5.1.1.1"></in><ci id="S3.p1.5.m5.1.1.2.cmml" xref="S3.p1.5.m5.1.1.2">𝑥</ci><apply id="S3.p1.5.m5.1.1.3.cmml" xref="S3.p1.5.m5.1.1.3"><csymbol cd="ambiguous" id="S3.p1.5.m5.1.1.3.1.cmml" xref="S3.p1.5.m5.1.1.3">superscript</csymbol><ci id="S3.p1.5.m5.1.1.3.2.cmml" xref="S3.p1.5.m5.1.1.3.2">ℝ</ci><apply id="S3.p1.5.m5.1.1.3.3.cmml" xref="S3.p1.5.m5.1.1.3.3"><times id="S3.p1.5.m5.1.1.3.3.1.cmml" xref="S3.p1.5.m5.1.1.3.3.1"></times><cn id="S3.p1.5.m5.1.1.3.3.2.cmml" type="integer" xref="S3.p1.5.m5.1.1.3.3.2">2</cn><ci id="S3.p1.5.m5.1.1.3.3.3.cmml" xref="S3.p1.5.m5.1.1.3.3.3">𝑝</ci></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.5.m5.1c">x\in\mathbb{R}^{2p}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.5.m5.1d">italic_x ∈ blackboard_R start_POSTSUPERSCRIPT 2 italic_p end_POSTSUPERSCRIPT</annotation></semantics></math> represented by the concatenation of the one-hot representations of <math alttext="a" class="ltx_Math" display="inline" id="S3.p1.6.m6.1"><semantics id="S3.p1.6.m6.1a"><mi id="S3.p1.6.m6.1.1" xref="S3.p1.6.m6.1.1.cmml">a</mi><annotation-xml encoding="MathML-Content" id="S3.p1.6.m6.1b"><ci id="S3.p1.6.m6.1.1.cmml" xref="S3.p1.6.m6.1.1">𝑎</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.6.m6.1c">a</annotation><annotation encoding="application/x-llamapun" id="S3.p1.6.m6.1d">italic_a</annotation></semantics></math> and <math alttext="b" class="ltx_Math" display="inline" id="S3.p1.7.m7.1"><semantics id="S3.p1.7.m7.1a"><mi id="S3.p1.7.m7.1.1" xref="S3.p1.7.m7.1.1.cmml">b</mi><annotation-xml encoding="MathML-Content" id="S3.p1.7.m7.1b"><ci id="S3.p1.7.m7.1.1.cmml" xref="S3.p1.7.m7.1.1">𝑏</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.7.m7.1c">b</annotation><annotation encoding="application/x-llamapun" id="S3.p1.7.m7.1d">italic_b</annotation></semantics></math>. Our model processes the input as <math alttext="f(\theta;x)=W_{2}Z^{1}" class="ltx_Math" display="inline" id="S3.p1.8.m8.2"><semantics id="S3.p1.8.m8.2a"><mrow id="S3.p1.8.m8.2.3" xref="S3.p1.8.m8.2.3.cmml"><mrow id="S3.p1.8.m8.2.3.2" xref="S3.p1.8.m8.2.3.2.cmml"><mi id="S3.p1.8.m8.2.3.2.2" xref="S3.p1.8.m8.2.3.2.2.cmml">f</mi><mo id="S3.p1.8.m8.2.3.2.1" xref="S3.p1.8.m8.2.3.2.1.cmml">⁢</mo><mrow id="S3.p1.8.m8.2.3.2.3.2" xref="S3.p1.8.m8.2.3.2.3.1.cmml"><mo id="S3.p1.8.m8.2.3.2.3.2.1" stretchy="false" xref="S3.p1.8.m8.2.3.2.3.1.cmml">(</mo><mi id="S3.p1.8.m8.1.1" xref="S3.p1.8.m8.1.1.cmml">θ</mi><mo id="S3.p1.8.m8.2.3.2.3.2.2" xref="S3.p1.8.m8.2.3.2.3.1.cmml">;</mo><mi id="S3.p1.8.m8.2.2" xref="S3.p1.8.m8.2.2.cmml">x</mi><mo id="S3.p1.8.m8.2.3.2.3.2.3" stretchy="false" xref="S3.p1.8.m8.2.3.2.3.1.cmml">)</mo></mrow></mrow><mo id="S3.p1.8.m8.2.3.1" xref="S3.p1.8.m8.2.3.1.cmml">=</mo><mrow id="S3.p1.8.m8.2.3.3" xref="S3.p1.8.m8.2.3.3.cmml"><msub id="S3.p1.8.m8.2.3.3.2" xref="S3.p1.8.m8.2.3.3.2.cmml"><mi id="S3.p1.8.m8.2.3.3.2.2" xref="S3.p1.8.m8.2.3.3.2.2.cmml">W</mi><mn id="S3.p1.8.m8.2.3.3.2.3" xref="S3.p1.8.m8.2.3.3.2.3.cmml">2</mn></msub><mo id="S3.p1.8.m8.2.3.3.1" xref="S3.p1.8.m8.2.3.3.1.cmml">⁢</mo><msup id="S3.p1.8.m8.2.3.3.3" xref="S3.p1.8.m8.2.3.3.3.cmml"><mi id="S3.p1.8.m8.2.3.3.3.2" xref="S3.p1.8.m8.2.3.3.3.2.cmml">Z</mi><mn id="S3.p1.8.m8.2.3.3.3.3" xref="S3.p1.8.m8.2.3.3.3.3.cmml">1</mn></msup></mrow></mrow><annotation-xml encoding="MathML-Content" id="S3.p1.8.m8.2b"><apply id="S3.p1.8.m8.2.3.cmml" xref="S3.p1.8.m8.2.3"><eq id="S3.p1.8.m8.2.3.1.cmml" xref="S3.p1.8.m8.2.3.1"></eq><apply id="S3.p1.8.m8.2.3.2.cmml" xref="S3.p1.8.m8.2.3.2"><times id="S3.p1.8.m8.2.3.2.1.cmml" xref="S3.p1.8.m8.2.3.2.1"></times><ci id="S3.p1.8.m8.2.3.2.2.cmml" xref="S3.p1.8.m8.2.3.2.2">𝑓</ci><list id="S3.p1.8.m8.2.3.2.3.1.cmml" xref="S3.p1.8.m8.2.3.2.3.2"><ci id="S3.p1.8.m8.1.1.cmml" xref="S3.p1.8.m8.1.1">𝜃</ci><ci id="S3.p1.8.m8.2.2.cmml" xref="S3.p1.8.m8.2.2">𝑥</ci></list></apply><apply id="S3.p1.8.m8.2.3.3.cmml" xref="S3.p1.8.m8.2.3.3"><times id="S3.p1.8.m8.2.3.3.1.cmml" xref="S3.p1.8.m8.2.3.3.1"></times><apply id="S3.p1.8.m8.2.3.3.2.cmml" xref="S3.p1.8.m8.2.3.3.2"><csymbol cd="ambiguous" id="S3.p1.8.m8.2.3.3.2.1.cmml" xref="S3.p1.8.m8.2.3.3.2">subscript</csymbol><ci id="S3.p1.8.m8.2.3.3.2.2.cmml" xref="S3.p1.8.m8.2.3.3.2.2">𝑊</ci><cn id="S3.p1.8.m8.2.3.3.2.3.cmml" type="integer" xref="S3.p1.8.m8.2.3.3.2.3">2</cn></apply><apply id="S3.p1.8.m8.2.3.3.3.cmml" xref="S3.p1.8.m8.2.3.3.3"><csymbol cd="ambiguous" id="S3.p1.8.m8.2.3.3.3.1.cmml" xref="S3.p1.8.m8.2.3.3.3">superscript</csymbol><ci id="S3.p1.8.m8.2.3.3.3.2.cmml" xref="S3.p1.8.m8.2.3.3.3.2">𝑍</ci><cn id="S3.p1.8.m8.2.3.3.3.3.cmml" type="integer" xref="S3.p1.8.m8.2.3.3.3.3">1</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.8.m8.2c">f(\theta;x)=W_{2}Z^{1}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.8.m8.2d">italic_f ( italic_θ ; italic_x ) = italic_W start_POSTSUBSCRIPT 2 end_POSTSUBSCRIPT italic_Z start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT</annotation></semantics></math> where <math alttext="Z^{1}=\text{ReLU}(W_{1}x+b_{1})\in\mathbb{R}^{s\times n}" class="ltx_Math" display="inline" id="S3.p1.9.m9.1"><semantics id="S3.p1.9.m9.1a"><mrow id="S3.p1.9.m9.1.1" xref="S3.p1.9.m9.1.1.cmml"><msup id="S3.p1.9.m9.1.1.3" xref="S3.p1.9.m9.1.1.3.cmml"><mi id="S3.p1.9.m9.1.1.3.2" xref="S3.p1.9.m9.1.1.3.2.cmml">Z</mi><mn id="S3.p1.9.m9.1.1.3.3" xref="S3.p1.9.m9.1.1.3.3.cmml">1</mn></msup><mo id="S3.p1.9.m9.1.1.4" xref="S3.p1.9.m9.1.1.4.cmml">=</mo><mrow id="S3.p1.9.m9.1.1.1" xref="S3.p1.9.m9.1.1.1.cmml"><mtext id="S3.p1.9.m9.1.1.1.3" xref="S3.p1.9.m9.1.1.1.3a.cmml">ReLU</mtext><mo id="S3.p1.9.m9.1.1.1.2" xref="S3.p1.9.m9.1.1.1.2.cmml">⁢</mo><mrow id="S3.p1.9.m9.1.1.1.1.1" xref="S3.p1.9.m9.1.1.1.1.1.1.cmml"><mo id="S3.p1.9.m9.1.1.1.1.1.2" stretchy="false" xref="S3.p1.9.m9.1.1.1.1.1.1.cmml">(</mo><mrow id="S3.p1.9.m9.1.1.1.1.1.1" xref="S3.p1.9.m9.1.1.1.1.1.1.cmml"><mrow id="S3.p1.9.m9.1.1.1.1.1.1.2" xref="S3.p1.9.m9.1.1.1.1.1.1.2.cmml"><msub id="S3.p1.9.m9.1.1.1.1.1.1.2.2" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2.cmml"><mi id="S3.p1.9.m9.1.1.1.1.1.1.2.2.2" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2.2.cmml">W</mi><mn id="S3.p1.9.m9.1.1.1.1.1.1.2.2.3" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2.3.cmml">1</mn></msub><mo id="S3.p1.9.m9.1.1.1.1.1.1.2.1" xref="S3.p1.9.m9.1.1.1.1.1.1.2.1.cmml">⁢</mo><mi id="S3.p1.9.m9.1.1.1.1.1.1.2.3" xref="S3.p1.9.m9.1.1.1.1.1.1.2.3.cmml">x</mi></mrow><mo id="S3.p1.9.m9.1.1.1.1.1.1.1" xref="S3.p1.9.m9.1.1.1.1.1.1.1.cmml">+</mo><msub id="S3.p1.9.m9.1.1.1.1.1.1.3" xref="S3.p1.9.m9.1.1.1.1.1.1.3.cmml"><mi id="S3.p1.9.m9.1.1.1.1.1.1.3.2" xref="S3.p1.9.m9.1.1.1.1.1.1.3.2.cmml">b</mi><mn id="S3.p1.9.m9.1.1.1.1.1.1.3.3" xref="S3.p1.9.m9.1.1.1.1.1.1.3.3.cmml">1</mn></msub></mrow><mo id="S3.p1.9.m9.1.1.1.1.1.3" stretchy="false" xref="S3.p1.9.m9.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S3.p1.9.m9.1.1.5" xref="S3.p1.9.m9.1.1.5.cmml">∈</mo><msup id="S3.p1.9.m9.1.1.6" xref="S3.p1.9.m9.1.1.6.cmml"><mi id="S3.p1.9.m9.1.1.6.2" xref="S3.p1.9.m9.1.1.6.2.cmml">ℝ</mi><mrow id="S3.p1.9.m9.1.1.6.3" xref="S3.p1.9.m9.1.1.6.3.cmml"><mi id="S3.p1.9.m9.1.1.6.3.2" xref="S3.p1.9.m9.1.1.6.3.2.cmml">s</mi><mo id="S3.p1.9.m9.1.1.6.3.1" lspace="0.222em" rspace="0.222em" xref="S3.p1.9.m9.1.1.6.3.1.cmml">×</mo><mi id="S3.p1.9.m9.1.1.6.3.3" xref="S3.p1.9.m9.1.1.6.3.3.cmml">n</mi></mrow></msup></mrow><annotation-xml encoding="MathML-Content" id="S3.p1.9.m9.1b"><apply id="S3.p1.9.m9.1.1.cmml" xref="S3.p1.9.m9.1.1"><and id="S3.p1.9.m9.1.1a.cmml" xref="S3.p1.9.m9.1.1"></and><apply id="S3.p1.9.m9.1.1b.cmml" xref="S3.p1.9.m9.1.1"><eq id="S3.p1.9.m9.1.1.4.cmml" xref="S3.p1.9.m9.1.1.4"></eq><apply id="S3.p1.9.m9.1.1.3.cmml" xref="S3.p1.9.m9.1.1.3"><csymbol cd="ambiguous" id="S3.p1.9.m9.1.1.3.1.cmml" xref="S3.p1.9.m9.1.1.3">superscript</csymbol><ci id="S3.p1.9.m9.1.1.3.2.cmml" xref="S3.p1.9.m9.1.1.3.2">𝑍</ci><cn id="S3.p1.9.m9.1.1.3.3.cmml" type="integer" xref="S3.p1.9.m9.1.1.3.3">1</cn></apply><apply id="S3.p1.9.m9.1.1.1.cmml" xref="S3.p1.9.m9.1.1.1"><times id="S3.p1.9.m9.1.1.1.2.cmml" xref="S3.p1.9.m9.1.1.1.2"></times><ci id="S3.p1.9.m9.1.1.1.3a.cmml" xref="S3.p1.9.m9.1.1.1.3"><mtext id="S3.p1.9.m9.1.1.1.3.cmml" xref="S3.p1.9.m9.1.1.1.3">ReLU</mtext></ci><apply id="S3.p1.9.m9.1.1.1.1.1.1.cmml" xref="S3.p1.9.m9.1.1.1.1.1"><plus id="S3.p1.9.m9.1.1.1.1.1.1.1.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.1"></plus><apply id="S3.p1.9.m9.1.1.1.1.1.1.2.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2"><times id="S3.p1.9.m9.1.1.1.1.1.1.2.1.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2.1"></times><apply id="S3.p1.9.m9.1.1.1.1.1.1.2.2.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2"><csymbol cd="ambiguous" id="S3.p1.9.m9.1.1.1.1.1.1.2.2.1.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2">subscript</csymbol><ci id="S3.p1.9.m9.1.1.1.1.1.1.2.2.2.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2.2">𝑊</ci><cn id="S3.p1.9.m9.1.1.1.1.1.1.2.2.3.cmml" type="integer" xref="S3.p1.9.m9.1.1.1.1.1.1.2.2.3">1</cn></apply><ci id="S3.p1.9.m9.1.1.1.1.1.1.2.3.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.2.3">𝑥</ci></apply><apply id="S3.p1.9.m9.1.1.1.1.1.1.3.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.3"><csymbol cd="ambiguous" id="S3.p1.9.m9.1.1.1.1.1.1.3.1.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.3">subscript</csymbol><ci id="S3.p1.9.m9.1.1.1.1.1.1.3.2.cmml" xref="S3.p1.9.m9.1.1.1.1.1.1.3.2">𝑏</ci><cn id="S3.p1.9.m9.1.1.1.1.1.1.3.3.cmml" type="integer" xref="S3.p1.9.m9.1.1.1.1.1.1.3.3">1</cn></apply></apply></apply></apply><apply id="S3.p1.9.m9.1.1c.cmml" xref="S3.p1.9.m9.1.1"><in id="S3.p1.9.m9.1.1.5.cmml" xref="S3.p1.9.m9.1.1.5"></in><share href="https://arxiv.org/html/2408.08944v1#S3.p1.9.m9.1.1.1.cmml" id="S3.p1.9.m9.1.1d.cmml" xref="S3.p1.9.m9.1.1"></share><apply id="S3.p1.9.m9.1.1.6.cmml" xref="S3.p1.9.m9.1.1.6"><csymbol cd="ambiguous" id="S3.p1.9.m9.1.1.6.1.cmml" xref="S3.p1.9.m9.1.1.6">superscript</csymbol><ci id="S3.p1.9.m9.1.1.6.2.cmml" xref="S3.p1.9.m9.1.1.6.2">ℝ</ci><apply id="S3.p1.9.m9.1.1.6.3.cmml" xref="S3.p1.9.m9.1.1.6.3"><times id="S3.p1.9.m9.1.1.6.3.1.cmml" xref="S3.p1.9.m9.1.1.6.3.1"></times><ci id="S3.p1.9.m9.1.1.6.3.2.cmml" xref="S3.p1.9.m9.1.1.6.3.2">𝑠</ci><ci id="S3.p1.9.m9.1.1.6.3.3.cmml" xref="S3.p1.9.m9.1.1.6.3.3">𝑛</ci></apply></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.9.m9.1c">Z^{1}=\text{ReLU}(W_{1}x+b_{1})\in\mathbb{R}^{s\times n}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.9.m9.1d">italic_Z start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT = ReLU ( italic_W start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT italic_x + italic_b start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT ) ∈ blackboard_R start_POSTSUPERSCRIPT italic_s × italic_n end_POSTSUPERSCRIPT</annotation></semantics></math> is a matrix of feature vectors <math alttext="z_{1}^{1},..,z_{n}^{1}" class="ltx_math_unparsed" display="inline" id="S3.p1.10.m10.1"><semantics id="S3.p1.10.m10.1a"><mrow id="S3.p1.10.m10.1b"><msubsup id="S3.p1.10.m10.1.1"><mi id="S3.p1.10.m10.1.1.2.2">z</mi><mn id="S3.p1.10.m10.1.1.2.3">1</mn><mn id="S3.p1.10.m10.1.1.3">1</mn></msubsup><mo id="S3.p1.10.m10.1.2">,</mo><mo id="S3.p1.10.m10.1.3" lspace="0em" rspace="0.0835em">.</mo><mo id="S3.p1.10.m10.1.4" lspace="0.0835em" rspace="0.167em">.</mo><mo id="S3.p1.10.m10.1.5">,</mo><msubsup id="S3.p1.10.m10.1.6"><mi id="S3.p1.10.m10.1.6.2.2">z</mi><mi id="S3.p1.10.m10.1.6.2.3">n</mi><mn id="S3.p1.10.m10.1.6.3">1</mn></msubsup></mrow><annotation encoding="application/x-tex" id="S3.p1.10.m10.1c">z_{1}^{1},..,z_{n}^{1}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.10.m10.1d">italic_z start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT , . . , italic_z start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT</annotation></semantics></math> in the first hidden layer where <math alttext="n" class="ltx_Math" display="inline" id="S3.p1.11.m11.1"><semantics id="S3.p1.11.m11.1a"><mi id="S3.p1.11.m11.1.1" xref="S3.p1.11.m11.1.1.cmml">n</mi><annotation-xml encoding="MathML-Content" id="S3.p1.11.m11.1b"><ci id="S3.p1.11.m11.1.1.cmml" xref="S3.p1.11.m11.1.1">𝑛</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.11.m11.1c">n</annotation><annotation encoding="application/x-llamapun" id="S3.p1.11.m11.1d">italic_n</annotation></semantics></math> = 250 is the number of neurons in the layer, and each feature vector <math alttext="z_{n}^{1}" class="ltx_Math" display="inline" id="S3.p1.12.m12.1"><semantics id="S3.p1.12.m12.1a"><msubsup id="S3.p1.12.m12.1.1" xref="S3.p1.12.m12.1.1.cmml"><mi id="S3.p1.12.m12.1.1.2.2" xref="S3.p1.12.m12.1.1.2.2.cmml">z</mi><mi id="S3.p1.12.m12.1.1.2.3" xref="S3.p1.12.m12.1.1.2.3.cmml">n</mi><mn id="S3.p1.12.m12.1.1.3" xref="S3.p1.12.m12.1.1.3.cmml">1</mn></msubsup><annotation-xml encoding="MathML-Content" id="S3.p1.12.m12.1b"><apply id="S3.p1.12.m12.1.1.cmml" xref="S3.p1.12.m12.1.1"><csymbol cd="ambiguous" id="S3.p1.12.m12.1.1.1.cmml" xref="S3.p1.12.m12.1.1">superscript</csymbol><apply id="S3.p1.12.m12.1.1.2.cmml" xref="S3.p1.12.m12.1.1"><csymbol cd="ambiguous" id="S3.p1.12.m12.1.1.2.1.cmml" xref="S3.p1.12.m12.1.1">subscript</csymbol><ci id="S3.p1.12.m12.1.1.2.2.cmml" xref="S3.p1.12.m12.1.1.2.2">𝑧</ci><ci id="S3.p1.12.m12.1.1.2.3.cmml" xref="S3.p1.12.m12.1.1.2.3">𝑛</ci></apply><cn id="S3.p1.12.m12.1.1.3.cmml" type="integer" xref="S3.p1.12.m12.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.12.m12.1c">z_{n}^{1}</annotation><annotation encoding="application/x-llamapun" id="S3.p1.12.m12.1d">italic_z start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT</annotation></semantics></math> has a dimension equal to the number of samples <math alttext="s" class="ltx_Math" display="inline" id="S3.p1.13.m13.1"><semantics id="S3.p1.13.m13.1a"><mi id="S3.p1.13.m13.1.1" xref="S3.p1.13.m13.1.1.cmml">s</mi><annotation-xml encoding="MathML-Content" id="S3.p1.13.m13.1b"><ci id="S3.p1.13.m13.1.1.cmml" xref="S3.p1.13.m13.1.1">𝑠</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p1.13.m13.1c">s</annotation><annotation encoding="application/x-llamapun" id="S3.p1.13.m13.1d">italic_s</annotation></semantics></math> in the input data. For each experiment, we train 5 models with different random seeds using full-batch AdamW optimization with a 0.03 learning rate and 40 % of the data <cite class="ltx_cite ltx_citemacro_citep">(Loshchilov &amp; Hutter, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib19" title="">2018</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S3.p2">
+<p class="ltx_p" id="S3.p2.2"><span class="ltx_text ltx_font_bold" id="S3.p2.2.1">O-Information</span> Given a collection of <math alttext="n" class="ltx_Math" display="inline" id="S3.p2.1.m1.1"><semantics id="S3.p2.1.m1.1a"><mi id="S3.p2.1.m1.1.1" xref="S3.p2.1.m1.1.1.cmml">n</mi><annotation-xml encoding="MathML-Content" id="S3.p2.1.m1.1b"><ci id="S3.p2.1.m1.1.1.cmml" xref="S3.p2.1.m1.1.1">𝑛</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.1.m1.1c">n</annotation><annotation encoding="application/x-llamapun" id="S3.p2.1.m1.1d">italic_n</annotation></semantics></math> random variables <math alttext="\mathbf{Z}=\{X_{1},..,X_{n}\}" class="ltx_math_unparsed" display="inline" id="S3.p2.2.m2.1"><semantics id="S3.p2.2.m2.1a"><mrow id="S3.p2.2.m2.1b"><mi id="S3.p2.2.m2.1.1">𝐙</mi><mo id="S3.p2.2.m2.1.2">=</mo><mrow id="S3.p2.2.m2.1.3"><mo id="S3.p2.2.m2.1.3.1" stretchy="false">{</mo><msub id="S3.p2.2.m2.1.3.2"><mi id="S3.p2.2.m2.1.3.2.2">X</mi><mn id="S3.p2.2.m2.1.3.2.3">1</mn></msub><mo id="S3.p2.2.m2.1.3.3">,</mo><mo id="S3.p2.2.m2.1.3.4" lspace="0em" rspace="0.0835em">.</mo><mo id="S3.p2.2.m2.1.3.5" lspace="0.0835em" rspace="0.167em">.</mo><mo id="S3.p2.2.m2.1.3.6">,</mo><msub id="S3.p2.2.m2.1.3.7"><mi id="S3.p2.2.m2.1.3.7.2">X</mi><mi id="S3.p2.2.m2.1.3.7.3">n</mi></msub><mo id="S3.p2.2.m2.1.3.8" stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex" id="S3.p2.2.m2.1c">\mathbf{Z}=\{X_{1},..,X_{n}\}</annotation><annotation encoding="application/x-llamapun" id="S3.p2.2.m2.1d">bold_Z = { italic_X start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT , . . , italic_X start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT }</annotation></semantics></math>, the O-Information <cite class="ltx_cite ltx_citemacro_citep">(Rosas et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib26" title="">2019</a>)</cite> is defined as :</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="\Omega_{n}(\mathbf{Z})=(n-2)H(\mathbf{Z})+\sum_{j=1}^{n}[H(Z_{j})-H(\mathbf{Z}%
+\backslash Z_{j})]" class="ltx_Math" display="block" id="S3.E1.m1.4"><semantics id="S3.E1.m1.4a"><mrow id="S3.E1.m1.4.4" xref="S3.E1.m1.4.4.cmml"><mrow id="S3.E1.m1.4.4.4" xref="S3.E1.m1.4.4.4.cmml"><msub id="S3.E1.m1.4.4.4.2" xref="S3.E1.m1.4.4.4.2.cmml"><mi id="S3.E1.m1.4.4.4.2.2" mathvariant="normal" xref="S3.E1.m1.4.4.4.2.2.cmml">Ω</mi><mi id="S3.E1.m1.4.4.4.2.3" xref="S3.E1.m1.4.4.4.2.3.cmml">n</mi></msub><mo id="S3.E1.m1.4.4.4.1" xref="S3.E1.m1.4.4.4.1.cmml">⁢</mo><mrow id="S3.E1.m1.4.4.4.3.2" xref="S3.E1.m1.4.4.4.cmml"><mo id="S3.E1.m1.4.4.4.3.2.1" stretchy="false" xref="S3.E1.m1.4.4.4.cmml">(</mo><mi id="S3.E1.m1.1.1" xref="S3.E1.m1.1.1.cmml">𝐙</mi><mo id="S3.E1.m1.4.4.4.3.2.2" stretchy="false" xref="S3.E1.m1.4.4.4.cmml">)</mo></mrow></mrow><mo id="S3.E1.m1.4.4.3" xref="S3.E1.m1.4.4.3.cmml">=</mo><mrow id="S3.E1.m1.4.4.2" xref="S3.E1.m1.4.4.2.cmml"><mrow id="S3.E1.m1.3.3.1.1" xref="S3.E1.m1.3.3.1.1.cmml"><mrow id="S3.E1.m1.3.3.1.1.1.1" xref="S3.E1.m1.3.3.1.1.1.1.1.cmml"><mo id="S3.E1.m1.3.3.1.1.1.1.2" stretchy="false" xref="S3.E1.m1.3.3.1.1.1.1.1.cmml">(</mo><mrow id="S3.E1.m1.3.3.1.1.1.1.1" xref="S3.E1.m1.3.3.1.1.1.1.1.cmml"><mi id="S3.E1.m1.3.3.1.1.1.1.1.2" xref="S3.E1.m1.3.3.1.1.1.1.1.2.cmml">n</mi><mo id="S3.E1.m1.3.3.1.1.1.1.1.1" xref="S3.E1.m1.3.3.1.1.1.1.1.1.cmml">−</mo><mn id="S3.E1.m1.3.3.1.1.1.1.1.3" xref="S3.E1.m1.3.3.1.1.1.1.1.3.cmml">2</mn></mrow><mo id="S3.E1.m1.3.3.1.1.1.1.3" stretchy="false" xref="S3.E1.m1.3.3.1.1.1.1.1.cmml">)</mo></mrow><mo id="S3.E1.m1.3.3.1.1.2" xref="S3.E1.m1.3.3.1.1.2.cmml">⁢</mo><mi id="S3.E1.m1.3.3.1.1.3" xref="S3.E1.m1.3.3.1.1.3.cmml">H</mi><mo id="S3.E1.m1.3.3.1.1.2a" xref="S3.E1.m1.3.3.1.1.2.cmml">⁢</mo><mrow id="S3.E1.m1.3.3.1.1.4.2" xref="S3.E1.m1.3.3.1.1.cmml"><mo id="S3.E1.m1.3.3.1.1.4.2.1" stretchy="false" xref="S3.E1.m1.3.3.1.1.cmml">(</mo><mi id="S3.E1.m1.2.2" xref="S3.E1.m1.2.2.cmml">𝐙</mi><mo id="S3.E1.m1.3.3.1.1.4.2.2" stretchy="false" xref="S3.E1.m1.3.3.1.1.cmml">)</mo></mrow></mrow><mo id="S3.E1.m1.4.4.2.3" rspace="0.055em" xref="S3.E1.m1.4.4.2.3.cmml">+</mo><mrow id="S3.E1.m1.4.4.2.2" xref="S3.E1.m1.4.4.2.2.cmml"><munderover id="S3.E1.m1.4.4.2.2.2" xref="S3.E1.m1.4.4.2.2.2.cmml"><mo id="S3.E1.m1.4.4.2.2.2.2.2" movablelimits="false" rspace="0em" xref="S3.E1.m1.4.4.2.2.2.2.2.cmml">∑</mo><mrow id="S3.E1.m1.4.4.2.2.2.2.3" xref="S3.E1.m1.4.4.2.2.2.2.3.cmml"><mi id="S3.E1.m1.4.4.2.2.2.2.3.2" xref="S3.E1.m1.4.4.2.2.2.2.3.2.cmml">j</mi><mo id="S3.E1.m1.4.4.2.2.2.2.3.1" xref="S3.E1.m1.4.4.2.2.2.2.3.1.cmml">=</mo><mn id="S3.E1.m1.4.4.2.2.2.2.3.3" xref="S3.E1.m1.4.4.2.2.2.2.3.3.cmml">1</mn></mrow><mi id="S3.E1.m1.4.4.2.2.2.3" xref="S3.E1.m1.4.4.2.2.2.3.cmml">n</mi></munderover><mrow id="S3.E1.m1.4.4.2.2.1.1" xref="S3.E1.m1.4.4.2.2.1.2.cmml"><mo id="S3.E1.m1.4.4.2.2.1.1.2" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.2.1.cmml">[</mo><mrow id="S3.E1.m1.4.4.2.2.1.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.cmml"><mrow id="S3.E1.m1.4.4.2.2.1.1.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.1.cmml"><mi id="S3.E1.m1.4.4.2.2.1.1.1.1.3" xref="S3.E1.m1.4.4.2.2.1.1.1.1.3.cmml">H</mi><mo id="S3.E1.m1.4.4.2.2.1.1.1.1.2" xref="S3.E1.m1.4.4.2.2.1.1.1.1.2.cmml">⁢</mo><mrow id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.cmml"><mo id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.2" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.cmml">(</mo><msub id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.cmml"><mi id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.2" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.2.cmml">Z</mi><mi id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.3" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.3.cmml">j</mi></msub><mo id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.3" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S3.E1.m1.4.4.2.2.1.1.1.3" xref="S3.E1.m1.4.4.2.2.1.1.1.3.cmml">−</mo><mrow id="S3.E1.m1.4.4.2.2.1.1.1.2" xref="S3.E1.m1.4.4.2.2.1.1.1.2.cmml"><mi id="S3.E1.m1.4.4.2.2.1.1.1.2.3" xref="S3.E1.m1.4.4.2.2.1.1.1.2.3.cmml">H</mi><mo id="S3.E1.m1.4.4.2.2.1.1.1.2.2" xref="S3.E1.m1.4.4.2.2.1.1.1.2.2.cmml">⁢</mo><mrow id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.cmml"><mo id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.2" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.cmml">(</mo><mrow id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.cmml"><mi id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.2" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.2.cmml">𝐙</mi><mo id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.1" lspace="0.222em" rspace="0.222em" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.1.cmml">\</mo><msub id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.cmml"><mi id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.2" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.2.cmml">Z</mi><mi id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.3" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.3.cmml">j</mi></msub></mrow><mo id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.3" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.cmml">)</mo></mrow></mrow></mrow><mo id="S3.E1.m1.4.4.2.2.1.1.3" stretchy="false" xref="S3.E1.m1.4.4.2.2.1.2.1.cmml">]</mo></mrow></mrow></mrow></mrow><annotation-xml encoding="MathML-Content" id="S3.E1.m1.4b"><apply id="S3.E1.m1.4.4.cmml" xref="S3.E1.m1.4.4"><eq id="S3.E1.m1.4.4.3.cmml" xref="S3.E1.m1.4.4.3"></eq><apply id="S3.E1.m1.4.4.4.cmml" xref="S3.E1.m1.4.4.4"><times id="S3.E1.m1.4.4.4.1.cmml" xref="S3.E1.m1.4.4.4.1"></times><apply id="S3.E1.m1.4.4.4.2.cmml" xref="S3.E1.m1.4.4.4.2"><csymbol cd="ambiguous" id="S3.E1.m1.4.4.4.2.1.cmml" xref="S3.E1.m1.4.4.4.2">subscript</csymbol><ci id="S3.E1.m1.4.4.4.2.2.cmml" xref="S3.E1.m1.4.4.4.2.2">Ω</ci><ci id="S3.E1.m1.4.4.4.2.3.cmml" xref="S3.E1.m1.4.4.4.2.3">𝑛</ci></apply><ci id="S3.E1.m1.1.1.cmml" xref="S3.E1.m1.1.1">𝐙</ci></apply><apply id="S3.E1.m1.4.4.2.cmml" xref="S3.E1.m1.4.4.2"><plus id="S3.E1.m1.4.4.2.3.cmml" xref="S3.E1.m1.4.4.2.3"></plus><apply id="S3.E1.m1.3.3.1.1.cmml" xref="S3.E1.m1.3.3.1.1"><times id="S3.E1.m1.3.3.1.1.2.cmml" xref="S3.E1.m1.3.3.1.1.2"></times><apply id="S3.E1.m1.3.3.1.1.1.1.1.cmml" xref="S3.E1.m1.3.3.1.1.1.1"><minus id="S3.E1.m1.3.3.1.1.1.1.1.1.cmml" xref="S3.E1.m1.3.3.1.1.1.1.1.1"></minus><ci id="S3.E1.m1.3.3.1.1.1.1.1.2.cmml" xref="S3.E1.m1.3.3.1.1.1.1.1.2">𝑛</ci><cn id="S3.E1.m1.3.3.1.1.1.1.1.3.cmml" type="integer" xref="S3.E1.m1.3.3.1.1.1.1.1.3">2</cn></apply><ci id="S3.E1.m1.3.3.1.1.3.cmml" xref="S3.E1.m1.3.3.1.1.3">𝐻</ci><ci id="S3.E1.m1.2.2.cmml" xref="S3.E1.m1.2.2">𝐙</ci></apply><apply id="S3.E1.m1.4.4.2.2.cmml" xref="S3.E1.m1.4.4.2.2"><apply id="S3.E1.m1.4.4.2.2.2.cmml" xref="S3.E1.m1.4.4.2.2.2"><csymbol cd="ambiguous" id="S3.E1.m1.4.4.2.2.2.1.cmml" xref="S3.E1.m1.4.4.2.2.2">superscript</csymbol><apply id="S3.E1.m1.4.4.2.2.2.2.cmml" xref="S3.E1.m1.4.4.2.2.2"><csymbol cd="ambiguous" id="S3.E1.m1.4.4.2.2.2.2.1.cmml" xref="S3.E1.m1.4.4.2.2.2">subscript</csymbol><sum id="S3.E1.m1.4.4.2.2.2.2.2.cmml" xref="S3.E1.m1.4.4.2.2.2.2.2"></sum><apply id="S3.E1.m1.4.4.2.2.2.2.3.cmml" xref="S3.E1.m1.4.4.2.2.2.2.3"><eq id="S3.E1.m1.4.4.2.2.2.2.3.1.cmml" xref="S3.E1.m1.4.4.2.2.2.2.3.1"></eq><ci id="S3.E1.m1.4.4.2.2.2.2.3.2.cmml" xref="S3.E1.m1.4.4.2.2.2.2.3.2">𝑗</ci><cn id="S3.E1.m1.4.4.2.2.2.2.3.3.cmml" type="integer" xref="S3.E1.m1.4.4.2.2.2.2.3.3">1</cn></apply></apply><ci id="S3.E1.m1.4.4.2.2.2.3.cmml" xref="S3.E1.m1.4.4.2.2.2.3">𝑛</ci></apply><apply id="S3.E1.m1.4.4.2.2.1.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1"><csymbol cd="latexml" id="S3.E1.m1.4.4.2.2.1.2.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.2">delimited-[]</csymbol><apply id="S3.E1.m1.4.4.2.2.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1"><minus id="S3.E1.m1.4.4.2.2.1.1.1.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.3"></minus><apply id="S3.E1.m1.4.4.2.2.1.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1"><times id="S3.E1.m1.4.4.2.2.1.1.1.1.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.2"></times><ci id="S3.E1.m1.4.4.2.2.1.1.1.1.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.3">𝐻</ci><apply id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1"><csymbol cd="ambiguous" id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1">subscript</csymbol><ci id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.2">𝑍</ci><ci id="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.1.1.1.1.3">𝑗</ci></apply></apply><apply id="S3.E1.m1.4.4.2.2.1.1.1.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2"><times id="S3.E1.m1.4.4.2.2.1.1.1.2.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.2"></times><ci id="S3.E1.m1.4.4.2.2.1.1.1.2.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.3">𝐻</ci><apply id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1"><ci id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.1">\</ci><ci id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.2">𝐙</ci><apply id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3"><csymbol cd="ambiguous" id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.1.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3">subscript</csymbol><ci id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.2.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.2">𝑍</ci><ci id="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.3.cmml" xref="S3.E1.m1.4.4.2.2.1.1.1.2.1.1.1.3.3">𝑗</ci></apply></apply></apply></apply></apply></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.E1.m1.4c">\Omega_{n}(\mathbf{Z})=(n-2)H(\mathbf{Z})+\sum_{j=1}^{n}[H(Z_{j})-H(\mathbf{Z}%
+\backslash Z_{j})]</annotation><annotation encoding="application/x-llamapun" id="S3.E1.m1.4d">roman_Ω start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT ( bold_Z ) = ( italic_n - 2 ) italic_H ( bold_Z ) + ∑ start_POSTSUBSCRIPT italic_j = 1 end_POSTSUBSCRIPT start_POSTSUPERSCRIPT italic_n end_POSTSUPERSCRIPT [ italic_H ( italic_Z start_POSTSUBSCRIPT italic_j end_POSTSUBSCRIPT ) - italic_H ( bold_Z \ italic_Z start_POSTSUBSCRIPT italic_j end_POSTSUBSCRIPT ) ]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p" id="S3.p2.8">where <math alttext="H" class="ltx_Math" display="inline" id="S3.p2.3.m1.1"><semantics id="S3.p2.3.m1.1a"><mi id="S3.p2.3.m1.1.1" xref="S3.p2.3.m1.1.1.cmml">H</mi><annotation-xml encoding="MathML-Content" id="S3.p2.3.m1.1b"><ci id="S3.p2.3.m1.1.1.cmml" xref="S3.p2.3.m1.1.1">𝐻</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.3.m1.1c">H</annotation><annotation encoding="application/x-llamapun" id="S3.p2.3.m1.1d">italic_H</annotation></semantics></math> is the entropy, and <math alttext="\mathbf{Z}\backslash Z_{j}" class="ltx_Math" display="inline" id="S3.p2.4.m2.1"><semantics id="S3.p2.4.m2.1a"><mrow id="S3.p2.4.m2.1.1" xref="S3.p2.4.m2.1.1.cmml"><mi id="S3.p2.4.m2.1.1.2" xref="S3.p2.4.m2.1.1.2.cmml">𝐙</mi><mo id="S3.p2.4.m2.1.1.1" lspace="0.222em" rspace="0.222em" xref="S3.p2.4.m2.1.1.1.cmml">\</mo><msub id="S3.p2.4.m2.1.1.3" xref="S3.p2.4.m2.1.1.3.cmml"><mi id="S3.p2.4.m2.1.1.3.2" xref="S3.p2.4.m2.1.1.3.2.cmml">Z</mi><mi id="S3.p2.4.m2.1.1.3.3" xref="S3.p2.4.m2.1.1.3.3.cmml">j</mi></msub></mrow><annotation-xml encoding="MathML-Content" id="S3.p2.4.m2.1b"><apply id="S3.p2.4.m2.1.1.cmml" xref="S3.p2.4.m2.1.1"><ci id="S3.p2.4.m2.1.1.1.cmml" xref="S3.p2.4.m2.1.1.1">\</ci><ci id="S3.p2.4.m2.1.1.2.cmml" xref="S3.p2.4.m2.1.1.2">𝐙</ci><apply id="S3.p2.4.m2.1.1.3.cmml" xref="S3.p2.4.m2.1.1.3"><csymbol cd="ambiguous" id="S3.p2.4.m2.1.1.3.1.cmml" xref="S3.p2.4.m2.1.1.3">subscript</csymbol><ci id="S3.p2.4.m2.1.1.3.2.cmml" xref="S3.p2.4.m2.1.1.3.2">𝑍</ci><ci id="S3.p2.4.m2.1.1.3.3.cmml" xref="S3.p2.4.m2.1.1.3.3">𝑗</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.4.m2.1c">\mathbf{Z}\backslash Z_{j}</annotation><annotation encoding="application/x-llamapun" id="S3.p2.4.m2.1d">bold_Z \ italic_Z start_POSTSUBSCRIPT italic_j end_POSTSUBSCRIPT</annotation></semantics></math> is the complement of <math alttext="Z_{j}" class="ltx_Math" display="inline" id="S3.p2.5.m3.1"><semantics id="S3.p2.5.m3.1a"><msub id="S3.p2.5.m3.1.1" xref="S3.p2.5.m3.1.1.cmml"><mi id="S3.p2.5.m3.1.1.2" xref="S3.p2.5.m3.1.1.2.cmml">Z</mi><mi id="S3.p2.5.m3.1.1.3" xref="S3.p2.5.m3.1.1.3.cmml">j</mi></msub><annotation-xml encoding="MathML-Content" id="S3.p2.5.m3.1b"><apply id="S3.p2.5.m3.1.1.cmml" xref="S3.p2.5.m3.1.1"><csymbol cd="ambiguous" id="S3.p2.5.m3.1.1.1.cmml" xref="S3.p2.5.m3.1.1">subscript</csymbol><ci id="S3.p2.5.m3.1.1.2.cmml" xref="S3.p2.5.m3.1.1.2">𝑍</ci><ci id="S3.p2.5.m3.1.1.3.cmml" xref="S3.p2.5.m3.1.1.3">𝑗</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.5.m3.1c">Z_{j}</annotation><annotation encoding="application/x-llamapun" id="S3.p2.5.m3.1d">italic_Z start_POSTSUBSCRIPT italic_j end_POSTSUBSCRIPT</annotation></semantics></math> with respect to <math alttext="\mathbf{Z}" class="ltx_Math" display="inline" id="S3.p2.6.m4.1"><semantics id="S3.p2.6.m4.1a"><mi id="S3.p2.6.m4.1.1" xref="S3.p2.6.m4.1.1.cmml">𝐙</mi><annotation-xml encoding="MathML-Content" id="S3.p2.6.m4.1b"><ci id="S3.p2.6.m4.1.1.cmml" xref="S3.p2.6.m4.1.1">𝐙</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.6.m4.1c">\mathbf{Z}</annotation><annotation encoding="application/x-llamapun" id="S3.p2.6.m4.1d">bold_Z</annotation></semantics></math>. If <math alttext="\Omega_{n}(\mathbf{Z})&gt;0" class="ltx_Math" display="inline" id="S3.p2.7.m5.1"><semantics id="S3.p2.7.m5.1a"><mrow id="S3.p2.7.m5.1.2" xref="S3.p2.7.m5.1.2.cmml"><mrow id="S3.p2.7.m5.1.2.2" xref="S3.p2.7.m5.1.2.2.cmml"><msub id="S3.p2.7.m5.1.2.2.2" xref="S3.p2.7.m5.1.2.2.2.cmml"><mi id="S3.p2.7.m5.1.2.2.2.2" mathvariant="normal" xref="S3.p2.7.m5.1.2.2.2.2.cmml">Ω</mi><mi id="S3.p2.7.m5.1.2.2.2.3" xref="S3.p2.7.m5.1.2.2.2.3.cmml">n</mi></msub><mo id="S3.p2.7.m5.1.2.2.1" xref="S3.p2.7.m5.1.2.2.1.cmml">⁢</mo><mrow id="S3.p2.7.m5.1.2.2.3.2" xref="S3.p2.7.m5.1.2.2.cmml"><mo id="S3.p2.7.m5.1.2.2.3.2.1" stretchy="false" xref="S3.p2.7.m5.1.2.2.cmml">(</mo><mi id="S3.p2.7.m5.1.1" xref="S3.p2.7.m5.1.1.cmml">𝐙</mi><mo id="S3.p2.7.m5.1.2.2.3.2.2" stretchy="false" xref="S3.p2.7.m5.1.2.2.cmml">)</mo></mrow></mrow><mo id="S3.p2.7.m5.1.2.1" xref="S3.p2.7.m5.1.2.1.cmml">&gt;</mo><mn id="S3.p2.7.m5.1.2.3" xref="S3.p2.7.m5.1.2.3.cmml">0</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.p2.7.m5.1b"><apply id="S3.p2.7.m5.1.2.cmml" xref="S3.p2.7.m5.1.2"><gt id="S3.p2.7.m5.1.2.1.cmml" xref="S3.p2.7.m5.1.2.1"></gt><apply id="S3.p2.7.m5.1.2.2.cmml" xref="S3.p2.7.m5.1.2.2"><times id="S3.p2.7.m5.1.2.2.1.cmml" xref="S3.p2.7.m5.1.2.2.1"></times><apply id="S3.p2.7.m5.1.2.2.2.cmml" xref="S3.p2.7.m5.1.2.2.2"><csymbol cd="ambiguous" id="S3.p2.7.m5.1.2.2.2.1.cmml" xref="S3.p2.7.m5.1.2.2.2">subscript</csymbol><ci id="S3.p2.7.m5.1.2.2.2.2.cmml" xref="S3.p2.7.m5.1.2.2.2.2">Ω</ci><ci id="S3.p2.7.m5.1.2.2.2.3.cmml" xref="S3.p2.7.m5.1.2.2.2.3">𝑛</ci></apply><ci id="S3.p2.7.m5.1.1.cmml" xref="S3.p2.7.m5.1.1">𝐙</ci></apply><cn id="S3.p2.7.m5.1.2.3.cmml" type="integer" xref="S3.p2.7.m5.1.2.3">0</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.7.m5.1c">\Omega_{n}(\mathbf{Z})&gt;0</annotation><annotation encoding="application/x-llamapun" id="S3.p2.7.m5.1d">roman_Ω start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT ( bold_Z ) &gt; 0</annotation></semantics></math> the system is redundancy-dominated, while if <math alttext="\Omega_{n}(\mathbf{Z})&lt;0" class="ltx_Math" display="inline" id="S3.p2.8.m6.1"><semantics id="S3.p2.8.m6.1a"><mrow id="S3.p2.8.m6.1.2" xref="S3.p2.8.m6.1.2.cmml"><mrow id="S3.p2.8.m6.1.2.2" xref="S3.p2.8.m6.1.2.2.cmml"><msub id="S3.p2.8.m6.1.2.2.2" xref="S3.p2.8.m6.1.2.2.2.cmml"><mi id="S3.p2.8.m6.1.2.2.2.2" mathvariant="normal" xref="S3.p2.8.m6.1.2.2.2.2.cmml">Ω</mi><mi id="S3.p2.8.m6.1.2.2.2.3" xref="S3.p2.8.m6.1.2.2.2.3.cmml">n</mi></msub><mo id="S3.p2.8.m6.1.2.2.1" xref="S3.p2.8.m6.1.2.2.1.cmml">⁢</mo><mrow id="S3.p2.8.m6.1.2.2.3.2" xref="S3.p2.8.m6.1.2.2.cmml"><mo id="S3.p2.8.m6.1.2.2.3.2.1" stretchy="false" xref="S3.p2.8.m6.1.2.2.cmml">(</mo><mi id="S3.p2.8.m6.1.1" xref="S3.p2.8.m6.1.1.cmml">𝐙</mi><mo id="S3.p2.8.m6.1.2.2.3.2.2" stretchy="false" xref="S3.p2.8.m6.1.2.2.cmml">)</mo></mrow></mrow><mo id="S3.p2.8.m6.1.2.1" xref="S3.p2.8.m6.1.2.1.cmml">&lt;</mo><mn id="S3.p2.8.m6.1.2.3" xref="S3.p2.8.m6.1.2.3.cmml">0</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.p2.8.m6.1b"><apply id="S3.p2.8.m6.1.2.cmml" xref="S3.p2.8.m6.1.2"><lt id="S3.p2.8.m6.1.2.1.cmml" xref="S3.p2.8.m6.1.2.1"></lt><apply id="S3.p2.8.m6.1.2.2.cmml" xref="S3.p2.8.m6.1.2.2"><times id="S3.p2.8.m6.1.2.2.1.cmml" xref="S3.p2.8.m6.1.2.2.1"></times><apply id="S3.p2.8.m6.1.2.2.2.cmml" xref="S3.p2.8.m6.1.2.2.2"><csymbol cd="ambiguous" id="S3.p2.8.m6.1.2.2.2.1.cmml" xref="S3.p2.8.m6.1.2.2.2">subscript</csymbol><ci id="S3.p2.8.m6.1.2.2.2.2.cmml" xref="S3.p2.8.m6.1.2.2.2.2">Ω</ci><ci id="S3.p2.8.m6.1.2.2.2.3.cmml" xref="S3.p2.8.m6.1.2.2.2.3">𝑛</ci></apply><ci id="S3.p2.8.m6.1.1.cmml" xref="S3.p2.8.m6.1.1">𝐙</ci></apply><cn id="S3.p2.8.m6.1.2.3.cmml" type="integer" xref="S3.p2.8.m6.1.2.3">0</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p2.8.m6.1c">\Omega_{n}(\mathbf{Z})&lt;0</annotation><annotation encoding="application/x-llamapun" id="S3.p2.8.m6.1d">roman_Ω start_POSTSUBSCRIPT italic_n end_POSTSUBSCRIPT ( bold_Z ) &lt; 0</annotation></semantics></math> it is synergy-dominated. We estimate the entropy terms in <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S3.E1" title="Equation 1 ‣ 3 Methodology ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">1</span></a> using Gaussian Copula transformation <cite class="ltx_cite ltx_citemacro_citep">(Ince et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib10" title="">2017</a>)</cite> allowing an efficient closed-form solution (see papers for details).</p>
+</div>
+<div class="ltx_para" id="S3.p3">
+<p class="ltx_p" id="S3.p3.7"><span class="ltx_text ltx_font_bold" id="S3.p3.7.1">Quantify synergy and redundancy</span> We first reduce the dimensions of the features <math alttext="Z^{1}\in\mathbb{R}^{s\times 250}" class="ltx_Math" display="inline" id="S3.p3.1.m1.1"><semantics id="S3.p3.1.m1.1a"><mrow id="S3.p3.1.m1.1.1" xref="S3.p3.1.m1.1.1.cmml"><msup id="S3.p3.1.m1.1.1.2" xref="S3.p3.1.m1.1.1.2.cmml"><mi id="S3.p3.1.m1.1.1.2.2" xref="S3.p3.1.m1.1.1.2.2.cmml">Z</mi><mn id="S3.p3.1.m1.1.1.2.3" xref="S3.p3.1.m1.1.1.2.3.cmml">1</mn></msup><mo id="S3.p3.1.m1.1.1.1" xref="S3.p3.1.m1.1.1.1.cmml">∈</mo><msup id="S3.p3.1.m1.1.1.3" xref="S3.p3.1.m1.1.1.3.cmml"><mi id="S3.p3.1.m1.1.1.3.2" xref="S3.p3.1.m1.1.1.3.2.cmml">ℝ</mi><mrow id="S3.p3.1.m1.1.1.3.3" xref="S3.p3.1.m1.1.1.3.3.cmml"><mi id="S3.p3.1.m1.1.1.3.3.2" xref="S3.p3.1.m1.1.1.3.3.2.cmml">s</mi><mo id="S3.p3.1.m1.1.1.3.3.1" lspace="0.222em" rspace="0.222em" xref="S3.p3.1.m1.1.1.3.3.1.cmml">×</mo><mn id="S3.p3.1.m1.1.1.3.3.3" xref="S3.p3.1.m1.1.1.3.3.3.cmml">250</mn></mrow></msup></mrow><annotation-xml encoding="MathML-Content" id="S3.p3.1.m1.1b"><apply id="S3.p3.1.m1.1.1.cmml" xref="S3.p3.1.m1.1.1"><in id="S3.p3.1.m1.1.1.1.cmml" xref="S3.p3.1.m1.1.1.1"></in><apply id="S3.p3.1.m1.1.1.2.cmml" xref="S3.p3.1.m1.1.1.2"><csymbol cd="ambiguous" id="S3.p3.1.m1.1.1.2.1.cmml" xref="S3.p3.1.m1.1.1.2">superscript</csymbol><ci id="S3.p3.1.m1.1.1.2.2.cmml" xref="S3.p3.1.m1.1.1.2.2">𝑍</ci><cn id="S3.p3.1.m1.1.1.2.3.cmml" type="integer" xref="S3.p3.1.m1.1.1.2.3">1</cn></apply><apply id="S3.p3.1.m1.1.1.3.cmml" xref="S3.p3.1.m1.1.1.3"><csymbol cd="ambiguous" id="S3.p3.1.m1.1.1.3.1.cmml" xref="S3.p3.1.m1.1.1.3">superscript</csymbol><ci id="S3.p3.1.m1.1.1.3.2.cmml" xref="S3.p3.1.m1.1.1.3.2">ℝ</ci><apply id="S3.p3.1.m1.1.1.3.3.cmml" xref="S3.p3.1.m1.1.1.3.3"><times id="S3.p3.1.m1.1.1.3.3.1.cmml" xref="S3.p3.1.m1.1.1.3.3.1"></times><ci id="S3.p3.1.m1.1.1.3.3.2.cmml" xref="S3.p3.1.m1.1.1.3.3.2">𝑠</ci><cn id="S3.p3.1.m1.1.1.3.3.3.cmml" type="integer" xref="S3.p3.1.m1.1.1.3.3.3">250</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.1.m1.1c">Z^{1}\in\mathbb{R}^{s\times 250}</annotation><annotation encoding="application/x-llamapun" id="S3.p3.1.m1.1d">italic_Z start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT ∈ blackboard_R start_POSTSUPERSCRIPT italic_s × 250 end_POSTSUPERSCRIPT</annotation></semantics></math> by grouping similar feature vectors into 10 bins using agglomerative clustering based on the standard configuration in sklearn resulting in a feature matrix <math alttext="\tilde{Z}^{1}\in\mathbb{R}^{s\times 10}" class="ltx_Math" display="inline" id="S3.p3.2.m2.1"><semantics id="S3.p3.2.m2.1a"><mrow id="S3.p3.2.m2.1.1" xref="S3.p3.2.m2.1.1.cmml"><msup id="S3.p3.2.m2.1.1.2" xref="S3.p3.2.m2.1.1.2.cmml"><mover accent="true" id="S3.p3.2.m2.1.1.2.2" xref="S3.p3.2.m2.1.1.2.2.cmml"><mi id="S3.p3.2.m2.1.1.2.2.2" xref="S3.p3.2.m2.1.1.2.2.2.cmml">Z</mi><mo id="S3.p3.2.m2.1.1.2.2.1" xref="S3.p3.2.m2.1.1.2.2.1.cmml">~</mo></mover><mn id="S3.p3.2.m2.1.1.2.3" xref="S3.p3.2.m2.1.1.2.3.cmml">1</mn></msup><mo id="S3.p3.2.m2.1.1.1" xref="S3.p3.2.m2.1.1.1.cmml">∈</mo><msup id="S3.p3.2.m2.1.1.3" xref="S3.p3.2.m2.1.1.3.cmml"><mi id="S3.p3.2.m2.1.1.3.2" xref="S3.p3.2.m2.1.1.3.2.cmml">ℝ</mi><mrow id="S3.p3.2.m2.1.1.3.3" xref="S3.p3.2.m2.1.1.3.3.cmml"><mi id="S3.p3.2.m2.1.1.3.3.2" xref="S3.p3.2.m2.1.1.3.3.2.cmml">s</mi><mo id="S3.p3.2.m2.1.1.3.3.1" lspace="0.222em" rspace="0.222em" xref="S3.p3.2.m2.1.1.3.3.1.cmml">×</mo><mn id="S3.p3.2.m2.1.1.3.3.3" xref="S3.p3.2.m2.1.1.3.3.3.cmml">10</mn></mrow></msup></mrow><annotation-xml encoding="MathML-Content" id="S3.p3.2.m2.1b"><apply id="S3.p3.2.m2.1.1.cmml" xref="S3.p3.2.m2.1.1"><in id="S3.p3.2.m2.1.1.1.cmml" xref="S3.p3.2.m2.1.1.1"></in><apply id="S3.p3.2.m2.1.1.2.cmml" xref="S3.p3.2.m2.1.1.2"><csymbol cd="ambiguous" id="S3.p3.2.m2.1.1.2.1.cmml" xref="S3.p3.2.m2.1.1.2">superscript</csymbol><apply id="S3.p3.2.m2.1.1.2.2.cmml" xref="S3.p3.2.m2.1.1.2.2"><ci id="S3.p3.2.m2.1.1.2.2.1.cmml" xref="S3.p3.2.m2.1.1.2.2.1">~</ci><ci id="S3.p3.2.m2.1.1.2.2.2.cmml" xref="S3.p3.2.m2.1.1.2.2.2">𝑍</ci></apply><cn id="S3.p3.2.m2.1.1.2.3.cmml" type="integer" xref="S3.p3.2.m2.1.1.2.3">1</cn></apply><apply id="S3.p3.2.m2.1.1.3.cmml" xref="S3.p3.2.m2.1.1.3"><csymbol cd="ambiguous" id="S3.p3.2.m2.1.1.3.1.cmml" xref="S3.p3.2.m2.1.1.3">superscript</csymbol><ci id="S3.p3.2.m2.1.1.3.2.cmml" xref="S3.p3.2.m2.1.1.3.2">ℝ</ci><apply id="S3.p3.2.m2.1.1.3.3.cmml" xref="S3.p3.2.m2.1.1.3.3"><times id="S3.p3.2.m2.1.1.3.3.1.cmml" xref="S3.p3.2.m2.1.1.3.3.1"></times><ci id="S3.p3.2.m2.1.1.3.3.2.cmml" xref="S3.p3.2.m2.1.1.3.3.2">𝑠</ci><cn id="S3.p3.2.m2.1.1.3.3.3.cmml" type="integer" xref="S3.p3.2.m2.1.1.3.3.3">10</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.2.m2.1c">\tilde{Z}^{1}\in\mathbb{R}^{s\times 10}</annotation><annotation encoding="application/x-llamapun" id="S3.p3.2.m2.1d">over~ start_ARG italic_Z end_ARG start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT ∈ blackboard_R start_POSTSUPERSCRIPT italic_s × 10 end_POSTSUPERSCRIPT</annotation></semantics></math> where each bin in <math alttext="\tilde{Z}^{1}" class="ltx_Math" display="inline" id="S3.p3.3.m3.1"><semantics id="S3.p3.3.m3.1a"><msup id="S3.p3.3.m3.1.1" xref="S3.p3.3.m3.1.1.cmml"><mover accent="true" id="S3.p3.3.m3.1.1.2" xref="S3.p3.3.m3.1.1.2.cmml"><mi id="S3.p3.3.m3.1.1.2.2" xref="S3.p3.3.m3.1.1.2.2.cmml">Z</mi><mo id="S3.p3.3.m3.1.1.2.1" xref="S3.p3.3.m3.1.1.2.1.cmml">~</mo></mover><mn id="S3.p3.3.m3.1.1.3" xref="S3.p3.3.m3.1.1.3.cmml">1</mn></msup><annotation-xml encoding="MathML-Content" id="S3.p3.3.m3.1b"><apply id="S3.p3.3.m3.1.1.cmml" xref="S3.p3.3.m3.1.1"><csymbol cd="ambiguous" id="S3.p3.3.m3.1.1.1.cmml" xref="S3.p3.3.m3.1.1">superscript</csymbol><apply id="S3.p3.3.m3.1.1.2.cmml" xref="S3.p3.3.m3.1.1.2"><ci id="S3.p3.3.m3.1.1.2.1.cmml" xref="S3.p3.3.m3.1.1.2.1">~</ci><ci id="S3.p3.3.m3.1.1.2.2.cmml" xref="S3.p3.3.m3.1.1.2.2">𝑍</ci></apply><cn id="S3.p3.3.m3.1.1.3.cmml" type="integer" xref="S3.p3.3.m3.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.3.m3.1c">\tilde{Z}^{1}</annotation><annotation encoding="application/x-llamapun" id="S3.p3.3.m3.1d">over~ start_ARG italic_Z end_ARG start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT</annotation></semantics></math> consist of a set of similar feature vectors <math alttext="\tilde{z}_{1}^{k}" class="ltx_Math" display="inline" id="S3.p3.4.m4.1"><semantics id="S3.p3.4.m4.1a"><msubsup id="S3.p3.4.m4.1.1" xref="S3.p3.4.m4.1.1.cmml"><mover accent="true" id="S3.p3.4.m4.1.1.2.2" xref="S3.p3.4.m4.1.1.2.2.cmml"><mi id="S3.p3.4.m4.1.1.2.2.2" xref="S3.p3.4.m4.1.1.2.2.2.cmml">z</mi><mo id="S3.p3.4.m4.1.1.2.2.1" xref="S3.p3.4.m4.1.1.2.2.1.cmml">~</mo></mover><mn id="S3.p3.4.m4.1.1.2.3" xref="S3.p3.4.m4.1.1.2.3.cmml">1</mn><mi id="S3.p3.4.m4.1.1.3" xref="S3.p3.4.m4.1.1.3.cmml">k</mi></msubsup><annotation-xml encoding="MathML-Content" id="S3.p3.4.m4.1b"><apply id="S3.p3.4.m4.1.1.cmml" xref="S3.p3.4.m4.1.1"><csymbol cd="ambiguous" id="S3.p3.4.m4.1.1.1.cmml" xref="S3.p3.4.m4.1.1">superscript</csymbol><apply id="S3.p3.4.m4.1.1.2.cmml" xref="S3.p3.4.m4.1.1"><csymbol cd="ambiguous" id="S3.p3.4.m4.1.1.2.1.cmml" xref="S3.p3.4.m4.1.1">subscript</csymbol><apply id="S3.p3.4.m4.1.1.2.2.cmml" xref="S3.p3.4.m4.1.1.2.2"><ci id="S3.p3.4.m4.1.1.2.2.1.cmml" xref="S3.p3.4.m4.1.1.2.2.1">~</ci><ci id="S3.p3.4.m4.1.1.2.2.2.cmml" xref="S3.p3.4.m4.1.1.2.2.2">𝑧</ci></apply><cn id="S3.p3.4.m4.1.1.2.3.cmml" type="integer" xref="S3.p3.4.m4.1.1.2.3">1</cn></apply><ci id="S3.p3.4.m4.1.1.3.cmml" xref="S3.p3.4.m4.1.1.3">𝑘</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.4.m4.1c">\tilde{z}_{1}^{k}</annotation><annotation encoding="application/x-llamapun" id="S3.p3.4.m4.1d">over~ start_ARG italic_z end_ARG start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT start_POSTSUPERSCRIPT italic_k end_POSTSUPERSCRIPT</annotation></semantics></math>. To quantify the synergy and redundancy in a network, we perform an exhaustive search of each combination of multiplets (i.e. subsets of 2 to <math alttext="k" class="ltx_Math" display="inline" id="S3.p3.5.m5.1"><semantics id="S3.p3.5.m5.1a"><mi id="S3.p3.5.m5.1.1" xref="S3.p3.5.m5.1.1.cmml">k</mi><annotation-xml encoding="MathML-Content" id="S3.p3.5.m5.1b"><ci id="S3.p3.5.m5.1.1.cmml" xref="S3.p3.5.m5.1.1">𝑘</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.5.m5.1c">k</annotation><annotation encoding="application/x-llamapun" id="S3.p3.5.m5.1d">italic_k</annotation></semantics></math> bins where the largest combination <math alttext="k" class="ltx_Math" display="inline" id="S3.p3.6.m6.1"><semantics id="S3.p3.6.m6.1a"><mi id="S3.p3.6.m6.1.1" xref="S3.p3.6.m6.1.1.cmml">k</mi><annotation-xml encoding="MathML-Content" id="S3.p3.6.m6.1b"><ci id="S3.p3.6.m6.1.1.cmml" xref="S3.p3.6.m6.1.1">𝑘</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.6.m6.1c">k</annotation><annotation encoding="application/x-llamapun" id="S3.p3.6.m6.1d">italic_k</annotation></semantics></math> = 10) using the O-Information <math alttext="\Omega_{k}(\tilde{z}_{1}^{1},..,\tilde{z}_{1}^{k})" class="ltx_math_unparsed" display="inline" id="S3.p3.7.m7.1"><semantics id="S3.p3.7.m7.1a"><mrow id="S3.p3.7.m7.1b"><msub id="S3.p3.7.m7.1.1"><mi id="S3.p3.7.m7.1.1.2" mathvariant="normal">Ω</mi><mi id="S3.p3.7.m7.1.1.3">k</mi></msub><mrow id="S3.p3.7.m7.1.2"><mo id="S3.p3.7.m7.1.2.1" stretchy="false">(</mo><msubsup id="S3.p3.7.m7.1.2.2"><mover accent="true" id="S3.p3.7.m7.1.2.2.2.2"><mi id="S3.p3.7.m7.1.2.2.2.2.2">z</mi><mo id="S3.p3.7.m7.1.2.2.2.2.1">~</mo></mover><mn id="S3.p3.7.m7.1.2.2.2.3">1</mn><mn id="S3.p3.7.m7.1.2.2.3">1</mn></msubsup><mo id="S3.p3.7.m7.1.2.3">,</mo><mo id="S3.p3.7.m7.1.2.4" lspace="0em" rspace="0.0835em">.</mo><mo id="S3.p3.7.m7.1.2.5" lspace="0.0835em" rspace="0.167em">.</mo><mo id="S3.p3.7.m7.1.2.6">,</mo><msubsup id="S3.p3.7.m7.1.2.7"><mover accent="true" id="S3.p3.7.m7.1.2.7.2.2"><mi id="S3.p3.7.m7.1.2.7.2.2.2">z</mi><mo id="S3.p3.7.m7.1.2.7.2.2.1">~</mo></mover><mn id="S3.p3.7.m7.1.2.7.2.3">1</mn><mi id="S3.p3.7.m7.1.2.7.3">k</mi></msubsup><mo id="S3.p3.7.m7.1.2.8" stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex" id="S3.p3.7.m7.1c">\Omega_{k}(\tilde{z}_{1}^{1},..,\tilde{z}_{1}^{k})</annotation><annotation encoding="application/x-llamapun" id="S3.p3.7.m7.1d">roman_Ω start_POSTSUBSCRIPT italic_k end_POSTSUBSCRIPT ( over~ start_ARG italic_z end_ARG start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT start_POSTSUPERSCRIPT 1 end_POSTSUPERSCRIPT , . . , over~ start_ARG italic_z end_ARG start_POSTSUBSCRIPT 1 end_POSTSUBSCRIPT start_POSTSUPERSCRIPT italic_k end_POSTSUPERSCRIPT )</annotation></semantics></math> to find the optimal synergy (lowest) and redundancy (highest) value. In our plots, we normalize both synergy and and redundancy between 0 and 1 while inverting the synergy for comparison.</p>
+</div>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Evaluating grokking</h2>
+<div class="ltx_para" id="S4.p1">
+<p class="ltx_p" id="S4.p1.1">In this experiment, we evaluate the impact of design choices to simulate grokking by training models according to two strategies:</p>
+</div>
+<div class="ltx_para" id="S4.p2">
+<p class="ltx_p" id="S4.p2.1"><span class="ltx_text ltx_font_bold" id="S4.p2.1.1">Role of weight decay</span> Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S4.F1" title="Figure 1 ‣ 4 Evaluating grokking ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">1</span></a> illustrates models trained with low (0.01) and high (2.0) weight decay. We observe that a low weight decay results in delayed generalization. However, increasing weight decay reduces the generalization gap and increases its sharpness.</p>
+</div>
+<div class="ltx_para" id="S4.p3">
+<p class="ltx_p" id="S4.p3.3"><span class="ltx_text ltx_font_bold" id="S4.p3.3.1">Role of initialization</span> To increase the validity of our findings, we investigate grokking beyond weight decay. <cite class="ltx_cite ltx_citemacro_citep">(Liu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib18" title="">2022</a>)</cite> observed that scaling the initialization weights of the model with a factor <math alttext="\alpha&gt;0" class="ltx_Math" display="inline" id="S4.p3.1.m1.1"><semantics id="S4.p3.1.m1.1a"><mrow id="S4.p3.1.m1.1.1" xref="S4.p3.1.m1.1.1.cmml"><mi id="S4.p3.1.m1.1.1.2" xref="S4.p3.1.m1.1.1.2.cmml">α</mi><mo id="S4.p3.1.m1.1.1.1" xref="S4.p3.1.m1.1.1.1.cmml">&gt;</mo><mn id="S4.p3.1.m1.1.1.3" xref="S4.p3.1.m1.1.1.3.cmml">0</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.p3.1.m1.1b"><apply id="S4.p3.1.m1.1.1.cmml" xref="S4.p3.1.m1.1.1"><gt id="S4.p3.1.m1.1.1.1.cmml" xref="S4.p3.1.m1.1.1.1"></gt><ci id="S4.p3.1.m1.1.1.2.cmml" xref="S4.p3.1.m1.1.1.2">𝛼</ci><cn id="S4.p3.1.m1.1.1.3.cmml" type="integer" xref="S4.p3.1.m1.1.1.3">0</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.1.m1.1c">\alpha&gt;0</annotation><annotation encoding="application/x-llamapun" id="S4.p3.1.m1.1d">italic_α &gt; 0</annotation></semantics></math>
+while constraining the L2 weight norm to be constant during training can induce grokking. Here, we train a model with a high initialization factor (<math alttext="\alpha" class="ltx_Math" display="inline" id="S4.p3.2.m2.1"><semantics id="S4.p3.2.m2.1a"><mi id="S4.p3.2.m2.1.1" xref="S4.p3.2.m2.1.1.cmml">α</mi><annotation-xml encoding="MathML-Content" id="S4.p3.2.m2.1b"><ci id="S4.p3.2.m2.1.1.cmml" xref="S4.p3.2.m2.1.1">𝛼</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.2.m2.1c">\alpha</annotation><annotation encoding="application/x-llamapun" id="S4.p3.2.m2.1d">italic_α</annotation></semantics></math> = 8) with zero weight decay. Similar to <cite class="ltx_cite ltx_citemacro_citep">(Lyu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib20" title="">2023</a>)</cite>, we set the initialization weights in the last layer to zero to avoid learning instabilities when using a large <math alttext="\alpha" class="ltx_Math" display="inline" id="S4.p3.3.m3.1"><semantics id="S4.p3.3.m3.1a"><mi id="S4.p3.3.m3.1.1" xref="S4.p3.3.m3.1.1.cmml">α</mi><annotation-xml encoding="MathML-Content" id="S4.p3.3.m3.1b"><ci id="S4.p3.3.m3.1.1.cmml" xref="S4.p3.3.m3.1.1">𝛼</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.3.m3.1c">\alpha</annotation><annotation encoding="application/x-llamapun" id="S4.p3.3.m3.1d">italic_α</annotation></semantics></math>. Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S4.F1" title="Figure 1 ‣ 4 Evaluating grokking ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">1</span></a> (right) verifies that this strategy reduces the generalization gap while increasing its sharpness.</p>
+</div>
+<figure class="ltx_figure" id="S4.F1">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S4.F1.2.2"><span class="ltx_text" id="S4.F1.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S4.F1.1.1.1.g1" src="x1.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S4.F1.2.2.2.g2" src="x2.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S4.F1.4.1.1" style="font-size:90%;">Figure 1</span>: </span><span class="ltx_text" id="S4.F1.5.2" style="font-size:90%;">Left: accuracy for weight decay 0.1 and 2.0, Right: accuracy for alpha initialization 8.</span></figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Grokking is an emergent phase transition</h2>
+<div class="ltx_para" id="S5.p1">
+<p class="ltx_p" id="S5.p1.1">To understand grokking, we plot the normalized synergy and redundancy with the loss, as this reflects the training dynamics, to measure the model’s progress during training. Each measure is on a log scale for visualization purposes. We include Pareto plots to illustrate the trade-off between synergy and redundancy as this provides a more fine-grained analysis of the progress measures.</p>
+</div>
+<section class="ltx_subsection" id="S5.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.1 </span>Low weight decay delays the emergence phase</h3>
+<div class="ltx_para" id="S5.SS1.p1">
+<p class="ltx_p" id="S5.SS1.p1.1">We first study the most common setting of grokking for a model trained with low weight decay of 0.1. From figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S4.F1" title="Figure 1 ‣ 4 Evaluating grokking ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">1</span></a> (left) we observe that training can be classified into 5 distinct phases:</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p2">
+<p class="ltx_p" id="S5.SS1.p2.1"><span class="ltx_text ltx_font_bold" id="S5.SS1.p2.1.1">Feature Learning</span> We initially observed low synergy and high redundancy. The lack of coupling between features suggests the network is independently learning features, while the high redundancy indicates it is extracting basic patterns with similar properties.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p3">
+<p class="ltx_p" id="S5.SS1.p3.1"><span class="ltx_text ltx_font_bold" id="S5.SS1.p3.1.1">Emergence</span> During this phase, the Pareto front in figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.F2" title="Figure 2 ‣ 5.1 Low weight decay delays the emergence phase ‣ 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">2</span></a> (right) reveals that the model rapidly trades off redundancy for synergy. At the same time, the size of the synergistic sub-network increases, and a peak is observed in the test loss. This suggests a critical phase transition from memorization where the model attempts to combine features to emerge a generalizing synergistic sub-network that is growing as it explores.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p4">
+<p class="ltx_p" id="S5.SS1.p4.1"><span class="ltx_text ltx_font_bold" id="S5.SS1.p4.1.1">Divergence</span>
+For low weight decay, the emergent phase does not directly lead to a generalizing solution. During a divergent phase, both the synergy and redundancy of the model drop, while the synergistic sub-network decreases in size with a small peak in the test loss. This indicates the model is overfitting due to a lack of sufficient features to combine. We hypothesize this is due to a low weight decay resulting in a difficult loss landscape making it difficult to learn generalizing.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p5">
+<p class="ltx_p" id="S5.SS1.p5.1"><span class="ltx_text ltx_font_bold" id="S5.SS1.p5.1.1">Delayed Emergence</span> During this phase, we observe a rapid increase in synergy, redundancy, and the size of the synergistic sub-network. This suggests the model escaped the sub-optimal solution and is now able to combine features to form a generalizing solution.
+
+<br class="ltx_break"/>
+<br class="ltx_break"/><span class="ltx_text ltx_font_bold" id="S5.SS1.p5.1.2">Decoupling</span> In this phase, synergy decreases, redundancy increases, and test accuracy increases. This suggests the model has found a generalizing sub-network but not all features are relevant so it removes coupled interactions for compression.</p>
+</div>
+<figure class="ltx_figure" id="S5.F2">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S5.F2.2.2"><span class="ltx_text" id="S5.F2.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F2.1.1.1.g1" src="x3.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F2.2.2.2.g2" src="x4.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S5.F2.4.1.1" style="font-size:90%;">Figure 2</span>: </span><span class="ltx_text" id="S5.F2.5.2" style="font-size:90%;">Baseline model with weight decay 0.1</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S5.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.2 </span>Increasing weight decay enhances emergence</h3>
+<div class="ltx_para" id="S5.SS2.p1">
+<p class="ltx_p" id="S5.SS2.p1.1">From Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.F3" title="Figure 3 ‣ 5.2 Increasing weight decay enhances emergence ‣ 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">3</span></a> (left), we observe that increasing weight decay directly results in an emergent phase with a larger peak in synergy and size of the synergistic sub-network. Moreover, the decoupling phase occurs immediately after this phase, with no divergent and delayed emergence phase.</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p2">
+<p class="ltx_p" id="S5.SS2.p2.1">This suggests that weight decay acts as regularization either by reducing the capacity of the network, which promotes learning shared features that are more robust by reducing the number of active features and thereby decreasing overfitting, or by smoothing the loss landscape, making it easier for optimization to find regions where more features can be combined.</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p3">
+<p class="ltx_p" id="S5.SS2.p3.1">We additionally observe a finalizing phase with minimal synergy and redundancy changes after test loss convergence. We attribute this to compression of the representation which is interesting for transfer learning but is not explored in this work.</p>
+</div>
+<figure class="ltx_figure" id="S5.F3">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S5.F3.2.2"><span class="ltx_text" id="S5.F3.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F3.1.1.1.g1" src="x5.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F3.2.2.2.g2" src="x6.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S5.F3.4.1.1" style="font-size:90%;">Figure 3</span>: </span><span class="ltx_text" id="S5.F3.5.2" style="font-size:90%;">Baseline model with weight decay 2.0</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S5.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3 </span>The role of weight initialization</h3>
+<div class="ltx_para" id="S5.SS3.p1">
+<p class="ltx_p" id="S5.SS3.p1.1">To isolate the contribution of weight decay regularization, we evaluate a model trained without weight decay using high weight initialization and a constrained norm. Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.F4" title="Figure 4 ‣ 5.3 The role of weight initialization ‣ 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">4</span></a> (left) illustrates that a model trained with high weight initialization without weight decay directly results in an emergent phase. However, from Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S5.F4" title="Figure 4 ‣ 5.3 The role of weight initialization ‣ 5 Grokking is an emergent phase transition ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">4</span></a> (right) we initially observe a rapid drop in redundancy followed by a delayed rapid increase in synergy. We hypothesize that this observation is due to the high convexity of the loss landscape making it easier for optimization to find a solution <cite class="ltx_cite ltx_citemacro_citep">(Vysogorets et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib30" title="">2024</a>; Fort &amp; Scherlis, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib5" title="">2018</a>)</cite>.</p>
+</div>
+<figure class="ltx_figure" id="S5.F4">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S5.F4.2.2"><span class="ltx_text" id="S5.F4.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F4.1.1.1.g1" src="x7.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S5.F4.2.2.2.g2" src="x8.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S5.F4.4.1.1" style="font-size:90%;">Figure 4</span>: </span><span class="ltx_text" id="S5.F4.5.2" style="font-size:90%;">Baseline model with alpha = 8 and weight decay = 0</span></figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_section" id="S6">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Early synergy peaks predict grokking</h2>
+<div class="ltx_para" id="S6.p1">
+<p class="ltx_p" id="S6.p1.1">In this experiment, we plot the synergy for a variety of models trained with weight decay and weight initialization. We empirically provide evidence that the synergy can predict grokking if there is a small peak early in training. For comparison, we additionally train the models with the same parameters from section 4 but with higher values for both weight decay and high weight initialization.</p>
+</div>
+<div class="ltx_para" id="S6.p2">
+<p class="ltx_p" id="S6.p2.1"><span class="ltx_text ltx_font_bold" id="S6.p2.1.1">Weight Decay</span> We additionally train models with weight decay values of 10 and 50, which do not achieve grokking (see figure 9 in the appendix). From figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S6.F5" title="Figure 5 ‣ 6 Early synergy peaks predict grokking ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">5</span></a> (left) we observe that both low (0.1) and higher (2) weight decay have a peak prior to grokking occurring. However, if weight decay is too high (i.e. 10 and 50) then the model is not able to grok indicated by lower synergy.</p>
+</div>
+<div class="ltx_para" id="S6.p3">
+<p class="ltx_p" id="S6.p3.1"><span class="ltx_text ltx_font_bold" id="S6.p3.1.1">Initialization</span> We additionally train models with weight decay values of 10 and 50, which do not achieve grokking (see figure 10 in the appendix). From figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S6.F5" title="Figure 5 ‣ 6 Early synergy peaks predict grokking ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">5</span></a> (right) we observe that high weight initialization (8) results in a synergistic peak. However, if alpha is too low (1) or too high (5) then the synergy rapidly drops and the model never recovers.</p>
+</div>
+<div class="ltx_para" id="S6.p4">
+<p class="ltx_p" id="S6.p4.1">These results indicate that early synergy peaks might be indicative of grokking. However, further experimentation with a variety of models and statistical tests is necessary to verify this hypothesis.</p>
+</div>
+<figure class="ltx_figure" id="S6.F5">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S6.F5.2.2"><span class="ltx_text" id="S6.F5.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S6.F5.1.1.1.g1" src="x9.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S6.F5.2.2.2.g2" src="x10.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S6.F5.4.1.1" style="font-size:90%;">Figure 5</span>: </span><span class="ltx_text" id="S6.F5.5.2" style="font-size:90%;">Left: synergy for weight decay (0.1, 2, 10, 50) Right: synergy for alpha (1, 8, 50)</span></figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="S7">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">7 </span>Are the emergent synergistic sub-networks causally related to generalization?</h2>
+<div class="ltx_para" id="S7.p1">
+<p class="ltx_p" id="S7.p1.1">This experiment investigates whether sub-networks with high synergy during the emergence phase contribute to delayed generalization in models. We focus on models trained with high weight decay (2.0) and weight initialization (8).</p>
+</div>
+<div class="ltx_para" id="S7.p2">
+<p class="ltx_p" id="S7.p2.1">First, we identify and extract sub-networks with high synergy during the emergence phase. We then train these sub-networks in isolation, setting all other neurons to zero. We compare the test accuracy of these isolated sub-networks with both the original test accuracy and the accuracy of their inverse sub-networks. For comparison, we also evaluate sub-networks identified during the delayed emergence phase of a model trained with low weight decay (0.1).</p>
+</div>
+<div class="ltx_para" id="S7.p3">
+<p class="ltx_p" id="S7.p3.1"><span class="ltx_text ltx_font_bold" id="S7.p3.1.1">Role of weight decay</span> From figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S7.F6" title="Figure 6 ‣ 7 Are the emergent synergistic sub-networks causally related to generalization? ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">6</span></a> left, we find that the synergistic network for low weight decay 0.1 achieves similar performance to the original model but the peak in test accuracy is less sudden indicating the model relies less on emergent interactions. On the other hand, the inverse model</p>
+</div>
+<div class="ltx_para" id="S7.p4">
+<p class="ltx_p" id="S7.p4.1">In contrast, figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S7.F6" title="Figure 6 ‣ 7 Are the emergent synergistic sub-networks causally related to generalization? ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">6</span></a> right shows that synergistic sub-network for weight decay 2.0 groks in fewer epochs. We hypothesize this is due to an emergent phase as indicated by a sharper test accuracy peak and higher synergy.</p>
+</div>
+<figure class="ltx_figure" id="S7.F6">
+<p class="ltx_p ltx_align_center ltx_align_center" id="S7.F6.2.2"><span class="ltx_text" id="S7.F6.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S7.F6.1.1.1.g1" src="x11.png" width="160"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="120" id="S7.F6.2.2.2.g2" src="x12.png" width="160"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S7.F6.4.1.1" style="font-size:90%;">Figure 6</span>: </span><span class="ltx_text" id="S7.F6.5.2" style="font-size:90%;">Left: test accuracy for synergistic sub-network with weight decay 0.1, Right: test accuracy for synergistic sub-network with weight decay 2.0</span></figcaption>
+</figure>
+<div class="ltx_para" id="S7.p5">
+<p class="ltx_p" id="S7.p5.1"><span class="ltx_text ltx_font_bold" id="S7.p5.1.1">Role of initialization</span> Figure <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#S7.F7" title="Figure 7 ‣ 7 Are the emergent synergistic sub-networks causally related to generalization? ‣ Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition"><span class="ltx_text ltx_ref_tag">7</span></a> shows that weight initialization 8 results in a similar grokking period than the original model. It should be noted that we observe similar results for the models with an emergent phase. These findings strengthen our belief in synergistic interactions and suggest that grokking may result from improper hyperparameter tuning.</p>
+</div>
+<figure class="ltx_figure" id="S7.F7"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="120" id="S7.F7.1.g1" src="x13.png" width="160"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="S7.F7.3.1.1" style="font-size:90%;">Figure 7</span>: </span><span class="ltx_text" id="S7.F7.4.2" style="font-size:90%;">Left: test accuracy for synergistic sub-network with weight decay 0.1, Right: test accuracy for synergistic sub-network with weight decay 2.0</span></figcaption>
+</figure>
+<div class="ltx_para" id="S7.p6">
+<p class="ltx_p" id="S7.p6.1">These preliminary findings indicate that the synergistic sub-networks are causally related to generalization. However, for the models with an emergent phase, the contrast between the synergistic sub-networks and its inverse is not that large. We argue that alternative methods are needed to provide a more accurate estimate of the clusters to identify the sub-networks.</p>
+</div>
+</section>
+<section class="ltx_section" id="S8">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">8 </span>Limitations</h2>
+<div class="ltx_para" id="S8.p1">
+<p class="ltx_p" id="S8.p1.1">A key limitation of our work is the simplicity of the model and benchmark. To validate the generality of the emergent phase transitions, we aim to extend this work to 1) realistic architectures based on transformers <cite class="ltx_cite ltx_citemacro_citep">(Nanda et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib24" title="">2023</a>)</cite>, or toy encoder-decoder models <cite class="ltx_cite ltx_citemacro_citep">(Doshi et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib4" title="">2023</a>)</cite> if scalability of our method is an issue. This allows us to disentangle the memorizing from the generalizing solution to better understand if these models learn isolated sub-networks, 2) evaluate alternative toy benchmarks, including sparse parity <cite class="ltx_cite ltx_citemacro_citep">(Barak et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib1" title="">2023</a>)</cite>, XOR <cite class="ltx_cite ltx_citemacro_citep">(Xu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib32" title="">2023</a>)</cite>, regression <cite class="ltx_cite ltx_citemacro_citep">(Kumar et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib13" title="">2023</a>)</cite>, realistic benchmarks like MNIST to study the impact of representation learning <cite class="ltx_cite ltx_citemacro_citep">(Liu et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib18" title="">2022</a>)</cite> and settings that can control grokking to increase the variety of models <cite class="ltx_cite ltx_citemacro_citep">(Miller et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib22" title="">2023</a>)</cite>, 3) scaling the width and depth of our models. We hypothesize this might provide us insights if the relationship between grokking and double descent can be explained via synergy and redundancy <cite class="ltx_cite ltx_citemacro_citep">(Huang et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib9" title="">2024</a>; Nakkiran et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib23" title="">2021</a>)</cite>, and 4) explore the role of optimization using gradient descent as our results might be influenced due to the internal regularization of AdamW <cite class="ltx_cite ltx_citemacro_citep">(Loshchilov &amp; Hutter, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib19" title="">2018</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S8.p2">
+<p class="ltx_p" id="S8.p2.1">Another limitation is the difficulty of scaling the O-Information to larger networks. Our method relies on agglomerative clustering to group similar features into bins which may not fully capture the structure between features. We aim to explore alternative similarity measures such as spectral clustering <cite class="ltx_cite ltx_citemacro_citep">(Hod et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib8" title="">2022</a>)</cite> and the Hessian of the loss <cite class="ltx_cite ltx_citemacro_citep">(Lange et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib14" title="">2022</a>)</cite>.</p>
+</div>
+</section>
+<section class="ltx_section" id="S9">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">9 </span>Conclusion and Discussion</h2>
+<div class="ltx_para" id="S9.p1">
+<p class="ltx_p" id="S9.p1.1">In this work, we present - to our knowledge - the first method to quantify emergent properties in neural networks for explaining grokking without relying on supervision, heuristics, or task-specific quantities. Our findings reveal an emergent phase transition where the model collectively combines features to solve arithmetic tasks. We illustrate that synergy peaks early during training could predict grokking.</p>
+</div>
+<div class="ltx_para" id="S9.p2">
+<p class="ltx_p" id="S9.p2.1">Through this preliminary work, we advocate for a paradigm shift in interpretability research from decomposing networks into the sum of isolated components (reductionism) to recognizing the emergent properties that arise from interactions between these components (emergentism). We emphasize the importance of developing methods that can quantify these higher-order interactions, as they are crucial for understanding training dynamics, generalization, and interpretability. As this is ongoing work, we conclude with future research directions.</p>
+</div>
+<div class="ltx_para" id="S9.p3">
+<p class="ltx_p" id="S9.p3.1"><span class="ltx_text ltx_font_bold" id="S9.p3.1.1">Loss Geometry</span> Our experiments illustrated that grokking might be caused by the difficulty of optimization to navigate the loss landscapes. We plan on further exploring this by visualizing these landscapes for each phase <cite class="ltx_cite ltx_citemacro_citep">(Li et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib15" title="">2018</a>)</cite> and exploring the connectivity between optima <cite class="ltx_cite ltx_citemacro_citep">(Garipov et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib6" title="">2018</a>)</cite>. This might give insights on geometric properties like sharp minima giving rise to generalization <cite class="ltx_cite ltx_citemacro_citep">(Hochreiter &amp; Schmidhuber, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib7" title="">1997</a>; Keskar et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib12" title="">2017</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S9.p4">
+<p class="ltx_p" id="S9.p4.1"><span class="ltx_text ltx_font_bold" id="S9.p4.1.1">Synergistic Dropout</span> Is the synergy between neurons a necessary and/or sufficient condition for grokking? To study if synergy causes grokking we aim to regularize for the synergy via dropout of the synergistic subnetworks <cite class="ltx_cite ltx_citemacro_citep">(Srivastava et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib28" title="">2014</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S9.p5">
+<p class="ltx_p" id="S9.p5.1"><span class="ltx_text ltx_font_bold" id="S9.p5.1.1">Phase Transitions</span> Recent work observed distinct phases during optimization when training neural networks <cite class="ltx_cite ltx_citemacro_citep">(Kalra &amp; Barkeshli, <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib11" title="">2023</a>)</cite> related to the edge of stability <cite class="ltx_cite ltx_citemacro_citep">(Cohen et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib3" title="">2020</a>)</cite>. We aim to investigate if these phases can be related via the training dynamics to the emergent phases in this work. This might explain why previous work on grokking discovered oscillation in the loss <cite class="ltx_cite ltx_citemacro_citep">(Notsawo et al., <a class="ltx_ref" href="https://arxiv.org/html/2408.08944v1#bib.bib25" title="">2023</a>)</cite>.</p>
+</div>
+</section>
+<section class="ltx_section" id="S10">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">10 </span>Author Contributions</h2>
+<div class="ltx_para" id="S10.p1">
+<p class="ltx_p" id="S10.p1.1">Kenzo carried out the experiments and wrote the paper. Daniele and Sebastiano supervised the project.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+<ul class="ltx_biblist">
+<li class="ltx_bibitem" id="bib.bib1">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Barak et al. (2023)</span>
+<span class="ltx_bibblock">
+Barak, B., Edelman, B. L., Goel, S., Kakade, S., Malach, E., and Zhang, C.
+
+</span>
+<span class="ltx_bibblock">Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit, January 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2207.08799" title="">http://arxiv.org/abs/2207.08799</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2207.08799 [cs, math, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib2">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Clauw et al. (2022)</span>
+<span class="ltx_bibblock">
+Clauw, K., Stramaglia, S., and Marinazzo, D.
+
+</span>
+<span class="ltx_bibblock">Higher-order mutual information reveals synergistic sub-networks for multi-neuron importance, November 2022.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2211.00416" title="">http://arxiv.org/abs/2211.00416</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2211.00416 [cs, math, q-bio].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib3">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Cohen et al. (2020)</span>
+<span class="ltx_bibblock">
+Cohen, J., Kaur, S., Li, Y., Kolter, J. Z., and Talwalkar, A.
+
+</span>
+<span class="ltx_bibblock">Gradient descent on neural networks typically occurs at the edge of stability.
+
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic" id="bib.bib3.1.1">International Conference on Learning Representations</em>, 2020.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://openreview.net/forum?id=jh-rTtvkGeM" title="">https://openreview.net/forum?id=jh-rTtvkGeM</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib4">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Doshi et al. (2023)</span>
+<span class="ltx_bibblock">
+Doshi, D., Das, A., He, T., and Gromov, A.
+
+</span>
+<span class="ltx_bibblock">To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datasets, October 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2310.13061" title="">http://arxiv.org/abs/2310.13061</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2310.13061 [cond-mat, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib5">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Fort &amp; Scherlis (2018)</span>
+<span class="ltx_bibblock">
+Fort, S. and Scherlis, A.
+
+</span>
+<span class="ltx_bibblock">The Goldilocks zone: Towards better understanding of neural network loss landscapes, November 2018.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/1807.02581" title="">http://arxiv.org/abs/1807.02581</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:1807.02581 [cs, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib6">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Garipov et al. (2018)</span>
+<span class="ltx_bibblock">
+Garipov, T., Izmailov, P., Podoprikhin, D., Vetrov, D. P., and Wilson, A. G.
+
+</span>
+<span class="ltx_bibblock">Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs.
+
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic" id="bib.bib6.1.1">Advances in Neural Information Processing Systems</em>, volume 31. Curran Associates, Inc., 2018.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://proceedings.neurips.cc/paper_files/paper/2018/hash/be3087e74e9100d4bc4c6268cdbe8456-Abstract.html" title="">https://proceedings.neurips.cc/paper_files/paper/2018/hash/be3087e74e9100d4bc4c6268cdbe8456-Abstract.html</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib7">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hochreiter &amp; Schmidhuber (1997)</span>
+<span class="ltx_bibblock">
+Hochreiter, S. and Schmidhuber, J.
+
+</span>
+<span class="ltx_bibblock">Flat Minima.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib7.1.1">Neural Computation</em>, 9(1):1–42, January 1997.
+
+</span>
+<span class="ltx_bibblock">ISSN 0899-7667.
+
+</span>
+<span class="ltx_bibblock">doi: <span class="ltx_ref ltx_nolink ltx_Url ltx_ref_self">10.1162/neco.1997.9.1.1</span>.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://doi.org/10.1162/neco.1997.9.1.1" title="">https://doi.org/10.1162/neco.1997.9.1.1</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib8">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hod et al. (2022)</span>
+<span class="ltx_bibblock">
+Hod, S., Filan, D., Casper, S., Critch, A., and Russell, S.
+
+</span>
+<span class="ltx_bibblock">Quantifying Local Specialization in Deep Neural Networks, February 2022.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2110.08058" title="">http://arxiv.org/abs/2110.08058</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2110.08058 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib9">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Huang et al. (2024)</span>
+<span class="ltx_bibblock">
+Huang, Y., Hu, S., Han, X., Liu, Z., and Sun, M.
+
+</span>
+<span class="ltx_bibblock">Unified View of Grokking, Double Descent and Emergent Abilities: A Perspective from Circuits Competition, February 2024.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2402.15175" title="">http://arxiv.org/abs/2402.15175</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2402.15175 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib10">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ince et al. (2017)</span>
+<span class="ltx_bibblock">
+Ince, R. A., Giordano, B. L., Kayser, C., Rousselet, G. A., Gross, J., and Schyns, P. G.
+
+</span>
+<span class="ltx_bibblock">A statistical framework for neuroimaging data analysis based on mutual information estimated via a gaussian copula.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib10.1.1">Human Brain Mapping</em>, 38(3):1541–1573, March 2017.
+
+</span>
+<span class="ltx_bibblock">ISSN 1065-9471, 1097-0193.
+
+</span>
+<span class="ltx_bibblock">doi: <span class="ltx_ref ltx_nolink ltx_Url ltx_ref_self">10.1002/hbm.23471</span>.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://onlinelibrary.wiley.com/doi/10.1002/hbm.23471" title="">https://onlinelibrary.wiley.com/doi/10.1002/hbm.23471</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib11">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kalra &amp; Barkeshli (2023)</span>
+<span class="ltx_bibblock">
+Kalra, D. S. and Barkeshli, M.
+
+</span>
+<span class="ltx_bibblock">Phase diagram of early training dynamics in deep neural networks: effect of the learning rate, depth, and width, October 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2302.12250" title="">http://arxiv.org/abs/2302.12250</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2302.12250 [cond-mat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib12">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Keskar et al. (2017)</span>
+<span class="ltx_bibblock">
+Keskar, N. S., Mudigere, D., Nocedal, J., Smelyanskiy, M., and Tang, P. T. P.
+
+</span>
+<span class="ltx_bibblock">On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima, February 2017.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/1609.04836" title="">http://arxiv.org/abs/1609.04836</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:1609.04836 [cs, math].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib13">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kumar et al. (2023)</span>
+<span class="ltx_bibblock">
+Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C.
+
+</span>
+<span class="ltx_bibblock">Grokking as the Transition from Lazy to Rich Training Dynamics, October 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2310.06110" title="">http://arxiv.org/abs/2310.06110</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2310.06110 [cond-mat, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib14">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lange et al. (2022)</span>
+<span class="ltx_bibblock">
+Lange, R. D., Rolnick, D. S., and Kording, K. P.
+
+</span>
+<span class="ltx_bibblock">Clustering units in neural networks: upstream vs downstream information, March 2022.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2203.11815" title="">http://arxiv.org/abs/2203.11815</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2203.11815 [cs, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib15">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li et al. (2018)</span>
+<span class="ltx_bibblock">
+Li, H., Xu, Z., Taylor, G., Studer, C., and Goldstein, T.
+
+</span>
+<span class="ltx_bibblock">Visualizing the Loss Landscape of Neural Nets.
+
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic" id="bib.bib15.1.1">Advances in Neural Information Processing Systems</em>, volume 31. Curran Associates, Inc., 2018.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://proceedings.neurips.cc/paper_files/paper/2018/hash/a41b3bb3e6b050b6c9067c67f663b915-Abstract.html" title="">https://proceedings.neurips.cc/paper_files/paper/2018/hash/a41b3bb3e6b050b6c9067c67f663b915-Abstract.html</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib16">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Liu et al. (2018)</span>
+<span class="ltx_bibblock">
+Liu, K., Amjad, R. A., and Geiger, B. C.
+
+</span>
+<span class="ltx_bibblock">Understanding individual neuron importance using information theory.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib16.1.1">arXiv preprint arXiv:1804.06679</em>, 19:5171–5180, 2018.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.researchgate.net/profile/Rana-Ali-Amjad/publication/324600151_Understanding_Individual_Neuron_Importance_Using_Information_Theory/links/5b7ab84d4585151fd12239c1/Understanding-Individual-Neuron-Importance-Using-Information-Theory.pdf" title="">https://www.researchgate.net/profile/Rana-Ali-Amjad/publication/324600151_Understanding_Individual_Neuron_Importance_Using_Information_Theory/links/5b7ab84d4585151fd12239c1/Understanding-Individual-Neuron-Importance-Using-Information-Theory.pdf</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib17">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">(17)</span>
+<span class="ltx_bibblock">
+Liu, Z., Zhong, Z., and Tegmark, M.
+
+</span>
+<span class="ltx_bibblock">Grokking as Compression: A Nonlinear Complexity Perspective.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib18">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Liu et al. (2022)</span>
+<span class="ltx_bibblock">
+Liu, Z., Michaud, E. J., and Tegmark, M.
+
+</span>
+<span class="ltx_bibblock">Omnigrok: Grokking Beyond Algorithmic Data.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib18.1.1">arXiv preprint arXiv:2210.01117</em>, 2022.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib19">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Loshchilov &amp; Hutter (2018)</span>
+<span class="ltx_bibblock">
+Loshchilov, I. and Hutter, F.
+
+</span>
+<span class="ltx_bibblock">Fixing Weight Decay Regularization in Adam.
+
+</span>
+<span class="ltx_bibblock">February 2018.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://openreview.net/forum?id=rk6qdGgCZ" title="">https://openreview.net/forum?id=rk6qdGgCZ</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib20">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lyu et al. (2023)</span>
+<span class="ltx_bibblock">
+Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W.
+
+</span>
+<span class="ltx_bibblock">Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking, November 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2311.18817" title="">http://arxiv.org/abs/2311.18817</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2311.18817 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib21">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Merrill et al. (2023)</span>
+<span class="ltx_bibblock">
+Merrill, W., Tsilivis, N., and Shukla, A.
+
+</span>
+<span class="ltx_bibblock">A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib21.1.1">arXiv preprint arXiv:2303.11873</em>, 2023.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib22">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Miller et al. (2023)</span>
+<span class="ltx_bibblock">
+Miller, J., O’Neill, C., and Bui, T.
+
+</span>
+<span class="ltx_bibblock">Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity, October 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2310.17247" title="">http://arxiv.org/abs/2310.17247</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2310.17247 [cs, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib23">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nakkiran et al. (2021)</span>
+<span class="ltx_bibblock">
+Nakkiran, P., Venkat, P., Kakade, S., and Ma, T.
+
+</span>
+<span class="ltx_bibblock">Optimal Regularization Can Mitigate Double Descent, April 2021.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2003.01897" title="">http://arxiv.org/abs/2003.01897</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2003.01897 [cs, math, stat].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib24">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nanda et al. (2023)</span>
+<span class="ltx_bibblock">
+Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J.
+
+</span>
+<span class="ltx_bibblock">Progress measures for grokking via mechanistic interpretability, January 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2301.05217" title="">http://arxiv.org/abs/2301.05217</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2301.05217 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib25">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Notsawo et al. (2023)</span>
+<span class="ltx_bibblock">
+Notsawo, P. J. T., Zhou, H., Pezeshki, M., Rish, I., and Dumas, G.
+
+</span>
+<span class="ltx_bibblock">Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok, June 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2306.13253" title="">http://arxiv.org/abs/2306.13253</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2306.13253 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib26">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Rosas et al. (2019)</span>
+<span class="ltx_bibblock">
+Rosas, F. E., Mediano, P. A., Gastpar, M., and Jensen, H. J.
+
+</span>
+<span class="ltx_bibblock">Quantifying high-order interdependencies via multivariate extensions of the mutual information.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib26.1.1">Physical Review E</em>, 100(3):032305, 2019.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://infoscience.epfl.ch/record/270413" title="">https://infoscience.epfl.ch/record/270413</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib27">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">(27)</span>
+<span class="ltx_bibblock">
+Schaeffer, R., Miranda, B., and Koyejo, S.
+
+</span>
+<span class="ltx_bibblock">Are Emergent Abilities of Large Language Models a Mirage?
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib28">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Srivastava et al. (2014)</span>
+<span class="ltx_bibblock">
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R.
+
+</span>
+<span class="ltx_bibblock">Dropout: a simple way to prevent neural networks from overfitting.
+
+</span>
+<span class="ltx_bibblock"><em class="ltx_emph ltx_font_italic" id="bib.bib28.1.1">The journal of machine learning research</em>, 15(1):1929–1958, 2014.
+
+</span>
+<span class="ltx_bibblock">Publisher: JMLR. org.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib29">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Tan &amp; Huang (2023)</span>
+<span class="ltx_bibblock">
+Tan, Z. and Huang, W.
+
+</span>
+<span class="ltx_bibblock">Understanding Grokking Through A Robustness Viewpoint, November 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2311.06597" title="">http://arxiv.org/abs/2311.06597</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2311.06597 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib30">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Vysogorets et al. (2024)</span>
+<span class="ltx_bibblock">
+Vysogorets, A., Dawid, A., and Kempe, J.
+
+</span>
+<span class="ltx_bibblock">Deconstructing the Goldilocks Zone of Neural Network Initialization, February 2024.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2402.03579" title="">http://arxiv.org/abs/2402.03579</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2402.03579 [cs, math].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib31">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wei et al. (2022)</span>
+<span class="ltx_bibblock">
+Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi, E. H., Hashimoto, T., Vinyals, O., Liang, P., Dean, J., and Fedus, W.
+
+</span>
+<span class="ltx_bibblock">Emergent Abilities of Large Language Models, October 2022.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2206.07682" title="">http://arxiv.org/abs/2206.07682</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2206.07682 [cs].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib32">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Xu et al. (2023)</span>
+<span class="ltx_bibblock">
+Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W.
+
+</span>
+<span class="ltx_bibblock">Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data, October 2023.
+
+</span>
+<span class="ltx_bibblock">URL <a class="ltx_ref ltx_url ltx_font_typewriter" href="http://arxiv.org/abs/2310.02541" title="">http://arxiv.org/abs/2310.02541</a>.
+
+</span>
+<span class="ltx_bibblock">arXiv:2310.02541 [cs, stat].
+
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section class="ltx_appendix" id="A1">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Training results for baseline model with weight decay</h2>
+<figure class="ltx_figure" id="A1.F8">
+<p class="ltx_p ltx_align_center ltx_align_center" id="A1.F8.2.2"><span class="ltx_text" id="A1.F8.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="192" id="A1.F8.1.1.1.g1" src="x14.png" width="256"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="192" id="A1.F8.2.2.2.g2" src="x15.png" width="256"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="A1.F8.4.1.1" style="font-size:90%;">Figure 8</span>: </span><span class="ltx_text" id="A1.F8.5.2" style="font-size:90%;">Left: train accuracy for weight decay (0.1, 2, 10, 50) Right: test accuracy for weight decay (0.1, 2, 10, 50)</span></figcaption>
+</figure>
+</section>
+<section class="ltx_appendix" id="A2">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix B </span>Training results for baseline model with weight initialization alpha</h2>
+<figure class="ltx_figure" id="A2.F9">
+<p class="ltx_p ltx_align_center ltx_align_center" id="A2.F9.2.2"><span class="ltx_text" id="A2.F9.2.2.2"><img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="192" id="A2.F9.1.1.1.g1" src="x16.png" width="256"/>
+<img alt="Refer to caption" class="ltx_graphics ltx_img_landscape" height="192" id="A2.F9.2.2.2.g2" src="x17.png" width="256"/></span></p>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" id="A2.F9.4.1.1" style="font-size:90%;">Figure 9</span>: </span><span class="ltx_text" id="A2.F9.5.2" style="font-size:90%;">Left: train accuracy for alpha (1, 8, 50) Right: test accuracy for alpha (1, 8, 50)</span></figcaption>
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Aug 16 16:31:48 2024 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

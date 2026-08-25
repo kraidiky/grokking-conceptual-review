@@ -1,0 +1,1017 @@
+<!DOCTYPE html><html prefix="dcterms: http://purl.org/dc/terms/" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>When Data Falls Short: Grokking Below the Critical Threshold</title>
+<!--Generated on Mon Jul 27 11:30:49 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/browse/0.3.4/css/arxiv-html-papers-20260131.css" type="text/css">
+<script src="/static/browse/0.3.4/js/arxiv-html-papers-20260131.js"></script>
+<script>
+  // Restore the saved color scheme preference, or
+  // enact the browser preference if "automatic", 
+  // without expecting DOM load to have completed.
+  //
+  // Also restore any saved readingmode and ToC display preferences.
+  function initializeReadingPreferences() {
+    let saved_theme = localStorage.getItem("ar5iv_theme") || "automatic";
+    if (saved_theme === "automatic") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        saved_theme = "dark";
+      }
+    }
+    if (saved_theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    const tocDisplay = localStorage.getItem('arxiv_html_paper_toc_display');
+    if (tocDisplay) {
+      document.documentElement.setAttribute("data-toc-display", tocDisplay);
+    }
+    const readingMode = localStorage.getItem('arxiv_html_paper_reading_mode');
+    if (readingMode) {
+      document.documentElement.setAttribute("data-reading-mode", readingMode);
+    }
+    // Pre-apply spinout-banner dismissal here, before the banner paints, so it
+    // never flashes in only to be hidden later by the deferred arxiv-header.js.
+    // Key matches arxiv-header.js: "arxiv-banner-dismissed:" + data-banner-name.
+    if (localStorage.getItem('arxiv-banner-dismissed:spinout-nonprofit')) {
+      document.documentElement.setAttribute("data-banner-dismissed", "");
+    }
+  }
+  // Run as soon as JS starts, to minimize repainting
+  initializeReadingPreferences();
+</script>
+<link rel="apple-touch-icon" sizes="180x180"
+  href="/static/browse/0.3.4/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+  href="/static/browse/0.3.4/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+  href="/static/browse/0.3.4/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/static/browse/0.3.4/images/icons/site.webmanifest">
+<link rel="mask-icon" href="/static/browse/0.3.4/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="stylesheet" type="text/css" media="screen" href="https://use.typekit.net/utz6mli.css"><link rel="stylesheet" type="text/css" media="screen"
+  href="/static/base/1.0.1/css/arxiv-header-footer.css?v=20260626"><style>
+  /* Banner pre-dismissal (set above before paint -> no flash-then-hide) and
+     reading-mode chrome hiding. */
+  html[data-banner-dismissed] .ds-announcement { display: none; }
+  html[data-reading-mode="enabled"] .ds-announcement,
+  html[data-reading-mode="enabled"] .ds-site-footer { display: none; }
+  /* Keep the announcement text dark on the Open-Blue band in both colour themes
+     (otherwise it inherits the paper's warm-wash text in dark mode and washes out). */
+  .ds-announcement-text { color: var(--arxiv-ink, #1c1a17); }
+</style>
+<script defer src="/static/base/1.0.1/js/arxiv-header.js?v=20260626"></script>
+</head>
+<body>
+<dialog id="modal-form" aria-labelledby="modal-title" closedby="any">
+  <form id="modal-form-content" method="dialog" enctype="multipart/form-data">
+    <header class="modal-header">
+      <h5 id="modal-title" class="modal-title">Report GitHub Issue</h5>
+      <button type="submit" formnovalidate class="modal-close" aria-label="Close">×</button>
+    </header>
+
+    <div class="modal-body">
+      <label for="form_title">Title:</label>
+      <input class="form-control" id="form_title" name="form_title" required placeholder="Enter title">
+
+      <p id="selectedTextModalDescription" hidden>Content selection saved. Describe the issue below:</p>
+
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" required maxlength="500"
+        placeholder="500 characters maximum"></textarea>
+    </div>
+
+    <footer class="modal-footer">
+      <button type="submit" value="internal-report" class="sr-only modal-submit">Submit without GitHub</button>
+      <button type="submit" value="github-report" class="modal-submit">Submit in GitHub</button>
+    </footer>
+  </form>
+</dialog><div class="ds-announcement" id="announcement-banner" role="region" aria-label="Announcement"
+    data-banner-name="spinout-nonprofit">
+    <img class="ds-announcement-glyph" src="/static/base/1.0.1/images/icons/smileybones-small.svg" alt="" aria-hidden="true">
+    <span class="ds-announcement-text">arXiv is now an independent nonprofit!</span>
+    <a class="ds-announcement-link" href="https://info.arxiv.org/about">Learn more</a>
+    <button type="button" class="ds-announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+<header class="arxiv-html-header">
+  <div class="html-header-logo">
+    <a href="/"><img alt="arXiv logo" class="logo desktop-only" width="100"
+        src="/static/base/1.0.1/images/arxiv-logo-primary-light.svg">
+      <span class="sr-only">Back to arXiv</span>
+    </a>
+  </div>
+  <!--TOC, dark mode, links-->
+  <nav class="html-header-nav">
+    <a class="header-button hover-effect desktop-only" href="https://info.arxiv.org/about/accessible_HTML.html"
+      target="_blank">Why HTML?</a>
+    <a class="header-button" title="Report an Issue" href="#" title="Report an issue"
+      onclick="event.preventDefault(); showModalForm();">
+      <svg role="presentation" class="mobile-only toggle-icon" aria-hidden="true" height="1.25rem"
+        viewBox="0 0 640 640">
+        <path
+          d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+      </svg>
+      <span class="desktop-only">Report Issue</span></a>
+    <!--back to abstract-->
+    <a class="header-button" title="Back to abstract page" aria-label="Back to abstract page"
+      href="/abs/2511.04760v1">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 512 512" fill="#ffffff"
+        aria-hidden="true">
+        <path
+          d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z">
+        </path>
+      </svg>
+      <span class="desktop-only">Back to Abstract</span>
+    </a>
+    <!-- PDF download link -->
+    <a class="header-button" title="Download PDF" href="/pdf/2511.04760v1"
+      target="_blank">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 576 542">
+        <path
+          d="M208 48L96 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l80 0 0 48-80 0c-35.3 0-64-28.7-64-64L32 64C32 28.7 60.7 0 96 0L229.5 0c17 0 33.3 6.7 45.3 18.7L397.3 141.3c12 12 18.7 28.3 18.7 45.3l0 149.5-48 0 0-128-88 0c-39.8 0-72-32.2-72-72l0-88zM348.1 160L256 67.9 256 136c0 13.3 10.7 24 24 24l68.1 0zM240 380l32 0c33.1 0 60 26.9 60 60s-26.9 60-60 60l-12 0 0 28c0 11-9 20-20 20s-20-9-20-20l0-128c0-11 9-20 20-20zm32 80c11 0 20-9 20-20s-9-20-20-20l-12 0 0 40 12 0zm96-80l32 0c28.7 0 52 23.3 52 52l0 64c0 28.7-23.3 52-52 52l-32 0c-11 0-20-9-20-20l0-128c0-11 9-20 20-20zm32 128c6.6 0 12-5.4 12-12l0-64c0-6.6-5.4-12-12-12l-12 0 0 88 12 0zm76-108c0-11 9-20 20-20l48 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 24 28 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 44c0 11-9 20-20 20s-20-9-20-20l0-128z" />
+      </svg>
+      <span class="desktop-only">Download PDF</span></a>
+    <!-- navigational table of contents toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleNavTOC();" title="Toggle navigation"
+      aria-label="Toggle navigation">
+      <svg height="1.25rem" role="presentation" viewBox="0 0 512 512">
+        <path
+          d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z">
+        </path>
+      </svg>
+    </a>
+    <!--- collapsable header / reading mode toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleReadingMode();"
+      title="Disable reading mode, show header and footer">
+      <svg role="presentation" height="1.25rem"
+        viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+        <path
+          d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32S0 334.3 0 352l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z" />
+      </svg>
+    </a>
+    <!--- colored theme toggle -->
+    <button type="button" class="header-button color-tog" onclick="toggleColorScheme();" title="Toggle dark/light mode" aria-label="Toggle color scheme">
+      <span class="toggle-icon automatic-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon light-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon dark-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+    </button>
+  </nav>
+</header><nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_abstract"><a href="#abstract1" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">Abstract</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Related Work</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S3" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Experimental Setup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S4" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Accelerating Grokking through Knowledge Distillation (KD)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S5" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Leveraging Grokked Models for Distillation and Continual Transfer</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S6" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Conclusions and Future Work</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="#bib" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="#A1" title="In When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Appendix</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A1.SS1" title="In Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.1 </span>Evolution of L2 weight norm</span></a></li>
+</ol>
+</li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div id="infobox" class="infobox">
+  <a id="license-tr" href="https://info.arxiv.org/help/license/index.html#licenses-available">
+    License: CC BY 4.0
+  </a>
+  <div id="watermark-tr">
+arXiv:2511.04760v1 [cs.LG] 06 Nov 2025</div>
+</div><div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<div id="p1" class="ltx_para">
+<span id="p1.1" class="ltx_ERROR undefined">\workshoptitle</span>
+<p id="p1.2" class="ltx_p">Continual and Compatible Foundation Model Updates (CCFM)</p>
+</div>
+<h1 class="ltx_title ltx_title_document">When Data Falls Short: Grokking Below the Critical Threshold</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Vaibhav Singh<sup id="id7.7.id1" class="ltx_sup"><span id="id7.7.id1.1" class="ltx_text ltx_font_italic">1,2</span></sup>    Eugene Belilovsky<sup id="id8.8.id2" class="ltx_sup"><span id="id8.8.id2.1" class="ltx_text ltx_font_italic">1,2</span></sup>  Rahaf Aljundi<sup id="id9.9.id3" class="ltx_sup"><span id="id9.9.id3.1" class="ltx_text ltx_font_italic">3</span></sup>
+<br class="ltx_break"><sup id="id10.10.id4" class="ltx_sup">1</sup>Concordia University  <sup id="id11.11.id5" class="ltx_sup">2</sup>Mila  <sup id="id12.12.id6" class="ltx_sup">3</sup>Toyota Motor Europe 
+<br class="ltx_break">
+</span></span>
+</div>
+
+<div id="abstract1" class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">In this paper, we investigate the phenomenon of <span class="ltx_text ltx_font_italic">grokking</span>, where models exhibit delayed generalization following overfitting on training data. We focus on data-scarce regimes where the number of training samples falls below the critical threshold, making grokking unobservable, and on practical scenarios involving distribution shift. We first show that Knowledge Distillation (KD) from a model that has already grokked on a distribution (<math class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>) can induce and accelerate grokking on a different distribution (<math class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>), even when the available data lies below the critical threshold. This highlights the value of KD for deployed models that must adapt to new distributions under limited data. We then study training on the joint distribution (<math class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>, <math class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>) and demonstrate that while standard supervised training fails when either distribution has insufficient data, distilling from models grokked on the individual distributions enables generalization. Finally, we examine a continual pretraining setup, where a grokked model transitions from <math class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> to <math class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>, and find that KD both accelerates generalization and mitigates catastrophic forgetting, achieving strong performance even with only 10% of the data. Together, our results provide new insights into the mechanics of grokking under knowledge transfer and underscore the central role of KD in enabling generalization in low-data and evolving distribution settings.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p id="S1.p1.1" class="ltx_p">Generalizing across varying data distributions remains a core challenge in machine learning, as standard training often fails under distribution shifts or data scarcity <cite class="ltx_cite ltx_citemacro_citep">(Van de Ven and Tolias, <a href="#bib.bib22" title="Three scenarios for continual learning" class="ltx_ref">2019</a>; Fang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib34" title="Rethinking importance weighting for deep learning under distribution shift" class="ltx_ref">2020</a>; Singh<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib15" title="Wake-sleep energy based models for continual learning" class="ltx_ref">2024b</a>, <a href="#bib.bib14" title="Controlling forgetting with test-time data in continual learning" class="ltx_ref">a</a>; Liang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib35" title="A comprehensive survey on test-time adaptation under distribution shifts" class="ltx_ref">2024</a>)</cite>. The phenomenon of <span id="S1.p1.1.1" class="ltx_text ltx_font_italic">grokking</span> <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>)</cite> sheds light on this problem, showing how models can suddenly generalize after prolonged overfitting <cite class="ltx_cite ltx_citemacro_citep">(Arpit<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib43" title="A closer look at memorization in deep networks" class="ltx_ref">2017</a>)</cite>. Explanations range from implicit regularization, such as weight decay <cite class="ltx_cite ltx_citemacro_citep">(Barak<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib20" title="Hidden progress in deep learning: sgd learns parities near the computational limit" class="ltx_ref">2022</a>; Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>)</cite>, to training dynamics that enable generalization even at zero loss <cite class="ltx_cite ltx_citemacro_citep">(Kumar<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib38" title="Grokking as the transition from lazy to rich training dynamics" class="ltx_ref">2024</a>; Lyu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib39" title="Dichotomy of early and late phase implicit biases can provably induce grokking" class="ltx_ref">2024</a>; Ishida<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib44" title="Do we need zero training loss after achieving zero training error?" class="ltx_ref">2020</a>)</cite>. A common finding is that grokking occurs only when training data exceeds a <span id="S1.p1.1.2" class="ltx_text ltx_font_italic">critical threshold</span> <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>; Zhu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib48" title="Critical data size of language models from a grokking perspective" class="ltx_ref">2024</a>)</cite>.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p id="S1.p2.7" class="ltx_p">Building on these findings, we explore grokking in scarce data regimes, under distribution shift. Specifically, we ask:<span id="S1.p2.7.1" class="ltx_text ltx_font_bold"> Can a grokked model be leveraged to <span id="S1.p2.7.1.1" class="ltx_text ltx_font_italic">train</span> another model on a different distribution?</span> To test this, we train a one-layer Transformer <cite class="ltx_cite ltx_citemacro_citep">(Vaswani<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib40" title="Attention is all you need" class="ltx_ref">2017</a>)</cite> on <math id="S1.p2.1.m1" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> as a Teacher (<math id="S1.p2.2.m2" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>) and distill its knowledge into a Student (<math id="S1.p2.3.m3" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math>) on <math id="S1.p2.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. We find that <math id="S1.p2.5.m5" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math> not only groks on <math id="S1.p2.6.m6" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> but also requires fewer steps under distillation. This enables faster adaptation when <math id="S1.p2.7.m7" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> has limited data, demonstrating the practical value of pre-grokked models for distribution shift, continual learning, multi-task learning, and domain generalization.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p id="S1.p3.1" class="ltx_p">We also show that generalization does not depend on smaller weight norms or weight decay. While prior work linked grokking to a cleanup phase driven by weight decay <cite class="ltx_cite ltx_citemacro_cite">Nanda<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>); Liu<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>); Varma<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">2023</a>)</cite>, our experiments refute this claim. Consistent with recent findings <cite class="ltx_cite ltx_citemacro_cite">Prieto<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="#bib.bib47" title="Grokking at the edge of numerical stability" class="ltx_ref">2025</a>)</cite>, we find that weight decay mainly mitigates floating-point errors. Grokking occurs even with zero weight decay and increasing weight norms, ruling out these factors as primary explanations.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p id="S1.p4.1" class="ltx_p">We further ask: <span id="S1.p4.1.1" class="ltx_text ltx_font_bold">Is grokking possible when training data falls <span id="S1.p4.1.1.1" class="ltx_text ltx_font_italic">below</span> the <span id="S1.p4.1.1.2" class="ltx_text ltx_font_italic">critical threshold</span> ?</span> Our results show that distillation from the Teacher model (<math id="S1.p4.1.m1" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>) not only reduces the steps required for grokking but also enables it in regimes where data is below the critical size. The critical data size, as defined in <cite class="ltx_cite ltx_citemacro_citep">(Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>; Varma<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">2023</a>; Zhu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib48" title="Critical data size of language models from a grokking perspective" class="ltx_ref">2024</a>)</cite>, is the minimum amount of data below which generalization does not occur. Our study further demonstrates that KD helps mitigate forgetting when models adapt to new domains. Together, these contributions outline a practical framework for building efficient and adaptable learning systems.</p>
+</div>
+<figure id="S1.F1" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S1.F1.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/scheme_1.png" id="S1.F1.sf1.g1" class="ltx_graphics ltx_centering ltx_img_square" width="598" height="646" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S1.F1.sf1.4.2.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S1.F1.sf1.2.1" class="ltx_text" style="font-size:90%;">Grokking a model on <math id="S1.F1.sf1.2.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> using KD, which otherwise fails to generalize.</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S1.F1.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/scheme_2.png" id="S1.F1.sf2.g1" class="ltx_graphics ltx_centering ltx_img_square" width="598" height="638" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S1.F1.sf2.8.4.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S1.F1.sf2.6.3" class="ltx_text" style="font-size:90%;">Distilling from multiple grokked models <math id="S1.F1.sf2.4.1.m1" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>, <math id="S1.F1.sf2.5.2.m2" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math> yields grokking on a larger model <math id="S1.F1.sf2.6.3.m3" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math> below critical data.</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S1.F1.18.9.1" class="ltx_text" style="font-size:90%;">Figure 1</span>: </span><a href="#S1.F1.sf1" title="1(a) ‣ Figure 1 ‣ 1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref" style="font-size:90%;"><span class="ltx_text ltx_ref_tag">1(a)</span></a><span id="S1.F1.16.8" class="ltx_text" style="font-size:90%;"> shows that <math id="S1.F1.9.1.m1" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math>groks below the critical data size when trained via KD from a grokked model <math id="S1.F1.10.2.m2" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>, whereas training from scratch fails. In <a href="#S1.F1.sf2" title="1(b) ‣ Figure 1 ‣ 1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">1(b)</span></a>, a larger model <math id="S1.F1.11.3.m3" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math>trained jointly on <math id="S1.F1.12.4.m4" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> and <math id="S1.F1.13.5.m5" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> cannot generalize when either dataset is below the threshold. Distilling from the smaller grokked models <math id="S1.F1.14.6.m6" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math>and <math id="S1.F1.15.7.m7" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>, however, enables <math id="S1.F1.16.8.m8" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math> to grok and generalize effectively even under scarce data.</span></figcaption>
+</figure>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Related Work</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p id="S2.p1.1" class="ltx_p"><span id="S2.p1.1.1" class="ltx_text ltx_font_bold">Grokking</span> was first identified in algorithmic tasks by <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>)</cite>. Subsequent work has aimed to explain this phenomenon. <cite class="ltx_cite ltx_citemacro_citep">(Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>)</cite> reverse-engineered a grokked modular-addition transformer and found it learns a composition of trigonometric and inverse-trigonometric functions. <cite class="ltx_cite ltx_citemacro_citep">(Merrill<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib25" title="A tale of two circuits: grokking as competition of sparse and dense subnetworks" class="ltx_ref">2023</a>)</cite> attributed grokking to competition between sparse (generalizing) and dense (memorizing) subnetworks. From a theoretical lens, <cite class="ltx_cite ltx_citemacro_citep">(Rubin<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib36" title="Grokking as a first order phase transition in two layer networks" class="ltx_ref">2024</a>)</cite> framed grokking as a first-order phase transition in feature learning, while <cite class="ltx_cite ltx_citemacro_citep">(Levi<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib37" title="Grokking in linear estimators – a solvable model that groks without understanding" class="ltx_ref">2024</a>)</cite> provided analytical solutions for loss and accuracy dynamics in linear networks. Studying polynomial regression, <cite class="ltx_cite ltx_citemacro_citep">(Kumar<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib38" title="Grokking as the transition from lazy to rich training dynamics" class="ltx_ref">2024</a>)</cite> linked grokking to a shift from lazy to rich learning. <cite class="ltx_cite ltx_citemacro_citep">(Lyu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib39" title="Dichotomy of early and late phase implicit biases can provably induce grokking" class="ltx_ref">2024</a>)</cite> further suggested that the sharp test-accuracy jump arises from differing implicit biases in early vs. late training.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p id="S2.p2.1" class="ltx_p">Grokking has also been observed in practical settings, e.g., CNNs trained on CIFAR-10 <cite class="ltx_cite ltx_citemacro_citep">(Humayun<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib8" title="Deep networks always grok and here is why" class="ltx_ref">2024</a>; Krizhevsky, <a href="#bib.bib31" title="Learning multiple layers of features from tiny images" class="ltx_ref">2012</a>)</cite>. <cite class="ltx_cite ltx_citemacro_citep">(Humayun<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib8" title="Deep networks always grok and here is why" class="ltx_ref">2024</a>)</cite> describe delayed robustness, where models eventually grok adversarial examples long after interpolation. Early prediction of grokking has been attempted using Fourier spectral signatures <cite class="ltx_cite ltx_citemacro_citep">(Notsawo Jr<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib30" title="Predicting grokking long before it happens: a look into the loss landscape of models which grok" class="ltx_ref">2023</a>)</cite>. It has been linked to slow formation of useful representations within a “Goldilocks zone” between memorization and confusion <cite class="ltx_cite ltx_citemacro_citep">(Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib5" title="Towards understanding grokking: an effective theory of representation learning" class="ltx_ref">2022a</a>)</cite>, and to gradual amplification of structured weights followed by removal of memorized components <cite class="ltx_cite ltx_citemacro_citep">(Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>)</cite>. Other explanations include hidden SGD-driven amplification of a Fourier gap <cite class="ltx_cite ltx_citemacro_citep">(Barak<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib20" title="Hidden progress in deep learning: sgd learns parities near the computational limit" class="ltx_ref">2022</a>)</cite> and the “Slingshot mechanism,” where training cycles between stable and unstable phases <cite class="ltx_cite ltx_citemacro_citep">(Thilak<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib21" title="The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon" class="ltx_ref">2022</a>)</cite>.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p id="S2.p3.1" class="ltx_p"><span id="S2.p3.1.1" class="ltx_text ltx_font_bold">Relationship to Dataset Size:</span> Circuit-efficiency analysis shows that generalization is slower but more efficient, implying a critical data size below which models memorize rather than generalize <cite class="ltx_cite ltx_citemacro_citep">(Varma<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">2023</a>)</cite>. Training below this threshold yields semi-grokking, and fine-tuning grokked models on such small data can cause “ungrokking.” Regularization has been proposed to correct training-sample errors <cite class="ltx_cite ltx_citemacro_citep">(Doshi<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib33" title="To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets" class="ltx_ref">2023</a>)</cite>, and loss-landscape analysis links grokking to data size, weight decay, and representation learning <cite class="ltx_cite ltx_citemacro_citep">(Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>)</cite>.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p id="S2.p4.1" class="ltx_p"><span id="S2.p4.1.1" class="ltx_text ltx_font_bold">Accelerating Grokking:</span> Several methods speed up grokking: gradient decomposition and amplification <cite class="ltx_cite ltx_citemacro_citep">(Lee<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib52" title="Grokfast: accelerated grokking by amplifying slow gradients" class="ltx_ref">2024</a>)</cite>, lottery-ticket approaches <cite class="ltx_cite ltx_citemacro_citep">(Minegishi<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib53" title="Bridging lottery ticket and grokking: is weight norm sufficient to explain delayed generalization?" class="ltx_ref">2023</a>)</cite>, transferring embeddings from a weaker to a stronger model <cite class="ltx_cite ltx_citemacro_citep">(Xu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib50" title="Let me grok for you: accelerating grokking via embedding transfer from a weaker model" class="ltx_ref">2025</a>)</cite>, and replacing softmax with stable-max <cite class="ltx_cite ltx_citemacro_citep">(Prieto<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib47" title="Grokking at the edge of numerical stability" class="ltx_ref">2025</a>)</cite>. In contrast, our method removes the phase transition without extra data or redundant pretraining, and to our knowledge is the first to accelerate grokking in data-scarce settings under distribution shift.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Experimental Setup</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p id="S3.p1.17" class="ltx_p">We trained a decoder only transformer to perform experiments on algorithmic tasks of the form (<math id="S3.p1.1.m1" class="ltx_Math" alttext="(a@b)\%P" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">@</mi><mo lspace="0em" rspace="0em">​</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">(a@b)\%P</annotation></semantics></math>), where <math id="S3.p1.2.m2" class="ltx_Math" alttext="@" display="inline" intent=":literal"><semantics><mi mathvariant="normal">@</mi><annotation encoding="application/x-tex">@</annotation></semantics></math> represents operator for any of the binary operations. In this work, we focus on addition and subtraction tasks following previous studies <cite class="ltx_cite ltx_citemacro_citep">(Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>; Varma<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">2023</a>; Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>; Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>; Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib5" title="Towards understanding grokking: an effective theory of representation learning" class="ltx_ref">2022a</a>)</cite> which consistently report grokking on these tasks. The model input is <math id="S3.p1.3.m3" class="ltx_Math" alttext="[a,b,@,P]" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi mathvariant="normal">@</mi><mo>,</mo><mi>P</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a,b,@,P]</annotation></semantics></math>, and the output <math id="S3.p1.4.m4" class="ltx_Math" alttext="c" display="inline" intent=":literal"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> is read from the final token <math id="S3.p1.5.m5" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>. In our experiments, each arithmetic modulo-<math id="S3.p1.6.m6" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> task is denoted as <math id="S3.p1.7.m7" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> for a specific prime <math id="S3.p1.8.m8" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>. A distribution shift is introduced by changing the modulus while keeping the operator fixed. For example, in addition modulo <math id="S3.p1.9.m9" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>, the task <math id="S3.p1.10.m10" class="ltx_Math" alttext="(a+b)\%P" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">(a+b)\%P</annotation></semantics></math> with <math id="S3.p1.11.m11" class="ltx_Math" alttext="P=P_{1}" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P=P_{1}</annotation></semantics></math> is referred to as distribution <math id="S3.p1.12.m12" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>, while <math id="S3.p1.13.m13" class="ltx_Math" alttext="(a+b)\%P" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">(a+b)\%P</annotation></semantics></math> with <math id="S3.p1.14.m14" class="ltx_Math" alttext="P=P_{2}\neq P_{1}" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>2</mn></msub><mo>≠</mo><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P=P_{2}\neq P_{1}</annotation></semantics></math> is denoted <math id="S3.p1.15.m15" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. Our results remain consistent regardless of the choice of <math id="S3.p1.16.m16" class="ltx_Math" alttext="P_{1}" display="inline" intent=":literal"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_{1}</annotation></semantics></math> and <math id="S3.p1.17.m17" class="ltx_Math" alttext="P_{2}" display="inline" intent=":literal"><semantics><msub><mi>P</mi><mn>2</mn></msub><annotation encoding="application/x-tex">P_{2}</annotation></semantics></math>.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p id="S3.p2.6" class="ltx_p">We begin training with 35% of the dataset to first observe grokking, as demonstrated in prior work <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>; Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>)</cite>. We then progressively reduce the data fraction to 30%, 25%, and 10%. For algorithmic addition and subtraction tasks, prior studies define the critical data size to be around 25% of the dataset <cite class="ltx_cite ltx_citemacro_citep">(Varma<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">2023</a>; Zhu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib48" title="Critical data size of language models from a grokking perspective" class="ltx_ref">2024</a>)</cite>. Consistent with this, our observations show that grokking does not occur when 25% or less of the data is available, confirming that 25% marks the critical threshold below which generalization becomes impossible.
+We utilize StableMax Cross Entropy <cite class="ltx_cite ltx_citemacro_citep">(Prieto<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib47" title="Grokking at the edge of numerical stability" class="ltx_ref">2025</a>)</cite> since cross entropy with softmax function causes numerical instability, given as:</p>
+<table id="S3.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E1.m1" class="ltx_Math" alttext="L_{\mathrm{StCE}}(\theta)=\mathbb{E}_{(x,y)\sim\mathcal{D}}\left[-\log\text{StableMax}(f_{S}^{y}(x;\theta))\right]" display="block" intent=":literal"><semantics><mrow><mrow><msub><mi>L</mi><mi>StCE</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>𝔼</mi><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∼</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo>[</mo><mrow><mo rspace="0.167em">−</mo><mrow><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mtext>StableMax</mtext></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><msubsup><mi>f</mi><mi>S</mi><mi>y</mi></msubsup><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">L_{\mathrm{StCE}}(\theta)=\mathbb{E}_{(x,y)\sim\mathcal{D}}\left[-\log\text{StableMax}(f_{S}^{y}(x;\theta))\right]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.p2.5" class="ltx_p">where <math id="S3.p2.1.m1" class="ltx_Math" alttext="f_{S}(\cdot;\theta)" display="inline" intent=":literal"><semantics><mrow><msub><mi>f</mi><mi>S</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo>;</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_{S}(\cdot;\theta)</annotation></semantics></math>, is the Student Network: parameterized by <math id="S3.p2.2.m2" class="ltx_Math" alttext="\theta" display="inline" intent=":literal"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> and StableMax(<math id="S3.p2.3.m3" class="ltx_Math" alttext="x" display="inline" intent=":literal"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>) = Softmax(<math id="S3.p2.4.m4" class="ltx_Math" alttext="g(x_{i})" display="inline" intent=":literal"><semantics><mrow><mi>g</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x_{i})</annotation></semantics></math>) where <math id="S3.p2.5.m5" class="ltx_Math" alttext="g(x_{i})" display="inline" intent=":literal"><semantics><mrow><mi>g</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x_{i})</annotation></semantics></math> is defined as</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<table id="S3.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E2.m1" class="ltx_Math" alttext="g(x)=\begin{cases}\log(x+1)&amp;\text{ if }x\geq 0\\
+-\log(-x+1)&amp;\text{ if }x&lt;0\end{cases}" display="block" intent=":literal"><semantics><mrow><mrow><mi>g</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext> if </mtext><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mo>≥</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mo rspace="0.167em">−</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext> if </mtext><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">g(x)=\begin{cases}\log(x+1)&amp;\text{ if }x\geq 0\\
+-\log(-x+1)&amp;\text{ if }x&lt;0\end{cases}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.p3.1" class="ltx_p">We observe that the usage of StableMax <cite class="ltx_cite ltx_citemacro_citep">(Prieto<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib47" title="Grokking at the edge of numerical stability" class="ltx_ref">2025</a>)</cite> already gives a prior speedup in inducing grokking, needing around 6000 iterations to grok, which otherwise would have been in order of <math id="S3.p3.1.m1" class="ltx_Math" alttext="1e4" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1e4</annotation></semantics></math> <cite class="ltx_cite ltx_citemacro_citep">(Liu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">2022b</a>; Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>; Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">2023</a>)</cite></p>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p id="S3.p4.6" class="ltx_p">For knowledge distillation, we use Kullback-Leibler (KL) Divergence Loss:</p>
+<table id="S3.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E3.m1" class="ltx_Math" alttext="L_{\mathrm{KL}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}_{X}}\left[D_{\mathrm{KL}}\left(q_{T}(x)\|q_{S}(x;\theta)\right)\right]" display="block" intent=":literal"><semantics><mrow><mrow><msub><mi>L</mi><mi>KL</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>𝔼</mi><mrow><mi>x</mi><mo>∼</mo><msub><mi class="ltx_font_mathcaligraphic">𝒟</mi><mi>X</mi></msub></mrow></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo>[</mo><mrow><msub><mi>D</mi><mi>KL</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>q</mi><mi>T</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∥</mo><mrow><msub><mi>q</mi><mi>S</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">L_{\mathrm{KL}}(\theta)=\mathbb{E}_{x\sim\mathcal{D}_{X}}\left[D_{\mathrm{KL}}\left(q_{T}(x)\|q_{S}(x;\theta)\right)\right]</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.p4.5" class="ltx_p">where <math id="S3.p4.1.m1" class="ltx_Math" alttext="D_{\mathrm{KL}}(p\|q)=\sum_{i=1}^{K}p_{i}\log\left(\frac{p_{i}}{q_{i}}\right)" display="inline" intent=":literal"><semantics><mrow><mrow><msub><mi>D</mi><mi>KL</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>p</mi><mo>∥</mo><mi>q</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><mrow><msub><mi>p</mi><mi>i</mi></msub><mo lspace="0.167em" rspace="0em">​</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><msub><mi>p</mi><mi>i</mi></msub><msub><mi>q</mi><mi>i</mi></msub></mfrac><mo>)</mo></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">D_{\mathrm{KL}}(p\|q)=\sum_{i=1}^{K}p_{i}\log\left(\frac{p_{i}}{q_{i}}\right)</annotation></semantics></math>. This takes softened outputs as <math id="S3.p4.2.m2" class="ltx_Math" alttext="q_{T}(x)=\operatorname{softmax}\left(\frac{f_{T}(x)}{t}\right)" display="inline" intent=":literal"><semantics><mrow><mrow><msub><mi>q</mi><mi>T</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>softmax</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><msub><mi>f</mi><mi>T</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mi>t</mi></mfrac><mo>)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">q_{T}(x)=\operatorname{softmax}\left(\frac{f_{T}(x)}{t}\right)</annotation></semantics></math>, and <math id="S3.p4.3.m3" class="ltx_Math" alttext="q_{S}(x;\theta)=\operatorname{softmax}\left(\frac{f_{S}(x;\theta)}{t}\right)" display="inline" intent=":literal"><semantics><mrow><mrow><msub><mi>q</mi><mi>S</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>softmax</mi><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><msub><mi>f</mi><mi>S</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mi>t</mi></mfrac><mo>)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">q_{S}(x;\theta)=\operatorname{softmax}\left(\frac{f_{S}(x;\theta)}{t}\right)</annotation></semantics></math> where <math id="S3.p4.4.m4" class="ltx_Math" alttext="f_{T}:" display="inline" intent=":literal"><semantics><mrow><msub><mi>f</mi><mi>T</mi></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mi></mi></mrow><annotation encoding="application/x-tex">f_{T}:</annotation></semantics></math>, represents the Teacher model, and <math id="S3.p4.5.m5" class="ltx_Math" alttext="t&gt;0" display="inline" intent=":literal"><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math> is the Temperature used to soften probabilities.</p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p id="S3.p5.2" class="ltx_p">The total distillation loss is therefore realised as:</p>
+<table id="S3.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E4.m1" class="ltx_Math" alttext="L(\theta)=(1-\alpha)L_{\mathrm{CE}}(\theta)+\alpha L_{\mathrm{KL}}(\theta)" display="block" intent=":literal"><semantics><mrow><mrow><mi>L</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em" rspace="0em">​</mo><msub><mi>L</mi><mi>CE</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>α</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>L</mi><mi>KL</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">L(\theta)=(1-\alpha)L_{\mathrm{CE}}(\theta)+\alpha L_{\mathrm{KL}}(\theta)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.p5.1" class="ltx_p">where <math id="S3.p5.1.m1" class="ltx_Math" alttext="\alpha" display="inline" intent=":literal"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> controls the proportion of each loss component.</p>
+</div>
+<div id="S3.p6" class="ltx_para">
+<p id="S3.p6.2" class="ltx_p">For demonstrating the efficacy of our distillation method and to negate the dependency of weight norm and weight decay theories, we compare both Adam without weight decay &amp; AdamW(with weight decay) optimizer  <cite class="ltx_cite ltx_citemacro_citep">(Loshchilov, <a href="#bib.bib23" title="Decoupled weight decay regularization" class="ltx_ref">2017</a>)</cite> with a learning rate <math id="S3.p6.1.m1" class="ltx_Math" alttext="\gamma=1e-3" display="inline" intent=":literal"><semantics><mrow><mi>γ</mi><mo>=</mo><mrow><mrow><mn>1</mn><mo lspace="0em" rspace="0em">​</mo><mi>e</mi></mrow><mo>−</mo><mn>3</mn></mrow></mrow><annotation encoding="application/x-tex">\gamma=1e-3</annotation></semantics></math>. For AdamW we set the weight decay parameter <math id="S3.p6.2.m2" class="ltx_Math" alttext="\lambda=1" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda=1</annotation></semantics></math>. We perform 15,000-30,000 epochs of training with a batch size of 2048 on NVIDIA V100 GPU.</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Accelerating Grokking through Knowledge Distillation (KD)</h2>
+
+<figure id="S4.F2" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F2.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/add_sub_0.3_without_kd_adam_adamw.png" id="S4.F2.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F2.sf1.4.2.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S4.F2.sf1.2.1" class="ltx_text" style="font-size:90%;">Training on <math id="S4.F2.sf1.2.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> without KD (f = 30%)</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F2.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/add_sub_0.3_with_kd_adam_adamw.png" id="S4.F2.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F2.sf2.6.3.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S4.F2.sf2.4.2" class="ltx_text" style="font-size:90%;">Training on <math id="S4.F2.sf2.3.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> with KD from <math id="S4.F2.sf2.4.2.m2" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> (f = 30%)</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F2.15.7.1" class="ltx_text" style="font-size:90%;">Figure 2</span>: </span><a href="#S4.F2.sf2" title="2(b) ‣ Figure 2 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref" style="font-size:90%;"><span class="ltx_text ltx_ref_tag">2(b)</span></a><span id="S4.F2.12.6" class="ltx_text" style="font-size:90%;"> shows the effectiveness of KD <span id="S4.F2.12.6.1" class="ltx_text ltx_font_bold">irrespective of the optimizer choice</span> for both addition and subtraction modulo task. In <a href="#S4.F2.sf1" title="2(a) ‣ Figure 2 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">2(a)</span></a> typical grokking phenomena on distribution <math id="S4.F2.7.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> on <math id="S4.F2.8.2.m2" class="ltx_Math" alttext="30\%" display="inline" intent=":literal"><semantics><mrow><mn>30</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math> of training data (denoted as f), without KD. We observe that weight decay is helpful in showing grokking but its not the only underlying cause. When trained with Adam, grokking is not observed for both tasks when trained for 15000 iterations. This concurs with <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib4" title="Grokking: generalization beyond overfitting on small algorithmic datasets" class="ltx_ref">2022</a>)</cite>. However <a href="#S4.F2.sf2" title="2(b) ‣ Figure 2 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">2(b)</span></a> demonstrates a <math id="S4.F2.9.3.m3" class="ltx_Math" alttext="Student" display="inline" intent=":literal"><semantics><mrow><mi>S</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>d</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">Student</annotation></semantics></math> model trained on a different distribution <math id="S4.F2.10.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> with same fraction, but now with KD from the <math id="S4.F2.11.5.m5" class="ltx_Math" alttext="Teacher" display="inline" intent=":literal"><semantics><mrow><mi>T</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>c</mi><mo lspace="0em" rspace="0em">​</mo><mi>h</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">Teacher</annotation></semantics></math> model trained on <math id="S4.F2.12.6.m6" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> displays accelerated generalization irrespective of the optimizer choice.</span></figcaption>
+</figure>
+<div id="S4.p1" class="ltx_para">
+<p id="S4.p1.5" class="ltx_p">KD has been shown to provide multiple benefits in improving training dynamics. <cite class="ltx_cite ltx_citemacro_cite">Menon<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="#bib.bib26" title="A statistical perspective on distillation" class="ltx_ref">2021</a>)</cite> provided a statistical perspective on distillation, that providing the true class-probabilities from the teacher model can lower the variance of the student objective, and thus improve performance. Further <cite class="ltx_cite ltx_citemacro_cite">Phuong and Lampert (<a href="#bib.bib27" title="Towards understanding knowledge distillation" class="ltx_ref">2019</a>)</cite> provides a generalization bound that establishes fast convergence of the expected risk of a distillation-trained linear classifier. In <cite class="ltx_cite ltx_citemacro_citep">(Boix-Adsera, <a href="#bib.bib45" title="Towards a theory of model distillation" class="ltx_ref">2024</a>; Ben-David and Ben-David, <a href="#bib.bib46" title="Learning a classifier when the labeling is known" class="ltx_ref">2011</a>)</cite>, a theoretical framework is given to analyze model distillation into decision trees through PAC-learning statistical theory. They show that if teacher model <math id="S4.p1.1.m1" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>is perfectly distillable into a student model <math id="S4.p1.2.m2" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math>, then with a probability of at least <math id="S4.p1.3.m3" class="ltx_Math" alttext="1-\delta" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">1-\delta</annotation></semantics></math>, <math id="S4.p1.4.m4" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math>generalizes with training samples no greater than <math id="S4.p1.5.m5" class="ltx_Math" alttext="\left\lceil\frac{\log(1/\delta)}{\epsilon}\right\rceil" display="inline" intent=":literal"><semantics><mrow><mo>⌈</mo><mfrac><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>/</mo><mi>δ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mi>ϵ</mi></mfrac><mo>⌉</mo></mrow><annotation encoding="application/x-tex">\left\lceil\frac{\log(1/\delta)}{\epsilon}\right\rceil</annotation></semantics></math>. It can be inferred from these studies <cite class="ltx_cite ltx_citemacro_citep">(Tang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib28" title="Understanding and improving knowledge distillation" class="ltx_ref">2020</a>; Cho and Hariharan, <a href="#bib.bib29" title="On the efficacy of knowledge distillation" class="ltx_ref">2019</a>; Yuan<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib41" title="Revisiting knowledge distillation via label smoothing regularization" class="ltx_ref">2020</a>)</cite> that KD brings the following advantages towards training dynamics,</p>
+<ul id="S4.I1" class="ltx_itemize">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p id="S4.I1.i1.p1.1" class="ltx_p"><span id="S4.I1.i1.p1.1.1" class="ltx_text ltx_font_bold">Regularization Effect through Label Smoothing:</span> KD smooths the labels, which acts as a regularizer and prevents overfitting.</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p id="S4.I1.i2.p1.1" class="ltx_p"><span id="S4.I1.i2.p1.1.1" class="ltx_text ltx_font_bold">Domain Knowledge Injection:</span> The teacher model imparts class relationships that shape the geometry of the student’s logit layer.</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p id="S4.I1.i3.p1.1" class="ltx_p"><span id="S4.I1.i3.p1.1.1" class="ltx_text ltx_font_bold">Instance-Specific Knowledge:</span> The teacher adjusts the student model’s per-instance gradients based on the difficulty of each sample, facilitating more effective learning.</p>
+</div>
+</li>
+</ul>
+</div>
+<figure id="S4.F3" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F3.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/addition_107_KD+scratch.png" id="S4.F3.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F3.sf1.6.3.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S4.F3.sf1.4.2" class="ltx_text" style="font-size:90%;">Accelerated Grokking on <math id="S4.F3.sf1.3.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> for Task: <math id="S4.F3.sf1.4.2.m2" class="ltx_Math" alttext="(a+b)\%107" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mn>107</mn></mrow><annotation encoding="application/x-tex">(a+b)\%107</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F3.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/subtraction_107_KD+scratch.png" id="S4.F3.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F3.sf2.6.3.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S4.F3.sf2.4.2" class="ltx_text" style="font-size:90%;">Accelerated Grokking on <math id="S4.F3.sf2.3.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> for Task: <math id="S4.F3.sf2.4.2.m2" class="ltx_Math" alttext="(a-b)\%107" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>−</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mn>107</mn></mrow><annotation encoding="application/x-tex">(a-b)\%107</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F3.20.10.1" class="ltx_text" style="font-size:90%;">Figure 3</span>: </span><span id="S4.F3.18.9" class="ltx_text" style="font-size:90%;">Dashed lines in<a href="#S4.F3.sf1" title="3(a) ‣ Figure 3 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">3(a)</span></a> and <a href="#S4.F3.sf2" title="3(b) ‣ Figure 3 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">3(b)</span></a> show typical grokking on <math id="S4.F3.10.1.m1" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> <math id="S4.F3.11.2.m2" class="ltx_Math" alttext="(P=107)" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>=</mo><mn>107</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P=107)</annotation></semantics></math> with different training fractions (<math id="S4.F3.12.3.m3" class="ltx_Math" alttext="f" display="inline" intent=":literal"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>). Training from scratch below <math id="S4.F3.13.4.m4" class="ltx_Math" alttext="30\%" display="inline" intent=":literal"><semantics><mrow><mn>30</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math> shows no grokking. With KD from a grokked model on <math id="S4.F3.14.5.m5" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> <math id="S4.F3.15.6.m6" class="ltx_Math" alttext="(P=113)" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>=</mo><mn>113</mn></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P=113)</annotation></semantics></math>, grokking is accelerated and occurs with as little as <math id="S4.F3.16.7.m7" class="ltx_Math" alttext="25\%" display="inline" intent=":literal"><semantics><mrow><mn>25</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">25\%</annotation></semantics></math> of <math id="S4.F3.17.8.m8" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. Distillation is applied to probability outputs from the operator token, enabling generic operator-level representations rather than <math id="S4.F3.18.9.m9" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>-specific ones. </span></figcaption>
+</figure>
+<div id="S4.p2" class="ltx_para">
+<p id="S4.p2.11" class="ltx_p">We first grok a 1 layer Transformer model with <math id="S4.p2.1.m1" class="ltx_Math" alttext="35\%" display="inline" intent=":literal"><semantics><mrow><mn>35</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">35\%</annotation></semantics></math> of training data for modular addition and subtraction tasks (<math id="S4.p2.2.m2" class="ltx_Math" alttext="(a\pm b)\%P" display="inline" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>a</mi><mo>±</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow><mo>%</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">(a\pm b)\%P</annotation></semantics></math>) with <math id="S4.p2.3.m3" class="ltx_Math" alttext="P=113" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>113</mn></mrow><annotation encoding="application/x-tex">P=113</annotation></semantics></math> (Choice of <math id="S4.p2.4.m4" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> was aritrary). We call this as data distribution <math id="S4.p2.5.m5" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>. This model will act as the teacher model (<math id="S4.p2.6.m6" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>). Next we train another model on a distribution <math id="S4.p2.7.m7" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>, by modifying the modulo prime (<math id="S4.p2.8.m8" class="ltx_Math" alttext="P=107" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>107</mn></mrow><annotation encoding="application/x-tex">P=107</annotation></semantics></math>), and compare the impact of KD under different fractions for <math id="S4.p2.9.m9" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> on both these tasks. As seen in <a href="#S4.F3" title="Figure 3 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 3</span></a>, KD significantly accelerates the grokking process for both tasks, even in scenarios where the proportion of training data is below critical dataset size. This observation is independent of the optimizer used, as shown in <a href="#S4.F2" title="Figure 2 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 2</span></a>. This demonstrates a practical utility of grokked models, illustrating their effectiveness in training models on varying distributions through KD. It is important to note that distillation occurs on the probability outputs from the operator token rather than the <math id="S4.p2.10.m10" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> token. This approach aims to learn generic operator-level representations instead of task-specific representations, which would depend on the choice of <math id="S4.p2.11.m11" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.</p>
+</div>
+<figure id="S4.F4" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F4.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/0.7_without_kd_adam_adamw.png" id="S4.F4.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F4.sf1.6.3.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S4.F4.sf1.4.2" class="ltx_text" style="font-size:90%;">Without KD on <math id="S4.F4.sf1.3.1.m1" class="ltx_Math" alttext="20\%" display="inline" intent=":literal"><semantics><mrow><mn>20</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math> of <math id="S4.F4.sf1.4.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S4.F4.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/with_kd_0.2_adam_and_adamw.png" id="S4.F4.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F4.sf2.6.3.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S4.F4.sf2.4.2" class="ltx_text" style="font-size:90%;">With KD on <math id="S4.F4.sf2.3.1.m1" class="ltx_Math" alttext="20\%" display="inline" intent=":literal"><semantics><mrow><mn>20</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math> of <math id="S4.F4.sf2.4.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S4.F4.4.2.1" class="ltx_text" style="font-size:90%;">Figure 4</span>: </span><a href="#S4.F4.sf1" title="4(a) ‣ Figure 4 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref" style="font-size:90%;"><span class="ltx_text ltx_ref_tag">4(a)</span></a><span id="S4.F4.2.1" class="ltx_text" style="font-size:90%;"> demonstrates that its impossible to observe grokking when the data fraction goes below a certain critical threshold(<math id="S4.F4.2.1.m1" class="ltx_Math" alttext="20\%" display="inline" intent=":literal"><semantics><mrow><mn>20</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math>.), even with 2X iterations (30,000) In such a case, the model does not learn anything regardless of the optimizer. In <a href="#S4.F4.sf2" title="4(b) ‣ Figure 4 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">4(b)</span></a>, it can be clearly seen that with KD, grokking is observed for all tasks, even without weight decay. However we notice that weight decay helps in achieving a better generalisation.</span></figcaption>
+</figure>
+<div id="S4.p3" class="ltx_para">
+<p id="S4.p3.2" class="ltx_p">Building on these observations, we ask: <span id="S4.p3.2.1" class="ltx_text ltx_font_bold ltx_font_italic">Can KD enable generalization below the critical data threshold?</span> To test this, we repeat the experiments with only <math id="S4.p3.1.m1" class="ltx_Math" alttext="20\%" display="inline" intent=":literal"><semantics><mrow><mn>20</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">20\%</annotation></semantics></math> of the data. Without KD, grokking does not occur even after 30,000 iterations, regardless of weight decay. In contrast, with KD, generalization emerges rapidly at this reduced data fraction (<a href="#S4.F4" title="Figure 4 ‣ 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 4</span></a>). Notably, the weight norm continues to increase (more details on weight norm given in <a href="#A1.SS1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A.1</span></a>), reinforcing our earlier claim that neither weight decay nor decreasing weight norms are essential for grokking. These results underscore the value of a grokked Teacher model (<math id="S4.p3.2.m2" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math>) in data-scarce settings. KD not only accelerates grokking but also makes it possible below the critical threshold, highlighting its practical utility for efficient training under limited data and shifting distributions.</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Leveraging Grokked Models for Distillation and Continual Transfer</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p id="S5.p1.15" class="ltx_p">We extended our study by checkpointing grokked models on fractions <math id="S5.p1.1.m1" class="ltx_Math" alttext="(0.35,0.3,0.25)" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mn>0.35</mn><mo>,</mo><mn>0.3</mn><mo>,</mo><mn>0.25</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0.35,0.3,0.25)</annotation></semantics></math> of <math id="S5.p1.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> trained via distillation (Section <a href="#S4" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>). The model grokked on <math id="S5.p1.3.m3" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> with <math id="S5.p1.4.m4" class="ltx_Math" alttext="35\%" display="inline" intent=":literal"><semantics><mrow><mn>35</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">35\%</annotation></semantics></math> data is denoted <math id="S5.p1.5.m5" class="ltx_Math" alttext="f_{p_{1}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>1</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{1}}</annotation></semantics></math>, and the KD-trained models on <math id="S5.p1.6.m6" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> as <math id="S5.p1.7.m7" class="ltx_Math" alttext="f_{p_{2}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>2</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{2}}</annotation></semantics></math>. Our goal was to train a new transformer (<math id="S5.p1.8.m8" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math>) that generalizes across both <math id="S5.p1.9.m9" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> and <math id="S5.p1.10.m10" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. In joint training, <math id="S5.p1.11.m11" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math> failed to generalize when <math id="S5.p1.12.m12" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> was below the critical size, showing that scarcity in any distribution limits learning. In contrast, training <math id="S5.p1.13.m13" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math> solely via KD from <math id="S5.p1.14.m14" class="ltx_Math" alttext="f_{p_{1}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>1</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{1}}</annotation></semantics></math> and <math id="S5.p1.15.m15" class="ltx_Math" alttext="f_{p_{2}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>2</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{2}}</annotation></semantics></math> enabled simultaneous generalization, even when either distribution had limited data (<a href="#S5.F5" title="Figure 5 ‣ 5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 5</span></a>)</p>
+</div>
+<figure id="S5.F5" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F5.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/multiple_without_kd_diff_fractions.png" id="S5.F5.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.sf1.2.1.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F5.sf1.3.2" class="ltx_text" style="font-size:90%;">without KD</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F5.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/multiple_kd_diff_fractions.png" id="S5.F5.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.sf2.2.1.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F5.sf2.3.2" class="ltx_text" style="font-size:90%;">With only KD, without entropy minimization</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.20.10.1" class="ltx_text" style="font-size:90%;">Figure 5</span>: </span><span id="S5.F5.18.9" class="ltx_text" style="font-size:90%;">Performance comparison of training strategies for a larger transformer model <math id="S5.F5.10.1.m1" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math>  on distributions of <math id="S5.F5.11.2.m2" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>(35%) and different fractions <math id="S5.F5.12.3.m3" class="ltx_Math" alttext="(0.35,0.3,0.25)" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mn>0.35</mn><mo>,</mo><mn>0.3</mn><mo>,</mo><mn>0.25</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0.35,0.3,0.25)</annotation></semantics></math> of <math id="S5.F5.13.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. In the Joint Training regime (<a href="#S5.F5.sf1" title="5(a) ‣ Figure 5 ‣ 5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">5(a)</span></a>), the model fails to generalize via cross-entropy when data from either distribution falls below the critical threshold. In contrast, training solely with distillation enables grokking even with <math id="S5.F5.14.5.m5" class="ltx_Math" alttext="25\%" display="inline" intent=":literal"><semantics><mrow><mn>25</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">25\%</annotation></semantics></math> of <math id="S5.F5.15.6.m6" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> (<a href="#S5.F5.sf2" title="5(b) ‣ Figure 5 ‣ 5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">5(b)</span></a>). At this low fraction, generalization does not reach unity due to the imperfect <math id="S5.F5.16.7.m7" class="ltx_Math" alttext="f_{p_{2}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>2</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{2}}</annotation></semantics></math> trained under data scarcity, while for <math id="S5.F5.17.8.m8" class="ltx_Math" alttext="0.35" display="inline" intent=":literal"><semantics><mn>0.35</mn><annotation encoding="application/x-tex">0.35</annotation></semantics></math> and <math id="S5.F5.18.9.m9" class="ltx_Math" alttext="0.3" display="inline" intent=":literal"><semantics><mn>0.3</mn><annotation encoding="application/x-tex">0.3</annotation></semantics></math> fractions, generalization is rapid with no grokking.</span></figcaption>
+</figure>
+<div id="S5.p2" class="ltx_para">
+<p id="S5.p2.7" class="ltx_p">Remarkably, <math id="S5.p2.1.m1" class="ltx_Math" alttext="f_{M}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>M</mi></msub><annotation encoding="application/x-tex">f_{M}</annotation></semantics></math> exhibited grokking <span id="S5.p2.7.1" class="ltx_text ltx_font_bold ltx_font_italic">only when trained via KD</span>, generalizing even when <math id="S5.p2.2.m2" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> or <math id="S5.p2.3.m3" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> was below the critical size. This shows that KD over the joint distribution <math id="S5.p2.4.m4" class="ltx_Math" alttext="(p_{1},p_{2})" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><msub><mi>p</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_{1},p_{2})</annotation></semantics></math> provides a stronger learning signal than ground-truth labels, enabling grokking under limited data. Notably, the effect persists even when the teacher <math id="S5.p2.5.m5" class="ltx_Math" alttext="f_{p_{2}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>2</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{2}}</annotation></semantics></math> itself was trained on a small fraction of <math id="S5.p2.6.m6" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>, distilled from <math id="S5.p2.7.m7" class="ltx_Math" alttext="f_{p_{1}}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><msub><mi>p</mi><mn>1</mn></msub></msub><annotation encoding="application/x-tex">f_{p_{1}}</annotation></semantics></math>.</p>
+</div>
+<div id="S5.p3" class="ltx_para">
+<p id="S5.p3.4" class="ltx_p">Building on recent work in continual pretraining <cite class="ltx_cite ltx_citemacro_citep">(Ke<span class="ltx_text ltx_bib_etal"> et al.</span>, <a href="#bib.bib42" title="Continual learning of language models" class="ltx_ref">2023</a>)</cite>, we evaluated the transition of a grokked model from <math id="S5.p3.1.m1" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> to <math id="S5.p3.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>, focusing on the role of knowledge distillation (KD) in mitigating catastrophic forgetting. A model grokked on <math id="S5.p3.3.m3" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> was further pretrained on <math id="S5.p3.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> under two conditions: with and without KD.</p>
+</div>
+<figure id="S5.F6" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F6.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/cl_prev_task.png" id="S5.F6.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F6.sf1.2.1.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F6.sf1.3.2" class="ltx_text" style="font-size:90%;">Previous Task Accuracy for different fractions of data, with and without KD.</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F6.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2511.04760v1/cl_curr_task.png" id="S5.F6.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="352" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F6.sf2.2.1.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F6.sf2.3.2" class="ltx_text" style="font-size:90%;">Current Task Accuracy for different fractions of data, with and without KD.</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F6.16.8.1" class="ltx_text" style="font-size:90%;">Figure 6</span>: </span><span id="S5.F6.14.7" class="ltx_text" style="font-size:90%;">Continual pretraining where a grokked model on <math id="S5.F6.8.1.m1" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> is further trained on <math id="S5.F6.9.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. Without KD, performance on <math id="S5.F6.10.3.m3" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> drops rapidly while generalization on <math id="S5.F6.11.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> is quick. With KD (<a href="#S5.F6.sf2" title="6(b) ‣ Figure 6 ‣ 5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">6(b)</span></a>), accuracy on the current task is preserved and forgetting is mitigated. Training from a grokked model enables fast generalization without delayed grokking, though for data below the critical size we observe a sudden phase transition from <math id="S5.F6.12.5.m5" class="ltx_Math" alttext="\sim 92\%" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>∼</mo><mrow><mn>92</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">\sim 92\%</annotation></semantics></math> to <math id="S5.F6.13.6.m6" class="ltx_Math" alttext="100\%" display="inline" intent=":literal"><semantics><mrow><mn>100</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math> accuracy at around <math id="S5.F6.14.7.m7" class="ltx_Math" alttext="28K" display="inline" intent=":literal"><semantics><mrow><mn>28</mn><mo lspace="0em" rspace="0em">​</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">28K</annotation></semantics></math> steps.</span></figcaption>
+</figure>
+<div id="S5.p4" class="ltx_para">
+<p id="S5.p4.4" class="ltx_p">As shown in <a href="#S5.F6" title="Figure 6 ‣ 5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 6</span></a>, training without KD led to immediate and severe forgetting of <math id="S5.p4.1.m1" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math>, though the model quickly generalized to <math id="S5.p4.2.m2" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. With KD, however, the model retained near-perfect accuracy on <math id="S5.p4.3.m3" class="ltx_Math" alttext="p_{1}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>1</mn></msub><annotation encoding="application/x-tex">p_{1}</annotation></semantics></math> while also achieving rapid generalization on <math id="S5.p4.4.m4" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math>. KD thus prevented delayed generalization and preserved prior knowledge, underscoring its role in balancing retention and adaptation during continual pretraining.</p>
+</div>
+<div id="S5.p5" class="ltx_para">
+<p id="S5.p5.1" class="ltx_p">These findings highlight the utility of KD in enabling generalization when data from multiple distributions is scarce, a scenario common in practice due to privacy, security, or resource constraints. Leveraging KD from pre-trained grokked models offers an effective solution in such settings. Finally, across all experiments we observed increasing weight norms despite successful grokking, challenging theories that link grokking to weight norm reduction. Instead, our results suggest that mechanisms like representation transfer via KD play a more central role, opening new directions for understanding the fundamental drivers of grokking.</p>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Conclusions and Future Work</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p id="S6.p1.1" class="ltx_p">This study advances the understanding of grokking by examining its behavior below the critical data regime. Unlike prior work centered on single distributions and weight-norm dynamics, we show that Knowledge Distillation (KD) can induce and accelerate grokking without relying on weight decay or decreasing norms. Our results demonstrate that KD enables generalization even below the critical threshold and across varying distributions, offering a practical solution in data-scarce settings where traditional training fails. Future work may extend these insights to more complex tasks, deepen our understanding of grokking’s mechanisms, and explore broader uses of pre-grokked models that generalize reliably and adapt efficiently to dynamic real-world data.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul id="bib.L1" class="ltx_biblist">
+<li id="bib.bib43" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">D. Arpit, S. Jastrzebski, N. Ballas, D. Krueger, E. Bengio, M. S. Kanwal, T. Maharaj, A. Fischer, A. C. Courville, Y. Bengio, and S. Lacoste-Julien (2017)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A closer look at memorization in deep networks</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">International Conference on Machine Learning</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib20" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">B. Barak, B. Edelman, S. Goel, S. Kakade, E. Malach, and C. Zhang (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Hidden progress in deep learning: sgd learns parities near the computational limit</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Advances in Neural Information Processing Systems</span> <span class="ltx_text ltx_bib_volume">35</span>, <span class="ltx_text ltx_bib_pages"> pp. 21750–21764</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib46" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">S. Ben-David and S. Ben-David (2011)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Learning a classifier when the labeling is known</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">International Conference on Algorithmic Learning Theory</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages"> pp. 440–451</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib45" class="ltx_bibitem ltx_bib_misc">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">E. Boix-Adsera (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards a theory of model distillation</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2403.09053</span>,
+<a href="https://arxiv.org/abs/2403.09053" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib29" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. H. Cho and B. Hariharan (2019)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">On the efficacy of knowledge distillation</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib33" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">D. Doshi, A. Das, T. He, and A. Gromov (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2310.13061</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p3.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib34" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">T. Fang, N. Lu, G. Niu, and M. Sugiyama (2020)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Rethinking importance weighting for deep learning under distribution shift</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Advances in neural information processing systems</span> <span class="ltx_text ltx_bib_volume">33</span>, <span class="ltx_text ltx_bib_pages"> pp. 11996–12007</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib8" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. I. Humayun, R. Balestriero, and R. Baraniuk (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Deep networks always grok and here is why</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2402.15555</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib44" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">T. Ishida, I. Yamane, T. Sakai, G. Niu, and M. Sugiyama (2020)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Do we need zero training loss after achieving zero training error?</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">ArXiv</span> <span class="ltx_text ltx_bib_volume">abs/2002.08709</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://api.semanticscholar.org/CorpusID:211205200" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib42" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Ke, Y. Shao, H. Lin, T. Konishi, G. Kim, and B. Liu (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Continual learning of language models</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">International Conference on Learning Representations (ICLR)</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S5.p3.4" title="5 Leveraging Grokked Models for Distillation and Continual Transfer ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§5</span></a>.
+</span>
+</li>
+<li id="bib.bib31" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Krizhevsky (2012)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Learning multiple layers of features from tiny images</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">University of Toronto</span>, <span class="ltx_text ltx_bib_pages"> pp. </span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib38" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking as the transition from lazy to rich training dynamics</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Twelfth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=vt5mnLVIVo" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib52" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Lee, B. G. Kang, K. Kim, and K. M. Lee (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokfast: accelerated grokking by amplifying slow gradients</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2405.20233</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p4.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib37" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">N. I. Levi, A. Beck, and Y. Bar-Sinai (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking in linear estimators – a solvable model that groks without understanding</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Twelfth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=GH2LYb9XV0" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib35" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Liang, R. He, and T. Tan (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A comprehensive survey on test-time adaptation under distribution shifts</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">International Journal of Computer Vision</span>, <span class="ltx_text ltx_bib_pages"> pp. 1–34</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib5" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams (2022a)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards understanding grokking: an effective theory of representation learning</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Advances in Neural Information Processing Systems</span> <span class="ltx_text ltx_bib_volume">35</span>, <span class="ltx_text ltx_bib_pages"> pp. 34651–34663</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p1.17" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib6" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Liu, E. J. Michaud, and M. Tegmark (2022b)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Omnigrok: grokking beyond algorithmic data</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Eleventh International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#A1.F7" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.F7.12.6" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.SS1.p2.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#A1.SS1.p4.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#S1.p3.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S1.p4.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p3.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p1.17" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p2.6" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p3.1" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib23" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">I. Loshchilov (2017)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Decoupled weight decay regularization</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:1711.05101</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S3.p6.2" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib39" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">K. Lyu, J. Jin, Z. Li, S. S. Du, J. D. Lee, and W. Hu (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Dichotomy of early and late phase implicit biases can provably induce grokking</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Twelfth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=XsHqr9dEGH" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib26" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. K. Menon, A. S. Rawat, S. Reddi, S. Kim, and S. Kumar (2021)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A statistical perspective on distillation</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 38th International Conference on Machine Learning</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_series">Proceedings of Machine Learning Research</span>, Vol. <span class="ltx_text ltx_bib_volume">139</span>, <span class="ltx_text ltx_bib_pages"> pp. 7632–7642</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib25" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">W. Merrill, N. Tsilivis, and A. Shukla (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A tale of two circuits: grokking as competition of sparse and dense subnetworks</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2303.11873</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib53" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">G. Minegishi, Y. Iwasawa, and Y. Matsuo (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Bridging lottery ticket and grokking: is weight norm sufficient to explain delayed generalization?</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2310.19470</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p4.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib19" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Progress measures for grokking via mechanistic interpretability</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2301.05217</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#A1.F7" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.F7.12.6" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.SS1.p1.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#A1.SS1.p4.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S1.p3.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p1.17" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p3.1" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib30" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">P. Notsawo Jr, H. Zhou, M. Pezeshki, I. Rish, G. Dumas, <span class="ltx_text ltx_bib_etal">et al.</span> (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Predicting grokking long before it happens: a look into the loss landscape of models which grok</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2306.13253</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib27" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">M. Phuong and C. Lampert (2019)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards understanding knowledge distillation</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 36th International Conference on Machine Learning</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_series">Proceedings of Machine Learning Research</span>, Vol. <span class="ltx_text ltx_bib_volume">97</span>, <span class="ltx_text ltx_bib_pages"> pp. 5142–5151</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib4" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking: generalization beyond overfitting on small algorithmic datasets</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2201.02177</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p1.17" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p2.6" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p3.1" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S4.F2" title="In 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 2</span></a>,
+<a href="#S4.F2.12.6" title="In 4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 2</span></a>.
+</span>
+</li>
+<li id="bib.bib47" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">L. Prieto, M. Barsbey, P. A. M. Mediano, and T. Birdal (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking at the edge of numerical stability</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Thirteenth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=TvfkSyHZRA" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p3.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p4.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p2.6" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p3.1" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib36" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">N. Rubin, I. Seroussi, and Z. Ringel (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking as a first order phase transition in two layer networks</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Twelfth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=3ROGsTX3IR" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p1.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib14" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">V. Singh, R. Aljundi, and E. Belilovsky (2024a)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Controlling forgetting with test-time data in continual learning</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2406.13653</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib15" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">V. Singh, A. Choromanska, S. Li, and Y. Du (2024b)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Wake-sleep energy based models for continual learning</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_pages"> pp. 4118–4127</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib28" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Tang, R. Shivanna, Z. Zhao, D. Lin, A. Singh, E. H. Chi, and S. Jain (2020)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Understanding and improving knowledge distillation</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2002.03532</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib21" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">V. Thilak, E. Littwin, S. Zhai, O. Saremi, R. Paiss, and J. Susskind (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2206.04817</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p2.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib22" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">G. M. Van de Ven and A. S. Tolias (2019)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Three scenarios for continual learning</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:1904.07734</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib32" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Explaining grokking through circuit efficiency</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2309.02390</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#A1.F7" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.F7.12.6" title="In A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>,
+<a href="#A1.SS1.p3.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#A1.SS1.p4.1" title="A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§A.1</span></a>,
+<a href="#S1.p3.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S1.p4.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S2.p3.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a href="#S3.p1.17" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>,
+<a href="#S3.p2.6" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li id="bib.bib40" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Vaswani, N. M. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin (2017)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Attention is all you need</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Neural Information Processing Systems</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://api.semanticscholar.org/CorpusID:13756489" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p2.7" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li id="bib.bib50" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Xu, Z. Ni, Y. Wang, and W. Hu (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Let me grok for you: accelerating grokking via embedding transfer from a weaker model</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Thirteenth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://openreview.net/forum?id=4rEI2JdHH6" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S2.p4.1" title="2 Related Work ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li id="bib.bib41" class="ltx_bibitem ltx_bib_inproceedings">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">L. Yuan, F. E. Tay, G. Li, T. Wang, and J. Feng (2020)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Revisiting knowledge distillation via label smoothing regularization</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>,
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S4.p1.5" title="4 Accelerating Grokking through Knowledge Distillation (KD) ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li id="bib.bib48" class="ltx_bibitem ltx_bib_article">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">X. Zhu, Y. Fu, B. Zhou, and Z. Lin (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Critical data size of language models from a grokking perspective</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">CoRR</span> <span class="ltx_text ltx_bib_volume">abs/2401.10463</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a href="https://doi.org/10.48550/arXiv.2401.10463" title="" class="ltx_ref ltx_bib_external">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a href="#S1.p1.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S1.p4.1" title="1 Introduction ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a href="#S3.p2.6" title="3 Experimental Setup ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section id="A1" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Appendix</h2>
+
+<section id="A1.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.1 </span>Evolution of L2 weight norm</h3>
+
+<div id="A1.SS1.p1" class="ltx_para">
+<p id="A1.SS1.p1.1" class="ltx_p">L2 weight norm trained with adam continuously increases for both addition and subtraction tasks as observed in <a href="#A1.F7" title="Figure 7 ‣ A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>, yet grokking still occurs. These findings challenge the theories proposed by <cite class="ltx_cite ltx_citemacro_citep">[<a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">23</a>]</cite> who suggest that the abrupt transition to perfect test accuracy during grokking occurs in the cleanup phase (where weight decay removes memorization components), following the establishment of the generalizing mechanism. Our empirical evidence contradicts these claims by demonstrating grokking even without weight decay and with increasing weight norms.</p>
+</div>
+<div id="A1.SS1.p2" class="ltx_para">
+<p id="A1.SS1.p2.1" class="ltx_p">Similarly <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">17</a>]</cite> induce grokking by increasing the initial weight norm and conclude that generalizing solutions lie on smaller norm spheres in parameter space. While we acknowledge that an initially higher weight norm can facilitate grokking, our results indicate that generalizing solutions do not necessarily lie on smaller norm spheres. Our modular arithmetic tasks serve as counterexamples, where the final generalizing solutions exhibit larger parameter weight norms than their initial states, and grokking occurs without the application of weight decay.</p>
+</div>
+<div id="A1.SS1.p3" class="ltx_para">
+<p id="A1.SS1.p3.1" class="ltx_p">Furthermore <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">34</a>]</cite> claim that the transition from memorizing to generalizing circuits occurs because the generalizing circuit is more “efficient” than the memorizing circuit, in the sense that it can produce equivalent loss with a lower parameter norm. In contrast, our studies show that modular arithmetic tasks can achieve generalizing solutions with higher parameter norms without any weight decay, disproving the necessity of norm reduction for grokking.</p>
+</div>
+<div id="A1.SS1.p4" class="ltx_para">
+<p id="A1.SS1.p4.1" class="ltx_p">We empirically demonstrate that parameters’ (L2) weight norm trained with adam continuously increases for both addition and subtraction tasks as observed in <a href="#A1.F7" title="Figure 7 ‣ A.1 Evolution of L2 weight norm ‣ Appendix A Appendix ‣ When Data Falls Short: Grokking Below the Critical Threshold" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 7</span></a>, yet grokking still occurs. This challenges the notion that decreasing weight norm is fundamental to grokking. Therefore, we assert that neither parameter weight decay nor a decreasing weight norm during optimization is inherently fundamental to observing grokking, contrary to its purported necessity in previous studies <cite class="ltx_cite ltx_citemacro_citep">[<a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">17</a>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">23</a>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">34</a>]</cite> on modular arithmetic tasks.</p>
+</div>
+<figure id="A1.F7" class="ltx_figure"><img src="2511.04760v1/norms.png" id="A1.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="357" height="210" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F7.14.7.1" class="ltx_text" style="font-size:90%;">Figure 7</span>: </span><span id="A1.F7.12.6" class="ltx_text" style="font-size:90%;">Evolution of the L2 weight norm for <math id="A1.F7.7.1.m1" class="ltx_Math" alttext="Student" display="inline" intent=":literal"><semantics><mrow><mi>S</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>d</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">Student</annotation></semantics></math> model <math id="A1.F7.8.2.m2" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math> trained with Adam(without weight decay) and AdamW(with weight decay) on different fractions of <math id="A1.F7.9.3.m3" class="ltx_Math" alttext="p_{2}" display="inline" intent=":literal"><semantics><msub><mi>p</mi><mn>2</mn></msub><annotation encoding="application/x-tex">p_{2}</annotation></semantics></math> distribution. <math id="A1.F7.10.4.m4" class="ltx_Math" alttext="f_{S}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>S</mi></msub><annotation encoding="application/x-tex">f_{S}</annotation></semantics></math> is trained via KD from a grokked model <math id="A1.F7.11.5.m5" class="ltx_Math" alttext="f_{T}" display="inline" intent=":literal"><semantics><msub><mi>f</mi><mi>T</mi></msub><annotation encoding="application/x-tex">f_{T}</annotation></semantics></math> . Notably, training without weight decay the <math id="A1.F7.12.6.m6" class="ltx_Math" alttext="L_{2}" display="inline" intent=":literal"><semantics><msub><mi>L</mi><mn>2</mn></msub><annotation encoding="application/x-tex">L_{2}</annotation></semantics></math>-weight norm increases continuously, while giving generalised solutions. This rules out the necessity of decreased weight norm condition for exhibiting grokking given by <cite class="ltx_cite ltx_citemacro_citep">[<a href="#bib.bib6" title="Omnigrok: grokking beyond algorithmic data" class="ltx_ref">17</a>, <a href="#bib.bib32" title="Explaining grokking through circuit efficiency" class="ltx_ref">34</a>, <a href="#bib.bib19" title="Progress measures for grokking via mechanistic interpretability" class="ltx_ref">23</a>]</cite></span></figcaption>
+</figure>
+</section>
+</section><div class="ltx_rdf" about="" property="dcterms:title" content="Overleaf Example"></div>
+
+</article>
+</div>
+</div>
+<footer class="arxiv-html-footer">
+  <div class="ltx_page_logo">
+    Experimental support, please
+    <a href="./2511.04760v1/__stdout.txt" class="ltx_ref"
+    target="_blank" rel="nofollow">view the build logs</a>
+    for errors. Generated by
+    <a href="https://math.nist.gov/~BMiller/LaTeXML/" target="_blank" class="ltx_ref ltx_LaTeXML_logo">
+      <span style="letter-spacing: -0.2em; margin-right: 0.1em;">
+        L
+        <span style="font-size: 70%; position: relative; bottom: 2.2pt;">A</span>
+        T
+        <span style="position: relative; bottom: -0.4ex;">E</span>
+      </span>
+      <span class="ltx_font_smallcaps">xml</span>
+      <img alt="[LOGO]"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==">
+    </a>.
+  </div>
+  <div class="keyboard-glossary">
+    <h2>Instructions for reporting errors</h2>
+    <p>We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below:</p>
+    <ul>
+      <li>Click the "Report Issue" <span class="mobile-only">(<svg role="presentation"
+            style="display: inline-block; vertical-align: middle; fill: var(--text-color);" aria-hidden="true"
+            height="1em" viewBox="0 0 640 640">
+            <path
+              d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+          </svg>)</span> button, located in the page header.</li>
+    </ul>
+    <p><strong>Tip:</strong> You can select the relevant text first, to include it in your report.</p>
+    <p>Our team has already identified <a class="ltx_ref" href="https://github.com/arXiv/html_feedback/issues"
+        target="_blank">the following issues</a>. We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all.</p>
+    <p>Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a <a
+        class="ltx_ref" href="https://github.com/brucemiller/LaTeXML/wiki/Porting-LaTeX-packages-for-LaTeXML"
+        target="_blank">list of packages that need conversion</a>, and welcome <a class="ltx_ref"
+        href="https://github.com/brucemiller/LaTeXML/issues" target="_blank">developer contributions</a>.</p>
+  </div>
+</footer><footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from
+        our <strong>major funders</strong>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe">Subscribe</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+
+    <div class="ds-site-footer-funders" aria-label="Major funders">
+      <div class="ds-site-footer-funders-label">Major funding support from</div>
+      <div class="ds-site-footer-funders-logos">
+        <a class="ds-funder-link" href="https://www.simonsfoundation.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation.png" alt="Simons Foundation">
+        </a>
+        <a class="ds-funder-link" href="https://www.sfi.org.bm/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation-international.png" alt="Simons Foundation International">
+        </a>
+        <a class="ds-funder-link" href="https://www.schmidtsciences.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/schmidt-sciences.png" alt="Schmidt Sciences">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer><div id="fixed-buttons-container">
+  <a id="disable-reading-mode-btn" class="header-button" href="javascript:toggleReadingMode();"
+    title="Disable reading mode, show header and footer">
+    <svg role="presentation" height="1.25rem"
+      viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+      <path
+        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+    </svg>
+  </a>
+</div></body>
+</html>

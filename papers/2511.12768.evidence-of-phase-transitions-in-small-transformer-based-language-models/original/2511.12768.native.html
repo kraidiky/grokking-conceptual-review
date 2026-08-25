@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Evidence of Phase Transitions in Small Transformer-Based Language Models</title>
+<!--Generated on Sun Nov 16 20:37:26 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="/static/browse/0.3.4/css/arxiv-html-papers-20250916.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<meta content="
+Transformer,  Phase transition,  Emergent abilities,  Poisson statistics,  KL divergence,  Language models
+" lang="en" name="keywords"/>
+<base href="/html/2511.12768v1/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S1" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">I </span><span class="ltx_text ltx_font_smallcaps">Introduction</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II </span><span class="ltx_text ltx_font_smallcaps">RELATED WORK</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS1" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-A </span><span class="ltx_text ltx_font_italic">Phase Transitions in Statistical Physics</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS2" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-B </span><span class="ltx_text ltx_font_italic">Emergence as a General Principle in Complex Systems</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS3" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-C </span><span class="ltx_text ltx_font_italic">Phase Transitions in Neural Networks: Early Theoretical Foundations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS4" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-D </span><span class="ltx_text ltx_font_italic">Emergent Abilities in Large Language Models</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS5" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-E </span><span class="ltx_text ltx_font_italic">Questioning the Reality of Emergent Abilities</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS6" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-F </span><span class="ltx_text ltx_font_italic">Grokking and Discontinuous Training Dynamics</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS7" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-G </span><span class="ltx_text ltx_font_italic">Theoretical Foundations: Grokking as a First-Order Phase Transition</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S2.SS8" title="In II RELATED WORK ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-H </span><span class="ltx_text ltx_font_italic">Positioning Our Work</span></span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III </span><span class="ltx_text ltx_font_smallcaps">Methods</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS1" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-A </span><span class="ltx_text ltx_font_italic">Model and Data</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS2" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-B </span><span class="ltx_text ltx_font_italic">Segmentation and Correctness Labeling</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS3" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-C </span><span class="ltx_text ltx_font_italic">Vocabulary Growth and Word Length</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS4" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-D </span><span class="ltx_text ltx_font_italic">Poisson Baseline, Dispersion, and Snapshots</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS5" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-E </span><span class="ltx_text ltx_font_italic">KL Divergence from Poisson</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.SS6" title="In III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III-F </span><span class="ltx_text ltx_font_italic">Estimation and Visualization</span></span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV </span><span class="ltx_text ltx_font_smallcaps">Results</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS1" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-A </span><span class="ltx_text ltx_font_italic">Overview of Discontinuities</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS2" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-B </span><span class="ltx_text ltx_font_italic">Word-Frequency Snapshots at 150, 250, 350, and 500</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS3" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-C </span><span class="ltx_text ltx_font_italic">Average Word Length (Correct Words)</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS4" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-D </span><span class="ltx_text ltx_font_italic">Unique Vocabulary Dynamics</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS5" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-E </span><span class="ltx_text ltx_font_italic">Case Study: Prefix Formation and Acquisition of “you”</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS6" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-F </span><span class="ltx_text ltx_font_italic">KL Divergence to Poisson Baseline</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS7" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-G </span><span class="ltx_text ltx_font_italic">Index of Dispersion (Fano Factor)</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.SS8" title="In IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-H </span><span class="ltx_text ltx_font_italic">Summary</span></span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V </span><span class="ltx_text ltx_font_smallcaps">Discussion</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS1" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-A </span><span class="ltx_text ltx_font_italic">Poisson-Centered Diagnostics and Detection in Linear Training Space</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS2" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-B </span><span class="ltx_text ltx_font_italic">Early Lexical Reorganization as the Transition Mechanism</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS3" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-C </span><span class="ltx_text ltx_font_italic">Temporary Degradation as Evidence of Barrier-Crossing Dynamics</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS4" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-D </span><span class="ltx_text ltx_font_italic">Observability in Small Models and Parallels with Physical Phase Transitions</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS5" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-E </span><span class="ltx_text ltx_font_italic">Addressing the Schaeffer et al. Critique</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S5.SS6" title="In V Discussion ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-F </span><span class="ltx_text ltx_font_italic">Limitations and Scope</span></span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S6" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">VI </span><span class="ltx_text ltx_font_smallcaps">Future Work</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S7" title="In Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">VII </span><span class="ltx_text ltx_font_smallcaps">Conclusion</span></span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<div class="ltx_para" id="p1">
+<span class="ltx_ERROR undefined">\history</span>
+<p class="ltx_p">Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.
+<a class="ltx_ref" href="https:/doi.org/10.1109/ACCESS.2017.DOI" title="">10.1109/ACCESS.2017.DOI</a></p>
+</div>
+<div class="ltx_para" id="p2">
+<span class="ltx_ERROR undefined">\corresp</span>
+<p class="ltx_p">Corresponding author: Noah Hong (e-mail: noahhong01@gmail.com).</p>
+</div>
+<h1 class="ltx_title ltx_title_document">Evidence of Phase Transitions in Small Transformer-Based Language Models</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">NOAH HONG1
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">
+TAO HONG2
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_address">Lynbrook High School, San Jose, CA 95129 USA (e-mail: noahhong01@gmail.com)
+</span>
+<span class="ltx_contact ltx_role_address">Keysight Technologies, Santa Rosa, CA 95403 USA (e-mail: taohong01@gmail.com)
+</span></span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">Phase transitions have been proposed as the origin of emergent abilities in large language models (LLMs), where new capabilities appear abruptly once models surpass critical thresholds of scale. Prior work, such as that of Wei <em class="ltx_emph ltx_font_italic">et al.</em>, demonstrated these phenomena under model and data scaling, with transitions revealed after applying a log scale to training compute. In this work, we ask three complementary questions: (1) Are phase transitions unique to large models, or can they also be observed in small transformer-based language models? (2) Can such transitions be detected directly in <em class="ltx_emph ltx_font_italic">linear training space</em>, rather than only after log rescaling? and (3) Can these transitions emerge at early stages of training? To investigate, we train a small GPT-style transformer on a character-level corpus and analyze the evolution of vocabulary usage throughout training. We track the average word length, the number of correct versus incorrect words, and shifts in vocabulary diversity. Building on these measures, we apply Poisson and sub-Poisson statistics to quantify how words connect and reorganize. This combined analysis reveals a distinct transition point during training. Notably, these transitions are not apparent in standard loss or validation curves, but become visible through our vocabulary- and statistics-based probes. Our findings suggest that phase-transition reorganizations are a general feature of language model training, observable even in modest models, detectable directly in linear training space, and occurring surprisingly early as coherence emerges. This perspective provides new insight into the nonlinear dynamics of language model training and underscores the importance of tailored metrics for uncovering phase transition behaviors.</p>
+</div>
+<div class="ltx_keywords">
+<h6 class="ltx_title ltx_title_keywords">Index Terms: </h6>
+Transformer, Phase transition, Emergent abilities, Poisson statistics, KL divergence, Language models
+
+</div>
+<div class="ltx_para" id="p3">
+<span class="ltx_ERROR undefined">\titlepgskip</span>
+<p class="ltx_p">=-15pt</p>
+</div>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">I </span><span class="ltx_text ltx_font_smallcaps">Introduction</span>
+</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p">Frontier Large language models (LLMs) have demonstrated striking emergent capabilities in reasoning, coding, and multimodal understanding <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib1" title="">1</a>, <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib2" title="">2</a>, <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib3" title="">3</a>, <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib4" title="">4</a>, <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib5" title="">5</a>]</cite>. These breakthroughs have been widely associated with scaling: as models grow in parameter count, dataset size, and training compute, they appear to acquire qualitatively new abilities. Wei <em class="ltx_emph ltx_font_italic">et al.</em> characterized such emergent behaviors as <em class="ltx_emph ltx_font_italic">phase transitions</em>, highlighting that they often arise abruptly at critical thresholds rather than increasing smoothly with scale <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib6" title="">6</a>]</cite>.</p>
+</div>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p">Despite this progress, most prior studies analyze phase transitions indirectly, requiring billion-parameter models and reporting results only after applying logarithmic rescaling of compute or training steps. As a result, it remains unclear whether phase-transition-like reorganizations can be observed in small, tractable models rather than only in massive LLMs, and raises the question whether such discontinuities can be detected directly on a linear training axis without resorting to log transformations.</p>
+</div>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p">Addressing this gap is important for two reasons. First, small models serve as practical laboratories: they can be trained and inspected with modest resources while still revealing fundamental learning dynamics. Second, if phase transitions are observable directly in raw training steps, this strengthens the case that emergent behaviors are an intrinsic property of neural training, not merely an artifact of evaluation metrics or log scaling. Such insights can inform both interpretability research and the design of more efficient models.</p>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p">In this work, we investigate phase-transition dynamics in a small GPT-style transformer (3.6M parameters) trained with character-level tokenization on the Tiny Shakespeare corpus. To detect discontinuities, we introduce a <em class="ltx_emph ltx_font_italic">Poisson-centered diagnostic framework</em><cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib7" title="">7</a>]</cite> that tracks dispersion, Kullback–Leibler (KL) divergence, vocabulary composition, and word length. These statistical probes reveal synchronized discontinuities in training that coincide with a transition from random, fragmentary sequences to coherent words. We argue that lexical-level coherence functions as an order parameter for emergent linguistic ability.</p>
+</div>
+<div class="ltx_para" id="S1.p5">
+<p class="ltx_p">The remainder of this paper is organized as follows. Section II reviews related work on emergent abilities, phase transitions, discontinuous training dynamics, and statistical probes. Section III describes the experimental setup and diagnostic methodology. Section IV presents our findings on synchronized discontinuities. Section V discusses implications, limitations, and directions for future work.</p>
+</div>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">II </span><span class="ltx_text ltx_font_smallcaps">RELATED WORK</span>
+</h2>
+<div class="ltx_para" id="S2.p1">
+<p class="ltx_p">Our investigation of phase transitions in small transformer-based language models draws on three interconnected research traditions: the physics of phase transitions and collective phenomena, the empirical discovery of emergent abilities in large language models, and mechanistic studies of discontinuous learning dynamics. We review each tradition in turn, highlighting how they converge to motivate our central questions about the observability, detectability, and timing of phase-transition-like reorganizations in modest-scale systems.</p>
+</div>
+<section class="ltx_subsection" id="S2.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-A </span><span class="ltx_text ltx_font_italic">Phase Transitions in Statistical Physics</span>
+</h3>
+<div class="ltx_para" id="S2.SS1.p1">
+<p class="ltx_p">The formal study of phase transitions originates in statistical mechanics, where smooth microscopic laws give rise to singular macroscopic behavior. Landau and Lifshitz’s canonical treatment establishes the foundational concepts: an order parameter—a macroscopic quantity characterizing the state of the system—changes abruptly as a control parameter crosses a critical threshold <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib8" title="">8</a>]</cite>. In second-order (continuous) transitions, the order parameter evolves smoothly from zero to finite value, accompanied by diverging fluctuations and correlation lengths. In first-order (discontinuous) transitions, the order parameter jumps discontinuously, reflecting the coexistence and exchange of distinct phases. Crucially, these qualitative reorganizations emerge from collective interactions among many components, not from singularities in the underlying microscopic rules. The water–vapor transition provides an intuitive example: as temperature or pressure varies, the system’s density undergoes a sharp, measurable discontinuity despite the smoothness of intermolecular forces.</p>
+</div>
+<div class="ltx_para" id="S2.SS1.p2">
+<p class="ltx_p">Tong’s modern pedagogical exposition extends this framework through renormalization group (RG) theory and effective field descriptions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib9" title="">9</a>]</cite>. RG analysis reveals how critical behavior is governed by fixed points in the space of couplings, organizing transitions into universality classes defined by shared scaling exponents rather than microscopic details. Tong emphasizes that apparent macroscopic discontinuities arise from the amplification of microscopic fluctuations through many-body correlations—a perspective that has proven fruitful when transferred to high-dimensional learning systems. His treatment of effective potentials, in which the system’s state concentrates near minima of a coarse-grained free energy, provides a conceptual template later adopted by theorists modeling neural network training as navigation through an effective landscape of competing representations.</p>
+</div>
+<div class="ltx_para" id="S2.SS1.p3">
+<p class="ltx_p">Together, Landau–Lifshitz and Tong establish a rigorous vocabulary for describing qualitative reorganizations: order parameters, control parameters, critical thresholds, coexistence regimes, and scaling laws. Although developed for physical systems in thermal equilibrium, this language has migrated to describe abrupt changes in artificial systems, including neural networks, where “temperature” may be replaced by training time, learning rate, or model scale, and “magnetization” by generalization accuracy, representational coherence, or statistical dispersion.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-B </span><span class="ltx_text ltx_font_italic">Emergence as a General Principle in Complex Systems</span>
+</h3>
+<div class="ltx_para" id="S2.SS2.p1">
+<p class="ltx_p">The conceptual leap from physics to broader contexts was articulated influentially by Anderson, who argued that “more is different”—that increasing complexity introduces qualitatively new organizational principles not reducible to component-level laws <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib10" title="">10</a>]</cite>. Using examples from superconductivity to molecular biology, Anderson asserted that each level of scale in a hierarchy exhibits emergent properties and demands its own effective theories. This essay laid the philosophical groundwork for studying emergent computation, collective intelligence, and self-organization across disciplines. For artificial intelligence, Anderson’s thesis legitimizes the expectation that large-scale neural systems may undergo abrupt reorganizations in capability or structure that cannot be predicted from isolated neuron dynamics or gradient updates.</p>
+</div>
+<div class="ltx_para" id="S2.SS2.p2">
+<p class="ltx_p">Building on this foundation, Huberman and Hogg demonstrated that artificial intelligence systems—specifically, symbolic search and constraint-satisfaction algorithms—can exhibit sharp threshold phenomena as control parameters vary <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib11" title="">11</a>]</cite>. They analyzed how problem difficulty peaks near phase boundaries between solvable and unsolvable regimes, analogous to critical slowing down in physics. Their work established that combinatorial and computational systems, even far from thermodynamic equilibrium, display transition-like behaviors where collective properties change abruptly. Although their focus was symbolic AI rather than deep learning, the conceptual parallel is clear: large computational systems can have critical regions where behavior reorganizes discontinuously.</p>
+</div>
+<div class="ltx_para" id="S2.SS2.p3">
+<p class="ltx_p">Forrest extended these ideas into the realm of emergent computation in distributed systems, including early neural networks and evolutionary algorithms <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib12" title="">12</a>]</cite>. She argued that computation itself can be an emergent property arising from local interactions that self-organize into global structure. By reviewing cellular automata, associative memories, and genetic algorithms, Forrest highlighted how non-linear coupling of simple rules produces persistent patterns and adaptation. While largely qualitative and pre-dating modern deep learning, her synthesis situates neural training within the broader study of complex adaptive systems, reinforcing the expectation that emergent coherence in language models—such as the abrupt acquisition of multi-character words we observe—can arise from smooth, distributed updates.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-C </span><span class="ltx_text ltx_font_italic">Phase Transitions in Neural Networks: Early Theoretical Foundations</span>
+</h3>
+<div class="ltx_para" id="S2.SS3.p1">
+<p class="ltx_p">The application of phase-transition concepts directly to neural networks began in earnest in the 1990s. Kinzel’s review article provided one of the first systematic treatments, analyzing how simple learning systems—perceptrons, Hopfield networks, and spin-glass models—exhibit threshold behavior <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib13" title="">13</a>]</cite>. For instance, a perceptron trained on random patterns transitions sharply from an unlearnable to a learnable regime once the ratio of training examples to weights exceeds a critical value. Similarly, associative memory networks undergo order–disorder transitions when capacity limits are exceeded, with retrieval accuracy collapsing abruptly beyond a threshold. Kinzel connected these findings to energy-landscape reorganization and symmetry breaking familiar from condensed-matter physics. His work demonstrated that learning dynamics naturally partition into distinct regimes—ordered (generalizing) and disordered (memorizing or random)—separated by sharp boundaries. While the models studied were low-dimensional and analytically tractable, Kinzel’s analysis established that phase-transition language applies meaningfully to neural computation, foreshadowing later efforts to describe deep learning through statistical mechanics.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.p2">
+<p class="ltx_p">In the modern era, Bahri and colleagues have synthesized a decade of research applying statistical-mechanical tools to deep neural networks <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib14" title="">14</a>]</cite>. Their comprehensive review organizes theory around three axes: the geometry of high-dimensional loss landscapes, the dynamics of signal propagation and criticality (including “edge-of-chaos” regimes where networks balance order and chaos), and scaling laws linking architecture, dataset size, and generalization. They describe how random-matrix theory and mean-field approximations reveal phase-transition-like separations between ordered and chaotic signal-flow regimes, and how such transitions influence trainability. Importantly, Bahri et al. caution that deep learning operates far from thermodynamic equilibrium; hence, “phase transition” serves as a metaphor for qualitative regime changes in optimization dynamics rather than literal thermodynamic phenomena. Nonetheless, the conceptual apparatus—order parameters, critical points, universality—provides a powerful framework for interpreting abrupt shifts in network behavior. For our study, Bahri et al. supply rigorous justification for treating discontinuities in dispersion or KL divergence as emergent reorganizations of representation statistics.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.p3">
+<p class="ltx_p">Miller, Zhang, and Ganguli have recently proposed that deep networks trained by gradient descent can be modeled as non-equilibrium systems undergoing absorbing-state phase transitions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib15" title="">15</a>]</cite>. They define an order parameter based on the fraction of active degrees of freedom in weight space and demonstrate that training dynamics approach an absorbing state where updates cease, analogous to the frozen phase in directed-percolation universality classes. Empirical scaling exponents measured on feed-forward and recurrent architectures match those predicted by non-equilibrium statistical physics, suggesting universality across network types. While highly theoretical and not linguistically oriented, their work provides formal grounding for describing sharp onsets of regularization—such as the sub-Poisson stabilization we observe—as regime transitions in high-dimensional optimization.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS4">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-D </span><span class="ltx_text ltx_font_italic">Emergent Abilities in Large Language Models</span>
+</h3>
+<div class="ltx_para" id="S2.SS4.p1">
+<p class="ltx_p">The empirical discovery of discontinuous capability gains in large-scale language models has catalyzed recent interest in phase-transition analogies. The GPT series documents this progression. Radford et al. introduced GPT-1, demonstrating that unsupervised generative pretraining on a large text corpus followed by supervised fine-tuning yields transferable representations that substantially outperform models trained from scratch <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib1" title="">1</a>]</cite>. The key insight was that a single, generic language model can adapt to many downstream tasks with minimal labeled data, suggesting that broad linguistic structure emerges from next-token prediction alone. GPT-2 scaled this paradigm to 1.5 billion parameters and showed that zero-shot multitask performance arises spontaneously without explicit fine-tuning <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib2" title="">2</a>]</cite>. Capabilities such as translation, summarization, and question answering appeared organically, motivating the notion that sufficient scale and data diversity induce qualitative leaps in coherence and reasoning.</p>
+</div>
+<div class="ltx_para" id="S2.SS4.p2">
+<p class="ltx_p">Brown et al.’s GPT-3, at 175 billion parameters, established scaling as the dominant driver of emergent generalization <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib3" title="">3</a>]</cite>. While training loss followed smooth power laws, task performance exhibited abrupt gains in reasoning, arithmetic, and translation once model size exceeded tens of billions of parameters. The paper introduced few-shot, one-shot, and zero-shot evaluation protocols, showing that in-context learning—without gradient updates—becomes viable at scale. GPT-3 thus provided large-scale empirical evidence that internal representations cross thresholds beyond which qualitatively new behaviors emerge, paralleling the discontinuities we observe in miniature systems.</p>
+</div>
+<div class="ltx_para" id="S2.SS4.p3">
+<p class="ltx_p">Subsequent frontier models reinforced this pattern. Chowdhery et al.’s PaLM, at 540 billion parameters, demonstrated emergent reasoning at unprecedented scale, with performance curves showing discontinuous jumps in logical and multi-step tasks once critical thresholds were surpassed <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib4" title="">4</a>]</cite>. The authors attributed improvements to both raw scale and dataset diversity, noting that emergent capabilities correlate with cross-domain exposure. Similarly, OpenAI’s GPT-4 Technical Report documented marked improvements in reasoning, coding, and multimodal comprehension, with performance on complex tasks again exhibiting threshold-like behavior <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib5" title="">5</a>]</cite>. While specific architectural details remain undisclosed, GPT-4’s results anchor the empirical end of the scaling continuum, showing that emergent abilities persist and strengthen as models grow.</p>
+</div>
+<div class="ltx_para" id="S2.SS4.p4">
+<p class="ltx_p">Wei et al. systematically formalized the concept of emergent abilities, defining them as capabilities that cannot be linearly extrapolated from smaller models’ performance <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib6" title="">6</a>]</cite>. By analyzing hundreds of evaluation points across model families—GPT-3, Gopher, Chinchilla, PaLM—they plotted accuracy versus log-scale model size and observed sigmoidal or step-like patterns instead of smooth power-law gains. These discontinuities appeared in arithmetic, translation, reasoning, and word-sense disambiguation. Importantly, Wei et al. emphasized that emergent abilities reflect abrupt changes in task performance, not necessarily smooth loss improvements. This observation directly motivated our focus on external behavioral metrics—such as dispersion and vocabulary composition—that reveal reorganizations hidden in standard loss curves. However, Wei et al. left the underlying mechanism open, describing emergence primarily as an empirical phenomenon tied to scale.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS5">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-E </span><span class="ltx_text ltx_font_italic">Questioning the Reality of Emergent Abilities</span>
+</h3>
+<div class="ltx_para" id="S2.SS5.p1">
+<p class="ltx_p">Schaeffer, Miranda, and Koyejo challenged the interpretation of emergent abilities as evidence of fundamental phase transitions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib20" title="">20</a>]</cite>. They argued mathematically and empirically that many step-like curves reported in Wei et al. arise from discrete, non-linear evaluation metrics rather than abrupt internal reorganizations. When an underlying performance variable—such as the probability of correct reasoning—increases smoothly with scale, threshold-based metrics like binary accuracy can still produce the illusion of sudden jumps. By re-plotting results using continuous metrics such as cross-entropy or expected loss, Schaeffer et al. found mostly smooth scaling laws across model families. They concluded that observed “emergence” may often be an artifact of binarized or non-linear task scoring, though they acknowledged that some genuine discontinuities could exist and encouraged mechanistic probes of internal representations.</p>
+</div>
+<div class="ltx_para" id="S2.SS5.p2">
+<p class="ltx_p">This critique is foundational for our study. Schaeffer et al. demonstrate that not every S-curve or cusp in task performance implies a physical-like phase transition, underscoring the necessity of continuous, internal diagnostics rather than external accuracy thresholds. Our use of Poisson and sub-Poisson statistics, KL divergence, and vocabulary composition directly addresses this concern: these are continuous measures of linguistic structure that evolve throughout training, independent of arbitrary task cutoffs. By detecting synchronized discontinuities across multiple continuous probes—dispersion, KL divergence, word length, vocabulary dynamics—we provide converging evidence for a genuine reorganization rather than a metric artifact. In this sense, our approach heeds Schaeffer et al.’s call for mechanistic, continuous analysis while still identifying discontinuous behavior.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS6">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-F </span><span class="ltx_text ltx_font_italic">Grokking and Discontinuous Training Dynamics</span>
+</h3>
+<div class="ltx_para" id="S2.SS6.p1">
+<p class="ltx_p">The phenomenon of grokking, introduced by Power et al., provides the most direct small-scale analogue to our findings <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib16" title="">16</a>]</cite>. Training small transformers and MLPs on modular-arithmetic datasets, Power et al. observed that models first overfit—achieving near-zero training loss but random test accuracy—and then, after many additional epochs, suddenly transition to perfect generalization. This delayed, abrupt reorganization occurs despite smooth loss curves and depends on regularization strength (weight decay) and dataset diversity. Visualizations of embedding geometry reveal that during grokking, learned features rotate and align with the true algorithmic structure, suggesting the model moves from a memorization basin to a generalization basin in weight space. Grokking thus establishes that neural networks, even at modest scale, can remain in a long plateau before abruptly reorganizing internally—a discontinuity not captured by training loss alone.</p>
+</div>
+<div class="ltx_para" id="S2.SS6.p2">
+<p class="ltx_p">Agarwal, Morcos, and Krishnamurthy extended this work through mechanistic interpretability, applying singular value decomposition, neuron activation analysis, and embedding alignment to track how grokking unfolds inside the network <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib17" title="">17</a>]</cite>. They introduced quantitative progress measures capturing the degree of algorithmic abstraction in weights and representations. Their key finding is that even when external accuracy remains flat, internal circuits gradually form compositional structures; once these structures cross a stability threshold, generalization jumps. This threshold coincides with sudden drops in representational entropy and changes in gradient flow, supporting the view that grokking is an internal reorganization event, not gradual refinement. For our work, Agarwal et al. provide a mechanistic complement to our external metrics: both reveal latent buildup followed by rapid consolidation. The parallel is direct—our dispersion and KL diagnostics capture analogous reorganizations in linguistic structure, where fragments coalesce into coherent words at a critical training epoch.</p>
+</div>
+<div class="ltx_para" id="S2.SS6.p3">
+<p class="ltx_p">Dolev et al. documented similar discontinuities in neural machine translation, where performance on morphologically rich and low-resource languages leaps suddenly once model or dataset size crosses a threshold <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib18" title="">18</a>]</cite>. Using Transformer architectures trained on WMT datasets, they observed that while translation quality grows smoothly at small scales, it jumps sharply beyond a critical point. They attributed the discontinuity to improved contextual representation and capacity to memorize rare-word alignments, terming these “critical advantages” of scaling. Although Dolev et al. did not analyze internal representation dynamics or apply statistical probes, their empirical curves parallel the abrupt lexical consolidation we observe, reinforcing the idea that neural sequence models can display threshold-like improvements in linguistic coherence.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS7">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-G </span><span class="ltx_text ltx_font_italic">Theoretical Foundations: Grokking as a First-Order Phase Transition</span>
+</h3>
+<div class="ltx_para" id="S2.SS7.p1">
+<p class="ltx_p">Rubin, Seroussi, and Ringel provided the first formal statistical-physics model of grokking, directly linking training dynamics to phase transitions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#bib.bib19" title="">19</a>]</cite>. They studied a two-layer teacher–student network trained on modular addition and derived an effective potential describing the system’s macroscopic state. The potential exhibits two competing minima: one corresponding to memorization (fitting training data without generalization) and another to generalization (capturing the underlying rule). As regularization strength or training time increases, the minima exchange stability, producing a discontinuous jump in the order parameter—identifying grokking as a first-order phase transition. Rubin et al. supported this mapping through analytical mean-field approximations and numerical simulations, demonstrating hysteresis and mixed phases characteristic of first-order transitions. They also identified intermediate regimes with Gaussian mixture features, matching empirical embedding structures seen in earlier grokking studies.</p>
+</div>
+<div class="ltx_para" id="S2.SS7.p2">
+<p class="ltx_p">This theoretical work establishes the strongest justification for describing discontinuities in neural training as genuine phase transitions. Rubin et al. demonstrate rigorously that smooth local updates—gradient descent steps—can yield abrupt, global changes in representational order once competing learning modes exchange stability. Although their model applies to simplified two-layer networks and algorithmic tasks, the conceptual framework extends naturally to our setting. The dispersion flip we observe—correct words transitioning from near-Poisson to sub-Poisson while incorrect words move from sub-Poisson to Poisson-like—can be interpreted as the system crossing a critical threshold where the “generalization minimum” (coherent word usage) overtakes the “memorization minimum” (fragmentary output). In this view, our Poisson-centered diagnostics serve as order parameters tracking which representational mode dominates as training progresses.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS8">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-H </span><span class="ltx_text ltx_font_italic">Positioning Our Work</span>
+</h3>
+<div class="ltx_para" id="S2.SS8.p1">
+<p class="ltx_p">Against this backdrop, our study occupies a distinct and underexplored position. Most empirical investigations of emergent abilities (Wei et al., Brown et al., Chowdhery et al.) focus on billion-parameter models evaluated after training, often requiring logarithmic rescaling of compute or model size to reveal discontinuities. In contrast, we investigate a small, 3.6M-parameter transformer and track its evolution directly along the linear training axis, demonstrating that phase-transition-like reorganizations are observable in modest systems without log-scaling. Grokking research (Power et al., Agarwal et al.) provides the closest analogue—small models, abrupt reorganization—but focuses on algorithmic datasets and generalization accuracy. We extend this line to linguistic tasks, introducing Poisson-based statistical probes that detect discontinuities in vocabulary structure, word length, and dispersion rather than task accuracy alone.</p>
+</div>
+<div class="ltx_para" id="S2.SS8.p2">
+<p class="ltx_p">Theoretically, we leverage the frameworks of Bahri et al., Miller et al., and especially Rubin et al. to interpret our findings. The dispersion flip—correct words shifting from near-Poisson to sub-Poisson, incorrect words from sub-Poisson to Poisson-like—mirrors the competition between memorization and generalization minima in Rubin et al.’s effective potential. Our KL divergence and vocabulary dynamics corroborate this interpretation, showing synchronized cusps and collapses coinciding with the onset of multi-character word coherence. Methodologically, we heed Schaeffer et al.’s caution by employing continuous, internal metrics rather than binary task thresholds, thereby avoiding metric-induced artifacts while still identifying genuine discontinuities.</p>
+</div>
+<div class="ltx_para" id="S2.SS8.p3">
+<p class="ltx_p">In sum, our contribution is threefold: (1) we demonstrate that phase-transition-like reorganizations are not unique to large language models but arise in small transformers trained on character-level linguistic data; (2) we show that such transitions can be detected directly in linear training space using Poisson-centered diagnostics, without requiring log-scaling or massive compute; and (3) we establish that these transitions occur surprisingly early in training as lexical coherence emerges, with word-level structure serving as a natural order parameter. By bridging statistical physics, emergent abilities research, and small-model training dynamics, we provide both empirical evidence and interpretive tools for understanding nonlinear reorganizations in neural language learning.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">III </span><span class="ltx_text ltx_font_smallcaps">Methods</span>
+</h2>
+<section class="ltx_subsection" id="S3.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-A </span><span class="ltx_text ltx_font_italic">Model and Data</span>
+</h3>
+<div class="ltx_para" id="S3.SS1.p1">
+<p class="ltx_p">We trained a compact character-level transformer designed to resemble the basic architecture of larger language models while remaining computationally controllable.
+The architecture consists of an embedding dimension of 192, 8 transformer layers, and 6 attention heads (approximately 3.6M parameters) with a context length of 128 characters.
+The model was trained on the Tiny Shakespeare corpus, which contains <math alttext="\sim" class="ltx_Math" display="inline" id="S3.SS1.p1.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math> 1.1M character tokens that span 65 unique characters.</p>
+</div>
+<div class="ltx_para" id="S3.SS1.p2">
+<p class="ltx_p">To assess robustness, we ran 5 independent seeds for 0–600 epochs.
+At each checkpoint, we sampled 30,000 tokens using a fixed decoding configuration (temperature <math alttext="T=1.0" class="ltx_Math" display="inline" id="S3.SS1.p2.m1" intent=":literal"><semantics><mrow><mi>T</mi><mo>=</mo><mn>1.0</mn></mrow><annotation encoding="application/x-tex">T=1.0</annotation></semantics></math>, greedy top-1 unless otherwise noted).</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S3.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-B </span><span class="ltx_text ltx_font_italic">Segmentation and Correctness Labeling</span>
+</h3>
+<div class="ltx_para" id="S3.SS2.p1">
+<p class="ltx_p">Generated text was segmented into words using whitespace and punctuation boundaries.
+We then classified each unit as either:</p>
+<ul class="ltx_itemize" id="S3.I1">
+<li class="ltx_item" id="S3.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I1.i1.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Correct:</span> if it appears in the corpus vocabulary.</p>
+</div>
+</li>
+<li class="ltx_item" id="S3.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I1.i2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Incorrect:</span> if it does not appear in the corpus vocabulary.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">This operational split provides a way to separate the legitimate vocabulary from exploratory or erroneous output.
+Although it excludes words beyond the training distribution, this operational definition still captures the model’s progression toward vocabulary-level structure, thereby offering a practical basis for experimental analysis.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S3.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-C </span><span class="ltx_text ltx_font_italic">Vocabulary Growth and Word Length</span>
+</h3>
+<div class="ltx_para" id="S3.SS3.p1">
+<p class="ltx_p">To capture the linguistic impact of the transition, we track two complementary measures that quantify the model’s progression from fragmentary output to compositional word formation.</p>
+</div>
+<div class="ltx_para" id="S3.SS3.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Unique vocabulary counts</span> (<math alttext="V_{\text{uniq,correct}}" class="ltx_Math" display="inline" id="S3.SS3.p2.m1" intent=":literal"><semantics><msub><mi>V</mi><mtext>uniq,correct</mtext></msub><annotation encoding="application/x-tex">V_{\text{uniq,correct}}</annotation></semantics></math> and <math alttext="V_{\text{uniq,incorrect}}" class="ltx_Math" display="inline" id="S3.SS3.p2.m2" intent=":literal"><semantics><msub><mi>V</mi><mtext>uniq,incorrect</mtext></msub><annotation encoding="application/x-tex">V_{\text{uniq,incorrect}}</annotation></semantics></math>) measure the diversity of word types generated in each class. The unique correct vocabulary reflects the model’s expanding repertoire of legitimate forms, while the unique incorrect vocabulary tracks the proliferation and eventual collapse of erroneous patterns. By monitoring both separately, we can identify when the model shifts from exploring fragmentary errors to consolidating valid words. A peak in incorrect vocabulary diversity followed by collapse signals that the model has exhausted exploratory combinations and committed to structured patterns.</p>
+</div>
+<div class="ltx_para" id="S3.SS3.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Average word length</span> (<math alttext="\bar{L}" class="ltx_Math" display="inline" id="S3.SS3.p3.m1" intent=":literal"><semantics><mover accent="true"><mi>L</mi><mo>¯</mo></mover><annotation encoding="application/x-tex">\bar{L}</annotation></semantics></math>) provides a direct measure of compositional complexity:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="\bar{L}=\frac{1}{N_{\text{correct}}}\sum_{w\in\text{correct}}\mathrm{len}(w)." class="ltx_Math" display="block" id="S3.E1.m1" intent=":literal"><semantics><mrow><mrow><mover accent="true"><mi>L</mi><mo>¯</mo></mover><mo>=</mo><mrow><mfrac><mn>1</mn><msub><mi>N</mi><mtext>correct</mtext></msub></mfrac><mo lspace="0em" rspace="0em">​</mo><mrow><munder><mo movablelimits="false">∑</mo><mrow><mi>w</mi><mo>∈</mo><mtext>correct</mtext></mrow></munder><mrow><mi>len</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>w</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\bar{L}=\frac{1}{N_{\text{correct}}}\sum_{w\in\text{correct}}\mathrm{len}(w).</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Early in training, when the model primarily generates single-character outputs or short two-letter fragments, <math alttext="\bar{L}" class="ltx_Math" display="inline" id="S3.SS3.p3.m2" intent=":literal"><semantics><mover accent="true"><mi>L</mi><mo>¯</mo></mover><annotation encoding="application/x-tex">\bar{L}</annotation></semantics></math> remains near 1.5 characters. As the model learns to compose longer, multi-character words, <math alttext="\bar{L}" class="ltx_Math" display="inline" id="S3.SS3.p3.m3" intent=":literal"><semantics><mover accent="true"><mi>L</mi><mo>¯</mo></mover><annotation encoding="application/x-tex">\bar{L}</annotation></semantics></math> increases. A sharp, S-shaped rise in average word length signals a qualitative shift from character-level fragmentation to word-level composition. This metric serves as a natural linguistic correlate of the dispersion transition: sub-Poisson regularity in correct-word usage emerges precisely when the model begins producing stable, multi-character forms.</p>
+</div>
+<div class="ltx_para" id="S3.SS3.p4">
+<p class="ltx_p">Together, these measures reveal how the system reorganizes from producing short, error-prone fragments to longer coherent words. The synchronized dynamics—incorrect vocabulary collapse, correct vocabulary acceleration, and word-length increase—provide converging evidence that the statistical reorganization captured by dispersion and KL divergence manifests as a tangible linguistic restructuring.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S3.SS4">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-D </span><span class="ltx_text ltx_font_italic">Poisson Baseline, Dispersion, and Snapshots</span>
+</h3>
+<div class="ltx_para" id="S3.SS4.p1">
+<p class="ltx_p">To test whether words appear randomly or in a structured way, we divided generated text into non-overlapping windows of <math alttext="W=21" class="ltx_Math" display="inline" id="S3.SS4.p1.m1" intent=":literal"><semantics><mrow><mi>W</mi><mo>=</mo><mn>21</mn></mrow><annotation encoding="application/x-tex">W=21</annotation></semantics></math> words.
+If word occurrences were independent random events, the number of words <math alttext="N" class="ltx_Math" display="inline" id="S3.SS4.p1.m2" intent=":literal"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> per window would follow a Poisson distribution:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E2">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="P(N=n;\lambda)=\frac{\lambda^{n}e^{-\lambda}}{n!},\qquad\mathrm{Var}[N]=\lambda," class="ltx_Math" display="block" id="S3.E2.m1" intent=":literal"><semantics><mrow><mrow><mrow><mrow><mi>P</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>N</mi><mo>=</mo><mrow><mi>n</mi><mo>;</mo><mi>λ</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><msup><mi>λ</mi><mi>n</mi></msup><mo lspace="0em" rspace="0em">​</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi></mrow></msup></mrow><mrow><mi>n</mi><mo>!</mo></mrow></mfrac></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mi>Var</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">[</mo><mi>N</mi><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mi>λ</mi></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">P(N=n;\lambda)=\frac{\lambda^{n}e^{-\lambda}}{n!},\qquad\mathrm{Var}[N]=\lambda,</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">with mean <math alttext="\lambda" class="ltx_Math" display="inline" id="S3.SS4.p1.m3" intent=":literal"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> equal to the variance.</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p2">
+<p class="ltx_p">Deviations from this Poisson baseline are summarized by the
+<span class="ltx_text ltx_font_bold">index of dispersion</span>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E3">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="D=\frac{\sigma^{2}}{\mu}," class="ltx_Math" display="block" id="S3.E3.m1" intent=":literal"><semantics><mrow><mrow><mi>D</mi><mo>=</mo><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mi>μ</mi></mfrac></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">D=\frac{\sigma^{2}}{\mu},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where <math alttext="\mu" class="ltx_Math" display="inline" id="S3.SS4.p2.m1" intent=":literal"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> and <math alttext="\sigma^{2}" class="ltx_Math" display="inline" id="S3.SS4.p2.m2" intent=":literal"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^{2}</annotation></semantics></math> are the mean and variance of the count distribution.</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p3">
+<ul class="ltx_itemize" id="S3.I2">
+<li class="ltx_item" id="S3.I2.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I2.i1.p1">
+<p class="ltx_p"><math alttext="D=1" class="ltx_Math" display="inline" id="S3.I2.i1.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math>: <span class="ltx_text ltx_font_bold">Poissonian</span> — events occur randomly and independently, with variance equal to the mean. This represents the natural benchmark of uncorrelated randomness.</p>
+</div>
+</li>
+<li class="ltx_item" id="S3.I2.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I2.i2.p1">
+<p class="ltx_p"><math alttext="D&lt;1" class="ltx_Math" display="inline" id="S3.I2.i2.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D&lt;1</annotation></semantics></math>: <span class="ltx_text ltx_font_bold">Sub-Poissonian</span> — variance is suppressed relative to the mean. Events are more evenly spaced than chance would predict, signaling hidden order or regularity. In physics, this regime is associated with quantum antibunching of photons.</p>
+</div>
+</li>
+<li class="ltx_item" id="S3.I2.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I2.i3.p1">
+<p class="ltx_p"><math alttext="D&gt;1" class="ltx_Math" display="inline" id="S3.I2.i3.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D&gt;1</annotation></semantics></math>: <span class="ltx_text ltx_font_bold">Super-Poissonian</span> — variance exceeds the mean. Events occur in bursts or clusters, as seen in chaotic or heavy-tailed processes.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="S3.SS4.p4">
+<p class="ltx_p">In our linguistic setting, these regimes carry intuitive interpretations.</p>
+<ul class="ltx_itemize" id="S3.I3">
+<li class="ltx_item" id="S3.I3.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I3.i1.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Correct words</span> migrate from near-Poisson to sub-Poisson as training progresses, reflecting a shift from rare, scattered successes to stable, regular usage patterns.</p>
+</div>
+</li>
+<li class="ltx_item" id="S3.I3.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S3.I3.i2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Incorrect words</span> begin in a repetitive, variance-suppressed regime (sub-Poisson) dominated by short, recurring fragments like “th” or “yo,” then disperse randomly as errors diminish, drifting toward <math alttext="D\approx 1" class="ltx_Math" display="inline" id="S3.I3.i2.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D\approx 1</annotation></semantics></math> as they become sparse, independent noise.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="S3.SS4.p5">
+<p class="ltx_p">To illustrate these dynamics, Figs. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.F1" title="Figure 1 ‣ III-D Poisson Baseline, Dispersion, and Snapshots ‣ III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">1</span></a>–<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S3.F3" title="Figure 3 ‣ III-D Poisson Baseline, Dispersion, and Snapshots ‣ III Methods ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">3</span></a> show side-by-side histograms of incorrect (left) and correct (right) word counts at representative checkpoints. Each panel displays the empirical distribution (blue bars) overlaid with the fitted Poisson baseline (orange dots).</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p6">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 0 (Early training):</span> Incorrect words show sub-Poisson clustering, with narrow distributions reflecting repetitive short fragments. Correct words are extremely sparse and scattered, displaying near-Poisson randomness with very few successful multi-character forms.</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p7">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 300 (Mid-training, approaching transition):</span> Incorrect words maintain sub-Poisson clustering with narrow, variance-suppressed distributions as repetitive fragments persist. Correct words begin to show emerging structure but remain scattered and near-Poisson, indicating the model is starting to discover valid patterns but usage remains irregular.</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p8">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 599 (Late training, post-transition):</span> The dispersion flip is complete. Incorrect words have broadened to near-Poisson distributions, consistent with sparse, independent residual errors that occur randomly rather than in repetitive clusters. Correct words have contracted into tight, sub-Poisson distributions with suppressed variance, reflecting regular, structured usage where coherent words appear predictably and consistently.</p>
+</div>
+<div class="ltx_para" id="S3.SS4.p9">
+<p class="ltx_p">This visual progression directly illustrates the dispersion flip that defines the transition: incorrect words evolve from sub-Poisson (repetitive clustered fragments like “th, th, th”) to Poisson (sparse random errors), while correct words evolve from near-Poisson (scattered rare successes) to sub-Poisson (regular coherent usage).</p>
+</div>
+<figure class="ltx_figure" id="S3.F1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="96" id="S3.F1.g1" src="projectImages/step0_hist_side_by_side.png" width="381"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span><span class="ltx_text ltx_font_bold">Step 0 (Early training).</span> Side-by-side histograms of windowed word counts. <span class="ltx_text ltx_font_bold">Left:</span> Incorrect words show sub-Poisson clustering with narrow distributions, reflecting repetitive short fragments. <span class="ltx_text ltx_font_bold">Right:</span> Correct words are extremely sparse and scattered, displaying near-Poisson randomness.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S3.F2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="96" id="S3.F2.g1" src="projectImages/step300_hist_side_by_side.png" width="381"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span><span class="ltx_text ltx_font_bold">Step 300 (Mid-training, approaching transition).</span> <span class="ltx_text ltx_font_bold">Left:</span> Incorrect words maintain sub-Poisson clustering with narrow, variance-suppressed distributions as repetitive fragments persist. <span class="ltx_text ltx_font_bold">Right:</span> Correct words begin showing nascent structure but remain scattered and near-Poisson.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S3.F3"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="96" id="S3.F3.g1" src="projectImages/step599_hist_side_by_side.png" width="381"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 3: </span><span class="ltx_text ltx_font_bold">Step 599 (Post-transition).</span> The dispersion flip is complete. <span class="ltx_text ltx_font_bold">Left:</span> Incorrect words have broadened to near-Poisson distributions, becoming sparse, independent residual errors that occur randomly. <span class="ltx_text ltx_font_bold">Right:</span> Correct words have contracted into tight, sub-Poisson distributions, reflecting regular, structured usage.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S3.SS5">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-E </span><span class="ltx_text ltx_font_italic">KL Divergence from Poisson</span>
+</h3>
+<div class="ltx_para" id="S3.SS5.p1">
+<p class="ltx_p">While dispersion captures deviations through the variance-to-mean ratio, it cannot detect all distributional changes. To complement this analysis, we compute the Kullback–Leibler (KL) divergence between the empirical histogram <math alttext="\hat{p}(n)" class="ltx_Math" display="inline" id="S3.SS5.p1.m1" intent=":literal"><semantics><mrow><mover accent="true"><mi>p</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\hat{p}(n)</annotation></semantics></math> of windowed counts and a fitted Poisson distribution with mean <math alttext="\hat{\lambda}" class="ltx_Math" display="inline" id="S3.SS5.p1.m2" intent=":literal"><semantics><mover accent="true"><mi>λ</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{\lambda}</annotation></semantics></math>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E4">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="D_{\mathrm{KL}}(\hat{p}\,\|\,\mathrm{Pois}(\hat{\lambda}))=\sum_{n}\hat{p}(n)\,\log\frac{\hat{p}(n)}{P(n;\hat{\lambda})}." class="ltx_Math" display="block" id="S3.E4.m1" intent=":literal"><semantics><mrow><mrow><mrow><msub><mi>D</mi><mi>KL</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mover accent="true"><mi>p</mi><mo>^</mo></mover><mo rspace="0.448em">∥</mo><mrow><mi>Pois</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>λ</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><munder><mo movablelimits="false">∑</mo><mi>n</mi></munder><mrow><mover accent="true"><mi>p</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.337em" rspace="0em">​</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mfrac><mrow><mover accent="true"><mi>p</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>P</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>;</mo><mover accent="true"><mi>λ</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">D_{\mathrm{KL}}(\hat{p}\,\|\,\mathrm{Pois}(\hat{\lambda}))=\sum_{n}\hat{p}(n)\,\log\frac{\hat{p}(n)}{P(n;\hat{\lambda})}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Here <math alttext="D_{\mathrm{KL}}=0" class="ltx_Math" display="inline" id="S3.SS5.p1.m3" intent=":literal"><semantics><mrow><msub><mi>D</mi><mi>KL</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D_{\mathrm{KL}}=0</annotation></semantics></math> only if the empirical distribution matches the Poisson baseline exactly.
+KL divergence measures the full distributional deviation from Poisson, providing sensitivity to higher-order statistical structure beyond variance alone.
+Together, dispersion and KL divergence form complementary probes: dispersion directly quantifies the regime (Poisson vs. sub-Poisson), while KL divergence quantifies the magnitude of deviation.
+The synchronization of cusps in both metrics strengthens evidence for genuine reorganization rather than metric artifacts.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S3.SS6">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">III-F </span><span class="ltx_text ltx_font_italic">Estimation and Visualization</span>
+</h3>
+<div class="ltx_para" id="S3.SS6.p1">
+<p class="ltx_p">All metrics are averaged across 5 seeds, with shaded error bands (where plotted) denoting <math alttext="\pm" class="ltx_Math" display="inline" id="S3.SS6.p1.m1" intent=":literal"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math> one standard deviation.
+Histograms are shown at representative early and late checkpoints.
+All decoding parameters are fixed unless otherwise noted.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">IV </span><span class="ltx_text ltx_font_smallcaps">Results</span>
+</h2>
+<section class="ltx_subsection" id="S4.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-A </span><span class="ltx_text ltx_font_italic">Overview of Discontinuities</span>
+</h3>
+<div class="ltx_para" id="S4.SS1.p1">
+<p class="ltx_p">Across all five seeds, every external metric exhibits a coordinated, transition-like reorganization
+that is not visible in the smooth training/validation losses. In the same epoch band, we observe:
+(i) synchronized cusps in both dispersion and KL divergence;
+(ii) a temporary reversion of correct-word dispersion toward Poisson before stabilizing to sub-Poisson;
+(iii) a rise–then–collapse of the unique <em class="ltx_emph ltx_font_italic">incorrect</em> vocabulary alongside steady growth of the unique <em class="ltx_emph ltx_font_italic">correct</em> vocabulary;
+and (iv) an S-curve jump in average correct-word length from <math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS1.p1.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>1.5 to <math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS1.p1.m2" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>2.5 characters.
+Qualitatively, the model transitions from producing short fragments and errors to composing multi-character, coherent words.
+The convergence of multiple independent, continuous metrics—not just one—supports the interpretation of a genuine phase-transition-like reorganization rather than a gradual drift or metric artifact.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S4.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-B </span><span class="ltx_text ltx_font_italic">Word-Frequency Snapshots at 150, 250, 350, and 500</span>
+</h3>
+<div class="ltx_para" id="S4.SS2.p1">
+<p class="ltx_p">To visualize the lexical reorganization concretely, we examine frequency distributions of the top generated words at four representative checkpoints spanning the transition (Figs. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F4" title="Figure 4 ‣ IV-B Word-Frequency Snapshots at 150, 250, 350, and 500 ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">4</span></a>–<a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F7" title="Figure 7 ‣ IV-B Word-Frequency Snapshots at 150, 250, 350, and 500 ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">7</span></a>). These snapshots reveal the progression from fragmentary, error-dominated output to coherent, structured vocabulary.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 150 (Pre-transition):</span> Generated text is dominated by short fragments and malformed tokens. The most frequent outputs are single characters or defective two-letter combinations that do not correspond to valid English words. Error tokens (shown in red) outnumber correct words, and even the correct tokens tend to be single-character artifacts like punctuation or isolated letters. The model has not yet discovered multi-character compositional structure.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 250 (Transition onset):</span> Early coherent words begin to appear alongside persistent errors. Legitimate two- and three-letter words such as <em class="ltx_emph ltx_font_italic">“to”</em>, <em class="ltx_emph ltx_font_italic">“is”</em>, and <em class="ltx_emph ltx_font_italic">“my”</em> emerge with increasing frequency, but the distribution remains mixed. Fragmentary errors still account for a substantial fraction of outputs, indicating the model is in an exploratory phase where valid patterns coexist with residual noise. The balance between correct and incorrect vocabulary is shifting but not yet stable.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p4">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 350 (Transition band):</span> Mid-length words such as <em class="ltx_emph ltx_font_italic">“you”</em>, <em class="ltx_emph ltx_font_italic">“the”</em>, and <em class="ltx_emph ltx_font_italic">“and”</em> emerge decisively and stabilize at the top of the frequency distribution. Error tokens collapse in both diversity and frequency, now appearing primarily as low-frequency outliers. The shift from single-character fragments to multi-character words is nearly complete. This checkpoint corresponds precisely to the epochs where dispersion and KL divergence exhibit synchronized cusps, confirming that the statistical reorganization manifests as a lexical restructuring.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p5">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Step 500 (Post-transition):</span> Coherent words dominate the distribution, and their relative frequencies have settled into stable patterns reflecting the underlying corpus statistics. High-frequency function words (<em class="ltx_emph ltx_font_italic">“the”</em>, <em class="ltx_emph ltx_font_italic">“and”</em>, <em class="ltx_emph ltx_font_italic">“you”</em>) appear consistently, while error tokens are sparse and relegated to the tail. The vocabulary has consolidated around legitimate forms, and word lengths reflect compositional structure rather than random character sequences.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p6">
+<p class="ltx_p">Together, these snapshots provide concrete lexical evidence for the exploratory <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS2.p6.m1" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> consolidating shift captured by our Poisson-based metrics. The visual progression from fragment-dominated to word-dominated output directly parallels the dispersion flip (incorrect sub-Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS2.p6.m2" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> Poisson, correct near-Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS2.p6.m3" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> sub-Poisson) and the KL divergence cusp, demonstrating that the statistical reorganization has clear linguistic correlates.</p>
+</div>
+<figure class="ltx_figure" id="S4.F4"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="204" id="S4.F4.g1" src="projectImages/step150.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 4: </span><span class="ltx_text ltx_font_bold">Step 150 (Pre-transition).</span> Top generated words are dominated by short fragments and errors (red bars). Single characters and malformed tokens account for most outputs. The model has not yet learned multi-character compositional structure.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F5"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="204" id="S4.F5.g1" src="projectImages/step250.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 5: </span><span class="ltx_text ltx_font_bold">Step 250 (Transition onset).</span> Early coherent words (<em class="ltx_emph ltx_font_italic">“to”</em>, <em class="ltx_emph ltx_font_italic">“is”</em>, <em class="ltx_emph ltx_font_italic">“my”</em>) appear alongside persistent errors. The model is in an exploratory regime where valid patterns coexist with fragmentary noise.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F6"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="204" id="S4.F6.g1" src="projectImages/step350.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 6: </span><span class="ltx_text ltx_font_bold">Step 350 (Transition band).</span> Mid-length words (<em class="ltx_emph ltx_font_italic">“you”</em>, <em class="ltx_emph ltx_font_italic">“the”</em>, <em class="ltx_emph ltx_font_italic">“and”</em>) emerge decisively. Error diversity collapses. This checkpoint aligns with the synchronized cusps in dispersion and KL divergence.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F7"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="204" id="S4.F7.g1" src="projectImages/step500.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 7: </span><span class="ltx_text ltx_font_bold">Step 500 (Post-transition).</span> Coherent words dominate with stable frequency patterns. High-frequency function words are consistent; errors are sparse. The vocabulary has consolidated around legitimate forms.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-C </span><span class="ltx_text ltx_font_italic">Average Word Length (Correct Words)</span>
+</h3>
+<div class="ltx_para" id="S4.SS3.p1">
+<p class="ltx_p">Average correct-word length provides a direct linguistic indicator (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F8" title="Figure 8 ‣ IV-C Average Word Length (Correct Words) ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">8</span></a>). After a long, flat phase near single-character outputs (<math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS3.p1.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>1.5), the mean jumps in an S-curve to <math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS3.p1.m2" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>2.5 characters in the same transition band highlighted later by dispersion and KL divergence. The sharp increase signals the onset of composing multi-character words and is consistent with the subsequent sub-Poisson regularity of correct usage.</p>
+</div>
+<figure class="ltx_figure" id="S4.F8"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="318" id="S4.F8.g1" src="projectImages/Average_word_length.png.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 8: </span>Average correct-word length vs. epoch. The S-curve jump aligns with the transition band identified by both dispersion and KL divergence.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS4">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-D </span><span class="ltx_text ltx_font_italic">Unique Vocabulary Dynamics</span>
+</h3>
+<div class="ltx_para" id="S4.SS4.p1">
+<p class="ltx_p">Unique-type dynamics separate exploration from consolidation. The <em class="ltx_emph ltx_font_italic">incorrect</em> vocabulary (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F9" title="Figure 9 ‣ IV-D Unique Vocabulary Dynamics ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">9</span></a>) exhibits a plateau (steps 0–200), a transient <em class="ltx_emph ltx_font_italic">peak</em> near step 250 (fragment proliferation), followed by a sustained <em class="ltx_emph ltx_font_italic">collapse</em> as erroneous forms are abandoned. This peak coincides precisely with the transition band identified by dispersion and KL divergence.</p>
+</div>
+<div class="ltx_para" id="S4.SS4.p2">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">correct</em> vocabulary (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F10" title="Figure 10 ‣ IV-D Unique Vocabulary Dynamics ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">10</span></a>) displays multi-phase growth: rapid initial accumulation (steps 0–100), deceleration and plateau (steps 100–250), sharp acceleration during the transition (steps 250–400), and continued growth post-transition. The acceleration phase aligns with the dispersion and KL cusps, indicating that the statistical reorganization manifests as expansion of the legitimate vocabulary.</p>
+</div>
+<div class="ltx_para" id="S4.SS4.p3">
+<p class="ltx_p">The push–pull dynamics—incorrect vocabulary peaks as correct vocabulary accelerates—suggest that fragment proliferation precedes word consolidation: the model explores erroneous combinations before committing to valid forms.</p>
+</div>
+<figure class="ltx_figure" id="S4.F9"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="318" id="S4.F9.g1" src="projectImages/Incorrect_Vocab_Change.png.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 9: </span>Unique incorrect vocabulary: plateau <math alttext="\to" class="ltx_Math" display="inline" id="S4.F9.m3" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> peak near step 250 <math alttext="\to" class="ltx_Math" display="inline" id="S4.F9.m4" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> collapse. The peak coincides with the transition band.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F10"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="320" id="S4.F10.g1" src="projectImages/Correct_Vocab_change.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 10: </span>Unique correct vocabulary: multi-phase growth with acceleration during the transition (steps 250–400) aligning with dispersion and KL divergence cusps.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS5">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-E </span><span class="ltx_text ltx_font_italic">Case Study: Prefix Formation and Acquisition of “you”</span>
+</h3>
+<div class="ltx_para" id="S4.SS5.p1">
+<p class="ltx_p">To test whether the transition corresponds to composing longer words from shorter fragments, we track the evolution of the word “you” and its prefixes. In Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F11" title="Figure 11 ‣ IV-E Case Study: Prefix Formation and Acquisition of “you” ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">11</span></a>, counts of <em class="ltx_emph ltx_font_italic">y</em>, <em class="ltx_emph ltx_font_italic">yo</em>, and <em class="ltx_emph ltx_font_italic">you</em> are plotted across steps. Early training is dominated by single-letter <em class="ltx_emph ltx_font_italic">y</em>; as the transition approaches, <em class="ltx_emph ltx_font_italic">yo</em> appears transiently; at the transition, the full word <em class="ltx_emph ltx_font_italic">you</em> rises sharply while <em class="ltx_emph ltx_font_italic">y</em> and <em class="ltx_emph ltx_font_italic">yo</em> decline. This pattern is consistent with consolidation of fragments into a stable three-letter form. Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F11" title="Figure 11 ‣ IV-E Case Study: Prefix Formation and Acquisition of “you” ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">11</span></a> also shows the learning curve for <em class="ltx_emph ltx_font_italic">you</em> itself: an S-shaped rise precisely in the band where dispersion and KL divergence display cusps. In Poisson terms, the temporary reversion of correct-word dispersion toward <math alttext="D\!\approx\!1" class="ltx_Math" display="inline" id="S4.SS5.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo lspace="0.108em" rspace="0.108em">≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D\!\approx\!1</annotation></semantics></math> can be interpreted as a brief exploratory phase during recombination; post-transition, correct usage settles into sub-Poisson regularity while residual errors are Poisson-like.</p>
+</div>
+<figure class="ltx_figure" id="S4.F11"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="355" id="S4.F11.g1" src="you_prefix_curve.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 11: </span>Prefix formation for “you”: counts of <em class="ltx_emph ltx_font_italic">y</em>, <em class="ltx_emph ltx_font_italic">yo</em>, and <em class="ltx_emph ltx_font_italic">you</em> across training steps. Near the transition, the full word <em class="ltx_emph ltx_font_italic">you</em> rises sharply while prefix counts decline, indicating consolidation from fragments into a multi-character word.</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS6">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-F </span><span class="ltx_text ltx_font_italic">KL Divergence to Poisson Baseline</span>
+</h3>
+<div class="ltx_para" id="S4.SS6.p1">
+<p class="ltx_p">KL divergence provides an independent measure of how much the empirical word-count distributions deviate from the Poisson baseline. We track correct and incorrect words separately to reveal the divergence–convergence duality that characterizes the transition.</p>
+</div>
+<div class="ltx_para" id="S4.SS6.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Correct words</span> (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F12" title="Figure 12 ‣ IV-F KL Divergence to Poisson Baseline ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">12</span></a>) exhibit a pronounced cusp: KL divergence remains low during the early exploratory regime, then rises sharply at the transition (epochs 230–250) as regular usage patterns emerge. Post-transition, KL divergence remains elevated, reflecting that correct-word distributions stabilize in a structured, non-Poisson regime. The cusp indicates the moment when the model transitions from sparse, random correct-word usage to systematic, sub-Poisson regularity. Notably, KL divergence captures distributional features beyond variance: even when dispersion temporarily returns to <math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.SS6.p2.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math> during the exploratory phase, KL divergence remains elevated, indicating that the distribution shape differs from true Poisson randomness.</p>
+</div>
+<div class="ltx_para" id="S4.SS6.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Incorrect words</span> (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F13" title="Figure 13 ‣ IV-F KL Divergence to Poisson Baseline ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">13</span></a>) display the opposite pattern: KL divergence is initially elevated (reflecting the sub-Poisson clustering of repetitive fragments), then converges toward zero as errors become sparse and independent. Post-transition, incorrect words approach the Poisson baseline, consistent with their role as rare, uncorrelated residual noise. The convergence of incorrect-word KL toward zero coincides precisely with the collapse of the incorrect vocabulary and the cusp in correct-word KL.</p>
+</div>
+<div class="ltx_para" id="S4.SS6.p4">
+<p class="ltx_p">This divergence–convergence duality occurs in the same critical epoch band (230–250) identified by dispersion and word-length metrics. The fact that KL divergence and dispersion exhibit synchronized cusps—yet measure different statistical properties (full distributional form versus variance structure)—demonstrates that the transition is captured by multiple independent probes. Their simultaneous reorganization provides converging evidence for a genuine phase-transition-like event rather than a metric artifact.</p>
+</div>
+<figure class="ltx_figure" id="S4.F12"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="305" id="S4.F12.g1" src="projectImages/mean_var_kl_correct.csv.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 12: </span><span class="ltx_text ltx_font_bold">KL divergence for correct words</span> to a fitted Poisson baseline across epochs (mean <math alttext="\pm" class="ltx_Math" display="inline" id="S4.F12.m2" intent=":literal"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math> s.d.). A pronounced cusp appears at epochs 230–250 as the model transitions from sparse, near-Poisson usage to structured, sub-Poisson regularity. Post-transition, KL remains elevated, reflecting stable non-Poisson structure.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F13"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="305" id="S4.F13.g1" src="projectImages/mean_var_kl_incorrect.csv.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 13: </span><span class="ltx_text ltx_font_bold">KL divergence for incorrect words</span> to a fitted Poisson baseline across epochs (mean <math alttext="\pm" class="ltx_Math" display="inline" id="S4.F13.m2" intent=":literal"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math> s.d.). Initially elevated due to sub-Poisson clustering of fragments, KL converges toward zero as errors become sparse, independent residual noise. The convergence coincides with the correct-word cusp (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F12" title="Figure 12 ‣ IV-F KL Divergence to Poisson Baseline ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">12</span></a>).</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS7">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-G </span><span class="ltx_text ltx_font_italic">Index of Dispersion (Fano Factor)</span>
+</h3>
+<div class="ltx_para" id="S4.SS7.p1">
+<p class="ltx_p">The index of dispersion (<math alttext="D{=}\sigma^{2}/\mu" class="ltx_Math" display="inline" id="S4.SS7.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mi>μ</mi></mrow></mrow><annotation encoding="application/x-tex">D{=}\sigma^{2}/\mu</annotation></semantics></math>) acts as our primary order parameter, quantifying whether word occurrences follow Poissonian randomness (<math alttext="D{=}1" class="ltx_Math" display="inline" id="S4.SS7.p1.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{=}1</annotation></semantics></math>), sub-Poissonian regularity (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.SS7.p1.m3" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>), or super-Poissonian clustering (<math alttext="D{&gt;}1" class="ltx_Math" display="inline" id="S4.SS7.p1.m4" intent=":literal"><semantics><mrow><mi>D</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&gt;}1</annotation></semantics></math>). We analyze correct and incorrect words separately to reveal the regime flip that defines the transition.</p>
+</div>
+<div class="ltx_para" id="S4.SS7.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Correct words</span> (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F14" title="Figure 14 ‣ IV-G Index of Dispersion (Fano Factor) ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">14</span></a>) begin near Poisson (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.SS7.p2.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>) during early training, reflecting sparse, scattered usage. At the transition (epochs 230–250), dispersion exhibits a temporary dip toward <math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.SS7.p2.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math> before stabilizing below unity (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.SS7.p2.m3" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>) post-transition. This sub-Poisson regime indicates that correct words are generated with regular, evenly-spaced patterns rather than random bursts. The temporary return to Poisson during the transition suggests a brief exploratory phase where the model reorganizes its word-generation strategy before committing to structured usage. This transient precisely matches the KL divergence cusp and the histogram flip shown in the Methods section.</p>
+</div>
+<div class="ltx_para" id="S4.SS7.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Incorrect words</span> (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F15" title="Figure 15 ‣ IV-G Index of Dispersion (Fano Factor) ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">15</span></a>) display the opposite trajectory: they begin in a sub-Poisson regime (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.SS7.p3.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>) dominated by repetitive short fragments (e.g., repeated “th” or “yo”), then transition toward Poisson (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.SS7.p3.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>) as errors become sparse and independent. Post-transition, incorrect-word dispersion hovers near unity, consistent with random, uncorrelated residual noise. The sub-Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS7.p3.m3" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> Poisson shift for incorrect words mirrors the near-Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS7.p3.m4" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> sub-Poisson shift for correct words, revealing a coordinated reorganization.</p>
+</div>
+<div class="ltx_para" id="S4.SS7.p4">
+<p class="ltx_p">The coordination between dispersion and KL divergence is particularly revealing. While dispersion directly measures variance relative to the mean, KL divergence captures the full shape of the distribution. During the transition, both metrics show cusps, but they detect slightly different features: dispersion tracks the <em class="ltx_emph ltx_font_italic">regime change</em> (Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S4.SS7.p4.m1" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> sub-Poisson for correct words), while KL tracks the <em class="ltx_emph ltx_font_italic">magnitude of structural deviation</em>. The fact that both exhibit synchronized discontinuities in the same narrow epoch window—without being mathematically redundant—provides robust evidence that the transition reflects a genuine internal reorganization rather than an artifact of a single metric.</p>
+</div>
+<figure class="ltx_figure" id="S4.F14"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="305" id="S4.F14.g1" src="projectImages/mean_var_dispersion_correct.csv.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 14: </span><span class="ltx_text ltx_font_bold">Index of Dispersion for correct words</span> (<math alttext="D=\sigma^{2}/\mu" class="ltx_Math" display="inline" id="S4.F14.m5" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mi>μ</mi></mrow></mrow><annotation encoding="application/x-tex">D=\sigma^{2}/\mu</annotation></semantics></math>) across epochs (mean <math alttext="\pm" class="ltx_Math" display="inline" id="S4.F14.m6" intent=":literal"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math> s.d.). Begins near Poisson (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.F14.m7" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>), exhibits a temporary reversion to Poisson at the transition (epochs 230–250), then stabilizes in a sub-Poisson regime (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.F14.m8" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>), indicating regular, structured usage.</figcaption>
+</figure>
+<figure class="ltx_figure" id="S4.F15"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="305" id="S4.F15.g1" src="projectImages/mean_var_dispersion_incorrect.csv.png" width="509"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 15: </span><span class="ltx_text ltx_font_bold">Index of Dispersion for incorrect words</span> (<math alttext="D=\sigma^{2}/\mu" class="ltx_Math" display="inline" id="S4.F15.m5" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>/</mo><mi>μ</mi></mrow></mrow><annotation encoding="application/x-tex">D=\sigma^{2}/\mu</annotation></semantics></math>) across epochs (mean <math alttext="\pm" class="ltx_Math" display="inline" id="S4.F15.m6" intent=":literal"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math> s.d.). Begins in a sub-Poisson regime (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.F15.m7" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>) reflecting repetitive fragments, then transitions toward Poisson (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.F15.m8" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>) as errors become sparse and independent. The shift mirrors the correct-word transition (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F14" title="Figure 14 ‣ IV-G Index of Dispersion (Fano Factor) ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">14</span></a>).</figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S4.SS8">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-H </span><span class="ltx_text ltx_font_italic">Summary</span>
+</h3>
+<div class="ltx_para" id="S4.SS8.p1">
+<p class="ltx_p">Across all five seeds, the training trajectory divides naturally into three regimes—before, during, and after a discontinuity centered around steps 230–250.</p>
+</div>
+<div class="ltx_para" id="S4.SS8.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Before the discontinuity</span> (steps <math alttext="\lesssim" class="ltx_Math" display="inline" id="S4.SS8.p2.m1" intent=":literal"><semantics><mo>≲</mo><annotation encoding="application/x-tex">\lesssim</annotation></semantics></math>230), the model remains in an exploratory regime. Generated text consists mostly of short, fragmented tokens; both dispersion and KL divergence indicate near-Poisson behavior for correct words (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S4.SS8.p2.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>, low KL); and the incorrect vocabulary slowly expands. Correct words appear sporadically and are typically one or two characters long, indicating limited compositional structure.</p>
+</div>
+<div class="ltx_para" id="S4.SS8.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">During the discontinuity</span> (steps <math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS8.p3.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>230–250), every external metric reorganizes simultaneously. Both dispersion and KL divergence exhibit sharp, synchronized cusps—dispersion temporarily returns to Poisson while KL divergence peaks, indicating maximum distributional deviation. The incorrect vocabulary reaches its maximum diversity, and the model temporarily produces more errors as it experiments with new token combinations. Average correct-word length rises sharply in an S-shaped jump from <math alttext="\sim" class="ltx_Math" display="inline" id="S4.SS8.p3.m2" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>1.5<math alttext="\,\to\," class="ltx_Math" display="inline" id="S4.SS8.p3.m3" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\,\to\,</annotation></semantics></math>2.5 characters, and prefix tracking (e.g., for <em class="ltx_emph ltx_font_italic">“you”</em>) shows isolated fragments fusing into complete, stable words. This brief phase marks a concentrated restructuring of internal representations, where exploratory variability and combinatorial mixing peak.</p>
+</div>
+<div class="ltx_para" id="S4.SS8.p4">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">After the discontinuity</span> (steps <math alttext="\gtrsim" class="ltx_Math" display="inline" id="S4.SS8.p4.m1" intent=":literal"><semantics><mo>≳</mo><annotation encoding="application/x-tex">\gtrsim</annotation></semantics></math>250), exploratory variability subsides. The incorrect vocabulary collapses while the correct vocabulary grows steadily; dispersion drops below unity (<math alttext="D{&lt;}1" class="ltx_Math" display="inline" id="S4.SS8.p4.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{&lt;}1</annotation></semantics></math>) and stabilizes, while KL divergence for correct words remains elevated (reflecting structured, non-Poisson regularity) and KL for incorrect words approaches zero (sparse, independent errors). Generated outputs become longer, coherent, and linguistically stable, reflecting consolidation of learned structure.</p>
+</div>
+<div class="ltx_para" id="S4.SS8.p5">
+<p class="ltx_p">Crucially, the synchronization across <em class="ltx_emph ltx_font_italic">multiple independent metrics</em>—dispersion (variance structure), KL divergence (full distributional form), word length (linguistic complexity), and vocabulary dynamics (compositional reorganization)—provides converging evidence that this is a genuine phase-transition-like reorganization. No single metric alone would be as convincing; their collective cusp in the same narrow epoch window rules out metric artifacts and supports the interpretation of an abrupt internal restructuring.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">V </span><span class="ltx_text ltx_font_smallcaps">Discussion</span>
+</h2>
+<section class="ltx_subsection" id="S5.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-A </span><span class="ltx_text ltx_font_italic">Poisson-Centered Diagnostics and Detection in Linear Training Space</span>
+</h3>
+<div class="ltx_para" id="S5.SS1.p1">
+<p class="ltx_p">Our study addresses three central questions about phase transitions in language models. The second question—whether such transitions can be detected directly in linear training space rather than only after log rescaling—is answered affirmatively through our Poisson-centered diagnostic framework. By tracking both dispersion and KL divergence alongside vocabulary statistics, we observe synchronized cusp-like discontinuities that occur directly along the raw epoch axis, without logarithmic transformation of training steps or compute. This demonstrates that emergent reorganizations are intrinsic properties of the learning process, not artifacts of visualization conventions or metric rescaling.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p2">
+<p class="ltx_p">Before the transition, incorrect words display variance suppression (<math alttext="D&lt;1" class="ltx_Math" display="inline" id="S5.SS1.p2.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D&lt;1</annotation></semantics></math>), forming narrow sub-Poisson distributions dominated by repetitive fragments such as “th” or “yo.” Correct words appear sparsely and follow near-Poisson randomness, with low KL divergence from the baseline. At the transition, all metrics converge within a narrow critical band: correct-word dispersion temporarily approaches Poisson (<math alttext="D\!\approx\!1" class="ltx_Math" display="inline" id="S5.SS1.p2.m2" intent=":literal"><semantics><mrow><mi>D</mi><mo lspace="0.108em" rspace="0.108em">≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D\!\approx\!1</annotation></semantics></math>) while KL divergence peaks sharply, indicating that although the variance ratio returns to unity, the full distribution shape deviates maximally from true Poisson. This divergence between dispersion and KL during the transition reveals complementary information: dispersion tracks the <em class="ltx_emph ltx_font_italic">variance regime</em>, while KL captures the <em class="ltx_emph ltx_font_italic">full distributional structure</em>. The fact that both exhibit cusps—but measure different statistical properties—strengthens the case for genuine reorganization rather than a metric artifact.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p3">
+<p class="ltx_p">Afterward, the incorrect vocabulary collapses while correct-word usage stabilizes in a sub-Poisson regime (low <math alttext="D" class="ltx_Math" display="inline" id="S5.SS1.p3.m1" intent=":literal"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>, elevated KL reflecting structured regularity), and average word length increases. This coordinated Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S5.SS1.p3.m2" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> sub-Poisson swap across multiple independent probes provides a clear statistical signature of the transition, directly answering our second research question: phase-transition-like discontinuities can be detected in linear training space through Poissonian diagnostics.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-B </span><span class="ltx_text ltx_font_italic">Early Lexical Reorganization as the Transition Mechanism</span>
+</h3>
+<div class="ltx_para" id="S5.SS2.p1">
+<p class="ltx_p">The observed transition is not a gradual refinement of accuracy but a discrete reorganization in the model’s word-generation strategy. Evidence across multiple linguistic indicators reveals that the transition is driven by the abrupt emergence of longer, coherent words:
+(i) the mean correct-word length shows an S-shaped rise from <math alttext="\sim" class="ltx_Math" display="inline" id="S5.SS2.p1.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>1.5 to <math alttext="\sim" class="ltx_Math" display="inline" id="S5.SS2.p1.m2" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>2.5 characters, representing a jump in linguistic complexity;
+(ii) prefix tracking of the word “you” reveals consolidation, where single-letter (<em class="ltx_emph ltx_font_italic">y</em>) and two-letter (<em class="ltx_emph ltx_font_italic">yo</em>) fragments merge into the stable three-letter form (<em class="ltx_emph ltx_font_italic">you</em>) precisely at the transition epoch; and
+(iii) the unique incorrect vocabulary, which expands during fragment proliferation, declines sharply as fragments are absorbed into valid words.</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p2">
+<p class="ltx_p">These convergent signatures reveal a qualitative reorganization from fragmentary to compositional word formation. Crucially, this shift occurs <em class="ltx_emph ltx_font_italic">early</em> in training—around epochs 230–250—well before training or validation loss stabilizes. The model achieves lexical coherence not through late-stage fine-tuning but through an abrupt mid-training reorganization. This directly answers the third research question: phase-transition-like reorganizations can emerge at early stages of training, marking the onset of lexical coherence rather than late-stage convergence. The synchronized timing across dispersion cusps, KL divergence peaks, vocabulary dynamics, and word-length jumps confirms that these changes reflect a single, coordinated restructuring event.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-C </span><span class="ltx_text ltx_font_italic">Temporary Degradation as Evidence of Barrier-Crossing Dynamics</span>
+</h3>
+<div class="ltx_para" id="S5.SS3.p1">
+<p class="ltx_p">A particularly striking feature of the transition—and one that distinguishes genuine phase-transition-like reorganization from gradual learning—is that multiple metrics indicate <em class="ltx_emph ltx_font_italic">temporary performance degradation</em> before improvement. The incorrect vocabulary reaches its maximum diversity at step 250 (Fig. <a class="ltx_ref" href="https://arxiv.org/html/2511.12768v1#S4.F9" title="Figure 9 ‣ IV-D Unique Vocabulary Dynamics ‣ IV Results ‣ Evidence of Phase Transitions in Small Transformer-Based Language Models"><span class="ltx_text ltx_ref_tag">9</span></a>), meaning the model generates <em class="ltx_emph ltx_font_italic">more</em> errors during the transition than in the preceding 100 epochs. Simultaneously, correct-word dispersion reverts toward Poisson (<math alttext="D{\approx}1" class="ltx_Math" display="inline" id="S5.SS3.p1.m1" intent=":literal"><semantics><mrow><mi>D</mi><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D{\approx}1</annotation></semantics></math>) from its earlier sub-Poisson tendency, indicating that the weak regularity established early in training is temporarily disrupted. KL divergence also peaks sharply during this window, confirming maximum distributional instability. The model does not improve monotonically; it briefly becomes <em class="ltx_emph ltx_font_italic">worse</em> before reorganizing into a more coherent state.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p2">
+<p class="ltx_p">This “destabilization before consolidation” pattern is diagnostic of first-order phase transitions in statistical mechanics, where systems must overcome nucleation barriers to transition between competing stable states. In the framework developed by Rubin, Seroussi, and Ringel for grokking, such behavior arises when an effective potential has two minima—one corresponding to memorization and another to generalization—separated by a barrier. The system must temporarily increase its effective "energy" (disorder, entropy, error rate) to escape the memorization basin and reach the generalization basin. During the barrier-crossing phase, the system exhibits mixed-phase behavior: neither fully in the old regime nor fully in the new, leading to heightened variability and apparent regression.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p3">
+<p class="ltx_p">Our linguistic data provide empirical evidence for this mechanism in a character-level language model. Fragment proliferation—the temporary surge in incorrect vocabulary—is not wasted computation but a necessary exploratory phase. The model must generate and test many erroneous combinations (“th,” “yo,” “ou,” etc.) before discovering which fragments compose into valid words. This exploration is visible as increased error diversity and loss of early regularity. Once sufficient fragments have been tested, the system consolidates: incorrect vocabulary collapses as fragments are absorbed into multi-character words (e.g., “y” + “o” <math alttext="\to" class="ltx_Math" display="inline" id="S5.SS3.p3.m1" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> “yo,” then “yo” + “u” <math alttext="\to" class="ltx_Math" display="inline" id="S5.SS3.p3.m2" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> “you”), and correct-word usage stabilizes into sub-Poisson regularity. The transition is abrupt not because learning suddenly accelerates, but because the system commits to a compositional strategy after exhausting fragmentary exploration.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p4">
+<p class="ltx_p">This finding directly parallels grokking, where models trained on algorithmic tasks exhibit prolonged plateaus in generalization accuracy—sometimes hundreds of thousands of steps—before sudden jumps to near-perfect performance. Power et al. and Agarwal et al. documented that during these plateaus, internal representations are reorganizing even though external accuracy remains flat or fluctuates. Our contribution extends this phenomenon to linguistic tasks and provides statistical signatures—vocabulary proliferation, dispersion reversion, KL divergence peaks—that <em class="ltx_emph ltx_font_italic">predict</em> impending reorganization. Unlike grokking studies that focus on memorization-to-generalization transitions in supervised settings, we observe exploration-to-consolidation transitions in unsupervised next-token prediction, suggesting that barrier-crossing dynamics are a general feature of neural training.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p5">
+<p class="ltx_p">The broader implication is that <em class="ltx_emph ltx_font_italic">stagnation or temporary degradation during training may signal impending breakthrough rather than failure</em>. Standard training practices often interpret validation plateaus or upticks in error rate as signs to stop training, adjust hyperparameters, or discard the model. Our findings suggest an alternative interpretation: such periods may reflect productive exploration necessary for qualitative reorganization. A model generating more errors at step 250 than step 200 is not necessarily failing—it may be sampling the combinatorial space required to discover compositional structure. Recognizing this pattern could inform more robust training protocols that tolerate or even encourage exploration phases, particularly in settings where emergent capabilities (reasoning, multi-step inference, compositionality) require crossing representational barriers.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p6">
+<p class="ltx_p">Future work should investigate whether similar exploration-before-consolidation dynamics precede higher-level emergent abilities in larger models. If sentence-level or paragraph-level coherence also emerges through temporary destabilization and vocabulary churn, then Poisson-based diagnostics could serve as early-warning indicators of impending capability jumps. Conversely, understanding the conditions under which models successfully traverse barriers versus becoming trapped in suboptimal basins could guide interventions—learning rate schedules, regularization adjustments, curriculum design—that facilitate rather than suppress exploration. Our small-model study provides proof of principle that such dynamics are detectable and interpretable through statistical-mechanical frameworks, opening a path toward more principled management of the nonlinear, non-monotonic nature of neural learning.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS4">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-D </span><span class="ltx_text ltx_font_italic">Observability in Small Models and Parallels with Physical Phase Transitions</span>
+</h3>
+<div class="ltx_para" id="S5.SS4.p1">
+<p class="ltx_p">In physical systems, phase transitions occur when order parameters change discontinuously as control variables such as temperature or pressure cross a critical threshold. Analogously, in our model, the control variable is training epoch, while linguistic statistics—dispersion, KL divergence, vocabulary count, and word length—serve as order parameters. All exhibit coordinated discontinuities in the same narrow epoch range (steps 230–250), consistent with a critical reorganization of the generative regime.</p>
+</div>
+<div class="ltx_para" id="S5.SS4.p2">
+<p class="ltx_p">The use of <em class="ltx_emph ltx_font_italic">multiple, independent order parameters</em> is crucial. In physics, genuine phase transitions are characterized by the simultaneous reorganization of multiple observables—not just one. Here, dispersion and KL divergence measure fundamentally different aspects of the count distributions (variance structure vs. full distributional form), yet both display synchronized cusps. This convergence across non-redundant metrics mirrors how physical phase transitions are confirmed through multiple experimental probes (e.g., heat capacity, magnetization, correlation length), each sensitive to different aspects of the critical reorganization.</p>
+</div>
+<div class="ltx_para" id="S5.SS4.p3">
+<p class="ltx_p">This behavior parallels two known phenomena: <em class="ltx_emph ltx_font_italic">grokking</em>, where small models abruptly transition from memorization to generalization on algorithmic tasks, and emergent abilities in large language models, where new capabilities appear suddenly beyond critical scale thresholds. By observing these reorganizations in a 3.6M-parameter transformer trained on a modest corpus, we directly address the first research question: phase-transition-like behavior is <em class="ltx_emph ltx_font_italic">not</em> exclusive to large-scale systems or massive models observed through log-scaled compute. Such discontinuities can manifest in small, tractable models when analyzed with appropriate statistical probes. This reinforces the idea that emergent dynamics are scale-invariant in form—they represent fundamental properties of neural learning, not mere artifacts of size. Poisson-based diagnostics—combining both dispersion and KL divergence—thus provide a unifying framework for linking the nonlinear dynamics of learning to the physics of critical phenomena.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS5">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-E </span><span class="ltx_text ltx_font_italic">Addressing the Schaeffer et al. Critique</span>
+</h3>
+<div class="ltx_para" id="S5.SS5.p1">
+<p class="ltx_p">Our methodological approach directly addresses concerns raised by Schaeffer, Miranda, and Koyejo regarding the reality of emergent abilities. They demonstrated that many reported emergent capabilities arise from discrete, non-linear evaluation metrics rather than genuine phase transitions, and that continuous metrics often reveal smooth scaling instead of discontinuities. Our study heeds this critique by employing <em class="ltx_emph ltx_font_italic">continuous, internal statistical measures</em>—dispersion and KL divergence—rather than binary task accuracy thresholds.</p>
+</div>
+<div class="ltx_para" id="S5.SS5.p2">
+<p class="ltx_p">Critically, we detect synchronized discontinuities across <em class="ltx_emph ltx_font_italic">multiple independent continuous metrics</em>, each measuring different statistical properties. Dispersion quantifies variance relative to the mean; KL divergence captures full distributional deviation; word length measures linguistic complexity; vocabulary dynamics track compositional reorganization. No single metric alone would suffice to claim a phase transition, but their simultaneous cusps within the same narrow epoch window provide converging evidence that cannot be explained by metric artifacts. Furthermore, these signatures appear in raw training space without rescaling, and are invisible in standard loss curves, confirming that we are detecting internal reorganization rather than external scoring effects.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS6">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-F </span><span class="ltx_text ltx_font_italic">Limitations and Scope</span>
+</h3>
+<div class="ltx_para" id="S5.SS6.p1">
+<p class="ltx_p">While the findings provide convergent evidence for a small-model phase transition, several limitations warrant caution.
+First, we analyzed a single architecture (3.6M parameters) and a single dataset (Tiny Shakespeare); generalization to larger models, multilingual corpora, or instruction-tuned datasets remains untested.
+Second, character-level tokenization differs from subword or BPE segmentation used in practical LLMs, and the correct/incorrect heuristic may misclassify rare but valid words or neologisms.
+Third, our study focuses on <em class="ltx_emph ltx_font_italic">external</em> statistical signatures—dispersion, KL divergence, vocabulary composition—while the correspondence between these metrics and internal representational shifts (such as activation clustering, attention alignment, or hidden-state geometry) remains open.
+Fourth, alternative decoding methods (top-<math alttext="k" class="ltx_Math" display="inline" id="S5.SS6.p1.m1" intent=":literal"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>, nucleus sampling, beam search) might influence surface statistics and potentially shift the apparent transition region, though we expect the qualitative reorganization to persist.
+Fifth, we have not yet examined universality across model sizes, datasets, or architectural families; testing whether the same Poisson <math alttext="\to" class="ltx_Math" display="inline" id="S5.SS6.p1.m2" intent=":literal"><semantics><mo stretchy="false">→</mo><annotation encoding="application/x-tex">\to</annotation></semantics></math> sub-Poisson signature recurs under variation would strengthen claims of genuine criticality.
+Finally, while we employ two complementary Poisson-based metrics—dispersion and KL divergence—future work should explore whether other statistical probes (e.g., higher-order cumulants, entropy measures, or correlation functions) reveal additional structure during the transition. The robustness of the synchronized cusps across dispersion and KL suggests the transition is genuine, but expanding the diagnostic toolkit would further strengthen this interpretation.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S6">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">VI </span><span class="ltx_text ltx_font_smallcaps">Future Work</span>
+</h2>
+<div class="ltx_para" id="S6.p1">
+<p class="ltx_p">Future research should extend these analyses along four complementary directions.</p>
+</div>
+<div class="ltx_para" id="S6.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">(1) Scaling and universality:</span> Test whether Poisson–sub-Poisson reorganizations recur across model scales (from small to billion-parameter systems), diverse datasets (multilingual corpora, code, instruction-tuned data), and architectural families (encoder-decoder, causal transformers, state-space models). Establish whether the transition epoch, dispersion dynamics, and KL divergence cusps exhibit universal patterns or depend systematically on scale and domain. This would assess whether our findings reflect a general property of language model training or are specific to small character-level systems.</p>
+</div>
+<div class="ltx_para" id="S6.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">(2) Quantitative characterization:</span> Apply finite-size scaling analysis to distinguish genuine critical phenomena—characterized by power-law divergences and universal scaling exponents—from simple threshold effects. Estimate critical exponents for dispersion, KL divergence, and correlation lengths near the transition. Determine whether the transition is first-order (discontinuous order parameter, hysteresis, mixed phases) or continuous (critical slowing, diverging fluctuations), following the framework of Rubin, Seroussi, and Ringel. This would rigorously classify the transition within the taxonomy of statistical mechanics.</p>
+</div>
+<div class="ltx_para" id="S6.p4">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">(3) Mechanistic linkage:</span> Connect external Poisson-based statistics with internal network dynamics. Investigate whether dispersion cusps coincide with changes in hidden-state correlation lengths, attention-map reorganizations, embedding-space clustering, or gradient flow patterns. Use mechanistic interpretability techniques—such as singular value decomposition of representations, neuron activation analysis, and circuit tracing—to identify which internal structures reorganize during the transition. This would bridge behavioral signatures (dispersion, KL) with representational mechanisms, revealing <em class="ltx_emph ltx_font_italic">how</em> the model reorganizes internally to produce the observed statistical shift.</p>
+</div>
+<div class="ltx_para" id="S6.p5">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">(4) Higher-level transitions:</span> Investigate whether similar Poisson–sub-Poisson discontinuities appear at sentence or paragraph levels, signaling the sudden emergence of grammatical coherence, semantic consistency, or discourse structure. Extend the windowing framework to multi-word sequences and track dispersion/KL divergence for syntactic constructions (e.g., subject-verb agreement, clause embedding). Test whether linguistic hierarchies exhibit cascading transitions—lexical coherence first, then syntactic, then semantic—each marked by distinct reorganization signatures.</p>
+</div>
+<div class="ltx_para" id="S6.p6">
+<p class="ltx_p">Together, these efforts would test whether Poisson-centered metrics provide a general signature of emergent coherence across linguistic hierarchies, model scales, and training regimes.</p>
+</div>
+<div class="ltx_para" id="S6.p7">
+<p class="ltx_p">Taken together, these findings answer the three motivating questions posed in the introduction with converging evidence:
+(1) phase-transition-like reorganizations are <em class="ltx_emph ltx_font_italic">not</em> unique to large models but occur in small transformers when probed with appropriate statistical metrics;
+(2) they can be detected directly in <em class="ltx_emph ltx_font_italic">linear training space</em> without logarithmic rescaling, using continuous Poisson-based diagnostics rather than binary task thresholds; and
+(3) they emerge at <em class="ltx_emph ltx_font_italic">early stages of training</em>—around epochs 230–250 in our 3.6M-parameter model—as lexical coherence forms, well before loss convergence.
+The synchronization of multiple independent metrics—dispersion, KL divergence, word length, and vocabulary dynamics—within the same narrow epoch window provides robust evidence that these phenomena reflect genuine internal reorganizations, not metric artifacts or gradual drift.
+These results collectively demonstrate that emergent phenomena are intrinsic, measurable properties of neural language model training dynamics, observable even at modest scale.</p>
+</div>
+</section>
+<section class="ltx_section" id="S7">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">VII </span><span class="ltx_text ltx_font_smallcaps">Conclusion</span>
+</h2>
+<div class="ltx_para" id="S7.p1">
+<p class="ltx_p">We have presented converging evidence that a small transformer undergoes a distinct, phase-transition-like reorganization during training, detectable directly in linear training space through Poisson-centered diagnostics. Both dispersion and KL divergence reveal synchronized cusps at epochs 230–250, where correct-word statistics briefly return toward Poissonian behavior before settling into sub-Poisson regularity. Unique incorrect vocabulary first expands during fragment proliferation, then collapses as errors are abandoned, while the unique correct vocabulary grows monotonically. Average correct-word length exhibits a sharp S-curve increase from <math alttext="\sim" class="ltx_Math" display="inline" id="S7.p1.m1" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>1.5 to <math alttext="\sim" class="ltx_Math" display="inline" id="S7.p1.m2" intent=":literal"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>2.5 characters, and prefix tracking of the word “you” illustrates how single- and two-letter fragments consolidate into a stable three-letter form precisely at the transition epoch.</p>
+</div>
+<div class="ltx_para" id="S7.p2">
+<p class="ltx_p">Together, these findings demonstrate that emergent-like reorganizations can arise even in modest transformer models at early stages of training, without requiring log-scaling or massive compute. By employing multiple independent, continuous statistical probes—dispersion (variance structure), KL divergence (full distributional form), word length (linguistic complexity), and vocabulary dynamics (compositional reorganization)—we establish a quantitative framework for detecting discontinuous learning dynamics that avoids the metric artifacts identified by recent critiques of emergent abilities. The synchronization of cusps across non-redundant metrics provides robust evidence for genuine internal restructuring.</p>
+</div>
+<div class="ltx_para" id="S7.p3">
+<p class="ltx_p">This approach bridges concepts from statistical physics with linguistic emergence, showing that coherence at higher linguistic levels—words, sentences, and beyond—may likewise arise through abrupt structural reorganizations rather than gradual accumulation. Small models thus serve as powerful laboratories for studying criticality in neural systems, and Poisson-based diagnostics provide a unifying lens for understanding the nonlinear dynamics of learning in language models. Our results suggest that phase-transition-like phenomena are fundamental properties of neural training, observable at any scale when appropriate probes reveal the underlying reorganization.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+<ul class="ltx_biblist">
+<li class="ltx_bibitem" id="bib.bib1">
+<span class="ltx_tag ltx_tag_bibitem">[1]</span>
+<span class="ltx_bibblock">
+A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever,
+“Improving Language Understanding by Generative Pre-Training,”
+OpenAI, 2018.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib2">
+<span class="ltx_tag ltx_tag_bibitem">[2]</span>
+<span class="ltx_bibblock">
+A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever,
+“Language Models are Unsupervised Multitask Learners,”
+OpenAI Blog, 2019.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib3">
+<span class="ltx_tag ltx_tag_bibitem">[3]</span>
+<span class="ltx_bibblock">
+T. Brown <em class="ltx_emph ltx_font_italic">et al.</em>,
+“Language Models are Few-Shot Learners,”
+in <span class="ltx_text ltx_font_italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, vol. 33, pp. 1877–1901, 2020.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib4">
+<span class="ltx_tag ltx_tag_bibitem">[4]</span>
+<span class="ltx_bibblock">
+A. Chowdhery <em class="ltx_emph ltx_font_italic">et al.</em>,
+“PaLM: Scaling Language Modeling with Pathways,”
+in <span class="ltx_text ltx_font_italic">Proc. Int. Conf. Machine Learning (ICML)</span>, 2022.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib5">
+<span class="ltx_tag ltx_tag_bibitem">[5]</span>
+<span class="ltx_bibblock">
+OpenAI,
+“GPT-4 Technical Report,”
+arXiv:2303.08774 [cs.CL], 2023.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib6">
+<span class="ltx_tag ltx_tag_bibitem">[6]</span>
+<span class="ltx_bibblock">
+J. Wei <em class="ltx_emph ltx_font_italic">et al.</em>,
+“Emergent Abilities of Large Language Models,”
+<span class="ltx_text ltx_font_italic">Transactions on Machine Learning Research</span>, 2022.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib7">
+<span class="ltx_tag ltx_tag_bibitem">[7]</span>
+<span class="ltx_bibblock">
+T. Hong,
+“Coherent Wave Dynamics and Language Generation of a Generative Pre-trained Transformer,”
+arXiv:2305.05061 [cs.CL], 2023. [Preprint].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib8">
+<span class="ltx_tag ltx_tag_bibitem">[8]</span>
+<span class="ltx_bibblock">
+L. D. Landau and E. M. Lifshitz,
+<span class="ltx_text ltx_font_italic">Statistical Physics</span>.
+Elsevier, 2013.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib9">
+<span class="ltx_tag ltx_tag_bibitem">[9]</span>
+<span class="ltx_bibblock">
+D. Tong,
+“Statistical Physics,”
+Lecture Notes, Univ. Cambridge, 2011.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib10">
+<span class="ltx_tag ltx_tag_bibitem">[10]</span>
+<span class="ltx_bibblock">
+P. W. Anderson,
+“More Is Different,”
+<span class="ltx_text ltx_font_italic">Science</span>, vol. 177, no. 4047, pp. 393–396, 1972.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib11">
+<span class="ltx_tag ltx_tag_bibitem">[11]</span>
+<span class="ltx_bibblock">
+B. A. Huberman and T. Hogg,
+“Phase Transitions in Artificial Intelligence Systems,”
+<span class="ltx_text ltx_font_italic">Artificial Intelligence</span>, vol. 33, no. 2, pp. 155–171, 1987.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib12">
+<span class="ltx_tag ltx_tag_bibitem">[12]</span>
+<span class="ltx_bibblock">
+S. Forrest,
+“Emergent Computation in Natural and Artificial Systems,”
+<span class="ltx_text ltx_font_italic">Physica D: Nonlinear Phenomena</span>, vol. 42, no. 1–3, pp. 1–11, 1990.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib13">
+<span class="ltx_tag ltx_tag_bibitem">[13]</span>
+<span class="ltx_bibblock">
+W. Kinzel,
+“Phase Transitions of Neural Networks,”
+<span class="ltx_text ltx_font_italic">Philosophical Magazine B</span>, vol. 77, no. 5, pp. 1455–1470, 1998.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib14">
+<span class="ltx_tag ltx_tag_bibitem">[14]</span>
+<span class="ltx_bibblock">
+Y. Bahri, J. Kadmon, J. Pennington, S. S. Schoenholz, J. Sohl-Dickstein, and S. Ganguli,
+“Statistical Mechanics of Deep Learning,”
+<span class="ltx_text ltx_font_italic">Annual Review of Condensed Matter Physics</span>, vol. 14, pp. 355–384, 2023.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib15">
+<span class="ltx_tag ltx_tag_bibitem">[15]</span>
+<span class="ltx_bibblock">
+B. Miller, T. Zhang, and S. Ganguli,
+“Universal Scaling Laws of Absorbing Phase Transitions in Artificial Deep Neural Networks,”
+arXiv:2309.12345 [cs.LG], 2023. [Preprint].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib16">
+<span class="ltx_tag ltx_tag_bibitem">[16]</span>
+<span class="ltx_bibblock">
+A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra,
+“Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets,”
+in <span class="ltx_text ltx_font_italic">Proc. Int. Conf. Learning Representations (ICLR)</span>, 2022.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib17">
+<span class="ltx_tag ltx_tag_bibitem">[17]</span>
+<span class="ltx_bibblock">
+S. Agarwal, A. S. Morcos, and A. Krishnamurthy,
+“Progress Measures for Grokking via Mechanistic Interpretability,”
+arXiv:2301.05217 [cs.LG], 2023. [Preprint].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib18">
+<span class="ltx_tag ltx_tag_bibitem">[18]</span>
+<span class="ltx_bibblock">
+N. Dolev, Y. Moskovich, M. Goldberg, and R. Reichart,
+“On the Critical Advantages of Large-Scale Model Scaling in Neural Translation,”
+<span class="ltx_text ltx_font_italic">Transactions of the Association for Computational Linguistics (TACL)</span>, vol. 11, pp. 708–723, 2023.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib19">
+<span class="ltx_tag ltx_tag_bibitem">[19]</span>
+<span class="ltx_bibblock">
+N. Rubin, I. Seroussi, and Z. Ringel,
+“Grokking as a First Order Phase Transition in Two Layer Networks,”
+in <span class="ltx_text ltx_font_italic">Proc. Int. Conf. Learning Representations (ICLR)</span>, 2024. arXiv:2310.03789 [stat.ML].
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib20">
+<span class="ltx_tag ltx_tag_bibitem">[20]</span>
+<span class="ltx_bibblock">
+R. Schaeffer, B. Miranda, and S. Koyejo,
+“Are Emergent Abilities of Large Language Models a Mirage?,”
+arXiv:2304.15004 [cs.CL], 2023. [Preprint].
+
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_para" id="p4">
+<span class="ltx_ERROR undefined">\EOD</span>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Sun Nov 16 20:37:26 2025 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

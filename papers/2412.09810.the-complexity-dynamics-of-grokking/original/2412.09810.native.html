@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>The Complexity Dynamics of Grokking</title>
+<!--Generated on Thu Aug 21 12:51:22 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv.0.8.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv-fonts.0.8.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/latexml_styles.0.8.2.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<base href="/html/2412.09810v2/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S2" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Related Work</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Complexity and Generalization</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.SS1" title="In 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Lossy Compression</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Capacity and Regularization</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.SS1" title="In 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Quantization and Noise</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.SS2" title="In 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Spectral Entropy</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S5" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Experiments</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S6" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Conclusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#A1" title="In The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Appendix</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line ltx_fleqn">
+<h1 class="ltx_title ltx_title_document">The Complexity Dynamics of Grokking</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Branton DeMoss
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_email"><a href="mailto:bdemoss@robots.ox.ac.uk">bdemoss@robots.ox.ac.uk</a>
+</span></span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Silvia Sapora
+</span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Jakob Foerster
+</span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Nick Hawes
+</span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Ingmar Posner
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_address">Department of Engineering Science, University of Oxford, Oxford, United Kingdom
+</span></span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">We demonstrate the existence of a complexity phase transition in neural networks by studying the grokking phenomenon, where networks suddenly transition from memorization to generalization long after overfitting their training data. To characterize this phase transition, we introduce a theoretical framework for measuring complexity based on rate-distortion theory and Kolmogorov complexity, which can be understood as principled lossy compression for networks. We find that properly regularized networks exhibit a sharp phase transition: complexity rises during memorization, then falls as the network discovers a simpler underlying pattern that generalizes. In contrast, unregularized networks remain trapped in a high-complexity memorization phase. We establish an explicit connection between our complexity measure and generalization bounds, providing a theoretical foundation for the link between lossy compression and generalization. Our framework achieves compression ratios 30-40<math alttext="\times" class="ltx_Math" display="inline" id="m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> better than naïve approaches, enabling precise tracking of complexity dynamics. Finally, we introduce a regularization method based on spectral entropy that encourages networks toward low-complexity representations by penalizing their intrinsic dimension.</p>
+</div>
+<div class="ltx_classification">
+<h6 class="ltx_title ltx_title_classification">keywords: </h6>
+grokking , algorithmic complexity , phase transition
+
+</div>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p">When can we expect learned models to generalize well? The study of phase transitions in learning systems provides a window into fundamental questions about the nature of generalization and emergence of structure. In this work, we investigate the recently observed “grokking” phenomenon <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib1" title="">1</a>]</cite>, where neural networks exhibit a sharp transition from memorization to generalization long after overfitting their training data. The extended delay between these two phases of learning provides an ideal setting to study the relationship between complexity and generalization in learning systems.</p>
+</div>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p">Simplicity has long been recognized as a common feature of good models: Occam’s Razor says that amongst models which explain some data equally well, the simplest one is expected to generalize best. Drawing inspiration from statistical physics and algorithmic information theory, we introduce a framework for measuring the intrinsic complexity of neural networks based on lossy compression and Kolmogorov complexity. Our approach parallels work by <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib2" title="">2</a>]</cite> which studies the complexity dynamics of physical systems. Their key insight is to measure complexity after appropriate <span class="ltx_text ltx_font_italic">coarse-graining</span> of the system’s state. We formalize their insight using algorithmic rate–distortion theory, resulting in a principled lossy compression scheme for neural networks which bounds their complexity.</p>
+</div>
+<figure class="ltx_figure" id="S1.F1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="201" id="S1.F1.g1" src="fig1.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Complexity dynamics for unregularized (blue) and regularized (red) neural networks in grokking experiments on modular multiplication. Markers denote when memorization (<math alttext="\square" class="ltx_Math" display="inline" id="S1.F1.m3"><semantics><mi mathvariant="normal">□</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math>) and generalization (<math alttext="\bigcirc" class="ltx_Math" display="inline" id="S1.F1.m4"><semantics><mo>○</mo><annotation encoding="application/x-tex">\bigcirc</annotation></semantics></math>) occur. In the regularized network, generalization occurs as complexity falls after its peak at memorization, while the unregularized network never generalizes, and its complexity remains large. Mean over 3 seeds, shading std. error.</figcaption>
+</figure>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p">This framework allows us to track the complexity dynamics of neural networks throughout training. We find that properly regularized networks that successfully generalize exhibit a distinct phase transition: complexity first rises as the network memorizes training data, then falls sharply as the network discovers a simpler underlying pattern that generalizes. In contrast, unregularized networks that fail to generalize remain trapped in a high-complexity memorization phase indefinitely. We establish an explicit link between our complexity measure and statistical generalization bounds, and show how these correspond to the Minimum Description Length Principle.</p>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p">The Minimum Description Length (MDL) Principle <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib3" title="">3</a>]</cite> formalizes Occam’s Razor in the language of information theory. It says that the best model is the one which minimizes the total message length of the data. Shannon’s theorem <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib4" title="">4</a>]</cite> says that the expected optimal coding rate for samples drawn from a distribution is equal to the entropy of the distribution. Hence, the entropy <math alttext="H" class="ltx_Math" display="inline" id="S1.p4.m1"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math> of some data <math alttext="D" class="ltx_Math" display="inline" id="S1.p4.m2"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math> under a model <math alttext="M" class="ltx_Math" display="inline" id="S1.p4.m3"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>, <math alttext="H(D|M)" class="ltx_Math" display="inline" id="S1.p4.m4"><semantics><mrow><mi>H</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo fence="false">|</mo><mi>M</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(D|M)</annotation></semantics></math> tells us the expected message length after encoding the data with the model. However, we must also consider the information cost of the model itself, which is the model complexity <math alttext="C(M)" class="ltx_Math" display="inline" id="S1.p4.m5"><semantics><mrow><mi>C</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(M)</annotation></semantics></math>. MDL says we should take the model which minimizes the <span class="ltx_text ltx_font_italic">sum</span> of these terms:</p>
+</div>
+<div class="ltx_para" id="S1.p5">
+<table class="ltx_equation ltx_eqn_table" id="S1.E1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="M\leftarrow\operatorname*{arg\,min}_{M}H(D\mid M)+C(M)" class="ltx_Math" display="block" id="S1.E1.m1"><semantics><mrow><mi>M</mi><mo stretchy="false">←</mo><mrow><mrow><mrow><munder><mrow><mi>arg</mi><mo lspace="0.170em" rspace="0em">​</mo><mi>min</mi></mrow><mi>M</mi></munder><mo>⁡</mo><mi>H</mi></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>∣</mo><mi>M</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>C</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">M\leftarrow\operatorname*{arg\,min}_{M}H(D\mid M)+C(M)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_para" id="S1.p6">
+<p class="ltx_p">Intuitively, it is worth making our model one bit more complex if it lets us reduce the apparent entropy of the data by more than one bit, since that reduces the overall message length. Note that if the model <math alttext="M" class="ltx_Math" display="inline" id="S1.p6.m1"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> fully explains some subset <math alttext="D^{\prime}\subseteq D" class="ltx_Math" display="inline" id="S1.p6.m2"><semantics><mrow><msup><mi>D</mi><mo>′</mo></msup><mo>⊆</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">D^{\prime}\subseteq D</annotation></semantics></math> then the prediction of that data becomes deterministic and <math alttext="H(D^{\prime}|M)=0" class="ltx_Math" display="inline" id="S1.p6.m3"><semantics><mrow><mrow><mi>H</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>D</mi><mo>′</mo></msup><mo fence="false">|</mo><mi>M</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H(D^{\prime}|M)=0</annotation></semantics></math>. Consider a trivial model which simply memorizes the data in a lookup table. Whilst this reduces the entropy of the data to zero, the model complexity is exactly equal to the original entropy of the data. Therefore the total description length has not changed, and no compression has been achieved by the model.</p>
+</div>
+<div class="ltx_para" id="S1.p7">
+<p class="ltx_p">The insight that simpler models are expected to generalize better is made precise through statistical generalization bounds of the form:</p>
+<table class="ltx_equation ltx_eqn_table" id="S1.E2">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\text{test error}\leq\text{train error}+\text{model complexity}" class="ltx_Math" display="block" id="S1.E2.m1"><semantics><mrow><mtext>test error</mtext><mo>≤</mo><mrow><mtext>train error</mtext><mo>+</mo><mtext>model complexity</mtext></mrow></mrow><annotation encoding="application/x-tex">\text{test error}\leq\text{train error}+\text{model complexity}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">which are ubiquitous across a number of fields of statistical machine learning <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib5" title="">5</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib6" title="">6</a>]</cite>. When the error terms are identified with entropy, as is typically the case, these bounds reveal that models which minimize MDL are precisely those expected to generalize best. This provides the link between compression and generalization: the model which best compresses the data is the one expected to generalize best.</p>
+</div>
+<div class="ltx_para" id="S1.p8">
+<p class="ltx_p">To apply the MDL principle, we require a measure of model complexity <math alttext="C(M)" class="ltx_Math" display="inline" id="S1.p8.m1"><semantics><mrow><mi>C</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(M)</annotation></semantics></math>. Traditional complexity measures in machine learning such as Rademacher complexity <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib6" title="">6</a>]</cite> or VC dimension <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib7" title="">7</a>]</cite> are defined relative to specific hypothesis classes, but we seek a universal measure that applies to any computational model. The Kolmogorov complexity <math alttext="K" class="ltx_Math" display="inline" id="S1.p8.m2"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math> of a string <math alttext="s" class="ltx_Math" display="inline" id="S1.p8.m3"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math> is equal to the length of the shortest program <math alttext="p" class="ltx_Math" display="inline" id="S1.p8.m4"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> which prints <math alttext="s" class="ltx_Math" display="inline" id="S1.p8.m5"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math> when executed:</p>
+<table class="ltx_equation ltx_eqn_table" id="S1.E3">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="K(s)=\min_{p}\{\texttt{len}(p):\texttt{exec}(p)=s\}" class="ltx_Math" display="block" id="S1.E3.m1"><semantics><mrow><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><mi>min</mi><mi>p</mi></munder><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mtext class="ltx_mathvariant_monospace">len</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:</mo><mrow><mrow><mtext class="ltx_mathvariant_monospace">exec</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>s</mi></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">K(s)=\min_{p}\{\texttt{len}(p):\texttt{exec}(p)=s\}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">To build intuition, consider two strings of length <math alttext="N" class="ltx_Math" display="inline" id="S1.p8.m6"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>: The string ‘<math alttext="111...1" class="ltx_Math" display="inline" id="S1.p8.m7"><semantics><mrow><mn>111</mn><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">…</mi><mo lspace="0em" rspace="0em">​</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">111...1</annotation></semantics></math>’ can be generated by a short program <span class="ltx_text ltx_font_typewriter">print ‘1’ N times</span>, so <math alttext="K(s)\approx\log N" class="ltx_Math" display="inline" id="S1.p8.m8"><semantics><mrow><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>N</mi></mrow></mrow><annotation encoding="application/x-tex">K(s)\approx\log N</annotation></semantics></math>. In contrast, a random string ‘<math alttext="10110..." class="ltx_Math" display="inline" id="S1.p8.m9"><semantics><mrow><mn>10110</mn><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">…</mi></mrow><annotation encoding="application/x-tex">10110...</annotation></semantics></math>’ has no pattern to exploit; its shortest description is itself: <span class="ltx_text ltx_font_typewriter">print ‘10110...’</span>, giving <math alttext="K(s)\approx N" class="ltx_Math" display="inline" id="S1.p8.m10"><semantics><mrow><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">K(s)\approx N</annotation></semantics></math>. Algorithmically random strings are precisely those whose Kolmogorov complexity equals their length—they are incompressible because they contain no exploitable patterns.
+For neural networks, this means a network implementing a simple pattern should have low complexity despite having many parameters, while a network memorizing random labels must have high complexity. Unlike capacity measures that provide worst-case upper bounds, Kolmogorov complexity captures the actual information content of the learned function.</p>
+</div>
+<figure class="ltx_figure" id="S1.F2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="415" id="S1.F2.g1" src="grokking_accuracy_complexity_ours_plots.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>Complexity and accuracy vs steps for models regularized using our method. As models memorize, complexity increases. Complexity falls as generalization occurs. We use Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm1" title="In 4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">1</span></a> to coarse-grain models with <math alttext="\epsilon=1" class="ltx_Math" display="inline" id="S1.F2.m2"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon=1</annotation></semantics></math>. Std. error shaded with six seeds.</figcaption>
+</figure>
+<div class="ltx_para" id="S1.p9">
+<p class="ltx_p">To implement these ideas, we develop a principled approach to measuring neural network complexity based on lossy compression. While the Kolmogorov complexity is uncomputable, compression provides an upper bound: notice that compressed data plus its decompressor form a program that generates the original data. The compressed file-size of the network provides an upper bound on its complexity, with better compression resulting in tighter upper bounds. To compute tight compression bounds, we develop a coarse-graining procedure inspired by rate-distortion theory that removes noise while preserving functional behavior, enabling compression ratios 30-40× better than naïve approaches. This sensitivity is crucial for revealing the underlying complexity dynamics during training, shown in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1.F1" title="Figure 1 ‣ 1 Introduction ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">1</span></a>. Our main contributions are:</p>
+<ul class="ltx_itemize" id="S1.I1">
+<li class="ltx_item" id="S1.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span>
+<div class="ltx_para" id="S1.I1.i1.p1">
+<p class="ltx_p">A theoretical framework connecting neural network complexity to Kolmogorov complexity through lossy compression, with explicit links to generalization bounds.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span>
+<div class="ltx_para" id="S1.I1.i2.p1">
+<p class="ltx_p">Empirical demonstration of a complexity phase transition during grokking, characterized by a rise and fall pattern that distinguishes generalizing from memorizing solutions.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span>
+<div class="ltx_para" id="S1.I1.i3.p1">
+<p class="ltx_p">A regularization method based on spectral entropy that encourages networks toward low-complexity representations by penalizing a differentiable measure of their effective dimension.</p>
+</div>
+</li>
+</ul>
+</div>
+<figure class="ltx_figure" id="S1.F3"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="415" id="S1.F3.g1" src="grokking_accuracy_complexity_none_plots.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>Complexity and accuracy vs steps for unregularized models. As models memorize, complexity increases. Without regularization, the models fail to find low complexity solutions, and never generalize. We use Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm1" title="In 4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">1</span></a> to coarse-grain models with <math alttext="\epsilon=1" class="ltx_Math" display="inline" id="S1.F3.m2"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon=1</annotation></semantics></math>.</figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Related Work</h2>
+<div class="ltx_para" id="S2.p1">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Grokking</span>    The grokking phenomenon <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib1" title="">1</a>]</cite> occurs when networks suddenly transition from memorizing to generalizing solutions long after over-fitting the training data. <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib8" title="">8</a>]</cite> characterize conditions under which grokking occurs, and categorize learning into four distinct regimes, <span class="ltx_text ltx_font_italic">comprehension</span>, <span class="ltx_text ltx_font_italic">grokking</span>, <span class="ltx_text ltx_font_italic">memorization</span>, and <span class="ltx_text ltx_font_italic">confusion</span> by examining phase diagrams of learning performance across different hyperparameters. <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib9" title="">9</a>]</cite> demonstrate grokking on non-algorithmic datasets, and propose a link between a network’s parameter norm and grokking. This link is also explored by <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib10" title="">10</a>]</cite>, who explain grokking in terms of the “efficiency” of a network, as measured by the ratio of the logit to parameter norms. <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib11" title="">11</a>]</cite> propose task-specific loss-based “progress measures” to detect grokking, but note that we “lack a general notion of criticality that would allow us to predict when the phase transition” occurs. In this work, we suggest that complexity is the key dynamical metric to understand grokking (and generalization more broadly), and discuss why proxy measures such as the <math alttext="L^{2}" class="ltx_Math" display="inline" id="S2.p1.m1"><semantics><msup><mi>L</mi><mn>2</mn></msup><annotation encoding="application/x-tex">L^{2}</annotation></semantics></math> norm are insufficient.</p>
+</div>
+<div class="ltx_para" id="S2.p2">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Generalization</span>    The connection between model capacity and complexity is sometimes misunderstood amongst machine learning practitioners: the contemporary view in deep learning is that “larger models are better” <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib12" title="">12</a>]</cite>, with empirically observed scaling laws across a range of modalities and architectures <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib13" title="">13</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib14" title="">14</a>]</cite> which show monotonic improvement of performance with increasing model scale. This view contrasts with the classical bias-variance tradeoff, which says that “once we pass a certain threshold, larger models are worse” <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib12" title="">12</a>]</cite>. The latter view is only true assuming model capacity is equal to model complexity, and would follow from bounds of the form of Equation <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1.E2" title="In 1 Introduction ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">2</span></a>. However, this appears <span class="ltx_text ltx_font_italic">not</span> to be the case. <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib15" title="">15</a>]</cite> recently established the first non-vacuous generalization bounds for large language models by producing highly compressible models trained in a non-linear low-rank subspace, and bounding their generalization performance under a smoothed entropy loss by the Kolmogorov complexity. While they focus on explicit generalization <span class="ltx_text ltx_font_italic">bounds</span>, we focus on the complexity dynamics of the transition from memorization to generalization to explain grokking. <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib16" title="">16</a>]</cite> argue for generalization to be understood using Kolmogorov complexity, and apply the Solomonoff prior, <math alttext="P(h)=2^{-K(h)}" class="ltx_Math" display="inline" id="S2.p2.m1"><semantics><mrow><mrow><mi>P</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">P(h)=2^{-K(h)}</annotation></semantics></math> for hypotheses <math alttext="h" class="ltx_Math" display="inline" id="S2.p2.m2"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> to a finite hypothesis bound <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib17" title="">17</a>]</cite> to produce a generic generalization bound based on the Kolmogorov complexity.</p>
+</div>
+<div class="ltx_para" id="S2.p3">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Coarse-graining</span>    <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib2" title="">2</a>]</cite> study the complexity dynamics of a cellular automaton which simulates the mixing of two liquids. They observe the rise and fall of complexity as entropy increases, and conjecture that this phenomenon is generic. To approximate the complexity of their automaton, they propose an “apparent complexity” measure which is the compressed file size of a <span class="ltx_text ltx_font_italic">coarse-grained</span> description of the state. They informally assert that coarse-graining removes random information from the state, leaving only “interesting” information behind. We formalize their intuition using rate–distortion theory, and use the resultant complexity measure to explain grokking.</p>
+</div>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Complexity and Generalization</h2>
+<div class="ltx_para" id="S3.p1">
+<p class="ltx_p">Understanding generalization is of central importance in machine learning.
+To what extent can we expect our models to generalize, and can we predict their performance ahead of time?
+Most generalization bounds are a function of model complexity, so understanding complexity is key to understanding generalization.
+<cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib15" title="">15</a>]</cite> provide one such bound, which quantifies the expected risk <math alttext="R(h)" class="ltx_Math" display="inline" id="S3.p1.m1"><semantics><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">R(h)</annotation></semantics></math> for a given hypothesis <math alttext="h" class="ltx_Math" display="inline" id="S3.p1.m2"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>, with probability <math alttext="1-\delta" class="ltx_Math" display="inline" id="S3.p1.m3"><semantics><mrow><mn>1</mn><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">1-\delta</annotation></semantics></math>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E4">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="R(h)\leq\hat{R}(h)+\sqrt{\frac{K(h)+2\log K(h)+\log(1/\delta)}{2n}}" class="ltx_Math" display="block" id="S3.E4.m1"><semantics><mrow><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mrow><mover accent="true"><mi>R</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><msqrt><mfrac><mrow><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo lspace="0.167em" rspace="0em">​</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mi>K</mi></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>/</mo><mi>δ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>2</mn><mo lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow></mfrac></msqrt></mrow></mrow><annotation encoding="application/x-tex">R(h)\leq\hat{R}(h)+\sqrt{\frac{K(h)+2\log K(h)+\log(1/\delta)}{2n}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Where <math alttext="K(\cdot)" class="ltx_Math" display="inline" id="S3.p1.m4"><semantics><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(\cdot)</annotation></semantics></math> is the Kolmogorov complexity, <math alttext="\hat{R}(h)" class="ltx_Math" display="inline" id="S3.p1.m5"><semantics><mrow><mover accent="true"><mi>R</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\hat{R}(h)</annotation></semantics></math> is the empirical risk, and <math alttext="n" class="ltx_Math" display="inline" id="S3.p1.m6"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> the number of samples.
+As mentioned in the introduction, the Kolmogorov complexity is not computable, but can be upper-bounded by compression.
+Therefore, we can bound our generalization error by compressing models, with better bounds following from tighter compression.
+It is important to keep in mind that some approaches we might take to compress models, such as reducing the precision of their parameters, can also result in loss of performance.
+Hence, while we might decrease the complexity term by compressing models, this may result in the empirical risk <math alttext="\hat{R}(h)" class="ltx_Math" display="inline" id="S3.p1.m7"><semantics><mrow><mover accent="true"><mi>R</mi><mo>^</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\hat{R}(h)</annotation></semantics></math> increasing.
+To produce strong generalization guarantees, we must jointly minimize the model complexity and the empirical risk.</p>
+</div>
+<div class="ltx_para" id="S3.p2">
+<p class="ltx_p">In fact, this can also be understood as a restatement of the MDL principle.
+If the empirical risk is understood as the entropy of the training data under the model, as is typically the case, then the joint minimization of the empirical risk and model complexity is exactly the MDL principle.
+I.e. the model which generalizes best is the one which compresses the data best, and is itself most compressible.</p>
+</div>
+<div class="ltx_para" id="S3.p3">
+<p class="ltx_p">Unfortunately, naïvely compressing a model’s parameters produces poor complexity bounds, since the network contains random information left over from initialization, and from the stochastic training procedure.
+If we could remove the random information from a network, compressing the resulting parameters would give much tighter bounds on the network complexity.
+However, it is undecidable whether information is random <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib18" title="">18</a>]</cite>, so there is no generic method to remove it.</p>
+</div>
+<div class="ltx_para" id="S3.p4">
+<p class="ltx_p"><cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib2" title="">2</a>]</cite> remove random information by coarse-graining their automaton’s state. They coarse-grain by smoothing and quantizing the state.
+The coarse-grained state is then compressed with off-the-shelf programs such as <span class="ltx_text ltx_font_typewriter">bzip2</span>, with the compressed file size providing improved complexity estimates.
+They dub this metric the “apparent complexity”, since it is not actually a bound on the original state’s complexity, and is arbitrary in the choice and degree of coarse-graining.
+We adapt their method and apply it to neural networks based on a central insight: <span class="ltx_text ltx_font_bold">the loss function induces a coarse-graining</span>, which can be understood as principled <span class="ltx_text ltx_font_italic">lossy</span> compression of the model.</p>
+</div>
+<figure class="ltx_figure" id="S3.F4"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="390" id="S3.F4.g1" src="ratedistortionplot.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>Algorithmic rate–distortion curves <math alttext="r_{\theta}(\hat{\theta})" class="ltx_Math" display="inline" id="S3.F4.m4"><semantics><mrow><msub><mi>r</mi><mi>θ</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">r_{\theta}(\hat{\theta})</annotation></semantics></math> for all datasets at varying distortion bounds <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.F4.m5"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>. The rate is the complexity of the coarse-grained weights <math alttext="\hat{\theta}" class="ltx_Math" display="inline" id="S3.F4.m6"><semantics><mover accent="true"><mi>θ</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> at the end of training. Mean over six seeds.</figcaption>
+</figure>
+<section class="ltx_subsection" id="S3.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1 </span>Lossy Compression</h3>
+<div class="ltx_para" id="S3.SS1.p1">
+<p class="ltx_p">Shannon’s theorem provides a lower-bound on coding rates which can <span class="ltx_text ltx_font_italic">losslessly</span> compress signals, but more efficient coding rates are possible if some distortion is allowed.
+For example, JPEG compression removes high-frequency details from images which are perceptually irrelevant to the human eye, incurring some distortion.
+Similarly, we want to find the least detailed model which produces acceptable performance on the training data.
+Since neural networks are initialized randomly and trained via stochastic optimization, much of their parameter’s information capacity stores noise.
+In algorithmic information theory, noise is precisely that which is incompressible, so if we naïvely compress model weights, the resultant complexity estimate from the compressed file size is dominated by the noise stored in the weights.
+To overcome this, we develop a lossy compression scheme which lets us formalize the trade-off between information capacity in the model and the performance on the training data as measured by the loss function.
+Rate–distortion theory formalizes the trade-off between coding rate, induced distortion, and perceptual quality <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib19" title="">19</a>]</cite>, though it is typically defined over random variables.
+<cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib20" title="">20</a>]</cite> generalize the theory of rate distortion to the algorithmic information setting. They define the algorithmic rate–distortion function <math alttext="r_{x}(y)" class="ltx_Math" display="inline" id="S3.SS1.p1.m1"><semantics><mrow><msub><mi>r</mi><mi>x</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">r_{x}(y)</annotation></semantics></math>, which is the minimum number of bits needed to specify <math alttext="y" class="ltx_Math" display="inline" id="S3.SS1.p1.m2"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> with distortion relative to <math alttext="x" class="ltx_Math" display="inline" id="S3.SS1.p1.m3"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> no more than <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.SS1.p1.m4"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E5">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="r_{x}(y)=\min\{K(y):d(x,y)&lt;\epsilon\}" class="ltx_Math" display="block" id="S3.E5.m1"><semantics><mrow><mrow><msub><mi>r</mi><mi>x</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>min</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>K</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:</mo><mrow><mrow><mi>d</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">r_{x}(y)=\min\{K(y):d(x,y)&lt;\epsilon\}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Where <math alttext="d" class="ltx_Math" display="inline" id="S3.SS1.p1.m5"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is some distortion function.
+We will take the “input string” <math alttext="x" class="ltx_Math" display="inline" id="S3.SS1.p1.m6"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> to be the model parameter vector <math alttext="\theta" class="ltx_Math" display="inline" id="S3.SS1.p1.m7"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, and the “output” <math alttext="y" class="ltx_Math" display="inline" id="S3.SS1.p1.m8"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> to be the coarse-grained parameter vector <math alttext="\hat{\theta}" class="ltx_Math" display="inline" id="S3.SS1.p1.m9"><semantics><mover accent="true"><mi>θ</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math>.
+The choice of distortion function <math alttext="d" class="ltx_Math" display="inline" id="S3.SS1.p1.m10"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is critical.
+In particular, we are not interested in the distortion in parameter space, <math alttext="|\theta-\hat{\theta}|^{2}" class="ltx_Math" display="inline" id="S3.SS1.p1.m11"><semantics><msup><mrow><mo stretchy="false">|</mo><mrow><mi>θ</mi><mo>−</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">|\theta-\hat{\theta}|^{2}</annotation></semantics></math>.
+Instead, we are interested in the distortion <span class="ltx_text ltx_font_italic">under the loss function</span>.
+Hence, we set:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E6">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="d(\theta,\hat{\theta})=\left|\mathcal{L}(\theta,D)-\mathcal{L}(\hat{\theta},D)\right|" class="ltx_Math" display="block" id="S3.E6.m1"><semantics><mrow><mrow><mi>d</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover><mo>,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow></mrow><annotation encoding="application/x-tex">d(\theta,\hat{\theta})=\left|\mathcal{L}(\theta,D)-\mathcal{L}(\hat{\theta},D)\right|</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Substituting this distortion function into Eqn <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.E5" title="In 3.1 Lossy Compression ‣ 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">5</span></a>, we can see that the optimum can be interpreted as the least complex set of model weights <math alttext="\hat{\theta}" class="ltx_Math" display="inline" id="S3.SS1.p1.m12"><semantics><mover accent="true"><mi>θ</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math> which induce distortion under the loss function no more than <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.SS1.p1.m13"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.
+We control the rate–distortion trade-off through the parameter <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.SS1.p1.m14"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>, which leads to the following distortion criterion to accept a coarse-grained approximation:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E7">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\left|\mathcal{L}(\theta,D)-\mathcal{L}(\hat{\theta},D)\right|&lt;\epsilon" class="ltx_Math" display="block" id="S3.E7.m1"><semantics><mrow><mrow><mo>|</mo><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover><mo>,</mo><mi>D</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\left|\mathcal{L}(\theta,D)-\mathcal{L}(\hat{\theta},D)\right|&lt;\epsilon</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure class="ltx_figure" id="S3.F5"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="368" id="S3.F5.g1" src="complexity_varying_eps.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 5: </span>Complexity dynamics under varying distortion bounds <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.F5.m2"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>. As the allowed distortion increases, the estimated model complexity becomes smaller, as expected. The rise-and-fall pattern is robust under varying distortion bounds.</figcaption>
+</figure>
+<div class="ltx_para" id="S3.SS1.p2">
+<p class="ltx_p">Note that we could have chosen an alternative distortion function, such as difference in <span class="ltx_text ltx_font_italic">accuracy</span> or any other performance metric of interest. However, the cross-entropy loss preserves the interpretation of the model as a compressor of the training data. In fact, the MDL principle implies an optimal distortion bound <math alttext="\epsilon" class="ltx_Math" display="inline" id="S3.SS1.p2.m1"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>, which determines the best coarse-grained model <math alttext="\hat{\theta}" class="ltx_Math" display="inline" id="S3.SS1.p2.m2"><semantics><mover accent="true"><mi>θ</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S3.E8">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\epsilon\leftarrow\operatorname*{arg\,min}_{\epsilon}H(D\mid\hat{\theta})+r_{\theta}(\hat{\theta})" class="ltx_Math" display="block" id="S3.E8.m1"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">←</mo><mrow><mrow><mrow><munder><mrow><mi>arg</mi><mo lspace="0.170em" rspace="0em">​</mo><mi>min</mi></mrow><mi>ϵ</mi></munder><mo>⁡</mo><mi>H</mi></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>∣</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>θ</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\epsilon\leftarrow\operatorname*{arg\,min}_{\epsilon}H(D\mid\hat{\theta})+r_{\theta}(\hat{\theta})</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(8)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Intuitively, as we coarse-grain a model it becomes less complex.
+However, it may also perform worse.
+The MDL principle implies that the optimally coarse-grained model is one which balances the complexity–performance trade-off, as measured by the model’s ability to compress its training data, which is given by the loss function.
+In particular, a <span class="ltx_text ltx_font_italic">lossy model</span> might be a better <span class="ltx_text ltx_font_italic">lossless compressor</span> of the data, as measured by the total description length.
+We approximate the algorithmic rate–distortion function via compression upper bounds, and plot curves of best fit in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.F4" title="Figure 4 ‣ 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4</span></a>.</p>
+</div>
+<div class="ltx_para" id="S3.SS1.p3">
+<p class="ltx_p">To obtain models which are optimal compressors, we must regularize them to limit their complexity.
+In the next section, we discuss the relationship between complexity, capacity, and regularization, and propose a regularization method which results in highly compressible models.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Capacity and Regularization</h2>
+<div class="ltx_para" id="S4.p1">
+<p class="ltx_p">To control model complexity, practitioners introduce regularizers to the network training process. Most regularizers work by limiting a model’s effective capacity, which <span class="ltx_text ltx_font_italic">may</span> limit its complexity. To see this, we consider a simplified representation of a model parameter. The information capacity <math alttext="I" class="ltx_Math" display="inline" id="S4.p1.m1"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> of a single positive parameter with fixed precision <math alttext="\delta" class="ltx_Math" display="inline" id="S4.p1.m2"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>, and max size <math alttext="\lambda" class="ltx_Math" display="inline" id="S4.p1.m3"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> is given by:</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E9">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="I=\log\frac{\lambda}{\delta}" class="ltx_Math" display="block" id="S4.E9.m1"><semantics><mrow><mi>I</mi><mo>=</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><mfrac><mi>λ</mi><mi>δ</mi></mfrac></mrow></mrow><annotation encoding="application/x-tex">I=\log\frac{\lambda}{\delta}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Under this simplified model, it is clear that we can limit the information capacity of the parameters either by controlling their range through <math alttext="\lambda" class="ltx_Math" display="inline" id="S4.p1.m4"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>, or by reducing their precision through <math alttext="\delta" class="ltx_Math" display="inline" id="S4.p1.m5"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>, which can be thought of as an effective quantization level. Regularizers such as weight decay control the information capacity by limiting <math alttext="\lambda" class="ltx_Math" display="inline" id="S4.p1.m6"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>, or proxies of it such as an <math alttext="L^{p}" class="ltx_Math" display="inline" id="S4.p1.m7"><semantics><msup><mi>L</mi><mi>p</mi></msup><annotation encoding="application/x-tex">L^{p}</annotation></semantics></math> norm. In particular, weight decay adds an independent <math alttext="L^{2}" class="ltx_Math" display="inline" id="S4.p1.m8"><semantics><msup><mi>L</mi><mn>2</mn></msup><annotation encoding="application/x-tex">L^{2}</annotation></semantics></math> penalty for each parameter to the loss function. Methods which control information capacity through <math alttext="\delta" class="ltx_Math" display="inline" id="S4.p1.m9"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> include training in reduced precision <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib21" title="">21</a>]</cite>, and quantization-aware training <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib22" title="">22</a>]</cite>.</p>
+</div>
+<div class="ltx_para" id="S4.p2">
+<p class="ltx_p">However, training with regularization does not guarantee that the resultant model will be of low complexity. For example, while weight decay ensures parameter norms are smaller than they otherwise would have been, the network can still store detail in high-frequency information. Our experiments demonstrate that this indeed occurs in practice. A key requirement for complexity reduction therefore is a regularization scheme which explicitly alleviates this issue.</p>
+</div>
+<div class="ltx_para" id="S4.p3">
+<p class="ltx_p">A further complication is information which is spread across multiple parameters. Networks are typically parameterized by matrices which represent linear transformations, such that relevant information exists in their <span class="ltx_text ltx_font_italic">spectrum</span>. Ultimately such information is accounted for by the total sum of parameter capacities, but it is helpful to think of information in the spectral representation. We now introduce a regularization scheme which addresses both of these challenges.</p>
+</div>
+<section class="ltx_subsection" id="S4.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.1 </span>Quantization and Noise</h3>
+<div class="ltx_para" id="S4.SS1.p1">
+<p class="ltx_p">In contrast to methods like weight decay, which regularize the capacity of networks by controlling their range through effective penalties on <math alttext="\lambda" class="ltx_Math" display="inline" id="S4.SS1.p1.m1"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>, we introduce a simple modification to the training procedure which has previously been studied by <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib23" title="">23</a>]</cite>, amongst many others: One way to set an effective lower bound on the quantization level <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m2"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> from Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.E9" title="In 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">9</span></a> is to train networks with noisy weights. The noise prevents the parameters from forming structure below the noise threshold, limiting the information capacity “from the bottom”. To do this, we construct a set of noisy weights <math alttext="\tilde{\theta}" class="ltx_Math" display="inline" id="S4.SS1.p1.m3"><semantics><mover accent="true"><mi>θ</mi><mo>~</mo></mover><annotation encoding="application/x-tex">\tilde{\theta}</annotation></semantics></math> by adding independent Gaussian noise scaled by <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m4"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> to every parameter at each forward pass:</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E10">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\tilde{\theta}=\theta+\delta\mathcal{N}(0,1)" class="ltx_Math" display="block" id="S4.E10.m1"><semantics><mrow><mover accent="true"><mi>θ</mi><mo>~</mo></mover><mo>=</mo><mrow><mi>θ</mi><mo>+</mo><mrow><mi>δ</mi><mo lspace="0em" rspace="0em">​</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">\tilde{\theta}=\theta+\delta\mathcal{N}(0,1)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(10)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We compute the forward pass and gradients with the noisy weights, then apply those gradients to the original parameters.
+Note that <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m5"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> in Eqn <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.E10" title="In 4.1 Quantization and Noise ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">10</span></a> need not be the same as <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m6"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> from Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.E9" title="In 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">9</span></a>, but applying this training procedure sets an effective lower bound on <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m7"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math> from Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.E9" title="In 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">9</span></a> (the effective precision of our parameters) so we use the same symbol.
+This implies that we ought to be able to remove all information below the scale set by <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m8"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>, i.e. that we can quantize the parameters with bin spacing at least <math alttext="\delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m9"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>.
+To do this, we introduce a quantization operator <math alttext="\hat{Q}" class="ltx_Math" display="inline" id="S4.SS1.p1.m10"><semantics><mover accent="true"><mi>Q</mi><mo>^</mo></mover><annotation encoding="application/x-tex">\hat{Q}</annotation></semantics></math> which takes a parameter vector <math alttext="\theta" class="ltx_Math" display="inline" id="S4.SS1.p1.m11"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> and bin size <math alttext="\Delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m12"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>, and rounds all parameters to the nearest bin value</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E11">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\hat{Q}(\theta,\Delta)=\lfloor\frac{\theta}{\Delta}\rceil\times\Delta" class="ltx_math_unparsed" display="block" id="S4.E11.m1"><semantics><mrow><mover accent="true"><mi>Q</mi><mo>^</mo></mover><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi mathvariant="normal">Δ</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">⌊</mo><mfrac><mi>θ</mi><mi mathvariant="normal">Δ</mi></mfrac><mo rspace="0.055em" stretchy="false">⌉</mo></mrow><mo rspace="0.222em">×</mo><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\hat{Q}(\theta,\Delta)=\lfloor\frac{\theta}{\Delta}\rceil\times\Delta</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(11)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">We could achieve greater compression by using a separate <math alttext="\Delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m13"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math> for each parameter group, but for simplicity we use a global value of <math alttext="\Delta" class="ltx_Math" display="inline" id="S4.SS1.p1.m14"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>.
+A simple algorithm which estimates the complexity of a network based on quantization coarse-graining alone is given in Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm2" title="In Appendix A Appendix ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">2</span></a> in the appendix.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S4.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.2 </span>Spectral Entropy</h3>
+<div class="ltx_para" id="S4.SS2.p1">
+<p class="ltx_p">While coarse-graining by quantization is simple and effective, it can only address high-frequency noise.
+In this section we introduce another coarse-graining procedure which takes advantage of low-rank approximation to remove random information.
+We use this low-rank approximation both as a regularization method to limit model complexity, and as a coarse-graining method during the compression stage, to produce tighter complexity estimates throughout training.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p2">
+<p class="ltx_p">Low rank approximation is the problem of finding an approximating matrix <math alttext="\tilde{M}" class="ltx_Math" display="inline" id="S4.SS2.p2.m1"><semantics><mover accent="true"><mi>M</mi><mo>~</mo></mover><annotation encoding="application/x-tex">\tilde{M}</annotation></semantics></math> for a matrix <math alttext="M" class="ltx_Math" display="inline" id="S4.SS2.p2.m2"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> subject to the constraint that <math alttext="\text{rank}(\tilde{M})\leq r" class="ltx_Math" display="inline" id="S4.SS2.p2.m3"><semantics><mrow><mrow><mtext>rank</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mover accent="true"><mi>M</mi><mo>~</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\text{rank}(\tilde{M})\leq r</annotation></semantics></math> for some <math alttext="r" class="ltx_Math" display="inline" id="S4.SS2.p2.m4"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>, typically <math alttext="r\ll\text{rank}(M)" class="ltx_Math" display="inline" id="S4.SS2.p2.m5"><semantics><mrow><mi>r</mi><mo>≪</mo><mrow><mtext>rank</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">r\ll\text{rank}(M)</annotation></semantics></math>. Low-rank approximation of neural network weight matrices has recently been used to achieve compute– and parameter–efficient finetuning of LLMs <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib24" title="">24</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib25" title="">25</a>]</cite>, building on the insight that both the weights and update gradients live on a low-dimension subspace of the total weight space <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib26" title="">26</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib27" title="">27</a>]</cite>.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p3">
+<p class="ltx_p">The mismatch between the apparent and effective ranks of the largest models is another manifestation of the difference between the capacity and complexity of networks.
+While large capacity may be needed for training dynamics to find optimal solutions, those learned solutions which generalize best tend to be of low effective rank, and therefore low complexity.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p4">
+<p class="ltx_p">It is well-known that the optimal rank <math alttext="k" class="ltx_Math" display="inline" id="S4.SS2.p4.m1"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> approximation of <math alttext="M" class="ltx_Math" display="inline" id="S4.SS2.p4.m2"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> under the Frobenius norm is obtained by computing the singular value decomposition of <math alttext="M" class="ltx_Math" display="inline" id="S4.SS2.p4.m3"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>, and removing all but the <math alttext="k" class="ltx_Math" display="inline" id="S4.SS2.p4.m4"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> largest singular values. Recall that for an <math alttext="m\times n" class="ltx_Math" display="inline" id="S4.SS2.p4.m5"><semantics><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m\times n</annotation></semantics></math> matrix <math alttext="M\in\mathbb{R}^{m\times n}" class="ltx_Math" display="inline" id="S4.SS2.p4.m6"><semantics><mrow><mi>M</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">M\in\mathbb{R}^{m\times n}</annotation></semantics></math>, the singular value decomposition is <math alttext="M=USV=\sum_{i=1}^{r}\sigma_{i}u_{i}v_{i}^{\intercal}" class="ltx_Math" display="inline" id="S4.SS2.p4.m7"><semantics><mrow><mi>M</mi><mo>=</mo><mrow><mi>U</mi><mo lspace="0em" rspace="0em">​</mo><mi>S</mi><mo lspace="0em" rspace="0em">​</mo><mi>V</mi></mrow><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>r</mi></msubsup><mrow><msub><mi>σ</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><msub><mi>u</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>v</mi><mi>i</mi><mo>⊺</mo></msubsup></mrow></mrow></mrow><annotation encoding="application/x-tex">M=USV=\sum_{i=1}^{r}\sigma_{i}u_{i}v_{i}^{\intercal}</annotation></semantics></math>, where the columns of <math alttext="U" class="ltx_Math" display="inline" id="S4.SS2.p4.m8"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math> and the rows of <math alttext="V" class="ltx_Math" display="inline" id="S4.SS2.p4.m9"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math> are the left- and right-singular vectors respectively, and <math alttext="S" class="ltx_Math" display="inline" id="S4.SS2.p4.m10"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> is a diagonal matrix <math alttext="S=\text{diag}(\sigma_{i})" class="ltx_Math" display="inline" id="S4.SS2.p4.m11"><semantics><mrow><mi>S</mi><mo>=</mo><mrow><mtext>diag</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>σ</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">S=\text{diag}(\sigma_{i})</annotation></semantics></math> with singular values <math alttext="\sigma_{1}&gt;\sigma_{2}&gt;...&gt;\sigma_{r=\min(m,n)}" class="ltx_Math" display="inline" id="S4.SS2.p4.m12"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>σ</mi><mn>2</mn></msub><mo>&gt;</mo><mi mathvariant="normal">…</mi><mo>&gt;</mo><msub><mi>σ</mi><mrow><mi>r</mi><mo>=</mo><mrow><mi>min</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\sigma_{1}&gt;\sigma_{2}&gt;...&gt;\sigma_{r=\min(m,n)}</annotation></semantics></math> in decreasing order. Then the optimal rank <math alttext="k" class="ltx_Math" display="inline" id="S4.SS2.p4.m13"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> approximation is <math alttext="\tilde{M}=\sum_{i=1}^{k}\sigma_{i}u_{i}v_{i}^{\intercal}" class="ltx_Math" display="inline" id="S4.SS2.p4.m14"><semantics><mrow><mover accent="true"><mi>M</mi><mo>~</mo></mover><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mrow><msub><mi>σ</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><msub><mi>u</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>v</mi><mi>i</mi><mo>⊺</mo></msubsup></mrow></mrow></mrow><annotation encoding="application/x-tex">\tilde{M}=\sum_{i=1}^{k}\sigma_{i}u_{i}v_{i}^{\intercal}</annotation></semantics></math>.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p5">
+<p class="ltx_p">To coarse-grain, we search for the smallest rank decomposition of each layer that satisfies the <math alttext="\epsilon" class="ltx_Math" display="inline" id="S4.SS2.p5.m1"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>–bound of Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.E7" title="In 3.1 Lossy Compression ‣ 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">7</span></a>. Note that different layers may admit different degrees of rank decomposition, so using a global value of <math alttext="k" class="ltx_Math" display="inline" id="S4.SS2.p5.m2"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> across all layers of the network would be suboptimal. Instead, we search for optimal per-layer low-rank approximations by normalizing the singular values</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E12">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\bar{\sigma}_{i}=\frac{\sigma_{i}}{\sum_{j}\sigma_{j}}" class="ltx_Math" display="block" id="S4.E12.m1"><semantics><mrow><msub><mover accent="true"><mi>σ</mi><mo>¯</mo></mover><mi>i</mi></msub><mo>=</mo><mfrac><msub><mi>σ</mi><mi>i</mi></msub><mrow><msub><mo>∑</mo><mi>j</mi></msub><msub><mi>σ</mi><mi>j</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\bar{\sigma}_{i}=\frac{\sigma_{i}}{\sum_{j}\sigma_{j}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(12)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">so that <math alttext="\sum_{i}\bar{\sigma}_{i}=1" class="ltx_Math" display="inline" id="S4.SS2.p5.m3"><semantics><mrow><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mover accent="true"><mi>σ</mi><mo>¯</mo></mover><mi>i</mi></msub></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum_{i}\bar{\sigma}_{i}=1</annotation></semantics></math>. Next we define a parameter <math alttext="\tau\in(0,1)" class="ltx_Math" display="inline" id="S4.SS2.p5.m4"><semantics><mrow><mi>τ</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tau\in(0,1)</annotation></semantics></math> which sets an approximation threshold, so that the sum of the normalized singular values is no less than <math alttext="\tau" class="ltx_Math" display="inline" id="S4.SS2.p5.m5"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>. Intuitively, <math alttext="\tau" class="ltx_Math" display="inline" id="S4.SS2.p5.m6"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math> is a parameter which allows for convenient control of the approximation quality of the low-rank decomposition. For example, a matrix with only one large singular value, and many other negligibly small singular values has an effective rank of 1, so we will probably be able to satisfy the <math alttext="\epsilon" class="ltx_Math" display="inline" id="S4.SS2.p5.m7"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>–bound with a rank 1 approximation of that matrix, whereas for a matrix with many singular values of similar magnitude, our approximation must be close to full rank. To represent each layer with as few parameters as possible, we define a per-layer truncation threshold <math alttext="k(\tau)" class="ltx_Math" display="inline" id="S4.SS2.p5.m8"><semantics><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">k(\tau)</annotation></semantics></math>:</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E13">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="k(\tau)=\min\{k:\sum_{i=1}^{k}\bar{\sigma}_{i}\geq\tau\}" class="ltx_Math" display="block" id="S4.E13.m1"><semantics><mrow><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>min</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mrow><mi>k</mi><mo lspace="0.278em" rspace="0.111em">:</mo><mrow><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msub><mover accent="true"><mi>σ</mi><mo>¯</mo></mover><mi>i</mi></msub></mrow><mo>≥</mo><mi>τ</mi></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">k(\tau)=\min\{k:\sum_{i=1}^{k}\bar{\sigma}_{i}\geq\tau\}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(13)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">where the same threshold <math alttext="\tau" class="ltx_Math" display="inline" id="S4.SS2.p5.m9"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math> is used across all weight matrices. This lets us define a low-rank approximation operator <math alttext="\tilde{R}(\theta,\tau)" class="ltx_Math" display="inline" id="S4.SS2.p5.m10"><semantics><mrow><mover accent="true"><mi>R</mi><mo>~</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tilde{R}(\theta,\tau)</annotation></semantics></math> which returns the truncated singular value decomposition with effective rank controlled by <math alttext="\tau" class="ltx_Math" display="inline" id="S4.SS2.p5.m11"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>. Note that if the effective rank of the matrix is large, there is no compression benefit to the spectral representation. An <math alttext="m\times n" class="ltx_Math" display="inline" id="S4.SS2.p5.m12"><semantics><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m\times n</annotation></semantics></math> matrix <math alttext="M" class="ltx_Math" display="inline" id="S4.SS2.p5.m13"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> normally requires <math alttext="mn" class="ltx_Math" display="inline" id="S4.SS2.p5.m14"><semantics><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">mn</annotation></semantics></math> parameters for representation, and the SVD of rank <math alttext="k" class="ltx_Math" display="inline" id="S4.SS2.p5.m15"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> uses <math alttext="k(m+n)" class="ltx_Math" display="inline" id="S4.SS2.p5.m16"><semantics><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">k(m+n)</annotation></semantics></math> parameters, so the low-rank approximation is only useful if <math alttext="k(\tau)&lt;\frac{mn}{m+n}" class="ltx_Math" display="inline" id="S4.SS2.p5.m17"><semantics><mrow><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mfrac><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">k(\tau)&lt;\frac{mn}{m+n}</annotation></semantics></math>.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p6">
+<table class="ltx_equation ltx_eqn_table" id="S4.E14">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\tilde{R}(\theta_{j},\tau)=\begin{cases}\left(\sigma^{j}_{i:k(\tau)},u^{j}_{i:k(\tau)},v^{j}_{i:k(\tau)}\right)&amp;\text{if }k(\tau)&lt;\frac{mn}{m+n}\\
+\theta_{j}&amp;\text{otherwise}\end{cases}" class="ltx_Math" display="block" id="S4.E14.m1"><semantics><mrow><mrow><mover accent="true"><mi>R</mi><mo>~</mo></mover><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>j</mi></msub><mo>,</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mo>(</mo><msubsup><mi>σ</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo>,</mo><msubsup><mi>u</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo>,</mo><msubsup><mi>v</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo>)</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mtext>if </mtext><mo lspace="0em" rspace="0em">​</mo><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mstyle displaystyle="false"><mfrac><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfrac></mstyle></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><msub><mi>θ</mi><mi>j</mi></msub></mtd><mtd class="ltx_align_left" columnalign="left"><mtext>otherwise</mtext></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\tilde{R}(\theta_{j},\tau)=\begin{cases}\left(\sigma^{j}_{i:k(\tau)},u^{j}_{i:k(\tau)},v^{j}_{i:k(\tau)}\right)&amp;\text{if }k(\tau)&lt;\frac{mn}{m+n}\\
+\theta_{j}&amp;\text{otherwise}\end{cases}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(14)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Where <math alttext="\theta_{j}" class="ltx_Math" display="inline" id="S4.SS2.p6.m1"><semantics><msub><mi>θ</mi><mi>j</mi></msub><annotation encoding="application/x-tex">\theta_{j}</annotation></semantics></math> is the network parameter group of layer <math alttext="j" class="ltx_Math" display="inline" id="S4.SS2.p6.m2"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>, and <math alttext="(\sigma^{j}_{i:k(\tau)},u^{j}_{i:k(\tau)},v^{j}_{i:k(\tau)})" class="ltx_Math" display="inline" id="S4.SS2.p6.m3"><semantics><mrow><mo stretchy="false">(</mo><msubsup><mi>σ</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo>,</mo><msubsup><mi>u</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo>,</mo><msubsup><mi>v</mi><mrow><mi>i</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mi>j</mi></msubsup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\sigma^{j}_{i:k(\tau)},u^{j}_{i:k(\tau)},v^{j}_{i:k(\tau)})</annotation></semantics></math> are the corresponding low-rank matrices of rank <math alttext="k(\tau)" class="ltx_Math" display="inline" id="S4.SS2.p6.m4"><semantics><mrow><mi>k</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">k(\tau)</annotation></semantics></math>.
+Note that we can interpret the normalized singular values as a probability distribution. Then, define the <span class="ltx_text ltx_font_italic">spectral entropy</span> of a matrix <math alttext="H_{\text{svd}}" class="ltx_Math" display="inline" id="S4.SS2.p6.m5"><semantics><msub><mi>H</mi><mtext>svd</mtext></msub><annotation encoding="application/x-tex">H_{\text{svd}}</annotation></semantics></math>,</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E15">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="H_{\text{svd}}=-\sum_{i}\bar{\sigma}_{i}\log\bar{\sigma}_{i}" class="ltx_Math" display="block" id="S4.E15.m1"><semantics><mrow><msub><mi>H</mi><mtext>svd</mtext></msub><mo>=</mo><mrow><mo>−</mo><mrow><munder><mo movablelimits="false">∑</mo><mi>i</mi></munder><mrow><msub><mover accent="true"><mi>σ</mi><mo>¯</mo></mover><mi>i</mi></msub><mo lspace="0.167em" rspace="0em">​</mo><mrow><mi>log</mi><mo lspace="0.167em">⁡</mo><msub><mover accent="true"><mi>σ</mi><mo>¯</mo></mover><mi>i</mi></msub></mrow></mrow></mrow></mrow></mrow><annotation encoding="application/x-tex">H_{\text{svd}}=-\sum_{i}\bar{\sigma}_{i}\log\bar{\sigma}_{i}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(15)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Intuitively, <math alttext="H_{\text{svd}}" class="ltx_Math" display="inline" id="S4.SS2.p6.m6"><semantics><msub><mi>H</mi><mtext>svd</mtext></msub><annotation encoding="application/x-tex">H_{\text{svd}}</annotation></semantics></math> tells us about the effective rank of the matrix by measuring the spread of the singular values. To see that, note that if all singular values are equal, <math alttext="H_{\text{svd}}" class="ltx_Math" display="inline" id="S4.SS2.p6.m7"><semantics><msub><mi>H</mi><mtext>svd</mtext></msub><annotation encoding="application/x-tex">H_{\text{svd}}</annotation></semantics></math> is maximized, and if all but one of the singular values are zero, <math alttext="H_{\text{svd}}" class="ltx_Math" display="inline" id="S4.SS2.p6.m8"><semantics><msub><mi>H</mi><mtext>svd</mtext></msub><annotation encoding="application/x-tex">H_{\text{svd}}</annotation></semantics></math> is minimized. <cite class="ltx_cite ltx_citemacro_citet">Roy and Vetterli [<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib28" title="">28</a>]</cite> formalize this by proving that <math alttext="H_{\text{svd}}" class="ltx_Math" display="inline" id="S4.SS2.p6.m9"><semantics><msub><mi>H</mi><mtext>svd</mtext></msub><annotation encoding="application/x-tex">H_{\text{svd}}</annotation></semantics></math> computes the effective rank of a matrix, <math alttext="\text{rank}_{\text{eff}}(M)=\exp(H_{\text{svd}}(M))" class="ltx_Math" display="inline" id="S4.SS2.p6.m10"><semantics><mrow><mrow><msub><mtext>rank</mtext><mtext>eff</mtext></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>H</mi><mtext>svd</mtext></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\text{rank}_{\text{eff}}(M)=\exp(H_{\text{svd}}(M))</annotation></semantics></math>, which measures the intrinsic dimension of the transformation parameterized by <math alttext="M" class="ltx_Math" display="inline" id="S4.SS2.p6.m11"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>. The spectral entropy not only provides a means of measuring the effective dimension of networks as training progresses—we can also explicitly penalize this quantity to encourage the network to learn simple, low-rank representations. In experiments, we show that our regularization method causes grokking, and produces the lowest-rank and most compressible networks of the methods we study.</p>
+</div>
+<figure class="ltx_figure" id="S4.F6"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="372" id="S4.F6.g1" src="GenBound.png" width="449"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 6: </span>We plot the generalization bound on the expected risk according to Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.E4" title="In 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4</span></a>. While no models achieve low enough complexity to give non-vacuous bounds, our regularization method achieves the best bounds in all cases. It is not surprising that we can only achieve a vacuous bound, since the models are vastly over-parameterized, and the dataset small.</figcaption>
+</figure>
+<div class="ltx_para" id="S4.SS2.p7">
+<p class="ltx_p">Our full coarse-graining procedure is to perform a Bayesian optimization for the values of <math alttext="\tau" class="ltx_Math" display="inline" id="S4.SS2.p7.m1"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math> and <math alttext="\Delta" class="ltx_Math" display="inline" id="S4.SS2.p7.m2"><semantics><mi mathvariant="normal">Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math> which produce the most compressed description, while satisfying the <math alttext="\epsilon" class="ltx_Math" display="inline" id="S4.SS2.p7.m3"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>–bound. When the low-rank description is more compressible, we quantize the <span class="ltx_text ltx_font_italic">decomposed</span> matrices. The full procedure is given in Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm1" title="In 4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">1</span></a>. We emphasize that the low-rank decomposition is used for two separate purposes: 1) the spectral entropy penalty is used as a regularizer, and 2) the low-rank decomposition is used to obtain compressed descriptions of the model at the coarse-graining stage.</p>
+</div>
+<div class="ltx_para" id="S4.SS2.p8">
+<p class="ltx_p">The regularizer we study in experiments adds the spectral entropy penalty scaled by <math alttext="\beta" class="ltx_Math" display="inline" id="S4.SS2.p8.m1"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> to the loss,</p>
+<table class="ltx_equation ltx_eqn_table" id="S4.E16">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_left_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_left"><math alttext="\mathcal{L}_{\text{reg}}(\theta)=\beta H_{\text{svd}}(\theta)" class="ltx_Math" display="block" id="S4.E16.m1"><semantics><mrow><mrow><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mtext>reg</mtext></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>β</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>H</mi><mtext>svd</mtext></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}_{\text{reg}}(\theta)=\beta H_{\text{svd}}(\theta)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_left_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(16)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">along with the noisy gradients described in section <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.SS1" title="4.1 Quantization and Noise ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4.1</span></a>, plus weight decay via the AdamW optimizer.</p>
+</div>
+<figure class="ltx_float ltx_algorithm" id="algorithm1">
+<div class="ltx_listing ltx_lst_numbers_left ltx_listing">
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">Input:</span> Neural network parameters <math alttext="\theta" class="ltx_Math" display="inline" id="algorithm1.m1"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>, number of optimization steps <math alttext="N" class="ltx_Math" display="inline" id="algorithm1.m2"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>, error tolerance <math alttext="\epsilon" class="ltx_Math" display="inline" id="algorithm1.m3"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">Output:</span> Optimal compressed size
+</div>
+<div class="ltx_listingline">
+Initialize Bayesian Optimizer <math alttext="BO" class="ltx_Math" display="inline" id="algorithm1.m4"><semantics><mrow><mi>B</mi><mo lspace="0em" rspace="0em">​</mo><mi>O</mi></mrow><annotation encoding="application/x-tex">BO</annotation></semantics></math>;
+</div>
+<div class="ltx_listingline">
+best_compressed_size <math alttext="\leftarrow\infty" class="ltx_Math" display="inline" id="algorithm1.m5"><semantics><mrow><mi></mi><mo stretchy="false">←</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\leftarrow\infty</annotation></semantics></math>;
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">for</span> <em class="ltx_emph ltx_font_italic"><math alttext="i=1" class="ltx_Math" display="inline" id="algorithm1.m6"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i=1</annotation></semantics></math> <span class="ltx_text ltx_font_bold ltx_font_upright">to</span> <math alttext="N" class="ltx_Math" display="inline" id="algorithm1.m7"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></em> <span class="ltx_text ltx_font_bold">do</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<math alttext="\tau_{i},\Delta_{i}\leftarrow BO.\textsc{SuggestParameters}()" class="ltx_Math" display="inline" id="algorithm1.m8"><semantics><mrow><mrow><mrow><msub><mi>τ</mi><mi>i</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>i</mi></msub></mrow><mo stretchy="false">←</mo><mrow><mi>B</mi><mo lspace="0em" rspace="0em">​</mo><mi>O</mi></mrow></mrow><mo lspace="0em" rspace="0.167em">.</mo><mrow><mtext class="ltx_font_smallcaps">SuggestParameters</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\tau_{i},\Delta_{i}\leftarrow BO.\textsc{SuggestParameters}()</annotation></semantics></math>;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<math alttext="\theta_{R}\leftarrow R(\theta,\tau_{i})" class="ltx_Math" display="inline" id="algorithm1.m9"><semantics><mrow><msub><mi>θ</mi><mi>R</mi></msub><mo stretchy="false">←</mo><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><msub><mi>τ</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\theta_{R}\leftarrow R(\theta,\tau_{i})</annotation></semantics></math> ;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>   <span class="ltx_text ltx_font_typewriter">// </span><span class="ltx_text ltx_font_typewriter">Low-rank approximation</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<math alttext="\theta_{RQ}\leftarrow Q(\theta_{R},\Delta_{i})" class="ltx_Math" display="inline" id="algorithm1.m10"><semantics><mrow><msub><mi>θ</mi><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mi>Q</mi></mrow></msub><mo stretchy="false">←</mo><mrow><mi>Q</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>R</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\theta_{RQ}\leftarrow Q(\theta_{R},\Delta_{i})</annotation></semantics></math> ;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>   <span class="ltx_text ltx_font_typewriter">// </span><span class="ltx_text ltx_font_typewriter">Quantization</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<span class="ltx_text ltx_font_bold">if</span> <em class="ltx_emph ltx_font_italic"><math alttext="\left|\textsc{Loss}(\theta_{RQ})-\textsc{Loss}(\theta)\right|&lt;\epsilon" class="ltx_Math" display="inline" id="algorithm1.m11"><semantics><mrow><mrow><mo>|</mo><mrow><mrow><mtext class="ltx_font_smallcaps"><em class="ltx_emph ltx_font_smallcaps">Loss</em></mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mi>Q</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mtext class="ltx_font_smallcaps"><em class="ltx_emph ltx_font_smallcaps">Loss</em></mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\left|\textsc{Loss}(\theta_{RQ})-\textsc{Loss}(\theta)\right|&lt;\epsilon</annotation></semantics></math></em> <span class="ltx_text ltx_font_bold">then</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+compressed_size <math alttext="\leftarrow\textsc{compress}(\theta_{RQ})" class="ltx_Math" display="inline" id="algorithm1.m12"><semantics><mrow><mi></mi><mo stretchy="false">←</mo><mrow><mtext class="ltx_font_smallcaps">compress</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mrow><mi>R</mi><mo lspace="0em" rspace="0em">​</mo><mi>Q</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\leftarrow\textsc{compress}(\theta_{RQ})</annotation></semantics></math>;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<span class="ltx_text ltx_font_bold">if</span> <em class="ltx_emph ltx_font_italic">compressed_size <math alttext="&lt;" class="ltx_Math" display="inline" id="algorithm1.m13"><semantics><mo>&lt;</mo><annotation encoding="application/x-tex">&lt;</annotation></semantics></math> best_compressed_size</em> <span class="ltx_text ltx_font_bold">then</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+best_compressed_size <math alttext="\leftarrow" class="ltx_Math" display="inline" id="algorithm1.m14"><semantics><mo stretchy="false">←</mo><annotation encoding="application/x-tex">\leftarrow</annotation></semantics></math> compressed_size;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  end if
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> <math alttext="BO.\textsc{UpdateModel}(\tau_{i},\Delta_{i},\text{compressed\_size})" class="ltx_Math" display="inline" id="algorithm1.m15"><semantics><mrow><mrow><mi>B</mi><mo lspace="0em" rspace="0em">​</mo><mi>O</mi></mrow><mo lspace="0em" rspace="0.167em">.</mo><mrow><mtext class="ltx_font_smallcaps">UpdateModel</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>τ</mi><mi>i</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>i</mi></msub><mo>,</mo><mtext>compressed_size</mtext><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">BO.\textsc{UpdateModel}(\tau_{i},\Delta_{i},\text{compressed\_size})</annotation></semantics></math>;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> <span class="ltx_text ltx_font_bold">else</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<math alttext="BO.\textsc{UpdateModel}(\tau_{i},\Delta_{i},\infty)" class="ltx_Math" display="inline" id="algorithm1.m16"><semantics><mrow><mrow><mi>B</mi><mo lspace="0em" rspace="0em">​</mo><mi>O</mi></mrow><mo lspace="0em" rspace="0.167em">.</mo><mrow><mtext class="ltx_font_smallcaps">UpdateModel</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>τ</mi><mi>i</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>i</mi></msub><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">BO.\textsc{UpdateModel}(\tau_{i},\Delta_{i},\infty)</annotation></semantics></math> ;
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>   <span class="ltx_text ltx_font_typewriter">// </span><span class="ltx_text ltx_font_typewriter">Penalize invalid solutions</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  end if
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+</div>
+<div class="ltx_listingline"> end for
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">return</span> best_compressed_size
+
+</div>
+</div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float"><span class="ltx_text ltx_font_bold">Algorithm 1</span> </span>Bayesian Optimization for Compression by Coarse-Graining</figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Experiments</h2>
+<div class="ltx_para" id="S5.p1">
+<p class="ltx_p">To study the complexity dynamics of networks transitioning from memorizing to generalizing solutions, we adopt the “grokking” tasks first reported in <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib1" title="">1</a>]</cite>. These are a set of modular arithmetic tasks which networks easily over-fit, quickly achieving zero training error while test error remains large, suggesting memorization of the training examples. After many further steps of gradient descent after over-fitting, networks suddenly generalize and achieve perfect test accuracy. Although grokking is a sign of improperly regularized training, the extended delay between memorization and generalization is convenient for understanding complexity dynamics, and their relationship with generalization.</p>
+</div>
+<div class="ltx_para" id="S5.p2">
+<p class="ltx_p">We demonstrate a regularizer, <math alttext="\mathcal{L}_{\text{reg}}" class="ltx_Math" display="inline" id="S5.p2.m1"><semantics><msub><mi class="ltx_font_mathcaligraphic">ℒ</mi><mtext>reg</mtext></msub><annotation encoding="application/x-tex">\mathcal{L}_{\text{reg}}</annotation></semantics></math> on the grokking tasks and show that 1) it causes grokking 2) it results in lower complexity networks than weight decay alone, the most widely-used regularization method, as measured by our complexity metric.</p>
+</div>
+<div class="ltx_para" id="S5.p3">
+<p class="ltx_p">We reproduce a subset of the grokking experiments first reported in <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib1" title="">1</a>]</cite>. Our training tasks all consist of learning a binary operation mod a prime number <math alttext="p=113" class="ltx_Math" display="inline" id="S5.p3.m1"><semantics><mrow><mi>p</mi><mo>=</mo><mn>113</mn></mrow><annotation encoding="application/x-tex">p=113</annotation></semantics></math>. For each binary operation we construct a dataset of equations of the form
+<math alttext="\langle x\rangle\langle\text{op}\rangle\langle y\rangle\langle=\rangle\langle x\circ y\rangle" class="ltx_Math" display="inline" id="S5.p3.m2"><semantics><mrow><mrow><mo stretchy="false">⟨</mo><mi>x</mi><mo stretchy="false">⟩</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">⟨</mo><mtext>op</mtext><mo stretchy="false">⟩</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">⟨</mo><mi>y</mi><mo stretchy="false">⟩</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">⟨</mo><mo lspace="0em" rspace="0em">=</mo><mo stretchy="false">⟩</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">⟨</mo><mrow><mi>x</mi><mo lspace="0.222em" rspace="0.222em">∘</mo><mi>y</mi></mrow><mo stretchy="false">⟩</mo></mrow></mrow><annotation encoding="application/x-tex">\langle x\rangle\langle\text{op}\rangle\langle y\rangle\langle=\rangle\langle x\circ y\rangle</annotation></semantics></math>, where <math alttext="\langle a\rangle" class="ltx_Math" display="inline" id="S5.p3.m3"><semantics><mrow><mo stretchy="false">⟨</mo><mi>a</mi><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\langle a\rangle</annotation></semantics></math> stands for the token corresponding to element <math alttext="a" class="ltx_Math" display="inline" id="S5.p3.m4"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>. We train standard decoder-only transformers with a single layer for mod addition and multiplication, and two layers for mod subtraction and division. Further training details can be found in the appendix. We use Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm1" title="In 4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">1</span></a> to compute complexity upper-bounds on the coarse-grained models. The final compression step is performed by <span class="ltx_text ltx_font_typewriter">bzip2</span>, an off-the-shelf compression utility.</p>
+</div>
+<div class="ltx_para" id="S5.p4">
+<p class="ltx_p">First, we establish that grokking occurs in all regularized models, and does not occur in unregularized models in Appendix Figure <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#A1.F10" title="Figure 10 ‣ Appendix A Appendix ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">10</span></a>. Next, we plot accuracy and complexity together for the regularized models in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1.F2" title="Figure 2 ‣ 1 Introduction ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">2</span></a>, which shows our main result: as expected from Occam’s Razor, complexity is maximized during memorization and falls during generalization, demonstrating a clear complexity phase transition. In contrast, Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1.F3" title="Figure 3 ‣ 1 Introduction ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">3</span></a> demonstrates that without regularization, models tend to stay in the high-complexity memorization regime indefinitely. Next, we plot algorithmic rate–distortion curves of best fit in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.F4" title="Figure 4 ‣ 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4</span></a>. We fit curves of the form <math alttext="y=a\log(x)+b" class="ltx_Math" display="inline" id="S5.p4.m1"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mi>a</mi><mo lspace="0.167em" rspace="0em">​</mo><mrow><mi>log</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mi>b</mi></mrow></mrow><annotation encoding="application/x-tex">y=a\log(x)+b</annotation></semantics></math>, and display <math alttext="R^{2}" class="ltx_Math" display="inline" id="S5.p4.m2"><semantics><msup><mi>R</mi><mn>2</mn></msup><annotation encoding="application/x-tex">R^{2}</annotation></semantics></math> values in the legend. These curves show how lossy <span class="ltx_text ltx_font_italic">model</span> compression trades off with lossless <span class="ltx_text ltx_font_italic">data</span> compression for the converged models at varying distortion bounds. Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.F5" title="Figure 5 ‣ 3.1 Lossy Compression ‣ 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">5</span></a> shows how the complexity dynamics change under varying distortion levels <math alttext="\epsilon" class="ltx_Math" display="inline" id="S5.p4.m3"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>: we see that as the distortion bound is loosened (larger <math alttext="\epsilon" class="ltx_Math" display="inline" id="S5.p4.m4"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>), the corresponding complexity falls for the same model, as expected from the theory of rate–distortion.</p>
+</div>
+<div class="ltx_para" id="S5.p5">
+<p class="ltx_p">Plotting the generalization bound from Eqn. <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S3.E4" title="In 3 Complexity and Generalization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4</span></a>, we see in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.F6" title="Figure 6 ‣ 4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">6</span></a> the models trained with our regularizer come closest to a non-trivial generalization bound: they achieve the least sum of data entropy and model complexity. Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#A1.F11" title="Figure 11 ‣ Appendix A Appendix ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">11</span></a> in the appendix plots the total description length of the dataset under each model, which mirrors the generalization bound.</p>
+</div>
+</section>
+<section class="ltx_section" id="S6">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Conclusion</h2>
+<div class="ltx_para" id="S6.p1">
+<p class="ltx_p">Just as physical systems can transition between distinct phases of matter, we show that learning systems can transition between distinct phases characterized by the complexity of their internal representations. We suggest that a complexity phase transition is the central mechanism driving the grokking phenomenon, in contrast to prior works which focus on more specific signatures such as weight norms <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib10" title="">10</a>]</cite> or linear structure <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib8" title="">8</a>]</cite>. We justify our analysis on theoretical grounds by linking complexity to generalization through formal statistical generalization bounds <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib15" title="">15</a>]</cite>. From this perspective, we can see that small weight norms or linear structure are different ways for networks to be simple, but these metrics alone are insufficient explanations since complexity can emerge through a variety of mechanisms. For example, we showed how the effective rank of the network is one means by which complexity can emerge, which we penalize through the spectral entropy measure we introduced in Section <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S4.SS2" title="4.2 Spectral Entropy ‣ 4 Capacity and Regularization ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">4.2</span></a>.</p>
+</div>
+<div class="ltx_para" id="S6.p2">
+<p class="ltx_p">The distinctive separation between the memorizing and generalizing phases makes the grokking phenomenon an ideal model system to initiate the study of complexity phase transitions in learning systems. A related pathological phenomenon observed in learning systems is <span class="ltx_text ltx_font_italic">double descent</span> <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib12" title="">12</a>]</cite>, in which test error first falls, then rises, then falls again as a function of model size, with training steps fixed. A unified theory of complexity and generalization should predict when and under which conditions such training dynamics occur, and may suggest avenues for further progress in the theory of machine learning. Generalizing our results to account for arbitrary learning systems could lead to a deeper understanding of the interplay between optimization dynamics, the loss landscape, data, model capacity, and complexity.</p>
+</div>
+<div class="ltx_para" id="S6.p3">
+<p class="ltx_p">Equipped with such a theory, practitioners could predict the performance of machine learning systems before running costly experiments, and insights gained from a more complete theory of machine learning could enable new breakthroughs in our understanding of complex systems more broadly. The emerging field of algorithmic thermodynamics <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib29" title="">29</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib30" title="">30</a>, <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib31" title="">31</a>]</cite> provides a promising mathematical and computational framework to analyze these systems.</p>
+</div>
+<div class="ltx_para" id="S6.p4">
+<p class="ltx_p">The study of phase transitions in learning systems provides a window into fundamental questions about the nature of generalization and the emergence of structure in dynamical systems. The rise and fall of complexity we report in this work is conjectured to be a generic property of certain complex dynamical systems <cite class="ltx_cite ltx_citemacro_citep">[<a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#bib.bib2" title="">2</a>]</cite>, and understanding its origin in greater detail could help explain not only the emergence of abstraction and generalization in learning systems, but also the apparent complexity we observe in the natural world more broadly. Machine learning systems such as neural networks are convenient model complex systems to study from a theoretical perspective due to their transparency and controllability, and the study of their complexity-theoretic properties is a promising avenue for further research.</p>
+</div>
+</section>
+<section class="ltx_section" id="Sx1">
+<h2 class="ltx_title ltx_title_section">Acknowledgments</h2>
+<div class="ltx_para" id="Sx1.p1">
+<p class="ltx_p">The authors thank Jasmine Brewer and Andrew P. Turner for valuable discussions that strengthened this work.</p>
+</div>
+</section>
+<section class="ltx_section" id="Sx2">
+<h2 class="ltx_title ltx_title_section">Funding</h2>
+<div class="ltx_para" id="Sx2.p1">
+<p class="ltx_p">This work was supported by the EPSRC Programme Grant <em class="ltx_emph ltx_font_italic">“From Sensing to Collaboration”</em> (EP/V000748/1). Branton DeMoss was supported by an AWS Lighthouse Scholarship.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+<ul class="ltx_biblist">
+<li class="ltx_bibitem" id="bib.bib1">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Power et al. [2022]</span>
+<span class="ltx_bibblock">
+A. Power, Y. Burda,
+H. Edwards, I. Babuschkin,
+V. Misra,
+
+</span>
+<span class="ltx_bibblock">Grokking: Generalization beyond overfitting on small
+algorithmic datasets,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2201.02177
+(2022).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib2">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Aaronson et al. [2014]</span>
+<span class="ltx_bibblock">
+S. Aaronson, S. M. Carroll,
+L. Ouellette, Quantifying the rise and fall
+of complexity in closed systems: The coffee automaton, 2014.
+URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/1405.6903" title="">https://arxiv.org/abs/1405.6903</a>.
+<a class="ltx_ref ltx_href ltx_font_typewriter" href="http://arxiv.org/abs/1405.6903" title="">arXiv:1405.6903</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib3">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Rissanen [1978]</span>
+<span class="ltx_bibblock">
+J. Rissanen,
+
+</span>
+<span class="ltx_bibblock">Modeling by shortest data description*,
+
+</span>
+<span class="ltx_bibblock">Autom. 14 (1978)
+465–471.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib4">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Shannon [1948]</span>
+<span class="ltx_bibblock">
+C. E. Shannon,
+
+</span>
+<span class="ltx_bibblock">A mathematical theory of communication,
+
+</span>
+<span class="ltx_bibblock">Bell Syst. Tech. J. 27
+(1948) 623–656.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib5">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Vapnik [1991]</span>
+<span class="ltx_bibblock">
+V. N. Vapnik,
+
+</span>
+<span class="ltx_bibblock">Principles of risk minimization for learning theory,
+
+</span>
+<span class="ltx_bibblock">in: Neural Information Processing Systems,
+1991.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib6">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Bartlett and Mendelson [2003]</span>
+<span class="ltx_bibblock">
+P. L. Bartlett, S. Mendelson,
+
+</span>
+<span class="ltx_bibblock">Rademacher and gaussian complexities: Risk bounds and
+structural results,
+
+</span>
+<span class="ltx_bibblock">J. Mach. Learn. Res. 3
+(2003) 463–482.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib7">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Vapnik and Chervonenkis [1971]</span>
+<span class="ltx_bibblock">
+V. N. Vapnik, A. Chervonenkis,
+
+</span>
+<span class="ltx_bibblock">On the uniform convergence of relative frequencies of
+events to their probabilities,
+
+</span>
+<span class="ltx_bibblock">1971.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib8">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Liu et al. [2022a]</span>
+<span class="ltx_bibblock">
+Z. Liu, O. Kitouni,
+N. Nolte, E. J. Michaud,
+M. Tegmark, M. Williams,
+
+</span>
+<span class="ltx_bibblock">Towards understanding grokking: An effective theory
+of representation learning,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2205.10343
+(2022a).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib9">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Liu et al. [2022b]</span>
+<span class="ltx_bibblock">
+Z. Liu, E. J. Michaud,
+M. Tegmark,
+
+</span>
+<span class="ltx_bibblock">Omnigrok: Grokking beyond algorithmic data,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2210.01117
+(2022b).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib10">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Varma et al. [2023]</span>
+<span class="ltx_bibblock">
+V. Varma, R. Shah,
+Z. Kenton, J. Kram’ar,
+R. Kumar,
+
+</span>
+<span class="ltx_bibblock">Explaining grokking through circuit efficiency,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2309.02390
+(2023).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib11">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nanda et al. [2023]</span>
+<span class="ltx_bibblock">
+N. Nanda, L. Chan,
+T. Lieberum, J. Smith,
+J. Steinhardt,
+
+</span>
+<span class="ltx_bibblock">Progress measures for grokking via mechanistic
+interpretability,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2301.05217
+(2023).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib12">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Nakkiran et al. [2019]</span>
+<span class="ltx_bibblock">
+P. Nakkiran, G. Kaplun,
+Y. Bansal, T. Yang,
+B. Barak, I. Sutskever,
+
+</span>
+<span class="ltx_bibblock">Deep double descent: where bigger models and more
+data hurt,
+
+</span>
+<span class="ltx_bibblock">Journal of Statistical Mechanics: Theory and
+Experiment 2021 (2019).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib13">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kaplan et al. [2020]</span>
+<span class="ltx_bibblock">
+J. Kaplan, S. McCandlish,
+T. Henighan, T. B. Brown,
+B. Chess, R. Child,
+S. Gray, A. Radford,
+J. Wu, D. Amodei, Scaling
+laws for neural language models, 2020. URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2001.08361" title="">https://arxiv.org/abs/2001.08361</a>.
+<a class="ltx_ref ltx_href ltx_font_typewriter" href="http://arxiv.org/abs/2001.08361" title="">arXiv:2001.08361</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib14">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Henighan et al. [2020]</span>
+<span class="ltx_bibblock">
+T. Henighan, J. Kaplan,
+M. Katz, M. Chen,
+C. Hesse, J. Jackson,
+H. Jun, T. B. Brown,
+P. Dhariwal, S. Gray,
+C. Hallacy, B. Mann,
+A. Radford, A. Ramesh,
+N. Ryder, D. M. Ziegler,
+J. Schulman, D. Amodei,
+S. McCandlish,
+
+</span>
+<span class="ltx_bibblock">Scaling laws for autoregressive generative modeling,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2010.14701
+(2020).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib15">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Lotfi et al. [2024]</span>
+<span class="ltx_bibblock">
+S. Lotfi, M. Finzi,
+Y. Kuang, T. G. J. Rudner,
+M. Goldblum, A. G. Wilson,
+
+</span>
+<span class="ltx_bibblock">Non-vacuous generalization bounds for large language
+models,
+
+</span>
+<span class="ltx_bibblock">ICML 2024 (2024). URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2312.17173" title="">https://arxiv.org/abs/2312.17173</a>.
+<a class="ltx_ref ltx_href ltx_font_typewriter" href="http://arxiv.org/abs/2312.17173" title="">arXiv:2312.17173</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib16">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Goldblum et al. [2023]</span>
+<span class="ltx_bibblock">
+M. Goldblum, M. Finzi,
+K. Rowan, A. G. Wilson,
+
+</span>
+<span class="ltx_bibblock">The no free lunch theorem, kolmogorov complexity, and
+the role of inductive biases in machine learning,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2304.05366
+(2023).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib17">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Langford and Seeger [2001]</span>
+<span class="ltx_bibblock">
+J. Langford, M. Seeger,
+
+</span>
+<span class="ltx_bibblock">Bounds for averaging classifiers.,
+
+</span>
+<span class="ltx_bibblock">Carnegie Mellon (2001).
+URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.cs.cmu.edu/~jcl/papers/averaging/averaging_tech.pdf" title="">https://www.cs.cmu.edu/˜jcl/papers/averaging/averaging_tech.pdf</a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib18">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li and Vitányi [1993]</span>
+<span class="ltx_bibblock">
+M. Li, P. M. B. Vitányi,
+
+</span>
+<span class="ltx_bibblock">An introduction to kolmogorov complexity and its
+applications,
+
+</span>
+<span class="ltx_bibblock">in: Graduate Texts in Computer Science,
+1993.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib19">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Blau and Michaeli [2019]</span>
+<span class="ltx_bibblock">
+Y. Blau, T. Michaeli,
+
+</span>
+<span class="ltx_bibblock">Rethinking lossy compression: The
+rate-distortion-perception tradeoff,
+
+</span>
+<span class="ltx_bibblock">in: International Conference on Machine
+Learning, 2019.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib20">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Vereshchagin and Vitányi [2004]</span>
+<span class="ltx_bibblock">
+N. K. Vereshchagin, P. M. B. Vitányi,
+
+</span>
+<span class="ltx_bibblock">Rate distortion and denoising of individual data
+using kolmogorov complexity,
+
+</span>
+<span class="ltx_bibblock">IEEE Transactions on Information Theory
+56 (2004) 3438–3454.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib21">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Micikevicius et al. [2017]</span>
+<span class="ltx_bibblock">
+P. Micikevicius, S. Narang,
+J. Alben, G. F. Diamos,
+E. Elsen, D. García,
+B. Ginsburg, M. Houston,
+O. Kuchaiev, G. Venkatesh,
+H. Wu,
+
+</span>
+<span class="ltx_bibblock">Mixed precision training,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/1710.03740
+(2017).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib22">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ma et al. [2024]</span>
+<span class="ltx_bibblock">
+S. Ma, H. Wang, L. Ma,
+L. Wang, W. Wang,
+S. Huang, L. Dong,
+R. Wang, J. Xue,
+F. Wei,
+
+</span>
+<span class="ltx_bibblock">The era of 1-bit llms: All large language models are
+in 1.58 bits,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2402.17764
+(2024).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib23">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hinton and van Camp [1993]</span>
+<span class="ltx_bibblock">
+G. E. Hinton, D. van Camp,
+
+</span>
+<span class="ltx_bibblock">Keeping the neural networks simple by minimizing the
+description length of the weights,
+
+</span>
+<span class="ltx_bibblock">in: Annual Conference Computational Learning
+Theory, 1993.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib24">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hu et al. [2021]</span>
+<span class="ltx_bibblock">
+J. E. Hu, Y. Shen,
+P. Wallis, Z. Allen-Zhu,
+Y. Li, S. Wang,
+W. Chen,
+
+</span>
+<span class="ltx_bibblock">Lora: Low-rank adaptation of large language models,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2106.09685
+(2021).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib25">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Dettmers et al. [2023]</span>
+<span class="ltx_bibblock">
+T. Dettmers, A. Pagnoni,
+A. Holtzman, L. Zettlemoyer,
+
+</span>
+<span class="ltx_bibblock">Qlora: Efficient finetuning of quantized llms,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2305.14314
+(2023).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib26">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Li et al. [2018]</span>
+<span class="ltx_bibblock">
+C. Li, H. Farkhoor,
+R. Liu, J. Yosinski,
+
+</span>
+<span class="ltx_bibblock">Measuring the intrinsic dimension of objective
+landscapes,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/1804.08838
+(2018).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib27">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Aghajanyan et al. [2020]</span>
+<span class="ltx_bibblock">
+A. Aghajanyan, L. Zettlemoyer,
+S. Gupta,
+
+</span>
+<span class="ltx_bibblock">Intrinsic dimensionality explains the effectiveness
+of language model fine-tuning,
+
+</span>
+<span class="ltx_bibblock">ArXiv abs/2012.13255
+(2020).
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib28">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Roy and Vetterli [2007]</span>
+<span class="ltx_bibblock">
+O. Roy, M. Vetterli,
+
+</span>
+<span class="ltx_bibblock">The effective rank: A measure of effective
+dimensionality,
+
+</span>
+<span class="ltx_bibblock">2007 15th European Signal Processing Conference
+(2007) 606–610.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib29">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ebtekar and Hutter [2025]</span>
+<span class="ltx_bibblock">
+A. Ebtekar, M. Hutter,
+
+</span>
+<span class="ltx_bibblock">Foundations of algorithmic thermodynamics,
+
+</span>
+<span class="ltx_bibblock">Phys. Rev. E 111
+(2025) 014118. URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://link.aps.org/doi/10.1103/PhysRevE.111.014118" title="">https://link.aps.org/doi/10.1103/PhysRevE.111.014118</a>.
+doi:<a class="ltx_ref ltx_href" href="http://dx.doi.org/10.1103/PhysRevE.111.014118" title=""><span class="ltx_ref ltx_nolink ltx_path ltx_font_typewriter">10.1103/PhysRevE.111.014118</span></a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib30">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Baez and Stay [2012]</span>
+<span class="ltx_bibblock">
+J. Baez, M. Stay,
+
+</span>
+<span class="ltx_bibblock">Algorithmic thermodynamics,
+
+</span>
+<span class="ltx_bibblock">Mathematical Structures in Computer Science
+22 (2012) 771–787.
+doi:<a class="ltx_ref ltx_href" href="http://dx.doi.org/10.1017/S0960129511000521" title=""><span class="ltx_ref ltx_nolink ltx_path ltx_font_typewriter">10.1017/S0960129511000521</span></a>.
+
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bib31">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kolchinsky and Wolpert [2020]</span>
+<span class="ltx_bibblock">
+A. Kolchinsky, D. H. Wolpert,
+
+</span>
+<span class="ltx_bibblock">Thermodynamic costs of turing machines,
+
+</span>
+<span class="ltx_bibblock">Phys. Rev. Res. 2
+(2020) 033312. URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://link.aps.org/doi/10.1103/PhysRevResearch.2.033312" title="">https://link.aps.org/doi/10.1103/PhysRevResearch.2.033312</a>.
+doi:<a class="ltx_ref ltx_href" href="http://dx.doi.org/10.1103/PhysRevResearch.2.033312" title=""><span class="ltx_ref ltx_nolink ltx_path ltx_font_typewriter">10.1103/PhysRevResearch.2.033312</span></a>.
+
+</span>
+</li>
+</ul>
+</section>
+<section class="ltx_appendix" id="A1">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Appendix</h2>
+<figure class="ltx_float ltx_algorithm" id="algorithm2">
+<div class="ltx_listing ltx_lst_numbers_left ltx_listing">
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">Data:</span> params, epsilon
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">Result:</span> best_complexity
+</div>
+<div class="ltx_listingline">
+best_complexity <math alttext="\leftarrow" class="ltx_Math" display="inline" id="algorithm2.m1"><semantics><mo stretchy="false">←</mo><annotation encoding="application/x-tex">\leftarrow</annotation></semantics></math> <span class="ltx_text ltx_font_smallcaps">compress</span>(params);
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">for</span> <em class="ltx_emph ltx_font_italic">bin_sizing <span class="ltx_text ltx_font_bold">from</span> small <span class="ltx_text ltx_font_bold">to</span> large</em> <span class="ltx_text ltx_font_bold">do</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+quantized_params <math alttext="\leftarrow" class="ltx_Math" display="inline" id="algorithm2.m2"><semantics><mo stretchy="false">←</mo><annotation encoding="application/x-tex">\leftarrow</annotation></semantics></math> <span class="ltx_text ltx_font_smallcaps">Quantize</span>(params, bin_sizing);
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+<span class="ltx_text ltx_font_bold">if</span> <em class="ltx_emph ltx_font_italic"><math alttext="\left|\textsc{Loss}(\text{quantized\_params})-\textsc{Loss}(\text{params})\right|&lt;\epsilon" class="ltx_Math" display="inline" id="algorithm2.m3"><semantics><mrow><mrow><mo>|</mo><mrow><mrow><mtext class="ltx_font_smallcaps"><em class="ltx_emph ltx_font_smallcaps">Loss</em></mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mtext class="ltx_mathvariant_italic">quantized_params</mtext><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mtext class="ltx_font_smallcaps"><em class="ltx_emph ltx_font_smallcaps">Loss</em></mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mtext class="ltx_mathvariant_italic">params</mtext><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\left|\textsc{Loss}(\text{quantized\_params})-\textsc{Loss}(\text{params})\right|&lt;\epsilon</annotation></semantics></math></em> <span class="ltx_text ltx_font_bold">then</span>
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+best_complexity <math alttext="\leftarrow" class="ltx_Math" display="inline" id="algorithm2.m4"><semantics><mo stretchy="false">←</mo><annotation encoding="application/x-tex">\leftarrow</annotation></semantics></math> <span class="ltx_text ltx_font_smallcaps">min</span>(<span class="ltx_text ltx_font_smallcaps">compress</span>(quantized_params), best_complexity);
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span>  end if
+</div>
+<div class="ltx_listingline"> <span class="ltx_rule" style="width:1px;height:100%;background:black;display:inline-block;"> </span> 
+</div>
+<div class="ltx_listingline"> end for
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_font_bold">return</span> best_complexity
+
+
+</div>
+</div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float"><span class="ltx_text ltx_font_bold">Algorithm 2</span> </span>Complexity by Quantization</figcaption>
+</figure>
+<figure class="ltx_figure" id="A1.F7"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="537" id="A1.F7.g1" src="quantization_complexity_plots.png" width="538"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 7: </span>Complexity estimates using quantization coarse-graining alone, according to Algorithm <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#algorithm2" title="In Appendix A Appendix ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">2</span></a>. Detecting the complexity dynamics requires relatively tight complexity bounds. While we see a similar rise and fall pattern in the regularized models of the top row, this method fails to distinguish these dynamics in the weight decayed models in the subtraction and addition. Note that the complexity bounds are about two times worse than those achieved by the spectral method in Fig <a class="ltx_ref" href="https://arxiv.org/html/2412.09810v2#S1.F2" title="Figure 2 ‣ 1 Introduction ‣ The Complexity Dynamics of Grokking"><span class="ltx_text ltx_ref_tag">2</span></a>.</figcaption>
+</figure>
+<figure class="ltx_figure" id="A1.F8"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="536" id="A1.F8.g1" src="effective_rank_plots.png" width="538"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 8: </span>Effective rank (<math alttext="\text{rank}_{\text{eff}}=e^{H_{\text{svd}}}" class="ltx_Math" display="inline" id="A1.F8.m2"><semantics><mrow><msub><mtext>rank</mtext><mtext>eff</mtext></msub><mo>=</mo><msup><mi>e</mi><msub><mi>H</mi><mtext>svd</mtext></msub></msup></mrow><annotation encoding="application/x-tex">\text{rank}_{\text{eff}}=e^{H_{\text{svd}}}</annotation></semantics></math>) of models throughout training. We see that the regularized models fall in effective rank when generalizing, while the unregularized model remains near full rank throughout training. Our regularizer explicitly penalizes this measure, and results in both the lowest rank and most compressible model amongst those we study.</figcaption>
+</figure>
+<figure class="ltx_figure" id="A1.F9"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="529" id="A1.F9.g1" src="total_bzip2_complexity_plots.png" width="538"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 9: </span>In this figure, we simply plot the naïve <span class="ltx_text ltx_font_typewriter">bzip2</span> compression of the model weights without any coarse-graining (note the y-axis scales). The range of variation in these complexity estimates is very small throughout training—if we plotted it on the same scale as other complexity plots, it would simply look like a flat line from the starting estimate. The dynamics here may correspond to weight patterns induced by the different regularizers that the compression algorithm is particularly suited or unsuited to compressing. Intriguingly, the dips in the complexity bounds of the regularized models around <math alttext="10^{3}" class="ltx_Math" display="inline" id="A1.F9.m2"><semantics><msup><mn>10</mn><mn>3</mn></msup><annotation encoding="application/x-tex">10^{3}</annotation></semantics></math> steps corresponds to generalization, giving some slight hint that some change has occurred in the model. To fully reveal this phenomenon, the coarse-graining procedure is required.</figcaption>
+</figure>
+<figure class="ltx_figure" id="A1.F10"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="597" id="A1.F10.g1" src="grokking_accuracy_plots.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 10: </span>Test and train accuracy vs steps. Grokking occurs in all regularized models, and does not occur in unregularized models. We plot the mean over six seeds, and shade the std. error.</figcaption>
+</figure>
+<figure class="ltx_figure" id="A1.F11"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="353" id="A1.F11.g1" src="TotalDescriptionLength.png" width="538"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 11: </span>Total description length (complexity + entropy) vs training steps. Models trained with our regularization (red) have a smaller total description length compared to baselines. The unregularized model collapses during memorization in the subtraction and division tasks. Apparent complexity computed for <math alttext="\epsilon=1" class="ltx_Math" display="inline" id="A1.F11.m2"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon=1</annotation></semantics></math>.</figcaption>
+</figure>
+<figure class="ltx_table" id="A1.T1">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 1: </span>Hyperparameters</figcaption>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row"><span class="ltx_text ltx_font_bold">Description</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><span class="ltx_text ltx_font_bold">Symbol</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><span class="ltx_text ltx_font_bold">Value</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_t">Modulus</th>
+<td class="ltx_td ltx_align_left ltx_border_t"><math alttext="p" class="ltx_Math" display="inline" id="A1.T1.m1"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><math alttext="113" class="ltx_Math" display="inline" id="A1.T1.m2"><semantics><mn>113</mn><annotation encoding="application/x-tex">113</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Dataset size</th>
+<td class="ltx_td ltx_align_left"><math alttext="N" class="ltx_Math" display="inline" id="A1.T1.m3"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="p^{2}=12769" class="ltx_Math" display="inline" id="A1.T1.m4"><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>=</mo><mn>12769</mn></mrow><annotation encoding="application/x-tex">p^{2}=12769</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Modular arithmetic tasks</th>
+<td class="ltx_td ltx_align_left"><math alttext="\{+,\times,-,\div\}" class="ltx_Math" display="inline" id="A1.T1.m5"><semantics><mrow><mo stretchy="false">{</mo><mo lspace="0em" rspace="0em">+</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">×</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">−</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">÷</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{+,\times,-,\div\}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left">-</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Train data fraction per task</th>
+<td class="ltx_td ltx_align_left">-</td>
+<td class="ltx_td ltx_align_left"><math alttext="(+,\times:20\%),(-,\div:30\%)" class="ltx_math_unparsed" display="inline" id="A1.T1.m6"><semantics><mrow><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">+</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">×</mo><mo rspace="0.278em">:</mo><mn>20</mn><mo>%</mo><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">−</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">÷</mo><mo rspace="0.278em">:</mo><mn>30</mn><mo>%</mo><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">(+,\times:20\%),(-,\div:30\%)</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Transformer layers</th>
+<td class="ltx_td ltx_align_left"><math alttext="n_{\text{layers}}" class="ltx_Math" display="inline" id="A1.T1.m7"><semantics><msub><mi>n</mi><mtext>layers</mtext></msub><annotation encoding="application/x-tex">n_{\text{layers}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="(+,\times:1),(-,\div:2)" class="ltx_math_unparsed" display="inline" id="A1.T1.m8"><semantics><mrow><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">+</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">×</mo><mo rspace="0.278em">:</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">−</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">÷</mo><mo rspace="0.278em">:</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">(+,\times:1),(-,\div:2)</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Transformer hidden dimension</th>
+<td class="ltx_td ltx_align_left"><math alttext="d_{\text{model}}" class="ltx_Math" display="inline" id="A1.T1.m9"><semantics><msub><mi>d</mi><mtext>model</mtext></msub><annotation encoding="application/x-tex">d_{\text{model}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="128" class="ltx_Math" display="inline" id="A1.T1.m10"><semantics><mn>128</mn><annotation encoding="application/x-tex">128</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Transformer heads dimension</th>
+<td class="ltx_td ltx_align_left"><math alttext="d_{\text{head}}" class="ltx_Math" display="inline" id="A1.T1.m11"><semantics><msub><mi>d</mi><mtext>head</mtext></msub><annotation encoding="application/x-tex">d_{\text{head}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="32" class="ltx_Math" display="inline" id="A1.T1.m12"><semantics><mn>32</mn><annotation encoding="application/x-tex">32</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Transformer head count</th>
+<td class="ltx_td ltx_align_left"><math alttext="n_{\text{head}}" class="ltx_Math" display="inline" id="A1.T1.m13"><semantics><msub><mi>n</mi><mtext>head</mtext></msub><annotation encoding="application/x-tex">n_{\text{head}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="4" class="ltx_Math" display="inline" id="A1.T1.m14"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Transformer MLP dimension</th>
+<td class="ltx_td ltx_align_left"><math alttext="d_{\text{mlp}}" class="ltx_Math" display="inline" id="A1.T1.m15"><semantics><msub><mi>d</mi><mtext>mlp</mtext></msub><annotation encoding="application/x-tex">d_{\text{mlp}}</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="512" class="ltx_Math" display="inline" id="A1.T1.m16"><semantics><mn>512</mn><annotation encoding="application/x-tex">512</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Noise regularization scale</th>
+<td class="ltx_td ltx_align_left"><math alttext="\delta" class="ltx_Math" display="inline" id="A1.T1.m17"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="(+,\times:10^{-2}),(-,\div:10^{-3})" class="ltx_math_unparsed" display="inline" id="A1.T1.m18"><semantics><mrow><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">+</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">×</mo><mo rspace="0.278em">:</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">−</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">÷</mo><mo rspace="0.278em">:</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">(+,\times:10^{-2}),(-,\div:10^{-3})</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Spectral entropy scalar</th>
+<td class="ltx_td ltx_align_left"><math alttext="\beta" class="ltx_Math" display="inline" id="A1.T1.m19"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_left"><math alttext="10^{-1}" class="ltx_Math" display="inline" id="A1.T1.m20"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">10^{-1}</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Optimizer</th>
+<td class="ltx_td ltx_align_left">-</td>
+<td class="ltx_td ltx_align_left">AdamW</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Weight decay scalar</th>
+<td class="ltx_td ltx_align_left">-</td>
+<td class="ltx_td ltx_align_left"><math alttext="1" class="ltx_Math" display="inline" id="A1.T1.m21"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row">Learning rate</th>
+<td class="ltx_td ltx_align_left">-</td>
+<td class="ltx_td ltx_align_left"><math alttext="10^{-3}" class="ltx_Math" display="inline" id="A1.T1.m22"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><annotation encoding="application/x-tex">10^{-3}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</figure>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Thu Aug 21 12:51:22 2025 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

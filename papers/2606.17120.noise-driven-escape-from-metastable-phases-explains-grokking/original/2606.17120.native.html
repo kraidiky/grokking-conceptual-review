@@ -1,0 +1,1031 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks</title>
+<!--Generated on Mon Jun 15 11:22:16 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/browse/0.3.4/css/arxiv-html-papers-20260131.css" type="text/css">
+<script src="/static/browse/0.3.4/js/arxiv-html-papers-20260131.js"></script>
+<script>
+  // Restore the saved color scheme preference, or
+  // enact the browser preference if "automatic", 
+  // without expecting DOM load to have completed.
+  //
+  // Also restore any saved readingmode and ToC display preferences.
+  function initializeReadingPreferences() {
+    let saved_theme = localStorage.getItem("ar5iv_theme") || "automatic";
+    if (saved_theme === "automatic") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        saved_theme = "dark";
+      }
+    }
+    if (saved_theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    const tocDisplay = localStorage.getItem('arxiv_html_paper_toc_display');
+    if (tocDisplay) {
+      document.documentElement.setAttribute("data-toc-display", tocDisplay);
+    }
+    const readingMode = localStorage.getItem('arxiv_html_paper_reading_mode');
+    if (readingMode) {
+      document.documentElement.setAttribute("data-reading-mode", readingMode);
+    }
+    // Pre-apply spinout-banner dismissal here, before the banner paints, so it
+    // never flashes in only to be hidden later by the deferred arxiv-header.js.
+    // Key matches arxiv-header.js: "arxiv-banner-dismissed:" + data-banner-name.
+    if (localStorage.getItem('arxiv-banner-dismissed:spinout-nonprofit')) {
+      document.documentElement.setAttribute("data-banner-dismissed", "");
+    }
+  }
+  // Run as soon as JS starts, to minimize repainting
+  initializeReadingPreferences();
+</script>
+<link rel="apple-touch-icon" sizes="180x180"
+  href="/static/browse/0.3.4/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+  href="/static/browse/0.3.4/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+  href="/static/browse/0.3.4/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/static/browse/0.3.4/images/icons/site.webmanifest">
+<link rel="mask-icon" href="/static/browse/0.3.4/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="stylesheet" type="text/css" media="screen" href="https://use.typekit.net/utz6mli.css"><link rel="stylesheet" type="text/css" media="screen"
+  href="/static/base/1.0.1/css/arxiv-header-footer.css?v=20260626"><style>
+  /* Banner pre-dismissal (set above before paint -> no flash-then-hide) and
+     reading-mode chrome hiding. */
+  html[data-banner-dismissed] .ds-announcement { display: none; }
+  html[data-reading-mode="enabled"] .ds-announcement,
+  html[data-reading-mode="enabled"] .ds-site-footer { display: none; }
+  /* Keep the announcement text dark on the Open-Blue band in both colour themes
+     (otherwise it inherits the paper's warm-wash text in dark mode and washes out). */
+  .ds-announcement-text { color: var(--arxiv-ink, #1c1a17); }
+</style>
+<script defer src="/static/base/1.0.1/js/arxiv-header.js?v=20260626"></script>
+</head>
+<body>
+<dialog id="modal-form" aria-labelledby="modal-title" closedby="any">
+  <form id="modal-form-content" method="dialog" enctype="multipart/form-data">
+    <header class="modal-header">
+      <h5 id="modal-title" class="modal-title">Report GitHub Issue</h5>
+      <button type="submit" formnovalidate class="modal-close" aria-label="Close">×</button>
+    </header>
+
+    <div class="modal-body">
+      <label for="form_title">Title:</label>
+      <input class="form-control" id="form_title" name="form_title" required placeholder="Enter title">
+
+      <p id="selectedTextModalDescription" hidden>Content selection saved. Describe the issue below:</p>
+
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" required maxlength="500"
+        placeholder="500 characters maximum"></textarea>
+    </div>
+
+    <footer class="modal-footer">
+      <button type="submit" value="internal-report" class="sr-only modal-submit">Submit without GitHub</button>
+      <button type="submit" value="github-report" class="modal-submit">Submit in GitHub</button>
+    </footer>
+  </form>
+</dialog><div class="ds-announcement" id="announcement-banner" role="region" aria-label="Announcement"
+    data-banner-name="spinout-nonprofit">
+    <img class="ds-announcement-glyph" src="/static/base/1.0.1/images/icons/smileybones-small.svg" alt="" aria-hidden="true">
+    <span class="ds-announcement-text">arXiv is now an independent nonprofit!</span>
+    <a class="ds-announcement-link" href="https://info.arxiv.org/about">Learn more</a>
+    <button type="button" class="ds-announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+<header class="arxiv-html-header">
+  <div class="html-header-logo">
+    <a href="/"><img alt="arXiv logo" class="logo desktop-only" width="100"
+        src="/static/base/1.0.1/images/arxiv-logo-primary-light.svg">
+      <span class="sr-only">Back to arXiv</span>
+    </a>
+  </div>
+  <!--TOC, dark mode, links-->
+  <nav class="html-header-nav">
+    <a class="header-button hover-effect desktop-only" href="https://info.arxiv.org/about/accessible_HTML.html"
+      target="_blank">Why HTML?</a>
+    <a class="header-button" title="Report an Issue" href="#" title="Report an issue"
+      onclick="event.preventDefault(); showModalForm();">
+      <svg role="presentation" class="mobile-only toggle-icon" aria-hidden="true" height="1.25rem"
+        viewBox="0 0 640 640">
+        <path
+          d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+      </svg>
+      <span class="desktop-only">Report Issue</span></a>
+    <!--back to abstract-->
+    <a class="header-button" title="Back to abstract page" aria-label="Back to abstract page"
+      href="/abs/2606.17120v1">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 512 512" fill="#ffffff"
+        aria-hidden="true">
+        <path
+          d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z">
+        </path>
+      </svg>
+      <span class="desktop-only">Back to Abstract</span>
+    </a>
+    <!-- PDF download link -->
+    <a class="header-button" title="Download PDF" href="/pdf/2606.17120v1"
+      target="_blank">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 576 542">
+        <path
+          d="M208 48L96 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l80 0 0 48-80 0c-35.3 0-64-28.7-64-64L32 64C32 28.7 60.7 0 96 0L229.5 0c17 0 33.3 6.7 45.3 18.7L397.3 141.3c12 12 18.7 28.3 18.7 45.3l0 149.5-48 0 0-128-88 0c-39.8 0-72-32.2-72-72l0-88zM348.1 160L256 67.9 256 136c0 13.3 10.7 24 24 24l68.1 0zM240 380l32 0c33.1 0 60 26.9 60 60s-26.9 60-60 60l-12 0 0 28c0 11-9 20-20 20s-20-9-20-20l0-128c0-11 9-20 20-20zm32 80c11 0 20-9 20-20s-9-20-20-20l-12 0 0 40 12 0zm96-80l32 0c28.7 0 52 23.3 52 52l0 64c0 28.7-23.3 52-52 52l-32 0c-11 0-20-9-20-20l0-128c0-11 9-20 20-20zm32 128c6.6 0 12-5.4 12-12l0-64c0-6.6-5.4-12-12-12l-12 0 0 88 12 0zm76-108c0-11 9-20 20-20l48 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 24 28 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 44c0 11-9 20-20 20s-20-9-20-20l0-128z" />
+      </svg>
+      <span class="desktop-only">Download PDF</span></a>
+    <!-- navigational table of contents toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleNavTOC();" title="Toggle navigation"
+      aria-label="Toggle navigation">
+      <svg height="1.25rem" role="presentation" viewBox="0 0 512 512">
+        <path
+          d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z">
+        </path>
+      </svg>
+    </a>
+    <!--- collapsable header / reading mode toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleReadingMode();"
+      title="Disable reading mode, show header and footer">
+      <svg role="presentation" height="1.25rem"
+        viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+        <path
+          d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32S0 334.3 0 352l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z" />
+      </svg>
+    </a>
+    <!--- colored theme toggle -->
+    <button type="button" class="header-button color-tog" onclick="toggleColorScheme();" title="Toggle dark/light mode" aria-label="Toggle color scheme">
+      <span class="toggle-icon automatic-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon light-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon dark-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+    </button>
+  </nav>
+</header><nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_abstract"><a href="#abstract1" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title">Abstract</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S2" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Methods</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S2.SS1" title="In 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>L2 Phase Transitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S2.SS2" title="In 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>SGD as Langevin Dynamics and Arrhenius Escape</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S3" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Results</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS1" title="In 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Hysteresis and Trapping Reproduce Grokking</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS2" title="In 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Energy Barrier Between Metastable States</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS3" title="In 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Arrhenius Scaling Confirms Thermally Activated Escape</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S4" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Discussion</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S4.SS1" title="In 4 Discussion ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>A Mechanistic Account of Grokking</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S4.SS2" title="In 4 Discussion ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Relation to Memorisation and Generalisation</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S5" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Conclusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="#bib" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="#A1" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Experimental Setup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="#A2" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Phase Diagram</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="#A3" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Bifurcation Diagram</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="#A4" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Critical Regularisation Strength</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A4.SS1" title="In Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.1 </span>Saddle-node bifurcation for DNNs</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A4.SS2" title="In Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.2 </span>Number of transitions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="#A5" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">E </span>Theoretical Barrier Heights</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="#A6" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F </span>Effective Barrier Height in High-Dimensional Landscapes</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A6.SS1" title="In Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F.1 </span>Kramers–Langer Theory</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A6.SS2" title="In Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F.2 </span>Effective barrier and entropic contributions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A6.SS3" title="In Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F.3 </span>Correction from multiplicative SGD noise</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A6.SS4" title="In Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F.4 </span>Escape time and choice of time unit</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="#A7" title="In Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">G </span>Generalisation to Nonlinear Networks</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div id="infobox" class="infobox">
+  <a id="license-tr" href="https://info.arxiv.org/help/license/index.html#licenses-available">
+    License: CC BY 4.0
+  </a>
+  <div id="watermark-tr">
+arXiv:2606.17120v1 [cs.LG] 15 Jun 2026</div>
+</div><div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"><span id="id1.1.id1" class="ltx_ERROR undefined">\Name</span>Ibrahim Talha Ersoy
+<span id="id2.2.id2" class="ltx_ERROR undefined">\Email</span>talha.ersoy@uni-potsdam.de 
+<br class="ltx_break"><span id="id3.3.id3" class="ltx_ERROR undefined">\Name</span>Karoline Wiesner <span id="id4.4.id4" class="ltx_ERROR undefined">\Email</span>karoline.wiesner@uni-potsdam.de 
+<br class="ltx_break"><span id="id5.5.id5" class="ltx_ERROR undefined">\addr</span>Complexity Science Group
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"> Institute of Physics and Astronomy
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">
+<br class="ltx_break">University of Potsdam
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"> Potsdam
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"> Germany
+</span></span>
+</div>
+
+<div id="abstract1" class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">Deep neural networks (DNNs) exhibit first-order phase transitions under variations of the L2 regularisation strength, with each transition marking the onset of a new learnable feature. Below a critical regularisation strength, all features are in principle learnable, but coexisting metastable states, separated by energy barriers, can trap the network and impede convergence. A strength of DNNs is their ability to generalise. But many open questions remain, among them the origin of so-called grokking: the abrupt, delayed onset of generalisation after prolonged apparent overfitting. We show for linear DNNs that grokking is consistent with hysteresis in first-order L2 phase transitions: using L2 regularisation to engineer deliberate trapping, we demonstrate that a model in a low-accuracy metastable state escapes only when SGD noise drives it across an energy barrier, with escape times following Arrhenius scaling. We reproduce grokking-like delayed convergence across two orders of magnitude in escape time by deliberately trapping models in metastable phases. Using sparse sub-sampling we also reproduce the canonical grokking curve where test error eventually approaches the final training error. Our work suggests that the number of metastable states equals the number of learnable features – one per singular value of the data covariance – the potential for hysteresis grows naturally with task complexity. We provide evidence that the same mechanism likely operates in general nonlinear DNNs. Our results provide routes toward more efficient learning schemes.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p id="S1.p1.6" class="ltx_p">L2 regularisation is a cornerstone of modern machine learning, employed to combat overfitting from classical ridge regression <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>]</cite> to large-scale deep learning <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib2" title="" class="ltx_ref">2</a>]</cite>. Beyond its practical role, L2 regularisation gives rise to rich phenomenology recently understood through statistical physics. Ziyin and Ueda <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>]</cite> showed that varying regularisation strength drives genuine phase transitions in DNNs, identifying first-order transitions in DNNs at the onset of learning (the transition from under- to over-parameterisation). Subsequent work extended this picture beyond the onset: Ersoy and Wiesner linked these transitions to curvature drops in the loss landscape <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite>, Ersoy, Licha, and Wiesner connected them to learnable feature hierarchies <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite>, and Ladewig, Ersoy, and Wiesner showed that in linear networks each non-zero singular value of the data covariance produces its own rank transition <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite>, meaning transitions recur throughout training, once per learnable feature. <em id="S1.p1.6.1" class="ltx_emph ltx_font_italic">Grokking</em>, the sudden transition from near-zero to near-perfect generalisation long after the training loss has saturated, has attracted much attention since Power et al. demonstrated it in transformers trained on modular arithmetic <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>]</cite>. The origin of this phenomenon is not yet fully understood. Liu et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib10" title="" class="ltx_ref">10</a>]</cite> implicated regularisation as the central driver of grokking. Nanda et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib21" title="" class="ltx_ref">21</a>]</cite> identified interpretable representations at the transition, and Tian <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib22" title="" class="ltx_ref">22</a>]</cite> derived scaling laws for feature emergence. Rubin et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib11" title="" class="ltx_ref">11</a>]</cite> proposed a first-order phase transition analogy involving an entropy barrier. This was then challenged by Zhang et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib23" title="" class="ltx_ref">23</a>]</cite>, who found no entropy barrier and proposed glassy relaxation instead. Solvable linear models have likewise been shown to grok <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib24" title="" class="ltx_ref">24</a>]</cite>, and a distribution shift between training and test data has been identified as a driver of delayed generalisation <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib25" title="" class="ltx_ref">25</a>]</cite>. We offer an alternative account. As the central mechanism we suggest <em id="S1.p1.6.2" class="ltx_emph ltx_font_italic">hysteresis</em> in analogy to the statistical physics of phase transitions: a model initialised in a low-accuracy phase remains there until SGD noise drives it across an energy (loss) barrier into the globally optimal phase. To show that hysteresis is consistent with the grokking phenomenology, we build on the finding that varying the L2 regularisation strength leads to first-order phase transitions. We ask: Can activated escape from the resulting metastable states, rather than the transitions themselves, account for the hallmark features of grokking? To answer this, we use L2 regularisation as a control tool to engineer metastable trapping. We successfully reproduce grokking behaviour, and, furthermore, show that this activated process is governed by Arrhenius-type kinetics <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib12" title="" class="ltx_ref">12</a>, <a href="#bib.bib13" title="" class="ltx_ref">13</a>]</cite> with an effective temperature <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib14" title="" class="ltx_ref">14</a>]</cite> <math id="S1.p1.1.m1" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B</annotation></semantics></math>. Here <math id="S1.p1.2.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>lr</mi></msub><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}</annotation></semantics></math> is the learning rate and <math id="S1.p1.3.m3" class="ltx_Math" alttext="B" display="inline" intent=":literal"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> the batch size, making the escape time exponentially sensitive to hyperparameter choices. Our results, established in Sections <a href="#S2" title="2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>–<a href="#S3" title="3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>, support three claims:
+<span id="S1.p1.6.3" class="ltx_text ltx_font_bold">(1)</span> first-order L2 phase transitions produce <math id="S1.p1.4.m4" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> coexisting metastable states (one per learnable feature) whose energy barriers trap models in low-accuracy phases.
+<span id="S1.p1.6.4" class="ltx_text ltx_font_bold">(2)</span> Escape is analogous to a thermally activated process obeying Arrhenius kinetics
+with <math id="S1.p1.5.m5" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B</annotation></semantics></math>; we confirm this numerically with <math id="S1.p1.6.m6" class="ltx_Math" alttext="R^{2}=0.991" display="inline" intent=":literal"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.991</mn></mrow><annotation encoding="application/x-tex">R^{2}=0.991</annotation></semantics></math>.
+<span id="S1.p1.6.5" class="ltx_text ltx_font_bold">(3)</span> Deliberate trapping reproduces hallmarks of grokking, i.e. long delay, abruptness, sensitivity to initialisation, and, under sparse sampling, the train/test dissociation, across two orders of magnitude in escape time.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Methods</h2>
+
+<section id="S2.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.1 </span>L2 Phase Transitions</h3>
+
+<div id="S2.SS1.p1" class="ltx_para">
+<p id="S2.SS1.p1.10" class="ltx_p">We use deep linear networks as our minimal model because their loss landscape is exactly solvable, allowing us to locate all <math id="S2.SS1.p1.1.m1" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> metastable minima and energy barriers analytically. All qualitative results, saddle-node bifurcations, coexisting phases, Arrhenius escape, survive in nonlinear networks (Appendix <a href="#A7" title="Appendix G Generalisation to Nonlinear Networks ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">G</span></a>), but the linear case keeps the analysis tractable. In this section we review the key prior results on L2 phase transitions before introducing our escape-time framework. Ladewig et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite> described the precise mechanism for linear DNNs, linking the transitions to the singular values of the data covariance: with input <math id="S2.SS1.p1.2.m2" class="ltx_Math" alttext="x" display="inline" intent=":literal"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and output <math id="S2.SS1.p1.3.m3" class="ltx_Math" alttext="y" display="inline" intent=":literal"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>, covariances <math id="S2.SS1.p1.4.m4" class="ltx_Math" alttext="\Sigma_{xx}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{xx}</annotation></semantics></math>, <math id="S2.SS1.p1.5.m5" class="ltx_Math" alttext="\Sigma_{yy}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>y</mi><mo lspace="0em" rspace="0em">​</mo><mi>y</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{yy}</annotation></semantics></math>, and cross-covariance <math id="S2.SS1.p1.6.m6" class="ltx_Math" alttext="\Sigma_{yx}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>y</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{yx}</annotation></semantics></math>, the singular values <math id="S2.SS1.p1.7.m7" class="ltx_Math" alttext="\eta_{i}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\eta_{i}</annotation></semantics></math> of <math id="S2.SS1.p1.8.m8" class="ltx_Math" alttext="\Sigma_{yx}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>y</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{yx}</annotation></semantics></math> directly characterise the learnable features in the aligned case (<math id="S2.SS1.p1.9.m9" class="ltx_Math" alttext="\Sigma_{xx}=\mathbf{I}" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><mo>=</mo><mi>𝐈</mi></mrow><annotation encoding="application/x-tex">\Sigma_{xx}=\mathbf{I}</annotation></semantics></math>). After the network reaches the 0-balanced subspace, the set of weight configurations where all layers contribute equally to the end-to-end map, the L2-regularised loss decouples into independent terms for each singular value <math id="S2.SS1.p1.10.m10" class="ltx_Math" alttext="\lambda_{i}" display="inline" intent=":literal"><semantics><msub><mi>λ</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\lambda_{i}</annotation></semantics></math> of the end-to-end weight matrix:</p>
+<table id="S2.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E1.m1" class="ltx_Math" alttext="\mathcal{L}(\{\lambda_{i}\},\beta)=\frac{1}{2}\sum_{i=1}^{d}(\lambda_{i}-\eta_{i})^{2}+\frac{\beta}{2}\sum_{i=1}^{d}\lambda_{i}^{2/L}," display="block" intent=":literal"><semantics><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mo stretchy="false">{</mo><msub><mi>λ</mi><mi>i</mi></msub><mo stretchy="false">}</mo></mrow><mo>,</mo><mi>β</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">​</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover><msup><mrow><mo stretchy="false">(</mo><mrow><msub><mi>λ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>η</mi><mi>i</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mfrac><mi>β</mi><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">​</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>d</mi></munderover><msubsup><mi>λ</mi><mi>i</mi><mrow><mn>2</mn><mo>/</mo><mi>L</mi></mrow></msubsup></mrow></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\mathcal{L}(\{\lambda_{i}\},\beta)=\frac{1}{2}\sum_{i=1}^{d}(\lambda_{i}-\eta_{i})^{2}+\frac{\beta}{2}\sum_{i=1}^{d}\lambda_{i}^{2/L},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.SS1.p1.15" class="ltx_p">where <math id="S2.SS1.p1.11.m1" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> is network depth, <math id="S2.SS1.p1.12.m2" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is the number of non-zero modes, and <math id="S2.SS1.p1.13.m3" class="ltx_Math" alttext="\beta&gt;0" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta&gt;0</annotation></semantics></math> is the regularisation strength. For depth <math id="S2.SS1.p1.14.m4" class="ltx_Math" alttext="L\geq 3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L\geq 3</annotation></semantics></math>, the stationarity condition <math id="S2.SS1.p1.15.m5" class="ltx_Math" alttext="\partial\mathcal{L}/\partial\lambda_{i}=0" display="inline" intent=":literal"><semantics><mrow><mrow><mo rspace="0em">∂</mo><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><msub><mi>λ</mi><mi>i</mi></msub></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\partial\mathcal{L}/\partial\lambda_{i}=0</annotation></semantics></math> for a single mode reads:</p>
+<table id="S2.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E2.m1" class="ltx_Math" alttext="\lambda-\eta+\beta\,\lambda^{2/L-1}=0." display="block" intent=":literal"><semantics><mrow><mrow><mrow><mrow><mi>λ</mi><mo>−</mo><mi>η</mi></mrow><mo>+</mo><mrow><mi>β</mi><mo lspace="0.170em" rspace="0em">​</mo><msup><mi>λ</mi><mrow><mrow><mn>2</mn><mo>/</mo><mi>L</mi></mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\lambda-\eta+\beta\,\lambda^{2/L-1}=0.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.SS1.p1.19" class="ltx_p">As <math id="S2.SS1.p1.16.m1" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> increases through <math id="S2.SS1.p1.17.m2" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math>, the two non-trivial solutions (a stable minimum and an unstable saddle) merge and annihilate in a saddle-node bifurcation (see Appendix <a href="#A4" title="Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">D</span></a>), leaving only <math id="S2.SS1.p1.18.m3" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>. Below <math id="S2.SS1.p1.19.m4" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math>, zero and non-zero rank solutions coexist, separated by a finite energy barrier (see Appendix <a href="#A3" title="Appendix C Bifurcation Diagram ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C</span></a> for the bifurcation diagram). The critical
+regularisation strength is:</p>
+<table id="S2.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E3.m1" class="ltx_Math" alttext="\beta_{c}^{(i)}=\frac{1}{1-k}\left(\eta_{i}\frac{1-k}{2-k}\right)^{2-k},\qquad k=\frac{2}{L}." display="block" intent=":literal"><semantics><mrow><mrow><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>k</mi></mrow></mfrac><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo>(</mo><mrow><msub><mi>η</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>k</mi></mrow><mrow><mn>2</mn><mo>−</mo><mi>k</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mo>−</mo><mi>k</mi></mrow></msup></mrow></mrow><mo rspace="2.167em">,</mo><mrow><mi>k</mi><mo>=</mo><mfrac><mn>2</mn><mi>L</mi></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\beta_{c}^{(i)}=\frac{1}{1-k}\left(\eta_{i}\frac{1-k}{2-k}\right)^{2-k},\qquad k=\frac{2}{L}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.SS1.p1.25" class="ltx_p">For <math id="S2.SS1.p1.20.m1" class="ltx_Math" alttext="\beta&gt;\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta&gt;\beta_{c}^{(i)}</annotation></semantics></math> the metastable minimum vanishes. The equal-loss point <math id="S2.SS1.p1.21.m2" class="ltx_Math" alttext="\beta^{*}_{i}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>i</mi><mo>∗</mo></msubsup><annotation encoding="application/x-tex">\beta^{*}_{i}</annotation></semantics></math> (where the lower and higher rank solutions have equal regularised loss) lies strictly below <math id="S2.SS1.p1.22.m3" class="ltx_Math" alttext="\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\beta_{c}^{(i)}</annotation></semantics></math> for <math id="S2.SS1.p1.23.m4" class="ltx_Math" alttext="L\geq 3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L\geq 3</annotation></semantics></math>, producing hysteresis: a model remains trapped in the lower rank phase even when the higher rank phase is energetically preferred. The ordering <math id="S2.SS1.p1.24.m5" class="ltx_Math" alttext="\eta_{1}&gt;\cdots&gt;\eta_{d}&gt;0" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>&gt;</mo><mi mathvariant="normal">⋯</mi><mo>&gt;</mo><msub><mi>η</mi><mi>d</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\eta_{1}&gt;\cdots&gt;\eta_{d}&gt;0</annotation></semantics></math> gives <math id="S2.SS1.p1.25.m6" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> distinct bifurcations, one metastable state per learnable feature.</p>
+</div>
+</section>
+<section id="S2.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2 </span>SGD as Langevin Dynamics and Arrhenius Escape</h3>
+
+<div id="S2.SS2.p1" class="ltx_para">
+<p id="S2.SS2.p1.3" class="ltx_p">To model escape from metastable states, we note that SGD mini-batch noise injects stochastic fluctuations into the gradient with covariance scaling as <math id="S2.SS2.p1.1.m1" class="ltx_Math" alttext="\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}/B</annotation></semantics></math>, where <math id="S2.SS2.p1.2.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>lr</mi></msub><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}</annotation></semantics></math> is the learning rate and <math id="S2.SS2.p1.3.m3" class="ltx_Math" alttext="B" display="inline" intent=":literal"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> the batch size. In the overdamped limit, the dynamics maps onto Langevin dynamics with an effective temperature <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib14" title="" class="ltx_ref">14</a>]</cite>:</p>
+<table id="S2.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E4.m1" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\frac{\eta_{\mathrm{lr}}}{B}." display="block" intent=":literal"><semantics><mrow><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mfrac><msub><mi>η</mi><mi>lr</mi></msub><mi>B</mi></mfrac></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\frac{\eta_{\mathrm{lr}}}{B}.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.SS2.p1.7" class="ltx_p">The mean escape time from a metastable state then follows the Kramers–Arrhenius
+law <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib12" title="" class="ltx_ref">12</a>, <a href="#bib.bib13" title="" class="ltx_ref">13</a>]</cite>:</p>
+<table id="S2.E5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E5.m1" class="ltx_Math" alttext="\ln\tau=\ln\tau_{0}+\frac{\Delta E_{\mathrm{eff}}}{T_{\mathrm{eff}}}," display="block" intent=":literal"><semantics><mrow><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><mo>=</mo><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><msub><mi>τ</mi><mn>0</mn></msub></mrow><mo>+</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><msub><mi>T</mi><mi>eff</mi></msub></mfrac></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\ln\tau=\ln\tau_{0}+\frac{\Delta E_{\mathrm{eff}}}{T_{\mathrm{eff}}},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.SS2.p1.6" class="ltx_p">where <math id="S2.SS2.p1.4.m1" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}</annotation></semantics></math> is an effective barrier height absorbing high-dimensional curvature and entropic corrections (see Appendix <a href="#A6" title="Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">F</span></a>). This yields the falsifiable prediction that <math id="S2.SS2.p1.5.m2" class="ltx_Math" alttext="\ln\tau" display="inline" intent=":literal"><semantics><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\ln\tau</annotation></semantics></math> is linear in <math id="S2.SS2.p1.6.m3" class="ltx_Math" alttext="B/\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>/</mo><msub><mi>η</mi><mi>lr</mi></msub></mrow><annotation encoding="application/x-tex">B/\eta_{\mathrm{lr}}</annotation></semantics></math>.</p>
+</div>
+</section>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Results</h2>
+
+<section id="S3.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1 </span>Hysteresis and Trapping Reproduce Grokking</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p id="S3.SS1.p1.18" class="ltx_p">The coexistence of metastable states implies that the training outcome depends sensitively on initialisation. To demonstrate this we operate at <math id="S3.SS1.p1.1.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, which lies in the range <math id="S3.SS1.p1.2.m2" class="ltx_Math" alttext="\beta&lt;\beta_{c}^{(1)}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&lt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta&lt;\beta_{c}^{(1)}</annotation></semantics></math>, so the global minimum is rank-2 but a metastable rank-1 minimum also exists. All three experiments use the learning rate <math id="S3.SS1.p1.3.m3" class="ltx_Math" alttext="\eta_{\mathrm{lr}}=0.08" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>=</mo><mn>0.08</mn></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}=0.08</annotation></semantics></math> and batch size <math id="S3.SS1.p1.4.m4" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>. We consider three initialisation protocols (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>): <span id="S3.SS1.p1.18.1" class="ltx_text ltx_font_bold">(i) Random initialisation.</span> <em id="S3.SS1.p1.18.2" class="ltx_emph ltx_font_italic">Setup</em>: standard random weight initialisation at <math id="S3.SS1.p1.5.m5" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>. <em id="S3.SS1.p1.18.3" class="ltx_emph ltx_font_italic">Observation</em>: the model converges rapidly to the rank-2 global minimum (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>, blue; <math id="S3.SS1.p1.6.m6" class="ltx_Math" alttext="\tau\approx 10" display="inline" intent=":literal"><semantics><mrow><mi>τ</mi><mo>≈</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">\tau\approx 10</annotation></semantics></math> epochs).
+<em id="S3.SS1.p1.18.4" class="ltx_emph ltx_font_italic">Conclusion</em>: no trapping occurs when the model starts outside any metastable phase. <span id="S3.SS1.p1.18.5" class="ltx_text ltx_font_bold">(ii) Rank-1 trap.</span> <em id="S3.SS1.p1.18.6" class="ltx_emph ltx_font_italic">Setup</em>: model initialised from a checkpoint
+trained at <math id="S3.SS1.p1.7.m7" class="ltx_Math" alttext="\beta&gt;\beta_{c}^{(1)}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta&gt;\beta_{c}^{(1)}</annotation></semantics></math>, placing it in the metastable rank-1 phase. <em id="S3.SS1.p1.18.7" class="ltx_emph ltx_font_italic">Observation</em>: the model remains in the rank-1 state for <math id="S3.SS1.p1.8.m8" class="ltx_Math" alttext="\tau\approx 5500" display="inline" intent=":literal"><semantics><mrow><mi>τ</mi><mo>≈</mo><mn>5500</mn></mrow><annotation encoding="application/x-tex">\tau\approx 5500</annotation></semantics></math> epochs before abruptly escaping to rank-2 (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>, green). <em id="S3.SS1.p1.18.8" class="ltx_emph ltx_font_italic">Conclusion</em>: trapping in a metastable phase produces grokking-like delayed convergence.
+<span id="S3.SS1.p1.18.9" class="ltx_text ltx_font_bold">(iii) Trivial-phase trap.</span> <em id="S3.SS1.p1.18.10" class="ltx_emph ltx_font_italic">Setup</em>: model initialised from a
+checkpoint trained at <math id="S3.SS1.p1.9.m9" class="ltx_Math" alttext="\beta&gt;\beta_{c}^{(2)}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta&gt;\beta_{c}^{(2)}</annotation></semantics></math>, placing it in the rank-0 phase.
+<em id="S3.SS1.p1.18.11" class="ltx_emph ltx_font_italic">Observation</em>: the model escapes to rank-1 after <math id="S3.SS1.p1.10.m10" class="ltx_Math" alttext="\tau&gt;7000" display="inline" intent=":literal"><semantics><mrow><mi>τ</mi><mo>&gt;</mo><mn>7000</mn></mrow><annotation encoding="application/x-tex">\tau&gt;7000</annotation></semantics></math> epochs, then remains
+trapped in rank-1 for a further extended period, with total delay <math id="S3.SS1.p1.11.m11" class="ltx_Math" alttext="\tau&gt;10{,}000" display="inline" intent=":literal"><semantics><mrow><mi>τ</mi><mo>&gt;</mo><mrow><mn>10</mn><mo>,</mo><mn>000</mn></mrow></mrow><annotation encoding="application/x-tex">\tau&gt;10{,}000</annotation></semantics></math> epochs
+(Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>, orange). <em id="S3.SS1.p1.18.12" class="ltx_emph ltx_font_italic">Conclusion</em>: sequential trapping across multiple
+metastable phases reproduces staged grokking delays spanning two orders of magnitude.
+<span id="S3.SS1.p1.18.13" class="ltx_text ltx_font_bold">(iv) Canonical grokking via sparse sub-sampling.</span>
+<em id="S3.SS1.p1.18.14" class="ltx_emph ltx_font_italic">Setup</em>: train and test are drawn from the <em id="S3.SS1.p1.18.15" class="ltx_emph ltx_font_italic">same</em> distribution (weak correlation <math id="S3.SS1.p1.12.m12" class="ltx_Math" alttext="0.8" display="inline" intent=":literal"><semantics><mn>0.8</mn><annotation encoding="application/x-tex">0.8</annotation></semantics></math>, strong correlation <math id="S3.SS1.p1.13.m13" class="ltx_Math" alttext="0.9" display="inline" intent=":literal"><semantics><mn>0.9</mn><annotation encoding="application/x-tex">0.9</annotation></semantics></math>), but the training set is very sparse, only <math id="S3.SS1.p1.14.m14" class="ltx_Math" alttext="25" display="inline" intent=":literal"><semantics><mn>25</mn><annotation encoding="application/x-tex">25</annotation></semantics></math> samples (<math id="S3.SS1.p1.15.m15" class="ltx_Math" alttext="0.5\%" display="inline" intent=":literal"><semantics><mrow><mn>0.5</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">0.5\%</annotation></semantics></math> of a <math id="S3.SS1.p1.16.m16" class="ltx_Math" alttext="5\,000" display="inline" intent=":literal"><semantics><mn>5 000</mn><annotation encoding="application/x-tex">5\,000</annotation></semantics></math>-sample pool), so the weak feature is poorly determined from the training data while remaining at full strength on test. The model is initialised in the rank-1 trapped state and trained at <math id="S3.SS1.p1.17.m17" class="ltx_Math" alttext="\beta=0.0025" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.0025</mn></mrow><annotation encoding="application/x-tex">\beta=0.0025</annotation></semantics></math>, a small regularisation chosen so that the plateau is long-lived but eventually resolves.
+<em id="S3.SS1.p1.18.16" class="ltx_emph ltx_font_italic">Observation</em>: After a brief transient in which the strong mode equilibrates, both errors plateau, with train below test (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>(b)); the model holds in the rank-1 phase for <math id="S3.SS1.p1.18.m18" class="ltx_Math" alttext="{\approx}1500" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>≈</mo><mn>1500</mn></mrow><annotation encoding="application/x-tex">{\approx}1500</annotation></semantics></math> epochs, then escapes to rank-2, and test error falls sharply to approach train error to within a small residual gap set by the irreducible noise of the stochastic task. <em id="S3.SS1.p1.18.17" class="ltx_emph ltx_font_italic">Conclusion</em>: the same trapping mechanism reproduces the canonical grokking curve when the weak feature is sufficiently underrepresented in the training sample.</p>
+</div>
+<figure id="S3.F1" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<div id="S3.F1.1" class="ltx_block ltx_figure_panel ltx_minipage ltx_align_center ltx_align_middle" style="width:165.6pt;">
+<img src="2606.17120v1/x1.png" id="S3.F1.1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="829" height="491" alt="Refer to caption">
+<p id="S3.F1.1.1" class="ltx_p ltx_align_center"><span id="S3.F1.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">(a) Hysteresis as Initialisation Dependence</span></p>
+</div>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<div id="S3.F1.2" class="ltx_block ltx_figure_panel ltx_minipage ltx_align_center ltx_align_middle" style="width:165.6pt;">
+<img src="2606.17120v1/x2.png" id="S3.F1.2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="829" height="491" alt="Refer to caption">
+<p id="S3.F1.2.1" class="ltx_p ltx_align_center"><span id="S3.F1.2.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">(b) Train-Test Discrepancy in Hysteresis</span></p>
+</div>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Delayed convergence in deep linear networks.
+<span id="S3.F1.17.1" class="ltx_text ltx_font_bold">(a)</span> Random (blue), rank‑1 trap (green), trivial‑phase trap (orange) at <math id="S3.F1.9.m1" class="ltx_Math" alttext="\beta=0.03" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.03</mn></mrow><annotation encoding="application/x-tex">\beta=0.03</annotation></semantics></math>, <math id="S3.F1.10.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}=0.08" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>=</mo><mn>0.08</mn></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}=0.08</annotation></semantics></math>, <math id="S3.F1.11.m3" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>. The convergence is strongly delayed when the model is initialised in the local minima of the lower accuracy phases.
+<span id="S3.F1.18.2" class="ltx_text ltx_font_bold">(b)</span> Canonical grokking via sparse sub-sampling (<math id="S3.F1.12.m4" class="ltx_Math" alttext="25" display="inline" intent=":literal"><semantics><mn>25</mn><annotation encoding="application/x-tex">25</annotation></semantics></math> training samples, <math id="S3.F1.13.m5" class="ltx_Math" alttext="\beta=0.0025" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.0025</mn></mrow><annotation encoding="application/x-tex">\beta=0.0025</annotation></semantics></math>). Initialised in the rank-1 phase, train MSE (blue) drops quickly but only to a plateau while test MSE (red) plateaus higher; at <math id="S3.F1.14.m6" class="ltx_Math" alttext="{\approx}1500" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>≈</mo><mn>1500</mn></mrow><annotation encoding="application/x-tex">{\approx}1500</annotation></semantics></math> epochs the model escapes the rank-1 phase and test MSE falls sharply, approaching train MSE to within a small residual gap set by the irreducible noise of the task.</figcaption>
+</figure>
+</section>
+<section id="S3.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2 </span>Energy Barrier Between Metastable States</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p id="S3.SS2.p1.8" class="ltx_p">The trapping mechanism requires a finite energy barrier between the differing rank phases. Fig. <a href="#S3.F2" title="Figure 2 ‣ 3.3 Arrhenius Scaling Confirms Thermally Activated Escape ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>(a) shows the loss landscape section along the minimal-loss path at <math id="S3.SS2.p1.1.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, parameterised by the singular value <math id="S3.SS2.p1.2.m2" class="ltx_Math" alttext="\lambda" display="inline" intent=":literal"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>. A clear barrier separates the local minimum at <math id="S3.SS2.p1.3.m3" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math> from the global minimum. We evaluate Eq. (<a href="#S2.E1" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>) numerically at the saddle point <math id="S3.SS2.p1.4.m4" class="ltx_Math" alttext="\lambda^{\mathrm{sad}}\approx 0.41" display="inline" intent=":literal"><semantics><mrow><msup><mi>λ</mi><mi>sad</mi></msup><mo>≈</mo><mn>0.41</mn></mrow><annotation encoding="application/x-tex">\lambda^{\mathrm{sad}}\approx 0.41</annotation></semantics></math> (obtained from Eq. (<a href="#S2.E2" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>) at <math id="S3.SS2.p1.5.m5" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, <math id="S3.SS2.p1.6.m6" class="ltx_Math" alttext="\eta=0.8" display="inline" intent=":literal"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta=0.8</annotation></semantics></math>, <math id="S3.SS2.p1.7.m7" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>). This gives <math id="S3.SS2.p1.8.m8" class="ltx_Math" alttext="\Delta E_{\mathrm{min}}\approx 0.003" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow><mo>≈</mo><mn>0.003</mn></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{min}}\approx 0.003</annotation></semantics></math>, the barrier along the lowest-loss path out of the metastable phase (Fig. <a href="#S3.F2" title="Figure 2 ‣ 3.3 Arrhenius Scaling Confirms Thermally Activated Escape ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>(a)). As we show next, the effective barrier governing escape times is far larger.</p>
+</div>
+</section>
+<section id="S3.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3 </span>Arrhenius Scaling Confirms Thermally Activated Escape</h3>
+
+<div id="S3.SS3.p1" class="ltx_para">
+<p id="S3.SS3.p1.7" class="ltx_p">To test whether the escape is governed by the activated barrier crossing as predicted by Eq. (<a href="#S2.E5" title="In 2.2 SGD as Langevin Dynamics and Arrhenius Escape ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a>), we measured escape times from the rank-1 trapped state at <math id="S3.SS3.p1.1.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math> while varying <math id="S3.SS3.p1.2.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}\in[5\times 10^{-4},5\times 10^{-3}]" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><mo>,</mo><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}\in[5\times 10^{-4},5\times 10^{-3}]</annotation></semantics></math> with batch size fixed at <math id="S3.SS3.p1.3.m3" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>. With <math id="S3.SS3.p1.4.m4" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B</annotation></semantics></math>, Eq. (<a href="#S2.E5" title="In 2.2 SGD as Langevin Dynamics and Arrhenius Escape ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a>) predicts <math id="S3.SS3.p1.5.m5" class="ltx_Math" alttext="\ln\tau" display="inline" intent=":literal"><semantics><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\ln\tau</annotation></semantics></math> to be linear in <math id="S3.SS3.p1.6.m6" class="ltx_Math" alttext="B/\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>/</mo><msub><mi>η</mi><mi>lr</mi></msub></mrow><annotation encoding="application/x-tex">B/\eta_{\mathrm{lr}}</annotation></semantics></math>. Figure <a href="#S3.F2" title="Figure 2 ‣ 3.3 Arrhenius Scaling Confirms Thermally Activated Escape ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>(b) shows this Arrhenius plot; the linear fit achieves <math id="S3.SS3.p1.7.m7" class="ltx_Math" alttext="R^{2}=0.991" display="inline" intent=":literal"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.991</mn></mrow><annotation encoding="application/x-tex">R^{2}=0.991</annotation></semantics></math>, confirming Eq. (<a href="#S2.E5" title="In 2.2 SGD as Langevin Dynamics and Arrhenius Escape ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a>). The slope yields the effective barrier:</p>
+<table id="S3.E6" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E6.m1" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}=0.15\pm 0.05." display="block" intent=":literal"><semantics><mrow><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>=</mo><mrow><mn>0.15</mn><mo>±</mo><mn>0.05</mn></mrow></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}=0.15\pm 0.05.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.SS3.p1.11" class="ltx_p">This is far above <math id="S3.SS3.p1.8.m1" class="ltx_Math" alttext="\Delta E_{\mathrm{min}}\approx 0.003" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow><mo>≈</mo><mn>0.003</mn></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{min}}\approx 0.003</annotation></semantics></math> shown in Fig. <a href="#S3.F2" title="Figure 2 ‣ 3.3 Arrhenius Scaling Confirms Thermally Activated Escape ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>(a). The discrepancy is expected: in a <math id="S3.SS3.p1.9.m2" class="ltx_Math" alttext="D=170" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">D=170</annotation></semantics></math>-dimensional parameter space the Kramers–Langer
+formula adds entropic and geometric corrections from the <math id="S3.SS3.p1.10.m3" class="ltx_Math" alttext="D-1" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D-1</annotation></semantics></math> transverse directions,
+driving <math id="S3.SS3.p1.11.m4" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}\gg\Delta E_{\mathrm{min}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>≫</mo><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}\gg\Delta E_{\mathrm{min}}</annotation></semantics></math>
+(Appendix <a href="#A6" title="Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">F</span></a>).</p>
+</div>
+<figure id="S3.F2" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<div id="S3.F2.1" class="ltx_block ltx_figure_panel ltx_minipage ltx_align_center ltx_align_middle" style="width:165.6pt;">
+<img src="2606.17120v1/x3.png" id="S3.F2.1.g1" class="ltx_graphics ltx_centering ltx_img_square" width="830" height="685" alt="Refer to caption">
+<p id="S3.F2.1.1" class="ltx_p ltx_align_center"><span id="S3.F2.1.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">(a) Loss Landscape Barrier</span></p>
+</div>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<div id="S3.F2.2" class="ltx_block ltx_figure_panel ltx_minipage ltx_align_center ltx_align_middle" style="width:165.6pt;">
+<img src="2606.17120v1/x4.png" id="S3.F2.2.g1" class="ltx_graphics ltx_centering ltx_img_square" width="830" height="685" alt="Refer to caption">
+<p id="S3.F2.2.1" class="ltx_p ltx_align_center"><span id="S3.F2.2.1.1" class="ltx_text ltx_font_bold" style="font-size:90%;">(b) Arrhenius Fit for Escape Times</span></p>
+</div>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span><span id="S3.F2.29.1" class="ltx_text ltx_font_bold">(a)</span> Loss landscape section at <math id="S3.F2.15.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, <math id="S3.F2.16.m2" class="ltx_Math" alttext="\eta=0.8" display="inline" intent=":literal"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta=0.8</annotation></semantics></math>, <math id="S3.F2.17.m3" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>; dotted curves show <math id="S3.F2.18.m4" class="ltx_Math" alttext="\beta=0.29" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.29</mn></mrow><annotation encoding="application/x-tex">\beta=0.29</annotation></semantics></math> and <math id="S3.F2.19.m5" class="ltx_Math" alttext="\beta=0.35" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.35</mn></mrow><annotation encoding="application/x-tex">\beta=0.35</annotation></semantics></math>. The barrier from the local minimum at <math id="S3.F2.20.m6" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math> to the saddle gives <math id="S3.F2.21.m7" class="ltx_Math" alttext="\Delta E_{\mathrm{min}}\approx 0.003" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow><mo>≈</mo><mn>0.003</mn></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{min}}\approx 0.003</annotation></semantics></math>.
+<span id="S3.F2.30.2" class="ltx_text ltx_font_bold">(b)</span> Arrhenius fit: <math id="S3.F2.22.m8" class="ltx_Math" alttext="\ln\tau" display="inline" intent=":literal"><semantics><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><annotation encoding="application/x-tex">\ln\tau</annotation></semantics></math> versus <math id="S3.F2.23.m9" class="ltx_Math" alttext="1/T_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo>/</mo><msub><mi>T</mi><mi>eff</mi></msub></mrow><annotation encoding="application/x-tex">1/T_{\mathrm{eff}}</annotation></semantics></math>. The linear fit (<math id="S3.F2.24.m10" class="ltx_Math" alttext="R^{2}=0.991" display="inline" intent=":literal"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.991</mn></mrow><annotation encoding="application/x-tex">R^{2}=0.991</annotation></semantics></math>) confirms thermally activated barrier crossing; the slope gives <math id="S3.F2.25.m11" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}=0.15\pm 0.05\gg\Delta E_{\mathrm{min}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>=</mo><mrow><mn>0.15</mn><mo>±</mo><mn>0.05</mn></mrow><mo>≫</mo><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}=0.15\pm 0.05\gg\Delta E_{\mathrm{min}}</annotation></semantics></math>, with the discrepancy explained by entropic and curvature corrections in <math id="S3.F2.26.m12" class="ltx_Math" alttext="D=170" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">D=170</annotation></semantics></math> dimensions (Appendix <a href="#A6" title="Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">F</span></a>).</figcaption>
+</figure>
+</section>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Discussion</h2>
+
+<section id="S4.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.1 </span>A Mechanistic Account of Grokking</h3>
+
+<div id="S4.SS1.p1" class="ltx_para">
+<p id="S4.SS1.p1.1" class="ltx_p">Our results establish three claims. First, first-order L2 phase transitions produce coexisting metastable states whose barriers trap models in low-accuracy phases. Second, escape from these states is an activated process governed by Arrhenius kinetics with <math id="S4.SS1.p1.1.m1" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B</annotation></semantics></math>. Third,
+deliberate trapping reproduces the hallmark features of grokking, long delay, abruptness, sensitivity to initialisation, and the train/test dissociation under sparse sampling, in an analytically tractable minimal model. This framework makes concrete, falsifiable predictions:</p>
+<ol id="S4.I1" class="ltx_enumerate">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p id="S4.I1.i1.p1.3" class="ltx_p"><em id="S4.I1.i1.p1.3.1" class="ltx_emph ltx_font_italic">Staged grokking</em>: In tasks with <math id="S4.I1.i1.p1.1.m1" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> learnable features, grokking should proceed in up to <math id="S4.I1.i1.p1.2.m2" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> discrete stages, one per singular value of <math id="S4.I1.i1.p1.3.m3" class="ltx_Math" alttext="\Sigma_{yx}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>y</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{yx}</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p id="S4.I1.i2.p1.4" class="ltx_p"><em id="S4.I1.i2.p1.4.1" class="ltx_emph ltx_font_italic">Depth dependence</em>: Deeper networks (<math id="S4.I1.i2.p1.1.m1" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> larger) produce higher barriers and thus longer grokking delays, since the critical strength <math id="S4.I1.i2.p1.2.m2" class="ltx_Math" alttext="\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\beta_{c}^{(i)}</annotation></semantics></math> decreases with <math id="S4.I1.i2.p1.3.m3" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> while the equal-loss crossing <math id="S4.I1.i2.p1.4.m4" class="ltx_Math" alttext="\beta^{*}_{i}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>i</mi><mo>∗</mo></msubsup><annotation encoding="application/x-tex">\beta^{*}_{i}</annotation></semantics></math> remains finite <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite>.</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p id="S4.I1.i3.p1.1" class="ltx_p"><em id="S4.I1.i3.p1.1.1" class="ltx_emph ltx_font_italic">Hyperparameter control</em>: Escape time obeys <math id="S4.I1.i3.p1.1.m1" class="ltx_Math" alttext="\ln\tau\propto B/\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><mo>∝</mo><mrow><mi>B</mi><mo>/</mo><msub><mi>η</mi><mi>lr</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\ln\tau\propto B/\eta_{\mathrm{lr}}</annotation></semantics></math>, providing a direct lever to accelerate or suppress grokking.</p>
+</div>
+</li>
+</ol>
+<p id="S4.SS1.p1.4" class="ltx_p">Predictions (2) and (3) are immediately testable by varying <math id="S4.SS1.p1.2.m1" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>, <math id="S4.SS1.p1.3.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>lr</mi></msub><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}</annotation></semantics></math>, and <math id="S4.SS1.p1.4.m3" class="ltx_Math" alttext="B" display="inline" intent=":literal"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> in existing grokking benchmarks. Preliminary experiments and work on nonlinear networks  <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite> with sigmoid and tanh activations reproduce qualitatively identical first-order phase transition behaviour, strongly suggesting that the same mechanism applies beyond the linear framework.</p>
+</div>
+</section>
+<section id="S4.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.2 </span>Relation to Memorisation and Generalisation</h3>
+
+<div id="S4.SS2.p1" class="ltx_para">
+<p id="S4.SS2.p1.2" class="ltx_p">In the dense-data experiments of Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>(a) the training error converges monotonically, and the large train/test gap of canonical grokking <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>]</cite> does not appear, because with <math id="S4.SS2.p1.1.m1" class="ltx_Math" alttext="d=2" display="inline" intent=":literal"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d=2</annotation></semantics></math> well-sampled modes the model has few directions along which train and test can diverge. Under sparse sub-sampling this gap does emerge: Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>(b) shows train error settling onto a plateau while test error remains substantially higher, until both fall abruptly as the model escapes the rank-1 phase. Because the network is linear and the task is stochastic, the model cannot memorise the training sample: train error plateaus at the best rank-1 linear fit and, after escape, settles near the best rank-2 fit, which is bounded below by the irreducible (Bayes) error of the Gaussian task. Train and test therefore approach one another and the noise floor but cannot coincide or fall to zero. The grokking signature here is thus the delayed, abrupt closing of a train/test gap down to the task’s noise floor, reproduced <em id="S4.SS2.p1.2.1" class="ltx_emph ltx_font_italic">without any memorising solution</em> — consistent with the view that memorisation is not a necessary ingredient of the phenomenon. When <math id="S4.SS2.p1.2.m2" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is large, the optimisation trajectory reduces training error by learning some singular directions while stagnating in others, giving rise to an apparent memorisation phase. In this view, memorisation and generalisation need not be primitive concepts but instead emerge as descriptions of partial versus complete progress through a cascade of rank transitions. Moreover, what is currently labeled “grokking” possibly encompasses several mechanistically distinct phenomena with a superficial resemblance; our framework offers a principled basis for distinguishing them.</p>
+</div>
+</section>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Conclusion</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p id="S5.p1.6" class="ltx_p">We propose a candidate mechanism for grokking: noise-activated escape from metastable states created by first-order phase transitions in L2-regularised deep networks. Using deep linear networks, i.e. the minimal setting in which the loss landscape is exactly solvable <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite>, we demonstrate three results: <span id="S5.p1.6.1" class="ltx_text ltx_font_bold">(i)</span> deliberate trapping in metastable phases reproduces grokking-like delayed convergence; <span id="S5.p1.6.2" class="ltx_text ltx_font_bold">(ii)</span> escape times obey Arrhenius scaling <math id="S5.p1.1.m1" class="ltx_Math" alttext="\ln\tau\propto 1/T_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><mo>∝</mo><mrow><mn>1</mn><mo>/</mo><msub><mi>T</mi><mi>eff</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\ln\tau\propto 1/T_{\mathrm{eff}}</annotation></semantics></math> with <math id="S5.p1.2.m2" class="ltx_Math" alttext="T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>∝</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mi>B</mi></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}\propto\eta_{\mathrm{lr}}/B</annotation></semantics></math>; and <span id="S5.p1.6.3" class="ltx_text ltx_font_bold">(iii)</span> the extracted barrier <math id="S5.p1.3.m3" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}=0.15\pm 0.05" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>=</mo><mrow><mn>0.15</mn><mo>±</mo><mn>0.05</mn></mrow></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}=0.15\pm 0.05</annotation></semantics></math> exceeds the minimum-path barrier <math id="S5.p1.4.m4" class="ltx_Math" alttext="\Delta E_{\mathrm{min}}\approx 0.003" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow><mo>≈</mo><mn>0.003</mn></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{min}}\approx 0.003</annotation></semantics></math> by the factor predicted from entropic and curvature corrections in <math id="S5.p1.5.m5" class="ltx_Math" alttext="D=170" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">D=170</annotation></semantics></math> dimensions. The framework connects grokking to the established physics of noise-activated escape from metastable states <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib12" title="" class="ltx_ref">12</a>, <a href="#bib.bib13" title="" class="ltx_ref">13</a>, <a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite>, and offers a direct practical handle: since <math id="S5.p1.6.m6" class="ltx_Math" alttext="\ln\tau\propto B/\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><mo>∝</mo><mrow><mi>B</mi><mo>/</mo><msub><mi>η</mi><mi>lr</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\ln\tau\propto B/\eta_{\mathrm{lr}}</annotation></semantics></math>, grokking delays can in principle be accelerated or suppressed by hyperparameter choice alone.</p>
+</div>
+</section>
+<section id="Sx1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">Acknowledgments</h2>
+
+<div id="Sx1.p1" class="ltx_para">
+<p id="Sx1.p1.1" class="ltx_p">We thank Björn Ladewig and members of the Complexity Science Group for stimulating discussions and inspiring contributions.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+<li id="bib.bib1" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[1]</span>
+<span class="ltx_bibblock">
+A. E. Hoerl and R. W. Kennard,
+“Ridge regression: Biased estimation for nonorthogonal problems,”
+<span id="bib.bib1.1.1" class="ltx_text ltx_font_italic">Technometrics</span> <span id="bib.bib1.2.2" class="ltx_text ltx_font_bold">12</span>, 55 (1970).
+
+</span>
+</li>
+<li id="bib.bib2" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[2]</span>
+<span class="ltx_bibblock">
+I. Goodfellow, Y. Bengio, and A. Courville,
+<span id="bib.bib2.1.1" class="ltx_text ltx_font_italic">Deep Learning</span> (MIT Press, Cambridge, MA, 2017).
+
+</span>
+</li>
+<li id="bib.bib3" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[3]</span>
+<span class="ltx_bibblock">Ziyin, L. &amp; Ueda, M. Zeroth, first, and second-order phase transitions in deep neural networks. <span id="bib.bib3.1.1" class="ltx_text ltx_font_italic">Physical Review Research</span>. <span id="bib.bib3.2.2" class="ltx_text ltx_font_bold">5</span>, 043243 (2023)
+
+</span>
+</li>
+<li id="bib.bib4" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[4]</span>
+<span class="ltx_bibblock">
+S. Amari,
+<span id="bib.bib4.1.1" class="ltx_text ltx_font_italic">Information Geometry and Its Applications</span>,
+Vol. 194 (Springer, Tokyo, 2016).
+
+</span>
+</li>
+<li id="bib.bib5" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[5]</span>
+<span class="ltx_bibblock">
+S. Watanabe,
+<span id="bib.bib5.1.1" class="ltx_text ltx_font_italic">Algebraic Geometry and Statistical Learning Theory</span>,
+Vol. 25 (Cambridge University Press, Cambridge, 2009).
+
+</span>
+</li>
+<li id="bib.bib6" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[6]</span>
+<span class="ltx_bibblock">
+I. T. Ersoy and K. Wiesner,
+“Exploring L2-phase transitions on error landscapes,”
+<span id="bib.bib6.1.1" class="ltx_text ltx_font_italic">Workshop on High-Dimensional Learning Dynamics</span> (2025).
+
+</span>
+</li>
+<li id="bib.bib7" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[7]</span>
+<span class="ltx_bibblock">
+I. T. Ersoy, A. F. C. Licha, and K. Wiesner,
+“Phase transitions reveal hierarchical structure in deep neural networks,”
+arXiv:2512.11866 (2025).
+
+</span>
+</li>
+<li id="bib.bib8" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[8]</span>
+<span class="ltx_bibblock"> B. Ladewig, I. T. Ersoy, and K. Wiesner,
+“Cascading through the Hierarchy: Regulariser-induced Feature Detection as Phase Transitions in Deep Linear Neural Networks,”
+<span id="bib.bib8.1.1" class="ltx_text ltx_font_italic">(in preparation)</span> (2026).
+
+</span>
+</li>
+<li id="bib.bib9" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[9]</span>
+<span class="ltx_bibblock">
+A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra,
+“Grokking: Generalization beyond overfitting on small algorithmic datasets,”
+arXiv:2201.02177 (2022).
+
+</span>
+</li>
+<li id="bib.bib10" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[10]</span>
+<span class="ltx_bibblock">
+Z. Liu, E. J. Michaud, and M. Tegmark,
+“Omnigrok: Grokking beyond algorithmic data,”
+arXiv:2210.01117 (2022).
+
+</span>
+</li>
+<li id="bib.bib11" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[11]</span>
+<span class="ltx_bibblock">
+N. Rubin, I. Seroussi, and Z. Ringel,
+“Grokking as a first order phase transition in two layer networks,”
+<span id="bib.bib11.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations</span> (2024).
+
+</span>
+</li>
+<li id="bib.bib12" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[12]</span>
+<span class="ltx_bibblock">
+H. A. Kramers,
+“Brownian motion in a field of force and the diffusion model of chemical
+reactions,”
+<span id="bib.bib12.1.1" class="ltx_text ltx_font_italic">Physica</span> <span id="bib.bib12.2.2" class="ltx_text ltx_font_bold">7</span>, 284 (1940).
+
+</span>
+</li>
+<li id="bib.bib13" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[13]</span>
+<span class="ltx_bibblock">
+P. Hänggi, P. Talkner, and M. Borkovec,
+“Reaction-rate theory: fifty years after Kramers,”
+<span id="bib.bib13.1.1" class="ltx_text ltx_font_italic">Rev. Mod. Phys.</span> <span id="bib.bib13.2.2" class="ltx_text ltx_font_bold">62</span>, 251 (1990).
+
+</span>
+</li>
+<li id="bib.bib14" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[14]</span>
+<span class="ltx_bibblock">
+S. Mandt, M. D. Hoffman, and D. M. Blei,
+“Stochastic gradient descent as approximate Bayesian inference,”
+<span id="bib.bib14.1.1" class="ltx_text ltx_font_italic">J. Mach. Learn. Res.</span> <span id="bib.bib14.2.2" class="ltx_text ltx_font_bold">18</span>, 4873 (2017).
+
+</span>
+</li>
+<li id="bib.bib15" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[15]</span>
+<span class="ltx_bibblock">Smith, S., Kindermans, P., Ying, C. &amp; Le, Q. Don’t decay the learning rate, increase the batch size. <span id="bib.bib15.1.1" class="ltx_text ltx_font_italic">ArXiv Preprint ArXiv:1711.00489</span>. (2017)
+
+</span>
+</li>
+<li id="bib.bib16" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[16]</span>
+<span class="ltx_bibblock">Welling, M. &amp; Teh, Y. Bayesian learning via stochastic gradient Langevin dynamics. <span id="bib.bib16.1.1" class="ltx_text ltx_font_italic">Proceedings Of The 28th International Conference On Machine Learning (ICML-11)</span>. pp. 681-688 (2011)
+
+</span>
+</li>
+<li id="bib.bib17" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[17]</span>
+<span class="ltx_bibblock">Saxe, A., McClelland, J. &amp; Ganguli, S. Exact solutions to the nonlinear dynamics of learning in deep linear neural networks. <span id="bib.bib17.1.1" class="ltx_text ltx_font_italic">ArXiv Preprint ArXiv:1312.6120</span>. (2013)
+
+</span>
+</li>
+<li id="bib.bib18" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[18]</span>
+<span class="ltx_bibblock">Wang, Z. &amp; Jacot, A. Implicit bias of SGD in L2-regularized linear DNNs: One-way jumps from high to low rank. <span id="bib.bib18.1.1" class="ltx_text ltx_font_italic">ArXiv Preprint ArXiv:2305.16038</span>. (2023)
+
+</span>
+</li>
+<li id="bib.bib19" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[19]</span>
+<span class="ltx_bibblock">
+T. Mori, L. Ziyin, K. Liu, and M. Ueda,
+“Power-law escape rate of SGD,”
+<span id="bib.bib19.1.1" class="ltx_text ltx_font_italic">Proceedings of the 39th International Conference on Machine Learning</span>,
+PMLR <span id="bib.bib19.2.2" class="ltx_text ltx_font_bold">162</span>, 15959 (2022).
+
+</span>
+</li>
+<li id="bib.bib20" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[20]</span>
+<span class="ltx_bibblock">Draxler, F., Veschgini, K., Salmhofer, M. &amp; Hamprecht, F. Essentially No Barriers in Neural Network Energy Landscape. (2019)
+
+</span>
+</li>
+<li id="bib.bib21" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[21]</span>
+<span class="ltx_bibblock">Nanda, N., Chan, L., Lieberum, T., Smith, J. &amp; Steinhardt, J. Progress measures for grokking via mechanistic interpretability. <span id="bib.bib21.1.1" class="ltx_text ltx_font_italic">ArXiv Preprint ArXiv:2301.05217</span>. (2023)
+
+</span>
+</li>
+<li id="bib.bib22" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[22]</span>
+<span class="ltx_bibblock">
+Y. Tian,
+“Provable scaling laws of feature emergence from learning dynamics of grokking,”
+arXiv:2509.21519 (2025).
+
+</span>
+</li>
+<li id="bib.bib23" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[23]</span>
+<span class="ltx_bibblock">Zhang, X., Shang, Y., Yang, E. &amp; Zhang, G. Is Grokking a Computational Glass Relaxation?. (2026), https://arxiv.org/abs/2505.11411
+
+</span>
+</li>
+<li id="bib.bib24" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[24]</span>
+<span class="ltx_bibblock">
+N. Levi, A. Beck, and Y. Bar-Sinai,
+“Grokking in linear estimators—a solvable model that groks without understanding,”
+<span id="bib.bib24.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations</span> (2024), arXiv:2310.16441.
+
+</span>
+</li>
+<li id="bib.bib25" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[25]</span>
+<span class="ltx_bibblock">
+K. Lyu, J. Jin, Z. Li, S. S. Du, J. D. Lee, and W. Hu,
+“Dichotomy of early and late phase implicit biases can provably induce grokking,”
+<span id="bib.bib25.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations</span> (2024), arXiv:2311.18817.
+
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section id="A1" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Experimental Setup</h2>
+
+<div id="A1.p1" class="ltx_para">
+<p id="A1.p1.4" class="ltx_p">All experiments use a deep linear network of depth <math id="A1.p1.1.m1" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math> (two hidden layers) with hidden width <math id="A1.p1.2.m2" class="ltx_Math" alttext="w=10" display="inline" intent=":literal"><semantics><mrow><mi>w</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">w=10</annotation></semantics></math> and output dimension <math id="A1.p1.3.m3" class="ltx_Math" alttext="p=2" display="inline" intent=":literal"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p=2</annotation></semantics></math>, giving <math id="A1.p1.4.m4" class="ltx_Math" alttext="D=170" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">D=170</annotation></semantics></math> total parameters. No nonlinear activation is applied; the end-to-end map is a single matrix product. The optimiser is SGD throughout.</p>
+</div>
+<div id="A1.p2" class="ltx_para">
+<p id="A1.p2.10" class="ltx_p"><span id="A1.p2.10.1" class="ltx_text ltx_font_bold">Data generation.</span> Training and test data each consist of <math id="A1.p2.1.m1" class="ltx_Math" alttext="N=512" display="inline" intent=":literal"><semantics><mrow><mi>N</mi><mo>=</mo><mn>512</mn></mrow><annotation encoding="application/x-tex">N=512</annotation></semantics></math> samples drawn from a zero-mean multivariate Gaussian over the joint input–output space. The data covariance has <math id="A1.p2.2.m2" class="ltx_Math" alttext="d=2" display="inline" intent=":literal"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d=2</annotation></semantics></math> non-zero singular values <math id="A1.p2.3.m3" class="ltx_Math" alttext="\eta_{1}=0.9" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\eta_{1}=0.9</annotation></semantics></math>, <math id="A1.p2.4.m4" class="ltx_Math" alttext="\eta_{2}=0.8" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>2</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta_{2}=0.8</annotation></semantics></math> with <math id="A1.p2.5.m5" class="ltx_Math" alttext="\Sigma_{xx}=\mathbf{I}" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><mo>=</mo><mi>𝐈</mi></mrow><annotation encoding="application/x-tex">\Sigma_{xx}=\mathbf{I}</annotation></semantics></math>. Samples are generated via Cholesky decomposition: given <math id="A1.p2.6.m6" class="ltx_Math" alttext="\Sigma=LL^{\top}" display="inline" intent=":literal"><semantics><mrow><mi mathvariant="normal">Σ</mi><mo>=</mo><mrow><mi>L</mi><mo lspace="0em" rspace="0em">​</mo><msup><mi>L</mi><mo>⊤</mo></msup></mrow></mrow><annotation encoding="application/x-tex">\Sigma=LL^{\top}</annotation></semantics></math>, each sample is drawn as <math id="A1.p2.7.m7" class="ltx_Math" alttext="z=L\epsilon" display="inline" intent=":literal"><semantics><mrow><mi>z</mi><mo>=</mo><mrow><mi>L</mi><mo lspace="0em" rspace="0em">​</mo><mi>ϵ</mi></mrow></mrow><annotation encoding="application/x-tex">z=L\epsilon</annotation></semantics></math> with <math id="A1.p2.8.m8" class="ltx_Math" alttext="\epsilon\sim\mathcal{N}(0,\mathbf{I})" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>∼</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>𝐈</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\epsilon\sim\mathcal{N}(0,\mathbf{I})</annotation></semantics></math>; the first <math id="A1.p2.9.m9" class="ltx_Math" alttext="p" display="inline" intent=":literal"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> components are input and the remaining <math id="A1.p2.10.m10" class="ltx_Math" alttext="p" display="inline" intent=":literal"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> components are output. An independent test set of the same size is held fixed throughout.</p>
+</div>
+<div id="A1.p3" class="ltx_para">
+<p id="A1.p3.2" class="ltx_p"><span id="A1.p3.2.1" class="ltx_text ltx_font_bold">Initialisation and annealing.</span> All trapping experiments use <em id="A1.p3.2.2" class="ltx_emph ltx_font_italic">checkpoint initialisation</em>: the model is first trained to convergence <math id="A1.p3.1.m1" class="ltx_Math" alttext="\beta_{\mathrm{init}}=0" display="inline" intent=":literal"><semantics><mrow><msub><mi>β</mi><mi>init</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta_{\mathrm{init}}=0</annotation></semantics></math> to get the full rank solution. The resulting weights are then used as the starting point for continued training. This is analogous to annealing. The random initialisation baseline uses fresh weights drawn from <math id="A1.p3.2.m2" class="ltx_Math" alttext="\mathcal{N}(0,1/\sqrt{w})" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mn>1</mn><mo>/</mo><msqrt><mi>w</mi></msqrt></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,1/\sqrt{w})</annotation></semantics></math> instead. Convergence is assessed by monitoring test MSE; escape from a metastable phase is identified as the epoch at which test MSE drops below a threshold midway between the metastable plateau value and the global minimum value.</p>
+</div>
+<div id="A1.p4" class="ltx_para">
+<p id="A1.p4.2" class="ltx_p"><span id="A1.p4.2.1" class="ltx_text ltx_font_bold">Phase diagram</span> (Fig. <a href="#A2.F3" title="Figure 3 ‣ Appendix B Phase Diagram ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>, Appendix <a href="#A2" title="Appendix B Phase Diagram ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">B</span></a>): the model is first trained to convergence at <math id="A1.p4.1.m1" class="ltx_Math" alttext="\beta=0" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta=0</annotation></semantics></math>, then <math id="A1.p4.2.m2" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> is increased quasi-statically in small increments, re-training to convergence at each step.</p>
+</div>
+<div id="A1.p5" class="ltx_para">
+<p id="A1.p5.3" class="ltx_p"><span id="A1.p5.3.1" class="ltx_text ltx_font_bold">Trapping experiments</span> (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>): all three protocols use
+<math id="A1.p5.1.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, <math id="A1.p5.2.m2" class="ltx_Math" alttext="\eta_{\mathrm{lr}}=0.08" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>=</mo><mn>0.08</mn></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}=0.08</annotation></semantics></math>, <math id="A1.p5.3.m3" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>.</p>
+<ul id="A1.I1" class="ltx_itemize">
+<li id="A1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.I1.i1.p1" class="ltx_para">
+<p id="A1.I1.i1.p1.2" class="ltx_p"><em id="A1.I1.i1.p1.2.1" class="ltx_emph ltx_font_italic">Random initialisation</em>: weights drawn from a standard normal distribution
+scaled by <math id="A1.I1.i1.p1.1.m1" class="ltx_Math" alttext="1/\sqrt{w}" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo>/</mo><msqrt><mi>w</mi></msqrt></mrow><annotation encoding="application/x-tex">1/\sqrt{w}</annotation></semantics></math>; training run for <math id="A1.I1.i1.p1.2.m2" class="ltx_Math" alttext="2\times 10^{4}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2\times 10^{4}</annotation></semantics></math> epochs.</p>
+</div>
+</li>
+<li id="A1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.I1.i2.p1" class="ltx_para">
+<p id="A1.I1.i2.p1.3" class="ltx_p"><em id="A1.I1.i2.p1.3.1" class="ltx_emph ltx_font_italic">Rank-1 trap</em>: model initialised from a checkpoint trained to convergence
+at <math id="A1.I1.i2.p1.1.m1" class="ltx_Math" alttext="\beta=0.361&gt;\beta_{c}^{(1)}=0.360" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.361</mn><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.360</mn></mrow><annotation encoding="application/x-tex">\beta=0.361&gt;\beta_{c}^{(1)}=0.360</annotation></semantics></math>, placing the end-to-end weight matrix in the
+rank-1 phase; training then continued at <math id="A1.I1.i2.p1.2.m2" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math> for <math id="A1.I1.i2.p1.3.m3" class="ltx_Math" alttext="2\times 10^{4}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2\times 10^{4}</annotation></semantics></math> epochs.</p>
+</div>
+</li>
+<li id="A1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.I1.i3.p1" class="ltx_para">
+<p id="A1.I1.i3.p1.3" class="ltx_p"><em id="A1.I1.i3.p1.3.1" class="ltx_emph ltx_font_italic">Trivial-phase trap</em>: model initialised from a checkpoint trained to
+convergence at <math id="A1.I1.i3.p1.1.m1" class="ltx_Math" alttext="\beta=0.43&gt;\beta_{c}^{(2)}=0.42" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.43</mn><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.42</mn></mrow><annotation encoding="application/x-tex">\beta=0.43&gt;\beta_{c}^{(2)}=0.42</annotation></semantics></math>, placing the network in the
+rank-0 phase; training continued at <math id="A1.I1.i3.p1.2.m2" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math> for <math id="A1.I1.i3.p1.3.m3" class="ltx_Math" alttext="2\times 10^{4}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2\times 10^{4}</annotation></semantics></math> epochs.</p>
+</div>
+</li>
+</ul>
+<p id="A1.p5.25" class="ltx_p">Each experiment is repeated across 50 random seeds (seeds 42–91); escape times vary across seeds due to stochastic SGD noise, which is the activated escape mechanism under study.
+<span id="A1.p5.25.1" class="ltx_text ltx_font_bold">Arrhenius sweep</span> (Fig. <a href="#S3.F2" title="Figure 2 ‣ 3.3 Arrhenius Scaling Confirms Thermally Activated Escape ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>(b)): starting from the rank-1 trap initialisation above, escape times are measured at <math id="A1.p5.4.m1" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math> with <math id="A1.p5.5.m2" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math> fixed while varying <math id="A1.p5.6.m3" class="ltx_Math" alttext="\eta_{\mathrm{lr}}\in\{5\times 10^{-4},\,1\times 10^{-3},\,2\times 10^{-3},\,3\times 10^{-3},\,5\times 10^{-3}\}" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>∈</mo><mrow><mo stretchy="false">{</mo><mrow><mn>5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><mo>,</mo><mrow><mn> 1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo>,</mo><mrow><mn> 2</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo>,</mo><mrow><mn> 3</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo>,</mo><mrow><mn> 5</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}\in\{5\times 10^{-4},\,1\times 10^{-3},\,2\times 10^{-3},\,3\times 10^{-3},\,5\times 10^{-3}\}</annotation></semantics></math>. Each point is averaged over 50 seeds. The proportionality constant <math id="A1.p5.7.m4" class="ltx_Math" alttext="C" display="inline" intent=":literal"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> in <math id="A1.p5.8.m5" class="ltx_Math" alttext="T_{\mathrm{eff}}=\eta_{\mathrm{lr}}/(BC)" display="inline" intent=":literal"><semantics><mrow><msub><mi>T</mi><mi>eff</mi></msub><mo>=</mo><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mi>B</mi><mo lspace="0em" rspace="0em">​</mo><mi>C</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">T_{\mathrm{eff}}=\eta_{\mathrm{lr}}/(BC)</annotation></semantics></math> is estimated using the trace of the covariance of the gradients. The linearity (<math id="A1.p5.9.m6" class="ltx_Math" alttext="R^{2}=0.991" display="inline" intent=":literal"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.991</mn></mrow><annotation encoding="application/x-tex">R^{2}=0.991</annotation></semantics></math>) is a key result. With <math id="A1.p5.10.m7" class="ltx_Math" alttext="N=512" display="inline" intent=":literal"><semantics><mrow><mi>N</mi><mo>=</mo><mn>512</mn></mrow><annotation encoding="application/x-tex">N=512</annotation></semantics></math> and <math id="A1.p5.11.m8" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>, each epoch consists of <math id="A1.p5.12.m9" class="ltx_Math" alttext="\lfloor N/B\rfloor=8" display="inline" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">⌊</mo><mrow><mi>N</mi><mo>/</mo><mi>B</mi></mrow><mo stretchy="false">⌋</mo></mrow><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\lfloor N/B\rfloor=8</annotation></semantics></math> SGD steps; this factor enters <math id="A1.p5.13.m10" class="ltx_Math" alttext="\ln\tau_{0}" display="inline" intent=":literal"><semantics><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><msub><mi>τ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\ln\tau_{0}</annotation></semantics></math> but not the slope <math id="A1.p5.14.m11" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}/T_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>/</mo><msub><mi>T</mi><mi>eff</mi></msub></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}/T_{\mathrm{eff}}</annotation></semantics></math>, leaving the extracted barrier unchanged.
+<span id="A1.p5.25.2" class="ltx_text ltx_font_bold">Sparse sub-sampling experiment</span> (Fig. <a href="#S3.F1" title="Figure 1 ‣ 3.1 Hysteresis and Trapping Reproduce Grokking ‣ 3 Results ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>(b)): train and test are drawn from a single zero-mean Gaussian with weak correlation <math id="A1.p5.15.m12" class="ltx_Math" alttext="0.8" display="inline" intent=":literal"><semantics><mn>0.8</mn><annotation encoding="application/x-tex">0.8</annotation></semantics></math> and strong correlation <math id="A1.p5.16.m13" class="ltx_Math" alttext="0.9" display="inline" intent=":literal"><semantics><mn>0.9</mn><annotation encoding="application/x-tex">0.9</annotation></semantics></math> (<math id="A1.p5.17.m14" class="ltx_Math" alttext="\Sigma_{xx}=\mathbf{I}" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><mo>=</mo><mi>𝐈</mi></mrow><annotation encoding="application/x-tex">\Sigma_{xx}=\mathbf{I}</annotation></semantics></math>). The training set is a random <math id="A1.p5.18.m15" class="ltx_Math" alttext="25" display="inline" intent=":literal"><semantics><mn>25</mn><annotation encoding="application/x-tex">25</annotation></semantics></math>-sample subset of a <math id="A1.p5.19.m16" class="ltx_Math" alttext="5\,000" display="inline" intent=":literal"><semantics><mn>5 000</mn><annotation encoding="application/x-tex">5\,000</annotation></semantics></math>-sample pool (<math id="A1.p5.20.m17" class="ltx_Math" alttext="0.5\%" display="inline" intent=":literal"><semantics><mrow><mn>0.5</mn><mo>%</mo></mrow><annotation encoding="application/x-tex">0.5\%</annotation></semantics></math>), so the weak feature is poorly determined from the training data while remaining at full strength on the (disjoint, <math id="A1.p5.21.m18" class="ltx_Math" alttext="10\,000" display="inline" intent=":literal"><semantics><mn>10 000</mn><annotation encoding="application/x-tex">10\,000</annotation></semantics></math>-sample) test set. The model is initialised in the rank-1 trapped state and trained at <math id="A1.p5.22.m19" class="ltx_Math" alttext="\beta=0.0025" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.0025</mn></mrow><annotation encoding="application/x-tex">\beta=0.0025</annotation></semantics></math>, <math id="A1.p5.23.m20" class="ltx_Math" alttext="\eta_{\mathrm{lr}}=0.1" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mi>lr</mi></msub><mo>=</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}=0.1</annotation></semantics></math>, <math id="A1.p5.24.m21" class="ltx_Math" alttext="B=64" display="inline" intent=":literal"><semantics><mrow><mi>B</mi><mo>=</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">B=64</annotation></semantics></math>. Escape is identified as the epoch at which the second singular value of the end-to-end map rises above a small threshold (<math id="A1.p5.25.m22" class="ltx_Math" alttext="\sigma_{2}&gt;10^{-3}" display="inline" intent=":literal"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub><mo>&gt;</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sigma_{2}&gt;10^{-3}</annotation></semantics></math>). Because the network is linear, the training error cannot reach zero: it plateaus at the best rank-1 linear fit and, after escape, settles near the best rank-2 fit, both bounded below by the irreducible (Bayes) error of the stochastic task.</p>
+</div>
+</section>
+<section id="A2" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix B </span>Phase Diagram</h2>
+
+<div id="A2.p1" class="ltx_para">
+<p id="A2.p1.10" class="ltx_p">Figure <a href="#A2.F3" title="Figure 3 ‣ Appendix B Phase Diagram ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> shows the test MSE as a function of <math id="A2.p1.1.m1" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> for a deep linear network with <math id="A2.p1.2.m2" class="ltx_Math" alttext="d=2" display="inline" intent=":literal"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d=2</annotation></semantics></math> singular values (<math id="A2.p1.3.m3" class="ltx_Math" alttext="\eta_{1}=0.9" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\eta_{1}=0.9</annotation></semantics></math>, <math id="A2.p1.4.m4" class="ltx_Math" alttext="\eta_{2}=0.8" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>2</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta_{2}=0.8</annotation></semantics></math>, <math id="A2.p1.5.m5" class="ltx_Math" alttext="\Sigma_{xx}=\mathbf{I}" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><mo>=</mo><mi>𝐈</mi></mrow><annotation encoding="application/x-tex">\Sigma_{xx}=\mathbf{I}</annotation></semantics></math>, <math id="A2.p1.6.m6" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>), obtained by training to convergence and then quasi-statically decreasing <math id="A2.p1.7.m7" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> in steps of <math id="A2.p1.8.m8" class="ltx_Math" alttext="0.01" display="inline" intent=":literal"><semantics><mn>0.01</mn><annotation encoding="application/x-tex">0.01</annotation></semantics></math>. Two sharp drops mark the transitions at <math id="A2.p1.9.m9" class="ltx_Math" alttext="\beta_{c}^{(1)}=0.36" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.36</mn></mrow><annotation encoding="application/x-tex">\beta_{c}^{(1)}=0.36</annotation></semantics></math> and <math id="A2.p1.10.m10" class="ltx_Math" alttext="\beta_{c}^{(2)}=0.42" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.42</mn></mrow><annotation encoding="application/x-tex">\beta_{c}^{(2)}=0.42</annotation></semantics></math>, in close agreement with Eq. (<a href="#S2.E3" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>). At each transition the effective rank of the end-to-end weight matrix increases by one, corresponding to the model learning an additional feature. The small offset from the theoretical values reflects the bias of the output distribution.</p>
+</div>
+<figure id="A2.F3" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="2606.17120v1/x5.png" id="A2.F3.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_landscape" width="665" height="390" alt="Refer to caption"></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1">
+<p id="A2.F3.17" class="ltx_p ltx_figure_panel ltx_align_center"><span id="A2.F3.17.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Experimental MSE vs Regularization Strength<span id="A2.F3.17.1.1" class="ltx_text ltx_font_medium"></span></span></p>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering" style="font-size:90%;"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>Phase transitions in a deep linear network (<math id="A2.F3.9.m1" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>, <math id="A2.F3.10.m2" class="ltx_Math" alttext="d=2" display="inline" intent=":literal"><semantics><mrow><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">d=2</annotation></semantics></math>, <math id="A2.F3.11.m3" class="ltx_Math" alttext="\eta_{1}=0.9" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\eta_{1}=0.9</annotation></semantics></math>, <math id="A2.F3.12.m4" class="ltx_Math" alttext="\eta_{2}=0.8" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>2</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta_{2}=0.8</annotation></semantics></math>, <math id="A2.F3.13.m5" class="ltx_Math" alttext="\Sigma_{xx}=\mathbf{I}" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><mo>=</mo><mi>𝐈</mi></mrow><annotation encoding="application/x-tex">\Sigma_{xx}=\mathbf{I}</annotation></semantics></math>). Test MSE versus regularisation strength <math id="A2.F3.14.m6" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> shows two sharp drops at <math id="A2.F3.15.m7" class="ltx_Math" alttext="\beta_{c}^{(1)}=0.36" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.36</mn></mrow><annotation encoding="application/x-tex">\beta_{c}^{(1)}=0.36</annotation></semantics></math> and <math id="A2.F3.16.m8" class="ltx_Math" alttext="\beta_{c}^{(2)}=0.42" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mn>0.42</mn></mrow><annotation encoding="application/x-tex">\beta_{c}^{(2)}=0.42</annotation></semantics></math>; at each transition the effective rank increases by one. Quasi-static sweep; small offset from theory reflects output distribution bias.</figcaption>
+</figure>
+</section>
+<section id="A3" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix C </span>Bifurcation Diagram</h2>
+
+<div id="A3.p1" class="ltx_para">
+<p id="A3.p1.16" class="ltx_p">The bifurcation structure of the loss landscape is shown in Fig. <a href="#A3.F4" title="Figure 4 ‣ Appendix C Bifurcation Diagram ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>. For a single mode with signal strength <math id="A3.p1.1.m1" class="ltx_Math" alttext="\eta" display="inline" intent=":literal"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>, the stationarity condition Eq. (<a href="#S2.E2" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>) has three solutions below <math id="A3.p1.2.m2" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math>: the trivial minimum at <math id="A3.p1.3.m3" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>, an unstable saddle at <math id="A3.p1.4.m4" class="ltx_Math" alttext="\lambda^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><msup><mi>λ</mi><mi>sad</mi></msup><annotation encoding="application/x-tex">\lambda^{\mathrm{sad}}</annotation></semantics></math>, and the global minimum at <math id="A3.p1.5.m5" class="ltx_Math" alttext="\lambda^{**}&gt;\lambda^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><mrow><msup><mi>λ</mi><mrow><mi></mi><mo lspace="0.222em" rspace="0em">∗</mo><mo lspace="0em">∗</mo></mrow></msup><mo>&gt;</mo><msup><mi>λ</mi><mi>sad</mi></msup></mrow><annotation encoding="application/x-tex">\lambda^{**}&gt;\lambda^{\mathrm{sad}}</annotation></semantics></math>. As <math id="A3.p1.6.m6" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> increases through <math id="A3.p1.7.m7" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math>, the saddle and the global minimum merge and annihilate in a saddle-node bifurcation, leaving only <math id="A3.p1.8.m8" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>. A model on the upper (rank-1) branch remains metastable for all <math id="A3.p1.9.m9" class="ltx_Math" alttext="\beta&lt;\beta_{c}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&lt;</mo><msub><mi>β</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\beta&lt;\beta_{c}</annotation></semantics></math>; a model on the lower (rank-0) branch at <math id="A3.p1.10.m10" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math> is trapped there even when the rank-1 phase is energetically preferred (i.e., for <math id="A3.p1.11.m11" class="ltx_Math" alttext="\beta&lt;\beta^{*}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&lt;</mo><msup><mi>β</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\beta&lt;\beta^{*}</annotation></semantics></math>). The height of the barrier between the two, and thus the mean escape time, grows as <math id="A3.p1.12.m12" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> increases toward <math id="A3.p1.13.m13" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math>. Note that for <math id="A3.p1.14.m14" class="ltx_Math" alttext="L=2" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">L=2</annotation></semantics></math> no such bifurcation occurs: the stationarity condition is linear in <math id="A3.p1.15.m15" class="ltx_Math" alttext="\lambda" display="inline" intent=":literal"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> and has a unique positive solution for all <math id="A3.p1.16.m16" class="ltx_Math" alttext="\beta&gt;0" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta&gt;0</annotation></semantics></math>, yielding only second-order behaviour <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>]</cite>.</p>
+</div>
+<figure id="A3.F4" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="2606.17120v1/x6.png" id="A3.F4.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_landscape" width="663" height="389" alt="Refer to caption"></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1">
+<p id="A3.F4.13" class="ltx_p ltx_figure_panel ltx_align_center"><span id="A3.F4.13.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Numerical MSE and Total Loss vs Regularization Strength<span id="A3.F4.13.1.1" class="ltx_text ltx_font_medium"></span></span></p>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering" style="font-size:90%;"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>Bifurcation diagram for modes (<math id="A3.F4.7.m1" class="ltx_Math" alttext="\eta_{1}=0.9" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\eta_{1}=0.9</annotation></semantics></math>, <math id="A3.F4.8.m2" class="ltx_Math" alttext="\eta_{2}=0.8" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>2</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta_{2}=0.8</annotation></semantics></math>, <math id="A3.F4.9.m3" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>). Solid lines: stable stationary points; dashed line: unstable saddle. The two non-trivial branches annihilate at <math id="A3.F4.10.m4" class="ltx_Math" alttext="\beta_{c}" display="inline" intent=":literal"><semantics><msub><mi>β</mi><mi>c</mi></msub><annotation encoding="application/x-tex">\beta_{c}</annotation></semantics></math> in a saddle-node bifurcation, leaving only <math id="A3.F4.11.m5" class="ltx_Math" alttext="\lambda=0" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math> for <math id="A3.F4.12.m6" class="ltx_Math" alttext="\beta&gt;\beta_{c}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&gt;</mo><msub><mi>β</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\beta&gt;\beta_{c}</annotation></semantics></math>. A model on the rank-1 branch (dotted continuation) remains metastable until stochastic noise drives it across the barrier into the rank-2 global minimum.</figcaption>
+</figure>
+</section>
+<section id="A4" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix D </span>Critical Regularisation Strength</h2>
+
+<div id="A4.p1" class="ltx_para">
+<p id="A4.p1.1" class="ltx_p">The stationary condition for mode <math id="A4.p1.1.m1" class="ltx_Math" alttext="i" display="inline" intent=":literal"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> under the loss of Eq. (<a href="#S2.E1" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>) is</p>
+<table id="A4.E7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A4.E7.m1" class="ltx_Math" alttext="\frac{\partial\mathcal{L}}{\partial\lambda_{i}}=\lambda_{i}-\eta_{i}+\beta\,\lambda_{i}^{2/L-1}=0." display="block" intent=":literal"><semantics><mrow><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi class="ltx_font_mathcaligraphic">ℒ</mi></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>λ</mi><mi>i</mi></msub></mrow></mfrac><mo>=</mo><mrow><mrow><msub><mi>λ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>η</mi><mi>i</mi></msub></mrow><mo>+</mo><mrow><mi>β</mi><mo lspace="0.170em" rspace="0em">​</mo><msubsup><mi>λ</mi><mi>i</mi><mrow><mrow><mn>2</mn><mo>/</mo><mi>L</mi></mrow><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\frac{\partial\mathcal{L}}{\partial\lambda_{i}}=\lambda_{i}-\eta_{i}+\beta\,\lambda_{i}^{2/L-1}=0.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<section id="A4.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">D.1 </span>Saddle-node bifurcation for DNNs</h3>
+
+<div id="A4.SS1.p1" class="ltx_para">
+<p id="A4.SS1.p1.1" class="ltx_p">Setting <math id="A4.SS1.p1.1.m1" class="ltx_Math" alttext="k=2/L" display="inline" intent=":literal"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mn>2</mn><mo>/</mo><mi>L</mi></mrow></mrow><annotation encoding="application/x-tex">k=2/L</annotation></semantics></math>, the stationarity condition reads</p>
+<table id="A4.E8" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A4.E8.m1" class="ltx_Math" alttext="\lambda_{i}-\eta_{i}+\beta\,\lambda_{i}^{k-1}=0." display="block" intent=":literal"><semantics><mrow><mrow><mrow><mrow><msub><mi>λ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>η</mi><mi>i</mi></msub></mrow><mo>+</mo><mrow><mi>β</mi><mo lspace="0.170em" rspace="0em">​</mo><msubsup><mi>λ</mi><mi>i</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">\lambda_{i}-\eta_{i}+\beta\,\lambda_{i}^{k-1}=0.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(8)</span></td>
+</tr></tbody>
+</table>
+<p id="A4.SS1.p1.5" class="ltx_p">For a range of <math id="A4.SS1.p1.2.m1" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>, this equation admits two distinct positive solutions: a larger root <math id="A4.SS1.p1.3.m2" class="ltx_Math" alttext="\lambda^{**}" display="inline" intent=":literal"><semantics><msup><mi>λ</mi><mrow><mi></mi><mo lspace="0.222em" rspace="0em">∗</mo><mo lspace="0em">∗</mo></mrow></msup><annotation encoding="application/x-tex">\lambda^{**}</annotation></semantics></math> (global minimum) and a smaller root <math id="A4.SS1.p1.4.m3" class="ltx_Math" alttext="\lambda^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><msup><mi>λ</mi><mi>sad</mi></msup><annotation encoding="application/x-tex">\lambda^{\mathrm{sad}}</annotation></semantics></math> (unstable saddle). The two roots coalesce at <math id="A4.SS1.p1.5.m4" class="ltx_Math" alttext="\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\beta_{c}^{(i)}</annotation></semantics></math>, requiring both Eq. (<a href="#A4.E8" title="In D.1 Saddle-node bifurcation for DNNs ‣ Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8</span></a>) and its derivative to vanish simultaneously:</p>
+<table id="A4.E9" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A4.E9.m1" class="ltx_Math" alttext="1+\beta(k-1)\lambda_{i}^{k-2}=0." display="block" intent=":literal"><semantics><mrow><mrow><mrow><mn>1</mn><mo>+</mo><mrow><mi>β</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>λ</mi><mi>i</mi><mrow><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msubsup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow><annotation encoding="application/x-tex">1+\beta(k-1)\lambda_{i}^{k-2}=0.</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr></tbody>
+</table>
+<p id="A4.SS1.p1.6" class="ltx_p">Solving Eq. (<a href="#A4.E9" title="In D.1 Saddle-node bifurcation for DNNs ‣ Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">9</span></a>) gives the critical singular value <math id="A4.SS1.p1.6.m1" class="ltx_Math" alttext="\lambda_{c}^{(i)}=\eta_{i}(1-k)/(2-k)" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>λ</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mrow><mrow><msub><mi>η</mi><mi>i</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>−</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\lambda_{c}^{(i)}=\eta_{i}(1-k)/(2-k)</annotation></semantics></math>, and substituting back into Eq. (<a href="#A4.E8" title="In D.1 Saddle-node bifurcation for DNNs ‣ Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8</span></a>) yields Eq. (<a href="#S2.E3" title="In 2.1 L2 Phase Transitions ‣ 2 Methods ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>) of the main text.</p>
+</div>
+</section>
+<section id="A4.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">D.2 </span>Number of transitions</h3>
+
+<div id="A4.SS2.p1" class="ltx_para">
+<p id="A4.SS2.p1.7" class="ltx_p">Because the modes decouple, each non-zero singular value <math id="A4.SS2.p1.1.m1" class="ltx_Math" alttext="\eta_{i}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\eta_{i}</annotation></semantics></math> of <math id="A4.SS2.p1.2.m2" class="ltx_Math" alttext="\Sigma_{yx}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">Σ</mi><mrow><mi>y</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\Sigma_{yx}</annotation></semantics></math> has its own <math id="A4.SS2.p1.3.m3" class="ltx_Math" alttext="\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><annotation encoding="application/x-tex">\beta_{c}^{(i)}</annotation></semantics></math>. The ordering <math id="A4.SS2.p1.4.m4" class="ltx_Math" alttext="\eta_{1}&gt;\cdots&gt;\eta_{d}&gt;0" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>1</mn></msub><mo>&gt;</mo><mi mathvariant="normal">⋯</mi><mo>&gt;</mo><msub><mi>η</mi><mi>d</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\eta_{1}&gt;\cdots&gt;\eta_{d}&gt;0</annotation></semantics></math> implies <math id="A4.SS2.p1.5.m5" class="ltx_Math" alttext="\beta_{c}^{(1)}&gt;\cdots&gt;\beta_{c}^{(d)}" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>&gt;</mo><mi mathvariant="normal">⋯</mi><mo>&gt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>d</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta_{c}^{(1)}&gt;\cdots&gt;\beta_{c}^{(d)}</annotation></semantics></math>, giving <math id="A4.SS2.p1.6.m6" class="ltx_Math" alttext="d" display="inline" intent=":literal"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> separate saddle-node bifurcations as <math id="A4.SS2.p1.7.m7" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> is decreased from a large value.</p>
+</div>
+</section>
+</section>
+<section id="A5" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix E </span>Theoretical Barrier Heights</h2>
+
+<div id="A5.p1" class="ltx_para">
+<p id="A5.p1.1" class="ltx_p">For a single mode at <math id="A5.p1.1.m1" class="ltx_Math" alttext="\beta&lt;\beta_{c}^{(i)}" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>&lt;</mo><msubsup><mi>β</mi><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\beta&lt;\beta_{c}^{(i)}</annotation></semantics></math>, the barrier for escape from the metastable lower rank phase is the loss difference between the saddle and the trivial minimum:</p>
+<table id="A5.E10" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A5.E10.m1" class="ltx_Math" alttext="\Delta E=\mathcal{L}(\lambda^{\mathrm{sad}})-\mathcal{L}(0)=\tfrac{1}{2}(\lambda^{\mathrm{sad}}-\eta)^{2}+\frac{L\beta}{2}(\lambda^{\mathrm{sad}})^{2/L}-\tfrac{1}{2}\eta^{2}," display="block" intent=":literal"><semantics><mrow><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi>E</mi></mrow><mo>=</mo><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msup><mi>λ</mi><mi>sad</mi></msup><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo stretchy="false">(</mo><mrow><msup><mi>λ</mi><mi>sad</mi></msup><mo>−</mo><mi>η</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mrow><mfrac><mrow><mi>L</mi><mo lspace="0em" rspace="0em">​</mo><mi>β</mi></mrow><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo stretchy="false">(</mo><msup><mi>λ</mi><mi>sad</mi></msup><mo stretchy="false">)</mo></mrow><mrow><mn>2</mn><mo>/</mo><mi>L</mi></mrow></msup></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em" rspace="0em">​</mo><msup><mi>η</mi><mn>2</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\Delta E=\mathcal{L}(\lambda^{\mathrm{sad}})-\mathcal{L}(0)=\tfrac{1}{2}(\lambda^{\mathrm{sad}}-\eta)^{2}+\frac{L\beta}{2}(\lambda^{\mathrm{sad}})^{2/L}-\tfrac{1}{2}\eta^{2},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(10)</span></td>
+</tr></tbody>
+</table>
+<p id="A5.p1.8" class="ltx_p">where <math id="A5.p1.2.m1" class="ltx_Math" alttext="\lambda^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><msup><mi>λ</mi><mi>sad</mi></msup><annotation encoding="application/x-tex">\lambda^{\mathrm{sad}}</annotation></semantics></math> is the smaller positive root of Eq. (<a href="#A4.E8" title="In D.1 Saddle-node bifurcation for DNNs ‣ Appendix D Critical Regularisation Strength ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8</span></a>), obtained numerically. At <math id="A5.p1.3.m2" class="ltx_Math" alttext="\beta=0.32" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">\beta=0.32</annotation></semantics></math>, <math id="A5.p1.4.m3" class="ltx_Math" alttext="\eta_{2}=0.8" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mn>2</mn></msub><mo>=</mo><mn>0.8</mn></mrow><annotation encoding="application/x-tex">\eta_{2}=0.8</annotation></semantics></math>, <math id="A5.p1.5.m4" class="ltx_Math" alttext="L=3" display="inline" intent=":literal"><semantics><mrow><mi>L</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">L=3</annotation></semantics></math>: <math id="A5.p1.6.m5" class="ltx_Math" alttext="\lambda^{\mathrm{sad}}\approx 0.41" display="inline" intent=":literal"><semantics><mrow><msup><mi>λ</mi><mi>sad</mi></msup><mo>≈</mo><mn>0.41</mn></mrow><annotation encoding="application/x-tex">\lambda^{\mathrm{sad}}\approx 0.41</annotation></semantics></math> and <math id="A5.p1.7.m6" class="ltx_Math" alttext="\Delta E\approx 0.003" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi>E</mi></mrow><mo>≈</mo><mn>0.003</mn></mrow><annotation encoding="application/x-tex">\Delta E\approx 0.003</annotation></semantics></math>. This is the minimal barrier along the lowest-loss path out of the metastable phase. The large discrepancy with the experimentally extracted <math id="A5.p1.8.m7" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}=0.15\pm 0.05" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>=</mo><mrow><mn>0.15</mn><mo>±</mo><mn>0.05</mn></mrow></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}=0.15\pm 0.05</annotation></semantics></math> is explained by the high-dimensional corrections derived in Appendix <a href="#A6" title="Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">F</span></a>.</p>
+</div>
+</section>
+<section id="A6" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix F </span>Effective Barrier Height in High-Dimensional Landscapes</h2>
+
+<section id="A6.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">F.1 </span>Kramers–Langer Theory</h3>
+
+<div id="A6.SS1.p1" class="ltx_para">
+<p id="A6.SS1.p1.2" class="ltx_p">In a parameter space of dimension <math id="A6.SS1.p1.1.m1" class="ltx_Math" alttext="D" display="inline" intent=":literal"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>, the mean first-passage time from a metastable
+minimum to a saddle point under Langevin dynamics with noise strength <math id="A6.SS1.p1.2.m2" class="ltx_Math" alttext="T_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><msub><mi>T</mi><mi>eff</mi></msub><annotation encoding="application/x-tex">T_{\mathrm{eff}}</annotation></semantics></math>
+is given by the Kramers–Langer formula <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib13" title="" class="ltx_ref">13</a>]</cite>:</p>
+<table id="A6.E11" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A6.E11.m1" class="ltx_Math" alttext="\tau=\frac{2\pi}{|\omega_{1}^{\mathrm{sad}}|}\left(\frac{\prod_{j=1}^{D}|\omega_{j}^{\mathrm{sad}}|}{\prod_{j=1}^{D-1}\omega_{j}^{\mathrm{min}}}\right)^{\!\!1/2}\exp\!\left(\frac{\Delta E}{T_{\mathrm{eff}}}\right)," display="block" intent=":literal"><semantics><mrow><mrow><mi>τ</mi><mo>=</mo><mrow><mfrac><mrow><mn>2</mn><mo lspace="0em" rspace="0em">​</mo><mi>π</mi></mrow><mrow><mo stretchy="false">|</mo><msubsup><mi>ω</mi><mn>1</mn><mi>sad</mi></msubsup><mo stretchy="false">|</mo></mrow></mfrac><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo>(</mo><mfrac><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>D</mi></msubsup><mrow><mo lspace="0em" stretchy="false">|</mo><msubsup><mi>ω</mi><mi>j</mi><mi>sad</mi></msubsup><mo stretchy="false">|</mo></mrow></mrow><mrow><msubsup><mo>∏</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msubsup><mi>ω</mi><mi>j</mi><mi>min</mi></msubsup></mrow></mfrac><mo>)</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo lspace="0.167em" rspace="0em">​</mo><mrow><mpadded style="width:1.370em;" width="1.370em"><mi>exp</mi></mpadded><mo>⁡</mo><mrow><mo>(</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi>E</mi></mrow><msub><mi>T</mi><mi>eff</mi></msub></mfrac><mo>)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\tau=\frac{2\pi}{|\omega_{1}^{\mathrm{sad}}|}\left(\frac{\prod_{j=1}^{D}|\omega_{j}^{\mathrm{sad}}|}{\prod_{j=1}^{D-1}\omega_{j}^{\mathrm{min}}}\right)^{\!\!1/2}\exp\!\left(\frac{\Delta E}{T_{\mathrm{eff}}}\right),</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(11)</span></td>
+</tr></tbody>
+</table>
+<p id="A6.SS1.p1.5" class="ltx_p">where <math id="A6.SS1.p1.3.m1" class="ltx_Math" alttext="\omega_{j}^{\mathrm{min}}&gt;0" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>ω</mi><mi>j</mi><mi>min</mi></msubsup><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\omega_{j}^{\mathrm{min}}&gt;0</annotation></semantics></math> are Hessian eigenvalues at the metastable minimum and <math id="A6.SS1.p1.4.m2" class="ltx_Math" alttext="\omega_{j}^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><msubsup><mi>ω</mi><mi>j</mi><mi>sad</mi></msubsup><annotation encoding="application/x-tex">\omega_{j}^{\mathrm{sad}}</annotation></semantics></math> those at the saddle, with exactly one negative eigenvalue <math id="A6.SS1.p1.5.m3" class="ltx_Math" alttext="\omega_{1}^{\mathrm{sad}}&lt;0" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>ω</mi><mn>1</mn><mi>sad</mi></msubsup><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\omega_{1}^{\mathrm{sad}}&lt;0</annotation></semantics></math>.</p>
+</div>
+</section>
+<section id="A6.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">F.2 </span>Effective barrier and entropic contributions</h3>
+
+<div id="A6.SS2.p1" class="ltx_para">
+<p id="A6.SS2.p1.8" class="ltx_p">Taking the logarithm of Eq. (<a href="#A6.E11" title="In F.1 Kramers–Langer Theory ‣ Appendix F Effective Barrier Height in High-Dimensional Landscapes ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">11</span></a>) and defining</p>
+<table id="A6.E12" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="A6.E12.m1" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}\equiv\Delta E-\frac{T_{\mathrm{eff}}}{2}\sum_{j=1}^{D-1}\ln\!\frac{\omega_{j}^{\mathrm{sad}}}{\omega_{j}^{\mathrm{min}}}," display="block" intent=":literal"><semantics><mrow><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>≡</mo><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi>E</mi></mrow><mo>−</mo><mrow><mfrac><msub><mi>T</mi><mi>eff</mi></msub><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">​</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mi>ln</mi><mo>⁡</mo><mfrac><msubsup><mi>ω</mi><mi>j</mi><mi>sad</mi></msubsup><msubsup><mi>ω</mi><mi>j</mi><mi>min</mi></msubsup></mfrac></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}\equiv\Delta E-\frac{T_{\mathrm{eff}}}{2}\sum_{j=1}^{D-1}\ln\!\frac{\omega_{j}^{\mathrm{sad}}}{\omega_{j}^{\mathrm{min}}},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(12)</span></td>
+</tr></tbody>
+</table>
+<p id="A6.SS2.p1.7" class="ltx_p">the Arrhenius form is recovered exactly: <math id="A6.SS2.p1.1.m1" class="ltx_Math" alttext="\ln\tau=\mathrm{const}+\Delta E_{\mathrm{eff}}/T_{\mathrm{eff}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>τ</mi></mrow><mo>=</mo><mrow><mi>const</mi><mo>+</mo><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>/</mo><msub><mi>T</mi><mi>eff</mi></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\ln\tau=\mathrm{const}+\Delta E_{\mathrm{eff}}/T_{\mathrm{eff}}</annotation></semantics></math>. In our setting <math id="A6.SS2.p1.2.m2" class="ltx_Math" alttext="D=170" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">D=170</annotation></semantics></math>. The metastable minimum is strongly confining in all directions, while the saddle has broader curvature in the <math id="A6.SS2.p1.3.m3" class="ltx_Math" alttext="D-1" display="inline" intent=":literal"><semantics><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D-1</annotation></semantics></math> transverse directions, so <math id="A6.SS2.p1.4.m4" class="ltx_Math" alttext="\omega_{j}^{\mathrm{min}}\gg\omega_{j}^{\mathrm{sad}}" display="inline" intent=":literal"><semantics><mrow><msubsup><mi>ω</mi><mi>j</mi><mi>min</mi></msubsup><mo>≫</mo><msubsup><mi>ω</mi><mi>j</mi><mi>sad</mi></msubsup></mrow><annotation encoding="application/x-tex">\omega_{j}^{\mathrm{min}}\gg\omega_{j}^{\mathrm{sad}}</annotation></semantics></math> for most <math id="A6.SS2.p1.5.m5" class="ltx_Math" alttext="j" display="inline" intent=":literal"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>. The resulting entropic contribution drives <math id="A6.SS2.p1.6.m6" class="ltx_Math" alttext="\Delta E_{\mathrm{eff}}\gg\Delta E_{\mathrm{min}}" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>eff</mi></msub></mrow><mo>≫</mo><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>E</mi><mi>min</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\Delta E_{\mathrm{eff}}\gg\Delta E_{\mathrm{min}}</annotation></semantics></math>, explaining the observed factor of <math id="A6.SS2.p1.7.m7" class="ltx_Math" alttext="\sim 50" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>∼</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">\sim 50</annotation></semantics></math>.</p>
+</div>
+</section>
+<section id="A6.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">F.3 </span>Correction from multiplicative SGD noise</h3>
+
+<div id="A6.SS3.p1" class="ltx_para">
+<p id="A6.SS3.p1.1" class="ltx_p">Mori et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite> showed that for MSE loss, the multiplicative nature of SGD noise modifies the relevant barrier from the linear loss difference to a logarithmised quantity. For the approximately quadratic landscape near our metastable minimum, this correction does not alter the linear Arrhenius relationship, consistent with <math id="A6.SS3.p1.1.m1" class="ltx_Math" alttext="R^{2}=0.991" display="inline" intent=":literal"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.991</mn></mrow><annotation encoding="application/x-tex">R^{2}=0.991</annotation></semantics></math>.</p>
+</div>
+</section>
+<section id="A6.SS4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">F.4 </span>Escape time and choice of time unit</h3>
+
+<div id="A6.SS4.p1" class="ltx_para">
+<p id="A6.SS4.p1.4" class="ltx_p">Escape times <math id="A6.SS4.p1.1.m1" class="ltx_Math" alttext="\tau" display="inline" intent=":literal"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math> are reported in epochs. Since <math id="A6.SS4.p1.2.m2" class="ltx_Math" alttext="B" display="inline" intent=":literal"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math id="A6.SS4.p1.3.m3" class="ltx_Math" alttext="\eta_{\mathrm{lr}}" display="inline" intent=":literal"><semantics><msub><mi>η</mi><mi>lr</mi></msub><annotation encoding="application/x-tex">\eta_{\mathrm{lr}}</annotation></semantics></math>, and <math id="A6.SS4.p1.4.m4" class="ltx_Math" alttext="N" display="inline" intent=":literal"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> are fixed within each sweep, the conversion
+between epochs and SGD steps is a constant (see Appendix <a href="#A1" title="Appendix A Experimental Setup ‣ Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A</span></a>), leaving the extracted barrier height unchanged.</p>
+</div>
+</section>
+</section>
+<section id="A7" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix G </span>Generalisation to Nonlinear Networks</h2>
+
+<div id="A7.p1" class="ltx_para">
+<p id="A7.p1.1" class="ltx_p">While our quantitative results (barrier heights, critical <math id="A7.p1.1.m1" class="ltx_Math" alttext="\beta" display="inline" intent=":literal"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> values) are specific to linear networks, the qualitative mechanism—metastable trapping due to saddle-node bifurcations, followed by noise-activated escape—applies generally. Prior work has established that deep nonlinear networks exhibit identical first-order L2-driven phase transitions <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>, <a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite>, with hierarchical feature learning <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite>. The main ingredient for proposing the hysteresis is the underlying first-order phase transition that exists beyond the linear setup. The linear case thus serves as a minimal model that preserves the essential bifurcation structure while remaining analytically tractable.</p>
+</div>
+</section>
+</article>
+</div>
+</div>
+<footer class="arxiv-html-footer">
+  <div class="ltx_page_logo">
+    Experimental support, please
+    <a href="./2606.17120v1/__stdout.txt" class="ltx_ref"
+    target="_blank" rel="nofollow">view the build logs</a>
+    for errors. Generated by
+    <a href="https://math.nist.gov/~BMiller/LaTeXML/" target="_blank" class="ltx_ref ltx_LaTeXML_logo">
+      <span style="letter-spacing: -0.2em; margin-right: 0.1em;">
+        L
+        <span style="font-size: 70%; position: relative; bottom: 2.2pt;">A</span>
+        T
+        <span style="position: relative; bottom: -0.4ex;">E</span>
+      </span>
+      <span class="ltx_font_smallcaps">xml</span>
+      <img alt="[LOGO]"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==">
+    </a>.
+  </div>
+  <div class="keyboard-glossary">
+    <h2>Instructions for reporting errors</h2>
+    <p>We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below:</p>
+    <ul>
+      <li>Click the "Report Issue" <span class="mobile-only">(<svg role="presentation"
+            style="display: inline-block; vertical-align: middle; fill: var(--text-color);" aria-hidden="true"
+            height="1em" viewBox="0 0 640 640">
+            <path
+              d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+          </svg>)</span> button, located in the page header.</li>
+    </ul>
+    <p><strong>Tip:</strong> You can select the relevant text first, to include it in your report.</p>
+    <p>Our team has already identified <a class="ltx_ref" href="https://github.com/arXiv/html_feedback/issues"
+        target="_blank">the following issues</a>. We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all.</p>
+    <p>Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a <a
+        class="ltx_ref" href="https://github.com/brucemiller/LaTeXML/wiki/Porting-LaTeX-packages-for-LaTeXML"
+        target="_blank">list of packages that need conversion</a>, and welcome <a class="ltx_ref"
+        href="https://github.com/brucemiller/LaTeXML/issues" target="_blank">developer contributions</a>.</p>
+  </div>
+</footer><footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from
+        our <strong>major funders</strong>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe">Subscribe</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+
+    <div class="ds-site-footer-funders" aria-label="Major funders">
+      <div class="ds-site-footer-funders-label">Major funding support from</div>
+      <div class="ds-site-footer-funders-logos">
+        <a class="ds-funder-link" href="https://www.simonsfoundation.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation.png" alt="Simons Foundation">
+        </a>
+        <a class="ds-funder-link" href="https://www.sfi.org.bm/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation-international.png" alt="Simons Foundation International">
+        </a>
+        <a class="ds-funder-link" href="https://www.schmidtsciences.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/schmidt-sciences.png" alt="Schmidt Sciences">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer><div id="fixed-buttons-container">
+  <a id="disable-reading-mode-btn" class="header-button" href="javascript:toggleReadingMode();"
+    title="Disable reading mode, show header and footer">
+    <svg role="presentation" height="1.25rem"
+      viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+      <path
+        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+    </svg>
+  </a>
+</div></body>
+</html>

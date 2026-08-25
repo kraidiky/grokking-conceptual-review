@@ -1,0 +1,240 @@
+\begin{thebibliography}{46}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aky{\"u}rek et~al.(2023)Aky{\"u}rek, Schuurmans, Andreas, Ma, and Zhou]{akyurek2023what}
+Ekin Aky{\"u}rek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou.
+\newblock What learning algorithm is in-context learning? investigations with linear models.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+
+\bibitem[Barak et~al.(2022)Barak, Edelman, Goel, Kakade, eran malach, and Zhang]{barak2022hidden}
+Boaz Barak, Benjamin~L. Edelman, Surbhi Goel, Sham~M. Kakade, eran malach, and Cyril Zhang.
+\newblock Hidden progress in deep learning: {SGD} learns parities near the computational limit.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2022.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert-Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei]{brown2020gpt3}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners.
+\newblock \emph{arXiv preprint arXiv:2005.14165}, 2020.
+
+\bibitem[Chughtai et~al.(2023)Chughtai, Chan, and Nanda]{chughtai2023toy}
+Bilal Chughtai, Lawrence Chan, and Neel Nanda.
+\newblock A toy model of universality: Reverse engineering how networks learn group operations.
+\newblock \emph{arXiv preprint arXiv:2302.03025}, 2023.
+
+\bibitem[Conmy et~al.(2023)Conmy, Mavor-Parker, Lynch, Heimersheim, and Garriga-Alonso]{conmy2023automated}
+Arthur Conmy, Augustine~N. Mavor-Parker, Aengus Lynch, Stefan Heimersheim, and Adri{\`a} Garriga-Alonso.
+\newblock Towards automated circuit discovery for mechanistic interpretability.
+\newblock In \emph{Thirty-seventh Conference on Neural Information Processing Systems}, 2023.
+
+\bibitem[Davies et~al.(2023)Davies, Langosco, and Krueger]{davies2023unifying}
+Xander Davies, Lauro Langosco, and David Krueger.
+\newblock Unifying grokking and double descent.
+\newblock \emph{arXiv preprint arXiv:2303.06173}, 2023.
+
+\bibitem[Doshi et~al.(2023)Doshi, Das, He, and Gromov]{doshi2023grok}
+Darshil Doshi, Aritra Das, Tianyu He, and Andrey Gromov.
+\newblock To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datasets.
+\newblock \emph{arXiv preprint arXiv:2310.13061}, 2023.
+
+\bibitem[Dziri et~al.(2023)Dziri, Lu, Sclar, Li, Jiang, Lin, West, Bhagavatula, Bras, Hwang, Sanyal, Welleck, Ren, Ettinger, Harchaoui, and Choi]{dziri2023faith}
+Nouha Dziri, Ximing Lu, Melanie Sclar, Xiang~Lorraine Li, Liwei Jiang, Bill~Yuchen Lin, Peter West, Chandra Bhagavatula, Ronan~Le Bras, Jena~D. Hwang, Soumya Sanyal, Sean Welleck, Xiang Ren, Allyson Ettinger, Zaid Harchaoui, and Yejin Choi.
+\newblock Faith and fate: Limits of transformers on compositionality.
+\newblock \emph{arXiv preprint arxiv:2305.18654}, 2023.
+
+\bibitem[Elhage et~al.(2021)Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, DasSarma, Drain, Ganguli, Hatfield-Dodds, Hernandez, Jones, Kernion, Lovitt, Ndousse, Amodei, Brown, Clark, Kaplan, McCandlish, and Olah]{elhage2021mathematical}
+Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Nova DasSarma, Dawn Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Andy Jones, Jackson Kernion, Liane Lovitt, Kamal Ndousse, Dario Amodei, Tom Brown, Jack Clark, Jared Kaplan, Sam McCandlish, and Chris Olah.
+\newblock A mathematical framework for transformer circuits.
+\newblock \emph{Transformer Circuits Thread}, 2021.
+\newblock https://transformer-circuits.pub/2021/framework/index.html.
+
+\bibitem[Elhage et~al.(2022)Elhage, Hume, Olsson, Schiefer, Henighan, Kravec, Hatfield-Dodds, Lasenby, Drain, Chen, Grosse, McCandlish, Kaplan, Amodei, Wattenberg, and Olah]{elhage2022toy}
+Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain, Carol Chen, Roger Grosse, Sam McCandlish, Jared Kaplan, Dario Amodei, Martin Wattenberg, and Christopher Olah.
+\newblock Toy models of superposition, 2022.
+
+\bibitem[Furuta et~al.(2023)Furuta, Matsuo, Faust, and Gur]{furuta2024exposing}
+Hiroki Furuta, Yutaka Matsuo, Aleksandra Faust, and Izzeddin Gur.
+\newblock Exposing limitations of language model agents in sequential-task compositions on the web.
+\newblock \emph{arXiv preprint arXiv:2311.18751}, 2023.
+
+\bibitem[Gromov(2023)]{gromov2023grokking}
+Andrey Gromov.
+\newblock Grokking modular arithmetic.
+\newblock \emph{arXiv preprint arXiv:2301.02679}, 2023.
+
+\bibitem[Kumar et~al.(2023)Kumar, Bordelon, Gershman, and Pehlevan]{kumar2023grokking}
+Tanishq Kumar, Blake Bordelon, Samuel~J. Gershman, and Cengiz Pehlevan.
+\newblock Grokking as the transition from lazy to rich training dynamics.
+\newblock \emph{arXiv preprint arXiv:2310.06110}, 2023.
+
+\bibitem[LeCun et~al.(2012)LeCun, Bottou, Orr, and M{\"u}ller]{LeCun2012init}
+Yann~A. LeCun, L{\'e}on Bottou, Genevieve~B. Orr, and Klaus-Robert M{\"u}ller.
+\newblock \emph{Efficient BackProp}, pp.\  9--48.
+\newblock Springer Berlin Heidelberg, 2012.
+
+\bibitem[Lee et~al.(2023)Lee, Sreenivasan, Lee, Lee, and Papailiopoulos]{lee2023teaching}
+Nayoung Lee, Kartik Sreenivasan, Jason~D. Lee, Kangwook Lee, and Dimitris Papailiopoulos.
+\newblock Teaching arithmetic to small transformers.
+\newblock \emph{arXiv preprint arxiv:2307.03381}, 2023.
+
+\bibitem[Levi et~al.(2023)Levi, Beck, and Bar-Sinai]{levi2023grokking}
+Noam Levi, Alon Beck, and Yohai Bar-Sinai.
+\newblock Grokking in linear estimators -- a solvable model that groks without understanding.
+\newblock \emph{arXiv preprint arXiv:2310.16441}, 2023.
+
+\bibitem[Liu et~al.(2022)Liu, Kitouni, Nolte, Michaud, Tegmark, and Williams]{liu2022understanding}
+Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric~J. Michaud, Max Tegmark, and Mike Williams.
+\newblock Towards understanding grokking: An effective theory of representation learning.
+\newblock \emph{arXiv preprint arXiv:2205.10343}, 2022.
+
+\bibitem[Liu et~al.(2023{\natexlab{a}})Liu, Michaud, and Tegmark]{liu2023omnigrok}
+Ziming Liu, Eric~J Michaud, and Max Tegmark.
+\newblock Omnigrok: Grokking beyond algorithmic data.
+\newblock In \emph{International Conference on Learning Representations}, 2023{\natexlab{a}}.
+
+\bibitem[Liu et~al.(2023{\natexlab{b}})Liu, Zhong, and Tegmark]{liu2023grokking}
+Ziming Liu, Ziqian Zhong, and Max Tegmark.
+\newblock Grokking as compression: A nonlinear complexity perspective.
+\newblock \emph{arXiv preprint arXiv:2310.05918}, 2023{\natexlab{b}}.
+
+\bibitem[Loshchilov \& Hutter(2019)Loshchilov and Hutter]{loshchilov2018decoupled}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock In \emph{International Conference on Learning Representations}, 2019.
+
+\bibitem[Lyu et~al.(2023)Lyu, Jin, Li, Du, Lee, and Hu]{lyu2023dichotomy}
+Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon~S. Du, Jason~D. Lee, and Wei Hu.
+\newblock Dichotomy of early and late phase implicit biases can provably induce grokking.
+\newblock \emph{arXiv preprint arXiv:2311.18817}, 2023.
+
+\bibitem[Meng et~al.(2023)Meng, Bau, Andonian, and Belinkov]{meng2023locating}
+Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov.
+\newblock Locating and editing factual associations in gpt.
+\newblock \emph{arXiv preprint arXiv:2202.05262}, 2023.
+
+\bibitem[Merrill et~al.(2023)Merrill, Tsilivis, and Shukla]{merrill2023tale}
+William Merrill, Nikolaos Tsilivis, and Aman Shukla.
+\newblock A tale of two circuits: Grokking as competition of sparse and dense subnetworks.
+\newblock \emph{arXiv preprint arXiv:2303.11873}, 2023.
+
+\bibitem[Miller et~al.(2023)Miller, O'Neill, and Bui]{miller2023grokking}
+Jack Miller, Charles O'Neill, and Thang Bui.
+\newblock Grokking beyond neural networks: An empirical exploration with model complexity.
+\newblock \emph{arXiv preprint arXiv:2310.17247}, 2023.
+
+\bibitem[Minegishi et~al.(2023)Minegishi, Iwasawa, and Matsuo]{minegishi2023grokking}
+Gouki Minegishi, Yusuke Iwasawa, and Yutaka Matsuo.
+\newblock {Bridging Lottery ticket and Grokking}: Is weight norm sufficient to explain delayed generalization?, 2023.
+
+\bibitem[Morwani et~al.(2023)Morwani, Edelman, Oncescu, Zhao, and Kakade]{morwani2023feature}
+Depen Morwani, Benjamin~L. Edelman, Costin-Andrei Oncescu, Rosie Zhao, and Sham Kakade.
+\newblock Feature emergence via margin maximization: case studies in algebraic tasks.
+\newblock \emph{arXiv preprint arXiv:2311.07568}, 2023.
+
+\bibitem[Murty et~al.(2023)Murty, Sharma, Andreas, and Manning]{murty2023grokking}
+Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher~D. Manning.
+\newblock Grokking of hierarchical structure in vanilla transformers.
+\newblock \emph{arXiv preprint arXiv:2305.18741}, 2023.
+
+\bibitem[Nakkiran et~al.(2019)Nakkiran, Kaplun, Bansal, Yang, Barak, and Sutskever]{nakkiran2019deep}
+Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya Sutskever.
+\newblock Deep double descent: Where bigger models and more data hurt.
+\newblock \emph{arXiv preprint arXiv:1912.02292}, 2019.
+
+\bibitem[Nanda et~al.(2023)Nanda, Chan, Lieberum, Smith, and Steinhardt]{nanda2023progress}
+Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt.
+\newblock Progress measures for grokking via mechanistic interpretability.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+
+\bibitem[Notsawo et~al.(2023)Notsawo, Zhou, Pezeshki, Rish, and Dumas]{notsawo2023predicting}
+Pascal Jr.~Tikeng Notsawo, Hattie Zhou, Mohammad Pezeshki, Irina Rish, and Guillaume Dumas.
+\newblock Predicting grokking long before it happens: A look into the loss landscape of models which grok.
+\newblock \emph{arXiv preprint arXiv:2306.13253}, 2023.
+
+\bibitem[Olah et~al.(2020)Olah, Cammarata, Schubert, Goh, Petrov, and Carter]{olah2020zoom}
+Chris Olah, Nick Cammarata, Ludwig Schubert, Gabriel Goh, Michael Petrov, and Shan Carter.
+\newblock Zoom in: An introduction to circuits.
+\newblock \emph{Distill}, 2020.
+\newblock \doi{10.23915/distill.00024.001}.
+\newblock https://distill.pub/2020/circuits/zoom-in.
+
+\bibitem[Olsson et~al.(2022)Olsson, Elhage, Nanda, Joseph, DasSarma, Henighan, Mann, Askell, Bai, Chen, Conerly, Drain, Ganguli, Hatfield-Dodds, Hernandez, Johnston, Jones, Kernion, Lovitt, Ndousse, Amodei, Brown, Clark, Kaplan, McCandlish, and Olah]{olsson2022context}
+Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Dawn Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Scott Johnston, Andy Jones, Jackson Kernion, Liane Lovitt, Kamal Ndousse, Dario Amodei, Tom Brown, Jack Clark, Jared Kaplan, Sam McCandlish, and Chris Olah.
+\newblock In-context learning and induction heads.
+\newblock \emph{Transformer Circuits Thread}, 2022.
+\newblock https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html.
+
+\bibitem[Power et~al.(2022)Power, Burda, Edwards, Babuschkin, and Misra]{power2022grokking}
+Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra.
+\newblock {Grokking}: Generalization beyond overfitting on small algorithmic datasets.
+\newblock \emph{arXiv preprint arXiv:2201.02177}, 2022.
+
+\bibitem[Rubin et~al.(2023)Rubin, Seroussi, and Ringel]{rubin2023droplets}
+Noa Rubin, Inbar Seroussi, and Zohar Ringel.
+\newblock Droplets of good representations: Grokking as a first order phase transition in two layer networks.
+\newblock \emph{arXiv preprint arXiv:2310.03789}, 2023.
+
+\bibitem[Singh et~al.(2024)Singh, Moskovitz, Hill, Chan, and Saxe]{singh2024inductionhead}
+Aaditya~K. Singh, Ted Moskovitz, Felix Hill, Stephanie C.~Y. Chan, and Andrew~M. Saxe.
+\newblock What needs to go right for an induction head? a mechanistic study of in-context learning circuits and their formation.
+\newblock \emph{arXiv preprint arxiv:2404.07129}, 2024.
+
+\bibitem[Stander et~al.(2023)Stander, Yu, Fan, and Biderman]{stander2023grokking}
+Dashiell Stander, Qinan Yu, Honglu Fan, and Stella Biderman.
+\newblock Grokking group multiplication with cosets.
+\newblock \emph{arXiv preprint arXiv:2312.06581}, 2023.
+
+\bibitem[Tan \& Huang(2023)Tan and Huang]{tan2023understanding}
+Zhiquan Tan and Weiran Huang.
+\newblock Understanding grokking through a robustness viewpoint.
+\newblock \emph{arXiv preprint arXiv:2311.06597}, 2023.
+
+\bibitem[Thilak et~al.(2022)Thilak, Littwin, Zhai, Saremi, Paiss, and Susskind]{thilak2022slingshot}
+Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind.
+\newblock The slingshot mechanism: An empirical study of adaptive optimizers and the grokking phenomenon.
+\newblock \emph{arXiv preprint arXiv:2206.04817}, 2022.
+
+\bibitem[Varma et~al.(2023)Varma, Shah, Kenton, Kramár, and Kumar]{varma2023explaining}
+Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar.
+\newblock Explaining grokking through circuit efficiency.
+\newblock \emph{arXiv preprint arXiv:2309.02390}, 2023.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{vaswani2023attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{arXiv preprint arXiv:1706.03762}, 2017.
+
+\bibitem[Vig et~al.(2020)Vig, Gehrmann, Belinkov, Qian, Nevo, Singer, and Shieber]{vig2020investingating}
+Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov, Sharon Qian, Daniel Nevo, Yaron Singer, and Stuart Shieber.
+\newblock Investigating gender bias in language models using causal mediation analysis.
+\newblock In H.~Larochelle, M.~Ranzato, R.~Hadsell, M.F. Balcan, and H.~Lin (eds.), \emph{Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem[Wei et~al.(2022)Wei, Tay, Bommasani, Raffel, Zoph, Borgeaud, Yogatama, Bosma, Zhou, Metzler, Chi, Hashimoto, Vinyals, Liang, Dean, and Fedus]{wei2022emergent}
+Jason Wei, Yi~Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, Ed~H. Chi, Tatsunori Hashimoto, Oriol Vinyals, Percy Liang, Jeff Dean, and William Fedus.
+\newblock Emergent abilities of large language models.
+\newblock \emph{arXiv preprint arXiv:2206.08853}, 2022.
+
+\bibitem[Xu et~al.(2023)Xu, Wang, Frei, Vardi, and Hu]{xu2023benign}
+Zhiwei Xu, Yutong Wang, Spencer Frei, Gal Vardi, and Wei Hu.
+\newblock Benign overfitting and grokking in relu networks for xor cluster data.
+\newblock \emph{arXiv preprint arXiv:2310.02541}, 2023.
+
+\bibitem[Zhang \& Nanda(2024)Zhang and Nanda]{zhang2024best}
+Fred Zhang and Neel Nanda.
+\newblock Towards best practices of activation patching in language models: Metrics and methods.
+\newblock \emph{arXiv preprint arXiv:2309.16042}, 2024.
+
+\bibitem[Zhong et~al.(2023)Zhong, Liu, Tegmark, and Andreas]{zhong2023the}
+Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas.
+\newblock The clock and the pizza: Two stories in mechanistic explanation of neural networks.
+\newblock In \emph{Neural Information Processing Systems}, 2023.
+
+\bibitem[Žunkovič \& Ilievski(2022)Žunkovič and Ilievski]{žunkovič2022grokking}
+Bojan Žunkovič and Enej Ilievski.
+\newblock Grokking phase transitions in learning local rules with gradient descent.
+\newblock \emph{arXiv preprint arXiv:2210.15435}, 2022.
+
+\end{thebibliography}

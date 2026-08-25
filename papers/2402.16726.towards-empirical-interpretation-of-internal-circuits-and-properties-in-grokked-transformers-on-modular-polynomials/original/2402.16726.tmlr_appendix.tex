@@ -1,0 +1,405 @@
+\appendix
+\section*{Appendix}
+
+\section{Mathematical Description of Transformer}
+\label{appendix:transformer}
+In this section, we describe the structure of causal Transformer in our work, loosely following the notation of \citet{elhage2021mathematical}.
+
+As defined in \Cref{sec:preliminaries}, we define embedding matrix as $W_{E}$, query, key, and value matrices of $j$-th head in the attention layer as $W^{j}_{Q}, W^{j}_{K}, W^{j}_{V}$. The input and output layer at the MLP block is denoted as $W_{\text{in}}, W_{\text{out}}$, and the unembedding matrix is denoted as $W_{U}$.
+We use ReLU for the activation functions and remove positional embedding, layer normalization, and bias terms for all the layers.
+
+We also denote the token (one-hot representation of integers) in position $i$ as $t_i$, the initial residual stream on $i$-th token as $x^{(0)}_i$, causal attention scores from the last tokens ($t_2$, because the context length is 3) to all previous tokens at $j$-th head as $A^{j}$, the attention output at $j$-th head as $W_{O}^j$, the residual stream after the attention layer on the final token as $x^{(1)}$, the neuron activations in the MLP block as ``$\text{MLP}$'', and the final residual stream on the final token as $x^{(2)}$.
+``$\text{Logits}$'' represents the logits on the final token since we only consider the loss from it.
+
+We can formalize the logit calculation via the following equations.
+\begin{itemize}[leftmargin=0.5cm,topsep=0pt,itemsep=0pt]
+    \item Embedding: $x^{(0)}_{i} = W_{E}t_i$
+    \item Attention score: $A^{j} = \text{softmax}({x^{(0)}}^{T}{W^{j}_{K}}^T W^{j}_{Q} x^{(0)}_{2}) $
+    \item Attention block: $x^{(1)} =  x^{(0)}_{2} + \sum_{j} W_{O}^j W_{V}^j (x^{(0)}A^j) $
+    \item MLP activations: $\text{MLP} = \text{ReLU}(W_{\text{in}}x^{(1)})$
+    \item MLP block: $x^{(2)} = W_{\text{out}}\text{MLP} + x^{(1)}$
+    \item Logits: $W_{U}x^{(2)}$
+\end{itemize}
+Note that these focus on the operations for the representation from the final token $x_{2}^{(0)}$ and the above reflects the causal modeling.
+Following the discussion in \citet{nanda2023progress}, we ignore the residual connection and investigate the neuron logit map $W_{L} = W_{U}W_{\text{out}}$ as a dominant part to decide the logits.
+
+\clearpage
+
+\input{table_figure_tmlr/fourier_python}
+
+\clearpage
+
+\section{Experimental Details}
+\label{appendix:exp_details}
+We summarize the hyper-parameters for the experiments (dimension in Transformers, optimizers, etc.) in \Cref{fig:hyperparameters}.
+We provide the code in supplementary material.
+
+\begin{table*}[htb]
+\begin{center}
+\scalebox{0.9}{
+\begin{tabular}{l|l}
+\toprule
+\textbf{Name} & \textbf{Value} \\
+\midrule
+Mod $p$ & 97 \\
+\midrule
+Epochs & 1e6 \\
+Optimizer & AdamW~\citep{loshchilov2018decoupled} \\
+Learning Rate & 0.001 \\
+AdamW Betas & (0.9, 0.98) \\
+Weight Decay $\lambda$ & 1.0 \\
+Batch Size & (Full batch) \\
+Max Optimization Steps & 3e5 \\
+Number of Seeds & 3 \\
+\midrule
+Embedding Dimension $d_{\text{emb}}$ & 128 \\
+MLP Dimension $d_{\text{mlp}} $ & 512 \\
+Number of Heads & 4 \\
+Head Dimension & 32 \\
+Number of Layers & 1 \\
+Activation & ReLU \\
+Layer Normalization & False \\
+Bias Term in Weight Matrix & False \\
+\update{Weight Initialization} & \update{$\mathcal{N}(0, \frac{1}{\sqrt{d_{\mathrm{out}}}})$} \\
+Vocabulary Size $p'$ & $p+n_{\text{op}}$ (including operation tokens) \\
+Context Length & 3 \\
+\bottomrule
+\end{tabular}
+}
+\vskip -0.1in
+\caption{
+Hyper-parameters for the grokking experiments.
+We follow the previous works~\citep{power2022grokking,nanda2023progress,zhong2023the}.
+}
+\label{fig:hyperparameters}
+\end{center}
+\end{table*}
+
+
+\section{Terminology for Mathematical Expressions}
+\label{appendix:term}
+As a reference, we summarize the terminology for mathematical expressions in \autoref{fig:math_expression}.
+\input{table_figure_tmlr/mathematical_expressions}
+
+
+\clearpage
+
+%\section{Proper Multi-Task Mixture also Accelerates Grokking in Polynomials}
+%\label{appendix:mix_poly}
+%We also investigate the multi-task training with the mixture of polynomials; preparing the combination of operations as $\{a+b, ab+b\}$, $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$, $\{(a+b)^3, a^3+ab\}$ and $\{(a+b)^3, a^3+ab^2+b\}$.
+
+%As shown in~\autoref{fig:multi_task_acceralation} and \autoref{fig:multi_cubic_task_acceralation}, a proper mixture of polynomials, in terms of operation similarity, also accelerates grokking in multi-task settings. For instance, $a^2+b^2$ and $(a+b)^2$ help generalization in $a^2+ab+b^2$.
+%This implies that the required representations among $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$ would be the same while original single-task $a^2+ab+b^2$ fails to grok due to the low signal-to-noise ratio from the non-factorizable cross term.
+%The test accuracy also improves in the cubic expression (\autoref{fig:multi_cubic_task_acceralation}). However, it hits a plateau before the perfect generalization.
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_joint_per_task_240126.pdf}
+%\vskip -0.1in
+%\caption{
+%Test accuracy in grokking with a mixture of modular polynomials ($\{a+b, ab+b\}$ and $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$).
+%The multi-task training across similar operations promotes grokking.
+%}
+%\label{fig:multi_task_acceralation}
+%\end{figure}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_cubic_joint_240211_scale1.pdf}
+%\vskip -0.1in
+%\caption{
+%Test accuracy in grokking with a mixture of modular polynomials ($\{(a+b)^3, a^3+ab\}$ and $\{(a+b)^3, a^3+ab^2+b\}$).
+%The multi-task training across similar operations promotes the improvement of test accuracy.
+%}
+%\label{fig:multi_cubic_task_acceralation}
+%\end{figure}
+
+\clearpage
+\section{Analysis of Restricted Loss in Modular Subtraction}
+\label{appendix:restricted_loss}
+In \autoref{fig:restricted_loss_subtract}, we test the restricted loss and ablated loss, the metrics proposed by \citet{nanda2023progress}, where the restricted loss is calculated only with the Fourier components of key frequencies, and the ablated loss is calculated by removing a certain frequency from the logits.
+The results show that modular subtraction has several \textit{dependent} frequencies, which cause worse restricted loss if ablated, while they are not key frequencies (we set the threshold to $\Delta\mathcal{L}>1e-9$).
+Those dependent frequencies are not observed in modular addition. Moreover, the restricted loss for modular subtraction significantly gets worse than the original loss, which also emphasizes the subtle dependency on other frequency components.
+
+Moreover, we extensively evaluate the relationships between loss and Fourier components.
+We here decompose the logits as follows:
+\begin{equation*}
+    \text{Logits} = (\text{Logits from key frequencies}) + (\text{Logits from non-key frequencies}) + (\text{Logits from residuals}),
+\end{equation*}
+where logits from residuals are estimated by subtracting logits of all the frequencies from the raw logits.
+
+The results are presented in \autoref{fig:loss_ablation}.
+In modular addition, we find that key frequencies contribute to the prediction and non-key frequencies only have a negligible effect on the loss (e.g. train loss v.s. ablation (d), restricted loss v.s. ablation (c)).
+The residuals actually hinder prediction accuracy (e.g., train loss v.s. ablation (c)).
+In modular subtraction, any ablations drop the performance and all the components contribute to the predictions, which implies that the grokked models in modular subtraction have informative representations to some degree over all the frequencies, even residuals in the logits.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/grokking_subtract_restricted_240111.pdf}
+\vskip -0.15in
+\caption{
+Loss of Transformer when ablating each frequency ($k=1, ..., 48$) and everything except for the key frequencies (restricted loss).
+In modular subtraction, we find several \textit{dependent} frequencies (\textcolor{cb_orange}{orange}), which cause worse restricted loss if ablated while they are not key frequencies.
+% See \autoref{appendix:enlarged} for the enlarged version.
+}
+\label{fig:restricted_loss_subtract}
+\end{figure}
+
+\input{table_figure_tmlr/loss_ablation}
+
+
+
+\clearpage
+\section{Grokking with Frozen Random Embedding}
+\label{appendix:random}
+
+We here show that even if the sparsity and non-trivial biases are not realizable in embedding, grokking could occur in \autoref{fig:grok_elementary_rand}.
+In this experiment, we initialize embedding weights from Gaussian distribution, \update{where the mean is 0 and the standard deviation is $\frac{1}{\sqrt{d_{\mathrm{out}}}}$}~\citep{LeCun2012init}, and then freeze them not allowing any parameter updates during training.
+Even with the restricted capacity, the models exhibit grokking in elementary arithmetic.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\linewidth]{figures/grokking_elementary_frequency_rand_240114.pdf}
+\vskip -0.1in
+\caption{Test accuracy with elementary arithmetic from random embedding.
+Grokking can occur even using frozen random embedding, while unembedding obtains similar Fourier representation as discussed in \Cref{sec:elem}.
+}
+\label{fig:grok_elementary_rand}
+\end{figure*}
+
+
+%\clearpage
+%\section{Enlarged Figures}
+%\label{appendix:enlarged}
+%In this section, we provide the enlarged figures from the main text for visibility.
+%Those have the same contents as the original figures.
+
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_elementary_frequency_240109.pdf}
+%\vskip -0.1in
+%\caption{
+%Frequency analysis in grokking with elementary arithmetic (the same as \autoref{fig:freq_analysis_elementary_arithmetic}).
+%}
+%\label{fig:freq_analysis_elementary_arithmetic_enlarged}
+%\end{figure*}
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_subtract_restricted_240111.pdf}
+%\vskip -0.1in
+%\caption{
+%Loss of Transformer when ablating each frequencies ($k=1, ..., 48$) and everything except for the key frequencies (restricted loss) (the same as \autoref{fig:restricted_loss_subtract}).
+%Loss of Transformer when ablating each frequencies ($k=1, ..., 48$) and everything except for the key frequencies (restricted loss).
+%In modular subtraction, we find several \textit{dependent} frequencies (\textcolor{cb_orange}{orange}), which causes worse restricted loss if ablated while they are not key frequencies.
+%}
+%\label{fig:restricted_loss_subtract_enlarged}
+%\end{figure}
+
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_elementary_frequency_joint_2x3_240110.pdf}
+%\vskip -0.1in
+%\caption{
+%Test accuracy (above) and frequency analysis (below) in a mixture of modular elementary arithmetic (the same as \autoref{fig:co_grok_elementary}).
+%}
+%\label{fig:co_grok_elementary_enlarged}
+%\end{figure*}
+
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_polynomials_frequency_240112.pdf}
+%\vskip -0.1in
+%\caption{Frequency analysis in grokking with modular polynomials (the same as \autoref{fig:freq_analysis_polynomials}).
+%}
+%\label{fig:freq_analysis_polynomials_enlarged}
+%\end{figure*}
+
+
+%\begin{figure*}[htb]
+%\centering
+%\includegraphics[width=\linewidth]{figures/grokking_polynomials_frequency_n_240113.pdf}
+%\vskip -0.1in
+%\caption{Frequency analysis in grokking with factorizable modular polynomials (the same as \autoref{fig:freq_analysis_factorizable_polynomials}).
+%}
+%\label{fig:freq_analysis_factorizable_polynomials_enlarged}
+%\end{figure*}
+
+%\clearpage
+%\section{Details of Multi-Task Mixture}
+%We provide the per-operation test accuracy curves as shown in \Cref{fig:multi_task_acceralation} (\Cref{appendix:mix_poly}).
+%\input{table_figure_tmlr/multi_task_mixtures}
+
+\clearpage
+\section{FFD and FCR in Neuron-Logit Map}
+\label{appendix:details_progress_measure}
+\autoref{fig:ffs_fcr_unemb} presents our progress measures: FFD and FCR in neuron-logit map $W_{L}$.
+For elementary arithmetic operators, the dynamics seem to be the same as seen in embedding~(\autoref{fig:ffs_fcr}). This might be due to the similarity of embedding and neuron-logit map~(\autoref{fig:freq_analysis_elementary_arithmetic}).
+For sum of powers ($a^n+b^n$) and the factorizable ($(a+b)^n$) behaves differently from embedding~(\autoref{fig:ffs_fcr}).
+The sum of powers decreases FFD while keeping FCR relatively higher.
+The factorizable polynomials maintain both FFD and FCR relatively higher.
+This might be due to the representation asymmetry between embedding and neuron-logit map in polynomials (\autoref{fig:freq_analysis_factorizable_polynomials}).
+
+\input{table_figure_tmlr/progress_measure}
+
+\section{Detailed Analysis on FFD and FCR}
+\update{
+In this section, we provide experiments to measure the FCR and FFD with different train dataset fractions $r$ or threshold $\eta$. As shown in \autoref{fig:ffs_fcr_different_r} (above), if we change the dataset ratio, the needed optimization steps to be grokked are also changed, and the inflection point of the corresponding progress measure is changed too.
+For instance, when we change $r=0.3$ with $r=0.5$ in $a+b$ and $a-b$, the decrease of FFD is also accelerated along with the increase of test accuracy.
+We also observe that if the grokking does not happen, the progress measure does not exhibit the change, such as the case of FFD in $ab+b$ with $r=0.3$.
+
+As for different threshold $\eta$, \autoref{fig:ffs_fcr_different_eta} demonstrates that lower $\eta$ delays the decrease of the metrics in contrast to the progress of grokking; for instance, the decrease of the metrics starts after test accuracy reaches 1.0 (in the case of $a+b$, $a-b$, $ab+b$). On the other hand, larger $\eta$ results in too fast convergence. Based on those observations, we have set $\eta=0.5$ in this paper.
+
+\input{table_figure_tmlr/progress_measure_with_different_fraction}
+
+\clearpage
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/grokking_progress_ffd_eta_sweep_241013.pdf}
+\vskip -0.1in
+\caption{
+    FFD in embedding for each operation $(a+b, a-b, a*b, ab+b)$ with different threshold $\eta$.
+}
+\label{fig:ffs_fcr_different_eta}
+\end{figure}
+}
+
+% \clearpage
+\section{Summary of Grokked Modular Operators}
+\label{appendix:grokked_summary}
+\autoref{tab:grok_op_full} summarizes if each modular operator can cause grokking in $r=0.3$ or not.
+We provide the best test accuracy if they do not grok.
+\input{table_figure_tmlr/grokked_summary}
+
+
+\clearpage
+\section{Analysis on Grokking with Different Modulo $p$}
+\label{appendix:grok_func_p}
+
+\subsection{Periodic Patterns in Fourier Components are Common Characteristics}
+\update{
+We here provide the ablation study with different modulo $p=59, 113$ (from \autoref{fig:different_p} to \autoref{fig:freq_analysis_polynomials_p113}). These results show that, basically, our findings and observed trends in the main text (done with $p=97$) can be seen in different modulo $p$ as well.
+The periodic patterns in Fourier components can be common characteristics among different $p$ in most cases.
+}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\linewidth]{figures/grokking_polynomials_p_59_113_241018.pdf}
+\vskip -0.15in
+\caption{
+Test accuracy with different modulo $p \in \{59, 113\}$ ($a+b$, $a-b$, $a*b$, $a^2+b^2$, $a^2-b$, $ab+a+b$).
+}
+\label{fig:different_p}
+\vskip -0.05in
+\end{figure*}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/grokking_elementary_frequency_p59_241018.pdf}
+\vskip -0.15in
+\caption{
+    Frequency analysis in grokking with modulo $p=59$ ($a+b$, $a-b$, $a*b$).
+}
+\label{fig:freq_analysis_elementary_p59}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/grokking_elementary_frequency_p113_241018.pdf}
+\vskip -0.15in
+\caption{
+    Frequency analysis in grokking with modulo $p=113$ ($a+b$, $a-b$, $a*b$).
+}
+\label{fig:freq_analysis_elementary_p113}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/grokking_polynomials_frequency_p59_241018.pdf}
+\vskip -0.15in
+\caption{
+    Frequency analysis in grokking with modulo $p=59$ ($a^2+b^2$, $a^2-b$, $ab+a+b$).
+}
+\label{fig:freq_analysis_polynomials_p59}
+\end{figure}
+
+\clearpage
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/grokking_polynomials_frequency_p113_241018.pdf}
+\vskip -0.15in
+\caption{
+    Frequency analysis in grokking with modulo $p=113$ ($a^2+b^2$, $a^2-b$, $ab+a+b$).
+}
+\label{fig:freq_analysis_polynomials_p113}
+\end{figure}
+
+\subsection{Grokking Can be a Function of Modulo $p$}
+In addition to mathematical operation and dataset fraction, grokking can be a function of modulo $p$.
+\autoref{fig:grokking_x3_xy_p} shows that $p=97$ causes grokking with $a^3+ab$, while $p=59$ and $p=113$ do not.
+Surprisingly, $p=59$ has fewer combinations than $p=97$, but $p=59$ does not generalize to the test set even with $r=0.9$.
+The results suggest that we might need to care about the choice of $p$ for grokking analysis.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/grokking_x3_xy_p_59_97_113_240218.pdf}
+\vskip -0.1in
+\caption{Test accuracy in grokking with $a^3+ab$ ($r=0.9$). $p=97$ only causes grokking among $\{59, 97, 113\}$.}
+\label{fig:grokking_x3_xy_p}
+\end{figure*}
+
+
+\clearpage
+\section{Dataset Distribution Does not Have Significant Effects}
+\label{appendix:dataset_dist}
+One possible hypothesis why some modular polynomials are hard to generalize is that some polynomials bias the label distribution in the dataset.
+To examine this hypothesis, we calculate several statistics on label distribution in the dataset. We first randomly split train and test dataset ($r=0.3$), and get categorical label distributions. We compute the KL divergence between train label distribution $d_{\text{train}}$ and test label distribution $d_{\text{test}}$, train label entropy, and test label entropy, averaging them with 100 random seeds.
+
+\autoref{fig:dataset_dist} shows KL divergence between train and test datasets (top), train dataset entropy (middle), and test dataset entropy (bottom).
+While those values slightly differ across the operations, there are no significant difference between generalizable (e.g. $a^3+b^3$, $a^2+b^2$) and non-generalizable (e.g. $a^3+ab$, $a^2+ab+b^2$) polynomials despite their similarity. The results do not imply that dataset distribution has significant impacts on grokking.
+
+\begin{figure*}[htb]
+\centering
+% \includegraphics[width=\linewidth]{figures/dataset_metrics_240221.pdf}
+\includegraphics[width=\linewidth]{figures/dataset_metrics_241018.pdf}
+\vskip -0.1in
+\caption{
+KL divergence between train and test datasets (top), train dataset entropy (middle), and test dataset entropy (bottom).
+}
+\label{fig:dataset_dist}
+\end{figure*}
+
+
+% \clearpage
+\section{Extended Limitation}
+Our work extends the grokking analysis from simple modular addition to complex modular polynomials. However, those tasks are still synthetic and far from LLMs~\citep{brown2020gpt3}, the most popular application of Transformers. Connecting grokking phenomena or mechanistic interpretability analysis into the emergent capability~\citep{wei2022emergent}, or limitation in compositional generalization~\citep{dziri2023faith,furuta2024exposing} and arithmetic~\citep{lee2023teaching} would be interesting future directions.
+
+\clearpage
+\section{Initialization and Pre-Grokked Models}
+\update{
+To clarify that our experimental observations do not trivially come from random initialization, we provide a detailed version of \autoref{fig:elementary_arithmetic} in \autoref{fig:elementary_arithmetic_std}, which has a visualization of standard deviation among three random seeds (shadow area).
+These results show that the overlap is small and thus our observations are consistent and do not come from the initialization or variance.
+}
+
+\begin{figure*}[htb]
+\centering
+% \includegraphics[width=\linewidth]{figures/dataset_metrics_240221.pdf}
+\includegraphics[width=\linewidth]{figures/grokking_elementary_std_241109.pdf}
+\vskip -0.1in
+\caption{
+Test accuracy in modular elementary arithmetic (addition and multiplication) with pre-grokked models (\textcolor{cb_orange}{embedding} and \textcolor{cb_blue}{Transformer}) trained with subtraction.
+In addition to the plot in \autoref{fig:elementary_arithmetic}, we visualize the standard deviation (shadow area).
+}
+\label{fig:elementary_arithmetic_std}
+\end{figure*}
+
+
+\section{Identifiability and Pre-Grokked Models}
+\update{
+Through the experiments with pre-grokked models, we observe that some pre-grokked models prevent grokking in certain combinations.
+However, \citet{singh2024inductionhead} point out that freezing a subset of models may suffer from identifiability issues, which may not prompt the downstream performance. To mitigate the potential issues, our experiments use the same random seed between pre-grokking and downstream grokking experiments. Moreover, we observe that the combinations that cannot accelerate grokking have quite different Fourier components (for instance, modular addition and multiplication as seen in \autoref{fig:freq_analysis_elementary_arithmetic}) in the weight matrix, while the rotating operations to the weight matrix do not change the Fourier basis. We think that our claims are not just due to the identifiability issues.
+}
+
+% \clearpage
+

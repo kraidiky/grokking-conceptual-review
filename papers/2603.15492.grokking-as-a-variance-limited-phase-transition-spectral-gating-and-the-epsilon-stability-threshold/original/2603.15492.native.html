@@ -1,0 +1,1294 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold</title>
+<!--Generated on Mon Mar 16 16:09:35 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on March 16, 2026.-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/browse/0.3.4/css/arxiv-html-papers-20260131.css" type="text/css">
+<script src="/static/browse/0.3.4/js/arxiv-html-papers-20260131.js"></script>
+<script>
+  // Restore the saved color scheme preference, or
+  // enact the browser preference if "automatic", 
+  // without expecting DOM load to have completed.
+  //
+  // Also restore any saved readingmode and ToC display preferences.
+  function initializeReadingPreferences() {
+    let saved_theme = localStorage.getItem("ar5iv_theme") || "automatic";
+    if (saved_theme === "automatic") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        saved_theme = "dark";
+      }
+    }
+    if (saved_theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    const tocDisplay = localStorage.getItem('arxiv_html_paper_toc_display');
+    if (tocDisplay) {
+      document.documentElement.setAttribute("data-toc-display", tocDisplay);
+    }
+    const readingMode = localStorage.getItem('arxiv_html_paper_reading_mode');
+    if (readingMode) {
+      document.documentElement.setAttribute("data-reading-mode", readingMode);
+    }
+    // Pre-apply spinout-banner dismissal here, before the banner paints, so it
+    // never flashes in only to be hidden later by the deferred arxiv-header.js.
+    // Key matches arxiv-header.js: "arxiv-banner-dismissed:" + data-banner-name.
+    if (localStorage.getItem('arxiv-banner-dismissed:spinout-nonprofit')) {
+      document.documentElement.setAttribute("data-banner-dismissed", "");
+    }
+  }
+  // Run as soon as JS starts, to minimize repainting
+  initializeReadingPreferences();
+</script>
+<link rel="apple-touch-icon" sizes="180x180"
+  href="/static/browse/0.3.4/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+  href="/static/browse/0.3.4/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+  href="/static/browse/0.3.4/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/static/browse/0.3.4/images/icons/site.webmanifest">
+<link rel="mask-icon" href="/static/browse/0.3.4/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="stylesheet" type="text/css" media="screen" href="https://use.typekit.net/utz6mli.css"><link rel="stylesheet" type="text/css" media="screen"
+  href="/static/base/1.0.1/css/arxiv-header-footer.css?v=20260626"><style>
+  /* Banner pre-dismissal (set above before paint -> no flash-then-hide) and
+     reading-mode chrome hiding. */
+  html[data-banner-dismissed] .ds-announcement { display: none; }
+  html[data-reading-mode="enabled"] .ds-announcement,
+  html[data-reading-mode="enabled"] .ds-site-footer { display: none; }
+  /* Keep the announcement text dark on the Open-Blue band in both colour themes
+     (otherwise it inherits the paper's warm-wash text in dark mode and washes out). */
+  .ds-announcement-text { color: var(--arxiv-ink, #1c1a17); }
+</style>
+<script defer src="/static/base/1.0.1/js/arxiv-header.js?v=20260626"></script>
+</head>
+<body>
+<dialog id="modal-form" aria-labelledby="modal-title" closedby="any">
+  <form id="modal-form-content" method="dialog" enctype="multipart/form-data">
+    <header class="modal-header">
+      <h5 id="modal-title" class="modal-title">Report GitHub Issue</h5>
+      <button type="submit" formnovalidate class="modal-close" aria-label="Close">×</button>
+    </header>
+
+    <div class="modal-body">
+      <label for="form_title">Title:</label>
+      <input class="form-control" id="form_title" name="form_title" required placeholder="Enter title">
+
+      <p id="selectedTextModalDescription" hidden>Content selection saved. Describe the issue below:</p>
+
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" required maxlength="500"
+        placeholder="500 characters maximum"></textarea>
+    </div>
+
+    <footer class="modal-footer">
+      <button type="submit" value="internal-report" class="sr-only modal-submit">Submit without GitHub</button>
+      <button type="submit" value="github-report" class="modal-submit">Submit in GitHub</button>
+    </footer>
+  </form>
+</dialog><div class="ds-announcement" id="announcement-banner" role="region" aria-label="Announcement"
+    data-banner-name="spinout-nonprofit">
+    <img class="ds-announcement-glyph" src="/static/base/1.0.1/images/icons/smileybones-small.svg" alt="" aria-hidden="true">
+    <span class="ds-announcement-text">arXiv is now an independent nonprofit!</span>
+    <a class="ds-announcement-link" href="https://info.arxiv.org/about">Learn more</a>
+    <button type="button" class="ds-announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+<header class="arxiv-html-header">
+  <div class="html-header-logo">
+    <a href="/"><img alt="arXiv logo" class="logo desktop-only" width="100"
+        src="/static/base/1.0.1/images/arxiv-logo-primary-light.svg">
+      <span class="sr-only">Back to arXiv</span>
+    </a>
+  </div>
+  <!--TOC, dark mode, links-->
+  <nav class="html-header-nav">
+    <a class="header-button hover-effect desktop-only" href="https://info.arxiv.org/about/accessible_HTML.html"
+      target="_blank">Why HTML?</a>
+    <a class="header-button" title="Report an Issue" href="#" title="Report an issue"
+      onclick="event.preventDefault(); showModalForm();">
+      <svg role="presentation" class="mobile-only toggle-icon" aria-hidden="true" height="1.25rem"
+        viewBox="0 0 640 640">
+        <path
+          d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+      </svg>
+      <span class="desktop-only">Report Issue</span></a>
+    <!--back to abstract-->
+    <a class="header-button" title="Back to abstract page" aria-label="Back to abstract page"
+      href="/abs/2603.15492v1">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 512 512" fill="#ffffff"
+        aria-hidden="true">
+        <path
+          d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z">
+        </path>
+      </svg>
+      <span class="desktop-only">Back to Abstract</span>
+    </a>
+    <!-- PDF download link -->
+    <a class="header-button" title="Download PDF" href="/pdf/2603.15492v1"
+      target="_blank">
+      <svg class="mobile-only toggle-icon" role="presentation" height="1.25rem" viewBox="0 0 576 542">
+        <path
+          d="M208 48L96 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l80 0 0 48-80 0c-35.3 0-64-28.7-64-64L32 64C32 28.7 60.7 0 96 0L229.5 0c17 0 33.3 6.7 45.3 18.7L397.3 141.3c12 12 18.7 28.3 18.7 45.3l0 149.5-48 0 0-128-88 0c-39.8 0-72-32.2-72-72l0-88zM348.1 160L256 67.9 256 136c0 13.3 10.7 24 24 24l68.1 0zM240 380l32 0c33.1 0 60 26.9 60 60s-26.9 60-60 60l-12 0 0 28c0 11-9 20-20 20s-20-9-20-20l0-128c0-11 9-20 20-20zm32 80c11 0 20-9 20-20s-9-20-20-20l-12 0 0 40 12 0zm96-80l32 0c28.7 0 52 23.3 52 52l0 64c0 28.7-23.3 52-52 52l-32 0c-11 0-20-9-20-20l0-128c0-11 9-20 20-20zm32 128c6.6 0 12-5.4 12-12l0-64c0-6.6-5.4-12-12-12l-12 0 0 88 12 0zm76-108c0-11 9-20 20-20l48 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 24 28 0c11 0 20 9 20 20s-9 20-20 20l-28 0 0 44c0 11-9 20-20 20s-20-9-20-20l0-128z" />
+      </svg>
+      <span class="desktop-only">Download PDF</span></a>
+    <!-- navigational table of contents toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleNavTOC();" title="Toggle navigation"
+      aria-label="Toggle navigation">
+      <svg height="1.25rem" role="presentation" viewBox="0 0 512 512">
+        <path
+          d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z">
+        </path>
+      </svg>
+    </a>
+    <!--- collapsable header / reading mode toggle -->
+    <a class="header-button toggle-icon" href="javascript:toggleReadingMode();"
+      title="Disable reading mode, show header and footer">
+      <svg role="presentation" height="1.25rem"
+        viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+        <path
+          d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32S0 334.3 0 352l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z" />
+      </svg>
+    </a>
+    <!--- colored theme toggle -->
+    <button type="button" class="header-button color-tog" onclick="toggleColorScheme();" title="Toggle dark/light mode" aria-label="Toggle color scheme">
+      <span class="toggle-icon automatic-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon light-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+      <span class="toggle-icon dark-tog" aria-hidden="true">
+        <svg role="presentation" height="1.25rem" viewBox="0 0 24 24">
+          <path
+            d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z">
+          </path>
+        </svg>
+      </span>
+    </button>
+  </nav>
+</header><nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_abstract"><a href="#abstract1" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">Abstract</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S2" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Related Work</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#S2.SS0.SSS0.Px1" title="In 2 Related Work ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">Grokking and Phase Transitions.</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#S2.SS0.SSS0.Px2" title="In 2 Related Work ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">Mechanistic Interpretability.</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#S2.SS0.SSS0.Px3" title="In 2 Related Work ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">Implicit Bias and the Edge of Stability.</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S3" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS1" title="In 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>AdamW as Variance-Gated Stochastic Dynamics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#S3.SS2" title="In 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>The Stability-Diffusion Trade-off</span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S3.SS2.SSS1" title="In 3.2 The Stability-Diffusion Trade-off ‣ 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.1 </span>Regime I: Variance Suppression (Over-Damped)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S3.SS2.SSS2" title="In 3.2 The Stability-Diffusion Trade-off ‣ 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.2 </span>Regime II: Radial Expansion (Under-Damped)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S3.SS2.SSS3" title="In 3.2 The Stability-Diffusion Trade-off ‣ 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.3 </span>Regime III: Anisotropic Rectification (Grokking)</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S3.SS3" title="In 3 Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Spectral Gating and the Edge of Stability</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S4" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Experimental Setup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S5" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Results and Analysis</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#S5.SS1" title="In 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1 </span>Phase Boundaries of Generalization: The Impact of Task Complexity</span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S5.SS1.SSS1" title="In 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1.1 </span>Regime I: Capacity Collapse (<math class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S5.SS1.SSS2" title="In 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1.2 </span>Regime II: The Variance-Limited Regime (<math class="ltx_Math" alttext="29\leq P\leq 59" display="inline" intent=":literal"><semantics><mrow><mn>29</mn><mo>≤</mo><mi>P</mi><mo>≤</mo><mn>59</mn></mrow><annotation encoding="application/x-tex">29\leq P\leq 59</annotation></semantics></math>)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#S5.SS1.SSS3" title="In 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1.3 </span>Regime III: Stability Override (<math class="ltx_Math" alttext="P\geq 67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P\geq 67</annotation></semantics></math>)</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S5.SS2" title="In 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Radial Stationarity: The Push-Pull Dynamics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S5.SS3" title="In 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3 </span>Stability-Regulated Diffusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S5.SS4" title="In 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4 </span>Mechanism: Spectral Gating and Sharpness Violation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S5.SS5" title="In 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.5 </span>The Necessity of Anisotropy: Failure of Isotropic Diffusion</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#S6" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Discussion</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S6.SS1" title="In 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1 </span>The Kinetic Mechanism: Geometric Rectification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S6.SS2" title="In 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.2 </span>Unifying the Stability Paradox</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S6.SS3" title="In 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.3 </span>Revisiting Flatness: The Geometry of Algorithmic Precision</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#S6.SS4" title="In 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.4 </span>Dimensional Bottlenecks: Capacity Collapse</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S7" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Conclusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="#bib" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="#A1" title="In Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Appendix</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A1.SS1" title="In Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.1 </span>Topological Analysis: The Clock Face</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A1.SS2" title="In Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2 </span>Evidence of Anisotropy</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A1.SS3" title="In Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.3 </span>Spectral Dynamics across Complexity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#A1.SS4" title="In Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.4 </span>Limits of Isotropic Noise</span></a></li>
+</ol>
+</li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div id="infobox" class="infobox">
+  <a id="license-tr" href="https://info.arxiv.org/help/license/index.html#licenses-available">
+    License: CC BY 4.0
+  </a>
+  <div id="watermark-tr">
+arXiv:2603.15492v1 [cs.LG] 16 Mar 2026</div>
+</div><div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line" lang="en">
+<h1 class="ltx_title ltx_title_document">
+<span id="id1.id1" class="ltx_text ltx_font_bold">Grokking as a Variance-Limited Phase Transition:
+<br class="ltx_break"></span>Spectral Gating and the Epsilon-Stability Threshold</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">
+<span id="id2.1.id1" class="ltx_text ltx_font_bold">Pratyush Acharya</span> 
+<br class="ltx_break"><span id="id3.2.id2" class="ltx_text ltx_font_typewriter">acharya.pratyush12@gmail.com</span>
+</span></span>
+<span class="ltx_author_before">  </span><span class="ltx_creator ltx_role_author">
+<span class="ltx_personname"><span id="id4.1.id1" class="ltx_text ltx_font_bold">Habish Dhakal</span> 
+<br class="ltx_break"><span id="id5.2.id2" class="ltx_text ltx_font_typewriter">dhakalhabish@gmail.com</span>
+</span></span>
+</div>
+<div class="ltx_dates">(<span id="id6.id1" class="ltx_text">March 16, 2026</span>)</div>
+
+<div id="abstract1" class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p"><span class="ltx_text">Standard optimization theories struggle to explain grokking, where generalization occurs long after training convergence. While geometric studies attribute this to slow drift, they often overlook the interaction between the optimizer’s noise structure and landscape curvature. This work analyzes AdamW dynamics on modular arithmetic tasks, revealing a “Spectral Gating” mechanism that regulates the transition from memorization to generalization.</span></p>
+<p class="ltx_p"><span class="ltx_text">We find that AdamW operates as a variance-gated stochastic system. Grokking is constrained by a stability condition: the generalizing solution resides in a sharp basin (<math class="ltx_Math" alttext="\lambda_{max}^{H}" display="inline" intent=":literal"><semantics><msubsup><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mi>H</mi></msubsup><annotation encoding="application/x-tex">\lambda_{max}^{H}</annotation></semantics></math>) initially inaccessible under low-variance regimes. The “delayed” phase represents the accumulation of gradient variance required to lift the effective stability ceiling, permitting entry into this sharp manifold.</span></p>
+<p class="ltx_p"><span class="ltx_text">Our ablation studies identify three complexity regimes: (1) <span class="ltx_text ltx_font_bold">Capacity Collapse</span> (<math class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>), where rank-deficiency prevents structural learning; (2) <span class="ltx_text ltx_font_bold">The Variance-Limited Regime</span> (<math class="ltx_Math" alttext="P\approx 41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≈</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P\approx 41</annotation></semantics></math>), where generalization waits for the spectral gate to open; and (3) <span class="ltx_text ltx_font_bold">Stability Override</span> (<math class="ltx_Math" alttext="P&gt;67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&gt;</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P&gt;67</annotation></semantics></math>), where memorization becomes dimensionally unstable. Furthermore, we challenge the "Flat Minima" hypothesis for algorithmic tasks, showing that isotropic noise injection fails to induce grokking. Generalization requires the <span class="ltx_text ltx_font_italic">anisotropic rectification</span> unique to adaptive optimizers, which directs noise into the tangent space of the solution manifold.</span></p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p id="S1.p1.1" class="ltx_p">Sometimes, a neural network learns a task only after it has already perfectly fit the training data. This delayed phase transition, known as <span id="S1.p1.1.1" class="ltx_text ltx_font_italic">grokking</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>]</cite>, challenges the traditional view that optimization ends when gradients hit zero. Understanding this disconnect is vital, as it may explain why large foundation models continue to improve reasoning capabilities even after their training loss plateaus. This implies the existence of a high-dimensional <span id="S1.p1.1.2" class="ltx_text ltx_font_bold">Minimizing Level Set</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>, <a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite> <math id="S1.p1.1.m1" class="ltx_Math" alttext="\mathcal{Z}=\{\theta\mid\mathcal{L}(\theta)\approx 0\}" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒵</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mi>θ</mi><mo fence="true" lspace="0em" rspace="0em">∣</mo><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{Z}=\{\theta\mid\mathcal{L}(\theta)\approx 0\}</annotation></semantics></math>, where dynamics are driven not by the loss gradient, but by the optimizer’s internal noise structure.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p id="S1.p2.1" class="ltx_p">Earlier studies explain these dynamics in three ways:</p>
+<ol id="S1.I1" class="ltx_enumerate">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p id="S1.I1.i1.p1.1" class="ltx_p"><span id="S1.I1.i1.p1.1.1" class="ltx_text ltx_font_bold">Geometric Drift:</span> Theories suggesting that weight decay slowly pushes the model toward max-margin solutions <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>, <a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite>. While mathematically rigorous, these frameworks assume a generic gradient flow. They often fail to explain why isotropic noise (SGLD) or standard SGD does not grok, even when weight decay is present <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib5" title="" class="ltx_ref">5</a>]</cite>.</p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p id="S1.I1.i2.p1.1" class="ltx_p"><span id="S1.I1.i2.p1.1.1" class="ltx_text ltx_font_bold">Circuit Competition:</span> Mechanistic interpretations that view grokking as a battle between “memorizing” and “generalizing” circuits <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>, <a href="#bib.bib20" title="" class="ltx_ref">20</a>]</cite>. These studies map the <span id="S1.I1.i2.p1.1.2" class="ltx_text ltx_font_italic">topology</span> of the solution (e.g., the “Clock Circuit”) but lack a kinetic mechanism to explain the timescale of the transition.</p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p id="S1.I1.i3.p1.1" class="ltx_p"><span id="S1.I1.i3.p1.1.1" class="ltx_text ltx_font_bold">Edge of Stability (EoS):</span> Research arguing that instability drives feature learning <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>, <a href="#bib.bib18" title="" class="ltx_ref">18</a>]</cite>. However, the precise interaction between numerical stability parameters (such as <math id="S1.I1.i3.p1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>) and the grokking phase transition remains under-explored.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p id="S1.p3.1" class="ltx_p">In this paper, we unify these perspectives by analyzing the optimizer as a <span id="S1.p3.1.1" class="ltx_text ltx_font_bold">Variance-Gated Stochastic System</span>. We find that grokking is a fragile state that depends on matching task complexity to optimizer stability. We posit that the delay in generalization is not a random walk, but a <span id="S1.p3.1.2" class="ltx_text ltx_font_bold">Variance-Limited Equilibrium</span>. The optimizer is initially too stable to enter the sharp manifolds where generalizing circuits reside.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p id="S1.p4.1" class="ltx_p">Our contributions are as follows:</p>
+<ul id="S1.I2" class="ltx_itemize">
+<li id="S1.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I2.i1.p1" class="ltx_para">
+<p id="S1.I2.i1.p1.2" class="ltx_p"><span id="S1.I2.i1.p1.2.1" class="ltx_text ltx_font_bold">The Spectral Gating Mechanism:</span> We find that the generalizing basin for modular arithmetic tasks is significantly sharper than the optimizer’s initial stability threshold. Grokking appears to occur only when accumulated gradient variance <math id="S1.I2.i1.p1.1.m1" class="ltx_Math" alttext="\sqrt{v_{t}}" display="inline" intent=":literal"><semantics><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{v_{t}}</annotation></semantics></math> lifts the stability ceiling (<math id="S1.I2.i1.p1.2.m2" class="ltx_Math" alttext="2/\eta_{eff}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2/\eta_{eff}</annotation></semantics></math>), finally permitting entry into the solution’s high-curvature geometry.</p>
+</div>
+</li>
+<li id="S1.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I2.i2.p1" class="ltx_para">
+<p id="S1.I2.i2.p1.1" class="ltx_p"><span id="S1.I2.i2.p1.1.1" class="ltx_text ltx_font_bold">The Complexity Threshold:</span> We identify a “Signal Starvation” regime (<math id="S1.I2.i2.p1.1.m1" class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>) where the loss landscape is structurally barren. Below this threshold, neither variance accumulation nor parameter tuning induces generalization, refuting purely thermal explanations of grokking.</p>
+</div>
+</li>
+<li id="S1.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I2.i3.p1" class="ltx_para">
+<p id="S1.I2.i3.p1.1" class="ltx_p"><span id="S1.I2.i3.p1.1.1" class="ltx_text ltx_font_bold">Anisotropic Rectification:</span> By comparing AdamW to Isotropic SGLD, we show that thermal energy alone is insufficient. Generalization requires the covariance structure of adaptive optimizers to rectify noise into the tangent space of the solution manifold.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Related Work</h2>
+
+<section id="S2.SS0.SSS0.Px1" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Grokking and Phase Transitions.</h5>
+
+<div id="S2.SS0.SSS0.Px1.p1" class="ltx_para">
+<p id="S2.SS0.SSS0.Px1.p1.1" class="ltx_p">The phenomenon of grokking was first characterized by Power et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>]</cite> as generalization occurring long after training error converges to zero. Subsequent work has attempted to demarcate the conditions for this transition. Liu et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib2" title="" class="ltx_ref">2</a>]</cite> identified a "Goldilocks zone" of initialization and data size, while Kumar et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib18" title="" class="ltx_ref">18</a>]</cite> framed it as a transition from "lazy" kernel regimes to "rich" feature learning.
+While these works describe the <span id="S2.SS0.SSS0.Px1.p1.1.1" class="ltx_text ltx_font_italic">phenomenology</span> of the transition, they largely treat the optimizer as a black box. Our work differs by providing a <span id="S2.SS0.SSS0.Px1.p1.1.2" class="ltx_text ltx_font_italic">kinetic</span> explanation: we identify the specific spectral state the optimizer must reach to trigger the transition.</p>
+</div>
+</section>
+<section id="S2.SS0.SSS0.Px2" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Mechanistic Interpretability.</h5>
+
+<div id="S2.SS0.SSS0.Px2.p1" class="ltx_para">
+<p id="S2.SS0.SSS0.Px2.p1.1" class="ltx_p">A parallel line of inquiry focuses on <span id="S2.SS0.SSS0.Px2.p1.1.1" class="ltx_text ltx_font_italic">what</span> is learned during grokking. Nanda et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>]</cite> fully reverse-engineered the modular addition network, identifying a specific "Clock Circuit" relying on trigonometric interference. Varma et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib20" title="" class="ltx_ref">20</a>]</cite> and Merrill et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib17" title="" class="ltx_ref">17</a>]</cite> argue that grokking is a competition between dense memorization circuits and sparse generalizing circuits.
+We adopt this topological view—that the solution is a specific, sparse circuit—but address the open question of <span id="S2.SS0.SSS0.Px2.p1.1.2" class="ltx_text ltx_font_italic">accessibility</span>. While mechanistic work maps the destination, our spectral gating theory explains the optimization dynamics required to enter the destination basin.</p>
+</div>
+</section>
+<section id="S2.SS0.SSS0.Px3" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Implicit Bias and the Edge of Stability.</h5>
+
+<div id="S2.SS0.SSS0.Px3.p1" class="ltx_para">
+<p id="S2.SS0.SSS0.Px3.p1.1" class="ltx_p">Geometric theories posit that gradient descent introduces an implicit bias toward max-margin solutions <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite>. Recent rigorous frameworks by Musat <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite> and Pesme et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite> model grokking as Riemannian Norm Minimization on the zero-loss manifold.
+However, these "drift" theories often assume stable gradient flow. Cohen et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite> and Damian et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib14" title="" class="ltx_ref">14</a>]</cite> demonstrate that neural network training typically occurs at the "Edge of Stability," where the sharpness oscillates around <math id="S2.SS0.SSS0.Px3.p1.1.m1" class="ltx_Math" alttext="2/\eta" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">2/\eta</annotation></semantics></math>. Thilak et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib5" title="" class="ltx_ref">5</a>]</cite> empirically linked this instability ("Slingshots") to grokking.
+Our work unifies the geometric and stability perspectives. We formalize the Slingshot not as an anomaly, but as a <span id="S2.SS0.SSS0.Px3.p1.1.1" class="ltx_text ltx_font_italic">variance-injection mechanism</span> required to satisfy the stability constraints of the sharp basins identified by mechanistic interpretability. Furthermore, we challenge the prevailing "Flat Minima" hypothesis <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>, <a href="#bib.bib16" title="" class="ltx_ref">16</a>]</cite> in this specific domain, providing evidence that for algorithmic tasks, the generalizing solution is spectrally sharper than the memorization solution.</p>
+</div>
+</section>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Theoretical Framework: Spectral Gating and Rectified Stochastic Dynamics</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p id="S3.p1.2" class="ltx_p">To understand how AdamW moves through the loss landscape, we model its training dynamics as a continuous stochastic process. While classical optimization focuses on the convergence of the loss mean, grokking takes place in a "post-convergence" regime where <math id="S3.p1.1.m1" class="ltx_Math" alttext="\mathcal{L}(\theta)\to 0" display="inline" intent=":literal"><semantics><mrow><mrow><mi class="ltx_font_mathcaligraphic">ℒ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathcal{L}(\theta)\to 0</annotation></semantics></math> yet the weights <math id="S3.p1.2.m2" class="ltx_Math" alttext="\|\theta\|" display="inline" intent=":literal"><semantics><mrow><mo stretchy="false">‖</mo><mi>θ</mi><mo stretchy="false">‖</mo></mrow><annotation encoding="application/x-tex">\|\theta\|</annotation></semantics></math> continue to evolve <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>]</cite>. In this phase, the trajectory is governed not by the loss gradient, which is near zero, but by the <span id="S3.p1.2.1" class="ltx_text ltx_font_bold">noise covariance structure</span> of the optimizer.</p>
+</div>
+<section id="S3.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1 </span>AdamW as Variance-Gated Stochastic Dynamics</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p id="S3.SS1.p1.2" class="ltx_p">We treat the discrete updates of AdamW as a continuous-time Stochastic Differential Equation (SDE) to capture the interaction between noise and geometry. Let <math id="S3.SS1.p1.1.m1" class="ltx_Math" alttext="g_{t}(\theta)=\nabla\mathcal{L}(\theta)+\xi_{t}" display="inline" intent=":literal"><semantics><mrow><mrow><msub><mi>g</mi><mi>t</mi></msub><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi class="ltx_font_mathcaligraphic">ℒ</mi></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><msub><mi>ξ</mi><mi>t</mi></msub></mrow></mrow><annotation encoding="application/x-tex">g_{t}(\theta)=\nabla\mathcal{L}(\theta)+\xi_{t}</annotation></semantics></math> be the stochastic gradient, where <math id="S3.SS1.p1.2.m2" class="ltx_Math" alttext="\xi_{t}\sim\mathcal{N}(0,\Sigma(\theta_{t}))" display="inline" intent=":literal"><semantics><mrow><msub><mi>ξ</mi><mi>t</mi></msub><mo>∼</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mi mathvariant="normal">Σ</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>t</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\xi_{t}\sim\mathcal{N}(0,\Sigma(\theta_{t}))</annotation></semantics></math> represents anisotropic, often heavy-tailed noise <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib15" title="" class="ltx_ref">15</a>, <a href="#bib.bib16" title="" class="ltx_ref">16</a>]</cite>.</p>
+</div>
+<div id="S3.SS1.p2" class="ltx_para">
+<p id="S3.SS1.p2.3" class="ltx_p">AdamW preconditions these updates using <math id="S3.SS1.p2.1.m1" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math>, the exponential moving average of squared gradients. Under the <span id="S3.SS1.p2.3.1" class="ltx_text ltx_font_bold">Adiabatic Approximation</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib11" title="" class="ltx_ref">11</a>]</cite>, we assume the preconditioner <math id="S3.SS1.p2.2.m2" class="ltx_Math" alttext="D_{t}=\text{diag}(\sqrt{v_{t}}+\epsilon)" display="inline" intent=":literal"><semantics><mrow><msub><mi>D</mi><mi>t</mi></msub><mo>=</mo><mrow><mtext>diag</mtext><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><mo>+</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">D_{t}=\text{diag}(\sqrt{v_{t}}+\epsilon)</annotation></semantics></math> evolves on a slower timescale than the parameters. Matching the first and second moments of the discrete step <math id="S3.SS1.p2.3.m3" class="ltx_Math" alttext="\Delta\theta\approx-\eta D_{t}^{-1}g_{t}" display="inline" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">Δ</mi><mo lspace="0em" rspace="0em">​</mo><mi>θ</mi></mrow><mo>≈</mo><mrow><mo>−</mo><mrow><mi>η</mi><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>D</mi><mi>t</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo lspace="0em" rspace="0em">​</mo><msub><mi>g</mi><mi>t</mi></msub></mrow></mrow></mrow><annotation encoding="application/x-tex">\Delta\theta\approx-\eta D_{t}^{-1}g_{t}</annotation></semantics></math> yields the following SDE <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib10" title="" class="ltx_ref">10</a>]</cite>:</p>
+</div>
+<div id="S3.SS1.p3" class="ltx_para">
+<table id="S3.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E1.m1" class="ltx_Math" alttext="\mathrm{d}\theta_{t}=\underbrace{-D_{t}^{-1}\left(\nabla\mathcal{L}(\theta_{t})+\lambda\theta_{t}\right)\mathrm{d}t}_{\text{Preconditioned Drift}}+\underbrace{\eta^{1/2}D_{t}^{-1}\Sigma(\theta_{t})^{1/2}\mathrm{d}W_{t}}_{\text{Rectified Diffusion}}" display="block" intent=":literal"><semantics><mrow><mrow><mi mathvariant="normal">d</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>θ</mi><mi>t</mi></msub></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mrow><mo>−</mo><mrow><msubsup><mi>D</mi><mi>t</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo lspace="0em" rspace="0em">​</mo><mrow><mo>(</mo><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi class="ltx_font_mathcaligraphic">ℒ</mi></mrow><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>t</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>λ</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>θ</mi><mi>t</mi></msub></mrow></mrow><mo>)</mo></mrow><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">d</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi></mrow></mrow><mo stretchy="true">⏟</mo></munder><mtext>Preconditioned Drift</mtext></munder><mo>+</mo><munder><munder accentunder="true"><mrow><msup><mi>η</mi><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>D</mi><mi>t</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">Σ</mi><mo lspace="0em" rspace="0em">​</mo><msup><mrow><mo stretchy="false">(</mo><msub><mi>θ</mi><mi>t</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">d</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>W</mi><mi>t</mi></msub></mrow><mo stretchy="true">⏟</mo></munder><mtext>Rectified Diffusion</mtext></munder></mrow></mrow><annotation encoding="application/x-tex">\mathrm{d}\theta_{t}=\underbrace{-D_{t}^{-1}\left(\nabla\mathcal{L}(\theta_{t})+\lambda\theta_{t}\right)\mathrm{d}t}_{\text{Preconditioned Drift}}+\underbrace{\eta^{1/2}D_{t}^{-1}\Sigma(\theta_{t})^{1/2}\mathrm{d}W_{t}}_{\text{Rectified Diffusion}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S3.SS1.p4" class="ltx_para">
+<p id="S3.SS1.p4.3" class="ltx_p">where <math id="S3.SS1.p4.1.m1" class="ltx_Math" alttext="W_{t}" display="inline" intent=":literal"><semantics><msub><mi>W</mi><mi>t</mi></msub><annotation encoding="application/x-tex">W_{t}</annotation></semantics></math> is a standard Brownian motion. The <math id="S3.SS1.p4.2.m2" class="ltx_Math" alttext="\eta^{1/2}" display="inline" intent=":literal"><semantics><msup><mi>η</mi><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">\eta^{1/2}</annotation></semantics></math> scaling ensures the diffusion term matches the <math id="S3.SS1.p4.3.m3" class="ltx_Math" alttext="\mathcal{O}(\eta)" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mi>η</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(\eta)</annotation></semantics></math> variance of the discrete algorithm.</p>
+</div>
+<div id="S3.SS1.p5" class="ltx_para">
+<p id="S3.SS1.p5.3" class="ltx_p">Crucially, AdamW behaves differently from standard Riemannian Langevin Dynamics (RLD). While RLD scales diffusion by the inverse square root of the metric (<math id="S3.SS1.p5.1.m1" class="ltx_Math" alttext="D_{t}^{-1/2}" display="inline" intent=":literal"><semantics><msubsup><mi>D</mi><mi>t</mi><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></msubsup><annotation encoding="application/x-tex">D_{t}^{-1/2}</annotation></semantics></math>), AdamW scales it by the inverse (<math id="S3.SS1.p5.2.m2" class="ltx_Math" alttext="D_{t}^{-1}" display="inline" intent=":literal"><semantics><msubsup><mi>D</mi><mi>t</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><annotation encoding="application/x-tex">D_{t}^{-1}</annotation></semantics></math>). This structural difference creates a distinct diffusivity profile for the <math id="S3.SS1.p5.3.m3" class="ltx_Math" alttext="i" display="inline" intent=":literal"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>-th parameter:</p>
+</div>
+<div id="S3.SS1.p6" class="ltx_para">
+<table id="S3.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E2.m1" class="ltx_Math" alttext="\mathcal{D}_{eff}^{(i)}\propto\frac{\eta\cdot\Sigma_{ii}}{(\sqrt{\Sigma_{ii}}+\epsilon)^{2}}" display="block" intent=":literal"><semantics><mrow><msubsup><mi class="ltx_font_mathcaligraphic">𝒟</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>∝</mo><mfrac><mrow><mi>η</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msub><mi mathvariant="normal">Σ</mi><mrow><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi></mrow></msub></mrow><msup><mrow><mo stretchy="false">(</mo><mrow><msqrt><msub><mi mathvariant="normal">Σ</mi><mrow><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi></mrow></msub></msqrt><mo>+</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">\mathcal{D}_{eff}^{(i)}\propto\frac{\eta\cdot\Sigma_{ii}}{(\sqrt{\Sigma_{ii}}+\epsilon)^{2}}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S3.SS1.p7" class="ltx_para">
+<p id="S3.SS1.p7.2" class="ltx_p">As the gradient noise variance <math id="S3.SS1.p7.1.m1" class="ltx_Math" alttext="\Sigma_{ii}\to\infty" display="inline" intent=":literal"><semantics><mrow><msub><mi mathvariant="normal">Σ</mi><mrow><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi></mrow></msub><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\Sigma_{ii}\to\infty</annotation></semantics></math>, RLD diffusion becomes unbounded. In contrast, AdamW diffusion saturates at a fixed limit (<math id="S3.SS1.p7.2.m2" class="ltx_Math" alttext="\mathcal{D}_{eff}\to\eta" display="inline" intent=":literal"><semantics><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒟</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub><mo stretchy="false">→</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">\mathcal{D}_{eff}\to\eta</annotation></semantics></math>). This <span id="S3.SS1.p7.2.1" class="ltx_text ltx_font_bold">Bounded Diffusivity</span> ensures that high-variance gradients do not cause the system to diverge from the manifold, effectively creating a "variance ceiling" that maintains stability even in high-noise regimes.</p>
+</div>
+<div id="S3.SS1.p8" class="ltx_para">
+<p id="S3.SS1.p8.1" class="ltx_p"><span id="S3.SS1.p8.1.1" class="ltx_text ltx_font_italic">Remark on Discrete Dynamics:</span> While the SDE provides an equilibrium description, the transition into the grokking phase is often triggered by "Slingshots" <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib5" title="" class="ltx_ref">5</a>]</cite>—discrete instabilities where the adiabatic assumption momentarily breaks down. In these transient moments, the rapid accumulation of <math id="S3.SS1.p8.1.m1" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math> (as described in Section <a href="#S5.SS4" title="5.4 Mechanism: Spectral Gating and Sharpness Violation ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4</span></a>) serves to actively suppress the effective step size, dynamically restoring stability.</p>
+</div>
+</section>
+<section id="S3.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2 </span>The Stability-Diffusion Trade-off</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p id="S3.SS2.p1.1" class="ltx_p">Equation (2) shows how the stability parameter <math id="S3.SS2.p1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> regulates the effective diffusion coefficient. By analyzing the limits of this equation, we can derive the three distinct physical regimes observed in our experiments.</p>
+</div>
+<section id="S3.SS2.SSS1" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">3.2.1 </span>Regime I: Variance Suppression (Over-Damped)</h4>
+
+<div id="S3.SS2.SSS1.p1" class="ltx_para">
+<p id="S3.SS2.SSS1.p1.1" class="ltx_p"><span id="S3.SS2.SSS1.p1.1.1" class="ltx_text ltx_font_bold">Condition:</span> <math id="S3.SS2.SSS1.p1.1.m1" class="ltx_Math" alttext="\epsilon\gg\sigma_{i}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>≫</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\epsilon\gg\sigma_{i}</annotation></semantics></math>.
+When the stability term dominates the preconditioner, the effective diffusivity vanishes:</p>
+<table id="S3.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E3.m1" class="ltx_Math" alttext="\lim_{\epsilon\to\infty}\mathcal{D}_{eff}^{(i)}\approx\frac{\eta\sigma_{i}^{2}}{\epsilon^{2}}\to 0" display="block" intent=":literal"><semantics><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msubsup><mi class="ltx_font_mathcaligraphic">𝒟</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow><mo>≈</mo><mfrac><mrow><mi>η</mi><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>σ</mi><mi>i</mi><mn>2</mn></msubsup></mrow><msup><mi>ϵ</mi><mn>2</mn></msup></mfrac><mo stretchy="false">→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{\epsilon\to\infty}\mathcal{D}_{eff}^{(i)}\approx\frac{\eta\sigma_{i}^{2}}{\epsilon^{2}}\to 0</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.SS2.SSS1.p1.2" class="ltx_p">In this limit, AdamW degenerates into <span id="S3.SS2.SSS1.p1.2.1" class="ltx_text ltx_font_bold">Damped SGD</span>. The diffusive pressure becomes too weak to overcome the restorative drift of weight decay <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib4" title="" class="ltx_ref">4</a>]</cite>. As seen in the phase diagram (Figure <a href="#S5.F1" title="Figure 1 ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>), this results in model stagnation; the system remains trapped in the kernel regime, unable to explore the manifold.</p>
+</div>
+</section>
+<section id="S3.SS2.SSS2" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">3.2.2 </span>Regime II: Radial Expansion (Under-Damped)</h4>
+
+<div id="S3.SS2.SSS2.p1" class="ltx_para">
+<p id="S3.SS2.SSS2.p1.2" class="ltx_p"><span id="S3.SS2.SSS2.p1.2.1" class="ltx_text ltx_font_bold">Condition:</span> <math id="S3.SS2.SSS2.p1.1.m1" class="ltx_Math" alttext="\epsilon\ll\sigma_{i}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>≪</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\epsilon\ll\sigma_{i}</annotation></semantics></math>.
+When <math id="S3.SS2.SSS2.p1.2.m2" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> is negligible, the preconditioner perfectly cancels the noise magnitude:</p>
+<table id="S3.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E4.m1" class="ltx_Math" alttext="\lim_{\epsilon\to 0}\mathcal{D}_{eff}^{(i)}\approx\frac{\eta\sigma_{i}^{2}}{(\sqrt{\sigma_{i}^{2}})^{2}}=\eta" display="block" intent=":literal"><semantics><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></munder><msubsup><mi class="ltx_font_mathcaligraphic">𝒟</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow><mrow><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow><mo>≈</mo><mfrac><mrow><mi>η</mi><mo lspace="0em" rspace="0em">​</mo><msubsup><mi>σ</mi><mi>i</mi><mn>2</mn></msubsup></mrow><msup><mrow><mo stretchy="false">(</mo><msqrt><msubsup><mi>σ</mi><mi>i</mi><mn>2</mn></msubsup></msqrt><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mfrac><mo>=</mo><mi>η</mi></mrow><annotation encoding="application/x-tex">\lim_{\epsilon\to 0}\mathcal{D}_{eff}^{(i)}\approx\frac{\eta\sigma_{i}^{2}}{(\sqrt{\sigma_{i}^{2}})^{2}}=\eta</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+<p id="S3.SS2.SSS2.p1.5" class="ltx_p">While this maximizes exploration, it removes the numerical floor required for stability. In our ablation studies, setting <math id="S3.SS2.SSS2.p1.3.m1" class="ltx_Math" alttext="\epsilon\to 10^{-15}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\to 10^{-15}</annotation></semantics></math> caused the weight norm <math id="S3.SS2.SSS2.p1.4.m2" class="ltx_Math" alttext="\|\theta\|^{2}" display="inline" intent=":literal"><semantics><msup><mrow><mo stretchy="false">‖</mo><mi>θ</mi><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">\|\theta\|^{2}</annotation></semantics></math> to diverge. Without the <math id="S3.SS2.SSS2.p1.5.m3" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> constraint, the system enters a phase of <span id="S3.SS2.SSS2.p1.5.1" class="ltx_text ltx_font_bold">Radial Expansion</span>, diffusing outwardly faster than weight decay can pull it back <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite>.</p>
+</div>
+</section>
+<section id="S3.SS2.SSS3" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">3.2.3 </span>Regime III: Anisotropic Rectification (Grokking)</h4>
+
+<div id="S3.SS2.SSS3.p1" class="ltx_para">
+<p id="S3.SS2.SSS3.p1.5" class="ltx_p"><span id="S3.SS2.SSS3.p1.5.1" class="ltx_text ltx_font_bold">Condition:</span> <math id="S3.SS2.SSS3.p1.1.m1" class="ltx_Math" alttext="\epsilon\approx\sigma_{noise}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>≈</mo><msub><mi>σ</mi><mrow><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi>o</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>s</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\epsilon\approx\sigma_{noise}</annotation></semantics></math>.
+Grokking occurs when <math id="S3.SS2.SSS3.p1.2.m2" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> is balanced. In this band, the optimizer performs <span id="S3.SS2.SSS3.p1.5.2" class="ltx_text ltx_font_bold">Anisotropic Rectification</span>: it amplifies noise in directions where the signal is coherent (low <math id="S3.SS2.SSS3.p1.3.m3" class="ltx_Math" alttext="\sigma" display="inline" intent=":literal"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>) while damping chaotic directions (high <math id="S3.SS2.SSS3.p1.4.m4" class="ltx_Math" alttext="\sigma" display="inline" intent=":literal"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>). This balance allows the system to drift along the tangent space of <math id="S3.SS2.SSS3.p1.5.m5" class="ltx_Math" alttext="\mathcal{Z}" display="inline" intent=":literal"><semantics><mi class="ltx_font_mathcaligraphic">𝒵</mi><annotation encoding="application/x-tex">\mathcal{Z}</annotation></semantics></math> without diverging.</p>
+</div>
+</section>
+</section>
+<section id="S3.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3 </span>Spectral Gating and the Edge of Stability</h3>
+
+<div id="S3.SS3.p1" class="ltx_para">
+<p id="S3.SS3.p1.1" class="ltx_p">For intermediate complexity tasks (<math id="S3.SS3.p1.1.m1" class="ltx_Math" alttext="P\approx 23-60" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≈</mo><mrow><mn>23</mn><mo>−</mo><mn>60</mn></mrow></mrow><annotation encoding="application/x-tex">P\approx 23-60</annotation></semantics></math>), we observe that structural learning is delayed by a <span id="S3.SS3.p1.1.1" class="ltx_text ltx_font_bold">Spectral Lock</span>. We explain this by connecting our framework to the <span id="S3.SS3.p1.1.2" class="ltx_text ltx_font_bold">Edge of Stability (EoS)</span> theory <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite>.</p>
+</div>
+<div id="S3.SS3.p2" class="ltx_para">
+<p id="S3.SS3.p2.4" class="ltx_p">In discrete optimization, a step size <math id="S3.SS3.p2.1.m1" class="ltx_Math" alttext="\eta" display="inline" intent=":literal"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math> is stable only if the local curvature satisfies <math id="S3.SS3.p2.2.m2" class="ltx_Math" alttext="\lambda&lt;2/\eta" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>&lt;</mo><mrow><mn>2</mn><mo>/</mo><mi>η</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda&lt;2/\eta</annotation></semantics></math>. For AdamW, the effective step size is adaptive and parameter-specific: <math id="S3.SS3.p2.3.m3" class="ltx_Math" alttext="\eta_{eff}\approx\eta/(\sqrt{v_{t}}+\epsilon)" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub><mo>≈</mo><mrow><mi>η</mi><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><mo>+</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\eta_{eff}\approx\eta/(\sqrt{v_{t}}+\epsilon)</annotation></semantics></math>. Consequently, the stability condition becomes dynamic. The optimizer can only converge into a basin with Hessian curvature <math id="S3.SS3.p2.4.m4" class="ltx_Math" alttext="\lambda_{max}^{H}" display="inline" intent=":literal"><semantics><msubsup><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mi>H</mi></msubsup><annotation encoding="application/x-tex">\lambda_{max}^{H}</annotation></semantics></math> if it satisfies the <span id="S3.SS3.p2.4.1" class="ltx_text ltx_font_bold">Spectral Gating Condition</span>:</p>
+</div>
+<div id="S3.SS3.p3" class="ltx_para">
+<table id="S3.E5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.E5.m1" class="ltx_Math" alttext="\lambda_{max}^{H}&lt;\frac{2}{\eta}(\sqrt{v_{t}}+\epsilon)" display="block" intent=":literal"><semantics><mrow><msubsup><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mi>H</mi></msubsup><mo>&lt;</mo><mrow><mfrac><mn>2</mn><mi>η</mi></mfrac><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><mo>+</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\lambda_{max}^{H}&lt;\frac{2}{\eta}(\sqrt{v_{t}}+\epsilon)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S3.SS3.p4" class="ltx_para">
+<p id="S3.SS3.p4.1" class="ltx_p">This inequality uncovers the causal mechanism behind the delay:</p>
+</div>
+<div id="S3.SS3.p5" class="ltx_para">
+<ol id="S3.I1" class="ltx_enumerate">
+<li id="S3.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S3.I1.i1.p1" class="ltx_para">
+<p id="S3.I1.i1.p1.2" class="ltx_p"><span id="S3.I1.i1.p1.2.1" class="ltx_text ltx_font_bold">The Memorization Trap (Low Variance):</span> Initially, gradient variance <math id="S3.I1.i1.p1.1.m1" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math> is low. This suppresses the stability ceiling (<math id="S3.I1.i1.p1.2.m2" class="ltx_Math" alttext="2/\eta_{eff}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2/\eta_{eff}</annotation></semantics></math>), forcing the optimizer to seek flat, high-entropy minima. The "lazy" memorization solution fits this profile: it is broad and robust to small perturbations, making it immediately accessible.</p>
+</div>
+</li>
+<li id="S3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S3.I1.i2.p1" class="ltx_para">
+<p id="S3.I1.i2.p1.1" class="ltx_p"><span id="S3.I1.i2.p1.1.1" class="ltx_text ltx_font_bold">The Sharpness Inversion:</span> Contrary to the "Flat Minima" hypothesis <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>]</cite>, we argue that for algorithmic tasks, the generalizing solution (the "Clock Circuit" <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>]</cite>) is geometrically <span id="S3.I1.i2.p1.1.2" class="ltx_text ltx_font_italic">sharper</span> than the memorization basin. It requires precise parameter alignment, resulting in a high <math id="S3.I1.i2.p1.1.m1" class="ltx_Math" alttext="\lambda_{max}^{H}" display="inline" intent=":literal"><semantics><msubsup><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mi>H</mi></msubsup><annotation encoding="application/x-tex">\lambda_{max}^{H}</annotation></semantics></math> that initially violates the condition in Eq. (5).</p>
+</div>
+</li>
+<li id="S3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S3.I1.i3.p1" class="ltx_para">
+<p id="S3.I1.i3.p1.1" class="ltx_p"><span id="S3.I1.i3.p1.1.1" class="ltx_text ltx_font_bold">Stability Release (Variance Injection):</span> As training progresses, gradients do not vanish but fluctuate, accumulating variance <math id="S3.I1.i3.p1.1.m1" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math> (the "Slingshot" mechanism). This increase in the denominator of the update rule effectively anneals the step size. This lifts the stability ceiling defined by Eq. (5), finally permitting the optimizer to stably enter and settle in the sharp generalizing manifold.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S3.SS3.p6" class="ltx_para">
+<p id="S3.SS3.p6.1" class="ltx_p">Thus, the delay is not a random walk, but a <span id="S3.SS3.p6.1.1" class="ltx_text ltx_font_bold">variance-accumulation phase</span>. The model must generate enough gradient noise to "unlock" the spectral gate, transitioning from the variance-intolerant memorization basin to the variance-stabilized generalizing circuit.</p>
+</div>
+</section>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Experimental Setup</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p id="S4.p1.4" class="ltx_p"><span id="S4.p1.4.1" class="ltx_text ltx_font_bold">Task &amp; Model.</span> Our experiments utilize an MLP with 2 hidden layers (width 128, ReLU activations) trained on the modular addition task <math id="S4.p1.1.m1" class="ltx_Math" alttext="a+b\pmod{P}" display="inline" intent=":literal"><semantics><mrow><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mspace style="width:0.949em;" width="0.949em"></mspace><mrow><mo stretchy="false">(</mo><mrow><mo lspace="0em" rspace="0.167em">mod</mo><mi>P</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">a+b\pmod{P}</annotation></semantics></math> with embeddings learned from scratch. Training employs full-batch AdamW with learning rate <math id="S4.p1.2.m2" class="ltx_Math" alttext="\eta=10^{-4}" display="inline" intent=":literal"><semantics><mrow><mi>η</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\eta=10^{-4}</annotation></semantics></math>, weight decay <math id="S4.p1.3.m3" class="ltx_Math" alttext="\lambda=0.1" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">\lambda=0.1</annotation></semantics></math>, and <math id="S4.p1.4.m4" class="ltx_Math" alttext="\beta=(0.9,0.999)" display="inline" intent=":literal"><semantics><mrow><mi>β</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0.9</mn><mo>,</mo><mn>0.999</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta=(0.9,0.999)</annotation></semantics></math> unless specified otherwise.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p id="S4.p2.1" class="ltx_p"><span id="S4.p2.1.1" class="ltx_text ltx_font_bold">Protocol.</span> We perform three targeted experimental sweeps to dissect the underlying mechanism:</p>
+</div>
+<div id="S4.p3" class="ltx_para">
+<ol id="S4.I1" class="ltx_enumerate">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p id="S4.I1.i1.p1.4" class="ltx_p"><span id="S4.I1.i1.p1.4.1" class="ltx_text ltx_font_bold">The Stability Frontier (Hardness vs. Gating):</span> To map the thermodynamic boundaries of grokking, we conduct a dense 2D grid search over Task Difficulty (<math id="S4.I1.i1.p1.1.m1" class="ltx_Math" alttext="P\in[11,97]" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mn>11</mn><mo>,</mo><mn>97</mn><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">P\in[11,97]</annotation></semantics></math>, sampled linearly) and Optimizer Stability (<math id="S4.I1.i1.p1.2.m2" class="ltx_Math" alttext="\epsilon\in[10^{-9},10^{-1}]" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\epsilon\in[10^{-9},10^{-1}]</annotation></semantics></math>, sampled logarithmically). Each configuration is trained for <math id="S4.I1.i1.p1.3.m3" class="ltx_Math" alttext="10^{6}" display="inline" intent=":literal"><semantics><msup><mn>10</mn><mn>6</mn></msup><annotation encoding="application/x-tex">10^{6}</annotation></semantics></math> steps to determine the "Steps to Grok" (defined as Test Accuracy <math id="S4.I1.i1.p1.4.m4" class="ltx_Math" alttext="&gt;99\%" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>&gt;</mo><mrow><mn>99</mn><mo>%</mo></mrow></mrow><annotation encoding="application/x-tex">&gt;99\%</annotation></semantics></math>).</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p id="S4.I1.i2.p1.4" class="ltx_p"><span id="S4.I1.i2.p1.4.1" class="ltx_text ltx_font_bold">Thermodynamic Sufficiency (SGLD):</span> To determine if isotropic energy can substitute for geometric steering, we compare AdamW against Stochastic Gradient Langevin Dynamics (SGLD). By injecting Gaussian noise <math id="S4.I1.i2.p1.1.m1" class="ltx_Math" alttext="\mathcal{N}(0,\sigma^{2})" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,\sigma^{2})</annotation></semantics></math> into standard SGD updates (<math id="S4.I1.i2.p1.2.m2" class="ltx_Math" alttext="\sigma\in[10^{-4},10^{-1}]" display="inline" intent=":literal"><semantics><mrow><mi>σ</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sigma\in[10^{-4},10^{-1}]</annotation></semantics></math>), we match the effective thermal pressure of AdamW for both easy (<math id="S4.I1.i2.p1.3.m3" class="ltx_Math" alttext="P=23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P=23</annotation></semantics></math>) and hard (<math id="S4.I1.i2.p1.4.m4" class="ltx_Math" alttext="P=67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P=67</annotation></semantics></math>) tasks.</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p id="S4.I1.i3.p1.2" class="ltx_p"><span id="S4.I1.i3.p1.2.1" class="ltx_text ltx_font_bold">Mechanism &amp; Topology:</span> Finally, we monitor high-resolution topological metrics, including the <span id="S4.I1.i3.p1.2.2" class="ltx_text ltx_font_bold">Force Ratio</span> (<math id="S4.I1.i3.p1.1.m1" class="ltx_Math" alttext="R=C_{push}/C_{pull}" display="inline" intent=":literal"><semantics><mrow><mi>R</mi><mo>=</mo><mrow><msub><mi>C</mi><mrow><mi>p</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>s</mi><mo lspace="0em" rspace="0em">​</mo><mi>h</mi></mrow></msub><mo>/</mo><msub><mi>C</mi><mrow><mi>p</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>l</mi><mo lspace="0em" rspace="0em">​</mo><mi>l</mi></mrow></msub></mrow></mrow><annotation encoding="application/x-tex">R=C_{push}/C_{pull}</annotation></semantics></math>), the <span id="S4.I1.i3.p1.2.3" class="ltx_text ltx_font_bold">Hessian Trace</span> (via Hutchinson’s estimator), and <span id="S4.I1.i3.p1.2.4" class="ltx_text ltx_font_bold">Fourier Sparsity</span> (the <math id="S4.I1.i3.p1.2.m2" class="ltx_Math" alttext="L_{1}" display="inline" intent=":literal"><semantics><msub><mi>L</mi><mn>1</mn></msub><annotation encoding="application/x-tex">L_{1}</annotation></semantics></math> norm of the weights’ DFT). These metrics allow us to track the formation of the "Clock Circuit" structure in real-time.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p id="S4.p4.1" class="ltx_p">These experiments define the three dynamical regimes analyzed in the following section.</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Results and Analysis</h2>
+
+<section id="S5.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.1 </span>Phase Boundaries of Generalization: The Impact of Task Complexity</h3>
+
+<div id="S5.SS1.p1" class="ltx_para">
+<p id="S5.SS1.p1.2" class="ltx_p">To map the dynamical regimes of grokking, we performed a dense grid search over Task Difficulty (<math id="S5.SS1.p1.1.m1" class="ltx_Math" alttext="P\in[11,97]" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mn>11</mn><mo>,</mo><mn>97</mn><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">P\in[11,97]</annotation></semantics></math>) and Optimizer Stability (<math id="S5.SS1.p1.2.m2" class="ltx_Math" alttext="\epsilon\in[10^{-9},10^{-1}]" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\epsilon\in[10^{-9},10^{-1}]</annotation></semantics></math>). The resulting phase diagram (Figure <a href="#S5.F1" title="Figure 1 ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>) reveals that generalization speed is non-monotonic with respect to complexity. Our results reveal three distinct regimes that explain how grokking begins and ends.</p>
+</div>
+<figure id="S5.F1" class="ltx_figure"><img src="2603.15492v1/phase_boundary_heatmap.png" id="S5.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="455" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F1.14.5.1" class="ltx_text" style="font-size:90%;">Figure 1</span>: </span><span id="S5.F1.8.4" class="ltx_text ltx_font_bold" style="font-size:90%;">Stability-Complexity Phase Diagram.<span id="S5.F1.8.4.5" class="ltx_text ltx_font_medium"> We define three regimes based on the time-to-generalization: (1) </span>Capacity Collapse<span id="S5.F1.5.1.1" class="ltx_text ltx_font_medium"> (<math id="S5.F1.5.1.1.m1" class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>), where rank-deficiency prevents the representation of the solution; (2) </span>Variance-Limited Regime<span id="S5.F1.6.2.2" class="ltx_text ltx_font_medium"> (<math id="S5.F1.6.2.2.m1" class="ltx_Math" alttext="29\leq P\leq 59" display="inline" intent=":literal"><semantics><mrow><mn>29</mn><mo>≤</mo><mi>P</mi><mo>≤</mo><mn>59</mn></mrow><annotation encoding="application/x-tex">29\leq P\leq 59</annotation></semantics></math>), where generalization is delayed by spectral gating; and (3) </span>Stability Override<span id="S5.F1.8.4.4" class="ltx_text ltx_font_medium"> (<math id="S5.F1.7.3.3.m1" class="ltx_Math" alttext="P\geq 67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P\geq 67</annotation></semantics></math>), where the high dimensionality of the memorization manifold forces immediate structural learning. The white dashed line marks <math id="S5.F1.8.4.4.m2" class="ltx_Math" alttext="\epsilon=\sigma_{noise}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>=</mo><msub><mi>σ</mi><mrow><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi>o</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>s</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\epsilon=\sigma_{noise}</annotation></semantics></math>, representing the intrinsic gradient noise level.</span></span></figcaption>
+</figure>
+<section id="S5.SS1.SSS1" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.1.1 </span>Regime I: Capacity Collapse (<math id="S5.SS1.SSS1.1.m1" class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>)</h4>
+
+<div id="S5.SS1.SSS1.p1" class="ltx_para">
+<p id="S5.SS1.SSS1.p1.5" class="ltx_p">The region <math id="S5.SS1.SSS1.p1.1.m1" class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math> is characterized by convergence failure (Figure <a href="#S5.F1" title="Figure 1 ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>, Red). While often counter-intuitive that easier tasks are harder to learn, we attribute this to **Capacity Collapse** (or Rank Deficiency). As detailed in Section <a href="#S6.SS4" title="6.4 Dimensional Bottlenecks: Capacity Collapse ‣ 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.4</span></a>, the modular addition task requires the model to represent <math id="S5.SS1.SSS1.p1.2.m2" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> distinct Fourier modes <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib2" title="" class="ltx_ref">2</a>]</cite>. When the embedding dimension <math id="S5.SS1.SSS1.p1.3.m3" class="ltx_Math" alttext="d_{model}" display="inline" intent=":literal"><semantics><msub><mi>d</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>o</mi><mo lspace="0em" rspace="0em">​</mo><mi>d</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>l</mi></mrow></msub><annotation encoding="application/x-tex">d_{model}</annotation></semantics></math> is small relative to <math id="S5.SS1.SSS1.p1.4.m4" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> (or when <math id="S5.SS1.SSS1.p1.5.m5" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> is small enough that the orthogonality of high-frequency modes is compromised by initialization variance), the gradient signal becomes rank-deficient. The model enters a "tunneling" phase (Figure <a href="#S5.F2" title="Figure 2 ‣ 5.1.1 Regime I: Capacity Collapse (𝑃&lt;23) ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>) where it drifts stochastically without locking into a coherent minimum. This is a representational failure, not a thermodynamic one.</p>
+</div>
+<figure id="S5.F2" class="ltx_figure"><img src="2603.15492v1/epsilon_sweep_p_17_test_acc.png" id="S5.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="294" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F2.6.3.1" class="ltx_text" style="font-size:90%;">Figure 2</span>: </span><span id="S5.F2.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Capacity Collapse (<math id="S5.F2.3.1.m1" class="ltx_Math" alttext="P=17" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>17</mn></mrow><annotation encoding="application/x-tex">P=17</annotation></semantics></math>).<span id="S5.F2.4.2.1" class="ltx_text ltx_font_medium"> Despite aggressive stability tuning (<math id="S5.F2.4.2.1.m1" class="ltx_Math" alttext="\epsilon\to 10^{-15}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\to 10^{-15}</annotation></semantics></math>), the optimizer fails to locate the generalizing minimum. The dynamics exhibit stochastic tunneling without convergence, indicating that the embedding space lacks the geometric capacity to separate the task’s Fourier modes.</span></span></figcaption>
+</figure>
+</section>
+<section id="S5.SS1.SSS2" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.1.2 </span>Regime II: The Variance-Limited Regime (<math id="S5.SS1.SSS2.1.m1" class="ltx_Math" alttext="29\leq P\leq 59" display="inline" intent=":literal"><semantics><mrow><mn>29</mn><mo>≤</mo><mi>P</mi><mo>≤</mo><mn>59</mn></mrow><annotation encoding="application/x-tex">29\leq P\leq 59</annotation></semantics></math>)</h4>
+
+<div id="S5.SS1.SSS2.p1" class="ltx_para">
+<p id="S5.SS1.SSS2.p1.3" class="ltx_p">Intermediate tasks exhibit the canonical "Grokking Gap," peaking at <math id="S5.SS1.SSS2.p1.1.m1" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math> (Figure <a href="#S5.F3" title="Figure 3 ‣ 5.1.2 Regime II: The Variance-Limited Regime (29≤𝑃≤59) ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>, Red line). We attribute this to **Competitive Variance Accumulation**. The memorization solution acts as a "Lazy" attractor: it is geometrically broad (high entropy) and easily accessible from random initialization. However, it is not the global minimum. The optimizer rapidly converges to this basin but is eventually destabilized by the accumulation of gradient variance <math id="S5.SS1.SSS2.p1.2.m2" class="ltx_Math" alttext="\sqrt{v_{t}}" display="inline" intent=":literal"><semantics><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{v_{t}}</annotation></semantics></math>. The delay corresponds to the time required for <math id="S5.SS1.SSS2.p1.3.m3" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math> to grow sufficiently to "heat" the optimizer out of the flat memorization trap and into the sharper generalizing basin.</p>
+</div>
+<figure id="S5.F3" class="ltx_figure"><img src="2603.15492v1/hardness_abl_tes_acc_p_41_100.png" id="S5.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="294" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F3.9.4.1" class="ltx_text" style="font-size:90%;">Figure 3</span>: </span><span id="S5.F3.6.3" class="ltx_text ltx_font_bold" style="font-size:90%;">Non-Monotonic Generalization Dynamics.<span id="S5.F3.6.3.3" class="ltx_text ltx_font_medium"> Generalization time peaks at intermediate complexity (<math id="S5.F3.4.1.1.m1" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math>, Red). Hard tasks (<math id="S5.F3.5.2.2.m2" class="ltx_Math" alttext="P=97" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>97</mn></mrow><annotation encoding="application/x-tex">P=97</annotation></semantics></math>, Teal) generalize immediately (Stability Override), while easy tasks (<math id="S5.F3.6.3.3.m3" class="ltx_Math" alttext="P=23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P=23</annotation></semantics></math>, Purple) stagnate. The results reveal a "Complexity Valley" where the competition between the entropic pull of memorization and the spectral gate of generalization is maximized.</span></span></figcaption>
+</figure>
+</section>
+<section id="S5.SS1.SSS3" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.1.3 </span>Regime III: Stability Override (<math id="S5.SS1.SSS3.1.m1" class="ltx_Math" alttext="P\geq 67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P\geq 67</annotation></semantics></math>)</h4>
+
+<div id="S5.SS1.SSS3.p1" class="ltx_para">
+<p id="S5.SS1.SSS3.p1.5" class="ltx_p">For high-complexity tasks (<math id="S5.SS1.SSS3.p1.1.m1" class="ltx_Math" alttext="P\geq 67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P\geq 67</annotation></semantics></math>), the grokking delay vanishes (Figure <a href="#S5.F3" title="Figure 3 ‣ 5.1.2 Regime II: The Variance-Limited Regime (29≤𝑃≤59) ‣ 5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>, Teal line). We observe **Stability Override**. The parameter cost of a memorization look-up table scales quadratically as <math id="S5.SS1.SSS3.p1.2.m2" class="ltx_Math" alttext="\mathcal{O}(P^{2})" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><msup><mi>P</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(P^{2})</annotation></semantics></math>, whereas the generalizing circuit (a constant frequency rotation) remains <math id="S5.SS1.SSS3.p1.3.m3" class="ltx_Math" alttext="\mathcal{O}(1)" display="inline" intent=":literal"><semantics><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo lspace="0em" rspace="0em">​</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{O}(1)</annotation></semantics></math> <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib20" title="" class="ltx_ref">20</a>]</cite>. As <math id="S5.SS1.SSS3.p1.4.m4" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> increases, the volume of the parameter space occupied by valid memorization solutions shrinks exponentially relative to the structural solution. At <math id="S5.SS1.SSS3.p1.5.m5" class="ltx_Math" alttext="P=100" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">P=100</annotation></semantics></math>, the memorization basin becomes dimensionally unstable—it is simply too "small" to catch the optimizer. Consequently, AdamW bypasses the "Lazy" phase entirely, converging directly to the structural solution.</p>
+</div>
+</section>
+</section>
+<section id="S5.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.2 </span>Radial Stationarity: The Push-Pull Dynamics</h3>
+
+<div id="S5.SS2.p1" class="ltx_para">
+<p id="S5.SS2.p1.2" class="ltx_p">Post-convergence dynamics are governed by a radial equilibrium between Weight Decay (<math id="S5.SS2.p1.1.m1" class="ltx_Math" alttext="\ell_{2}" display="inline" intent=":literal"><semantics><msub><mi mathvariant="normal">ℓ</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\ell_{2}</annotation></semantics></math> regularization) and the Rectified Diffusion of the optimizer. We model the weight norm <math id="S5.SS2.p1.2.m2" class="ltx_Math" alttext="\|\theta\|^{2}" display="inline" intent=":literal"><semantics><msup><mrow><mo stretchy="false">‖</mo><mi>θ</mi><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">\|\theta\|^{2}</annotation></semantics></math> as a radial Ornstein-Uhlenbeck process.</p>
+</div>
+<figure id="S5.F4" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F4.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/equilibrium_abl_c_push.png" id="S5.F4.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F4.sf1.4.2.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F4.sf1.2.1" class="ltx_text" style="font-size:90%;">Diffusive Expansion (<math id="S5.F4.sf1.2.1.m1" class="ltx_Math" alttext="F_{push}" display="inline" intent=":literal"><semantics><msub><mi>F</mi><mrow><mi>p</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>s</mi><mo lspace="0em" rspace="0em">​</mo><mi>h</mi></mrow></msub><annotation encoding="application/x-tex">F_{push}</annotation></semantics></math>)</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F4.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/equilibrium_abl_c_pull.png" id="S5.F4.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F4.sf2.4.2.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F4.sf2.2.1" class="ltx_text" style="font-size:90%;">Restorative Drift (<math id="S5.F4.sf2.2.1.m1" class="ltx_Math" alttext="F_{pull}" display="inline" intent=":literal"><semantics><msub><mi>F</mi><mrow><mi>p</mi><mo lspace="0em" rspace="0em">​</mo><mi>u</mi><mo lspace="0em" rspace="0em">​</mo><mi>l</mi><mo lspace="0em" rspace="0em">​</mo><mi>l</mi></mrow></msub><annotation encoding="application/x-tex">F_{pull}</annotation></semantics></math>)</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F4.sf3" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/equilibrium_abl_wght_norm_sq.png" id="S5.F4.sf3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F4.sf3.4.2.1" class="ltx_text" style="font-size:90%;">(c)</span> </span><span id="S5.F4.sf3.2.1" class="ltx_text" style="font-size:90%;">Radial Orbit <math id="S5.F4.sf3.2.1.m1" class="ltx_Math" alttext="\|\theta\|^{2}" display="inline" intent=":literal"><semantics><msup><mrow><mo stretchy="false">‖</mo><mi>θ</mi><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">\|\theta\|^{2}</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F4.3.1.1" class="ltx_text" style="font-size:90%;">Figure 4</span>: </span><span id="S5.F4.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Radial Stationarity.<span id="S5.F4.4.2.1" class="ltx_text ltx_font_medium"> (a) AdamW generates a constant diffusive "push" (peach line) that counters the restorative force. (b) The restorative drift stabilizes, confirming a fixed radial orbit. (c) Stronger weight decay (peach) forces a lower-norm equilibrium, compressing the search space onto the manifold <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite>.</span></span></figcaption>
+</figure>
+<div id="S5.SS2.p2" class="ltx_para">
+<p id="S5.SS2.p2.1" class="ltx_p">Distinct stationary states emerge under analysis (Figure <a href="#S5.F4" title="Figure 4 ‣ 5.2 Radial Stationarity: The Push-Pull Dynamics ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>). High weight decay (<math id="S5.SS2.p2.1.m1" class="ltx_Math" alttext="\lambda=0.5" display="inline" intent=":literal"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\lambda=0.5</annotation></semantics></math>) forces the system into a high-energy, low-radius orbit (Figure <a href="#S5.F4" title="Figure 4 ‣ 5.2 Radial Stationarity: The Push-Pull Dynamics ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>c). This compression accelerates grokking (Figure <a href="#S5.F5" title="Figure 5 ‣ 5.2 Radial Stationarity: The Push-Pull Dynamics ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a>) by restricting the search space volume. Effectively, the constraint forces the optimizer to rectify noise into the tangent directions of the manifold, consistent with Riemannian Norm Minimization theories <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib19" title="" class="ltx_ref">19</a>]</cite>.</p>
+</div>
+<figure id="S5.F5" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F5.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/equilibrium_abl_test_acc.png" id="S5.F5.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.sf1.2.1.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F5.sf1.3.2" class="ltx_text" style="font-size:90%;">Test Accuracy vs. Steps</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F5.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/equilibrium_abl_adam_sqrt_v_t.png" id="S5.F5.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="399" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.sf2.4.2.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F5.sf2.2.1" class="ltx_text" style="font-size:90%;">Optimizer Variance <math id="S5.F5.sf2.2.1.m1" class="ltx_Math" alttext="\sqrt{\hat{v}_{t}}" display="inline" intent=":literal"><semantics><msqrt><msub><mover accent="true"><mi>v</mi><mo>^</mo></mover><mi>t</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{\hat{v}_{t}}</annotation></semantics></math></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F5.3.1.1" class="ltx_text" style="font-size:90%;">Figure 5</span>: </span><span id="S5.F5.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Acceleration via Constraint.<span id="S5.F5.4.2.1" class="ltx_text ltx_font_medium"> (a) Higher weight decay (Peach) significantly accelerates the phase transition. (b) Strong regularization suppresses the peak gradient variance, enforcing a disciplined search in the tangent space.</span></span></figcaption>
+</figure>
+</section>
+<section id="S5.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3 </span>Stability-Regulated Diffusion</h3>
+
+<div id="S5.SS3.p1" class="ltx_para">
+<p id="S5.SS3.p1.2" class="ltx_p">The stability parameter <math id="S5.SS3.p1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> acts as a spectral gatekeeper. Figure <a href="#S5.F6" title="Figure 6 ‣ 5.3 Stability-Regulated Diffusion ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6</span></a> demonstrates the sensitivity of the phase transition to <math id="S5.SS3.p1.2.m2" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.</p>
+</div>
+<figure id="S5.F6" class="ltx_figure"><img src="2603.15492v1/grok_steps_vs_epsilon_grouped.png" id="S5.F6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="479" height="383" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F6.10.3.1" class="ltx_text" style="font-size:90%;">Figure 6</span>: </span><span id="S5.F6.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">The Stability Threshold.<span id="S5.F6.4.2.3" class="ltx_text ltx_font_medium"> </span>Class C (Hard):<span id="S5.F6.3.1.1" class="ltx_text ltx_font_medium"> Performance degrades as <math id="S5.F6.3.1.1.m1" class="ltx_Math" alttext="\epsilon\to 10^{-1}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\to 10^{-1}</annotation></semantics></math>, confirming the need for anisotropic noise (Limit I). </span>Class B (Intermediate):<span id="S5.F6.4.2.2" class="ltx_text ltx_font_medium"> Exhibits a convex "optimal stability" region around <math id="S5.F6.4.2.2.m1" class="ltx_Math" alttext="\epsilon=10^{-4}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon=10^{-4}</annotation></semantics></math>. </span>Class A (Easy):<span id="S5.F6.4.2.4" class="ltx_text ltx_font_medium"> Fails regardless of stability settings.</span></span></figcaption>
+</figure>
+<div id="S5.SS3.p2" class="ltx_para">
+<p id="S5.SS3.p2.1" class="ltx_p">For solvable tasks, we identify an **Optimal Stability Interval** (<math id="S5.SS3.p2.1.m1" class="ltx_Math" alttext="\epsilon\approx 10^{-4}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo>≈</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\approx 10^{-4}</annotation></semantics></math>):</p>
+<ul id="S5.I1" class="ltx_itemize">
+<li id="S5.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I1.i1.p1" class="ltx_para">
+<p id="S5.I1.i1.p1.2" class="ltx_p"><span id="S5.I1.i1.p1.1.1" class="ltx_text ltx_font_bold">Over-Damping (<math id="S5.I1.i1.p1.1.1.m1" class="ltx_Math" alttext="\epsilon\to 10^{-1}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\to 10^{-1}</annotation></semantics></math>):</span> The effective diffusivity <math id="S5.I1.i1.p1.2.m1" class="ltx_Math" alttext="\mathcal{D}_{eff}\to 0" display="inline" intent=":literal"><semantics><mrow><msub><mi class="ltx_font_mathcaligraphic">𝒟</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub><mo stretchy="false">→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathcal{D}_{eff}\to 0</annotation></semantics></math>. The optimizer behaves like SGD, failing to explore the manifold.</p>
+</div>
+</li>
+<li id="S5.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I1.i2.p1" class="ltx_para">
+<p id="S5.I1.i2.p1.1" class="ltx_p"><span id="S5.I1.i2.p1.1.1" class="ltx_text ltx_font_bold">Under-Damping (<math id="S5.I1.i2.p1.1.1.m1" class="ltx_Math" alttext="\epsilon\to 10^{-9}" display="inline" intent=":literal"><semantics><mrow><mi>ϵ</mi><mo stretchy="false">→</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\epsilon\to 10^{-9}</annotation></semantics></math>):</span> The system suffers from radial instability. While diffusion is maximized, the lack of a stability floor prevents weight condensation onto the sparse circuit <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib21" title="" class="ltx_ref">21</a>]</cite>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="S5.SS4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.4 </span>Mechanism: Spectral Gating and Sharpness Violation</h3>
+
+<div id="S5.SS4.p1" class="ltx_para">
+<p id="S5.SS4.p1.2" class="ltx_p">We provide direct evidence that a **Spectral Stability Condition ** governs the delayed generalization. According to Edge of Stability (EoS) theory <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite>, the optimizer cannot stably enter a basin where curvature <math id="S5.SS4.p1.1.m1" class="ltx_Math" alttext="\lambda_{max}^{H}" display="inline" intent=":literal"><semantics><msubsup><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow><mi>H</mi></msubsup><annotation encoding="application/x-tex">\lambda_{max}^{H}</annotation></semantics></math> exceeds the stability threshold <math id="S5.SS4.p1.2.m2" class="ltx_Math" alttext="2/\eta_{eff}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2/\eta_{eff}</annotation></semantics></math>.</p>
+</div>
+<figure id="S5.F7" class="ltx_figure"><img src="2603.15492v1/hessian_representative_merged.png" id="S5.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="218" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F7.12.5.1" class="ltx_text" style="font-size:90%;">Figure 7</span>: </span><span id="S5.F7.8.4" class="ltx_text ltx_font_bold" style="font-size:90%;">Violation of the Initial Stability Condition.<span id="S5.F7.8.4.4" class="ltx_text ltx_font_medium"> We compare Hessian Sharpness (Blue) to the <span id="S5.F7.8.4.4.1" class="ltx_text ltx_font_italic">Initial</span> Stability Limit determined by <math id="S5.F7.5.1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> (Red Dotted Line). For the grokking task (<math id="S5.F7.6.2.2.m2" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math>, Center), the generalizing solution resides in a basin where <math id="S5.F7.7.3.3.m3" class="ltx_Math" alttext="\lambda_{max}" display="inline" intent=":literal"><semantics><msub><mi>λ</mi><mrow><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">\lambda_{max}</annotation></semantics></math> is **721x higher** than the initial stability threshold. The delayed phase (0–200k steps) corresponds to the time required for gradient variance <math id="S5.F7.8.4.4.m4" class="ltx_Math" alttext="\sqrt{v_{t}}" display="inline" intent=":literal"><semantics><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{v_{t}}</annotation></semantics></math> to grow sufficiently to lift the stability ceiling (Black Dashed Line) above the basin’s curvature.</span></span></figcaption>
+</figure>
+<div id="S5.SS4.p2" class="ltx_para">
+<p id="S5.SS4.p2.3" class="ltx_p">Figure <a href="#S5.F7" title="Figure 7 ‣ 5.4 Mechanism: Spectral Gating and Sharpness Violation ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">7</span></a> illustrates the core mechanism. For the grokking task (<math id="S5.SS4.p2.1.m1" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math>), the generalizing minimum is extremely sharp. The "Sharpness Violation Ratio" reaches **721.31x**. This creates a **Spectral Gate**: the model is initially locked out of the generalizing basin. It remains trapped in the flat memorization basin until the accumulated gradient noise variance <math id="S5.SS4.p2.2.m2" class="ltx_Math" alttext="\sqrt{v_{t}}" display="inline" intent=":literal"><semantics><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt><annotation encoding="application/x-tex">\sqrt{v_{t}}</annotation></semantics></math> increases the denominator of the effective step size. This variance accumulation raises the effective stability ceiling <math id="S5.SS4.p2.3.m3" class="ltx_Math" alttext="2/\eta_{eff}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2/\eta_{eff}</annotation></semantics></math>, eventually permitting entry into the sharp "Clock Circuit" basin.</p>
+</div>
+</section>
+<section id="S5.SS5" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5 </span>The Necessity of Anisotropy: Failure of Isotropic Diffusion</h3>
+
+<div id="S5.SS5.p1" class="ltx_para">
+<p id="S5.SS5.p1.1" class="ltx_p">To disentangle the role of "thermal energy" (variance) from "geometric rectification" (covariance), we trained with Stochastic Gradient Langevin Dynamics (SGLD). We injected isotropic Gaussian noise matched to the thermal scale of AdamW.</p>
+</div>
+<figure id="S5.F8" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F8.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/sgld_noise_ablation_test_acc.png" id="S5.F8.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F8.sf1.3.1.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F8.sf1.4.2" class="ltx_text ltx_font_typewriter" style="font-size:90%;">test/acc<span id="S5.F8.sf1.4.2.1" class="ltx_text ltx_font_serif">: Flatline at Random Chance</span></span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="S5.F8.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/sgld_noise_abl_wgt_norm_sq.png" id="S5.F8.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="314" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F8.sf2.3.1.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F8.sf2.4.2" class="ltx_text ltx_font_typewriter" style="font-size:90%;">metrics/weight_norm_sq<span id="S5.F8.sf2.4.2.1" class="ltx_text ltx_font_serif">: Scalar Equilibrium</span></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F8.7.3.1" class="ltx_text" style="font-size:90%;">Figure 8</span>: </span><span id="S5.F8.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Failure of Isotropic SGLD.<span id="S5.F8.4.2.2" class="ltx_text ltx_font_medium"> (a) Despite <math id="S5.F8.3.1.1.m1" class="ltx_Math" alttext="1\times 10^{6}" display="inline" intent=":literal"><semantics><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">1\times 10^{6}</annotation></semantics></math> steps and extensive noise tuning (<math id="S5.F8.4.2.2.m2" class="ltx_Math" alttext="\sigma\in[10^{-3},10^{-1}]" display="inline" intent=":literal"><semantics><mrow><mi>σ</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sigma\in[10^{-3},10^{-1}]</annotation></semantics></math>), SGLD fails to generalize. (b) Isotropic noise successfully maintains the weight norm, proving that radial energy alone is insufficient.</span></span></figcaption>
+</figure>
+<div id="S5.SS5.p2" class="ltx_para">
+<p id="S5.SS5.p2.1" class="ltx_p">Isotropic diffusion fails to induce grokking (Figure <a href="#S5.F8" title="Figure 8 ‣ 5.5 The Necessity of Anisotropy: Failure of Isotropic Diffusion ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8</span></a>). While the noise prevents weight collapse, the model remains in a high-entropy state (Figure <a href="#S5.F9" title="Figure 9 ‣ 5.5 The Necessity of Anisotropy: Failure of Isotropic Diffusion ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">9</span></a>). This confirms that grokking requires **Anisotropic Rectification**: the optimizer must strictly suppress noise in high-curvature directions while amplifying it in tangent directions to navigate the Minimizing Level Set <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib10" title="" class="ltx_ref">10</a>]</cite>.</p>
+</div>
+<figure id="S5.F9" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F9.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/sgld_noise_abl_sparsity_a.png" id="S5.F9.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F9.sf1.3.1.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="S5.F9.sf1.4.2" class="ltx_text ltx_font_typewriter" style="font-size:90%;">metrics/fourier_sparsity_a<span id="S5.F9.sf1.4.2.1" class="ltx_text ltx_font_serif">: High Entropy</span></span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F9.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/sgld_noise_abl_sparsity_b.png" id="S5.F9.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="310" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F9.sf2.3.1.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="S5.F9.sf2.4.2" class="ltx_text ltx_font_typewriter" style="font-size:90%;">metrics/fourier_sparsity_b<span id="S5.F9.sf2.4.2.1" class="ltx_text ltx_font_serif">: High Entropy</span></span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_3">
+<figure id="S5.F9.sf3" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/sgld_noise_abl_hessian_trace.png" id="S5.F9.sf3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="314" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F9.sf3.3.1.1" class="ltx_text" style="font-size:90%;">(c)</span> </span><span id="S5.F9.sf3.4.2" class="ltx_text ltx_font_typewriter" style="font-size:90%;">metrics/hessian_trace<span id="S5.F9.sf3.4.2.1" class="ltx_text ltx_font_serif">: No Spectral Features</span></span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S5.F9.3.1.1" class="ltx_text" style="font-size:90%;">Figure 9</span>: </span><span id="S5.F9.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Structural Stagnation in SGLD.<span id="S5.F9.4.2.1" class="ltx_text ltx_font_medium"> (a) and (b) Fourier sparsity remains high, indicating no circuit formation. (c) The Hessian trace lacks the characteristic "Ignition" spike of AdamW.</span></span></figcaption>
+</figure>
+</section>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Discussion</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p id="S6.p1.1" class="ltx_p">Grokking has historically been framed as a mystery of timescales—specifically, why generalization lags so far behind training convergence. Our findings suggest this is actually a problem of <span id="S6.p1.1.1" class="ltx_text ltx_font_bold">spectral accessibility</span>. By analyzing AdamW as a <span id="S6.p1.1.2" class="ltx_text ltx_font_bold">Variance-Gated Stochastic System</span>, we show that the delay is not merely a slow drift, but a structural requirement for stability. The optimizer must undergo specific internal state changes to access high-curvature basins. This perspective helps resolve three tensions in the current literature.</p>
+</div>
+<section id="S6.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.1 </span>The Kinetic Mechanism: Geometric Rectification</h3>
+
+<div id="S6.SS1.p1" class="ltx_para">
+<p id="S6.SS1.p1.1" class="ltx_p">Recent geometric frameworks <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib19" title="" class="ltx_ref">19</a>, <a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite> prove that grokking corresponds to Riemannian Norm Minimization on the Minimizing Level Set <math id="S6.SS1.p1.1.m1" class="ltx_Math" alttext="\mathcal{Z}" display="inline" intent=":literal"><semantics><mi class="ltx_font_mathcaligraphic">𝒵</mi><annotation encoding="application/x-tex">\mathcal{Z}</annotation></semantics></math>. However, they attribute the delay primarily to the weak magnitude of weight decay.</p>
+</div>
+<div id="S6.SS1.p2" class="ltx_para">
+<p id="S6.SS1.p2.2" class="ltx_p">Our ablation of Isotropic SGLD (Section <a href="#S5.SS5" title="5.5 The Necessity of Anisotropy: Failure of Isotropic Diffusion ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.5</span></a>) refines this view. We find that while isotropic noise can prevent weight collapse and lift test accuracy above random chance, it fails to induce perfect generalization. In simple terms, adding random noise helps the model escape shallow local minima, but it does not provide the steering necessary to find the specific generalizing circuit. Because isotropic noise vectors are statistically orthogonal to the low-dimensional solution manifold <math id="S6.SS1.p2.1.m1" class="ltx_Math" alttext="\mathcal{Z}" display="inline" intent=":literal"><semantics><mi class="ltx_font_mathcaligraphic">𝒵</mi><annotation encoding="application/x-tex">\mathcal{Z}</annotation></semantics></math>, standard diffusion results in orthogonal oscillations. AdamW resolves this via **Anisotropic Rectification**: by scaling updates by <math id="S6.SS1.p2.2.m2" class="ltx_Math" alttext="v_{t}^{-1/2}" display="inline" intent=":literal"><semantics><msubsup><mi>v</mi><mi>t</mi><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></msubsup><annotation encoding="application/x-tex">v_{t}^{-1/2}</annotation></semantics></math>, it directs noise into the tangent directions of the manifold <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib10" title="" class="ltx_ref">10</a>, <a href="#bib.bib16" title="" class="ltx_ref">16</a>]</cite>. Thus, isotropic noise helps the model move, but geometric rectification ensures it moves in the right direction.</p>
+</div>
+</section>
+<section id="S6.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.2 </span>Unifying the Stability Paradox</h3>
+
+<div id="S6.SS2.p1" class="ltx_para">
+<p id="S6.SS2.p1.1" class="ltx_p">There is a conflict in the literature regarding instability. Thilak et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib5" title="" class="ltx_ref">5</a>]</cite> argue that "Slingshots"—spikes in loss and gradient variance—drive grokking. Conversely, Prieto et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib21" title="" class="ltx_ref">21</a>]</cite> suggest that numerical instability (like Softmax Collapse) prevents learning.</p>
+</div>
+<div id="S6.SS2.p2" class="ltx_para">
+<p id="S6.SS2.p2.1" class="ltx_p">Our **Spectral Gating Theory** (Eq. 5) suggests these views are compatible. We identify the Slingshot as a necessary variance accumulation event.</p>
+<ul id="S6.I1" class="ltx_itemize">
+<li id="S6.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i1.p1" class="ltx_para">
+<p id="S6.I1.i1.p1.3" class="ltx_p"><span id="S6.I1.i1.p1.3.1" class="ltx_text ltx_font_bold">Mechanism of Entry:</span> A Slingshot causes a spike in the second moment estimator <math id="S6.I1.i1.p1.1.m1" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math>. This increase in the denominator reduces the effective step size <math id="S6.I1.i1.p1.2.m2" class="ltx_Math" alttext="\eta_{eff}\approx\eta/\sqrt{v_{t}}" display="inline" intent=":literal"><semantics><mrow><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub><mo>≈</mo><mrow><mi>η</mi><mo>/</mo><msqrt><msub><mi>v</mi><mi>t</mi></msub></msqrt></mrow></mrow><annotation encoding="application/x-tex">\eta_{eff}\approx\eta/\sqrt{v_{t}}</annotation></semantics></math>. This reduction raises the stability ceiling <math id="S6.I1.i1.p1.3.m3" class="ltx_Math" alttext="2/\eta_{eff}" display="inline" intent=":literal"><semantics><mrow><mn>2</mn><mo>/</mo><msub><mi>η</mi><mrow><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2/\eta_{eff}</annotation></semantics></math>, temporarily allowing the optimizer to survive in the sharper generalizing basin.</p>
+</div>
+</li>
+<li id="S6.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i2.p1" class="ltx_para">
+<p id="S6.I1.i2.p1.4" class="ltx_p"><span id="S6.I1.i2.p1.4.1" class="ltx_text ltx_font_bold">The Epsilon Constraint:</span> As noted by Thilak et al., increasing <math id="S6.I1.i2.p1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> halts Slingshots. We derive this analytically: if <math id="S6.I1.i2.p1.2.m2" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> is too high, the variance <math id="S6.I1.i2.p1.3.m3" class="ltx_Math" alttext="v_{t}" display="inline" intent=":literal"><semantics><msub><mi>v</mi><mi>t</mi></msub><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math> never dominates the denominator, and the stability ceiling never lifts. If <math id="S6.I1.i2.p1.4.m4" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> is too low, the instability becomes unbounded.</p>
+</div>
+</li>
+</ul>
+<p id="S6.SS2.p2.2" class="ltx_p">Grokking appears to happen near the edge of stability. The optimizer needs enough instability to generate variance for exploration, but too much instability leads to numerical divergence.</p>
+</div>
+</section>
+<section id="S6.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.3 </span>Revisiting Flatness: The Geometry of Algorithmic Precision</h3>
+
+<div id="S6.SS3.p1" class="ltx_para">
+<p id="S6.SS3.p1.1" class="ltx_p">Kumar et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib18" title="" class="ltx_ref">18</a>]</cite> describe grokking as a transition from "Lazy" to "Rich" dynamics. This creates a theoretical tension with the prevailing "Flat Minima" hypothesis <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>]</cite>, which posits that generalization correlates with broad, low-curvature basins.</p>
+</div>
+<div id="S6.SS3.p2" class="ltx_para">
+<p id="S6.SS3.p2.1" class="ltx_p">We propose a topological resolution specific to algorithmic tasks. While flat minima are robust to input noise in perceptual tasks (e.g., image classification), algorithmic solutions—such as the trigonometric "Clock Circuit" identified by Nanda et al. <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib3" title="" class="ltx_ref">3</a>]</cite>—rely on **precise interference patterns**. Constructive interference is geometrically fragile: small perturbations in the frequency or phase parameters destroy the circuit’s logic. Consequently, the generalizing solution resides in a **narrow, high-curvature manifold**.</p>
+</div>
+<div id="S6.SS3.p3" class="ltx_para">
+<p id="S6.SS3.p3.1" class="ltx_p">In contrast, the "Lazy" memorization solution relies on a look-up table structure. This basin is **entropically vast**: there are combinatorially many ways to assign weights to memorized disconnected points, creating a broad, flat attractor that is easily accessible from random initialization.</p>
+</div>
+<div id="S6.SS3.p4" class="ltx_para">
+<p id="S6.SS3.p4.1" class="ltx_p">The grokking delay is therefore the kinetic cost of this geometry. The optimizer is initially trapped in the high-entropy memorization basin. It cannot access the low-entropy, high-precision generalizing manifold until it accumulates sufficient gradient variance to lift the spectral gate (Eq. 5), satisfying the strict stability requirements of the algorithmic solution.</p>
+</div>
+</section>
+<section id="S6.SS4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.4 </span>Dimensional Bottlenecks: Capacity Collapse</h3>
+
+<div id="S6.SS4.p1" class="ltx_para">
+<p id="S6.SS4.p1.1" class="ltx_p">Finally, we address the limits of this phenomenon. Our embedding ablation (Figure <a href="#S6.F10" title="Figure 10 ‣ 6.4 Dimensional Bottlenecks: Capacity Collapse ‣ 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">10</span></a>) reveals that task difficulty is governed not just by the modulus <math id="S6.SS4.p1.1.m1" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>, but by the ratio of capacity to complexity.</p>
+</div>
+<figure id="S6.F10" class="ltx_figure"><img src="2603.15492v1/embedding_sweep_contour_refined.png" id="S6.F10.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="479" height="383" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="S6.F10.11.5.1" class="ltx_text" style="font-size:90%;">Figure 10</span>: </span><span id="S6.F10.8.4" class="ltx_text ltx_font_bold" style="font-size:90%;">Capacity Collapse.<span id="S6.F10.8.4.4" class="ltx_text ltx_font_medium"> We ablate embedding dimension <math id="S6.F10.5.1.1.m1" class="ltx_Math" alttext="V" display="inline" intent=":literal"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math> against modulus <math id="S6.F10.6.2.2.m2" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>. The color scale indicates the time required to grok (Log10 Steps). The sharp diagonal boundary reveals that grokking requires a minimum dimensional capacity proportional to task complexity (<math id="S6.F10.7.3.3.m3" class="ltx_Math" alttext="V\propto P" display="inline" intent=":literal"><semantics><mrow><mi>V</mi><mo>∝</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">V\propto P</annotation></semantics></math>). Black crosses indicate configurations that failed to generalize within <math id="S6.F10.8.4.4.m4" class="ltx_Math" alttext="10^{6}" display="inline" intent=":literal"><semantics><msup><mn>10</mn><mn>6</mn></msup><annotation encoding="application/x-tex">10^{6}</annotation></semantics></math> steps.</span></span></figcaption>
+</figure>
+<div id="S6.SS4.p2" class="ltx_para">
+<p id="S6.SS4.p2.2" class="ltx_p">As shown in Figure <a href="#S6.F10" title="Figure 10 ‣ 6.4 Dimensional Bottlenecks: Capacity Collapse ‣ 6 Discussion ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">10</span></a>, a sharp phase boundary emerges. Failure occurs when the embedding dimension is insufficient relative to the modulus (<math id="S6.SS4.p2.1.m1" class="ltx_Math" alttext="V\lesssim P" display="inline" intent=":literal"><semantics><mrow><mi>V</mi><mo>≲</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">V\lesssim P</annotation></semantics></math>). We term this **Capacity Collapse**. When the embedding space lacks the geometric bandwidth to represent the <math id="S6.SS4.p2.2.m2" class="ltx_Math" alttext="P" display="inline" intent=":literal"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> discrete Fourier modes required for the solution <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib2" title="" class="ltx_ref">2</a>]</cite>, the gradient signal becomes **rank-deficient**. This prevents the optimizer from constructing the generalizing circuit regardless of the variance supplied. This finding confirms that spectral gating is a secondary mechanism that can only operate when the model capacity is geometrically sufficient to support the solution.</p>
+</div>
+</section>
+</section>
+<section id="S7" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">7 </span>Conclusion</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p id="S7.p1.1" class="ltx_p">We have characterized grokking as a conditional phase transition governed by the interplay between landscape geometry and optimizer stability. We establish three governing principles:</p>
+</div>
+<div id="S7.p2" class="ltx_para">
+<ol id="S7.I1" class="ltx_enumerate">
+<li id="S7.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S7.I1.i1.p1" class="ltx_para">
+<p id="S7.I1.i1.p1.2" class="ltx_p"><span id="S7.I1.i1.p1.2.1" class="ltx_text ltx_font_bold">The Complexity Threshold:</span> Generalization is not monotonic. We identify a "Signal Starvation" regime where the landscape is structurally barren (<math id="S7.I1.i1.p1.1.m1" class="ltx_Math" alttext="V&lt;P" display="inline" intent=":literal"><semantics><mrow><mi>V</mi><mo>&lt;</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">V&lt;P</annotation></semantics></math>), and a "Complexity Override" regime (<math id="S7.I1.i1.p1.2.m2" class="ltx_Math" alttext="P&gt;67" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&gt;</mo><mn>67</mn></mrow><annotation encoding="application/x-tex">P&gt;67</annotation></semantics></math>) where memorization becomes dimensionally unstable, forcing early generalization.</p>
+</div>
+</li>
+<li id="S7.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S7.I1.i2.p1" class="ltx_para">
+<p id="S7.I1.i2.p1.1" class="ltx_p"><span id="S7.I1.i2.p1.1.1" class="ltx_text ltx_font_bold">Spectral Gating:</span> We demonstrate that the delayed phase is a stable equilibrium where the model is spectrally barred from the generalizing basin. The delay represents the time required for gradient variance to accumulate and lift the stability ceiling defined by <math id="S7.I1.i2.p1.1.m1" class="ltx_Math" alttext="\epsilon" display="inline" intent=":literal"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.</p>
+</div>
+</li>
+<li id="S7.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S7.I1.i3.p1" class="ltx_para">
+<p id="S7.I1.i3.p1.1" class="ltx_p"><span id="S7.I1.i3.p1.1.1" class="ltx_text ltx_font_bold">Anisotropic Rectification:</span> We show that thermal energy alone is insufficient. Generalization requires the directed channeling of variance unique to adaptive optimizers, which rectify noise into the tangent space of the solution manifold.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S7.p3" class="ltx_para">
+<p id="S7.p3.1" class="ltx_p">In short, generalization depends on how the optimizer balances noise and stability. Future work could investigate whether similar spectral gating mechanisms govern the emergence of reasoning capabilities in larger language models, or if this behavior is specific to highly structured algorithmic tasks.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+<li id="bib.bib1" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[1]</span>
+<span class="ltx_bibblock">
+Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra.
+
+</span>
+<span class="ltx_bibblock">Grokking: Generalization beyond overfitting on small algorithmic datasets.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib1.1.1" class="ltx_text ltx_font_italic">arXiv preprint arXiv:2201.02177</span>, 2022.
+
+</span>
+</li>
+<li id="bib.bib2" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[2]</span>
+<span class="ltx_bibblock">
+Ziming Liu, Eric J. Michaud, and Max Tegmark.
+
+</span>
+<span class="ltx_bibblock">Omnigrok: Grokking beyond algorithmic data.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib2.1.1" class="ltx_text ltx_font_italic">ICLR</span>, 2023.
+
+</span>
+</li>
+<li id="bib.bib3" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[3]</span>
+<span class="ltx_bibblock">
+Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt.
+
+</span>
+<span class="ltx_bibblock">Progress measures for grokking via mechanistic interpretability.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib3.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations (ICLR)</span>, 2023.
+
+</span>
+</li>
+<li id="bib.bib4" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[4]</span>
+<span class="ltx_bibblock">
+Ilya Loshchilov and Frank Hutter.
+
+</span>
+<span class="ltx_bibblock">Decoupled weight decay regularization.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib4.1.1" class="ltx_text ltx_font_italic">ICLR</span>, 2019.
+
+</span>
+</li>
+<li id="bib.bib5" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[5]</span>
+<span class="ltx_bibblock">
+Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind.
+
+</span>
+<span class="ltx_bibblock">The slingshot mechanism: An empirical study of adaptive optimizers and the grokking phenomenon.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib5.1.1" class="ltx_text ltx_font_italic">arXiv preprint arXiv:2206.04817</span>, 2022.
+
+</span>
+</li>
+<li id="bib.bib6" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[6]</span>
+<span class="ltx_bibblock">
+Jeremy Cohen, Simran Kaur, Yuanzhi Li, J. Zico Kolter, and Ameet Talwalkar.
+
+</span>
+<span class="ltx_bibblock">Gradient descent on neural networks typically occurs at the edge of stability.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib6.1.1" class="ltx_text ltx_font_italic">ICLR</span>, 2021.
+
+</span>
+</li>
+<li id="bib.bib7" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[7]</span>
+<span class="ltx_bibblock">
+Tiberiu Musat.
+
+</span>
+<span class="ltx_bibblock">The Geometry of Grokking: Norm Minimization on the Zero-Loss Manifold.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib7.1.1" class="ltx_text ltx_font_italic">arXiv preprint arXiv:2511.01938</span>, 2025.
+
+</span>
+</li>
+<li id="bib.bib8" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[8]</span>
+<span class="ltx_bibblock">
+Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar, and Nathan Srebro.
+
+</span>
+<span class="ltx_bibblock">The implicit bias of gradient descent on separable data.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib8.1.1" class="ltx_text ltx_font_italic">The Journal of Machine Learning Research</span>, 19(1):2822–2878, 2018.
+
+</span>
+</li>
+<li id="bib.bib9" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[9]</span>
+<span class="ltx_bibblock">
+Sepp Hochreiter, Jurgen Schmidhuber
+
+</span>
+<span class="ltx_bibblock">Flat Minima
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib9.1.1" class="ltx_text ltx_font_italic">Neural Computation</span>, 1997
+
+</span>
+</li>
+<li id="bib.bib10" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[10]</span>
+<span class="ltx_bibblock">
+Lukas Balles and Philipp Hennig.
+
+</span>
+<span class="ltx_bibblock">Dissecting Adam: The sign, magnitude and variance of stochastic gradients.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib10.1.1" class="ltx_text ltx_font_italic">Proceedings of the 35th International Conference on Machine Learning (ICML)</span>, 2018.
+
+</span>
+</li>
+<li id="bib.bib11" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[11]</span>
+<span class="ltx_bibblock">
+Frederik Kunstner, Philipp Hennig, and Lukas Balles.
+
+</span>
+<span class="ltx_bibblock">Limitations of the empirical fisher approximation for natural gradient descent.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib11.1.1" class="ltx_text ltx_font_italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 32, 2019.
+
+</span>
+</li>
+<li id="bib.bib12" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[12]</span>
+<span class="ltx_bibblock">
+Samy Jelassi and Yuanzhi Li.
+
+</span>
+<span class="ltx_bibblock">Towards understanding how momentum improves generalization in deep learning.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib12.1.1" class="ltx_text ltx_font_italic">Proceedings of the 39th International Conference on Machine Learning (ICML)</span>, 2022.
+
+</span>
+</li>
+<li id="bib.bib13" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[13]</span>
+<span class="ltx_bibblock">
+Sanjeev Arora, Zhiyuan Li, and Abhishek Panigrahi.
+
+</span>
+<span class="ltx_bibblock">The scale of initialization determines the edge of stability.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib13.1.1" class="ltx_text ltx_font_italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 35, 2022.
+
+</span>
+</li>
+<li id="bib.bib14" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[14]</span>
+<span class="ltx_bibblock">
+Alex Damian, Eshaan Nichani, and Jason D. Lee.
+
+</span>
+<span class="ltx_bibblock">Self-stabilization: The implicit bias of gradient descent at the edge of stability.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib14.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations (ICLR)</span>, 2023.
+
+</span>
+</li>
+<li id="bib.bib15" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[15]</span>
+<span class="ltx_bibblock">
+Umut Simsekli, Levent Sagun, and Mert Gurbuzbalaban.
+
+</span>
+<span class="ltx_bibblock">A tail-index analysis of stochastic gradient noise in deep neural networks.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib15.1.1" class="ltx_text ltx_font_italic">Proceedings of the 36th International Conference on Machine Learning (ICML)</span>, 2019.
+
+</span>
+</li>
+<li id="bib.bib16" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[16]</span>
+<span class="ltx_bibblock">
+Zeke Xie, Issei Sato, and Masashi Sugiyama.
+
+</span>
+<span class="ltx_bibblock">A diffusion theory for deep learning dynamics: Stochastic gradient descent exponentially favors flat minima.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib16.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations (ICLR)</span>, 2021.
+
+</span>
+</li>
+<li id="bib.bib17" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[17]</span>
+<span class="ltx_bibblock">
+William Merrill, Nikolaos Tsilivis, and Aman Shukla.
+
+</span>
+<span class="ltx_bibblock">A tale of two circuits: Grokking as competition of sparse and dense subnetworks.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib17.1.1" class="ltx_text ltx_font_italic">arXiv preprint arXiv:2303.11873</span>, 2023.
+
+</span>
+</li>
+<li id="bib.bib18" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[18]</span>
+<span class="ltx_bibblock">
+Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan.
+
+</span>
+<span class="ltx_bibblock">Grokking as the transition from lazy to rich training dynamics.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib18.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations (ICLR)</span>, 2024.
+
+</span>
+</li>
+<li id="bib.bib19" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[19]</span>
+<span class="ltx_bibblock">
+Scott Pesme, Etienne Boursier, and Radu-Alexandru Dragomir.
+
+</span>
+<span class="ltx_bibblock">A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib19.1.1" class="ltx_text ltx_font_italic">Advances in Neural Information Processing Systems (NeurIPS)</span>, 2025.
+
+</span>
+</li>
+<li id="bib.bib20" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[20]</span>
+<span class="ltx_bibblock">
+Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar.
+
+</span>
+<span class="ltx_bibblock">Explaining grokking through circuit efficiency.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib20.1.1" class="ltx_text ltx_font_italic">arXiv preprint arXiv:2309.02390</span>, 2023.
+
+</span>
+</li>
+<li id="bib.bib21" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[21]</span>
+<span class="ltx_bibblock">
+Lucas Prieto, Melih Barsbey, Pedro A.M. Mediano, and Tolga Birdal.
+
+</span>
+<span class="ltx_bibblock">Grokking at the Edge of Numerical Stability.
+
+</span>
+<span class="ltx_bibblock"><span id="bib.bib21.1.1" class="ltx_text ltx_font_italic">International Conference on Learning Representations (ICLR)</span>, 2025.
+
+</span>
+</li>
+</ul>
+</section>
+<section id="A1" class="ltx_appendix">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Appendix</h2>
+
+<div id="A1.p1" class="ltx_para">
+<p id="A1.p1.1" class="ltx_p">This supplementary material provides detailed geometric and spectral evidence supporting the **Spectral Gating** framework presented in the main text. We provide topological visualizations of the embedding space (Section <a href="#A1.SS1" title="A.1 Topological Analysis: The Clock Face ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A.1</span></a>), quantify the anisotropic covariance structure of AdamW updates (Section <a href="#A1.SS2" title="A.2 Evidence of Anisotropy ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A.2</span></a>), and examine the spectral limits of thermal noise injection across the full range of task complexities (Section <a href="#A1.SS4" title="A.4 Limits of Isotropic Noise ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A.4</span></a>).</p>
+</div>
+<section id="A1.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.1 </span>Topological Analysis: The Clock Face</h3>
+
+<div id="A1.SS1.p1" class="ltx_para">
+<p id="A1.SS1.p1.2" class="ltx_p">Section <a href="#S5.SS1" title="5.1 Phase Boundaries of Generalization: The Impact of Task Complexity ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.1</span></a> hypothesized that the "Signal Starvation" regime (<math id="A1.SS1.p1.1.m1" class="ltx_Math" alttext="P&lt;23" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>&lt;</mo><mn>23</mn></mrow><annotation encoding="application/x-tex">P&lt;23</annotation></semantics></math>) stems from a failure to form the requisite task geometry. Figure <a href="#A1.F11" title="Figure 11 ‣ A.1 Topological Analysis: The Clock Face ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">11</span></a> visualizes the embedding weights <math id="A1.SS1.p1.2.m2" class="ltx_Math" alttext="W_{E}" display="inline" intent=":literal"><semantics><msub><mi>W</mi><mi>E</mi></msub><annotation encoding="application/x-tex">W_{E}</annotation></semantics></math> via Principal Component Analysis (PCA).</p>
+</div>
+<figure id="A1.F11" class="ltx_figure"><img src="2603.15492v1/clock_face_comparison_3.png" id="A1.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="171" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F11.9.4.1" class="ltx_text" style="font-size:90%;">Figure 11</span>: </span><span id="A1.F11.6.3" class="ltx_text ltx_font_bold" style="font-size:90%;">Embedding Geometry across Complexity Regimes.<span id="A1.F11.6.3.1" class="ltx_text ltx_font_medium"> Learned embeddings projected onto their first two principal components.
+</span>Left (<math id="A1.F11.4.1.m1" class="ltx_Math" alttext="P=17" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>17</mn></mrow><annotation encoding="application/x-tex">P=17</annotation></semantics></math>):<span id="A1.F11.6.3.2" class="ltx_text ltx_font_medium"> The Signal Starvation regime exhibits a lack of structural organization; embeddings are scattered, indicating failure to discover the modular circle.
+</span>Center (<math id="A1.F11.5.2.m2" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math>):<span id="A1.F11.6.3.3" class="ltx_text ltx_font_medium"> The Grokking regime reveals a recognizable but noisy circular geometry, consistent with a variance-limited equilibrium where the optimizer maintains high entropy to navigate the basin.
+</span>Right (<math id="A1.F11.6.3.m3" class="ltx_Math" alttext="P=97" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>97</mn></mrow><annotation encoding="application/x-tex">P=97</annotation></semantics></math>):<span id="A1.F11.6.3.4" class="ltx_text ltx_font_medium"> The Stability Override regime forms a clear circular structure immediately, indicating that high-complexity tasks force rapid geometric condensation.</span></span></figcaption>
+</figure>
+</section>
+<section id="A1.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2 </span>Evidence of Anisotropy</h3>
+
+<div id="A1.SS2.p1" class="ltx_para">
+<p id="A1.SS2.p1.1" class="ltx_p">Section <a href="#S5.SS5" title="5.5 The Necessity of Anisotropy: Failure of Isotropic Diffusion ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.5</span></a> argued that grokking relies on **Anisotropic Rectification**—the selective amplification of noise in tangent directions. Figure <a href="#A1.F12" title="Figure 12 ‣ A.2 Evidence of Anisotropy ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">12</span></a> characterizes this by plotting the distribution of the inverse preconditioner scale factors <math id="A1.SS2.p1.1.m1" class="ltx_Math" alttext="\alpha_{i}=1/(\sqrt{v_{t,i}}+\epsilon)" display="inline" intent=":literal"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><msub><mi>v</mi><mrow><mi>t</mi><mo>,</mo><mi>i</mi></mrow></msub></msqrt><mo>+</mo><mi>ϵ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\alpha_{i}=1/(\sqrt{v_{t,i}}+\epsilon)</annotation></semantics></math> at the moment of generalization.</p>
+</div>
+<figure id="A1.F12" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="A1.F12.sf1" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/anisotropy_histogram_P41.png" id="A1.F12.sf1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="359" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F12.sf1.4.2.1" class="ltx_text" style="font-size:90%;">(a)</span> </span><span id="A1.F12.sf1.2.1" class="ltx_text" style="font-size:90%;">Grokking Regime (<math id="A1.F12.sf1.2.1.m1" class="ltx_Math" alttext="P=41" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>41</mn></mrow><annotation encoding="application/x-tex">P=41</annotation></semantics></math>)</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure id="A1.F12.sf2" class="ltx_figure ltx_figure_panel ltx_align_center"><img src="2603.15492v1/anisotropy_histogram_P97.png" id="A1.F12.sf2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="359" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F12.sf2.4.2.1" class="ltx_text" style="font-size:90%;">(b)</span> </span><span id="A1.F12.sf2.2.1" class="ltx_text" style="font-size:90%;">Override Regime (<math id="A1.F12.sf2.2.1.m1" class="ltx_Math" alttext="P=97" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>=</mo><mn>97</mn></mrow><annotation encoding="application/x-tex">P=97</annotation></semantics></math>)</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F12.3.1.1" class="ltx_text" style="font-size:90%;">Figure 12</span>: </span><span id="A1.F12.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Distribution of Update Scalings.<span id="A1.F12.4.2.1" class="ltx_text ltx_font_medium"> Histograms display the effective learning rates applied by AdamW per parameter. Unlike Isotropic SGLD (which implies a Dirac distribution), AdamW generates a **heavy-tailed distribution** spanning multiple orders of magnitude. This indicates that the optimizer actively shapes the noise geometry, suppressing variance in high-curvature directions (left tail) while amplifying it in flat directions (right tail).</span></span></figcaption>
+</figure>
+</section>
+<section id="A1.SS3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.3 </span>Spectral Dynamics across Complexity</h3>
+
+<div id="A1.SS3.p1" class="ltx_para">
+<p id="A1.SS3.p1.1" class="ltx_p">To ensure the mechanisms identified in Section <a href="#S5.SS4" title="5.4 Mechanism: Spectral Gating and Sharpness Violation ‣ 5 Results and Analysis ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4</span></a> apply beyond specific cases, Figure <a href="#A1.F13" title="Figure 13 ‣ A.3 Spectral Dynamics across Complexity ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">13</span></a> presents the spectral dynamics across the full range of moduli.</p>
+</div>
+<figure id="A1.F13" class="ltx_figure"><img src="2603.15492v1/hessian_grid_analysis.png" id="A1.F13.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="164" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F13.5.2.1" class="ltx_text" style="font-size:90%;">Figure 13</span>: </span><span id="A1.F13.2.1" class="ltx_text ltx_font_bold" style="font-size:90%;">Spectral Dynamics for Varying Moduli.<span id="A1.F13.2.1.1" class="ltx_text ltx_font_medium"> Green lines denote Test Accuracy; Blue lines denote Hessian Sharpness. For successful generalization cases (<math id="A1.F13.2.1.1.m1" class="ltx_Math" alttext="P\geq 29" display="inline" intent=":literal"><semantics><mrow><mi>P</mi><mo>≥</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">P\geq 29</annotation></semantics></math>), we observe the characteristic "Ignition" event where the variance-driven stability ceiling (Black Dashed) rises to meet the local curvature.</span></span></figcaption>
+</figure>
+</section>
+<section id="A1.SS4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.4 </span>Limits of Isotropic Noise</h3>
+
+<div id="A1.SS4.p1" class="ltx_para">
+<p id="A1.SS4.p1.1" class="ltx_p">Figure <a href="#A1.F14" title="Figure 14 ‣ A.4 Limits of Isotropic Noise ‣ Appendix A Appendix ‣ Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold" class="ltx_ref"><span class="ltx_text ltx_ref_tag">14</span></a> provides a granular view of the interaction between isotropic noise and the "Signal Starvation" regime.</p>
+</div>
+<figure id="A1.F14" class="ltx_figure"><img src="2603.15492v1/adamw_grad_noise_abl_test_acc.png" id="A1.F14.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="568" height="294" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span id="A1.F14.7.3.1" class="ltx_text" style="font-size:90%;">Figure 14</span>: </span><span id="A1.F14.4.2" class="ltx_text ltx_font_bold" style="font-size:90%;">Isotropic Noise Injection.<span id="A1.F14.4.2.2" class="ltx_text ltx_font_medium"> Injecting isotropic noise (<math id="A1.F14.3.1.1.m1" class="ltx_Math" alttext="\sigma=0.01" display="inline" intent=":literal"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\sigma=0.01</annotation></semantics></math>, cyan lines) allows the model to escape the lazy basin and reach <math id="A1.F14.4.2.2.m2" class="ltx_Math" alttext="\approx 60-80\%" display="inline" intent=":literal"><semantics><mrow><mi></mi><mo>≈</mo><mrow><mn>60</mn><mo>−</mo><mrow><mn>80</mn><mo>%</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\approx 60-80\%</annotation></semantics></math> accuracy, outperforming the noiseless baseline. However, it fails to induce the perfect generalization seen in grokking. Thus, isotropic noise aids optimization but does not replace the geometric steering required for structural convergence.</span></span></figcaption>
+</figure>
+</section>
+</section>
+</article>
+</div>
+</div>
+<footer class="arxiv-html-footer">
+  <div class="ltx_page_logo">
+    Experimental support, please
+    <a href="./2603.15492v1/__stdout.txt" class="ltx_ref"
+    target="_blank" rel="nofollow">view the build logs</a>
+    for errors. Generated by
+    <a href="https://math.nist.gov/~BMiller/LaTeXML/" target="_blank" class="ltx_ref ltx_LaTeXML_logo">
+      <span style="letter-spacing: -0.2em; margin-right: 0.1em;">
+        L
+        <span style="font-size: 70%; position: relative; bottom: 2.2pt;">A</span>
+        T
+        <span style="position: relative; bottom: -0.4ex;">E</span>
+      </span>
+      <span class="ltx_font_smallcaps">xml</span>
+      <img alt="[LOGO]"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==">
+    </a>.
+  </div>
+  <div class="keyboard-glossary">
+    <h2>Instructions for reporting errors</h2>
+    <p>We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below:</p>
+    <ul>
+      <li>Click the "Report Issue" <span class="mobile-only">(<svg role="presentation"
+            style="display: inline-block; vertical-align: middle; fill: var(--text-color);" aria-hidden="true"
+            height="1em" viewBox="0 0 640 640">
+            <path
+              d="M224 160C224 107 267 64 320 64C373 64 416 107 416 160L416 163.6C416 179.3 403.3 192 387.6 192L252.5 192C236.8 192 224.1 179.3 224.1 163.6L224.1 160zM569.6 172.8C580.2 186.9 577.3 207 563.2 217.6L465.4 290.9C470.7 299.8 474.7 309.6 477.2 320L576 320C593.7 320 608 334.3 608 352C608 369.7 593.7 384 576 384L480 384L480 416C480 418.6 479.9 421.3 479.8 423.9L563.2 486.4C577.3 497 580.2 517.1 569.6 531.2C559 545.3 538.9 548.2 524.8 537.6L461.7 490.3C438.5 534.5 395.2 566.5 344 574.2L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 574.2C244.8 566.5 201.5 534.5 178.3 490.3L115.2 537.6C101.1 548.2 81 545.3 70.4 531.2C59.8 517.1 62.7 497 76.8 486.4L160.2 423.9C160.1 421.3 160 418.7 160 416L160 384L64 384C46.3 384 32 369.7 32 352C32 334.3 46.3 320 64 320L162.8 320C165.3 309.6 169.3 299.8 174.6 290.9L76.8 217.6C62.7 207 59.8 186.9 70.4 172.8C81 158.7 101.1 155.8 115.2 166.4L224 248C236.3 242.9 249.8 240 264 240L376 240C390.2 240 403.7 242.8 416 248L524.8 166.4C538.9 155.8 559 158.7 569.6 172.8z" />
+          </svg>)</span> button, located in the page header.</li>
+    </ul>
+    <p><strong>Tip:</strong> You can select the relevant text first, to include it in your report.</p>
+    <p>Our team has already identified <a class="ltx_ref" href="https://github.com/arXiv/html_feedback/issues"
+        target="_blank">the following issues</a>. We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all.</p>
+    <p>Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a <a
+        class="ltx_ref" href="https://github.com/brucemiller/LaTeXML/wiki/Porting-LaTeX-packages-for-LaTeXML"
+        target="_blank">list of packages that need conversion</a>, and welcome <a class="ltx_ref"
+        href="https://github.com/brucemiller/LaTeXML/issues" target="_blank">developer contributions</a>.</p>
+  </div>
+</footer><footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from
+        our <strong>major funders</strong>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe">Subscribe</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a>
+        <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+
+    <div class="ds-site-footer-funders" aria-label="Major funders">
+      <div class="ds-site-footer-funders-label">Major funding support from</div>
+      <div class="ds-site-footer-funders-logos">
+        <a class="ds-funder-link" href="https://www.simonsfoundation.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation.png" alt="Simons Foundation">
+        </a>
+        <a class="ds-funder-link" href="https://www.sfi.org.bm/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/simons-foundation-international.png" alt="Simons Foundation International">
+        </a>
+        <a class="ds-funder-link" href="https://www.schmidtsciences.org/" target="_blank" rel="noopener noreferrer">
+          <img class="ds-funder-logo" src="/static/base/1.0.1/images/funders/schmidt-sciences.png" alt="Schmidt Sciences">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer><div id="fixed-buttons-container">
+  <a id="disable-reading-mode-btn" class="header-button" href="javascript:toggleReadingMode();"
+    title="Disable reading mode, show header and footer">
+    <svg role="presentation" height="1.25rem"
+      viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+      <path
+        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+    </svg>
+  </a>
+</div></body>
+</html>

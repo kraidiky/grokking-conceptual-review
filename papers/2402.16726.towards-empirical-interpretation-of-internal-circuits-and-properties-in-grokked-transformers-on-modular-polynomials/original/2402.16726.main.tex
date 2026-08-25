@@ -1,0 +1,667 @@
+
+\documentclass[10pt]{article} % For LaTeX2e
+% \usepackage{tmlr}
+% If accepted, instead use the following line for the camera-ready submission:
+\usepackage[accepted]{tmlr}
+% To de-anonymize and remove mentions to TMLR (for example for posting to preprint servers), instead use the following:
+%\usepackage[preprint]{tmlr}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+% \usepackage{hyperref}
+\usepackage{url}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+
+% optional customized packages
+\usepackage[font=small]{caption}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\usepackage{bbding}
+\usepackage{wrapfig}
+
+% For theorems and such
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+\usepackage{bbm}
+\setlength{\abovedisplayskip}{2pt}
+
+\usepackage{lscape}
+\usepackage{listings}
+
+
+% colors for color-blindness
+\definecolor{cb_orange}{RGB}{213,94,0}
+% \definecolor{cb_green}{RGB}{0,158,115}
+\definecolor{cb_green}{RGB}{34,136,51}
+\definecolor{cbgreen}{RGB}{34,136,51}
+\definecolor{sky_blue}{RGB}{204, 238, 255}
+\definecolor{cb_purple}{RGB}{170, 51, 119}
+\definecolor{cb_red}{RGB}{204, 51, 17}
+\definecolor{cb_blue}{RGB}{0, 119, 187}
+\definecolor{cbblue}{RGB}{0, 119, 187}
+\definecolor{mydarkblue}{rgb}{0,0.08,0.45}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+
+
+% if you use cleveref..
+\usepackage[colorlinks=true,citecolor=cbgreen,linkcolor=cbblue,urlcolor=cbblue]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+
+\newcommand{\yes}{\textcolor{cb_green}{\tiny \CheckmarkBold}}
+\newcommand{\no}{\textcolor{cb_red}{\tiny \XSolidBrush}}
+\newcommand{\lyes}{\textcolor{cb_green}{\small \CheckmarkBold}}
+\newcommand{\lno}{\textcolor{cb_red}{\small \XSolidBrush}}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    % basicstyle=\ttfamily\footnotesize,
+    basicstyle=\ttfamily\tiny,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% \newcommand{\update}[1]{{\color{cb_purple}{#1}}}
+\newcommand{\update}[1]{{\color{black}{#1}}}
+
+
+
+%\title{Interpreting Grokked Transformers in Complex Modular Arithmetic}
+% \title{Empirical Interpretation of Grokked Transformers in Complex Modular Arithmetic}
+\title{Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modular Polynomials}
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the tmlr package is used without the [accepted] or [preprint] options.
+% Non-anonymous submissions will be rejected without review.
+
+%\author{\name Hiroki Furuta \email furuta@weblab.t.u-tokyo.ac.jp \\
+%      \addr The University of Tokyo
+%      \AND
+%      \name Gouki Minegishi \email minegishi@weblab.t.u-tokyo.ac.jp \\
+%      \addr The University of Tokyo
+%      \AND
+%      \name Yusuke Iwasawa \email iwasawa@weblab.t.u-tokyo.ac.jp \\
+%      \addr The University of Tokyo
+%      \AND
+%      \name Yutaka Matsuo \email matsuo@weblab.t.u-tokyo.ac.jp \\
+%      \addr The University of Tokyo
+%}
+\author{\name Hiroki Furuta \quad Gouki Minegishi \quad Yusuke Iwasawa \quad Yutaka Matsuo \\
+    \email \{furuta,minegishi,iwasawa,matsuo\}@weblab.t.u-tokyo.ac.jp \\
+    \addr The University of Tokyo
+}
+% The \author macro works with any number of authors. Use \AND 
+% to separate the names and addresses of multiple authors.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\def\month{11}  % Insert correct month for camera-ready version
+\def\year{2024} % Insert correct year for camera-ready version
+\def\openreview{\url{https://openreview.net/forum?id=MzSf70uXJO}} % Insert correct link to OpenReview for camera-ready version
+
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+Grokking has been actively explored to reveal the mystery of delayed generalization and identifying interpretable representations and algorithms inside the grokked models is a suggestive hint to understanding its mechanism.
+Grokking on modular addition has been known to implement Fourier representation and its calculation circuits with trigonometric identities in Transformers.
+Considering the periodicity in modular arithmetic, the natural question is to what extent these explanations and interpretations hold for the grokking on \update{other modular operations beyond addition}.
+For a closer look, we first hypothesize that (1) any modular operations can be characterized with distinctive Fourier representation or internal circuits, (2) grokked models obtain common features transferable among similar operations, and (3) mixing datasets with similar operations promotes grokking. \update{Then, we extensively examine them by learning Transformers on complex modular arithmetic tasks, including polynomials.}
+Our Fourier analysis and novel progress measure for modular arithmetic, \textit{Fourier Frequency \update{Density}} and \textit{Fourier Coefficient Ratio}, characterize distinctive internal representations of grokked models per modular operation; for instance, polynomials often result in the superposition of the \update{Fourier components seen in} elementary arithmetic, but clear patterns do not emerge in challenging \update{non-factorizable polynomials}.
+In contrast, \update{our ablation study on the pre-grokked models reveals that} the transferability \update{among the models grokked with each operation} can be only limited to specific combinations, such as from elementary arithmetic to linear expressions. Moreover, some multi-task mixtures may lead to co-grokking \update{-- where grokking simultaneously happens for all the tasks --} and accelerate generalization, while others may not find optimal solutions.
+We empirically provide significant steps towards the interpretability of internal circuits learned through modular \update{operations}, where analytical solutions are not attainable.
+%Grokking has been actively explored to reveal the mystery of delayed generalization. Identifying interpretable algorithms inside the grokked models is a suggestive hint to understanding its mechanism.
+%In this work, beyond the simplest and well-studied modular addition, we observe the internal circuits learned through grokking in complex modular arithmetic via interpretable reverse engineering, which highlights the significant difference in their dynamics: subtraction poses a strong asymmetry on Transformer; multiplication requires cosine-biased components at all the frequencies in a Fourier domain; polynomials often result in the superposition of the patterns from elementary arithmetic, but clear patterns do not emerge in challenging cases; grokking can easily occur even in higher-degree formulas with basic symmetric and alternating expressions.
+%We also introduce the novel progress measure for modular arithmetic; \textit{Fourier Frequency Density} and \textit{Fourier Coefficient Ratio}, which not only indicate the late generalization but also characterize distinctive internal representations of grokked models per modular operation.
+%Our empirical analysis emphasizes the importance of holistic evaluation among various combinations.
+% Grokking has been actively explored to reveal the mystery of delayed generalization and recently implied the relation to the capability and interpretability of large language models (LLMs).
+% Identifying interpretable representations and algorithms inside the grokked models is a suggestive hint to understanding its mechanism.
+% In this work, we verify these hypotheses through extensive experiments by learning Transformers on complex modular arithmetic and also investigate whether grokked models may exhibit a desirable nature as in LLMs, such as transferability or scaling to the number of tasks.
+% First, our analysis reveals that modular operations that cause grokking have unique Fourier representations.
+% In particular, modular polynomials have a superposition of representations in modular elementary arithmetic, while the operations that do not grok do not have explicit patterns.
+% We also introduce the novel progress measure for modular arithmetic; \textit{Fourier Frequency Density} and \textit{Fourier Coefficient Ratio}, which not only indicate the late generalization but also characterize distinctive internal representations of grokked models per modular operation.
+\end{abstract}
+
+\section{Introduction}
+Grokking is a late generalization phenomenon when training Transformer~\citep{vaswani2023attention} and other architectures with algorithmic data~\citep{power2022grokking} where training accuracy soon reaches 100\% with low test accuracy (often 0\%), and after several iterations, test accuracy gradually reaches 100\%.
+Grokking has been actively explored to reveal the mystery of delayed generalization, and identifying interpretable circuits inside the grokked models should be a suggestive hint to understanding the grokking mechanism and dynamics.
+The interpretability analysis has mainly shed light on modular addition, where grokking obtains the calculation with Fourier basis and trigonometric identities~\citep{nanda2023progress,zhong2023the,gromov2023grokking,rubin2023droplets}.
+Considering the periodicity in modular arithmetic, the natural question is to what extent these explanations and interpretations hold for the grokking on \update{other modular operations beyond addition}.
+
+For a closer look at the connections among the grokking phenomena in \update{other modular operations}, we first hypothesize that (1) \textit{any modular operations can be characterized with unique Fourier representation or algorithms} (\textbf{circuit formulation}), (2) \textit{grokked models obtain common features transferable among similar operations} (\textbf{transferability}), and (3) \textit{mixing functionally similar operations in dataset promote grokking} (\textbf{multi-task training}).
+Revealing these relations would help us understand and analyze the dynamics of grokking better.
+In this work, beyond the simplest and well-studied operation, we observe the internal circuits learned through grokking in complex modular arithmetic via interpretable reverse engineering, and extensively verify our three hypotheses, while also investigating whether grokked models may exhibit transferability \update{among the models grokked with other operations} and scaling to the similarity and the number of tasks\footnote{\url{https://github.com/frt03/grok_mod_poly}}.
+% \footnote{We will include URL to the code in de-anonymized version.}
+
+First, analyzing modular subtraction, multiplication, and polynomials reveals that the operations that cause grokking have unique Fourier representations (\Cref{sec:elem}).
+For instance, subtraction poses a strong asymmetry on Transformer (\Cref{sec:subtraction}), and multiplication requires cosine-biased components at all frequencies (\Cref{sec:multiplication}). 
+Grokking can easily occur in certain modular polynomials, such as the sum of powers and higher-degree expressions factorizable with basic symmetric and alternating expressions (\Cref{sec:poly}).
+These polynomials have a superposition of representations in modular elementary arithmetic, while ``non-grokked'' operations do not have explicit patterns (\Cref{sec:poly_without_cross}).
+We also introduce the novel progress measure for modular arithmetic; \textit{\update{Fourier Frequency Density (FFD)}} and \textit{Fourier Coefficient Ratio \update{(FCR)}}, which not only indicate the late generalization but also characterize distinctive internal representations of grokked models per modular operation (\Cref{sec:progress_measure_exp}).
+We prove that our proposed \update{FFD} and FCR decrease accompanying the test accuracy improvement, and they reflect features of internal circuits, such as the coexistence of addition and multiplication patterns in $ab+b$, or dependence of the factorizable polynomials on the parity of exponent $n$.
+
+% \input{table_figure_tmlr/grokked_operation_summary}
+
+In contrast, the ablation study with pre-grokked models reveals that the transferability of grokked embeddings and models is limited to specific combinations, such as from elementary arithmetic to linear expressions (\Cref{sec:linear_grokked}), and could be rarely observed in higher-degree expressions (\Cref{sec:poly_grokked}).
+Besides, some mixtures of multiple operations lead to the co-occurrence of grokking and even accelerate generalization (\Cref{sec:multi_task_elem}). In contrast, others may interfere with each other, not reaching optimal solutions (\Cref{sec:mix_poly}).
+These observations indicate that the mechanism of grokking might not always share the underlying dynamics with common machine learning.
+We provide significant insights in the empirical interpretation of internal circuits learned through modular \update{operations}, where analytical solutions are not attainable.
+%In summary, our key observations are:
+%\begin{itemize}[leftmargin=0.35cm,topsep=0pt,itemsep=0pt]
+%    \item In elementary arithmetic, modular addition, subtraction, and multiplication learn distinct representations in the Fourier domain, while allowing coexistence in multi-task training.
+%    \item In polynomials, grokked models often exhibit a superposition of representations in elementary arithmetic.
+%    \item The sum of powers and polynomials factorizable with linear addition (subtraction) easily induce grokking, even in the case of higher degrees (e.g. $n=7$). In contrast, ones with the cross term ($n\geq2$) are hard to grok~(\autoref{fig:grok_op}).
+%    \item Pre-grokked models and a mixture of multi-operation accelerate grokking among similar operations.
+%    \item The decrease of either \update{FFD} or FCR (or both) indicates the progress of grokking, and they also characterize each representation of modular operations.
+%\end{itemize}
+
+
+\section{Related Work}
+\label{sec:related}
+\textbf{Grokking}~
+Grokking has been actively studied to answer the questions: (1) when it happens, (2) why it happens, and (3) what representations are learned.
+In simple algorithmic tasks like modular addition, grokking would be observed with proper weight decay and the ratio of train-test splits~\citep{power2022grokking,lyu2023dichotomy}. In addition to synthetic data~\citep{liu2023grokking}, grokking could occur in more general settings such as teacher-student~\citep{levi2023grokking}, NLP~\citep{murty2023grokking}, computer vision~\citep{thilak2022slingshot}, or molecular graph tasks~\citep{liu2023omnigrok}, which could be explained with the dynamic phase transitions during training~\citep{rubin2023droplets,kumar2023grokking} or mismatch between the train-test loss landscape against weight norm~\citep{liu2023omnigrok}.
+Recent findings have revealed that while grokking has initially been observed in neural networks (MLP and Transformer) \update{with weight decay}, it may also occur in Gaussian processes and linear regression models~\citep{levi2023grokking,miller2023grokking} \update{or even the case without weight decay}~\citep{kumar2023grokking}.
+Our work focuses on complex modular arithmetic including subtraction, multiplication, polynomials, and a multi-task mixture, and then empirically analyzes the difference between grokked and non-grokked modular operations.
+
+Several works have argued that the late generalization dynamics has been driven by the sparsification of neural network emerging dominant sub-networks~\citep{merrill2023tale,tan2023understanding} and the structured representations~\citep{liu2022understanding}; the training process could be a phase transition divided into memorization, circuit formation, and cleanup phase~\citep{nanda2023progress,xu2023benign,doshi2023grok,davies2023unifying,žunkovič2022grokking}, and the formation of generalization circuits produces higher logits with small norm parameters than memorization circuits~\citep{varma2023explaining}. The sparse lottery tickets in neural networks may also promote grokking~\citep{minegishi2023grokking}.
+Moreover, our work highlights that in modular arithmetic such sparse representations are obtained interpretably through the discrete Fourier transform.
+
+
+\textbf{Mechanistic Interpretability}~
+While training neural networks is often accompanied by mysterious phenomena such as double descent~\citep{nakkiran2019deep}, many works along the mechanistic interpretability have attempted to systematically understand what happened during training and inference through extensive reverse engineering~\citep{olah2020zoom,olsson2022context,akyurek2023what,elhage2022toy,notsawo2023predicting}.
+Paying attention to the activation of neurons, those studies have tried to identify the functional modules or circuits inside neural networks~\citep{elhage2021mathematical,conmy2023automated}.
+Even for recent large language models, controlling activation patterns via activation patching can unveil the role of each module~\citep{vig2020investingating,meng2023locating,zhang2024best}.
+In grokking literature, several works have revealed what kind of algorithmic pattern was obtained inside the model when it worked on modular addition~\citep{zhong2023the,nanda2023progress,morwani2023feature} or group composition~\citep{chughtai2023toy,stander2023grokking} through the Fourier transform of logits or investigating gradients.
+\citet{gromov2023grokking} points out that the learned weights and algorithms in some arithmetic tasks are analytically solvable if MLP uses a quadratic activation.
+In contrast, \update{we extend the analysis from addition to other modular operations, such as} subtraction, multiplication, polynomials, and a multi-task mixture, which can bridge the gap between simple synthetic data from modular addition and complex structured data as seen in the real world.
+
+
+% \input{table_figure_tmlr/pre_grokked_models}
+
+% \input{table_figure_tmlr/elementary_arithmetic}
+
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+\textbf{Grokking}~
+This paper focuses on grokking on the classification tasks from simple algorithmic data commonly investigated in the literature~\citep{power2022grokking,liu2022understanding,barak2022hidden}.
+We have train and test datasets~($\boldsymbol{S_{\text{train}}}$, $\boldsymbol{S_{\text{test}}}$) without overlap, and learn a neural network $f(\boldsymbol{x};\boldsymbol{\theta})$ where input $\boldsymbol{x}$ is a feature vector of elements in the underlying algorithm space for synthetic data and $\boldsymbol{\theta}$ are weights of neural network.
+The small-size Transformers (e.g. one or two layers) or MLP are usually adopted as $f$.
+% Specifically, they train the network using stochastic gradient decent with weight decay~\citep{loshchilov2018decoupled} (i.e. regularizing L2 norm of weights $\|\boldsymbol{\theta} \|_2 $) over the cross-entropy loss $\mathcal{L}$:
+Specifically, \update{prior works} train the network using stochastic gradient decent over the cross-entropy loss $\mathcal{L}$ and weight decay:
+\begin{equation}
+    \boldsymbol{\theta} \leftarrow \underset{{\boldsymbol{\theta}}}{\operatorname{argmin}}~\mathbb{E}_{(\boldsymbol{x},y)\sim \boldsymbol{S}} \left[  \mathcal{L}(f(\boldsymbol{x}; \boldsymbol{\theta}), y) + \frac{\lambda}{2}\|\boldsymbol{\theta} \|_2 \right],
+    % \boldsymbol{\theta} \leftarrow \underset{{\boldsymbol{\theta}}}{\operatorname{argmin}}~\mathbb{E}_{(\boldsymbol{x},y)\sim \boldsymbol{S}} \left[  \mathcal{L}(f(\boldsymbol{x}; \boldsymbol{\theta}), y) \right],
+% \label{eq:optimization}
+\nonumber
+\end{equation}
+where $y \in \{ 0, . . . , p - 1 \}$ is a scalar class label ($p$ is a number of classes) correspond to the inputs \update{$\boldsymbol{x} \in \{ 0, . . . , p - 1 \} \times \{ 0, . . . , p - 1 \}$}, and $\lambda$ is a hyper-parameter controlling the regularization.
+\update{The weight decay is one of the factors inducing the grokking phenomenon}~\citep{power2022grokking,liu2023omnigrok,varma2023explaining}. We employ AdamW~\citep{loshchilov2018decoupled}) as an optimizer in practice.
+The fraction of training data from all the combinations is defined as:
+\begin{equation}
+    %\resizebox{0.499\linewidth}{!}{$\displaystyle r = \frac{|\boldsymbol{S_{\text{train}}}|}{|\boldsymbol{S_{\text{train}}}|+|\boldsymbol{S_{\text{test}}}|} \left( = \frac{|\boldsymbol{S_{\text{train}}}|}{p^2} \right)$}.
+    r = \frac{|\boldsymbol{S_{\text{train}}}|}{|\boldsymbol{S_{\text{train}}}|+|\boldsymbol{S_{\text{test}}}|} \left( = \frac{|\boldsymbol{S_{\text{train}}}|}{p^2} \right).
+    % \label{eq:data_fraction}
+    \nonumber
+\end{equation}
+It has been observed that a larger fraction tends to facilitate fast model grokking, whereas a smaller fraction makes grokking more challenging and slow especially in complex settings such as modular polynomial tasks.
+
+\textbf{Transformers}~
+As discussed in \citet{elhage2021mathematical}, the functionality of a small-size Transformer can be written down with several distinctive matrices.
+We denote embedding weights as $W_{E} \in \mathbb{R}^{d_{\text{emb}}\times p}$, output weights at the last MLP block as $W_{\text{out}} \in \mathbb{R}^{d_{\text{emb}}\times d_{\text{mlp}}}$, and unembedding weights as $W_{U} \in \mathbb{R}^{p\times d_{\text{emb}}}$.
+The logit vector on inputs $a,b$ can be approximately written with activatations from MLP block, $\text{MLP}(a,b)$, as $\text{Logits}(a,b) \approx W_{U}W_{\text{out}}\text{MLP}(a,b)$ by ignoring residual connection~\citep{nanda2023progress}, and we investigate the neuron-logit map $W_{L} = W_{U}W_{\text{out}} \in \mathbb{R}^{p\times d_{\text{mlp}}}$ in the later analysis.
+See \Cref{appendix:transformer} for further details.
+
+\textbf{Analysis in Modular Addition}~
+\citet{nanda2023progress} first pointed out that Transformer uses particular Fourier components and trigonometric identities after grokking occurred in modular addition~\footnote{\update{\citet{zhong2023the} revealed the existence of algorithms independent of trigonometric identities if the model does not have attention. Since we employ a Transformer with attention, this paper assumes the algorithms based on trigonometric identities.}}.
+The modular addition is a basic mathematical operation as $(a + b)~\%~p = c$ where $a, b, c$ are integers. The model predicts $c$ given a pair of $a$ and $b$. 
+As a slightly abused notation, $a, b, c$ may represent one-hot representation, and we will omit $\%~p$ in later sections.
+In the case of modular addition, the way Transformer model represents the task has been well-studied \citep{zhong2023the, nanda2023progress}, where the embedding matrix $W_{E}$ maps the input one-hot vectors into cosine and sine functions for various frequencies $\omega_k = \frac{2k\pi}{p}, k \in \{0, ..., p-1\}$, such as $a \xrightarrow{} \cos(\omega_ka), \sin(\omega_ka)$.
+%\begin{equation}
+%    \begin{split}
+%    a &\xrightarrow{} \cos(\omega_ka), \sin(\omega_ka)\\
+%    b &\xrightarrow{} \cos(\omega_kb), \sin(\omega_kb).
+%    \end{split}
+%    \label{eq:fourier_rep}
+%\end{equation}
+%\begin{equation}
+    % a \xrightarrow{} \cos(\omega_ka), \sin(\omega_ka),~~b \xrightarrow{} \cos(\omega_kb), \sin(\omega_kb)
+    %a \xrightarrow{} \cos(\omega_ka), \sin(\omega_ka).
+    %\nonumber
+    % \label{eq:fourier_rep}
+%\end{equation}
+It is also known that the addition is implemented inside the Transformer with trigonometric identities,
+\begin{equation}
+\begin{split}
+    \cos(\omega_k(a+b)) &= \cos(\omega_ka)\cos(\omega_kb) - \sin(\omega_ka)\sin(\omega_kb), \\
+    \sin(\omega_k(a+b)) &= \sin(\omega_ka)\cos(\omega_kb) + \cos(\omega_ka)\sin(\omega_kb), \nonumber
+\end{split}
+% \label{eq:trig_iden}
+\end{equation}
+%\begin{equation}
+%    \cos(\omega_k(a+b)) = \cos(\omega_ka)\cos(\omega_kb) - \sin(\omega_ka)\sin(\omega_kb),~~
+%    \sin(\omega_k(a+b)) = \sin(\omega_ka)\cos(\omega_kb) + \cos(\omega_ka)\sin(\omega_kb), \nonumber
+% \label{eq:trig_iden}
+%\end{equation}
+and then the neuron-logit map $W_{L}$ reads off $\cos(\omega_k(a+b-c))$ by also using trigonometric identities,
+\begin{equation}
+\begin{split}
+\cos(&\omega_k(a+b-c)) = \cos(\omega_k(a+b))\cos(\omega_kc) + \sin(\omega_k(a+b))\sin(\omega_kc).
+%    \cos(&\omega_k(a+b-c)) = \\
+%    & \cos(\omega_k(a+b))\cos(\omega_kc) + \sin(\omega_k(a+b))\sin(\omega_kc). \\
+\end{split}
+\label{eq:read_off}
+\end{equation}
+The logits of $c$ are the weighted sum of $\cos(\omega_k(a+b-c))$ over $k$.
+Note that we only consider the first half of frequencies (i.e. $k \in \{1, ..., [\frac{p}{2}]\}$) because of the symmetry.
+We show the example Python code for Fourier analysis in~\Cref{sec:example_python}.
+
+\input{table_figure_tmlr/pre_grokked_models_wrap}
+
+% \subsection{}
+\textbf{Experimental Setup}~
+In this paper, we expand the discussion above on modular addition to entire modular arithmetic: $a \circ b~\%~p = c$ where $\circ$ represents arbitrary operations (or polynomials) that take two integers $a$ and $b$ as inputs, such as $a-b$ (subtract), $a*b$ (multiplication), $2a-b, ab+b, a^2+b^2, a^3+ab, (a+b)^4$ (polynomials)~\footnote{We omit the discussion on modular division, since it requires division into cases while we also consider a multi-task mixture.}.
+Transformer takes three one-hot tokens as inputs, $a$, $\circ$, $b$.
+In addition to $p$ integer tokens, we prepare $n_{\text{op}}$ special tokens representing the mathematical operations above.
+% , such as addition, subtraction, multiplication and other polynomials.
+% We denote $p' = p + n_{\text{op}}$ for simplicity.
+The models are trained to predict $c$ as an output.
+
+Our neural network is composed of a single-layer causal Transformer architecture~(\autoref{fig:pre_grokked_models}) with learnable embedding and unembedding ($d_{\text{emb}}=128$).
+We use ReLU for the activation functions and remove positional embedding, layer normalization, and bias terms for all the layers.
+\update{We initialize each weight from Gaussian distribution, where the mean is 0 and the standard deviation is $\frac{1}{\sqrt{d_{\mathrm{out}}}}$}~\citep{LeCun2012init}.
+This Transformer is trained via full batch gradient descent with AdamW~\citep{loshchilov2018decoupled} and weight decay $\lambda=1.0$.
+We use $p=97$ for all the experiments. For the dataset faction, we use $r=0.3$ unless otherwise mentioned.
+\update{We conduct the experiments with 3 random seeds and report the average\footnote{\update{We optimize the models up to 3e5 gradient steps and then judge whether grokking happens or not.}}.}
+Other hyper-parameters are described in \Cref{appendix:exp_details}.
+% \footnote{We provide the code in supplementary material.}.
+
+
+
+\section{Pre-Grokked Models and Fourier Metrics}
+In contrast to modular addition, the exact analysis of internal circuits across other modular arithmetic would be challenging, since not all the operations have analytical algorithms.
+To mitigate such interpretability issues, we introduce the notion of \textit{pre-grokked models}, and propose a pair of novel progress measures for grokking in modular arithmetic; \textit{Fourier Frequency Density (\update{FFD})} and \textit{Fourier Coefficient Ratio (FCR)}, which are derived from our empirical observation on sparsity and sinusoidal bias in embedding and neuron-logit map.
+
+\textbf{Pre-Grokked Models}~
+To dive into the internal dynamics, we leverage pre-grokked models, which are pre-trained on similar algorithmic tasks until grokking and used for another training to replace randomly initialized modules without any parameter updates (i.e. frozen).
+This allows us to consider learning representations and algorithms separately.
+We will use pre-grokked embedding (freezing $W_{\text{emb}}$) and Transformer (freezing all the weights except for $W_{\text{emb}} and W_{\text{U}}$) in later sections.
+% We will use pre-grokked embedding and pre-grokked Transformer in the later section.
+\update{We also use the same random seed between pre-grokking and downstream grokking experiments to reduce identifiability issues~\citep{singh2024inductionhead}.}
+
+\textbf{\update{Fourier Frequency Density (FFD)}}~
+\update{FFD} quantitatively measures the sparsity of Fourier components in a certain layer (embedding or neuron-logit map),
+\begin{equation}
+\begin{split}
+\text{\update{FFD}}(\eta, \boldsymbol{\mu}, \boldsymbol{\nu}) = \frac{1}{2\left[\frac{p}{2}\right]} \sum_k^{\left[\frac{p}{2}\right]} \mathbbm{1} \left[ \frac{\|\mu_k\|_2}{\underset{\boldsymbol{\mu}}{\max} \|\mu_i\|_2} > \eta \right] + \mathbbm{1} \left[ \frac{\|\nu_k\|_2}{\underset{\boldsymbol{\nu}}{\max}\|\nu_j\|_2} > \eta \right], \nonumber
+%\text{\update{FFD}}&(\eta, \boldsymbol{\mu}, \boldsymbol{\nu}) = \\
+%&\frac{1}{2\left[\frac{p}{2}\right]} \sum_k^{\left[\frac{p}{2}\right]} \mathbbm{1} \left[ \frac{\|\mu_k\|_2}{\underset{\boldsymbol{\mu}}{\max} \|\mu_i\|_2} > \eta \right] + \mathbbm{1} \left[ \frac{\|\nu_k\|_2}{\underset{\boldsymbol{\nu}}{\max}\|\nu_j\|_2} > \eta \right], \nonumber
+\end{split}
+% \label{eq:ffs}
+\end{equation}
+where $u_k \in \boldsymbol{\mu} = \{\mu_1, ..., \mu_k, ...\}$ is a coefficient of cosine components \update{($\mu_{k} = \frac{2}{\left[\frac{p}{2}\right]} \sum_{t=1}^{\left[\frac{p}{2}\right]} W[t]\cos{(\omega_k t)}$; $W[t]$ is a $t$-th index of weight matrix $W$)} and $\nu_k \in \boldsymbol{\nu}$ is a coefficient of sine components \update{($\nu_{k} = \frac{2}{\left[\frac{p}{2}\right]} \sum_{t=1}^{\left[\frac{p}{2}\right]} W[t]\sin{(\omega_k t)}$)} with frequency $\omega_k$.
+We set $\eta=0.5$.
+The low \update{FFD} indicates that a few key frequencies are dominant in the Fourier domain, which can be often observed in modular addition.
+
+\textbf{Fourier Coefficient Ratio (FCR)}~
+FCR quantifies the sinusoidal bias of Fourier components in a certain weight matrix,
+\begin{equation}
+\begin{split}
+\text{FCR}(\boldsymbol{\mu}, \boldsymbol{\nu}) = \frac{1}{\left[\frac{p}{2}\right]} \sum_k^{\left[\frac{p}{2}\right]}~\min\left( \frac{\|\mu_k\|_2}{\|\nu_k\|_2}, \frac{\|\nu_k\|_2}{\|\mu_k\|_2} \right). \nonumber
+\end{split}
+% \label{eq:fcr}
+\end{equation}
+The low FCR means that Fourier representations of the weights have either cosine- or sine-biased components, which can be often observed in modular multiplication.
+
+The decrease of either \update{FFD} or FCR (or both) \update{correlates to} the progress of grokking, and the responsible indicator \update{varies for} each modular operation; for instance, \update{FFD} is a good measure for addition, and FCR is for multiplication.
+They are not only aligned with the late improvement in test accuracy but also can characterize each Fourier representation of modular operations at a certain layer (\Cref{sec:progress_measure_exp}).
+
+\input{table_figure_tmlr/elementary_arithmetic}
+
+\input{table_figure_tmlr/freq_analysis_elementary_arithmetic}
+
+\section{Analysis in Elementary Arithmetic}
+\label{sec:elem}
+We start with the analysis with internal circuits of pre-grokked models, which can reveal the characteristics of each arithmetic operation;
+% if pre-grokked embedding encourages grokking in downstream tasks, the learned embedding should be similar, but if not, those tasks should require different types of representations.
+if pre-grokked embedding encourages grokking in downstream tasks, the learned embedding should be similar, but if \update{pre-grokked embedding prevents grokking,} those tasks \update{may} require different types of representations.
+Moreover, if a pre-grokked Transformer accelerates generalization, it means the algorithms obtained internally would have similar properties, while the failure \update{may hint} at algorithmic differences.
+
+\autoref{fig:elementary_arithmetic} shows test accuracy in elementary arithmetic (addition, subtraction, and multiplication) with pre-grokked embedding and Transformer\footnote{To avoid the confusion, we will mention the sub-figures using pythonic coordinates like Figure[i, j] for row i column j.}.
+Because of the task simplicity, grokking always occurs among those operations. However, in certain combinations, pre-grokked models hinder grokking even with a $r=0.9$ fraction.
+For pre-grokked embedding, modular addition and subtraction accelerate grokking (\autoref{fig:elementary_arithmetic}[0:2, 0:2]), while modular multiplication and those two hurt the performances each other ($+$: \autoref{fig:elementary_arithmetic}[2, 0] and [0, 2], $-$: \autoref{fig:elementary_arithmetic}[2, 1] and [1, 2]).
+In contrast, for pre-grokked Transformer, modular subtraction is challenging in both directions, even transferring subtraction models into subtraction itself (\autoref{fig:elementary_arithmetic}[1, 4]).
+Pre-grokked Transformer on addition or multiplication accelerates each other (\autoref{fig:elementary_arithmetic}[0, 5] and [2, 3]).
+Those results \update{might} imply that (1) while there is a similarity between the learned embeddings in addition and subtraction, their acquired algorithms significantly differ~(\cref{sec:subtraction}), and that (2) multiplication requires representations independent of addition or subtraction but the algorithm might be transferable~(\cref{sec:multiplication}).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/grokking_polynomials_240112.pdf}
+\vskip -0.15in
+\caption{
+Test accuracy in modular polynomials (univariate 
+terms: $a^2+b^2$, $a^2\pm b$, $a^3 \pm 2b$, the degree-1 with cross term: $ab+a+b$).
+Grokking occurs even in quadratic or cubic expressions asymmetric with input $a$ and $b$.
+}
+\label{fig:polynomials}
+\vskip -0.05in
+\end{figure*}
+
+\subsection{Modular Subtraction Imposes Strong Asymmetry}
+\label{sec:subtraction}
+Considering the sign in trigonometric identities, Transformers should learn modular subtraction in the Fourier domain with trigonometric identities as the case of addition (\autoref{eq:read_off}):
+\begin{equation}
+\begin{split}
+\cos(\omega_k(a-b-c)) = \cos(\omega_k(a-b))\cos(\omega_kc) + \sin(\omega_k(a-b))\sin(\omega_kc), \\ \nonumber
+    %\cos(&\omega_k(a-b)) = \cos(\omega_ka)\cos(\omega_kb) + \sin(\omega_ka)\sin(\omega_kb), \\
+    %\sin(&\omega_k(a-b)) = \sin(\omega_ka)\cos(\omega_kb) - \cos(\omega_ka)\sin(\omega_kb), \\
+%    \cos(&\omega_k(a-b-c)) = \\
+%    & \cos(\omega_k(a-b))\cos(\omega_kc) + \sin(\omega_k(a-b))\sin(\omega_kc), \\ \nonumber
+\end{split}
+\end{equation}
+\vskip -0.25in
+and then we would anticipate similar interpretable representations to addition. However, we observe that the grokked models exhibit asymmetric properties for both embedding and Transformer. We transform the embedding into a Fourier domain along the input dimension and compute the L2 norm along other dimensions.
+In \autoref{fig:freq_analysis_elementary_arithmetic}, subtraction learns similar embedding to addition with sparse Fourier components (\autoref{fig:freq_analysis_elementary_arithmetic}[0, 0] and [1, 0]). On the other hand, it imposes an asymmetric neuron-logit map and norms of logits with cosine-biased components (\autoref{fig:freq_analysis_elementary_arithmetic}[1, 1] and [1, 2]), which may represent alternatings ($a-b \neq b-a$).
+
+Such an asymmetry is also observed in grokked Transformers.
+The pre-grokked Transformer on subtraction could not be transferred to \textbf{any} downstream elementary arithmetic (\autoref{fig:elementary_arithmetic}[1, :]), even subtraction itself (\autoref{fig:elementary_arithmetic}[1, 4]), and pre-grokked models with addition or multiplication could not learn subtraction as well (\autoref{fig:elementary_arithmetic}[:, 4]).
+This implies that while we could interpret subtraction as a part of addition with negative numbers, \update{it is possible that} the embedding and algorithm inside Transformer are quite different.
+
+Lastly, we examine the restricted loss and ablated loss in \cref{appendix:restricted_loss}, where the restricted loss is calculated only with the Fourier components of significant frequencies, and the ablated loss is calculated by removing a certain frequency from the logits.
+The analysis emphasizes the subtle dependency on other frequencies than significant ones.
+
+
+\subsection{Modular Multiplication Leverages All Frequencies}
+\label{sec:multiplication}
+% In contrast to modular addition and subtraction, we may not describe possible acquired algorithms for modular multiplication in a closed form, since trigonometric identities do not have multiplication formulas.
+In contrast to modular addition and subtraction, \update{we do not attempt to fully interpret the learned model in a closed form or a form of pseudocode.}
+However, following the empirical analysis in modular addition, we can observe that multiplication also leverages the periodicity in the Fourier domain.
+
+\autoref{fig:freq_analysis_elementary_arithmetic} reveals that multiplication obtains significantly different Fourier representation from addition or subtraction (\autoref{fig:freq_analysis_elementary_arithmetic}[2, :]); it employs all the frequencies equally with cosine bias for both embedding and neuron-logit map.
+Surprisingly, multiplication-pre-grokked Transformer accelerates grokking in addition (\autoref{fig:elementary_arithmetic}[2, 3]) and addition-pre-grokked Transformer (\autoref{fig:elementary_arithmetic}[0, 5]) causes grokking in multiplication. This implies that in contrast to the asymmetry of subtraction, addition, and multiplication leverage their symmetry in the operations.
+Since the embedding of multiplication is quite different from addition and subtraction, it \update{seems to be} reasonable to fail to grok with addition/subtraction-pre-grokked embeddings~(\autoref{fig:elementary_arithmetic}[0:2, 2] and [2, 0:2]).
+Moreover, we find that grokking in elementary arithmetic occurs even with frozen random embedding~(see \Cref{appendix:random}\update{; sampled from the same random seed}) that does not have biased components nor sparsity, which also supports that some unique, non-transferable patterns are learned in grokked models.
+
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.735\linewidth]{figures/grokking_polynomials_frequency_240112.pdf}
+\vskip -0.15in
+\caption{
+Frequency analysis in grokking with modular polynomials ($a^2+b^2$, $a^2-b$, $ab+a+b$).
+Grokking discovers the superposition of frequency sparsity and bias seen in elementary arithmetic;
+$a^2-b$ inherits both biased sparsity in subtraction and significant cosine biases in multiplication for embedding (fig[1,0]). Its neuron-logit map leverages addition-like sparsity (fig[1,1]).
+% See \autoref{appendix:enlarged} for the enlarged version.
+}
+\label{fig:freq_analysis_polynomials}
+\vskip -0.05in
+\end{figure}
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/grokking_polynomials_n_2401113.pdf}
+\vskip -0.1in
+\caption{
+    Test accuracy in modular polynomials with quadratic, cubic, and quartic formulas. \update{Compared to the elementary arithmetic (\autoref{fig:elementary_arithmetic}), these requires longer optimization steps.}
+    Transformers suffer from late generalization in degree-$n$ polynomials with cross-term ($a^2+ab+b^2$, $a^2+ab+b^2+a$, $a^3+ab$, $a^3+ab^2+b$).
+    If polynomials are factorizable with addition ($a+b$) or subtraction ($a-b$), they are easy to grok (e.g. $(a+b)^2+a+b$; fig[0][4]) although they also have a cross term (c.f. $a^2+ab+b^2$).
+    Even, cubic ($(a\pm b)^3$; fig[1][2:4]) or quartic ($(a\pm b)^4$; fig[1][4:]) expressions, grokking occurs if they are factorizable.
+}
+\label{fig:factorizable_polynomials}
+\vskip -0.05in
+\end{figure*}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.735\linewidth]{figures/grokking_polynomials_frequency_n_240113.pdf}
+\vskip -0.15in
+\caption{
+Frequency analysis in grokking with factorizable polynomials.
+Non-factorizable operation ($a^2+ab+b^2$, fig[0, :]) cannot find sparse embedding representations.
+In contrast, factorization with elementary arithmetic accelerates grokking in both quadratic ($(a+b)^2$, fig[1, :]) and cubic expression ($(a+b)^3$, fig[2, :]) with sparse Fourier features.
+% See \autoref{appendix:enlarged} for the enlarged version.
+}
+\label{fig:freq_analysis_factorizable_polynomials}
+\end{figure}
+
+\begin{figure*}[ht]
+\centering
+% \includegraphics[width=0.9\linewidth]{figures/grokking_emb_progress_240128.pdf}
+\includegraphics[width=0.9\linewidth]{figures/grokking_emb_progress_241014.pdf}
+% \includegraphics[width=\linewidth]{example-image}
+\vskip -0.15in
+\caption{
+\update{FFD} and FCR as progress measure of grokking.
+The decrease of either \update{FFD} or FCR (or both) indicates the progress of grokking synchronizing with the test accuracy improvement. The responsible indicator depends on each operation.
+See \cref{appendix:details_progress_measure} for the details.
+}
+\label{fig:ffs_fcr}
+\vskip -0.05in
+\end{figure*}
+
+\vskip -0.25in
+\section{Analysis in Polynomials}
+\label{sec:poly}
+It has been known that grokking would be less likely to occur as increasing the complexity of operators in general~\citep{power2022grokking}, but the underlying reasons or conditions are still unclear.
+In addition to elementary operations, we examine the interpretable patterns of grokked models in modular polynomials.
+We first investigate the case of simple polynomials~(\Cref{sec:poly_without_cross}), quadratic, cubic, and quartic expressions~(\Cref{sec:quad_cub_quar}).
+
+
+\subsection{Polynomials Discover Superposition of Representations for Elementary Arithmetic}
+% \subsection{Superposition of Representations for Elementary Arithmetic}
+\label{sec:poly_without_cross}
+We here investigate the relatively simple polynomials that induce grokking (univariate terms: $a^2+b^2$, $a^2\pm b$, $a^3 \pm 2b$, the degree-1 with cross term: $ab+a+b$).
+In \autoref{fig:polynomials}, grokking occurs even in quadratic or cubic expressions asymmetric with input $a$ and $b$, and suggests that the existence of symmetry or the cross term might be a key for occurrence.
+
+Moreover, the grokked models exhibit partially-similar internal states to the one in elementary arithmetic.
+\autoref{fig:freq_analysis_polynomials} provides frequency analysis with modular polynomials ($a^2+b^2$, $a^2-b$, $ab+a+b$), where grokking discovers superposition of representations (frequency sparsity and bias) for elementary arithmetic.
+For instance, $a^2+b^2$ finds a cosine-biased embedding like multiplication and a sparse neuron-logit map like addition.
+$a^2-b$ inherits both biased sparsity in subtraction and significant cosine biases in multiplication for embedding. Its neuron-logit map leverages addition-like sparsity.
+$ab+a+b$ is similar to multiplication; leveraging biased all the frequencies while using sine components, because it can be factorized as $(a+1)(b+1) - 1$.
+These trends are flipped between embedding and neuron-logit map.
+Norms of logits in 2D Fourier basis basically follow the trend in multiplication~(\autoref{fig:freq_analysis_polynomials}[:,2]), and especially $a^2-b$ activates key frequency columns (\autoref{fig:freq_analysis_polynomials}[1,2]).
+
+
+
+\subsection{High-Degree Factorization Allows Grokking}
+\label{sec:quad_cub_quar}
+
+Increasing the complexity of operators, we test modular polynomials with quadratic, cubic, and quartic formulas in \autoref{fig:factorizable_polynomials}.
+Apparently, Transformer fails to generalize in degree-$n$ polynomials with cross term ($a^2+ab+b^2$, $a^2+ab+b^2+a$, $a^3+ab$, $a^3+ab^2+b$).
+\update{However, if polynomials are factorizable as a product of addition or subtraction (in the form of $(a \pm b)^{n}$), they easily grok, even when they also have cross terms (e.g., $(a+b)^2+a+b$). Besides, the sum of powers is also easy to be grokked.}
+Even, cubic (\autoref{fig:factorizable_polynomials}[1, 2:4]) or quartic (\autoref{fig:factorizable_polynomials}[1, 4:]) expressions, grokking occurs if they are factorizable.
+Comparing $a^2+ab+b^2$ and $(a+b)^2$ or $a^2+ab+b^2+a$ and $(a+b)^2+a+b$ emphasizes the importance of factorizability for the emergence of grokking. 
+
+\autoref{fig:freq_analysis_factorizable_polynomials} analyzes the frequency components in factorizable polynomials.
+Non-factorizable operation ($a^2+ab+b^2$) cannot find the sparse embedding representation.
+In contrast, factorizable operations promote grokking in both quadratic ($(a+b)^2$) and cubic expression ($(a+b)^3$) obtaining sparsity in embedding.
+The factorizable operations find more biased Fourier components than the non-factorizable ones in the neuron-logit map.
+Moreover, factorizable polynomials exhibit clear logits patterns as shown in elementary arithmetic~(\autoref{fig:freq_analysis_elementary_arithmetic}), while non-factorizable ones only show significant norms around a constant component.
+
+
+
+% \section{\update{FFD} and FCR as Progress Measures}
+\subsection{FFD and FCR as Progress Measures}
+\label{sec:progress_measure_exp}
+As shown in \autoref{fig:ffs_fcr}, we measure \update{FFD} and FCR in embedding layer $W_{E}$ for various modular operations.
+See \Cref{appendix:details_progress_measure} for the results in neuron-logit map $W_{L}$.
+
+\textbf{Elementary Arithmetic}~
+Addition (\textcolor{cb_red}{red}) and subtraction (\textcolor{cb_blue}{blue}) decrease \update{FFD} and keep a high FCR, whereas multiplication maintains \update{FFD} as 1.0 and decreases FCR (\textcolor{cb_green}{green}).
+In all the cases, the saturation of accuracy and inflection point of either \update{FFD} or FCR almost match (vertical lines).
+Interestingly, $ab+b$ (\textcolor{cb_purple}{purple}) exhibits decreasing both \update{FFD} and FCR, which reflects the feature of addition and multiplication simultaneously.
+
+\textbf{Sum of Powers}~
+In $a^n+b^n$, \update{FFD} and FCR exhibit the same progress as multiplication, while the neuron-logit map has sparsity the same as addition (\Cref{appendix:details_progress_measure}).
+We also observe different behaviors depending on the parity of exponent $n$; \update{FFD} decreases more when $n$ is odd (\textcolor{cb_blue}{blue}) and FCR drops more when $n$ is even (\textcolor{cb_red}{red}).
+
+\textbf{Factorizable Polynomials}~
+$(a+b)^n$ exhibits the same trend as addition: high sparsity and balanced components.
+In contrast, the neuron-logit map behaves similarly to multiplication (\Cref{appendix:details_progress_measure}).
+As in the sum of powers, the dynamics would be different depending on the parity of exponent $n$; FCR significantly drops when $n$ is even.
+In the case of non-factorizable $a^2+ab+b^2$, \update{FFD} do not change during training, and the model cannot achieve late generalization.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/grokking_linear_expression_240113.pdf}
+\vskip -0.15in
+\caption{
+Test accuracy in modular linear expression ($2a\pm b$, $2a\pm 3b$) and degree-1 polynomials with cross term ($ab\pm b$). Pre-grokked embedding in modular addition accelerates grokking in $2a \pm b, 2a \pm 3b$, and pre-grokked Transformer in modular multiplication accelerates grokking in $ab \pm b$, while the training from scratch could not generalize in $r=0.3$.
+}
+\label{fig:linear_expression}
+\end{figure*}
+
+\section{Analysis in Transferability}
+\label{sec:transfer}
+Since all the modular arithmetic has periodicity, we could hypothesize that grokked models obtain common features among similar operations (transferability). Furthermore, pre-grokked models in a certain task could promote grokking in other similar tasks because they already have a useful basis.
+We first test the transferability of pre-grokked models from elementary arithmetic to linear expressions (\Cref{sec:linear_grokked}), and then extensively investigate it with higher-order polynomials (\Cref{sec:poly_grokked}).
+
+\subsection{Pre-Grokked Models Accelerate Grokking in Linear Expression}
+\label{sec:linear_grokked}
+We test whether frozen pre-grokked modules in elementary arithmetic ($a+b$, $a*b$) are transferable to grokking in modular linear expression ($2a\pm b$, $2a\pm 3b$, $ab\pm b$).
+Those asymmetric expressions are hard to grok from scratch, especially if the fraction is small ($r=0.3$) despite their simplicity.
+\autoref{fig:linear_expression} shows that pre-grokked embedding with addition accelerates grokking in $2a \pm b, 2a \pm 3b$, and pre-grokked Transformer with multiplication does in $ab \pm b$.
+These support our hypothesis and imply that in complex operations, internal circuits struggle with finding interpretable patterns.
+
+\subsection{Pre-Grokked Models May not Help Higher-Order Polynomials}
+\label{sec:poly_grokked}
+In \cref{sec:linear_grokked}, we demonstrate that pre-grokked models accelerate grokking in linear expressions.
+We here extensively test pre-grokked models in higher-order polynomials (quadratic and cubic).
+\autoref{tab:pre_grok_poly_summary} shows that pre-grokked models could not accelerate, and they even prevent grokking in higher-order polynomials, which implies that pre-grokked models may not always help grokking accelerations, except for linear expressions.
+While the learned representation of polynomials seems to be a superposition of that of elementary arithmetic (e.g. \cref{sec:poly_without_cross}), their functionalities might differ significantly.
+
+These ablation studies reveal that the transferability of pre-grokked embeddings and models is limited to specific combinations, such as from elementary arithmetic to linear expressions, and could be rarely observed in higher-degree expressions.
+From the transferability of learned representation perspective, we should note that there is still an analysis gap between the grokking with synthetic data and common machine learning.
+
+
+\input{table_figure_tmlr/pre_grokked_poly_summary}
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=\linewidth]{figures/grokking_elementary_frequency_joint_240110.pdf}
+\includegraphics[width=0.8\linewidth]{figures/grokking_elementary_frequency_joint_2x3_240110.pdf}
+\vskip -0.15in
+\caption{
+Test accuracy and frequency analysis in grokking with a mixture of elementary arithmetic.
+Co-grokking across different operations occurs, but it needs a larger fraction than a single task ($r=0.3$ does not work).
+% See \autoref{appendix:enlarged} for the enlarged figure.
+}
+\label{fig:co_grok_elementary}
+\end{figure}
+
+
+\section{Analysis in Multi-Task Training}
+While previous works on grokking have only dealt with a single task during training, the application of Transformers such as large language models~\citep{brown2020gpt3} is usually trained on a mixture of various tasks or datasets.
+Given the periodicity and similarity across entire modular arithmetic, we also hypothesize that mixing functionally similar operations in the dataset promotes grokking.
+To fill the gap between synthetic tasks and practice, we here investigate grokking on mixed datasets with addition, subtraction, and multiplication (\Cref{sec:multi_task_elem}).
+We also study multi-task training mixing hard and easy polynomial operations (\Cref{sec:mix_poly}).
+We prepare $r=0.3$ datasets and jointly train Transformers on their mixture.
+
+\subsection{Multi-Task Mixture Discovers Coexisting Solutions}
+\label{sec:multi_task_elem}
+\autoref{fig:co_grok_elementary} reveals that \textit{co-grokking} (i.e. grokking happens for all the tasks) occurs, but it requires a larger fraction of train dataset than a single task; for instance, $r=0.3$ could not cause grokking while it does in \autoref{fig:elementary_arithmetic}.
+The test accuracy of multiplication increases slower than the other two, which implies the conflict among different Fourier representations may affect the performance and generalization.
+
+For the Fourier analysis of grokked models, training with a multi-task mixture seems to discover ``Pareto-optimal'' representations for all the operations in embedding and neuron-logit map (\autoref{fig:co_grok_elementary}[1, :]).
+We can see the coexistence of component sparsity in embedding (addition), asymmetric cosine sparsity in neuron-logit map (subtraction), and cosine-biased components for all the frequencies (multiplication).
+Furthermore, the norms of logits in 2D Fourier basis for addition and subtraction exhibit the same patterns. This means that addition and subtraction can be expressed on the same representation space originally, while they find quite different grokked models after the single-task training.
+
+\subsection{Proper Multi-Task Mixture also Accelerates Grokking in Polynomials}
+\label{sec:mix_poly}
+We also investigate the multi-task training with the mixture of polynomials; preparing the combination of easy and hard operations as $\{a+b, ab+b\}$, $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$, $\{(a+b)^3, a^3+ab\}$ and $\{(a+b)^3, a^3+ab^2+b\}$.
+As shown in~\autoref{fig:multi_task_acceralation} (left), a proper mixture of polynomials, in terms of operation similarity, also accelerates grokking in multi-task settings. For instance, $a^2+b^2$ and $(a+b)^2$ help generalization in $a^2+ab+b^2$.
+This implies that the required representations among $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$ would be the same while original single-task $a^2+ab+b^2$ fails to grok due to the difficulty in non-factorizable cross term.
+The test accuracy also improves in the cubic expression (\autoref{fig:multi_task_acceralation}, right). However, it hits a plateau before the perfect generalization.
+
+The results imply that some multi-task mixtures may lead to co-grokking and accelerate generalization while others may not find optimal solutions.
+It would be an interesting future direction to further reveal the grokking dynamics and mechanism for multi-task training.
+
+\begin{figure}[t]
+\begin{minipage}[c]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/grokking_joint_per_task_240126.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/grokking_cubic_joint_240211_scale1.pdf}
+\end{minipage}
+\vskip -0.1in
+\caption{
+(\textbf{Left}) Test accuracy in grokking with a mixture of modular polynomials ($\{a+b, ab+b\}$ and $\{a^2+b^2, a^2+ab+b^2, (a+b)^2\}$).
+The multi-task training across similar operations promotes grokking.
+(\textbf{Right}) Test accuracy in grokking with a mixture of modular polynomials ($\{(a+b)^3, a^3+ab\}$ and $\{(a+b)^3, a^3+ab^2+b\}$).
+The multi-task training across similar operations promotes the improvement of test accuracy.
+}
+\label{fig:multi_task_acceralation}
+\end{figure}
+
+
+
+\section{Conclusion}
+Our empirical analysis has shed light on significant differences in internal circuits and grokking dynamics across modular arithmetic.
+The learned representations are distinct from each other depending on the type of mathematical expressions. and despite the periodicity of modular arithmetic itself, the distinctive Fourier representations are only obtained in the operations that cause grokking. 
+While grokking can also happen with complex synthetic data, we find that not all the insights are related to the nature seen in practical models.
+For instance, the ablation with frozen pre-grokked modules demonstrates that the transferability could only be limited to the specific combination of modular operations.
+The functional similarity between the mathematical expressions may not help.
+In addition, some multi-operation mixtures may lead to co-grokking and even promote generalization while others might not reach optimal solutions.
+We hope our extensive empirical analysis encourages the community to further bridge the gap between simple synthetic data and the data where analytical solutions are not attainable for a better understanding of grokked internal circuits.
+
+\textbf{Limitation}~~
+We have observed all modular arithmetic operations that can cause grokking have shown interpretable trends with the Fourier basis. However, except for a few cases, we may not derive exact algorithms.
+It remains as future works to derive the approximate solutions covering the \update{other modular operations beyond addition} remain as future works.
+We also have examined a broader range of complex modular arithmetic than prior works and obtained some implications to bridge the analysis gaps between the synthetic and practical settings. 
+However, our observations imply that the mechanism of grokking might not always share the underlying dynamics with common machine learning.
+Further investigations of internal circuits in practical models such as LLMs are important future directions.
+
+
+% \subsubsection*{Broader Impact Statement}
+\subsubsection*{Acknowledgments}
+We thank Tadashi Kozuno for helpful discussion on this work. HF was supported by JSPS KAKENHI Grant Number JP22J21582.
+
+\bibliography{reference}
+\bibliographystyle{tmlr}
+
+\clearpage
+\include{tmlr_appendix}
+% \appendix
+% \section{Appendix}
+% You may include other additional sections here.
+
+\end{document}

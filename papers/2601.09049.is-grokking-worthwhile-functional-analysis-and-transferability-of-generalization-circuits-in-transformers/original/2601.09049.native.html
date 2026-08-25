@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers</title>
+<!--Generated on Wed Jan 14 00:37:04 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="/static/browse/0.3.4/css/arxiv-html-papers-20250916.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<base href="/html/2601.09049v1/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.SS0.SSS0.Px1" title="In 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title">Finding 1:</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.SS0.SSS0.Px2" title="In 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title">Finding 2:</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.SS0.SSS0.Px3" title="In 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title">Finding 3:</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S2" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Task definition &amp; Training data</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Finding 1: Grokked and non-grokked transformers follow the same reasoning path</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S4" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Finding 2: Behavioral Grokking or True Grokking?</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S5" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Finding 3: Transferability of Generalization Circuit</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S5.SS1" title="In 5 Finding 3: Transferability of Generalization Circuit ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1 </span>Finetuning data</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S5.SS2" title="In 5 Finding 3: Transferability of Generalization Circuit ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Limited transferability of Generalization Circuit</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S6" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Conclusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S7" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Limitations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A1" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Figures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Pre-training Data Construction</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2.SS1" title="In Appendix B Pre-training Data Construction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.1 </span>Synthetic Dataset Generation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2.SS2" title="In Appendix B Pre-training Data Construction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.2 </span>Two-Hop Composition Rule</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2.SS3" title="In Appendix B Pre-training Data Construction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.3 </span>Choice of Inferred/Atomic Ratio (<math alttext="\phi" class="ltx_Math" display="inline" intent=":literal"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>)</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A3" title="In Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Data Augmentation Detail</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A3.SS0.SSS0.Px1" title="In Appendix C Data Augmentation Detail ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title">Fact-level compositional augmentation (ID–OOD mixing).</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A3.SS0.SSS0.Px2" title="In Appendix C Data Augmentation Detail ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_title">Both hop full augmentation setting:</span></a></li>
+</ol>
+</li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document">
+<h1 class="ltx_title ltx_title_document">Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Kaiyu He,
+Mian Zhang,
+Peilin Wu,
+Xinya Du,
+Zhiyu Zoey Chen 
+<br class="ltx_break"/>Department of Computer Science
+<br class="ltx_break"/>University of Texas at Dallas
+<br class="ltx_break"/><span class="ltx_text ltx_font_typewriter" id="id1.1.id1">{kaiyu.he, zhiyu.chen2}@utdallas.edu</span>
+</span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p" id="id2.id1">While Large Language Models (LLMs) excel at factual retrieval, they often struggle with the “curse of two-hop reasoning” in compositional tasks. Recent research suggests that parameter-sharing transformers can bridge this gap by forming a “Generalization Circuit” during a prolonged “grokking” phase. A fundamental question arises: Is a grokked model superior to its non-grokked counterparts on downstream tasks? Furthermore, is the extensive computational cost of waiting for the grokking phase worthwhile? In this work, we conduct a mechanistic study to evaluate the Generalization Circuit’s role in knowledge assimilation and transfer. We demonstrate that: (i) The inference paths established by non-grokked and grokked models for in-distribution compositional queries are identical. This suggests that the “Generalization Circuit” does not represent the sudden acquisition of a new reasoning paradigm. Instead, we argue that grokking is the process of integrating memorized atomic facts into an naturally established reasoning path. (ii) Achieving high accuracy on unseen cases after prolonged training and the formation of a certain reasoning path are not bound; they can occur independently under specific data regimes. (iii) Even a mature circuit exhibits limited transferability when integrating new knowledge, suggesting that “grokked” Transformers do not achieve a full mastery of compositional logic. Our code and data are available at: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://github.com/KaiyuHe998/IsGrokkingWorthwhile" title="">https://github.com/KaiyuHe998/IsGrokkingWorthwhile</a>.</p>
+</div>
+<div class="ltx_para ltx_noindent" id="p1">
+<div class="ltx_block ltx_align_bottom" id="p1.1">
+<p class="ltx_p ltx_align_center" id="p1.1.1"><span class="ltx_text ltx_font_bold" id="p1.1.1.1">Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers</span></p>
+<p class="ltx_p ltx_align_center" id="p1.1.2" style="width:345.0pt;"><span class="ltx_text ltx_inline-block" id="p1.1.2.1" style="width:0.0pt;">
+<span class="ltx_tabular ltx_align_top" id="p1.1.2.1.1">
+<span class="ltx_tbody">
+<span class="ltx_tr" id="p1.1.2.1.1.1.1">
+<span class="ltx_td ltx_align_center" id="p1.1.2.1.1.1.1.1"><span class="ltx_text ltx_font_bold" id="p1.1.2.1.1.1.1.1.1">Kaiyu He,
+Mian Zhang,
+Peilin Wu,
+Xinya Du,
+Zhiyu Zoey Chen</span></span></span>
+<span class="ltx_tr" id="p1.1.2.1.1.2.2">
+<span class="ltx_td ltx_align_center" id="p1.1.2.1.1.2.2.1">Department of Computer Science</span></span>
+<span class="ltx_tr" id="p1.1.2.1.1.3.3">
+<span class="ltx_td ltx_align_center" id="p1.1.2.1.1.3.3.1">University of Texas at Dallas</span></span>
+<span class="ltx_tr" id="p1.1.2.1.1.4.4">
+<span class="ltx_td ltx_align_center" id="p1.1.2.1.1.4.4.1"><span class="ltx_text ltx_font_typewriter" id="p1.1.2.1.1.4.4.1.1">{kaiyu.he, zhiyu.chen2}@utdallas.edu</span></span></span>
+</span>
+</span></span></p>
+</div>
+</div>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p" id="S1.p1.1">Implicit reasoning refers to a model’s capacity to derive new information from its stored parameters without the aid of externalized tools. A primary failure mode, often termed the “curse of two-hop reasoning,”<cite class="ltx_cite ltx_citemacro_citep">(Balesni<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib1" title="Lessons from studying two-hop latent reasoning">2025</a>)</cite> occurs when standard Transformers fail to compose separately learned facts. For example, a model may successfully recall that “<span class="ltx_text ltx_font_italic" id="S1.p1.1.1">Barack’s wife is Michelle</span>” and “<span class="ltx_text ltx_font_italic" id="S1.p1.1.2">Michelle was born in 1964</span>,” yet it remains unable to answer “<span class="ltx_text ltx_font_italic" id="S1.p1.1.3">Barack’s wife was born in?</span>” purely through internal computation.</p>
+</div>
+<figure class="ltx_figure" id="S1.F1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="298" id="S1.F1.g1" src="x1.png" width="462"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 1: </span><span class="ltx_text ltx_font_bold" id="S1.F1.4.1">Mechanistic Comparison Between traditional transformer and parameter-sharing transformer.</span> (Left) Standard Transformers struggle with representational mismatch across independent layers and are unable to generalize to compositional reasoning. (Right) Transformer with shared parameter resolves the bridge entity <math alttext="b" class="ltx_Math" display="inline" id="S1.F1.2.m1" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> and is able to use shallow parameters to get the final answer.</figcaption>
+</figure>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p" id="S1.p2.2">This limitation is often attributed to a <span class="ltx_text ltx_font_bold" id="S1.p2.2.1">representational mismatch</span> in the model’s internal information flow (see Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.F1" title="Figure 1 ‣ 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">1</span></a>). In standard Transformers, atomic facts are typically retrieved and resolved in shallow layers. When performing compositional reasoning, the bridge entity <math alttext="b" class="ltx_Math" display="inline" id="S1.p2.1.m1" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> (e.g., <span class="ltx_text ltx_font_italic" id="S1.p2.2.2">Michelle</span>) emerges as an <span class="ltx_text ltx_font_italic" id="S1.p2.2.3">output</span> of these early layers. However, the subsequent deeper layers, which contain the parameters for the second hop, have not been trained to use this specific latent representation of <math alttext="b" class="ltx_Math" display="inline" id="S1.p2.2.m2" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> as an <span class="ltx_text ltx_font_italic" id="S1.p2.2.4">input</span> for further retrieval <cite class="ltx_cite ltx_citemacro_citep">(Wang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p" id="S1.p3.1">Existing research has demonstrated that parameter-sharing Transformers, when trained significantly beyond the point of training-label saturation, can achieve correct implicit compositional reasoning on unseen cases—a phenomenon known as <span class="ltx_text ltx_font_bold" id="S1.p3.1.1">“grokking”</span>. Subsequent mechanistic studies have revealed that this transition is driven by the emergence of a <span class="ltx_text ltx_font_bold" id="S1.p3.1.2">“Generalization Circuit”</span>: a specific internal computation path where the model learns to internalize the reasoning chain by explicitly recovering necessary intermediate information within its middle layers <cite class="ltx_cite ltx_citemacro_citep">(Power<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib7" title="Grokking: generalization beyond overfitting on small algorithmic datasets">2022</a>; Wang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>)</cite>.</p>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p" id="S1.p4.1">While prior work has sought to explain the mechanisms behind grokking <cite class="ltx_cite ltx_citemacro_citep">(Wang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>; Varma<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib8" title="Explaining grokking through circuit efficiency">2023</a>; Nanda<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib9" title="Progress measures for grokking via mechanistic interpretability">2023</a>; Merrill<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib10" title="A tale of two circuits: grokking as competition of sparse and dense subnetworks">2023</a>; Huang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib11" title="Unified view of grokking, double descent and emergent abilities: a perspective from circuits competition">2024</a>; Gu<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib12" title="Beyond progress measures: theoretical insights into the mechanism of grokking">2025</a>; Furuta<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib13" title="Towards empirical interpretation of internal circuits and properties in grokked transformers on modular polynomials">2024</a>; AlquBoj<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib14" title="Mechanistic insights into grokking from the embedding layer">2025</a>; Doshi<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib15" title="To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets">2024</a>; Lv<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib16" title="Language models “grok” to copy">2025</a>)</cite>, leveraged the phenomenon to improve model performance <cite class="ltx_cite ltx_citemacro_citep">(Abramov<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib6" title="Grokking in the wild: data augmentation for real-world multi-hop reasoning with transformers">2025</a>; Lyle<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib18" title="What can grokking teach us about learning under nonstationarity?">2025</a>; Murty<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib17" title="Grokking of hierarchical structure in vanilla transformers">2023</a>; Furuta<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib13" title="Towards empirical interpretation of internal circuits and properties in grokked transformers on modular polynomials">2024</a>; Africa<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib19" title="Learning modular exponentiation with transformers">2025</a>)</cite>, and explored diverse methodologies to induce it <cite class="ltx_cite ltx_citemacro_cite">Lin<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib2" title="Identity bridge: enabling implicit reasoning via shared latent memory">2025</a>); Lee<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib20" title="Grokfast: accelerated grokking by amplifying slow gradients">2024</a>); Xu<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib21" title="Let me grok for you: accelerating grokking via embedding transfer from a weaker model">2025</a>); Zhou<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib22" title="NeuralGrok: accelerate grokking by neural gradient transformation">2025</a>); Park<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib23" title="Acceleration of grokking in learning arithmetic operations via kolmogorov-arnold representation">2024</a>); Carvalho<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib24" title="Inducing grokking with distribution shifts">2025</a>)</cite>, a central question remains: Is a transformer trained through grokking better than its counterpart? Furthermore, does the reasoning capability acquired through grokking effectively transfer to downstream tasks or novel facts?</p>
+</div>
+<div class="ltx_para" id="S1.p5">
+<p class="ltx_p" id="S1.p5.1">In this work, we leverage the state-of-the-art parameter-sharing Transformer architecture <cite class="ltx_cite ltx_citemacro_citep">(Jolicoeur-Martineau, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib4" title="Less is more: recursive reasoning with tiny networks">2025</a>)</cite> on reasoning tasks to investigate the transferability of the grokked transformers on new facts. Our findings reveal that a grokked transformer with a Generalization Circuit may not be generalized as we expected:</p>
+</div>
+<section class="ltx_paragraph" id="S1.SS0.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Finding 1:</h4>
+<div class="ltx_para" id="S1.SS0.SSS0.Px1.p1">
+<p class="ltx_p" id="S1.SS0.SSS0.Px1.p1.1">Non-grokked transformer follows identical reasoning path as the grokked one on In-Distribution data, and grokking is the process of integrating memorized atomic facts into an naturally established reasoning structure. By providing sufficient atomic and compositional supervision, models can establish a stable Generalization Circuit and achieve equivalent transfer performance without undergoing the time-consuming grokking.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S1.SS0.SSS0.Px2">
+<h4 class="ltx_title ltx_title_paragraph">Finding 2:</h4>
+<div class="ltx_para" id="S1.SS0.SSS0.Px2.p1">
+<p class="ltx_p" id="S1.SS0.SSS0.Px2.p1.1">Grokking and the formation of a Generalization Circuit are not intrinsically linked, A “grokked” model may not necessarily reason through a Generalization Circuit, and a Generalization Circuit may not necessarily be obtained through grokking.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S1.SS0.SSS0.Px3">
+<h4 class="ltx_title ltx_title_paragraph">Finding 3:</h4>
+<div class="ltx_para" id="S1.SS0.SSS0.Px3.p1">
+<p class="ltx_p" id="S1.SS0.SSS0.Px3.p1.1">Following a Generalization Circuit does not imply a full mastery of compositional reasoning, while it accelerates the assimilation of new facts in specific setups, its ability to generalize reasoning patterns across domains remains limited compared to human-like reasoning.</p>
+</div>
+<figure class="ltx_figure" id="S1.F2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="138" id="S1.F2.g1" src="x2.png" width="660"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>Transformer model “Grokking” under different data regime.</figcaption>
+</figure>
+</section>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Task definition &amp; Training data</h2>
+<div class="ltx_para" id="S2.p1">
+<p class="ltx_p" id="S2.p1.1">We follow the compositional task definition and data format established in recent literature <cite class="ltx_cite ltx_citemacro_citep">(Wang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>; Ye<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib25" title="How do transformers learn implicit reasoning?">2025</a>; Guo<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib26" title="How do llms perform two-hop reasoning in context?">2025</a>; Brinkmann<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib27" title="A mechanistic analysis of a transformer trained on a symbolic multi-step reasoning task">2024</a>)</cite>. Models are trained on two types of queries: <span class="ltx_text ltx_font_bold" id="S2.p1.1.1">atomic queries</span>, such as <span class="ltx_text ltx_font_italic" id="S2.p1.1.2">&lt;Barack&gt; &lt;wife&gt;?</span>”, and <span class="ltx_text ltx_font_bold" id="S2.p1.1.3">compositional queries</span>, such as <span class="ltx_text ltx_font_italic" id="S2.p1.1.4">&lt;Barack&gt; &lt;wife&gt; &lt;born in&gt;?</span>”. To evaluate systematic generalization rather than surface-level memorization, we partition the set of all atomic facts into In-Distribution (ID) and Out-of-Distribution (OOD) subsets. During training, the model is exposed to all atomic queries but only those compositional queries constructed from ID facts. At test time, the model must answer compositional queries that involve OOD facts. Success in this setting indicates that the model has acquired a genuine compositional reasoning ability. Following the schema of <cite class="ltx_cite ltx_citemacro_citet">Wang<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>)</cite>, we construct a synthetic dataset to ensure precise control over reasoning paths. The dataset comprises 2,000 entities and 200 unique relations, with each entity associated with 20 relations, totaling 40,000 atomic facts. We reserve 5% (2,000 facts) as the OOD subset. More details on the construction of the dataset are shown in Appendix  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2" title="Appendix B Pre-training Data Construction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">B</span></a>.</p>
+</div>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Finding 1: Grokked and non-grokked transformers follow the same reasoning path</h2>
+<div class="ltx_para" id="S3.p1">
+<p class="ltx_p" id="S3.p1.1">Using the logit lens <cite class="ltx_cite ltx_citemacro_citep">(Belrose<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib5" title="Eliciting latent predictions from transformers with the tuned lens">2025</a>)</cite>, we visualize the maturation of Generalization Circuits in parameter-shared Transformers as they learn compositional reasoning. Specifically, we decode the hidden states across all layers with logit lens to identify the entities they represent. An inference trace is categorized as ’Bridge found’ if the decoded hidden state matches the ground-truth bridge entity. We define the Generalization Circuit as the internal reasoning trace that achieves compositional reasoning by explicitly recovering the bridge entity within the model’s intermediate layers <cite class="ltx_cite ltx_citemacro_citep">(Wang<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>)</cite>. As shown in Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.F2" title="Figure 2 ‣ Finding 3: ‣ 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">2</span></a> (A), a model exhibiting natural grokking establishes three distinct stages during training on OOD compostional queries. The <span class="ltx_text ltx_font_bold" id="S3.p1.1.1">first stage</span> is the saturation of training targets, occurring at approximately 0.1M steps. In the <span class="ltx_text ltx_font_bold" id="S3.p1.1.2">second stage</span>, which persists for an additional 0.2M steps, the model begins to consistently recover the correct bridge entity within its intermediate layers for OOD compositional queries. The <span class="ltx_text ltx_font_bold" id="S3.p1.1.3">third stage</span> involves the model learning to effectively utilize these intermediate representations to derive the final answer, a process that stabilizes after 1M steps.</p>
+</div>
+<div class="ltx_para" id="S3.p2">
+<p class="ltx_p" id="S3.p2.1">However, when providing compositional supervision on OOD facts, the final model trained with fewer steps follows the same reasoning path as naturally grokked models. Specifically, for <span class="ltx_text ltx_font_bold" id="S3.p2.1.1">every</span> OOD facts appearing in the first hop of test queries, we randomly pair them with ID facts to construct <span class="ltx_text ltx_font_italic" id="S3.p2.1.2">OOD Facts + ID Facts</span> queries (<span class="ltx_text ltx_font_bold" id="S3.p2.1.3">First Hop Full Augmentation</span>); for <span class="ltx_text ltx_font_bold" id="S3.p2.1.4">every</span> OOD facts appearing in the second hop of test queries, we construct <span class="ltx_text ltx_font_italic" id="S3.p2.1.5">ID Facts + OOD Facts</span> queries (<span class="ltx_text ltx_font_bold" id="S3.p2.1.6">Second Hop Full Augmentation</span>). Adding these queries ensures the model observes each OOD fact in both compositional positions, effectively equalizing the level of supervision between OOD and ID facts. Surprisingly, this supervision does not prevent the formation of the Generalization Circuit. As shown in Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.F2" title="Figure 2 ‣ Finding 3: ‣ 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">2</span></a>(B), within 0.3M training steps, every correct prediction on OOD compositions is achieved through successful recovery of the bridge entity in intermediate layers. Furthermore, we show in §<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S5" title="5 Finding 3: Transferability of Generalization Circuit ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">5</span></a> and Figure  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A1.F4" title="Figure 4 ‣ Appendix A Figures ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">4</span></a> in Appendix  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A1" title="Appendix A Figures ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">A</span></a> that the model trained under full supervision exhibits identical transferability when applied to new facts compared to a natural grokked one.</p>
+</div>
+<div class="ltx_para" id="S3.p3">
+<p class="ltx_p" id="S3.p3.1">These findings suggest that the “Generalization Circuit” does not represent the sudden acquisition of a generalized reasoning paradigm. Instead, such a reasoning path is established in the early stages of training for ID facts. Crucially, this circuit is not directly applicable to all memorized facts; rather, the subsequent grokking phase progressively integrates sparsely supervised OOD facts into this established circuit. Consequently, a model trained extensively under sparse compositional supervision and a model trained rapidly under full supervision converge on the same solution: they are <span class="ltx_text ltx_font_bold" id="S3.p3.1.1">functionally equivalent</span> in their mechanistic approach to compositional reasoning.</p>
+</div>
+<figure class="ltx_figure" id="S3.F3"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="140" id="S3.F3.g1" src="x3.png" width="660"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>“Grokked” Transformer learning new knowledge, detailed visualization on all settings can be seen in Figure  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A1.F4" title="Figure 4 ‣ Appendix A Figures ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">4</span></a> in Appendix  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A1" title="Appendix A Figures ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">A</span></a></figcaption>
+</figure>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Finding 2: Behavioral Grokking or True Grokking?</h2>
+<div class="ltx_para" id="S4.p1">
+<p class="ltx_p" id="S4.p1.1">First defined by <cite class="ltx_cite ltx_citemacro_citet">Power<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib7" title="Grokking: generalization beyond overfitting on small algorithmic datasets">2022</a>)</cite>, grokking is a phenomenon where a model suddenly achieves high accuracy on unseen cases long after saturating its performance on training targets. Previous studies have leveraged this phenomenon to improve model performance or have employed data augmentation to accelerate grokking <cite class="ltx_cite ltx_citemacro_citep">(Abramov<span class="ltx_text ltx_bib_etal"> et al.</span>, <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib6" title="Grokking in the wild: data augmentation for real-world multi-hop reasoning with transformers">2025</a>)</cite>. However, we demonstrate that not all training processes that satisfy the behavioral description of grokking actually involve the formation of the intended underlying mechanism.</p>
+</div>
+<div class="ltx_para" id="S4.p2">
+<p class="ltx_p" id="S4.p2.1">To investigate this, we conducted additional augmentation experiments on OOD facts. Similar to augmentation in § <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3" title="3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">3</span></a>, but this time we only did the <span class="ltx_text ltx_font_bold" id="S4.p2.1.1">Second Hop Full Augmentation</span>. As shown in Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.F2" title="Figure 2 ‣ Finding 3: ‣ 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">2</span></a> (D), although the training curve fits the behavior description of grokking. Its underlying mechanism is different from Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.F2" title="Figure 2 ‣ Finding 3: ‣ 1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">2</span></a> (A) and (B), their final answer to composition queries does not come through a correctly recovered bridge entity during the middle layer. And we will show in the § <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S5" title="5 Finding 3: Transferability of Generalization Circuit ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">5</span></a> that such “Fake grokked” transformer lacks the same level of transferability compared to those transformers that really established Generalization Circuits.</p>
+</div>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Finding 3: Transferability of Generalization Circuit</h2>
+<div class="ltx_para" id="S5.p1">
+<p class="ltx_p" id="S5.p1.1">Most evaluations of “Grokking” have been conducted using static datasets where the atomic facts are static. Intuitively, if a model has truly mastered a specific reasoning logic, it should exhibit human-like adaptability; once the reasoning rule is learned, it should be immediately applicable to novel facts. Despite this expectation, the downstream transferability of “grokked” Transformers remains largely underexplored.</p>
+</div>
+<section class="ltx_subsection" id="S5.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.1 </span>Finetuning data</h3>
+<div class="ltx_para" id="S5.SS1.p1">
+<p class="ltx_p" id="S5.SS1.p1.3">In the pre-training dataset, there are <math alttext="200" class="ltx_Math" display="inline" id="S5.SS1.p1.1.m1" intent=":literal"><semantics><mn>200</mn><annotation encoding="application/x-tex">200</annotation></semantics></math> relations in total, and each entity is connected to <math alttext="20" class="ltx_Math" display="inline" id="S5.SS1.p1.2.m2" intent=":literal"><semantics><mn>20</mn><annotation encoding="application/x-tex">20</annotation></semantics></math> relations. For each entity, we randomly sample relations that have not been previously used (i.e., unseen (entity, relation) pairs), and we instantiate new triples by assigning a target entity. Repeating this procedure yields entirely <math alttext="2,000" class="ltx_Math" display="inline" id="S5.SS1.p1.3.m3" intent=":literal"><semantics><mrow><mn>2</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">2,000</annotation></semantics></math> new atomic facts.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p2">
+<p class="ltx_p" id="S5.SS1.p2.3">To prevent catastrophic forgetting of the original knowledge, we also retain a subset of 8,000 atomic facts from the original in-distribution (ID) training set. We then build the finetuning training split as follows:
+(1) the retained <math alttext="8,000" class="ltx_Math" display="inline" id="S5.SS1.p2.1.m1" intent=":literal"><semantics><mrow><mn>8</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">8,000</annotation></semantics></math> original ID atomic facts,
+(2) the <math alttext="2,000" class="ltx_Math" display="inline" id="S5.SS1.p2.2.m2" intent=":literal"><semantics><mrow><mn>2</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">2,000</annotation></semantics></math> newly added atomic facts, and
+(3) all compositional queries whose supporting atomic facts are included in the retained <math alttext="8,000" class="ltx_Math" display="inline" id="S5.SS1.p2.3.m3" intent=":literal"><semantics><mrow><mn>8</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">8,000</annotation></semantics></math> ID subset (so that these compositional queries remain answerable from the included old facts).</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.2 </span>Limited transferability of Generalization Circuit</h3>
+<div class="ltx_para" id="S5.SS2.p1">
+<p class="ltx_p" id="S5.SS2.p1.1">We use the pre-trained checkpoints obtained in § <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3" title="3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">3</span></a> and § <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S4" title="4 Finding 2: Behavioral Grokking or True Grokking? ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">4</span></a> as base models for further fine-tuning on finetuning data. This setup enables us to assess the models’ capacity to assimilate new atomic facts and their efficiency in resolving associated downstream compositional queries. The resulting learning curves are illustrated in Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3.F3" title="Figure 3 ‣ 3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">3</span></a>. We find that the Generalization Circuit learned during pretraining provides limited benefits. Models that have developed the intended Circuit can often recover the correct bridge entity for compositional queries involving new facts; it then leverages patterns acquired during pretraining to complete the second-hop reasoning instantly (See in Figure  <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3.F3" title="Figure 3 ‣ 3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">3</span></a> (A)).</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p2">
+<p class="ltx_p" id="S5.SS2.p2.1">However, when a novel fact is required in the second hop, models fail to complete the inference despite correctly recovering the bridge entity, indicating that the second component of the Generalization Circuit is less transferable. To establish a reliable circuit for new knowledge, models still require either (i) an additional grokking phase, or (ii) substantially more finetuning data covering the new facts and their compositions. Finally, “Fake grokked” transformers, despite achieving comparable performance on original OOD facts, fail to adapt to compositional reasoning mixing new and old facts. As shown in Figure <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3.F3" title="Figure 3 ‣ 3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">3</span></a>(B), these models memorize new atomic facts but do not learn to reason over them compositionally.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S6">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>Conclusion</h2>
+<div class="ltx_para" id="S6.p1">
+<p class="ltx_p" id="S6.p1.1">In this work, we mechanistically re-evaluate grokking and Generalization Circuits in Transformers. Our findings challenge the view that grokking represents genuine acquisition of generalized reasoning. We show that grokked and non-grokked models follow identical reasoning paths, revealing that grokking merely integrates memorized facts into naturally established circuits. We further demonstrate a dissociation between behavioral grokking and circuit formation, and expose limited transferability to novel facts. These results suggest that the decision to pursue grokking involves a trade-off between data scarcity and computational resources: training until grokking may be necessary under sparse supervision, but with sufficient compositional data, models can stop at training saturation and achieve equivalent performance.</p>
+</div>
+</section>
+<section class="ltx_section" id="S7">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">7 </span>Limitations</h2>
+<div class="ltx_para" id="S7.p1">
+<p class="ltx_p" id="S7.p1.1">Despite the mechanistic insights provided by our study, several limitations remain.</p>
+</div>
+<div class="ltx_para" id="S7.p2">
+<p class="ltx_p" id="S7.p2.1"><span class="ltx_text ltx_font_bold" id="S7.p2.1.1">Computational Constraints on Exploring Fake Grokking:</span> First, our investigation into “fake grokking” (behavioral grokking without circuit formation) is not exhaustive. Since the emergence of grokking phenomena typically requires extremely prolonged training cycles (often exceeding 1M steps in our settings), conducting a large-scale grid search to identify all possible augmentation strategies that might trigger circuit collapse was computationally infeasible. Consequently, while we have demonstrated that certain augmentation regimes lead to fake grokking, the precise boundary conditions and the universal principles governing this transition remain an open question. Future research is needed to systematically categorize which data distributions favor circuit formation over pattern memorization.</p>
+</div>
+<div class="ltx_para" id="S7.p3">
+<p class="ltx_p" id="S7.p3.1"><span class="ltx_text ltx_font_bold" id="S7.p3.1.1">Architectural Scope:</span> Second, our findings are specifically constrained to parameter-sharing Transformer architectures. As established in recent literature, these models are currently unique in their ability to resolve the representational mismatch that typically hinders implicit compositional reasoning. Standard Transformers with independent layer weights inherently struggle to compose separately learned facts; their deeper layers are not trained to recognize the latent representations produced by earlier layers as valid inputs for subsequent retrieval. Therefore, while our results regarding circuit formation and collapse are robust within the context of shared-parameter models, they do not necessarily extend to traditional architectures, which appear unable to achieve this form of implicit generalization even with extensive training.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+<ul class="ltx_biblist" id="bib.L1">
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib6">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">R. Abramov, F. Steinbauer, and G. Kasneci (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking in the wild: data augmentation for real-world multi-hop reasoning with transformers</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Forty-second International Conference on Machine Learning</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://openreview.net/forum?id=lyUJH51URt" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S4.p1.1" title="4 Finding 2: Behavioral Grokking or True Grokking? ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib19">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">D. D. Africa, S. M. Kapoor, T. S. Sorg, and C. Mishra (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Learning modular exponentiation with transformers</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2506.23679</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2506.23679" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib14">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">H. V. AlquBoj, H. AlQuabeh, V. Bojkovic, M. Nwadike, and K. Inui (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Mechanistic insights into grokking from the embedding layer</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2505.15624</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2505.15624" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib1">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">M. Balesni, T. Korbak, and O. Evans (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Lessons from studying two-hop latent reasoning</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2411.16353</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2411.16353" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p1.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib5">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">N. Belrose, I. Ostrovsky, L. McKinney, Z. Furman, L. Smith, D. Halawi, S. Biderman, and J. Steinhardt (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Eliciting latent predictions from transformers with the tuned lens</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2303.08112</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2303.08112" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3.p1.1" title="3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib27">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Brinkmann, A. Sheshadri, V. Levoso, P. Swoboda, and C. Bartelt (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A mechanistic analysis of a transformer trained on a symbolic multi-step reasoning task</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2402.11917</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2402.11917" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S2.p1.1" title="2 Task definition &amp; Training data ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib24">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">B. W. Carvalho, A. d’Avila Garcez, L. C. Lamb, and E. V. Brazil (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Inducing grokking with distribution shifts</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">2025 IEEE 37th International Conference on Tools with Artificial Intelligence (ICTAI)</span>,
+</span>
+<span class="ltx_bibblock">Vol. <span class="ltx_text ltx_bib_volume"></span>, <span class="ltx_text ltx_bib_pages"> pp. 222–229</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref doi ltx_bib_external" href="https://dx.doi.org/10.1109/ICTAI66417.2025.00036" title="">Document</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib15">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">D. Doshi, A. Das, T. He, and A. Gromov (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2310.13061</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2310.13061" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib13">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">H. Furuta, G. Minegishi, Y. Iwasawa, and Y. Matsuo (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Towards empirical interpretation of internal circuits and properties in grokked transformers on modular polynomials</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">Transactions on Machine Learning Research</span>.
+</span>
+<span class="ltx_bibblock">Note: <span class="ltx_text ltx_bib_note"></span>
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text issn ltx_bib_external">ISSN 2835-8856</span>,
+<a class="ltx_ref ltx_bib_external" href="https://openreview.net/forum?id=MzSf70uXJO" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib12">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Gu, R. Chen, H. Zhang, Y. Hu, and X. Cao (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Beyond progress measures: theoretical insights into the mechanism of grokking</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2504.03162</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2504.03162" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib26">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">T. Guo, H. Zhu, R. Zhang, J. Jiao, S. Mei, M. I. Jordan, and S. Russell (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">How do llms perform two-hop reasoning in context?</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2502.13913</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2502.13913" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S2.p1.1" title="2 Task definition &amp; Training data ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib11">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Y. Huang, S. Hu, X. Han, Z. Liu, and M. Sun (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Unified view of grokking, double descent and emergent abilities: a perspective from circuits competition</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2402.15175</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2402.15175" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib4">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Jolicoeur-Martineau (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Less is more: recursive reasoning with tiny networks</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2510.04871</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2510.04871" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p5.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib20">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Lee, B. G. Kang, K. Kim, and K. M. Lee (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokfast: accelerated grokking by amplifying slow gradients</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2405.20233</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2405.20233" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib2">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">P. Lin, Z. Chen, and Z. J. Xu (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Identity bridge: enabling implicit reasoning via shared latent memory</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2509.24653</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2509.24653" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib16">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Lv, R. Xie, X. Sun, Z. Kang, and R. Yan (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Language models “grok” to copy</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers)</span>,  <span class="ltx_text ltx_bib_editor">L. Chiruzzo, A. Ritter, and L. Wang (Eds.)</span>,
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_place">Albuquerque, New Mexico</span>, <span class="ltx_text ltx_bib_pages"> pp. 735–741</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://aclanthology.org/2025.naacl-short.61/" title="">Link</a>,
+<a class="ltx_ref doi ltx_bib_external" href="https://dx.doi.org/10.18653/v1/2025.naacl-short.61" title="">Document</a>,
+<span class="ltx_text isbn ltx_bib_external">ISBN 979-8-89176-190-2</span></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib18">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">C. Lyle, G. Sokar, R. Pascanu, and A. Gyorgy (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">What can grokking teach us about learning under nonstationarity?</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">arXiv preprint arXiv:2507.20057</span>.
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib10">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">W. Merrill, N. Tsilivis, and A. Shukla (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">A tale of two circuits: grokking as competition of sparse and dense subnetworks</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://openreview.net/forum?id=8GZxtu46Kx" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_article" id="bib.bib17">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">S. Murty, P. Sharma, J. Andreas, and C. D. Manning (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking of hierarchical structure in vanilla transformers</span>.
+</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_journal">CoRR</span> <span class="ltx_text ltx_bib_volume">abs/2305.18741</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://doi.org/10.48550/arXiv.2305.18741" title="">Link</a>,
+<a class="ltx_ref doi ltx_bib_external" href="https://dx.doi.org/10.48550/ARXIV.2305.18741" title="">Document</a>,
+<span class="ltx_text ltx_bib_external">2305.18741</span></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib9">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Progress measures for grokking via mechanistic interpretability</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2301.05217</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2301.05217" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib23">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Y. Park, M. Kim, and Y. Kim (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Acceleration of grokking in learning arithmetic operations via kolmogorov-arnold representation</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2405.16658</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2405.16658" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib7">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking: generalization beyond overfitting on small algorithmic datasets</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2201.02177</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2201.02177" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p3.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S4.p1.1" title="4 Finding 2: Behavioral Grokking or True Grokking? ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§4</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib8">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar (2023)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Explaining grokking through circuit efficiency</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2309.02390</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2309.02390" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib3">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">B. Wang, X. Yue, Y. Su, and H. Sun (2024)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">Advances in Neural Information Processing Systems</span>,  <span class="ltx_text ltx_bib_editor">A. Globerson, L. Mackey, D. Belgrave, A. Fan, U. Paquet, J. Tomczak, and C. Zhang (Eds.)</span>,
+</span>
+<span class="ltx_bibblock">Vol. <span class="ltx_text ltx_bib_volume">37</span>, <span class="ltx_text ltx_bib_pages"> pp. 95238–95265</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref doi ltx_bib_external" href="https://dx.doi.org/10.52202/079017-3017" title="">Document</a>,
+<a class="ltx_ref ltx_bib_external" href="https://proceedings.neurips.cc/paper_files/paper/2024/file/ad217e0c7fecc71bdf48660ad6714b07-Paper-Conference.pdf" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#A2.p1.1" title="Appendix B Pre-training Data Construction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">Appendix B</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p2.2" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p3.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S2.p1.1" title="2 Task definition &amp; Training data ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§2</span></a>,
+<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S3.p1.1" title="3 Finding 1: Grokked and non-grokked transformers follow the same reasoning path ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§3</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib21">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">Z. Xu, Z. Ni, Y. Wang, and W. Hu (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">Let me grok for you: accelerating grokking via embedding transfer from a weaker model</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Thirteenth International Conference on Learning Representations</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://openreview.net/forum?id=4rEI2JdHH6" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_inproceedings" id="bib.bib25">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">J. Ye, Z. Yao, Z. Huang, L. Pan, J. Liu, Y. Bai, A. Xin, L. Weichuan, X. Che, L. Hou, and J. Li (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">How do transformers learn implicit reasoning?</span>.
+</span>
+<span class="ltx_bibblock">In <span class="ltx_text ltx_bib_inbook">The Thirty-ninth Annual Conference on Neural Information Processing Systems</span>,
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><a class="ltx_ref ltx_bib_external" href="https://openreview.net/forum?id=19ygs48nOa" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S2.p1.1" title="2 Task definition &amp; Training data ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§2</span></a>.
+</span>
+</li>
+<li class="ltx_bibitem ltx_bib_misc" id="bib.bib22">
+<span class="ltx_tag ltx_bib_author-year ltx_role_refnum ltx_tag_bibitem">X. Zhou, S. Fan, M. Jaggi, and J. Fu (2025)</span>
+<span class="ltx_bibblock"><span class="ltx_text ltx_bib_title">NeuralGrok: accelerate grokking by neural gradient transformation</span>.
+</span>
+<span class="ltx_bibblock">External Links: <span class="ltx_text ltx_bib_links"><span class="ltx_text ltx_bib_external">2504.17243</span>,
+<a class="ltx_ref ltx_bib_external" href="https://arxiv.org/abs/2504.17243" title="">Link</a></span>
+</span>
+<span class="ltx_bibblock ltx_bib_cited">Cited by: <a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#S1.p4.1" title="1 Introduction ‣ Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers"><span class="ltx_text ltx_ref_tag">§1</span></a>.
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<section class="ltx_appendix" id="A1">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Figures</h2>
+<figure class="ltx_figure" id="A1.F4"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="772" id="A1.F4.g1" src="x4.png" width="660"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>“Grokked” transformer finetuned on new facts.</figcaption>
+</figure>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</section>
+<section class="ltx_appendix" id="A2">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix B </span>Pre-training Data Construction</h2>
+<div class="ltx_para" id="A2.p1">
+<p class="ltx_p" id="A2.p1.1">We adopt a synthetic data generation framework following <cite class="ltx_cite ltx_citemacro_citet">Wang<span class="ltx_text ltx_bib_etal"> et al.</span> (<a class="ltx_ref" href="https://arxiv.org/html/2601.09049v1#bib.bib3" title="Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization">2024</a>)</cite> to ensure precise control over reasoning paths and data distributions.</p>
+</div>
+<section class="ltx_subsection" id="A2.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">B.1 </span>Synthetic Dataset Generation</h3>
+<div class="ltx_para" id="A2.SS1.p1">
+<p class="ltx_p" id="A2.SS1.p1.4">The dataset is modeled as a directed knowledge graph <math alttext="G" class="ltx_Math" display="inline" id="A2.SS1.p1.1.m1" intent=":literal"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, consisting of <math alttext="|\mathcal{E}|=2,000" class="ltx_Math" display="inline" id="A2.SS1.p1.2.m2" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">|</mo><mi class="ltx_font_mathcaligraphic">ℰ</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mn>2</mn><mo>,</mo><mn>000</mn></mrow></mrow><annotation encoding="application/x-tex">|\mathcal{E}|=2,000</annotation></semantics></math> entities and <math alttext="|\mathcal{R}|=200" class="ltx_Math" display="inline" id="A2.SS1.p1.3.m3" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">|</mo><mi class="ltx_font_mathcaligraphic">ℛ</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mn>200</mn></mrow><annotation encoding="application/x-tex">|\mathcal{R}|=200</annotation></semantics></math> unique relations. Each entity serves as a subject for 20 unique relations, resulting in a total of <math alttext="40,000" class="ltx_Math" display="inline" id="A2.SS1.p1.4.m4" intent=":literal"><semantics><mrow><mn>40</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">40,000</annotation></semantics></math> atomic triplets.</p>
+</div>
+<div class="ltx_para" id="A2.SS1.p2">
+<p class="ltx_p" id="A2.SS1.p2.2">To evaluate systematicity, these facts are partitioned into In-Distribution (<math alttext="C_{ID}" class="ltx_Math" display="inline" id="A2.SS1.p2.1.m1" intent=":literal"><semantics><msub><mi>C</mi><mrow><mi>I</mi><mo lspace="0em" rspace="0em">​</mo><mi>D</mi></mrow></msub><annotation encoding="application/x-tex">C_{ID}</annotation></semantics></math>) and Out-of-Distribution (<math alttext="C_{OOD}" class="ltx_Math" display="inline" id="A2.SS1.p2.2.m2" intent=":literal"><semantics><msub><mi>C</mi><mrow><mi>O</mi><mo lspace="0em" rspace="0em">​</mo><mi>O</mi><mo lspace="0em" rspace="0em">​</mo><mi>D</mi></mrow></msub><annotation encoding="application/x-tex">C_{OOD}</annotation></semantics></math>) subsets using a 95%:5% split, yielding 38,000 ID facts and 2,000 OOD facts. While the model is exposed to all atomic facts during training, compositional queries involving OOD facts are reserved strictly for testing true reasoning capability.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="A2.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">B.2 </span>Two-Hop Composition Rule</h3>
+<div class="ltx_para" id="A2.SS2.p1">
+<p class="ltx_p" id="A2.SS2.p1.4">The core task involves inducing the latent rule of two-hop composition:</p>
+<table class="ltx_equation ltx_eqn_table" id="A2.E1">
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math alttext="(h,r_{1},b)\wedge(b,r_{2},t)\Rightarrow(h,r_{1},r_{2},t)" class="ltx_Math" display="block" id="A2.E1.m1" intent=":literal"><semantics><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">⇒</mo><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex">(h,r_{1},b)\wedge(b,r_{2},t)\Rightarrow(h,r_{1},r_{2},t)</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right" rowspan="1"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p" id="A2.SS2.p1.3">where <math alttext="h,b,t" class="ltx_Math" display="inline" id="A2.SS2.p1.1.m1" intent=":literal"><semantics><mrow><mi>h</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">h,b,t</annotation></semantics></math> denote the head, bridge, and tail entities, respectively. The model is trained to predict <math alttext="t" class="ltx_Math" display="inline" id="A2.SS2.p1.2.m2" intent=":literal"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> given <math alttext="(h,r_{1},r_{2})" class="ltx_Math" display="inline" id="A2.SS2.p1.3.m3" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(h,r_{1},r_{2})</annotation></semantics></math> by internally retrieving and composing the two supporting atomic facts.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="A2.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">B.3 </span>Choice of Inferred/Atomic Ratio (<math alttext="\phi" class="ltx_Math" display="inline" id="A2.SS3.1.m1" intent=":literal"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>)</h3>
+<div class="ltx_para" id="A2.SS3.p1">
+<p class="ltx_p" id="A2.SS3.p1.2">The ratio <math alttext="\phi=|train\_inferred_{ID}|/|atomic_{ID}|" class="ltx_Math" display="inline" id="A2.SS3.p1.1.m1" intent=":literal"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>t</mi><mo lspace="0em" rspace="0em">​</mo><mi>r</mi><mo lspace="0em" rspace="0em">​</mo><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi mathvariant="normal">_</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi><mo lspace="0em" rspace="0em">​</mo><mi>f</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><mi>r</mi><mo lspace="0em" rspace="0em">​</mo><mi>r</mi><mo lspace="0em" rspace="0em">​</mo><mi>e</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>d</mi><mrow><mi>I</mi><mo lspace="0em" rspace="0em">​</mo><mi>D</mi></mrow></msub></mrow><mo stretchy="false">|</mo></mrow><mo>/</mo><mrow><mo stretchy="false">|</mo><mrow><mi>a</mi><mo lspace="0em" rspace="0em">​</mo><mi>t</mi><mo lspace="0em" rspace="0em">​</mo><mi>o</mi><mo lspace="0em" rspace="0em">​</mo><mi>m</mi><mo lspace="0em" rspace="0em">​</mo><mi>i</mi><mo lspace="0em" rspace="0em">​</mo><msub><mi>c</mi><mrow><mi>I</mi><mo lspace="0em" rspace="0em">​</mo><mi>D</mi></mrow></msub></mrow><mo stretchy="false">|</mo></mrow></mrow></mrow><annotation encoding="application/x-tex">\phi=|train\_inferred_{ID}|/|atomic_{ID}|</annotation></semantics></math> serves as the primary determinant for the speed of grokking. We explicitly set <math alttext="\phi=18.0" class="ltx_Math" display="inline" id="A2.SS3.p1.2.m2" intent=":literal"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mn>18.0</mn></mrow><annotation encoding="application/x-tex">\phi=18.0</annotation></semantics></math> for our experiments to facilitate efficient observation of the Generalization Circuit.</p>
+</div>
+<div class="ltx_para" id="A2.SS3.p2">
+<p class="ltx_p" id="A2.SS3.p2.2">According to the circuit efficiency hypothesis, a high ratio like <math alttext="18.0" class="ltx_Math" display="inline" id="A2.SS3.p2.1.m1" intent=":literal"><semantics><mn>18.0</mn><annotation encoding="application/x-tex">18.0</annotation></semantics></math> increases the relative complexity of a memorizing circuit compared to a generalizing one. This high-density supervision incentivizes the model to transition toward a systematic reasoning circuit more rapidly. Specifically, at <math alttext="\phi=18.0" class="ltx_Math" display="inline" id="A2.SS3.p2.2.m2" intent=":literal"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mn>18.0</mn></mrow><annotation encoding="application/x-tex">\phi=18.0</annotation></semantics></math>, models have been shown to achieve high generalization accuracy even before training performance saturates, providing a clear window for mechanistic analysis.</p>
+</div>
+</section>
+</section>
+<section class="ltx_appendix" id="A3">
+<h2 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix C </span>Data Augmentation Detail</h2>
+<div class="ltx_para" id="A3.p1">
+<p class="ltx_p" id="A3.p1.1">To evaluate the impact of supervision on the emergence of the Generalization Circuit, we implement targeted augmentation strategies that incorporate OOD facts into compositional training queries.</p>
+</div>
+<section class="ltx_paragraph" id="A3.SS0.SSS0.Px1">
+<h4 class="ltx_title ltx_title_paragraph">Fact-level compositional augmentation (ID–OOD mixing).</h4>
+<div class="ltx_para" id="A3.SS0.SSS0.Px1.p1">
+<p class="ltx_p" id="A3.SS0.SSS0.Px1.p1.10">Given an atomic split <math alttext="C_{\mathrm{ID}}\cup C_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.1.m1" intent=":literal"><semantics><mrow><msub><mi>C</mi><mi>ID</mi></msub><mo>∪</mo><msub><mi>C</mi><mi>OOD</mi></msub></mrow><annotation encoding="application/x-tex">C_{\mathrm{ID}}\cup C_{\mathrm{OOD}}</annotation></semantics></math> and an OOD compositional evaluation set <math alttext="\mathcal{Q}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.2.m2" intent=":literal"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒬</mi><mi>OOD</mi></msub><annotation encoding="application/x-tex">\mathcal{Q}_{\mathrm{OOD}}</annotation></semantics></math> of queries <math alttext="(h,r_{1},r_{2})\mapsto t" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.3.m3" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo stretchy="false">↦</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">(h,r_{1},r_{2})\mapsto t</annotation></semantics></math>, we first <em class="ltx_emph ltx_font_italic" id="A3.SS0.SSS0.Px1.p1.10.1">extract the OOD hop facts that actually appear in the evaluation compositions</em>. For each <math alttext="(h,r_{1},r_{2})\mapsto t\in\mathcal{Q}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.4.m4" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo stretchy="false">↦</mo><mi>t</mi><mo>∈</mo><msub><mi class="ltx_font_mathcaligraphic">𝒬</mi><mi>OOD</mi></msub></mrow><annotation encoding="application/x-tex">(h,r_{1},r_{2})\mapsto t\in\mathcal{Q}_{\mathrm{OOD}}</annotation></semantics></math>, we recover the bridge entity <math alttext="b" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.5.m5" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>, so that the corresponding hop facts are <math alttext="(h,r_{1},b)" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.6.m6" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(h,r_{1},b)</annotation></semantics></math> and <math alttext="(b,r_{2},t)" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.7.m7" intent=":literal"><semantics><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(b,r_{2},t)</annotation></semantics></math>; we then collect the subsets <math alttext="\mathcal{F}^{(1)}_{\mathrm{OOD}}=\{(h,r_{1},b)\in C_{\mathrm{OOD}}\}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.8.m8" intent=":literal"><semantics><mrow><msubsup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mi>OOD</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msub><mi>C</mi><mi>OOD</mi></msub></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}^{(1)}_{\mathrm{OOD}}=\{(h,r_{1},b)\in C_{\mathrm{OOD}}\}</annotation></semantics></math> and <math alttext="\mathcal{F}^{(2)}_{\mathrm{OOD}}=\{(b,r_{2},t)\in C_{\mathrm{OOD}}\}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.9.m9" intent=":literal"><semantics><mrow><msubsup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mi>OOD</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msub><mi>C</mi><mi>OOD</mi></msub></mrow><mo stretchy="false">}</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}^{(2)}_{\mathrm{OOD}}=\{(b,r_{2},t)\in C_{\mathrm{OOD}}\}</annotation></semantics></math> that occur as hop-1 / hop-2 components in <math alttext="\mathcal{Q}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px1.p1.10.m10" intent=":literal"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒬</mi><mi>OOD</mi></msub><annotation encoding="application/x-tex">\mathcal{Q}_{\mathrm{OOD}}</annotation></semantics></math>.</p>
+</div>
+<div class="ltx_para" id="A3.SS0.SSS0.Px1.p2">
+<ul class="ltx_itemize" id="A3.I1">
+<li class="ltx_item" id="A3.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="A3.I1.i1.p1">
+<p class="ltx_p" id="A3.I1.i1.p1.4"><span class="ltx_text ltx_font_bold" id="A3.I1.i1.p1.4.1">Hop-1 injection (OOD hop-1 + ID hop-2).</span>
+For each selected OOD hop-1 fact <math alttext="(h,r_{1},b)\in\mathcal{F}^{(1)}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.I1.i1.p1.1.m1" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msubsup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mi>OOD</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">(h,r_{1},b)\in\mathcal{F}^{(1)}_{\mathrm{OOD}}</annotation></semantics></math>, we generate additional training compositions by sampling an <em class="ltx_emph ltx_font_italic" id="A3.I1.i1.p1.4.2">ID</em> hop-2 fact <math alttext="(b,r_{x},t_{x})\in C_{\mathrm{ID}}" class="ltx_Math" display="inline" id="A3.I1.i1.p1.2.m2" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>r</mi><mi>x</mi></msub><mo>,</mo><msub><mi>t</mi><mi>x</mi></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msub><mi>C</mi><mi>ID</mi></msub></mrow><annotation encoding="application/x-tex">(b,r_{x},t_{x})\in C_{\mathrm{ID}}</annotation></semantics></math> that shares the same bridge <math alttext="b" class="ltx_Math" display="inline" id="A3.I1.i1.p1.3.m3" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>, and add the inferred training example <math alttext="(h,r_{1},r_{x})\mapsto t_{x}" class="ltx_Math" display="inline" id="A3.I1.i1.p1.4.m4" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mi>x</mi></msub><mo stretchy="false">)</mo></mrow><mo stretchy="false">↦</mo><msub><mi>t</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">(h,r_{1},r_{x})\mapsto t_{x}</annotation></semantics></math>.</p>
+</div>
+</li>
+<li class="ltx_item" id="A3.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="A3.I1.i2.p1">
+<p class="ltx_p" id="A3.I1.i2.p1.4"><span class="ltx_text ltx_font_bold" id="A3.I1.i2.p1.4.1">Hop-2 injection (ID hop-1 + OOD hop-2).</span>
+For each selected OOD hop-2 fact <math alttext="(b,r_{2},t)\in\mathcal{F}^{(2)}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.I1.i2.p1.1.m1" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msubsup><mi class="ltx_font_mathcaligraphic">ℱ</mi><mi>OOD</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">(b,r_{2},t)\in\mathcal{F}^{(2)}_{\mathrm{OOD}}</annotation></semantics></math>, we generate additional training compositions by sampling an <em class="ltx_emph ltx_font_italic" id="A3.I1.i2.p1.4.2">ID</em> hop-1 fact <math alttext="(h_{y},r_{y},b)\in C_{\mathrm{ID}}" class="ltx_Math" display="inline" id="A3.I1.i2.p1.2.m2" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mi>y</mi></msub><mo>,</mo><msub><mi>r</mi><mi>y</mi></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msub><mi>C</mi><mi>ID</mi></msub></mrow><annotation encoding="application/x-tex">(h_{y},r_{y},b)\in C_{\mathrm{ID}}</annotation></semantics></math> that ends at the same bridge <math alttext="b" class="ltx_Math" display="inline" id="A3.I1.i2.p1.3.m3" intent=":literal"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>, and add the inferred training example <math alttext="(h_{y},r_{y},r_{2})\mapsto t" class="ltx_Math" display="inline" id="A3.I1.i2.p1.4.m4" intent=":literal"><semantics><mrow><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mi>y</mi></msub><mo>,</mo><msub><mi>r</mi><mi>y</mi></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo stretchy="false">↦</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">(h_{y},r_{y},r_{2})\mapsto t</annotation></semantics></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="ltx_paragraph" id="A3.SS0.SSS0.Px2">
+<h4 class="ltx_title ltx_title_paragraph">Both hop full augmentation setting:</h4>
+<div class="ltx_para" id="A3.SS0.SSS0.Px2.p1">
+<p class="ltx_p" id="A3.SS0.SSS0.Px2.p1.1">We expose <em class="ltx_emph ltx_font_italic" id="A3.SS0.SSS0.Px2.p1.1.1">all</em> OOD hop facts extracted from <math alttext="\mathcal{Q}_{\mathrm{OOD}}" class="ltx_Math" display="inline" id="A3.SS0.SSS0.Px2.p1.1.m1" intent=":literal"><semantics><msub><mi class="ltx_font_mathcaligraphic">𝒬</mi><mi>OOD</mi></msub><annotation encoding="application/x-tex">\mathcal{Q}_{\mathrm{OOD}}</annotation></semantics></math>. Each OOD hop fact is injected into compositional training queries. Importantly, the augmentation <em class="ltx_emph ltx_font_italic" id="A3.SS0.SSS0.Px2.p1.1.2">does not</em> add the original OOD test compositions where <em class="ltx_emph ltx_font_italic" id="A3.SS0.SSS0.Px2.p1.1.3">both</em> hops are OOD; instead, every injected query is constructed to contain <em class="ltx_emph ltx_font_italic" id="A3.SS0.SSS0.Px2.p1.1.4">exactly one</em> OOD hop fact and one ID hop fact.</p>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Jan 14 00:37:04 2026 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

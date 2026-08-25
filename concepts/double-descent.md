@@ -1,0 +1,166 @@
+# Двойной спуск (double descent)
+
+[Эмерджентность / эмерджентные способности](emergence.md) ← предыдущая карточка, следующая → [Коллапс softmax](softmax-collapse.md)
+
+[Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
+→ Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\
+← Предыдущая категория: [7. Теория и формальные результаты](effective-theory-statistical-mechanics.md)
+
+## Определение
+
+**Double descent (двойной спуск)** — немонотонное поведение тестовой ошибки:
+при увеличении размера модели (либо объёма данных, либо числа эпох обучения)
+ошибка сначала падает, затем растёт до пика вблизи **точки интерполяции** (где
+модель ровно вписывает все обучающие примеры), а в переобученной области падает
+**снова** — отсюда «двойной» спуск \[[3.1](#ref-3-1)\]. Введено Belkin et al.
+(2019) и Nakkiran et al.; в исследованиях [гроккинга](grokking.md) обсуждается
+как родственное явление отложенной генерализации.
+
+## Детализация
+
+Double descent проявляется в нескольких формах. **Model-wise** (по размеру
+модели) — классическая кривая Belkin/Nakkiran: ошибка растёт к пику в точке
+интерполяции, а в переобученном (overparameterized) режиме снова падает
+\[[3.1](#ref-3-1)\]. **Epoch-wise** (по числу эпох обучения) — та же
+немонотонность, но во времени: валидационная потеря сначала падает, затем
+растёт, затем резко падает; именно эта форма роднит double descent с гроккингом
+\[[1.1](#ref-1-1)\]\[[1.2](#ref-1-2)\]. Есть и более узкие версии — например
+**двойной спуск рангов признаков** (числа линейно-независимых направлений в
+активациях сети) \[[1.3](#ref-1-3)\].
+
+Главный вопрос — **одно ли это явление с гроккингом**. Одни объединяют их:
+гроккинг, double descent и [эмерджентность](emergence.md) выводятся из общей
+рамки **конкуренции контуров** — запоминающего (подсеть, хранящая примеры) против
+обобщающего (реализующего алгоритм), то есть из [эффективности контуров](circuit-efficiency.md),
+а [критический размер данных](data-fraction-critical-dataset-size.md) или модели управляет обоими
+\[[3.1](#ref-3-1)\]. Их же трактуют как следствие единой «pattern-learning»
+модели \[[3.2](#ref-3-2)\]. Другие — начиная с оригинальной работы о гроккинге —
+считают, что гроккинг **может быть отличен** от double descent: здесь второй
+спуск виден только в **потере (loss), а не в accuracy**, и наступает на **десятки
+тысяч эпох позже** момента, когда обучающая потеря стала малой (в классическом
+double descent он идёт сразу за точкой интерполяции) \[[2.1](#ref-2-1)\].
+
+## Альтернативные определения и нюансы
+
+### A. Model-wise (по размеру модели)
+
+Классическая форма Belkin/Nakkiran: тестовая ошибка как функция **размера модели**
+— спад, пик у точки интерполяции, второй спад в переобученной области
+\[[3.1](#ref-3-1)\]. Источник различия: управляющий параметр — размер (ёмкость)
+модели.
+
+### B. Epoch-wise (по времени обучения)
+
+Немонотонность вдоль оси **эпох**: валидационная потеря падает → растёт → резко
+падает. Именно эта форма ближе всего к гроккингу (тот же «горб» ошибки во
+времени обучения) \[[1.1](#ref-1-1)\]\[[1.2](#ref-1-2)\]. Источник различия:
+управляющий параметр — число эпох, а не размер модели.
+
+### C. Обобщённые формы (ранги признаков)
+
+Двойной спуск бывает не только у ошибки: у **рангов признаков** (числа независимых
+направлений в активациях) наблюдается такой же двойной ход \[[1.3](#ref-1-3)\].
+Источник различия: double descent как свойство внутренней величины сети, а не
+только внешней метрики качества.
+
+### Оспаривают
+
+- **Гроккинг ≠ double descent** \[[2.1](#ref-2-1)\]: оригинальная работа о
+  гроккинге предполагает, что это, возможно, разные явления, и называет два
+  конкретных отличия — (1) немонотонность здесь только в **потере (loss), но не в
+  accuracy** (классический double descent немонотонен именно по ошибке/точности);
+  (2) второй спад наступает на **десятки тысяч эпох позже** того, как обучающая
+  потеря уже стала малой (в классическом варианте — сразу за точкой интерполяции).
+  Источник различия: отрицается общий механизм — расходятся и время наступления,
+  и величина, в которой видна немонотонность.
+
+### Поддерживают
+
+- **Единый механизм** \[[3.1](#ref-3-1)\]\[[3.2](#ref-3-2)\]: гроккинг и double
+  descent (а с ними и эмерджентность) выводятся из одной рамки — конкуренции
+  запоминающего и обобщающего контуров \[[3.1](#ref-3-1)\] либо единой
+  «pattern-learning» модели \[[3.2](#ref-3-2)\]. Источник различия: постулируется
+  общая причина, а критический размер данных/модели служит общим управляющим
+  параметром.
+
+## Ссылки
+
+###### ref-1-1
+**\[1.1\]** 2206.04817 — Thilak et al., «The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon». [`"exhibits a double descent behavior with an initial decrease, then a growth before rapidly decreasing to zero"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p4-2). *«[обнаруживает поведение двойного спуска: сначала снижение, затем рост, а затем быстрое падение до нуля](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p4-2)»*
+
+###### ref-1-2
+**\[1.2\]** 2306.13253 — Notsawo et al., «Predicting Grokking Long Before it Happens». [`"the validation loss exhibits a double descent behaviour with an initial decrease, then a growth before rapidly decreasing to zero"`](../papers/2306.13253.predicting-grokking-long-before-it-happens/original/2306.13253.predicting-grokking-long-before-it-happens.md#p7-3). *«[потеря на валидации обнаруживает поведение двойного спуска: сперва убывает, затем растёт, а потом быстро падает до нуля](../papers/2306.13253.predicting-grokking-long-before-it-happens/2306.13253.predicting-grokking-long-before-it-happens.card.md#p7-3)»*
+
+###### ref-1-3
+**\[1.3\]** 2405.19454 — Fan, Pascanu, Jaggi 2024, «Deep Grokking: Would Deep Neural Networks Generalize Better?». [`"the multi-stage generalization behavior is corresponding to a double-descent of feature ranks"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#p3-3). *«[поведение многопорной генерализации отвечает двойному спуску рангов признаков](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#p3-3)»*
+
+
+###### ref-1-4
+**\[1.4\]** 2303.06173 — Davies, Langosco, Krueger, «Unifying Grokking and Double Descent». Нюанс: первоисточник тезиса о единстве; заявка выдвинута как гипотеза и держится на игрушечной сигмоидной модели, к данным не подгонявшейся. [`"We argue that double descent and grokking are best viewed as two instances of the same phenomenon, in which inductive biases prefer better-generalizing but slower to learn patterns"`](../papers/2303.06173.unifying-grokking-and-double-descent/2303.06173.unifying-grokking-and-double-descent.card.md#p1-4). *«[Мы доказываем, что двойной спуск и гроккинг лучше рассматривать как два проявления одного и того же явления, при котором индуктивные предпочтения отдают предпочтение лучше обобщающим, но медленнее выучиваемым образцам](../papers/2303.06173.unifying-grokking-and-double-descent/2303.06173.unifying-grokking-and-double-descent.card.md#p1-4)»*\
+Доп. (возражение Power et al., приведённое дословно и не разобранное): [`"Grokking was first demonstrated by Power et al. 2022, who state that grokking is distinct from double descent because generalization occurs far past the interpolation threshold"`](../papers/2303.06173.unifying-grokking-and-double-descent/2303.06173.unifying-grokking-and-double-descent.card.md#p5-2) — *«[Гроккинг был впервые показан у Power et al. 2022, которые утверждают, что гроккинг отличен от двойного спуска, поскольку генерализация происходит далеко за порогом интерполяции](../papers/2303.06173.unifying-grokking-and-double-descent/2303.06173.unifying-grokking-and-double-descent.card.md#p5-2)»*.
+
+###### ref-1-5
+**\[1.5\]** 2310.12977 — Humayun, Balestriero, Baraniuk 2023, «Training Dynamics of Deep Network Linear Regions». Первый носитель термина в корпусе вне кривых ошибки: двойным спуском названа форма кривой местной сложности во времени обучения (спуск, подъём, второй спуск), подтверждённая сверкой с точным счётом линейных областей через SplineCAM. Нюанс: классический двойной спуск упомянут в аннотации как пример явления, введённого через потерю, но с кривой LC нигде не сопоставлен, и оговорки о разнице смысла работа не делает. [`"the local complexity around data points follow a double descent curve ultimately falling until training is stopped"`](../papers/2310.12977.training-dynamics-of-deep-network-linear-regions/original/2310.12977.training-dynamics-of-deep-network-linear-regions.md#fig-1). *«[местная сложность вокруг точек данных следует кривой двойного спуска, в конце концов падающей до самой остановки обучения](../papers/2310.12977.training-dynamics-of-deep-network-linear-regions/2310.12977.training-dynamics-of-deep-network-linear-regions.card.md#fig-1)»*\
+Доп. (сверка с точным счётом): [`"Both methods exhibit the double descent behavior."`](../papers/2310.12977.training-dynamics-of-deep-network-linear-regions/original/2310.12977.training-dynamics-of-deep-network-linear-regions.md#fig-12) — *«[Оба способа обнаруживают поведение двойного спуска.](../papers/2310.12977.training-dynamics-of-deep-network-linear-regions/2310.12977.training-dynamics-of-deep-network-linear-regions.card.md#fig-12)»*.
+## Ссылки на присоединившиеся работы
+
+### Оспаривают
+
+###### ref-2-1
+**\[2.1\]** 2201.02177 — Power et al., «Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets». Оспаривает единство: гроккинг, возможно, отличен от double descent. [`"We believe that the phenomenon we describe might be distinct from the double descent phenomena"`](../papers/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets.card.md#p9-2). *«[Мы полагаем, что описываемое нами явление может отличаться от явлений двойного спуска](../papers/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets.card.md#p9-2)»*\
+Доп. (в чём отличие): [`"because we observe the second descent in loss far past the ﬁrst time the training loss becomes very small (tens of thousands of epochs in some of our experiments), and we don’t observe a non-monotonic behavior of accuracy"`](../papers/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets.card.md#p9-2) — *«[поскольку мы наблюдаем второй спуск потерь намного позже того момента, когда потери на обучении впервые становятся очень малыми (десятки тысяч эпох в некоторых наших экспериментах), и мы не наблюдаем немонотонного поведения точности](../papers/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets.card.md#p9-2)»*.
+
+
+###### ref-2-2
+**\[2.2\]** 2506.23286 — Jeffares & van der Schaar, «Not All Explanations for Deep Learning Phenomena Are Equally Valuable». Нюанс: собственного измерения двойного спуска нет — рисунок 1 нарисован от руки, а левая половина рисунка 4 воспроизводит чужую постановку MNIST-1D. [`"When appropriate regularization is applied, as is typically done both explicitly and implicitly through e.g. early stopping and stochastic gradient descent, the double descent effect is no longer expected to appear"`](../papers/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/original/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.md#p3-2). *«[Когда применена подобающая регуляризация, как это обычно и делается — явно и неявно, например через раннюю остановку и стохастический градиентный спуск, — эффекта двойного спуска ожидать уже не приходится](../papers/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.card.md#p3-2)»*\
+Доп. (единственный развёрнутый образец уточнения широкой теории явлением): [`"phase transitions in test accuracy coincide with changes in the density of primes within the parameter vector"`](../papers/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/original/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.md#p6-1). *«[фазовые переходы в тестовой точности совпадают с изменениями плотности простых чисел внутри вектора параметров](../papers/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.card.md#p6-1)»*
+### Поддерживают
+
+###### ref-3-1
+**\[3.1\]** 2402.15175 — Huang et al., «Unified View of Grokking, Double Descent and Emergent Abilities: A Perspective from Circuits Competition». Нюанс: гроккинг, double descent и эмерджентность объединены рамкой конкуренции контуров. [`"a function that first increases, then decreases, and ultimately increases again with increasing model size. This pattern exemplifies the double descent phenomenon"`](../papers/2402.15175.unified-view-of-grokking-double-descent-and-emergent-abilities/original/2402.15175.unified-view-of-grokking-double-descent-and-emergent-abilities.md#p2-3). *«[функция с ростом размера модели сперва растёт, потом убывает и в конце концов растёт снова. Эта картина и есть явление двойного спуска](../papers/2402.15175.unified-view-of-grokking-double-descent-and-emergent-abilities/2402.15175.unified-view-of-grokking-double-descent-and-emergent-abilities.card.md#p2-3)»*
+
+###### ref-3-2
+**\[3.2\]** 2601.19791 — Xu et al., «To Grok Grokking: Provable Grokking in Ridge Regression». Нюанс: гроккинг и double descent объяснимы единой «pattern-learning» моделью. [`"Davies et al. (2023) hypothesized that grokking and double descent can be understood using the same pattern-learning model"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p3-2). *«[Davies et al. (2023) выдвинули догадку, что гроккинг и двойной спуск можно понимать одной и той же моделью выучивания образцов](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.card.md#p3-2)»*
+
+###### ref-3-3
+**\[3.3\]** 2402.15555 — Humayun, Balestriero, Baraniuk 2024, «Deep Networks Always Grok and Here is Why». Новый носитель термина: двойной спуск — это форма кривой местной сложности во времени обучения (спуск, подъём, второй спуск), подтверждённая сверкой с точным счётом областей через SplineCam. Нюанс: с двойным спуском ошибки — ни эпохальным, ни модельным — работа свою кривую не сопоставляет, а обоснование самой формы называет отсутствующим. [`"The local complexity around data points (bottom-left) follows a double descent curve"`](../papers/2402.15555.deep-networks-always-grok-and-here-is-why/original/2402.15555.deep-networks-always-grok-and-here-is-why.md#fig-2). *«[Местная сложность вокруг точек данных (снизу слева) следует кривой двойного спуска](../papers/2402.15555.deep-networks-always-grok-and-here-is-why/2402.15555.deep-networks-always-grok-and-here-is-why.card.md#fig-2)»*\
+Доп.: [`"While we empirically study the local complexity dynamics, a theoretical justification behind the double descent behavior is lacking."`](../papers/2402.15555.deep-networks-always-grok-and-here-is-why/original/2402.15555.deep-networks-always-grok-and-here-is-why.md#p9-6) — *«[Хотя мы изучаем динамику местной сложности эмпирически, теоретическое обоснование поведения двойного спуска отсутствует.](../papers/2402.15555.deep-networks-always-grok-and-here-is-why/2402.15555.deep-networks-always-grok-and-here-is-why.card.md#p9-6)»*.
+
+
+###### ref-3-4
+**\[3.4\]** 2411.00247 — Jeffares, Curth, van der Schaar, «Deep Learning Through A Telescoping Lens: A Simple Model Provides Empirical Insights On Grokking, Gradient Boosting & Beyond». Поддерживает разрешение двойного спуска через сложность выученного, а не через счёт параметров, и переносит его с неглубоких моделей на сети: $p^{train}$ растёт монотонно, а $p^{test}$ за порогом интерполяции убывает. Нюанс: опыты идут на однослойных сетях при входах $8\times8$, а на MNIST двойной спуск виден только при добавленном шуме в метках. [`"provides new quantitative evidence that bigger networks are *not* necessarily learning more complex prediction functions for unseen test examples, which resolves the ostensible tension between deep double descent and the classical U-curve"`](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/original/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.md#p5-5). *«[даёт новое количественное свидетельство того, что более крупные сети *не* обязательно выучивают более сложные функции предсказания для невиданных тестовых примеров, что снимает мнимое противоречие между глубоким двойным спуском и классической U-образной кривой](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.card.md#p5-5)»*\
+Доп. (что меряется): [`"Intuitively, the larger $\textstyle p^{0}_{\hat{\mathbf{s}}}$, the less smoothing across the training labels is performed, which implies higher model complexity."`](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/original/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.md#p4-4) — *«[Наглядно, чем больше $\textstyle p^{0}_{\hat{\mathbf{s}}}$, тем меньше выполняется сглаживания по обучающим меткам, что означает более высокую сложность модели](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.card.md#p4-4)»*\
+Доп. (связь с доброкачественным переобучением): [`"In Section 4.1 we provide new *empirical* evidence for this by highlighting that there is a difference between $p^{train}_{\hat{\mathbf{s}}}$ and $p^{test}_{\hat{\mathbf{s}}}$."`](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/original/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.md#p17-6) — *«[В разделе 4.1 мы даём этому новое *эмпирическое* свидетельство, выявляя, что между $p^{train}_{\hat{\mathbf{s}}}$ и $p^{test}_{\hat{\mathbf{s}}}$ есть разность](../papers/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.card.md#p17-6)»*.
+## Цитирования
+
+Работы, лишь упоминающие явление (обзор литературы, связанные работы, попутное цитирование) без его подробного разбора.
+
+**\[4.1\]** 2405.20233 — Lee et al., «Grokfast: Accelerated Grokking by Amplifying Slow Gradients». [`"relating the grokking phenomenon to the previously known double descent phenomenon"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-3). *«[связывая явление гроккинга с ранее известным явлением двойного спуска](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-3)»*
+
+**\[4.2\]** 2504.13292 — Xu et al., «Let Me Grok For You: Accelerating Grokking». [`"Davies et al. (2023) hypothesized that grokking and double descent, another surprising phenomenon, are caused by the same hidden mechanism"`](../papers/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model/original/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model.md#p2-4). *«[Davies et al. (2023) предположили, что гроккинг и двойной спуск, другое неожиданное явление, вызваны одним и тем же скрытым механизмом](../papers/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model.card.md#p2-4)»*
+
+**\[4.3\]** 2510.04930 — Saheb Pasand et al., «Egalitarian Gradient Descent». [`"grokking has been linked to phenomena such as double descent and emergent abilities"`](../papers/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking/original/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking.md#p4-1). *«[гроккинг связывался с явлениями вроде двойного спуска и возникающих способностей](../papers/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking.card.md#p4-1)»*
+
+**\[4.4\]** 2511.12768 — Hong, Hong, «Evidence of Phase Transitions in Small Transformer-Based Language Models». Нюанс: возражение о том, что скачки создаются самой мерой оценивания, принято как требование к приёму. [`"many step-like curves reported in Wei et al. arise from discrete, non-linear evaluation metrics rather than abrupt internal reorganizations"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p4-2) — *«[многие ступенчатые кривые из Wei et al. происходят от дискретных нелинейных мер оценивания, а не от резких внутренних перестроек](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.card.md#p4-2)»*
+
+**\[4.5\]** 2311.18817 — Lyu et al., «Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking». Нюанс: единственное упоминание двойного спуска — в пересказе Davies et al., и оно сопровождается прямым возражением о неопределённости понятия «узора» для произвольной динамики. [`"Davies et al. 2022 hypothesized that both grokking and double descent are the result of the existence of two patterns: one pattern is faster to learn but generalizes poorly, and the other pattern is slower to learn but generalizes well. However, it is unclear how these notions can be rigorously defined for general training dynamics."`](../papers/2311.18817.dichotomy-of-early-and-late-phase-implicit-biases-can-provably-induce-grokking/original/2311.18817.dichotomy-of-early-and-late-phase-implicit-biases-can-provably-induce-grokking.md#p16-1). *«[Davies et al. 2022 выдвинули гипотезу, что и гроккинг, и двойной спуск суть следствие существования двух узоров: один узор выучивается быстрее, но обобщает плохо, а другой выучивается медленнее, но обобщает хорошо. Однако неясно, как эти понятия можно строго определить для произвольной динамики обучения](../papers/2311.18817.dichotomy-of-early-and-late-phase-implicit-biases-can-provably-induce-grokking/2311.18817.dichotomy-of-early-and-late-phase-implicit-biases-can-provably-induce-grokking.card.md#p16-1)»*
+
+**\[4.6\]** 2210.15435 — Žunkovič, Ilievski, «Grokking phase transitions in learning local rules with gradient descent». Нюанс: двойной спуск служит только фоном введения и вторым упоминанием — среди наблюдений, подкрепляемых пользой терминальной фазы обучения; никакого сопоставления гроккинга с двойным спуском работа не проводит. [`"Despite recent progress in understanding the double descend phenomena [1, 2, 3, 4] we still do not have a complete theory of generalisation in over-parameterised models."`](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p3-1). *«[Несмотря на недавние успехи в понимании явления двойного спуска [1, 2, 3, 4], у нас до сих пор нет полной теории генерализации в переопараметризованных моделях](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p3-1)»*
+
+**\[4.7\]** 2401.10463 — Zhu et al. 2024. Нюанс: три режима по объёму данных выстроены по образцу режимов действенной сложности модели у Nakkiran et al.; двойного спуска работа не измеряет и не наблюдает — взята только рамка изложения. [`"Following the theory framework in [11], we formulate a hypothesis about critical data size under grokking"`](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p3-1). *«[Следуя теоретической рамке [11], мы формулируем гипотезу о критическом размере данных при гроккинге](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p3-1)»*
+
+**\[4.8\]** 2310.16441 — Levi et al. 2023. Нюанс: поэпоховые структуры спуска помянуты в обзоре, работа Davies et al. о сведении гроккинга и двойного спуска процитирована, но $\lambda=1$ как порог интерполяции с двойным спуском не связан ни словом. [`"corroborating the presence of epoch-wise descent structures"`](../papers/2310.16441.grokking-in-linear-estimators-a-solvable-model-that-groks-without-understanding/original/2310.16441.grokking-in-linear-estimators-a-solvable-model-that-groks-without-understanding.md#p3-1). *«[подтвердив наличие поэпоховых структур спуска](../papers/2310.16441.grokking-in-linear-estimators-a-solvable-model-that-groks-without-understanding/2310.16441.grokking-in-linear-estimators-a-solvable-model-that-groks-without-understanding.card.md#p3-1)»*
+
+**\[4.9\]** 2408.11804 — Yunis et al., «Approaching Deep Learning through the Spectral Dynamics of Weights». Нюанс: двойной спуск назван смежным явлением, к которому взгляд через спектральную динамику, возможно, тоже стоит перенести; никаких измерений двойного спуска в работе нет. [`"There may also be connections to other unexplained phenomena such as double descent (Belkin et al. 2019; Nakkiran et al. 2021; Davies et al. 2022) or adversarial examples"`](../papers/2408.11804.approaching-deep-learning-through-the-spectral-dynamics-of-weights/original/2408.11804.approaching-deep-learning-through-the-spectral-dynamics-of-weights.md#p14-3). *«[Возможны также связи с другими необъяснёнными явлениями, такими как двойной спуск (Belkin et al. 2019; Nakkiran et al. 2021; Davies et al. 2022) или состязательные примеры](../papers/2408.11804.approaching-deep-learning-through-the-spectral-dynamics-of-weights/2408.11804.approaching-deep-learning-through-the-spectral-dynamics-of-weights.card.md#p14-3)»*
+
+**\[4.10\]** 2605.09724 — Song & Ye, «Model Capacity Determines Grokking through Competing Memorisation and Generalisation Speeds». Нюанс: собственно двойного спуска работа не показывает — немонотонности качества по размеру модели не ищет, хотя развёртка идёт по размеру. [`"grokking and double descent are unified by a spectrum of pattern-learning speeds"`](../papers/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds/original/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds.md#p3-3). *«[гроккинг и двойной спуск объединяются спектром скоростей выучивания закономерностей](../papers/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds.card.md#p3-3)»*
+
+**\[4.11\]** 2606.13753 — Truong et al. 2026, «The Weight Norm Sets the Grokking Timescale: A Causal Delay Law». Берёт двойной спуск противопоставлением: гроккинг подан как переход, чей временной масштаб задаётся расслаблением нормы, а двойной спуск — как седлоузловой уход с показателем времени перехода $\delta=1/2$. Нюанс: числа $\delta=1/2$ работа не выводит, не меряет и не подкрепляет ссылкой — приведённые [14, 15] (Belkin et al. 2019 и Nakkiran et al. 2021) такого утверждения не содержат; кроме того, §2 относит двойной спуск к иному классу универсальности, а §9 от такого вывода прямо отказывается, ссылаясь на ограниченный размах размеров. Противопоставление тем самым остаётся риторическим. [`"We draw the contrast at the level of mechanism (a saddle-node escape versus a relaxation-set timescale) rather than asserting distinct universality classes from exponents, given the limited size range."`](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p12-2). *«[Мы проводим противопоставление на уровне устройства (седлоузловой уход против временного масштаба, задаваемого расслаблением), а не утверждаем различные классы универсальности из показателей, учитывая ограниченный размах размеров.](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p12-2)»*\
+Доп. (несогласованное с этим место §2): [`"in a linear model it is analytically a saddle-node bifurcation with a different critical exponent, placing it in a different universality class from the grokking transition studied here"`](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p4-3) — *«[в линейной модели он аналитически есть седлоузловая бифуркация с иным критическим показателем, что помещает его в иной класс универсальности, нежели изучаемый здесь переход гроккинга](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p4-3)»*.
+
+```
+concept:
+  category: 1                    # 1. Явления (Phenomena)
+  papers_linked: 22             # различных статей в разделах ссылок карточки
+  counted_at: 2026-08-20
+```
