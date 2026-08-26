@@ -107,10 +107,3 @@ Loss-Landscape Geometry». Нюанс: сосредоточенность PC1 у
 70–85 % против 40–60 % у весов MLP; разбор по головам на Dyck даёт
 одновременное выравнивание всех четырёх голов. Специализации голов и контуров
 работа не ищет. [`"The mechanism is not head-specific—it operates at the whole-layer level, suggesting a global geometric reorganization rather than attention-head specialization."`](../papers/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry/original/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry.md#p18-4). *«[Механизм не свойствен отдельной голове — он работает на уровне целого слоя, что позволяет предположить общую геометрическую перестройку, а не специализацию голов внимания.](../papers/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry.card.md#p18-4)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 16             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

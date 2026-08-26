@@ -343,10 +343,3 @@ Loss-Landscape Geometry». Нюанс: коммутаторный дефект �
 
 ###### ref-5-2
 **\[5.2\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». Термина в работе нет; итоговая формулировка раздела о гроккинге — [`"providing a basis for further research"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4), *«[давая основу для дальнейших исследований](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4)»*. Мерой прогресса MIR по построению не является: она не монотонна и у поры обобщения падает до наименьшего за прогон значения, порога для предсказания перехода не построено, с restricted/excluded loss, нормой весов и долей энергии в ключевых частотах величина не сопоставлена. Единственное место, где мера могла бы работать ранним признаком, — начало медленного снижения MIR примерно с $10^{3}$ эпох, задолго до подъёма тестовой точности ([рис. 7](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#fig-7)); момент отрыва не измерен.
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 53             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

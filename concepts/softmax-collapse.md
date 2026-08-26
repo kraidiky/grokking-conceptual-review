@@ -118,10 +118,3 @@ softmax), безотносительно к тому, что его вызвал
 **\[4.4\]** 2504.16041 — Tveit, Remseth, Skogvold, «Muon Optimizer Accelerates Grokking». Нюанс: связь Muon с уходом от коллапса softmax заявлена строкой таблицы гипотез во введении и после опыта никак не проверена — ни логитов, ни признаков поглощения при сложении с плавающей точкой, ни сравнения обычного softmax со stablemax под Muon в работе не измерено. [`"Keeps training stable and avoids “softmax collapse”"`](../papers/2504.16041.muon-optimizer-accelerates-grokking/original/2504.16041.muon-optimizer-accelerates-grokking.md#fig-1). *«[Держит обучение устойчивым и избегает «softmax collapse»](../papers/2504.16041.muon-optimizer-accelerates-grokking/2504.16041.muon-optimizer-accelerates-grokking.card.md#fig-1)»*
 
 **\[4.5\]** 2605.08237 — Wang, Ying, Kanamori 2026, «Distributional Spectral Diagnostics for Localizing Grokking Transitions». Нюанс: логиты в работе появляются как альтернативная наблюдаемая (3/4 тревог, ни одной до onset), но связи с коллапсом softmax не проводится. [`"stability-based accounts link it to logit scaling and softmax collapse [42, 32]"`](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p30-7). *«[объяснения на основе устойчивости связывают его с масштабированием логитов и коллапсом softmax [42, 32]](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p30-7)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 8             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

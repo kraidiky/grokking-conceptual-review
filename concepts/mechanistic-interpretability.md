@@ -246,10 +246,3 @@ lens \[[3.4](#ref-3-4)\]; и трактовка структуры внутре�
 
 ###### ref-5-1
 **\[5.1\]** 2601.21150 — Внешняя работа (демотирована из корпуса): Kvinge et al., «Can Neural Networks Learn Small Algebraic Worlds? An Investigation Into the Group-theoretic Structures Learned By Narrow Models Trained To Predict Group Operations». Нюанс: структура внутренних представлений трактуется как согласующаяся с парадигмой МИ. [`"This perspective aligns with the mechanistic interpretability paradigm"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-7). *«[Такой взгляд согласуется с укладом устройственной истолковываемости](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-7)»*
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 44             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

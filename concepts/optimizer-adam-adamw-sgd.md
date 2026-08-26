@@ -283,10 +283,3 @@ SGD вызвана плохо обусловленными градиентам�
 
 ###### ref-5-2
 **\[5.2\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"We train the model using full-batch gradient descent, a learning rate of 0.001, and an AdamW optimizer with a weight decay parameter of 1."`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3). *«[Мы обучаем модель полнобатчевым градиентным спуском, со скоростью обучения 0.001 и оптимизатором AdamW с параметром weight decay 1.](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3)»* Сравнения оптимизаторов на одной задаче в работе нет, поэтому приписывать разницу между двумя картинами самому явлению, а не настройкам, оснований она не даёт.
-
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 49             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

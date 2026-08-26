@@ -161,9 +161,3 @@ al. дают первые количественные границы «врем
 
 ###### ref-5-1
 **\[5.1\]** 2502.20763 — Внешняя работа (демотирована из корпуса): Tan & Huang 2025, «Information-Theoretic Perspectives on Optimizers». Нюанс: в оценку входят норма решения, след гессиана и разрыв энтропии — отсюда и берётся предлагаемая мера. [`"We can now present a PAC-Bayes generalization bound which shows what metrics of the network mainly affect generalization"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p5-8). *«[Теперь мы можем привести оценку генерализации PAC-Байеса, показывающую, какие меры сети главным образом сказываются на генерализации](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p5-8)»*
-```
-concept:
-  category: 7                    # 7. Теория и формальные результаты (Theory & formal results)
-  papers_linked: 15             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

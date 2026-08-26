@@ -94,10 +94,3 @@
 
 **\[4.4\]** 2605.20441 — Verma 2026, «Weight Decay Regimes in Grokking Transformers: Cheap Online Diagnostics». Употребляет случайные метки как нулевую сверку амплитуды параметра порядка и делает из совпадения порядка величины осторожный вывод: различие значимо, но мало, поэтому сверка объявлена нижней границей амплитуды, а не эквивалентностью режиму малой размерности на голову. Нюанс: перебора доли зашумлённых меток нет — метки либо все настоящие, либо все случайные; и метка когорты в этом месте расходится с указателем опытов (см. раздел «Несогласованности» карточки статьи). [`"A random-label null control ($n{=}15$ extended random-label control runs, superseding the smaller E8 pilot) yields peak $\sigma_{H}{=}0.087\pm 0.025$"`](../papers/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/original/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.md#p13-1). *«[Нулевая сверка со случайными метками ($n{=}15$ расширенных прогонов сверки со случайными метками, вытеснивших меньший пилот E8) даёт пиковый $\sigma_{H}{=}0.087\pm 0.025$](../papers/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.card.md#p13-1)»*\
 Доп. (осторожность вывода): [`"so the null control is a meaningful lower bound on amplitude rather than statistically equivalent to $d/H{=}2$"`](../papers/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/original/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.md#p13-1) — *«[так что нулевая сверка есть содержательная нижняя граница амплитуды, а не статистическая эквивалентность $d/H{=}2$](../papers/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.card.md#p13-1)»*.
-
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 18             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

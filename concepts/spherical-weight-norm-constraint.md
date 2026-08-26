@@ -170,10 +170,3 @@ A First-Principles Theory of Delayed Generalization». Нюанс: норм-се
 **\[4.1\]** 2405.19454 — Fan, Pascanu, Jaggi 2024, «Deep Grokking: Would Deep Neural Networks Generalize Better?». [`"Liu et al. (2023) presents a hypothesis of *grokking* from large initialization based on the *Godilocks Zone* theory: there exist a thick, hollow, spherical shell in the space of model’s weight around the initialization which could lead to a great generalization behavior"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#p3-6). *«[Liu et al. (2023) предлагают догадку о *гроккинге* из большого начального приближения на основе теории *зоны Златовласки*: в пространстве весов модели вокруг начального приближения существует толстая полая сферическая оболочка, способная давать прекрасное поведение при генерализации](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#p3-6)»*
 
 **\[4.2\]** 2605.06352 — Tang et al., «Topological Signatures of Grokking». [`"Relatedly, [21] reduced grokking delay by constraining representations to lie on a sphere."`](../papers/2605.06352.topological-signatures-of-grokking/2605.06352.topological-signatures-of-grokking.card.md#p2-10). *«[Родственным образом [21] сократили задержку гроккинга, ограничив представления лежать на сфере.](../papers/2605.06352.topological-signatures-of-grokking/2605.06352.topological-signatures-of-grokking.card.md#p2-10)»*
-
-```
-concept:
-  category: 5                    # 5. Интервенции и методы (Interventions & methods)
-  papers_linked: 10             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

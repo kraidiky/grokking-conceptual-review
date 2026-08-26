@@ -68,10 +68,3 @@ Semi-grokking привязан к **[критическому размеру д�
 **\[4.3\]** 2601.19791 — Xu et al., «To Grok Grokking: Provable Grokking in Ridge Regression». [`"Varma et al. (2023) interpreted grokking from the perspective of circuit efficiency, and discovered two related phenomena named “ungrokking” and “semi-grokking”"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p3-2). *«[Varma et al. (2023) истолковали гроккинг со стороны действенности контуров и открыли два родственных явления, названных «разгроккиванием» и «полугроккингом»](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.card.md#p3-2)»*
 
 **\[4.4\]** 2401.10463 — Zhu et al. 2024. Нюанс: полу-грокинг помянут только как содержание работы Varma et al., от постановки которой авторы себя отделяют; собственных опытов у критического размера с промежуточной точностью в работе нет. [`"Training with these data points will result in suboptimal test loss (i.e., semi-grokking)."`](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p12-2). *«[Обучение на таком числе точек приведёт к неоптимальной тестовой потере (то есть к полу-грокингу).](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p12-2)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 6             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

@@ -88,10 +88,3 @@ accuracy обрушивается \[[1.1](#ref-1-1)\]. Коллапс насту
 ###### ref-3-3
 **\[3.3\]** 2309.02390 — Varma et al. 2023, «Explaining Grokking Through Circuit Efficiency». Самое раннее наблюдение класса в корпусе — предвестник в другом режиме, а не первенство: в специально отобранном одиночном запуске полу-грокинга (D=1532, с weight decay) поздний рост тестовой потери увиден и оставлен необъяснённым за два с лишним года до того, как Prakash & Martin назвали и систематически описали третью фазу. [`"At epoch $3.2\times 10^{7}$ we see test loss *rise*, we do not know why"`](../papers/2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md#fig-6). *«[На эпохе $3.2\times 10^{7}$ мы видим, что тестовая потеря *растёт*, и не знаем почему](../papers/2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md#fig-6)»*\
 Доп. (многофазная гипотеза там же): [`"There seem to be multiple phases, perhaps corresponding to the network transitioning between mixtures of multiple circuits with increasing efficiencies, but further investigation is needed"`](../papers/2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md#fig-6) — *«[По-видимому, фаз несколько — возможно, они соответствуют переходам сети между смесями нескольких контуров с растущей эффективностью, — но нужны дальнейшие исследования](../papers/2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md#fig-6)»*.
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 5             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-24
-```

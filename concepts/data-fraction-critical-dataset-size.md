@@ -342,9 +342,3 @@ Loss-Landscape Geometry». Нюанс: на Dyck взяты 50 обучающи�
 
 ###### ref-5-2
 **\[5.2\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"We use 30% of all possible inputs ($113\times 113$ pairs) for training data and test performance on the remaining 70%."`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3). *«[Мы берём 30 % всех возможных входов ($113\times 113$ пар) как обучающие данные и проверяем качество на оставшихся 70 %.](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3)»*
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 54             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

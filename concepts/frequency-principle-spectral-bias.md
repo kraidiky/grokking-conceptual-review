@@ -125,10 +125,3 @@ al. (затянутый ленивый режим) сводятся к тому,
 **\[4.3\]** 2603.07323 — Truong, Truong, «Norm-Hierarchy Transitions in Representation Learning…». Нюанс: спектральное смещение взято как готовый довод, не проверяется. [`"gradient-based optimisers exhibit a spectral or frequency bias: they fit low-complexity functions before high-complexity ones"`](../papers/2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts/2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts.card.md#p4-3). *«[градиентные оптимизаторы обнаруживают спектральное, или частотное, смещение: они подгоняют функции малой сложности прежде функций большой сложности](../papers/2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts/2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts.card.md#p4-3)»*
 
 **\[4.4\]** 2606.12966 — Sivasankar, «Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking». [`"our Fourier rank collapse is consistent with this bias compressing the Fourier circuit representation to its minimal frequency set"`](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p17-2). *«[наш обвал фурье-ранга согласуется с тем, что это смещение сжимает представление фурье-контура до его наименьшего набора частот](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p17-2)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 7             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

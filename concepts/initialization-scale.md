@@ -242,9 +242,3 @@ Kumar et al. связывают динамику гроккинга с [double d
 
 ###### ref-5-1
 **\[5.1\]** 2601.21150 — Внешняя работа (демотирована из корпуса): Kvinge et al., «Can Neural Networks Learn Small Algebraic Worlds?». [`"Mathematical world models are sensitive to hyperparameter choice and initialization"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p8-1). *«[Математические картины мира чувствительны к выбору настроек и начального приближения](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p8-1)»*
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 38             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

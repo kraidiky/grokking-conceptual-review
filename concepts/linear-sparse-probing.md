@@ -141,9 +141,3 @@ Wang et al. (2405.15071) присоединяются к трактовке зо
 ###### ref-5-1
 **\[5.1\]** 2601.21150 — Внешняя работа (демотирована из корпуса): Kvinge et al., «Can Neural Networks Learn Small Algebraic Worlds?». [`"We can test whether $f$ captures a distinct representation of $H$ by probing for subgroup membership on the hidden activations of $f$"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p7-2). *«[проверить, строит ли $f$ отдельное представление $H$, можно, прощупывая принадлежность к подгруппе по скрытым возбуждениям $f$](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p7-2)»*\
 Доп.: [`"we find substantial evidence that performant models sometimes capture subgroup structure within their internal representations which we can access via the linear probing"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p7-6) — *«[мы находим весомое свидетельство того, что добротные модели иной раз всё же схватывают строение подгрупп во внутренних представлениях, до которых мы добираемся линейным прощупыванием](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p7-6)»*
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 6             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

@@ -242,10 +242,3 @@ Transition in Delayed Generalisation». [`"order parameter for representation ge
 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». Через лемму 4.5 (хвост сингулярных чисел) и теорему 4.6 (граница $1-\frac{\text{rank}(\mathbf{Z}_{2})}{\text{rank}(\mathbf{Z}_{1})}$) разность энтропий увязана с ошибкой линейной аппроксимации: [`"making the difference of entropy a good surrogate bound for approximation error"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-9). *«[что делает разность энтропий хорошей суррогатной границей ошибки приближения](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-9)»* Переход от рангов к энтропии держится на приближении $\exp{(\operatorname{H}(\mathbf{G}(\mathbf{Z}))}\approx\text{rank}(\mathbf{Z})$; погрешность этого приближения нигде не оценена.
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 21             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

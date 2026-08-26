@@ -381,10 +381,3 @@ Models Trained To Predict Group Operations». Нюанс: модульная а�
 
 ###### ref-5-2
 **\[5.2\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"where $a$ and $b$ are encoded into $p$-dimensional one-hot vectors"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3). *«[где $a$ и $b$ закодированы в $p$-мерные one-hot векторы](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3)»* Переноса на другие операции и другие модули в работе нет, поэтому считать наблюдённую двухфазность свойством задачи, а не одного прогона, оснований она не даёт.
-
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 74             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

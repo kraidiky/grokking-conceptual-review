@@ -135,10 +135,3 @@ Abramov et al. присоединяются с другой стороны: он
 Работы, лишь упоминающие явление (обзор литературы, связанные работы, попутное цитирование) без его подробного разбора.
 
 **\[4.1\]** 2506.21551 — Li et al., «Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test». [`"generalization on diverse benchmark tasks covering math/commonsense reasoning, code generation, and domain-specific retrieval"`](../papers/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md#p1-2). *«[генерализации на разнообразных эталонных задачах, охватывающих математическое рассуждение и рассуждение здравого смысла, порождение кода и предметно-ориентированный поиск](../papers/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md#p1-2)»*
-
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 5             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-19
-```

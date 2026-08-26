@@ -227,10 +227,3 @@ MNIST), при продлённом обучении наступает позд
 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"Our models are trained on CIFAR-10 and CIFAR-100."`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-11). *«[Наши модели обучаются на CIFAR-10 и CIFAR-100.](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-11)»* Опоры — WideResNet-28-2 и WideResNet-28-8, SGD с моментом 0.9 и weight decay $5e^{-4}$, шаг 0.03 с косинусным затуханием, батч 64, $2^{20}$ итераций. Свидетельством гроккинга на реальных данных эта работа не является.
-
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 34             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

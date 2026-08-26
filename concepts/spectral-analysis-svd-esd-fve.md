@@ -277,10 +277,3 @@ Loss-Landscape Geometry». Нюанс: прямой пересмотр хрон�
 
 ###### ref-5-1
 **\[5.1\]** 2502.20763 — Внешняя работа (демотирована из корпуса): Tan & Huang 2025, «Information-Theoretic Perspectives on Optimizers». Нюанс: взамен предложен разрыв энтропии спектра гессиана — мера его неравномерности. [`"Traditional methods for analyzing optimizers, such as sharpness metrics based on the Hessian matrix, offer valuable insights into the local landscape around minima or saddle points but fail to fully capture the underlying optimization dynamics"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-2). *«[Расхожие способы разбора приёмов оптимизации, скажем меры крутизны на основе матрицы Гессе, дают ценные сведения о местном ландшафте вокруг наименьших точек или седловин, но не улавливают вполне лежащего под этим хода оптимизации](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-2)»*
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 28             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

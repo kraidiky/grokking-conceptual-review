@@ -196,10 +196,3 @@ Jiang et al. присоединяются к «rich learning regime grokking hyp
 **\[4.13\]** 2502.01774 — Carvalho et al. 2025, «Grokking Explained: A Statistical Phenomenon». [`"Kumar et al. 2024 proposes that grokking is a transition from lazy to rich training"`](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/original/2502.01774.grokking-explained-a-statistical-phenomenon.md#p3-1). *«[Kumar et al. 2024 предлагают считать гроккинг переходом от ленивого к богатому обучению](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/2502.01774.grokking-explained-a-statistical-phenomenon.card.md#p3-1)»*
 
 **\[4.14\]** 2606.13753 — Truong et al. 2026, «The Weight Norm Sets the Grokking Timescale: A Causal Delay Law». Упоминает эту линию одной строкой обзора, в перечне объяснений скачка через неявное смещение оптимизатора, и никак с ней не соотносится: ни измерений богатости, ни отступов, ни разбора того, сдвигает ли зажим нормы точку перехода от ленивого к богатому, в работе нет. Нюанс для карточки: постановка при этом даёт линии готовый рычаг — если норму можно удерживать на заданном значении при работающем оптимизаторе, то «ленивость» и величина нормы разводятся опытно. [`"Related accounts cast the jump as a lazy-to-rich transition [7], or as a late-phase implicit-bias dichotomy [8], connected to the classical max-margin bias of gradient descent [9]."`](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p2-3). *«[Смежные объяснения подают скачок как переход от ленивого к богатому [7] или как дихотомию неявных смещений поздней поры [8], связанную с классическим смещением градиентного спуска к наибольшему отступу [9].](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p2-3)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 29             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

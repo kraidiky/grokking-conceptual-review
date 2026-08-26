@@ -121,10 +121,3 @@ Networks: An Empirical Exploration with Model Complexity». [`"we measure the co
 **\[4.1\]** 2604.13123 — Truong et al., «Spectral Entropy Collapse as a Phase Transition
 in Delayed Generalisation». [`"DeMoss et al. (2024) develop a rate–distortion and Kolmogorov complexity framework for grokking and introduce a regulariser based on the *spectral entropy of weight matrices*"`](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p3-4) — *«[DeMoss et al. (2024) развивают рамку «скорость — искажение» и колмогоровской сложности для гроккинга и вводят регуляризатор на основе *спектральной энтропии весовых матриц*](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p3-4)»*\
 Доп. (размежевание по предмету измерения): [`"Both works use the term “spectral entropy”, but applied to different objects"`](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p3-4) — *«[Обе работы пользуются словами «спектральная энтропия», но прилагают их к разным предметам](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p3-4)»*
-
-```
-concept:
-  category: 7                    # 7. Теория и формальные результаты (Theory & formal results)
-  papers_linked: 6             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

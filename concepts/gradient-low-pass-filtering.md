@@ -135,10 +135,3 @@ Egalitarian Gradient Descent (EGD) идёт дальше и называет Gro
 **\[4.6\]** 2604.13123 — Truong Xuan Khanh et al., «Spectral Entropy Collapse as a Phase Transition in Delayed Generalisation». [`"Lee et al. (2024) showed that amplifying slow gradient components accelerates grokking"`](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p2-5) — *«[Lee et al. (2024) показали, что усиление медленных составляющих градиента ускоряет гроккинг](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p2-5)»*
 
 **\[4.7\]** 2606.12966 — Sivasankar, «Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking». [`"Lee et al. 2024 amplify slow-varying gradient components; our intervention is complementary"`](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-4). *«[Lee et al. 2024 усиливают медленно меняющиеся составляющие градиента; наше вмешательство дополняет их](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-4)»*
-
-```
-concept:
-  category: 5                    # 5. Интервенции и методы (Interventions & methods)
-  papers_linked: 12             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

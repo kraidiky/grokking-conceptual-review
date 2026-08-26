@@ -216,10 +216,3 @@ Li et al. доказывают, что решение с максимальны�
 
 **\[4.13\]** 2606.13753 — Truong et al. 2026, «The Weight Norm Sets the Grokking Timescale: A Causal Delay Law». Меряет фурье-сосредоточенность вложения коэффициентом Джини спектра мощности по лексемам и показывает, что она растёт в том же окне, где weight decay расслабляет норму, — то есть на спуске, ведущем к гроккингу. Из этого предлагается разделение труда между двумя объяснениями: контуры правят тем, что выучивается, а расслабление нормы — тем, когда оно обобщает. Нюанс, который при пересказе отпадает первым: связь только временна́я, вмешательства в контуры нет, и авторы признают это трижды, — при том что заголовок «Мост между двумя объяснениями» и шестой пункт списка вкладов ставят её в один ряд с измеренными результатами. [`"suggesting that norm relaxation toward $\|W\|_{c}$ *may organize* the feature formation of the circuit account"`](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p5-6). *«[что наводит на мысль, что расслабление нормы к $\|W\|_{c}$ *может устраивать* образование признаков объяснения через контуры](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p5-6)»*\
 Доп. (собственная оговорка): [`"the temporal alignment suggests, but does not prove, that it organizes the features"`](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p11-6) — *«[временное совпадение наводит на мысль, но не доказывает, что она устраивает признаки](../papers/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md#p11-6)»*.
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 30             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

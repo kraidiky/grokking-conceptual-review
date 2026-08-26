@@ -133,10 +133,3 @@ Transition». [`"These studies map the topology of the solution (e.g., the “Cl
 **\[4.5\]** 2602.06702 — Singh, Misra, Orvieto, «Explaining Grokking in Transformers…». Zhong et al. привлечены как довод о неединственности решения: (54) [`"find that this solution is not unique, and show that transformers can learn the “pizza” algorithm"`](../papers/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md#p12-3). *«[находят, что это решение не единственно, и показывают, что трансформеры могут выучивать алгоритм «пиццы»](../papers/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md#p12-3)»* В соседнем предложении того же абзаца результат Zhong et al. о фазовых переходах отнесён к другой работе — разбор в разделе «Ошибочные цитирования» карточки, якорь `mc-2306-17844`.
 
 **\[4.6\]** 2606.12966 — Sivasankar, «Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking». [`"small hyperparameter changes induce qualitatively different procedures (a “clock” and a “pizza” algorithm), both Fourier-based"`](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-3). *«[малые изменения гиперпараметров вызывают качественно различные процедуры (алгоритмы «часов» и «пиццы»), обе на основе Фурье](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-3)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 9             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

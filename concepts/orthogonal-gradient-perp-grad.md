@@ -131,10 +131,3 @@ Dyck); на SCAN мягкое подавление штрафом предотв
 **\[4.1\]** 2512.03437 — Liang & Li, «Grokked Models are Better Unlearners». Нюанс: измерены косинусная близость градиентов забываемого и сохраняемого наборов (0,999 до гроккинга против 0,426 после) и соответствующий угол (2,57 против 64,78 градуса). [`"Grokked models show substantially lower correlations (0.521 for CNN, 0.426 for ResNet), indicating that grokking creates more orthogonal gradient spaces"`](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p9-5). *«[Гроккнувшие модели дают заметно меньшую корреляцию (0,521 у CNN, 0,426 у ResNet), то есть гроккинг создаёт более ортогональные градиентные пространства](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p9-5)»*
 
 **\[4.2\]** 2504.16041 — Tveit, Remseth, Skogvold, «Muon Optimizer Accelerates Grokking». Нюанс, важный для разграничения: у Muon ортогонализуется матрица обновления (итерацией Ньютона—Шульца по буферу момента), а не снимается компонента градиента вдоль направления весов, как в ⊥Grad Prieto et al.; это разные операции с разными целями. Формулы обновления Muon, числа итераций Ньютона—Шульца и отсечения этой операции в работе нет, так что проверить, что дело именно в ортогонализации, здесь нечем. [`"Uses orthogonalized gradient updates"`](../papers/2504.16041.muon-optimizer-accelerates-grokking/original/2504.16041.muon-optimizer-accelerates-grokking.md#fig-1). *«[Употребляет ортогонализованные градиентные обновления](../papers/2504.16041.muon-optimizer-accelerates-grokking/2504.16041.muon-optimizer-accelerates-grokking.card.md#fig-1)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 7             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

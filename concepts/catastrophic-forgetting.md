@@ -84,10 +84,3 @@ continual pretraining (грокнутая модель последовател�
 **\[4.2\]** 2512.03437 — Liang & Li, «Grokked Models are Better Unlearners». Нюанс: плоские минимумы смягчают разрушительное забывание, но сверка с SAM показывает, что одной плоскости недостаточно. [`"confirming that flatter minima help buffer against catastrophic forgetting"`](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p19-3). *«[что подтверждает: плоские минимумы и впрямь смягчают разрушительное забывание](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p19-3)»*
 
 **\[4.3\]** 2308.15594 — Charton, «Learning the greatest common divisor: explaining transformer predictions». Нюанс: катастрофическое забывание названо тем, чего избегает лог-равномерная выборка операндов, — распределение неизменно в ходе обучения, в отличие от учебного расписания; опыта с меняющимся расписанием и измерения забывания в работе нет. [`"This is related to curriculum learning, but avoids catastrophic forgetting, because the training distribution never changes."`](../papers/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions/original/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions.md#p9-8). *«[Это родственно учебному расписанию (curriculum learning), но избегает катастрофического забывания, потому что обучающее распределение никогда не меняется](../papers/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions.card.md#p9-8)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 7             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

@@ -153,10 +153,3 @@ AIC = 16.8 в пользу перехода), — при этом порядок
 
 **\[4.4\]** 2210.15435 — Žunkovič, Ilievski, «Grokking phase transitions in learning local rules with gradient descent». Нюанс: параметра порядка работа не вводит и симметрии не называет — неаналитичной величиной служит сама тестовая ошибка, управляющим параметром время обучения; ландшафтную постановку Ландау приписывать авторам нельзя. Ценно другое: разделены роли величин — вероятность и время гроккинга зависят от начальных условий и хода обучения, а показатель только от плотности данных у границы области. [`"Obtained critical exponent $\nu=\frac{D+1}{2}$ is universal for isotropic probability densities that do not vanish at the ball boundary and is consistent with the result in Eq. 23."`](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p17-5). *«[Полученный критический показатель $\nu=\frac{D+1}{2}$ универсален для изотропных плотностей вероятности, не обращающихся в нуль на границе шара, и согласуется с результатом Ур. 23](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p17-5)»*\
 Доп.: [`"the critical exponent $\nu$ depends only on the data distribution at the boundary of the domain"`](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p18-1) — *«[критический показатель $\nu$ зависит только от распределения данных на границе области](../papers/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent/2210.15435.grokking-phase-transitions-in-learning-local-rules-with-gradient-descent.card.md#p18-1)»*.
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 12             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

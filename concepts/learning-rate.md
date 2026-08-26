@@ -209,9 +209,3 @@ $t_{\text{grok}}\propto\eta^{-1}$ не наблюдалось. [`"it means that 
 
 ###### ref-5-3
 **\[5.3\]** 2212.07677 — Внешняя работа (демотирована из корпуса): von Oswald et al., «Transformers Learn In-Context by Gradient Descent». Нюанс: подбор скорости обучения вместе с размером пакета назван тем, что включает гроккинг-подобный переход; значения не приведены. [`"when carefully tuning the learning rate and batchsize we can also make the Transformers trained in these linear regression tasks *grokk*"`](../externals/2212.07677.transformers-learn-in-context-by-gradient-descent/2212.07677.transformers-learn-in-context-by-gradient-descent.card.md#p22-2) — *«[при тщательном подборе скорости обучения и размера пакета мы можем заставить трансформеры, обучаемые на этих задачах линейной регрессии, тоже *гроккать*](../externals/2212.07677.transformers-learn-in-context-by-gradient-descent/2212.07677.transformers-learn-in-context-by-gradient-descent.card.md#p22-2)»*.
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 30             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

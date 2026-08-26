@@ -116,10 +116,3 @@ D ≈ Dcrit сеть грокает с задержкой, но выходит �
 **\[4.2\]** 2601.19791 — Xu et al., «To Grok Grokking: Provable Grokking in Ridge Regression». [`"Varma et al. (2023) interpreted grokking from the perspective of circuit efficiency, and discovered two related phenomena named “ungrokking” and “semi-grokking”"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p3-2). *«[Varma et al. (2023) истолковали гроккинг со стороны действенности контуров и открыли два родственных явления, названных «разгроккиванием» и «полугроккингом»](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.card.md#p3-2)»*
 
 **\[4.3\]** 2401.10463 — Zhu et al. 2024. Нюанс: унгрокинг помянут только как содержание работы Varma et al.; донастройки грокнутых моделей на меньших наборах в работе не ставится. [`"And fine-tuning grokked models with smaller data sizes will lead to poor test performance (i.e., ungrokking)."`](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p12-2). *«[А донастройка грокнутых моделей на меньших размерах данных приведёт к плохому тестовому качеству (то есть к унгрокингу).](../papers/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective/2401.10463.critical-data-size-of-language-models-from-a-grokking-perspective.card.md#p12-2)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 7             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

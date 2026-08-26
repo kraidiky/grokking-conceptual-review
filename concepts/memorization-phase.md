@@ -297,10 +297,3 @@ Loss-Landscape Geometry». Нюанс: разложение интегрируе
 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"in the early stages of training, the model quickly fits the training data and achieves 100% accuracy on the training set"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4). *«[на ранних порах обучения модель быстро подгоняется под обучающие данные и достигает 100 % точности на обучающей выборке](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4)»* По [рис. 7](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#fig-7) обучающая точность выходит на 100 % около 150 эпох, а MIR продолжает расти примерно до $10^{3}$ эпох и лишь затем поворачивает: внутри плато различимы две части, разделённые не точностью, а поворотом меры. Авторы этого разделения не проговаривают.
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 74             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

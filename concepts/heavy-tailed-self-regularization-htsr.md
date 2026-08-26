@@ -112,10 +112,3 @@ Learning) и добавляет вторую спектральную метри
 **\[4.3\]** 2602.06702 — Singh, Misra, Orvieto, «Explaining Grokking in Transformers…». [`"higher values of weight decay show more heavy-tailed eigenspectra in $Z$"`](../papers/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md#p7-10). *«[более высокие значения weight decay показывают более тяжелохвостые собственные спектры в $Z$](../papers/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md#p7-10)»* — где $Z$ есть корреляционная матрица пре-логитов, а не весовая матрица; в этом отличие от линии HTSR, на которую работа не ссылается.
 
 **\[4.4\]** 2605.08237 — Wang, Ying, Kanamori 2026, «Distributional Spectral Diagnostics for Localizing Grokking Transitions». Нюанс: ближайшая по замыслу линия «дешёвой спектральной диагностики без доступа к тесту» упомянута одной фразой и ни разу не сопоставлена с невязкой. [`"Weight-matrix spectra have been studied via random-matrix theory and heavy-tailed self-regularization [30, 25]."`](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p31-2). *«[Спектры весовых матриц изучались через теорию случайных матриц и тяжелохвостовую саморегуляризацию [30, 25].](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p31-2)»*
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 8             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

@@ -196,10 +196,3 @@ D.2: рогатки удалось вызвать на однослойной м
 **\[4.18\]** 2605.08237 — Wang, Ying, Kanamori 2026, «Distributional Spectral Diagnostics for Localizing Grokking Transitions». Нюанс: Thilak et al. упомянуты одной скобкой; ни рогаточных всплесков, ни поведения нормы во времени работа не разбирает. [`"stability-based accounts link grokking to logit scaling and softmax collapse [42, 32]"`](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p1-4). *«[объяснения на основе устойчивости связывают гроккинг с масштабированием логитов и коллапсом softmax [42, 32]](../papers/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md#p1-4)»*
 
 **\[4.19\]** 2606.12966 — Sivasankar, «Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking». [`"link grokking to a “slingshot” optimisation instability under adaptive optimisers—which we observe as the post-grokking destabilisation at high $\lambda$"`](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-2). *«[связывают гроккинг с оптимизационной неустойчивостью «рогатки» при адаптивных оптимизаторах — которую мы наблюдаем как потерю устойчивости после гроккинга при больших $\lambda$](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-2)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 29             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-24
-```

@@ -360,10 +360,3 @@ $\Delta t>t_{\text{grok}}$, что невозможно по определен�
 
 ###### ref-5-3
 **\[5.3\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"a clear two-phase variation in both MIR and HDR"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4). *«[явственное двухфазное изменение и MIR, и HDR](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4)»* Дальше описания двух пор работа не идёт: выброс HDR у поры обобщения параметром порядка не назван и как переход не разобран. Для корпуса это кандидат в наблюдаемые — величина, скачущая на порядок в узком окне вокруг перехода, — но кандидат непроверенный, на одном прогоне.
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 60             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

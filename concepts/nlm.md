@@ -67,10 +67,3 @@
 
 ###### ref-3-1
 **\[3.1\]** 2603.05228 — Yıldırım, «The Geometric Inductive Bias of Grokking: Bypassing Phase Transitions via Architectural Topology». Нюанс: NLM берётся за причину роста логитов и мотивирует ограниченный выходной слой. [`"This behavior—known as Naïve Loss Minimization—leads to numerical instability and Softmax Collapse"`](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/original/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.md#p6-5). *«[Это поведение, известное как наивная минимизация потерь, ведёт к вычислительной неустойчивости и коллапсу softmax](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.card.md#p6-5)»*
-
-```
-concept:
-  category: 1                    # 1. Явления (Phenomena)
-  papers_linked: 2             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-19
-```

@@ -165,9 +165,3 @@ kernel-методов (RFM — Recursive Feature Machine, итеративно �
 ###### ref-5-1
 **\[5.1\]** 2601.21150 — Внешняя работа (демотирована из корпуса): Kvinge et al., «Can Neural Networks Learn Small Algebraic Worlds? An Investigation Into the Group-theoretic Structures Learned By Narrow Models Trained To Predict Group Operations». [`"sophisticated algorithms that depend on the representation theory of the corresponding groups"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p2-1). *«[изощрённые алгоритмы, опирающиеся на теорию представлений соответствующих групп](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p2-1)»*\
 Доп.: [`"to what extent we can detect basic group-theoretic concepts from such a network"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p2-2) — *«[в какой мере в такой сети можно распознать основные теоретико-групповые понятия](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p2-2)»*.
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 12             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

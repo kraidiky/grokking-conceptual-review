@@ -222,10 +222,3 @@ ${\sim}40\%$). Числа прогонов на условие не указан
 Работы, лишь упоминающие явление (обзор литературы, связанные работы, попутное цитирование) без его подробного разбора.
 
 **\[4.1\]** 2505.18266 — McCracken et al. 2025, «Uncovering a Universal Abstract Algorithm for Modular Addition in Neural Networks». Нюанс: отсечением подтверждено «действие фурье-умножения», позже названное часами. [`"This was termed the *Fourier Multiplication Algorithm* (later *Clock* [5]), and validated through ablation experiments"`](../papers/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/original/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.md#p2-3). *«[Приём назвали *действием фурье-умножения* (позже *часами* [5]) и подтвердили опытами с отсечением](../papers/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.card.md#p2-3)»*
-
-```
-concept:
-  category: 6                    # 6. Аналитические инструменты и метрики (Analytical tools & metrics)
-  papers_linked: 23             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

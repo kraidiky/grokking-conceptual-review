@@ -225,9 +225,3 @@ Loss-Landscape Geometry». Нюанс: полигон заменён двумя 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"Following Nanda et al. 2022; Tan & Huang 2023, we train a transformer to learn modular addition $c\equiv(a+b)\pmod{p}$, with $p$ being 113."`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3). *«[Следуя Nanda et al. 2022; Tan & Huang 2023, мы обучаем трансформер выучивать модульное сложение $c\equiv(a+b)\pmod{p}$, где $p$ равно 113.](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3)»*\
 Доп. (что осталось неопределённым): где именно берутся представления, не сказано — только «между представлением и весом полносвязного слоя»: ни токен, ни выборка (обучающая или тестовая), ни размер грам-матрицы не названы. Ссылки на код нет, число прогонов и семян не указано.
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 47             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

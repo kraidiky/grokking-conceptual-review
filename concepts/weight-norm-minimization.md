@@ -275,10 +275,3 @@ decay стягивает норму экспоненциально, поэтом
 
 **\[4.9\]** 2311.07568 — Morwani et al. 2024, «Feature emergence via margin maximization: case studies in algebraic tasks». Даёт максимизации зазора неформальное прочтение именно как минимизации нормы: достичь заданной уверенности на всех точках при наименьшей возможной суммарной норме параметров. Нюанс: формально работа считает **нормированный** зазор $h(\theta/\|\theta\|)$, то есть работает на сфере $\Theta=\{\|\theta\|\leq 1\}$; ни многообразия нулевой потери, ни разговора о поведении нормы по ходу обучения здесь нет. [`"Informally, the network maximizes the margin if it attains a given confidence level on all the points in the dataset, with the smallest total parameter norm possible."`](../papers/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks.card.md#p2-1). *«[Неформально, сеть максимизирует зазор, если достигает заданного уровня уверенности на всех точках набора данных при наименьшей возможной суммарной норме параметров.](../papers/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks.card.md#p2-1)»*\
 Доп. (что считается формально): [`"Similarly, we define the normalized margin for a given $\theta$ as $h(\theta/\|\theta\|)$."`](../papers/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks.card.md#p5-7) — *«[Аналогично мы определяем нормированный зазор для данного $\theta$ как $h(\theta/\|\theta\|)$.](../papers/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks/2311.07568.feature-emergence-via-margin-maximization-case-studies-in-algebraic-tasks.card.md#p5-7)»*.
-
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 40             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

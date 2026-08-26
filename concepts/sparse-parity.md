@@ -172,10 +172,3 @@ et al. подтверждают реальность перехода косве
 **\[4.7\]** 2504.16041 — Tveit, Remseth, Skogvold, «Muon Optimizer Accelerates Grokking». Нюанс: чётность здесь **полная** — все десять битов десятибитной строки, — а не $k$-разрежённая чётность корпуса; ни скрытого подмножества, ни параметров $(n,k)$, ни вычислительной трудности в постановке нет, и относить работу к полигону разрежённой чётности нельзя. [`"The parity task involves predicting the parity bit for 10-bit binary strings, with 1024 possible combinations."`](../papers/2504.16041.muon-optimizer-accelerates-grokking/original/2504.16041.muon-optimizer-accelerates-grokking.md#p2-4). *«[Задача чётности состоит в предсказании бита чётности для 10-битных двоичных строк, при 1024 возможных сочетаниях.](../papers/2504.16041.muon-optimizer-accelerates-grokking/2504.16041.muon-optimizer-accelerates-grokking.card.md#p2-4)»*
 
 **\[4.8\]** 2606.12966 — Sivasankar, «Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking». О «скрытом прогрессе» Barak et al. 2022 сказано: [`"an observation directly analogous to our FSD precursor"`](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-2) — *«[наблюдение, прямо созвучное нашему предвестнику FSD](../papers/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md#p16-2)»*.
-
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 20             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

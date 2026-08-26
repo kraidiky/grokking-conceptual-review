@@ -172,10 +172,3 @@ Bhaskar et al. оспаривают предпосылку о *непересе�
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"even when the model sparsity is 90%, the features extracted by the pruned model maintain a high MIR with those extracted before pruning"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-2). *«[даже при разрежённости модели 90 % признаки, извлечённые прореженной моделью, сохраняют высокий MIR с признаками, извлечёнными до прореживания](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-2)»*\
 Доп. (величина «высокого»): по [рис. 6](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#fig-6) MIR держится около 0.5 по правой оси на всём переборе разрежённости от 0 до 0.9, то есть «высокий» здесь означает «не изменившийся», а не «близкий к 1».
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 21             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

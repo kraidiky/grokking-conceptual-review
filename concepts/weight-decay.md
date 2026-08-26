@@ -374,10 +374,3 @@ Loss-Landscape Geometry». Нюанс: перебора по $\lambda$ нет �
 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"an AdamW optimizer with a weight decay parameter of 1"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3). *«[оптимизатором AdamW с параметром weight decay 1](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-3)»* Перебора weight decay, прогона без него и любой попытки связать поведение MIR и HDR с силой регуляризации в работе нет — при том что весь двухфазный сюжет разворачивается именно при $\lambda=1$. В опытах на CIFAR стоит $5e^{-4}$ ([с. 4, абз. 11](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-11)).
-
-```
-concept:
-  category: 4                    # 4. Факторы обучения и оптимизации (Training / optimization factors)
-  papers_linked: 82             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

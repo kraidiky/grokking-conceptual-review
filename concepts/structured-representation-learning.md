@@ -214,10 +214,3 @@
 ###### ref-5-2
 **\[5.2\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"we focus more on the consistency between sample representations and class classification heads"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-10). *«[мы сосредоточиваемся прежде всего на согласованности между представлениями объектов и классификационными головами классов](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-10)»*\
 Доп. (ограничение оценки): [`"Due to constraints in computational resources, we approximate the dataset’s matrix entropy using batch matrix entropy."`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-10) — *«[Из-за ограниченности вычислительных ресурсов мы приближаем матричную энтропию набора данных батчевой матричной энтропией.](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p4-10)»*
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 46             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

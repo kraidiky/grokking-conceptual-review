@@ -160,9 +160,3 @@ Tian и Truong et al.: механизмы, найденные на абелев�
 ###### ref-5-1
 **\[5.1\]** 2601.21150 — Внешняя работа (демотирована из корпуса): Kvinge et al., «Can Neural Networks Learn Small Algebraic Worlds? An Investigation Into the Group-theoretic Structures Learned By Narrow Models Trained To Predict Group Operations». [`"The symmetric group $S_{n}$ is the set of all permutations of $n$ elements with the binary operation of composition of permutations"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-4). *«[симметрическая группа $S_{n}$ есть множество всех перестановок $n$ элементов с двуместным действием композиции перестановок](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-4)»*\
 Доп. (непереместительность): [`"the order of $S_{n}$ is $n!$. It is not commutative"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-4). *«[порядок $S_{n}$ равен $n!$. Она непереместительна](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p3-4)»*
-```
-concept:
-  category: 3                    # 3. Задачи и наборы данных (Tasks & datasets)
-  papers_linked: 15             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```

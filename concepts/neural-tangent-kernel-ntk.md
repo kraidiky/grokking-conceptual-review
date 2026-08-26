@@ -180,9 +180,3 @@ Cullen et al. подходят с третьей стороны — со сто�
 
 ###### ref-3-7
 **\[3.7\]** 2506.12284 — Walker et al., «GrokAlign: Geometric Characterisation and Acceleration of Grokking». Предлагает ядру дешёвый заменитель: Теорема 9 связывает производную по времени скалярного произведения точки с её центроидом со взвешенной суммой ядра этой точки с обучающими точками, а центроид считается одним якобиан-векторным произведением. Нюанс: постановка узкая — двухслойная сеть без смещений, скалярный выход, кросс-энтропия, полнопакетный градиентный спуск; для векторного выхода (приложение A) связь с ядром не выписывается; эмпирическая проверка одна — одна точка двухклассового MNIST, и «область обучения признаков» на рисунке выделена без числового порога. [`"a changing inner product implies a dynamic neural tangent kernel, which corresponds to the feature learning regime of training"`](../papers/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking/original/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking.md#p5-6). *«[меняющееся скалярное произведение влечёт меняющееся нейронное касательное ядро, что отвечает режиму обучения признаков](../papers/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking.card.md#p5-6)»*
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 18             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-20
-```

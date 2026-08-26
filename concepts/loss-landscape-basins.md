@@ -205,10 +205,3 @@ decoder-only трансформер; картина «удержание — н�
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». Две копии из одной инициализации, разный порядок данных и аугментации, затем линейная интерполяция весов ([с. 5, абз. 1](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p5-1)): на CIFAR-100 связность есть и обе меры вдоль отрезка почти не меняются, на CIFAR-10 при шаге $3e^{-2}$ связности нет — точность падает до случайного угадывания при весе интерполяции между 0.4 и 0.6. [`"Although we find it difficult to explain this anomaly, it does demonstrate that HDR and MIR have distinctive attributes compared to the accuracy metric"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p5-2). *«[Хотя нам трудно объяснить эту аномалию, она всё же показывает, что HDR и MIR обладают отличительными свойствами по сравнению с мерой точности](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p5-2)»*\
 Доп. (что видно на рисунке): на [рис. 3](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#fig-3), панель (a), у MIR в середине провала горб, а HDR падает почти к нулю при весах около 0.1 и 0.94 — то есть одновременно с падением точности, а не против него.
-
-```
-concept:
-  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
-  papers_linked: 24             # различных статей в разделах ссылок карточки
-  counted_at: 2026-08-25
-```
