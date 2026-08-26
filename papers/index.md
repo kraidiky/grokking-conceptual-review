@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-113 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто десять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные три перечислены строкой: их карточки не заведены, и описывать пока нечего.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто десять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 58 перечислены строкой: их карточки не заведены, и описывать пока нечего (56 ждут очереди импорта, у двух — 2411.05353 и 2507.11645 — нет и папок в papers/).
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -158,6 +158,10 @@
 
   Работа не о гроккинге, а о том, **какое решение** сеть выбирает в задаче, на которой гроккинг изучают: для остаточного сложения нескольких входов доказано, что решение наибольшего отступа состоит из нейронов, каждый из которых занят ровно одной частотой, и что покрыты все частоты. Корпус получает опору под фурье-разбором, который до того держался на наблюдениях в уже обученных сетях: здесь это не «сеть выучивает нечто фурье-подобное», а утверждение с замкнутой формулой и оценкой нужной ширины, причём опыт поставлен ровно на том числе нейронов, которое даёт граница. Оттуда же выведено и подтверждено предсказание, что с ростом числа входов гроккинг слабеет. Цена: доказано о предельной точке, а не о пути к ней; возбуждение многочленное, а не ReLU; и само явление задержки работа, по признанию авторов, не объясняет.
 
+- `2509.21016` · всего: **22** · в картотеке: **0** · RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?
+
+- `2308.09543` · всего: **21** · в картотеке: **1** · Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics
+
 - `2310.17247` · всего: **20** · в картотеке: **15** · [Miller, O'Neill, Bui 2024 — Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity](2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md)
 
   Работа, расширяющая круг явления за пределы нейронных сетей: гроккинг показан у распознавания и регрессии гауссовым процессом, у линейной регрессии и у байесовой нейронной сети — то есть там, где ни контуров, ни перехода от ленивого к богатому, ни NTK нет вовсе. Отсюда корпус берёт два орудия: приём сокрытия, наводящий отложенную генерализацию предсказуемым образом, и рамку «доступность области малой ошибки и малой сложности», в которую прежние объяснения укладываются частными случаями. Выбор гауссова процесса не случаен — у него два настроечных параметра, и ландшафт «ошибка — сложность» рисуется целиком, а не проецируется. Цена: устройство названо, но не выведено; правило бережливости, на котором всё держится, принято допущением; линейный пример подобран вручную, а мера сложности в главных опытах признана сомнительной самими авторами.
@@ -174,6 +178,8 @@
 
   Вводит **число линейных отображений** (LMN) — меру сложности сети, считающую не веса, а функцию: сколько разных локальных линейных отображений сеть реализует на данных. Линейная связность пары входов меряется через $r^{2}$ выходной кривой вдоль отрезка между ними, матрица связности сводится к числу через энтропию фон Неймана. Между запоминанием и генерализацией LMN неуклонно убывает — «скрытое сжатие», не видимое по точности, — и связано с тестовой потерей ровнее, чем норма $L_{2}$. Довод против $L_{2}$ концептуален и не зависит от постановки: глубокая линейная сеть даёт LMN = 1 при произвольной норме. Побочная находка на поразрядном XOR: после гроккинга LMN растёт и снова падает — сеть перескакивает между двумя почти вырожденными решениями. Работа того же первого автора, что Omnigrok, и оспаривает меру сложности из его же прежних работ.
 
+- `2404.16367` · всего: **17** · в картотеке: **0** · Learning Syntax Without Planting Trees: Understanding Hierarchical Generalization in Transformers
+
 - `2402.16726` · всего: **15** · в картотеке: **12** · [Furuta et al. 2024 — Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modular Polynomials](2402.16726.towards-empirical-interpretation-of-internal-circuits-and-properties-in-grokked-transformers-on-modular-polynomials/2402.16726.towards-empirical-interpretation-of-internal-circuits-and-properties-in-grokked-transformers-on-modular-polynomials.card.md)
 
   Самая широкая эмпирическая карта модульных задач в корпусе: фурье-разбор Nanda et al. распространён со сложения на вычитание, умножение, линейные выражения и многочлены до седьмой степени. У каждой грокающей операции своё фурье-представление — вычитание асимметрично, умножение задействует все частоты, многочлены дают суперпозицию, — а у не грокающих ясных картин нет. Главный результат сформулирован на языке самой задачи: **разложимость** через $(a\pm b)$ отделяет грокающие многочлены от не грокающих, причём $a^2+ab+b^2$ не грокает, а равное ему как многочлен $(a+b)^2$ грокает. Введены две меры прогресса, не привязанные к задаче (плотность частот Фурье и отношение коэффициентов Фурье), и приём *предгрокнутых моделей* — заморожённый модуль, доученный на одной операции и вставленный в обучение на другой. Гипотеза о переносимости в основном опровергнута: перенос работает лишь от элементарной арифметики к линейным выражениям, а предгрокнутый на вычитании трансформер не переносится даже в само вычитание.
@@ -185,6 +191,8 @@
 - `2509.21519` · всего: **14** · в картотеке: **10** · [Tian 2025 — Provable Scaling Laws of Feature Emergence from Learning Dynamics of Grokking](2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking/2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking.card.md)
 
   Самая математичная работа корпуса после Mohamadi et al.: рамка **Li2** делит динамику гроккинга двухслойной сети на три стадии — ленивое обучение, независимое обучение признакам, взаимодействующее обучение признакам, — и связывает их одной величиной, обратно распространяемым градиентом $G_{F}$. Пока верхний слой не подогнался, $G_{F}$ — шум, и учить признаки не из чего: **ленивая фаза необходима**. Дальше динамика скрытого слоя оказывается в точности градиентным подъёмом функции энергии $\mathcal{E}(\mathbf{w})=\frac{1}{2}\|\tilde{Y}^{\top}\sigma(X\mathbf{w})\|^{2}$, а выучиваемые признаки — её локальными максимумами, описанными для групповых задач полностью. Отсюда фурье-решение модульного сложения **выводится**, а не обнаруживается обратной инженерией, и выводится закон масштабирования: доля данных, нужная для генерализации, ведёт себя как $M^{-1}\log M$ — подтверждено на циклических, произведениях и неабелевых группах. Weight decay оказывается скоростью обучения признакам и объявлен достаточным, но не необходимым. Цена — узость постановки: квадратичная активация и групповой вход.
+
+- `2309.03800` · всего: **14** · в картотеке: **1** · Pareto Frontiers in Neural Feature Learning: Data, Compute, Width, and Luck
 
 - `2506.05718` · всего: **13** · в картотеке: **11** · [Notsawo et al. 2025 — Grokking Beyond the Euclidean Norm of Model Parameters](2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.card.md)
 
@@ -213,6 +221,8 @@
 - `2410.04489` · всего: **11** · в картотеке: **9** · [Beck et al. 2024 — Grokking at the Edge of Linear Separability](2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md)
 
   Самая экономная модель гроккинга в корпусе: **линейная** логистическая классификация двух гауссиан, ни нейронной сети, ни регуляризации, ни weight decay. Критерий генерализации здесь не измеряется, а **доказывается**: модель обобщает безупречно тогда и только тогда, когда обучающий набор не отделим линейно от начала координат, а в разделимом случае предельная точность выражается через отступ в замкнутом виде. Порог не подогнан — он вытекает из теоремы Венделя 1962 года: при $N,d\to\infty$ набор отделим от начала координат с вероятностью 1 ровно при $\lambda=d/N>1/2$. Гроккинг же случается на **границе** разделимости: при $\lambda\to\frac{1}{2}^{-}$ предельная норма $\|\boldsymbol{S}_{\infty}\|$ расходится, а большой шум в перпендикулярных направлениях заставляет $\boldsymbol{S}$ выходить на неё сколь угодно быстро при ограниченной скорости роста свободного члена — отсюда сколь угодно долгая задержка. Оба условия нужны одновременно. Механизм назван своим именем из физики: **критическое замедление** вблизи точки, где два асимптотических решения обмениваются устойчивостью. Вся феноменология воспроизводится набором из двух точек в одном измерении, решаемым аналитически.
+
+- `2412.04619` · всего: **11** · в картотеке: **0** · Sometimes I am a Tree: Data Drives Unstable Hierarchical Generalization in LMs
 
 - `2505.20172` · всего: **10** · в картотеке: **6** · [Boursier et al. 2025 — A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation/2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation.card.md)
 
@@ -318,6 +328,8 @@
 
   Даёт первое объяснение, связывающее гроккинг с **информационным бутылочным горлышком** через одну общую величину: и граница на ошибку генерализации, и граница на избыточные сведения выражены через популяционную внутриклассовую дисперсию представлений, а не через две похожие величины. Заявка от этого проверяема: если дисперсия падает, оба показателя должны улучшаться разом. Временные масштабы выведены, а не подмечены совпадением. Не менее ценно прямое столкновение с Han et al.: две одновременные работы приходят к противоположным заголовкам, и различие сводится к тому, что называть мерой коллапса — здесь выделена одна лишь внутриклассовая дисперсия, тогда как привычные меры вбирают и разделение классовых средних, возникающее уже при подгонке. Цена: единственная постановка, где гроккинг вообще возник, приблизительные оценки взаимной осведомлённости и допущения теорем, не выполняющиеся в собственных опытах.
 
+- `2504.12700` · всего: **4** · в картотеке: **1** · A Two-Phase Perspective on Deep Learning Dynamics
+
 - `2605.09724` · всего: **3** · в картотеке: **3** · [Song, Ye 2026 — Model Capacity Determines Grokking through Competing Memorisation and Generalisation Speeds](2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds.card.md)
 
   Работа, разводящая две величины, которые корпус до неё держал за одну: порог ёмкости, начиная с которого запоминающее решение представимо, и размер модели, начиная с которого гроккинг появляется. Второе строго больше первого, и промежуток между ними — целый режим немедленного обобщения. Корпус наследует отсюда две измеримые величины, годные в любой его постановке: скорость запоминания, снимаемая на случайных метках равной информационной сложности, и скорость обобщения на самой задаче, обе как функции числа параметров; их пересечение и предлагается как предсказатель начала гроккинга. Поиск здесь идёт не за механизмом, а за масштабом: какое решение градиентный спуск встречает первым при данном размере, а не какое предпочтительно на сходимости, — этим работа отличается от объяснений через эффективность контуров, разрежённую подсеть и переход lazy→rich, которые сама и называет своими соседями. Ось развёртки — размер модели, а не время обучения: каждая точка есть отдельный прогон. Чего в работе нет: механизма (во внутренности сети не заглядывают ни разу), вывода скоростей (они измеряются, и всякая новая задача требует повторных прогонов), точного совпадения предсказания с наблюдением (остаётся постоянный сдвиг, перекалибровывающийся при смене weight decay, доли обучения, глубины и операции) и работоспособности при глубине $\geq 6$, где пересечения нет вовсе, а гроккинг есть. Препринт открыто незавершён: три подраздела приложений состоят из обещаний. Числа — постоянная «бит на параметр», пороги, состав развёрток и статистики — в карточке.
@@ -345,6 +357,8 @@
 - `2603.01192` · всего: **3** · в картотеке: **3** · [Cullen et al. 2026 — A Basin-Selection Perspective on Grokking via Singular Learning Theory](2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md)
 
   Первая работа корпуса, дающая гроккингу **байесовское** объяснение с явно вычисленной величиной: не «плоские минимумы лучше», а «котловина с меньшим местным коэффициентом обучения получает большую апостериорную массу, и вот его значение для этой сети». Статистический вопрос — какая котловина предпочтительна — отделён при этом от динамического, когда SGD туда перейдёт: первый решается теорией, второй остаётся опытным. Теоретический вклад заявлен точно: замкнутого выражения коэффициента обучения для сети с **нелинейной** активацией прежде не было. Проверяется при этом форма зависимости, а не безусловное значение, — честно, ибо оценщик ненадёжен. Второй вклад практический: величина считается по одним обучающим данным и предсказывает переход, не заглядывая в проверочные. Цена: байесовская асимптотика вместо разбора динамики SGD, оценщик, меняющийся на порядки с настройкой выборщика, и одна малая постановка.
+
+- `2307.09550` · всего: **3** · в картотеке: **0** · The semantic landscape paradigm for neural networks
 
 - `2506.12284` · всего: **2** · в картотеке: **2** · [Walker et al. 2025 — GrokAlign: Geometric Characterisation and Acceleration of Grokking](2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking.card.md)
 
@@ -391,6 +405,16 @@
 - `2602.02859` · всего: **2** · в картотеке: **2** · [Prakash, Martin 2026 — Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher](2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md)
 
   Продолжение работы тех же авторов (`2506.04434`) и укрепление её главного итога: генерализацию можно потерять, просто продолжая обучение — обе постановки корпуса, продлённые на два порядка по шагам, обрушивают точность на тесте назад к случайной при безупречной точности на обучении. Отсюда неудобный вопрос ко всем работам об ускорении гроккинга: где именно надо остановиться. Новое здесь — основной признак: собственные числа, переживающие почленное перемешивание весовой матрицы. Перемешивание разрушает все корреляции, сохраняя набор величин, поэтому уцелевшее большое собственное число говорит об отдельных непомерно больших членах, а не о выученном строении. Обе меры считаются по одним весам, без данных, то есть годятся для остановки обучения там, где отложенного набора нет вовсе. Цена: ни одного вмешательства, а значит и причинности; спектральный признак в двух случаях имеет противоположный знак, и это не объяснено; отождествление ловушек с прообразами качественное.
+
+- `2502.01739` · всего: **2** · в картотеке: **1** · Grokking vs. Learning: Same features, different encodings
+
+- `2507.23346` · всего: **2** · в картотеке: **0** · Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems
+
+- `2509.06931` · всего: **2** · в картотеке: **1** · Learning words in groups: fusion algebras, tensor ranks and Grokking
+
+- `2509.10562` · всего: **2** · в картотеке: **1** · Predator–Prey Model: Driven Hunt for Accelerated Grokking
+
+- `2601.22450` · всего: **2** · в картотеке: **0** · Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from $k$-Parity
 
 - `2412.18624` · всего: **1** · в картотеке: **2** · [Kozyrev 2024 — How to explain grokking](2412.18624.how-to-explain-grokking/2412.18624.how-to-explain-grokking.card.md)
 
@@ -448,6 +472,36 @@
 
   Работа не о гроккинге, а о численном отказе, который гроккингу сопутствует: пращевые всплески потери объявлены и показаны как след ограниченной разрядности мантиссы, а не свойство внутренней динамики оптимизации. Корпусу это важно потому, что праща со времён Thilak et al. разбиралась как явление оптимизации и на ней строились объяснения; первую связь с численной точностью дало одно предложение приложения D.2 Nanda et al. 2023, и здесь это прочтение доведено до полного механизма — с прямым признанием их первенства. Довод проверяем одной строкой кода: перевод вычисления логитов и потери в двойную точность при неизменном хранении параметров пращу устраняет — такой опыт отделяет численную причину от всех прочих разом и повторяется кем угодно. Вмешательство при этом бьёт в звено вывода, а не в следствие. Отдельно ценно, что край устойчивости отделён от пращи и доказательством, и опытом. Цена: весь вывод опирается на неизмеренное допущение нейронного коллапса, связь с гроккингом остаётся наблюдением на одной задаче, а вынесенный в заглавие вопрос ответа не получает.
 
+- `2412.10898` · всего: **1** · в картотеке: **0** · Exploring Grokking: Experimental and Mechanistic Investigations
+
+- `2505.20076` · всего: **1** · в картотеке: **1** · ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior
+
+- `2512.00686` · всего: **1** · в картотеке: **1** · Using physics-inspired Singular Learning Theory to understand grokking & other phase transitions in modern neural networks
+
+- `2602.12039` · всего: **1** · в картотеке: **1** · The Implicit Bias of Logit Regularization
+
+- `2604.07380` · всего: **1** · в картотеке: **1** · The Lifecycle of the Spectral Edge: From Gradient Learning to Weight-Decay Compression
+
+- `2604.25143` · всего: **1** · в картотеке: **0** · Gradient-Direction Sensitivity Reveals Linear-Centroid Coupling Hidden by Optimizer Trajectories
+
+- `2605.04396` · всего: **1** · в картотеке: **1** · Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize
+
+- `2605.12394` · всего: **1** · в картотеке: **1** · Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory
+
+- `2606.04405` · всего: **1** · в картотеке: **1** · Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View
+
+- `2606.05863` · всего: **1** · в картотеке: **1** · Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction
+
+- `2606.08985` · всего: **1** · в картотеке: **1** · Beyond Neural Collapse: Task-Intrinsic Geometry Governs Neural Representations in Modular Arithmetic
+
+- `2606.18465` · всего: **1** · в картотеке: **1** · What Does the Weight Norm Control in Grokking? Logit-Scale Mediation under Cross-Entropy
+
+- `2606.32000` · всего: **1** · в картотеке: **1** · HiLD 2025: 3rd Workshop on High-dimensional Learning Dynamics 1–16
+
+- `2607.08350` · всего: **1** · в картотеке: **0** · Grokking and epoch-wise double descent in quantum neural networks
+
+- `2607.20512` · всего: **1** · в картотеке: **1** · The Active Ingredient in Muon’s Grokking
+
 - `2503.23298` · всего: **0** · в картотеке: **0** · [Wang et al. 2025 — Learning Towards Emergence: Paving the Way to Induce Emergence by Inhibiting Monosemantic Neurons on Pre-trained Models](2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md)
 
   Боковая ветвь для вики: гроккинг здесь не изучается, а служит соседним явлением, с которым сопоставляют возникновение способностей, и само сопоставление вынесено в приложение. Корпусу полезны два вклада, оба про измерение: мера моносемантичности впервые проверена перекрёстно и с двух сторон — независимым приёмом разрежённого щупания, причём и на моносемантических нейронах, и на случайно выбранных, — и введена мера ложных подавлений, задающая, сколько нейронов подавлять. Догадка об убывании моносемантичности с масштабом проверена по частой сетке масштабов, признаковых наборов и слоёв, а не привычным «отключим нейроны и посмотрим на потерю». Цена: заявленного возникновения нет, прирост мал и неустойчив; обучение оборвано на десятой части шагов, что приёму благоприятствует; сама мера ненадёжна вне одного качественного признакового набора.
@@ -459,6 +513,62 @@
 - `2512.03437` · всего: **0** · в картотеке: **0** · [Liang, Li 2025 — Grokked Models are Better Unlearners](2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md)
 
   Прикладная боковая ветвь: гроккинг здесь не объясняется, а применяется — как рычаг для машинного разучивания. Ценна прежде всего постановка вопроса, поперечного всему корпусу: меняет ли момент остановки обучения последующее поведение модели при неизменных алгоритмах разучивания. Ответ полезен независимо от того, верно ли предложенное объяснение через составность представлений. Довод измерен, а не описан: градиентные пространства забываемого и сохраняемого наборов у гроккнувшей точки почти ортогональны, у рано остановленной — далеко нет, и перевод в угловую меру делает разрыв наглядным. Две проверочные сверки отрезают объяснение через одну лишь плоскость минимума. Авторы прямо отказываются предписывать продлённое обучение: гроккинг стоит в разы дороже. Цена: причинности нет, отправные точки двух сверяемых моделей неодинаковы, сводная мера неустойчива, а «местный гроккинг» есть переименование ранней выучиваемости.
+
+- `2411.03541` · всего: **0** · в картотеке: **1** · Do Mice Grok? Glimpses of Hidden Progress During Overtraining in Sensory Cortex
+
+- `2602.08302` · всего: **0** · в картотеке: **0** · Grokking in Linear Models for Logistic Regression
+
+- `2602.18649` · всего: **0** · в картотеке: **1** · Global Low-Rank, Local Full-Rank: The Holographic Encoding of Learned Algorithms
+
+- `2602.19533` · всего: **0** · в картотеке: **0** · Grokking Finite-Dimensional Algebra
+
+- `2602.22600` · всего: **0** · в картотеке: **0** · Transformers Converge to Invariant Algorithmic Cores
+
+- `2603.23784` · всего: **0** · в картотеке: **0** · Latent Algorithmic Structure Precedes Grokking: A Mechanistic Study of ReLU MLPs on Modular Arithmetic
+
+- `2604.12434` · всего: **0** · в картотеке: **0** · A Bayesian Perspective on the Role of Epistemic Uncertainty for Delayed Generalization in In-Context Learning
+
+- `2604.17673` · всего: **0** · в картотеке: **0** · Grokking of Diffusion Models: Case Study on Modular Addition
+
+- `2605.08119` · всего: **0** · в картотеке: **0** · Feature Repulsion and Spectral Lock-in: An Empirical Study of Two-Layer Network Grokking
+
+- `2605.08464` · всего: **0** · в картотеке: **0** · The Geometric Structure of Models Learning Sparse Data
+
+- `2605.14659` · всего: **0** · в картотеке: **0** · Slower Generalization, Faster Memorization: A Sweet Spot in Algorithmic Learning
+
+- `2605.15787` · всего: **0** · в картотеке: **0** · Grokking as Structural Inference: Transformers Need Bayesian Lottery Tickets
+
+- `2605.18022` · всего: **0** · в картотеке: **0** · Unveiling Memorization–Generalization Coexistence: A Case Study on Arithmetic Tasks with Label Noise
+
+- `2605.24057` · всего: **0** · в картотеке: **0** · Feature Lottery? A Bifurcation Theory of Concept Emergence
+
+- `2606.00230` · всего: **0** · в картотеке: **0** · A Pre-Training Analogue of Grokking in Language Models: Tracing Delayed Grammatical Generalization
+
+- `2606.17399` · всего: **0** · в картотеке: **0** · The Discrete-Log Clock: How a Transformer Learns Modular Multiplication
+
+- `2606.26050` · всего: **0** · в картотеке: **0** · Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining
+
+- `2607.04333` · всего: **0** · в картотеке: **0** · Structure-Specific Representational Priors Causally Control the Grokking Delay
+
+- `2607.05104` · всего: **0** · в картотеке: **0** · Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters
+
+- `2607.06628` · всего: **0** · в картотеке: **0** · Cross-Trajectory Chimera Interventions Reveal Dissociable Roles of Weight Magnitude and Direction in Grokking
+
+- `2607.06639` · всего: **0** · в картотеке: **0** · At-Grok Is Not Converged: A Measurement-Validity Audit for Grokking Representation Metrics
+
+- `2607.11666` · всего: **0** · в картотеке: **0** · How to Tame Grokking: Representation Geometry as a Control Signal
+
+- `2607.12735` · всего: **0** · в картотеке: **1** · What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking
+
+- `2607.13749` · всего: **0** · в картотеке: **0** · Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations
+
+- `2607.20552` · всего: **0** · в картотеке: **0** · Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat
+
+- `2607.29503` · всего: **0** · в картотеке: **0** · The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting
+
+- `2608.01833` · всего: **0** · в картотеке: **0** · Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping
+
+- `2608.07436` · всего: **0** · в картотеке: **0** · Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers
 
 ## В порядке появления
 
@@ -482,8 +592,11 @@
 | `2305.18741` | **78** | **20** | [Murty et al. 2023 — Grokking of Hierarchical Structure in Vanilla Transformers](2305.18741.grokking-of-hierarchical-structure-in-vanilla-transformers/2305.18741.grokking-of-hierarchical-structure-in-vanilla-transformers.card.md) |
 | `2306.13253` | **36** | **24** | [Notsawo et al. 2023 — Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok](2306.13253.predicting-grokking-long-before-it-happens/2306.13253.predicting-grokking-long-before-it-happens.card.md) |
 | `2306.17844` | **178** | **32** | [Zhong et al. 2023 — The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks](2306.17844.the-clock-and-the-pizza-two-stories-in-mechanistic-explanation-of-neural-networks/2306.17844.the-clock-and-the-pizza-two-stories-in-mechanistic-explanation-of-neural-networks.card.md) |
+| `2307.09550` | **3** | **0** | The semantic landscape paradigm for neural networks |
+| `2308.09543` | **21** | **1** | Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics |
 | `2308.15594` | **37** | **11** | [Charton 2024 — Learning the greatest common divisor: explaining transformer predictions](2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions.card.md) |
 | `2309.02390` | **110** | **85** | [Varma & Shah et al. 2023 — Explaining grokking through circuit efficiency](2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md) |
+| `2309.03800` | **14** | **1** | Pareto Frontiers in Neural Feature Learning: Data, Compute, Width, and Luck |
 | `2310.02541` | **39** | **24** | [Xu et al. 2023 — Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data](2310.02541.benign-overfitting-and-grokking-in-relu-networks-for-xor-cluster-data/2310.02541.benign-overfitting-and-grokking-in-relu-networks-for-xor-cluster-data.card.md) |
 | `2310.03789` | **52** | **29** | [Rubin et al. 2024 — Grokking as a First Order Phase Transition in Two Layer Networks](2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.card.md) |
 | `2310.05918` | **17** | **11** | [Liu, Zhong, Tegmark 2023 — Grokking as Compression: A Nonlinear Complexity Perspective](2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective/2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective.card.md) |
@@ -502,6 +615,7 @@
 | `2402.15555` | **61** | **30** | [Humayun et al. 2024 — Deep Networks Always Grok and Here is Why](2402.15555.deep-networks-always-grok-and-here-is-why/2402.15555.deep-networks-always-grok-and-here-is-why.card.md) |
 | `2402.16726` | **15** | **12** | [Furuta et al. 2024 — Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modular Polynomials](2402.16726.towards-empirical-interpretation-of-internal-circuits-and-properties-in-grokked-transformers-on-modular-polynomials/2402.16726.towards-empirical-interpretation-of-internal-circuits-and-properties-in-grokked-transformers-on-modular-polynomials.card.md) |
 | `2403.03942` | **11** | **1** | [Bhaskar et al. 2024 — The Heuristic Core: Understanding Subnetwork Generalization in Pretrained Language Models](2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md) |
+| `2404.16367` | **17** | **0** | Learning Syntax Without Planting Trees: Understanding Hierarchical Generalization in Transformers |
 | `2405.12755` | **9** | **11** | [Golechha 2024 — Progress Measures for Grokking on Real-world Tasks](2405.12755.progress-measures-for-grokking-on-real-world-tasks/2405.12755.progress-measures-for-grokking-on-real-world-tasks.card.md) |
 | `2405.15071` | **90** | **13** | [Wang et al. 2024 — Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization](2405.15071.grokked-transformers-are-implicit-reasoners/2405.15071.grokked-transformers-are-implicit-reasoners.card.md) |
 | `2405.16658` | **4** | **4** | [Park et al. 2024 — Acceleration of Grokking in Learning Arithmetic Operations via Kolmogorov-Arnold Representation](2405.16658.acceleration-of-grokking-in-learning-arithmetic-operations-via-kolmogorov-arnold-representation/2405.16658.acceleration-of-grokking-in-learning-arithmetic-operations-via-kolmogorov-arnold-representation.card.md) |
@@ -517,14 +631,19 @@
 | `2410.03569` | **4** | **0** | [Saxena et al. 2024 — Making Hard Problems Easier with Custom Data Distributions and Loss Regularization: A Case Study in Modular Arithmetic](2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.card.md) |
 | `2410.04489` | **11** | **9** | [Beck et al. 2024 — Grokking at the Edge of Linear Separability](2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md) |
 | `2411.00247` | **10** | **5** | [Jeffares et al. 2024 — Deep Learning Through A Telescoping Lens: A Simple Model Provides Empirical Insights On Grokking, Gradient Boosting & Beyond](2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.card.md) |
+| `2411.03541` | **0** | **1** | Do Mice Grok? Glimpses of Hidden Progress During Overtraining in Sensory Cortex |
 | `2411.05353` | **2** | — | Controlling Grokking with Nonlinearity and Data |
+| `2412.04619` | **11** | **0** | Sometimes I am a Tree: Data Drives Unstable Hierarchical Generalization in LMs |
 | `2412.09810` | **23** | **15** | [DeMoss et al. 2024 — The Complexity Dynamics of Grokking](2412.09810.the-complexity-dynamics-of-grokking/2412.09810.the-complexity-dynamics-of-grokking.card.md) |
+| `2412.10898` | **1** | **0** | Exploring Grokking: Experimental and Mechanistic Investigations |
 | `2412.18624` | **1** | **2** | [Kozyrev 2024 — How to explain grokking](2412.18624.how-to-explain-grokking/2412.18624.how-to-explain-grokking.card.md) |
 | `2501.04697` | **38** | **30** | [Prieto et al. 2025 — Grokking at the Edge of Numerical Stability](2501.04697.grokking-at-the-edge-of-numerical-stability/2501.04697.grokking-at-the-edge-of-numerical-stability.card.md) |
+| `2502.01739` | **2** | **1** | Grokking vs. Learning: Same features, different encodings |
 | `2502.01774` | **1** | **2** | [Carvalho et al. 2025 — Grokking Explained: A Statistical Phenomenon](2502.01774.grokking-explained-a-statistical-phenomenon/2502.01774.grokking-explained-a-statistical-phenomenon.card.md) |
 | `2503.10483` | **4** | **2** | [Pomarico et al. 2025 — Grokking as an entanglement transition in tensor network machine learning](2503.10483.grokking-as-an-entanglement-transition-in-tensor-network-machine-learning/2503.10483.grokking-as-an-entanglement-transition-in-tensor-network-machine-learning.card.md) |
 | `2503.23298` | **0** | **0** | [Wang et al. 2025 — Learning Towards Emergence: Paving the Way to Induce Emergence by Inhibiting Monosemantic Neurons on Pre-trained Models](2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md) |
 | `2504.03162` | **1** | **2** | [Gu et al. 2025 — Beyond Progress Measures: Theoretical Insights into the Mechanism of Grokking](2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking.card.md) |
+| `2504.12700` | **4** | **1** | A Two-Phase Perspective on Deep Learning Dynamics |
 | `2504.13292` | **12** | **13** | [Xu et al. 2025 — Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model](2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model.card.md) |
 | `2504.16041` | **11** | **4** | [Tveit et al. 2025 — Muon Optimizer Accelerates Grokking](2504.16041.muon-optimizer-accelerates-grokking/2504.16041.muon-optimizer-accelerates-grokking.card.md) |
 | `2504.17243` | **3** | **2** | [Zhou et al. 2025 — NeuralGrok: Accelerate Grokking by Neural Gradient Transformation](2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.card.md) |
@@ -532,6 +651,7 @@
 | `2505.11411` | **5** | **5** | [Zhang et al. 2025 — Is Grokking a Computational Glass Relaxation?](2505.11411.is-grokking-a-computational-glass-relaxation/2505.11411.is-grokking-a-computational-glass-relaxation.card.md) |
 | `2505.15624` | **5** | **4** | [AlQuabeh et al. 2025 — Mechanistic Insights into Grokking from the Embedding Layer](2505.15624.mechanistic-insights-into-grokking-from-the-embedding-layer/2505.15624.mechanistic-insights-into-grokking-from-the-embedding-layer.card.md) |
 | `2505.18266` | **14** | **2** | [McCracken et al. 2025 — Uncovering a Universal Abstract Algorithm for Modular Addition in Neural Networks](2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.card.md) |
+| `2505.20076` | **1** | **1** | ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior |
 | `2505.20172` | **10** | **6** | [Boursier et al. 2025 — A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation/2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation.card.md) |
 | `2506.04434` | **9** | **4** | [Prakash & Martin 2025 — Grokking and Generalization Collapse: Insights from HTSR theory](2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory/2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory.card.md) |
 | `2506.05718` | **13** | **11** | [Notsawo et al. 2025 — Grokking Beyond the Euclidean Norm of Model Parameters](2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.card.md) |
@@ -540,42 +660,87 @@
 | `2506.23286` | **4** | **2** | [Jeffares, van der Schaar 2025 — Not All Explanations for Deep Learning Phenomena Are Equally Valuable](2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.card.md) |
 | `2507.11645` | **1** | — | Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation |
 | `2507.20057` | **8** | **4** | [Lyle et al. 2025 — What Can Grokking Teach Us About Learning Under Nonstationarity?](2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity/2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity.card.md) |
+| `2507.23346` | **2** | **0** | Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems |
+| `2509.06931` | **2** | **1** | Learning words in groups: fusion algebras, tensor ranks and Grokking |
+| `2509.10562` | **2** | **1** | Predator–Prey Model: Driven Hunt for Accelerated Grokking |
 | `2509.17738` | **7** | **2** | [Han et al. 2025 — Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking.card.md) |
 | `2509.20829` | **4** | **1** | [Sakamoto, Sato 2026 — Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence/2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence.card.md) |
+| `2509.21016` | **22** | **0** | RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs? |
 | `2509.21519` | **14** | **10** | [Tian 2025 — Provable Scaling Laws of Feature Emergence from Learning Dynamics of Grokking](2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking/2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking.card.md) |
 | `2510.04930` | **1** | **1** | [Saheb Pasand, Dohmatob 2026 — Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking](2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking.card.md) |
 | `2510.25966` | **1** | **2** | Grokking in the Ising Model |
 | `2511.01938` | **8** | **6** | [Musat 2026 — The Geometry of Grokking: Norm Minimization on the Zero-Loss Manifold](2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold.card.md) |
 | `2511.04760` | **1** | **1** | [Singh et al. 2025 — When Data Falls Short: Grokking Below the Critical Threshold](2511.04760.when-data-falls-short-grokking-below-the-critical-threshold/2511.04760.when-data-falls-short-grokking-below-the-critical-threshold.card.md) |
 | `2511.12768` | **0** | **0** | [Hong, Hong 2025 — Evidence of Phase Transitions in Small Transformer-Based Language Models](2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.card.md) |
+| `2512.00686` | **1** | **1** | Using physics-inspired Singular Learning Theory to understand grokking & other phase transitions in modern neural networks |
 | `2512.03437` | **0** | **0** | [Liang, Li 2025 — Grokked Models are Better Unlearners](2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md) |
 | `2601.03162` | **1** | **0** | [Jiang et al. 2026 — On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime](2601.03162.on-the-convergence-behavior-of-preconditioned-gradient-descent-toward-the-rich-learning-regime/2601.03162.on-the-convergence-behavior-of-preconditioned-gradient-descent-toward-the-rich-learning-regime.card.md) |
 | `2601.09049` | **1** | **0** | [He et al. 2026 — Is Grokking Worthwhile? Functional Analysis and Transferability of Generalization Circuits in Transformers](2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers.card.md) |
 | `2601.19791` | **3** | **1** | [Xu et al. 2026 — To Grok Grokking: Provable Grokking in Ridge Regression](2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.card.md) |
+| `2601.22450` | **2** | **0** | Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from $k$-Parity |
 | `2602.02859` | **2** | **2** | [Prakash, Martin 2026 — Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher](2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md) |
 | `2602.06702` | **2** | **2** | [Singh et al. 2026 — Explaining Grokking in Transformers through the Lens of Inductive Bias](2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md) |
+| `2602.08302` | **0** | **0** | Grokking in Linear Models for Logistic Regression |
+| `2602.12039` | **1** | **1** | The Implicit Bias of Logit Regularization |
 | `2602.16746` | **10** | **8** | [Xu 2026 — Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking](2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md) |
 | `2602.16967` | **6** | **5** | [Xu 2026 — Early-Warning Signals of Grokking via Loss-Landscape Geometry](2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry.card.md) |
 | `2602.18523` | **8** | **6** | [Xu 2026 — The Geometry of Multi-Task Grokking: Transverse Instability, Superposition, and Weight Decay Phase Structure](2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure/2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure.card.md) |
+| `2602.18649` | **0** | **1** | Global Low-Rank, Local Full-Rank: The Holographic Encoding of Learned Algorithms |
+| `2602.19533` | **0** | **0** | Grokking Finite-Dimensional Algebra |
+| `2602.22600` | **0** | **0** | Transformers Converge to Invariant Algorithmic Cores |
 | `2603.01192` | **3** | **3** | [Cullen et al. 2026 — A Basin-Selection Perspective on Grokking via Singular Learning Theory](2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md) |
 | `2603.01968` | **1** | **0** | [Hwang & Park 2026 — Intrinsic Task Symmetry Drives Generalization in Algorithmic Tasks](2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.card.md) |
 | `2603.05228` | **5** | **5** | [Yildirim 2026 — The Geometric Inductive Bias of Grokking: Bypassing Phase Transitions via Architectural Topology](2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.card.md) |
 | `2603.07323` | **3** | **2** | [Truong, Truong 2026 — Norm-Hierarchy Transitions in Representation Learning: When and Why Neural Networks Abandon Shortcuts](2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts/2603.07323.norm-hierarchy-transitions-in-representation-learning-when-and-why-neural-networks-abandon-shortcuts.card.md) |
 | `2603.13331` | **6** | **6** | [Truong et al. 2026 — The Norm-Separation Delay Law of Grokking: A First-Principles Theory of Delayed Generalization](2603.13331.the-norm-separation-delay-law-of-grokking-a-first-principles-theory-of-delayed-generalization/2603.13331.the-norm-separation-delay-law-of-grokking-a-first-principles-theory-of-delayed-generalization.card.md) |
 | `2603.15492` | **1** | **1** | [Acharya, Dhakal 2026 — Grokking as a Variance-Limited Phase Transition: Spectral Gating and the Epsilon-Stability Threshold](2603.15492.grokking-as-a-variance-limited-phase-transition-spectral-gating-and-the-epsilon-stability-threshold/2603.15492.grokking-as-a-variance-limited-phase-transition-spectral-gating-and-the-epsilon-stability-threshold.card.md) |
+| `2603.23784` | **0** | **0** | Latent Algorithmic Structure Precedes Grokking: A Mechanistic Study of ReLU MLPs on Modular Arithmetic |
 | `2603.24746` | **3** | **3** | [Bi et al. 2026 — Grokking as a Falsifiable Finite-Size Transition](2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md) |
 | `2603.25009` | **5** | **4** | [Manir, Rupa 2026 — A Systematic Empirical Study of Grokking: Depth, Architecture, Activation, and Regularization](2603.25009.a-systematic-empirical-study-of-grokking-depth-architecture-activation-and-regularization/2603.25009.a-systematic-empirical-study-of-grokking-depth-architecture-activation-and-regularization.card.md) |
 | `2603.29262` | **1** | **1** | [Zhang et al. 2026 — Grokking: From Abstraction to Intelligence](2603.29262.grokking-from-abstraction-to-intelligence/2603.29262.grokking-from-abstraction-to-intelligence.card.md) |
 | `2604.00316` | **1** | **1** | [Tomàs, Mallinar, Belkin 2026 — Breaking Data Symmetry is Needed For Generalization in Feature Learning Kernels](2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.card.md) |
 | `2604.06256` | **2** | **2** | [Xu 2026 — Spectral Edge Dynamics Reveal Functional Modes of Learning](2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning/2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning.card.md) |
+| `2604.07380` | **1** | **1** | The Lifecycle of the Spectral Edge: From Gradient Learning to Weight-Decay Compression |
+| `2604.12434` | **0** | **0** | A Bayesian Perspective on the Role of Epistemic Uncertainty for Delayed Generalization in In-Context Learning |
 | `2604.13082` | **2** | **2** | [Gomezjurado Gonzalez 2026 — The Long Delay to Arithmetic Generalization: When Learned Representations Outrun Behavior](2604.13082.the-long-delay-to-arithmetic-generalization-when-learned-representations-outrun-behavior/2604.13082.the-long-delay-to-arithmetic-generalization-when-learned-representations-outrun-behavior.card.md) |
 | `2604.13123` | **1** | **3** | [Truong et al. 2026 — Spectral Entropy Collapse as a Phase Transition in Delayed Generalisation](2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md) |
+| `2604.17673` | **0** | **0** | Grokking of Diffusion Models: Case Study on Modular Addition |
 | `2604.20923` | **2** | **2** | [Golwala 2026 — ILDR: Geometric Early Detection of Grokking](2604.20923.ildr-geometric-early-detection-of-grokking/2604.20923.ildr-geometric-early-detection-of-grokking.card.md) |
+| `2604.25143` | **1** | **0** | Gradient-Direction Sensitivity Reveals Linear-Centroid Coupling Hidden by Optimizer Trajectories |
+| `2605.04396` | **1** | **1** | Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize |
 | `2605.06152` | **1** | **0** | [Liu, Cao, Li, Zhou 2026 — Grokking or Glitching? How Low-Precision Drives Slingshot Loss Spikes](2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes.card.md) |
 | `2605.06352` | **2** | **2** | [Tang et al. 2026 — Topological Signatures of Grokking](2605.06352.topological-signatures-of-grokking/2605.06352.topological-signatures-of-grokking.card.md) |
+| `2605.08119` | **0** | **0** | Feature Repulsion and Spectral Lock-in: An Empirical Study of Two-Layer Network Grokking |
 | `2605.08237` | **2** | **2** | [Wang, Ying, Kanamori 2026 — Distributional Spectral Diagnostics for Localizing Grokking Transitions](2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md) |
+| `2605.08464` | **0** | **0** | The Geometric Structure of Models Learning Sparse Data |
 | `2605.09724` | **3** | **3** | [Song, Ye 2026 — Model Capacity Determines Grokking through Competing Memorisation and Generalisation Speeds](2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds.card.md) |
+| `2605.12394` | **1** | **1** | Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory |
+| `2605.14659` | **0** | **0** | Slower Generalization, Faster Memorization: A Sweet Spot in Algorithmic Learning |
+| `2605.15787` | **0** | **0** | Grokking as Structural Inference: Transformers Need Bayesian Lottery Tickets |
+| `2605.18022` | **0** | **0** | Unveiling Memorization–Generalization Coexistence: A Case Study on Arithmetic Tasks with Label Noise |
 | `2605.20441` | **2** | **2** | [Verma 2026 — Weight Decay Regimes in Grokking Transformers: Cheap Online Diagnostics](2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.card.md) |
+| `2605.24057` | **0** | **0** | Feature Lottery? A Bifurcation Theory of Concept Emergence |
+| `2606.00230` | **0** | **0** | A Pre-Training Analogue of Grokking in Language Models: Tracing Delayed Grammatical Generalization |
+| `2606.04405` | **1** | **1** | Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View |
+| `2606.05863` | **1** | **1** | Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction |
+| `2606.08985` | **1** | **1** | Beyond Neural Collapse: Task-Intrinsic Geometry Governs Neural Representations in Modular Arithmetic |
 | `2606.12966` | **2** | **2** | [Sivasankar 2026 — Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking](2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md) |
 | `2606.13753` | **2** | **2** | [Truong et al. 2026 — The Weight Norm Sets the Grokking Timescale: A Causal Delay Law](2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md) |
 | `2606.17120` | **4** | **2** | [Ersoy & Wiesner 2026 — Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks](2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking.card.md) |
+| `2606.17399` | **0** | **0** | The Discrete-Log Clock: How a Transformer Learns Modular Multiplication |
+| `2606.18465` | **1** | **1** | What Does the Weight Norm Control in Grokking? Logit-Scale Mediation under Cross-Entropy |
+| `2606.26050` | **0** | **0** | Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining |
+| `2606.32000` | **1** | **1** | HiLD 2025: 3rd Workshop on High-dimensional Learning Dynamics 1–16 |
+| `2607.04333` | **0** | **0** | Structure-Specific Representational Priors Causally Control the Grokking Delay |
+| `2607.05104` | **0** | **0** | Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters |
+| `2607.06628` | **0** | **0** | Cross-Trajectory Chimera Interventions Reveal Dissociable Roles of Weight Magnitude and Direction in Grokking |
+| `2607.06639` | **0** | **0** | At-Grok Is Not Converged: A Measurement-Validity Audit for Grokking Representation Metrics |
+| `2607.08350` | **1** | **0** | Grokking and epoch-wise double descent in quantum neural networks |
+| `2607.11666` | **0** | **0** | How to Tame Grokking: Representation Geometry as a Control Signal |
+| `2607.12735` | **0** | **1** | What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking |
+| `2607.13749` | **0** | **0** | Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations |
+| `2607.20512` | **1** | **1** | The Active Ingredient in Muon’s Grokking |
+| `2607.20552` | **0** | **0** | Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat |
+| `2607.29503` | **0** | **0** | The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting |
+| `2608.01833` | **0** | **0** | Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping |
+| `2608.07436` | **0** | **0** | Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers |
