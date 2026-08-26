@@ -18,8 +18,8 @@
 и **FVE** (Fraction of Variance Explained — доля дисперсии активаций, объяснённая
 заданным набором базисных направлений). Общая гипотеза семейства: переход от
 запоминания к обобщению проявляется как воспроизводимая перестройка спектра —
-например, [HTSR](heavy-tailed-self-regularization-htsr.md)-анализ рассматривает `"empirical spectral density (ESD) of individual layer weight matrices"`
-\[[1.3](#ref-1-3)\], а SVD-анализ весов показывает, что `"grokking is preceded by a near-degeneracy of the leading singular values of the attention matrices"`
+например, [HTSR](heavy-tailed-self-regularization-htsr.md)-анализ рассматривает *«эмпирическую спектральную плотность (ESD) весовых матриц отдельных слоёв»*
+\[[1.3](#ref-1-3)\], а SVD-анализ весов показывает, что *«гроккингу предшествует почти вырождение ведущих сингулярных чисел матриц внимания»*
 \[[1.7](#ref-1-7)\].
 
 ![Коллапс энтропии предшествует гроккингу: точность, спектральная энтропия весов и норма параметров по ходу обучения (рис. 1 Truong, Truong, Luu, Phan)](assets/spectral-entropy-collapse.png)
