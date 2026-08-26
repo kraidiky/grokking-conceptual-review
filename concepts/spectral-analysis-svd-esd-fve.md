@@ -22,6 +22,8 @@
 \[[1.3](#ref-1-3)\], а SVD-анализ весов показывает, что `"grokking is preceded by a near-degeneracy of the leading singular values of the attention matrices"`
 \[[1.7](#ref-1-7)\].
 
+![Коллапс энтропии предшествует гроккингу: точность, спектральная энтропия весов и норма параметров по ходу обучения (рис. 1 Truong, Truong, Luu, Phan)](assets/spectral-entropy-collapse.png)
+
 ## Детализация
 
 Работы этого семейства различаются прежде всего **тем, спектр какой матрицы**

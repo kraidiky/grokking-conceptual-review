@@ -20,6 +20,8 @@ k много меньше n \[[1.1](#ref-1-1)\]\[[1.2](#ref-1-2)\]. Формал
 как модель «скрытого прогресса» ([Barak et al., 2022](../papers/2207.08799.hidden-progress-in-deep-learning-sgd-learns-parities-near-the-computational-limit/2207.08799.hidden-progress-in-deep-learning-sgd-learns-parities-near-the-computational-limit.card.md)), а её систематический разбор в терминах гроккинга дан Merrill
 et al. \[[1.1](#ref-1-1)\].
 
+![Обучение (40,3)-чётности: точность, потеря и эффективная разрежённость — скачок совпадает с выделением разрежённой подсети (рис. 2 Merrill et al.)](assets/sparse-parity-training.png)
+
 ## Детализация
 
 Разрежённая чётность привлекательна как полигон гроккинга по двум причинам.
