@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать пять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 43 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 43 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать шесть из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 42 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 42 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -512,7 +512,9 @@
 
 - `2605.04396` · всего: **1** · в картотеке: **1** · Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize
 
-- `2605.12394` · всего: **1** · в картотеке: **1** · Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory
+- `2605.12394` · всего: **1** · в картотеке: **1** · [Prakash & Martin 2026 — Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory](2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory/2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory.card.md)
+
+  Развёрнутая версия приборной линии WeightWatcher с перевёрнутым относительно HTSR прибором: спектр читается не у коррелированной, а у поэлементно перемешанной матрицы весов, и выброс за краем Марченко—Пастура («ловушка корреляции») означает атипичность самого распределения членов. Корпус наследует термин анти-гроккинг — позднюю пору падения тестовой точности при высокой обучающей, структурно отличимую от предгроккинга только по спектру, — вместе с тремя сверками, укрепляющими признак: подавление ловушек weight decay, независимость от роста нормы весов и вмешательство на ловушке, меняющее матрицу ошибок. Чем отличается от соседей: третья, языковая постановка (GPT2 на композиции знаний) и послойный просмотр открытых gpt-oss. Чего нет: разметки «вредности» без тестовых данных вопреки заявке, измерений локализации, сверки с обычным переобучением без гроккинга; предшественники с теми же опытами не процитированы — числа в карточке.
 
 - `2606.04405` · всего: **1** · в картотеке: **1** · Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View
 
@@ -744,7 +746,7 @@
 | `2605.08237` | **2** | **2** | [Wang, Ying, Kanamori 2026 — Distributional Spectral Diagnostics for Localizing Grokking Transitions](2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions/2605.08237.distributional-spectral-diagnostics-for-localizing-grokking-transitions.card.md) |
 | `2605.08464` | **0** | **0** | The Geometric Structure of Models Learning Sparse Data |
 | `2605.09724` | **3** | **3** | [Song, Ye 2026 — Model Capacity Determines Grokking through Competing Memorisation and Generalisation Speeds](2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds/2605.09724.model-capacity-determines-grokking-through-competing-memorisation-and-generalisation-speeds.card.md) |
-| `2605.12394` | **1** | **1** | Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory |
+| `2605.12394` | **1** | **1** | [Prakash & Martin 2026 — Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory](2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory/2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory.card.md) |
 | `2605.14659` | **0** | **0** | Slower Generalization, Faster Memorization: A Sweet Spot in Algorithmic Learning |
 | `2605.15787` | **0** | **0** | Grokking as Structural Inference: Transformers Need Bayesian Lottery Tickets |
 | `2605.18022` | **0** | **0** | Unveiling Memorization–Generalization Coexistence: A Case Study on Arithmetic Tasks with Label Noise |
