@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать три из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 35 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 35 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать четыре из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 34 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 34 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -540,7 +540,9 @@
 
 - `2607.08350` · всего: **1** · в картотеке: **0** · Grokking and epoch-wise double descent in quantum neural networks
 
-- `2607.20512` · всего: **1** · в картотеке: **1** · The Active Ingredient in Muon’s Grokking
+- `2607.20512` · всего: **1** · в картотеке: **1** · [Wang 2026 — The Active Ingredient in Muon’s Grokking](2607.20512.the-active-ingredient-in-muons-grokking/2607.20512.the-active-ingredient-in-muons-grokking.card.md)
+
+  Разбор на части готовой заявки 2504.16041 «Muon гроккает быстрее AdamW»: абляция 2×2 показывает, что действующее начало — ортогонализация момента итерацией Ньютона—Шульца, а не спектральное масштабирование («только ортогонализация» не отличима от полного Muon и обгоняет AdamW, «только масштабирование» не быстрее и разбросано); ортогонализующие приёмы приходят к гроку при втрое меньшем наибольшем сингулярном числе и с разлитым по частотам вложением. Корпус наследует двойную меру скорости — «первое пересечение» и «устойчивый грок» — с переворотом вывода на собственном варианте авторов: одна итерация быстрейшая по касанию, но шесть семян из восьми обваливаются. Чего нет: четвёртая клетка плана (сырой момент без множителя) не запускалась, «бездейственность» множителя конфликтует с проигрышем на вычитании, бюджет основного опыта не назван, а устойчивость пяти итераций опровергнута цитирующей 2608.07436 на длинных горизонтах — числа в карточке.
 
 - `2503.23298` · всего: **0** · в картотеке: **0** · [Wang et al. 2025 — Learning Towards Emergence: Paving the Way to Induce Emergence by Inhibiting Monosemantic Neurons on Pre-trained Models](2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md)
 
@@ -785,7 +787,7 @@
 | `2607.11666` | **0** | **0** | How to Tame Grokking: Representation Geometry as a Control Signal |
 | `2607.12735` | **0** | **1** | [Howe 2026 — What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking](2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking/2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking.card.md) |
 | `2607.13749` | **0** | **0** | Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations |
-| `2607.20512` | **1** | **1** | The Active Ingredient in Muon’s Grokking |
+| `2607.20512` | **1** | **1** | [Wang 2026 — The Active Ingredient in Muon’s Grokking](2607.20512.the-active-ingredient-in-muons-grokking/2607.20512.the-active-ingredient-in-muons-grokking.card.md) |
 | `2607.20552` | **0** | **0** | Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat |
 | `2607.29503` | **0** | **0** | The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting |
 | `2608.01833` | **0** | **0** | Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping |
