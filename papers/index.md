@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто девятнадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 49 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 49 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 48 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 48 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -420,7 +420,9 @@
 
 - `2507.23346` · всего: **2** · в картотеке: **0** · Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems
 
-- `2509.06931` · всего: **2** · в картотеке: **1** · Learning words in groups: fusion algebras, tensor ranks and Grokking
+- `2509.06931` · всего: **2** · в картотеке: **1** · [Shutman, Louidor & Tessler 2025 — Learning words in groups: fusion algebras, tensor ranks and Grokking](2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking.card.md)
+
+  Прямое продолжение представленческой линии Chughtai et al. двумя новыми для корпуса понятиями — фузионной алгеброй группы и рангом тензора задачи: задача группового умножения расширена до произвольного слова в буквах $a,b,a^{-1},b^{-1}$, и двухслойная сеть выучивает любое слово в любой конечной группе при достаточной ширине. Ход рассуждения: фузионные правила делают bsc-носитель тензора слова разрежённым, разрежённость даёт малый ранг, малый ранг требует малой ширины; при простом умножении сеть реализует эффективное матричное умножение в смысле Штрассена, а фурье-анзац Громова оказывается случаем циклической группы. Самое сильное — точное совпадение эмпирической минимальной ширины с границей ранга в четырёх группах. Гроккинг стоит в заглавии, но лишь отмечен как присутствующий: все четыре главных вывода — «Suggested General Principle» без доказательств, а вопрос, почему градиентный спуск приходит к малоранговому решению, прямо объявлен открытым — числа в карточке.
 
 - `2509.10562` · всего: **2** · в картотеке: **1** · Predator–Prey Model: Driven Hunt for Accelerated Grokking
 
@@ -679,7 +681,7 @@
 | `2507.11645` | **1** | **1** | [Salah & Yevick 2025 — Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation](2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation.card.md) |
 | `2507.20057` | **8** | **4** | [Lyle et al. 2025 — What Can Grokking Teach Us About Learning Under Nonstationarity?](2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity/2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity.card.md) |
 | `2507.23346` | **2** | **0** | Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems |
-| `2509.06931` | **2** | **1** | Learning words in groups: fusion algebras, tensor ranks and Grokking |
+| `2509.06931` | **2** | **1** | [Shutman, Louidor & Tessler 2025 — Learning words in groups: fusion algebras, tensor ranks and Grokking](2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking.card.md) |
 | `2509.10562` | **2** | **1** | Predator–Prey Model: Driven Hunt for Accelerated Grokking |
 | `2509.17738` | **7** | **2** | [Han et al. 2025 — Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking.card.md) |
 | `2509.20829` | **4** | **1** | [Sakamoto, Sato 2026 — Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence/2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence.card.md) |
