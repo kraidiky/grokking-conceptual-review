@@ -200,6 +200,8 @@ decoder-only трансформер; картина «удержание — н�
 
 **\[4.1\]** 2604.06256 — Xu, «Spectral Edge Dynamics Reveal Functional Modes of Learning». Нюанс: связь с кривизной проведена только ссылкой на предшествующую работу того же автора о коммутаторных дефектах (2602.16746). [`"This is a statement about loss landscape geometry, not representation theory."`](../papers/2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning/original/2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning.md#p5-10). *«[Это утверждение о геометрии ландшафта потерь, а не о теории представлений.](../papers/2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning/2604.06256.spectral-edge-dynamics-reveal-functional-modes-of-learning.card.md#p5-10)»*
 
+**\[4.2\]** 2308.09543 — Hu, Chen, Saphra & Cho, «Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics». [`"We conjecture that grokking is the consequence of a sharp optimization landscape"`](../papers/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/original/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.md#p12-2). *«[Мы предполагаем, что гроккинг есть следствие резкого ландшафта оптимизации](../papers/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.card.md#p12-2)»*
+
 ### Внешние работы
 
 ###### ref-5-1

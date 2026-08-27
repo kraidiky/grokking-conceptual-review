@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двенадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 56 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 56 стоят в очереди импорта (две последние папки — 2411.05353 и 2507.11645 — восстановлены из PDF задачей task-025).
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тринадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 55 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 55 стоят в очереди импорта (две последние папки — 2411.05353 и 2507.11645 — восстановлены из PDF задачей task-025).
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -160,7 +160,9 @@
 
 - `2509.21016` · всего: **22** · в картотеке: **0** · RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?
 
-- `2308.09543` · всего: **21** · в картотеке: **1** · Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics
+- `2308.09543` · всего: **21** · в картотеке: **1** · [Hu, Chen, Saphra & Cho 2023 — Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics](2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.card.md)
+
+  Первая работа корпуса, строящая модель НАД траекторией обучения: скрытая марковская модель по четырнадцати метрикам весов превращается в «карту обучения», и гроккинг-полигоны оказываются главной ареной — их карты ветвятся по случайным семенам, тогда как у классификации изображений остаются линейными. Корпус наследует отсюда словарь: детур-состояния (необязательные состояния, коррелирующие с более долгой сходимостью), операциональное определение фазового перехода через перелом вогнутости потери и наблюдение, что расхождение прогонов по семени возникает в самом начале обучения. Отличие от соседей по линии мер прогресса — мера не подбирается вручную, а извлекается без учителя; отличие от нормовой линии — гроккинг снимается стабилизацией (layer norm, меньший батч) без прямого вмешательства в норму, что авторы читают в пользу хеджированной догадки о резком ландшафте. Чего в работе нет: механистического содержания у состояний (ярлыки присвоены по кривым потерь), отложенной проверки регрессий, и быстрые ветви, которыми определение детура задаётся, малы — числа в карточке.
 
 - `2310.17247` · всего: **20** · в картотеке: **15** · [Miller, O'Neill, Bui 2024 — Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity](2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md)
 
@@ -597,7 +599,7 @@
 | `2306.13253` | **36** | **24** | [Notsawo et al. 2023 — Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok](2306.13253.predicting-grokking-long-before-it-happens/2306.13253.predicting-grokking-long-before-it-happens.card.md) |
 | `2306.17844` | **178** | **32** | [Zhong et al. 2023 — The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks](2306.17844.the-clock-and-the-pizza-two-stories-in-mechanistic-explanation-of-neural-networks/2306.17844.the-clock-and-the-pizza-two-stories-in-mechanistic-explanation-of-neural-networks.card.md) |
 | `2307.09550` | **3** | **0** | The semantic landscape paradigm for neural networks |
-| `2308.09543` | **21** | **1** | Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics |
+| `2308.09543` | **21** | **1** | [Hu, Chen, Saphra & Cho 2023 — Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics](2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.card.md) |
 | `2308.15594` | **37** | **11** | [Charton 2024 — Learning the greatest common divisor: explaining transformer predictions](2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions/2308.15594.learning-the-greatest-common-divisor-explaining-transformer-predictions.card.md) |
 | `2309.02390` | **110** | **85** | [Varma & Shah et al. 2023 — Explaining grokking through circuit efficiency](2309.02390.explaining-grokking-through-circuit-efficiency/2309.02390.explaining-grokking-through-circuit-efficiency.card.md) |
 | `2309.03800` | **14** | **1** | Pareto Frontiers in Neural Feature Learning: Data, Compute, Width, and Luck |

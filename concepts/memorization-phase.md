@@ -293,6 +293,8 @@ Loss-Landscape Geometry». Нюанс: разложение интегрируе
 
 **\[4.30\]** 2502.01774 — Carvalho et al. 2025, «Grokking Explained: A Statistical Phenomenon». [`"The interval between the inflection points $\alpha_{0}$ (end of memorization phase) and $\alpha_{1}$ (start of generalization phase) signifies the transition phase"`](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/original/2502.01774.grokking-explained-a-statistical-phenomenon.md#p3-4). *«[Интервал между точками перегиба $\alpha_{0}$ (конец фазы запоминания) и $\alpha_{1}$ (начало фазы генерализации) означает фазу перехода](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/2502.01774.grokking-explained-a-statistical-phenomenon.card.md#p3-4)»*
 
+**\[4.31\]** 2308.09543 — Hu, Chen, Saphra & Cho, «Delays, Detours, and Forks in the Road: Latent State Models of Training Dynamics». [`"State 1 encapsulates the memorization phase transition: the training loss drop to near-zero in state 1, while validation loss increases"`](../papers/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/original/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.md#p6-1). *«[состояние 1 вмещает фазовый переход запоминания — обучающая потеря падает почти до нуля в состоянии 1, тогда как проверочная потеря растёт](../papers/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics/2308.09543.delays-detours-and-forks-in-the-road-latent-state-models-of-training-dynamics.card.md#p6-1)»*
+
 ### Внешние работы
 
 ###### ref-5-1
