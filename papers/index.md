@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать шесть из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 42 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 42 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать семь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 41 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 41 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -516,7 +516,9 @@
 
   Развёрнутая версия приборной линии WeightWatcher с перевёрнутым относительно HTSR прибором: спектр читается не у коррелированной, а у поэлементно перемешанной матрицы весов, и выброс за краем Марченко—Пастура («ловушка корреляции») означает атипичность самого распределения членов. Корпус наследует термин анти-гроккинг — позднюю пору падения тестовой точности при высокой обучающей, структурно отличимую от предгроккинга только по спектру, — вместе с тремя сверками, укрепляющими признак: подавление ловушек weight decay, независимость от роста нормы весов и вмешательство на ловушке, меняющее матрицу ошибок. Чем отличается от соседей: третья, языковая постановка (GPT2 на композиции знаний) и послойный просмотр открытых gpt-oss. Чего нет: разметки «вредности» без тестовых данных вопреки заявке, измерений локализации, сверки с обычным переобучением без гроккинга; предшественники с теми же опытами не процитированы — числа в карточке.
 
-- `2606.04405` · всего: **1** · в картотеке: **1** · Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View
+- `2606.04405` · всего: **1** · в картотеке: **1** · [Li 2026 — Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View](2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view/2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view.card.md)
+
+  В спектральной линии корпуса спектр здесь впервые взят как рукоять управления, а не измеритель: к спору о направлении влияния weight decay добавлена ось «радиальный против спектрального» — при масштабной инвариантности блока (RMSNorm, QK-Norm) фробениусов распад действует вдоль вырожденного радиального направления и после запоминания функционально инертен, а шаг вдоль полярного множителя ядерной нормы продолжает вычитать из сингулярных чисел и при нулевом градиенте задачи. Подтверждено обрушение устойчивого ранга QK-матриц под таким шагом. Чего нет: числа итераций, семян, оптимизатора и бюджета шагов; сам шаг записан в статье трижды по-разному; заявленный сдвиг границы по доле данных — один шаг сетки, а прямой предшественник с ядерной нормой (Notsawo et al.) не процитирован; причинность обрушения ранга признана неустановленной — числа в карточке.
 
 - `2606.05863` · всего: **1** · в картотеке: **1** · Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction
 
@@ -753,7 +755,7 @@
 | `2605.20441` | **2** | **2** | [Verma 2026 — Weight Decay Regimes in Grokking Transformers: Cheap Online Diagnostics](2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics/2605.20441.weight-decay-regimes-in-grokking-transformers-cheap-online-diagnostics.card.md) |
 | `2605.24057` | **0** | **0** | Feature Lottery? A Bifurcation Theory of Concept Emergence |
 | `2606.00230` | **0** | **0** | A Pre-Training Analogue of Grokking in Language Models: Tracing Delayed Grammatical Generalization |
-| `2606.04405` | **1** | **1** | Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View |
+| `2606.04405` | **1** | **1** | [Li 2026 — Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View](2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view/2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view.card.md) |
 | `2606.05863` | **1** | **1** | Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction |
 | `2606.08985` | **1** | **1** | Beyond Neural Collapse: Task-Intrinsic Geometry Governs Neural Representations in Modular Arithmetic |
 | `2606.12966` | **2** | **2** | [Sivasankar 2026 — Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking](2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md) |
