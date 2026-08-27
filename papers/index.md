@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать две из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 46 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 46 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать три из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 45 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 45 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -500,7 +500,9 @@
 
   Вторая работа SLT-линии корпуса рядом с Cullen et al. с обратным разделением труда: там выведено замкнутое выражение местного коэффициента обучения, а динамика объявлена невыводимой — здесь LLC лишь измеряется до и после гроккинга, зато делается попытка предсказать срок перехода аррениусовской гипотезой через разность свободных энергий. Корпус наследует редкую статистику: распределение скачка сложности при гроккинге по полутора сотням прогонов — грокнутое решение проще запомнившего — и честно описанный отрицательный результат на игрушечных моделях суперпозиции, где знак эффекта зависел от способа обнаружения переходов. Чего в работе нет: механики гроккинга (ни Фурье, ни норм, ни представлений), объяснения расхождений в знаке свободной энергии, кода и семян; главная подгонка объясняет лишь малую долю разброса — числа в карточке.
 
-- `2602.12039` · всего: **1** · в картотеке: **1** · The Implicit Bias of Logit Regularization
+- `2602.12039` · всего: **1** · в картотеке: **1** · [Beck, Bar-Sinai & Levi 2026 — The Implicit Bias of Logit Regularization](2602.12039.the-implicit-bias-of-logit-regularization/2602.12039.the-implicit-bias-of-logit-regularization.card.md)
+
+  Прямое продолжение линии Beck et al. о крае линейной отделимости, дающее корпусу редкий механизм: управляющий параметр гроккинга здесь — сила регуляризации, а не размер выборки или норма весов. Выпуклый логит-штраф (label smoothing — частный случай) меняет неявное смещение с максимизации зазора на скучивание логитов, доказанно выравнивая веса по дискриминанту Фишера и сдвигая порог интерполяции вдвое; гроккинг живёт в полосе между старым и новым порогами, и задержка расходится при исчезающем штрафе. Отличается от соседей доказательным стилем: контраст с weight decay и инвариантность к ортогональному шуму проверены отдельными опытами. Чего нет: временно́го масштаба задержки, гроккинга вне линейной модели и синтетики, оговорки о несовместимости своего механизма с механизмом Prieto et al.; единственный двоичный опыт гроккинга поставлен при ослабленном сигнале без оговорки — числа в карточке.
 
 - `2604.07380` · всего: **1** · в картотеке: **1** · The Lifecycle of the Spectral Edge: From Gradient Learning to Weight-Decay Compression
 
@@ -705,7 +707,7 @@
 | `2602.02859` | **2** | **2** | [Prakash, Martin 2026 — Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher](2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md) |
 | `2602.06702` | **2** | **2** | [Singh et al. 2026 — Explaining Grokking in Transformers through the Lens of Inductive Bias](2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias/2602.06702.explaining-grokking-in-transformers-through-the-lens-of-inductive-bias.card.md) |
 | `2602.08302` | **0** | **0** | Grokking in Linear Models for Logistic Regression |
-| `2602.12039` | **1** | **1** | The Implicit Bias of Logit Regularization |
+| `2602.12039` | **1** | **1** | [Beck, Bar-Sinai & Levi 2026 — The Implicit Bias of Logit Regularization](2602.12039.the-implicit-bias-of-logit-regularization/2602.12039.the-implicit-bias-of-logit-regularization.card.md) |
 | `2602.16746` | **10** | **8** | [Xu 2026 — Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking](2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md) |
 | `2602.16967` | **6** | **5** | [Xu 2026 — Early-Warning Signals of Grokking via Loss-Landscape Geometry](2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry.card.md) |
 | `2602.18523` | **8** | **6** | [Xu 2026 — The Geometry of Multi-Task Grokking: Transverse Instability, Superposition, and Weight Decay Phase Structure](2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure/2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure.card.md) |

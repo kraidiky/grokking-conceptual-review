@@ -173,6 +173,9 @@ decay в проверяемый «закон задержки» с обратн�
 ###### ref-2-11
 **\[2.11\]** 2509.06931 — Shutman, Louidor & Tessler 2025, «Learning words in groups: fusion algebras, tensor ranks and Grokking». Гроккинг получен вовсе без weight decay и без явной регуляризации: HD-модель обучается чистым градиентным спуском, TLP — AdamW без weight decay; авторы этого обстоятельства не обсуждают. [`"To avoid unrelated effects, in most experiments we use pure Gradient Descent without acceleration or additional regularization"`](../papers/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking.card.md#p5-6). *«[Чтобы избежать посторонних эффектов, в большинстве экспериментов мы используем чистый градиентный спуск без ускорения и дополнительной регуляризации](../papers/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking/2509.06931.learning-words-in-groups-fusion-algebras-tensor-ranks-and-grokking.card.md#p5-6)»*.
 
+###### ref-2-12
+**\[2.12\]** 2602.12039 — Beck, Bar-Sinai & Levi 2026, «The Implicit Bias of Logit Regularization». Доказанный проверкой контраст: $L_{2}$-штраф не воспроизводит ни сдвига порога интерполяции, ни инвариантности точности к ортогональному шуму — оба эффекта принадлежат поцелевому разложению потери с конечным минимумом, недоступному весовой регуляризации, связывающей примеры через глобальную норму. [`"Weight Decay does **not** induce the specific invariance properties observed under logit regularization"`](../papers/2602.12039.the-implicit-bias-of-logit-regularization/original/2602.12039.the-implicit-bias-of-logit-regularization.md#p24-2). *«[Weight Decay **не** порождает специфических свойств инвариантности, наблюдаемых при логит-регуляризации](../papers/2602.12039.the-implicit-bias-of-logit-regularization/2602.12039.the-implicit-bias-of-logit-regularization.card.md#p24-2)»*.
+
 ### Поддерживают
 
 ###### ref-3-1
