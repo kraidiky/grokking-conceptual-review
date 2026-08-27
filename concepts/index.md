@@ -1,6 +1,6 @@
 # Глобальный индекс понятий грокинга (Global Grokking Concept Index)
 
-Построено инверсией по-статейных экстракций в индекс «понятие -> статьи» по 66 статьям arXiv о грокинге (исходно — по txt-экстракциям репозитория, из которого вики выделена; они здесь не хранятся). Каждая ссылка quote-anchored: точный английский фрагмент оригинала, связанный с хранимым текстом статьи в `papers/<папка>/original/` — якорем абзаца, а для заголовков и формул — ссылкой на файл. [Решение task-004, 2026-08-07: у трёх PDF-only работ без карточек — 2411.05353, 2507.11645, 2510.25966 — записи сохраняют историческую форму `"цитата" (line N)`; номер указывает в отсутствующую здесь txt-экстракцию и локально не проверяем, поисковым якорем служит сама цитата.] Синонимичные ярлыки (напр. frequency-principle / spectral-bias; lazy-to-rich / kernel-to-feature-learning; anti-grokking / generalization-collapse; weight-norm-minimization / zero-loss-manifold) сведены к одному каноническому понятию, слитые алиасы указаны в скобках.
+Построено инверсией по-статейных экстракций в индекс «понятие -> статьи» по 66 статьям arXiv о грокинге (исходно — по txt-экстракциям репозитория, из которого вики выделена; они здесь не хранятся). Каждая ссылка quote-anchored: точный английский фрагмент оригинала, связанный с хранимым текстом статьи в `papers/<папка>/original/` — якорем абзаца, а для заголовков и формул — ссылкой на файл. Синонимичные ярлыки (напр. frequency-principle / spectral-bias; lazy-to-rich / kernel-to-feature-learning; anti-grokking / generalization-collapse; weight-norm-minimization / zero-loss-manifold) сведены к одному каноническому понятию, слитые алиасы указаны в скобках.
 
 Формат ссылки: `arxivid: ["verbatim English quote"](../papers/<папка>/original/<файл>.md#якорь)` — цитаты приведены дословно (verbatim), на английском, в сериализации хранимого оригинала; не изменяйте их. Дословность проверяет quote_check.py.
 
@@ -304,11 +304,11 @@
 
 ### Контроль через нелинейность активации (activation nonlinearity control) — 1 статей
 
-- 2411.05353: "can be controlled by modifying the profile of the activation function" (line 13)
+- 2411.05353: [`"can be controlled by modifying the profile of the activation function"`](https://arxiv.org/abs/2411.05353)
 
 ### Разрежённость активаций (activation sparsity) — 1 статей
 
-- 2510.25966: "The activation sparsity, e.g. the fraction of" (line 68)
+- 2510.25966: [`"The activation sparsity, e.g. the fraction of"`](https://arxiv.org/abs/2510.25966)
 
 ### Адаптивное ядро для feature learning (adaptive kernel feature learning) — 1 статей
 
@@ -396,11 +396,11 @@
 
 ### Dropout устраняет грокинг (dropout eliminates grokking) — 1 статей
 
-- 2510.25966: "dropout can eliminate grokking" (line 57)
+- 2510.25966: [`"dropout can eliminate grokking"`](https://arxiv.org/abs/2510.25966)
 
 ### Кривая устойчивости к dropout (Dropout Robustness Curve, DRC) — 1 статей
 
-- 2507.11645: "a Dropout Robustness Curve (DRC)" (line 19)
+- 2507.11645: [`"a Dropout Robustness Curve (DRC)"`](https://arxiv.org/abs/2507.11645)
 
 ### Раннее предсказание грокинга (early grokking prediction) — 1 статей
 
@@ -416,7 +416,7 @@
 
 ### Косинусная близость эмбеддингов (embedding cosine similarity) — 1 статей
 
-- 2507.11645: "similarity between embeddings in a high-dimensional spaces" (line 99)
+- 2507.11645: [`"similarity between embeddings in a high-dimensional spaces"`](https://arxiv.org/abs/2507.11645)
 
 ### Униформность эмбеддинг-пространства (embedding-space uniformity) — 1 статей
 
@@ -564,7 +564,7 @@
 
 ### Метрика неактивных нейронов (inactive neurons metric) — 1 статей
 
-- 2507.11645: "percentage of inactive neurons decreases during generalization" (line 27)
+- 2507.11645: [`"percentage of inactive neurons decreases during generalization"`](https://arxiv.org/abs/2507.11645)
 
 ### Информационное узкое место (information bottleneck) — 1 статей
 
@@ -733,7 +733,7 @@
 
 ### PCA-факторизация симметрии (PCA symmetry factorization) — 1 статей
 
-- 2411.05353: "can yield a factorization of the modulus" (line 106)
+- 2411.05353: [`"can yield a factorization of the modulus"`](https://arxiv.org/abs/2411.05353)
 
 ### PCA-анализ траекторий (PCA trajectory analysis) — 1 статей
 
@@ -805,7 +805,7 @@
 
 ### Упрощённые границы решений (simplified decision boundaries) — 1 статей
 
-- 2510.25966: "simplified decision boundaries in the input space" (line 68)
+- 2510.25966: [`"simplified decision boundaries in the input space"`](https://arxiv.org/abs/2510.25966)
 
 ### Сингулярная теория обучения (Singular Learning Theory, SLT) — 1 статей
 
@@ -857,7 +857,7 @@
 
 ### Модель Изинга (Ising model task) — 1 статей
 
-- 2510.25966: "Grokking in the Ising Model" (line 1)
+- 2510.25966: [`"Grokking in the Ising Model"`](https://arxiv.org/abs/2510.25966)
 
 ### Ограниченный выход через температуру (temperature-bounded output) — 1 статей
 
@@ -897,7 +897,7 @@
 
 ### Энтропия весов (weight entropy metric) — 1 статей
 
-- 2411.05353: "a metric for the generalization ability of" (line 21)
+- 2411.05353: [`"a metric for the generalization ability of"`](https://arxiv.org/abs/2411.05353)
 
 ### Сжатие внутриклассовой дисперсии (within-class variance contraction) — 1 статей
 

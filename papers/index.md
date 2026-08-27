@@ -1,12 +1,12 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто десять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 58 перечислены строкой: их карточки не заведены, и описывать пока нечего (56 ждут очереди импорта, у двух — 2411.05353 и 2507.11645 — нет и папок в papers/).
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто десять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 58 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 58 стоят в очереди импорта (две последние папки — 2411.05353 и 2507.11645 — восстановлены из PDF задачей task-025).
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
 Число «всего» — собственный citationCount работы по Semantic Scholar (единый источник, решение D1-A task-008), взятый из [citations-2201.02177.txt](citations-2201.02177.txt). Основная секция той таблицы — работы, цитирующие Power et al. 2022 (снимок 2026-08-14); дополнительная секция (task-012) — работы картотеки, в списке цитирующих не значащиеся, и сама Power et al. 2022 (снимок 2026-08-24). Число «всего» есть у всех работ корпуса (и у вынесенных во внешние — их строки остаются с вердиктом =ext); снимки двух секций разнесены на десять дней, поэтому соседние числа сопоставимы с этой поправкой.
 
-Число «в картотеке» — сколько работ картотеки цитируют данную по хранимым текстам `original/` ([citations-in-corpus.txt](citations-in-corpus.txt), правило подсчёта и списки цитирующих — в его заголовке; task-012). Оно мерит вес работы внутри разговора о гроккинге, а не общую известность: у второй по «всего» работы списка, 2212.07677, «в картотеке» лишь 4. Прочерк здесь стоит только у работ без папки в `papers/`.
+Число «в картотеке» — сколько работ картотеки цитируют данную по хранимым текстам `original/` ([citations-in-corpus.txt](citations-in-corpus.txt), правило подсчёта и списки цитирующих — в его заголовке; task-012). Оно мерит вес работы внутри разговора о гроккинге, а не общую известность: у второй по «всего» работы списка, 2212.07677, «в картотеке» лишь 4. Папка в `papers/` теперь есть у всех работ списка, и число посчитано для каждой.
 
 ## По цитируемости
 
@@ -400,7 +400,7 @@
 
   Работа, переведшая весовую линию корпуса из наблюдения во вмешательство: норму весов здесь не записывают в точке гроккинга, а **удерживают** пошаговой проекцией на заданном кратном $\rho$ от критического значения — и сеть грокает при какой угодно удерживаемой норме, лишь позже или раньше. Корпус наследует отсюда три вещи: сам уклад согласованного контрфакта, где семя выводится из базовой настройки в обход вмешательства; набор отрицательных сверок, которым в корпусе почти нет равных, — на проекцию как таковую, на «это просто регуляризация», на толчок против удержания, на межслойное строение; и методическое требование, что в нормализованной сети «норма весов» обязана означать норму после нормализации, а не сырую полную. Отличие от соседей по весовой линии — в направлении поиска: не вглубь теории (как у спутника 2603.13331, дающего логарифмическую задержку свободного сжатия) и не вширь по гиперпараметрам (как у 2603.25009), а в точку — одна величина, удерживаемая на десяти уровнях, и дозовый отклик, снятый с неё. Отсюда же переистолкование, которое корпусу и стоит запомнить: «предотвращение» гроккинга высокой нормой оказывается хвостом экспоненты при конечном бюджете, а не отдельным явлением. Чего в работе нет: настоящих данных — ни одного прогона вне модульного сложения и разрежённой чётности; вывода показателя $\alpha$ откуда бы то ни было — он измерен, и его вывод прямо оставлен будущей работе; объяснения, почему на ненормализованном трансформере он вдвое больше; вмешательства в контуры — связь с фурье-строением остаётся временно́й, и авторы оговаривают это трижды; и числа для шага вмешательства. Числа — состав матрицы зажимов, значения показателей, границы промежутков — в карточке.
 
-- `2411.05353` · всего: **2** · в картотеке: — · Controlling Grokking with Nonlinearity and Data
+- `2411.05353` · всего: **2** · в картотеке: **2** · Controlling Grokking with Nonlinearity and Data Symmetry
 
 - `2602.02859` · всего: **2** · в картотеке: **2** · [Prakash, Martin 2026 — Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher](2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md)
 
@@ -460,7 +460,7 @@
 
   Первая работа корпуса, где предложена величина, годная для **предсказания срока** гроккинга в живом времени: одна скалярная мера, считаемая по возбуждениям без доступа к тестовым данным, падает ниже устойчивого порога до генерализации во всех прогонах, а разрыв до порога связан с оставшимся временем. Для практики это готовое средство — слежение стоит доли процента времени обучения. Не менее ценно устройство проверки: вмешательство поставлено, а не подменено наблюдением кривых, и рядом с ним стоит сверка при уравненной норме — норму закрепили, задержка выросла, и это прямо отделяет объяснение через норму от объяснения через энтропию. Мера привязана к содержанию: её падение совпадает со складыванием фурье-строения. Цена: порог измерен, а не выведен; причинность признана неполной; круг проверки узок; собственный отрицательный опыт показывает, что признака самого по себе недостаточно.
 
-- `2507.11645` · всего: **1** · в картотеке: — · Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation
+- `2507.11645` · всего: **1** · в картотеке: **1** · Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation
 
 - `2603.01968` · всего: **1** · в картотеке: **0** · [Hwang & Park 2026 — Intrinsic Task Symmetry Drives Generalization in Algorithmic Tasks](2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.card.md)
 
@@ -632,7 +632,7 @@
 | `2410.04489` | **11** | **9** | [Beck et al. 2024 — Grokking at the Edge of Linear Separability](2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md) |
 | `2411.00247` | **10** | **5** | [Jeffares et al. 2024 — Deep Learning Through A Telescoping Lens: A Simple Model Provides Empirical Insights On Grokking, Gradient Boosting & Beyond](2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond/2411.00247.deep-learning-through-a-telescoping-lens-a-simple-model-provides-empirical-insights-on-grokking-gradient-boosting-and-beyond.card.md) |
 | `2411.03541` | **0** | **1** | Do Mice Grok? Glimpses of Hidden Progress During Overtraining in Sensory Cortex |
-| `2411.05353` | **2** | — | Controlling Grokking with Nonlinearity and Data |
+| `2411.05353` | **2** | **2** | Controlling Grokking with Nonlinearity and Data Symmetry |
 | `2412.04619` | **11** | **0** | Sometimes I am a Tree: Data Drives Unstable Hierarchical Generalization in LMs |
 | `2412.09810` | **23** | **15** | [DeMoss et al. 2024 — The Complexity Dynamics of Grokking](2412.09810.the-complexity-dynamics-of-grokking/2412.09810.the-complexity-dynamics-of-grokking.card.md) |
 | `2412.10898` | **1** | **0** | Exploring Grokking: Experimental and Mechanistic Investigations |
@@ -658,7 +658,7 @@
 | `2506.12284` | **2** | **2** | [Walker et al. 2025 — GrokAlign: Geometric Characterisation and Acceleration of Grokking](2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking/2506.12284.grokalign-geometric-characterisation-and-acceleration-of-grokking.card.md) |
 | `2506.21551` | **10** | **5** | [Li et al. 2026 — Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md) |
 | `2506.23286` | **4** | **2** | [Jeffares, van der Schaar 2025 — Not All Explanations for Deep Learning Phenomena Are Equally Valuable](2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable/2506.23286.not-all-explanations-for-deep-learning-phenomena-are-equally-valuable.card.md) |
-| `2507.11645` | **1** | — | Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation |
+| `2507.11645` | **1** | **1** | Tracing the Path to Grokking: Embeddings, Dropout, and Network Activation |
 | `2507.20057` | **8** | **4** | [Lyle et al. 2025 — What Can Grokking Teach Us About Learning Under Nonstationarity?](2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity/2507.20057.what-can-grokking-teach-us-about-learning-under-nonstationarity.card.md) |
 | `2507.23346` | **2** | **0** | Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems |
 | `2509.06931` | **2** | **1** | Learning words in groups: fusion algebras, tensor ranks and Grokking |
