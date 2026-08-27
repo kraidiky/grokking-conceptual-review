@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто семнадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 51 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 51 стоят в очереди импорта (две последние папки — 2411.05353 и 2507.11645 — восстановлены из PDF задачей task-025).
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто восемнадцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 50 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 50 стоят в очереди импорта (две последние папки — 2411.05353 и 2507.11645 — восстановлены из PDF задачей task-025).
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -486,7 +486,9 @@
 
 - `2412.10898` · всего: **1** · в картотеке: **0** · Exploring Grokking: Experimental and Mechanistic Investigations
 
-- `2505.20076` · всего: **1** · в картотеке: **1** · ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior
+- `2505.20076` · всего: **1** · в картотеке: **1** · [Eichin, Du, Mondorf, Matveev, Plank & Hedderich 2025 — ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior.card.md)
+
+  Единая рамка послеопытной интерпретируемости: точное траекторное ядро обобщено на AdamW, и предсказание аддитивно раскладывается в «тензор влияний» по шагам, параметрам и обучающим примерам — с валидацией квадратурой (сто узлов воспроизводят все решения) и обрезкой. Корпус наследует отсюда переписанную тройку фаз: вместо «запоминание — формирование схемы — чистка» предложено «запоминание — формирование конвейера представлений — выравнивание вложения и декодера», с причинной опорой в пересадке срединных слоёв, дающей мгновенное обобщение в обход запоминания. Отличие от механистической линии — разложение по всей траектории, а не по активациям, и признанная непричинность рамки. Чего в работе нет: разбор фаз влияния — один прогон одной однослойной модели, пара «вложение и декодер» в причинной проверке работает лишь вместе со вторым линейным слоем, а разбор EuroLLM выполнен по батчу-заместителю; стоимость применения на порядки дороже обучения — числа в карточке.
 
 - `2512.00686` · всего: **1** · в картотеке: **1** · Using physics-inspired Singular Learning Theory to understand grokking & other phase transitions in modern neural networks
 
@@ -665,7 +667,7 @@
 | `2505.11411` | **5** | **5** | [Zhang et al. 2025 — Is Grokking a Computational Glass Relaxation?](2505.11411.is-grokking-a-computational-glass-relaxation/2505.11411.is-grokking-a-computational-glass-relaxation.card.md) |
 | `2505.15624` | **5** | **4** | [AlQuabeh et al. 2025 — Mechanistic Insights into Grokking from the Embedding Layer](2505.15624.mechanistic-insights-into-grokking-from-the-embedding-layer/2505.15624.mechanistic-insights-into-grokking-from-the-embedding-layer.card.md) |
 | `2505.18266` | **14** | **2** | [McCracken et al. 2025 — Uncovering a Universal Abstract Algorithm for Modular Addition in Neural Networks](2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.card.md) |
-| `2505.20076` | **1** | **1** | ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior |
+| `2505.20076` | **1** | **1** | [Eichin, Du, Mondorf, Matveev, Plank & Hedderich 2025 — ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior.card.md) |
 | `2505.20172` | **10** | **6** | [Boursier et al. 2025 — A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation/2505.20172.a-theoretical-framework-for-grokking-interpolation-followed-by-riemannian-norm-minimisation.card.md) |
 | `2506.04434` | **9** | **4** | [Prakash & Martin 2025 — Grokking and Generalization Collapse: Insights from HTSR theory](2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory/2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory.card.md) |
 | `2506.05718` | **13** | **11** | [Notsawo et al. 2025 — Grokking Beyond the Euclidean Norm of Model Parameters](2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.card.md) |
