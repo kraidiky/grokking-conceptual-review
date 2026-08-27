@@ -27,16 +27,11 @@
 
 Резкое появление качественно новых способностей при пересечении критического порога масштаба — числа параметров, данных или вычислений. В работах о гроккинге — та же скачкообразность, но управляемая временем обучения.
 
-- 2310.17247: [`"grokking is not limited to neural networks but occurs in other settings"`](../papers/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md#p1-1)
-- 2402.09469: [`"Grokking and Emergent Ability"`](../papers/2402.09469.fourier-circuits-in-neural-networks-and-transformers-a-case-study-of-modular-arithmetic-with-multiple-inputs/original/2402.09469.fourier-circuits-in-neural-networks-and-transformers-a-case-study-of-modular-arithmetic-with-multiple-inputs.md#p6-2)
 
 ### [Двойной спуск](double-descent.md) (double descent) — 22 статей
 
 Немонотонность тестовой ошибки: спад, подъём к пику вблизи точки интерполяции и второй спад в переобученной области. С гроккингом делит вопрос, почему переобучение оказывается не финалом, а промежуточной стадией.
 
-- 2410.04489: [`"grokking and double descent."`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p10-1)
-- 2411.05353: "Unifying grokking and double descent" (line 717)
-- 2504.03162: [`"view of grokking, double descent and emergent abilities"`](../papers/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking.card.md#p9-11)
 
 ### [Коллапс softmax](softmax-collapse.md) (Softmax Collapse) — 8 статей
 
@@ -50,7 +45,6 @@
 
 Переход, обратный гроккингу: сеть, уже достигшая идеальной тестовой точности, при дальнейшем обучении регрессирует к низкой — от генерализации назад к запоминанию. Предсказан теорией эффективности контуров (Varma et al., 2023).
 
-- 2506.05718: [`"makes it possible to grok or ungrok"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p1-2)
 
 ### [Полу-грокинг](semi-grokking.md) (semi-grokking) — 6 статей
 
@@ -80,10 +74,6 @@
 
 Периодические представления входов на немногих ключевых частотах и подсети, складывающие числа через тригонометрические тождества, — язык описания решений модульной арифметики, идущий от разбора Nanda et al.
 
-- 2406.05335: [`"denotes the Fourier"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md#p4-4) ↗
-- 2411.05353: "the corresponding Fourier spectrum in Fig. 2 is sharply peaked" (line 300)
-- 2511.01938: [`"FOURIER FEATURES"`](../papers/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold/original/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold.md#fig-6)
-- 2603.05228: [`"structured representations based on discrete Fourier features"`](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/original/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.md#p2-1)
 
 ### [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) (lazy-to-rich / kernel-to-feature-learning transition) — 29 статей
 Слитые алиасы: lazy-to-rich / kernel-to-feature-learning / lazy-learning-stage / lazy-rich-regime-transition.
@@ -94,14 +84,11 @@
 
 Свойство контура выдавать нужные логиты при меньшей норме параметров; когда несколько контуров одинаково решают обучающую выборку, weight decay отбирает более эффективный. Основа объяснений гроккинга, унгрокинга и полу-грокинга у Varma et al.
 
-- 2410.04489: [`"circuits: Grokking as competition of sparse and dense"`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p10-17)
-- 2505.18266: [`"require only $\mathcal{O}(\log n)$ features"`](../papers/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/original/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.md#p1-2)
 
 ### [Ландшафт потерь / бассейны](loss-landscape-basins.md) (loss landscape / basins) — 24 статей
 
 Геометрия функции потерь над пространством весов: отложенная генерализация описывается как перемещение оптимизационной траектории между бассейнами — из запоминающего минимума в обобщающий.
 
-- 2502.20763: [`"the local landscape around minima or saddle points"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-2) ↗
 
 ### [Сжатие многообразия представлений](manifold-representation-compression.md) (manifold / representation compression) — 21 статей
 
@@ -149,7 +136,6 @@
 
 Класс задач вида (a ∘ b) mod p, на котором гроккинг впервые наблюдали и который стал его каноническим полигоном; деление требует простого модуля — оно задаётся обращением умножения и однозначно только при простом p.
 
-- 2405.17479: [`"algorithmic datasets (Power et al., 2022)"`](../papers/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network.card.md#p1-4)
 
 ### [Эталонный полигон гроккинга](canonical-grokking-testbed.md) (canonical grokking testbed / Power et al. setup) — 47 статей
 
@@ -182,7 +168,6 @@
 
 Штраф, пропорциональный квадрату L2-нормы весов (эквивалент покомпонентного затухания весов на каждом шаге); главный регуляризатор корпуса — с ним связаны и скорость, и само наступление гроккинга в большинстве постановок.
 
-- 2511.12768: [`"depends on regularization strength (weight decay) and dataset\ndiversity"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p4-4)
 
 ### [Доля данных / критический размер набора](data-fraction-critical-dataset-size.md) (data fraction / critical dataset size) — 54 статей
 

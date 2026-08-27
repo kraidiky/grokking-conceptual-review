@@ -370,6 +370,8 @@ Loss-Landscape Geometry». Нюанс: перебора по $\lambda$ нет �
 
 **\[4.42\]** 2502.01774 — Carvalho et al. 2025, «Grokking Explained: A Statistical Phenomenon». [`"their impact on the test set performance was seen only after training converged and weight decay led the network to a more sparse internal representation"`](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/original/2502.01774.grokking-explained-a-statistical-phenomenon.md#p6-3). *«[их влияние на качество на тестовой выборке проявилось только после того, как обучение сошлось и weight decay привёл сеть к более разрежённому внутреннему представлению](../papers/2502.01774.grokking-explained-a-statistical-phenomenon/2502.01774.grokking-explained-a-statistical-phenomenon.card.md#p6-3)»*
 
+**\[4.43\]** 2511.12768 — Hong & Hong, «Evidence of Phase Transitions in Small Transformer-Based Language Models». [`"This delayed, abrupt reorganization occurs despite smooth loss curves and depends on regularization strength (weight decay) and dataset diversity"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p4-4). *«[Эта отложенная резкая перестройка происходит несмотря на плавные кривые потери и зависит от силы регуляризации (weight decay) и разнообразия набора данных](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.card.md#p4-4)»*
+
 ### Внешние работы
 
 ###### ref-5-1
