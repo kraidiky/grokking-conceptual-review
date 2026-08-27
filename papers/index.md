@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто сорок две из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 26 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 26 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто сорок три из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 25 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 25 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -582,7 +582,9 @@
 
   Развёртка одного пункта серии Xu о низкоразмерных траекториях: «голографическая несжимаемость» грокнутых весов на многозадачной модульной арифметике с общим стволом. Корпус наследует два переносимых измерения: раздельную оценку спектральной энергии и деятельной сжимаемости — деятельная часть решения лежит в хвосте спектра — и наблюдение «та же энергия, другая функция»: weight decay не меняет формы спектра, а загоняет деятельную часть глубже, делая ствол менее сжимаемым; отсюда предупреждение для LoRA-подобного сжатия грокнутых сетей. Чем отличается от соседей: систематическое сравнение трёх способов восстановления на пятнадцати условиях. Чего нет: контроля не грокающей моделью (голографичность не отделена от свойств любой обученной сети), нулевых моделей для PCA траектории, кривых обучения и семян; главный рисунок показывает обратное своей подписи, а числа введения расходятся с таблицами — числа в карточке.
 
-- `2602.19533` · всего: **0** · в картотеке: **0** · Grokking Finite-Dimensional Algebra
+- `2602.19533` · всего: **0** · в картотеке: **0** · [Notsawo, Dumas, Rabusseau 2026 — Grokking Finite-Dimensional Algebra](2602.19533.grokking-finite-dimensional-algebra/2602.19533.grokking-finite-dimensional-algebra.card.md)
+
+  Первое систематическое вынесение гроккинга за пределы групповых операций — на конечномерные алгебры: любой тензор $\mathbf{\boldsymbol{\mathcal{C}}}\in\mathbb{F}^{n\times n\times n}$ задаёт алгебру, групповые задачи корпуса — частный случай через $\mathbb{F}[G]$ (структурный тензор = таблица Кэли в one-hot кодировке), а ассоциативность, коммутативность и унитальность включаются по одному как тензорные тождества. Главное при $(2,7)$: ассоциативные неунитальные алгебры гроккают раньше всех (унитальность сужает множество представлений); возмущение одной ячейки таблицы умножения резко сдвигает задержку при неизменном прочем — самый чистый рычаг статьи; качество представления $\mathcal{A}_{\text{rep}}$ растёт ровно на поре гроккинга у MLP, Transformer и LSTM. Слабости: объяснения через число представлений — рассуждения; 5 непустых категорий из 8; 10 тензоров и 2 прогона на точку; вещественная теория без опытов — числа в карточке.
 
 - `2602.22600` · всего: **0** · в картотеке: **0** · Transformers Converge to Invariant Algorithmic Cores
 
@@ -750,7 +752,7 @@
 | `2602.16967` | **6** | **5** | [Xu 2026 — Early-Warning Signals of Grokking via Loss-Landscape Geometry](2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry/2602.16967.early-warning-signals-of-grokking-via-loss-landscape-geometry.card.md) |
 | `2602.18523` | **8** | **6** | [Xu 2026 — The Geometry of Multi-Task Grokking: Transverse Instability, Superposition, and Weight Decay Phase Structure](2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure/2602.18523.the-geometry-of-multi-task-grokking-transverse-instability-superposition-and-weight-decay-phase-structure.card.md) |
 | `2602.18649` | **0** | **1** | [Xu 2026 — Global Low-Rank, Local Full-Rank: The Holographic Encoding of Learned Algorithms](2602.18649.global-low-rank-local-full-rank-the-holographic-encoding-of-learned-algorithms/2602.18649.global-low-rank-local-full-rank-the-holographic-encoding-of-learned-algorithms.card.md) |
-| `2602.19533` | **0** | **0** | Grokking Finite-Dimensional Algebra |
+| `2602.19533` | **0** | **0** | [Notsawo, Dumas, Rabusseau 2026 — Grokking Finite-Dimensional Algebra](2602.19533.grokking-finite-dimensional-algebra/2602.19533.grokking-finite-dimensional-algebra.card.md) |
 | `2602.22600` | **0** | **0** | Transformers Converge to Invariant Algorithmic Cores |
 | `2603.01192` | **3** | **3** | [Cullen et al. 2026 — A Basin-Selection Perspective on Grokking via Singular Learning Theory](2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md) |
 | `2603.01968` | **1** | **0** | [Hwang & Park 2026 — Intrinsic Task Symmetry Drives Generalization in Algorithmic Tasks](2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.card.md) |
