@@ -192,13 +192,7 @@ Bottleneck through Neural Collapse Emergence». Нюанс: сжатие как 
 ###### ref-3-4
 **\[3.4\]** 2510.25966 — Hutchison et al., «Grokking in the Ising Model».
 Нюанс: сжатие как переход весовых матриц к низкоранговой конфигурации/разрежённой
-подсети. `"transition to a low-rank configuration resulting in a sparse subnetwork"` (line 66). *«переходят к низкоранговой конфигурации, что даёт разрежённую подсеть».*
-
-###### ref-3-5
-**\[3.5\]** 2602.16746 — Xu, «Low-Dimensional and Transversely Curved
-Optimization Dynamics in Grokking». Нюанс: сжатие как удержание траектории на
-низкоразмерном подпространстве весов («исполнительном многообразии»).
-[`"We propose that grokking corresponds to prolonged confinement on a low-dimensional subspace in weight space"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p1-2). *«[Мы предполагаем, что гроккингу отвечает затяжное удержание на низкоразмерном подпространстве пространства весов](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md#p1-2)»*\
+подсети. [`"transition to a low-rank configuration resulting in a sparse subnetwork"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3). *«[переходят к малоранговой конфигурации, дающей разреженную подсеть](../papers/2510.25966.grokking-in-the-ising-model/2510.25966.grokking-in-the-ising-model.card.md#p2-3)»*\
 Доп.: [`"the weight-space trajectory during grokking lies on a low-dimensional execution manifold"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p2-1) — *«[траектория в пространстве весов при гроккинге лежит на низкоразмерном исполнительном многообразии](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md#p2-1)».*
 
 ###### ref-3-6

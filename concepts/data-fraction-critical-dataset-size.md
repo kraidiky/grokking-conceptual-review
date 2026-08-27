@@ -210,7 +210,7 @@ Rich». Нюанс: критический размер как окно — до
 
 ###### ref-3-6
 **\[3.6\]** 2510.25966 — Hutchison et al., «Grokking in the Ising Model». Нюанс:
-задержка грокинга растёт при уменьшении размера набора. `"the grokking delay, defined as the number of training steps required for a model to generalize after first reaching maximum training set accuracy, increases as the dataset size decreases"` (line 53). *«задержка грокинга, определяемая как число шагов обучения, нужное модели для генерализации после первого достижения максимальной точности на обучении, растёт по мере уменьшения размера набора»*
+задержка грокинга растёт при уменьшении размера набора. [`"the grokking delay, defined as the number of training steps required for a model to generalize after first reaching maximum training set accuracy, increases as the dataset size decreases"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-2). *«[задержка гроккинга, определяемая как число шагов обучения, требуемое модели для генерализации после первого достижения максимальной точности на обучающем наборе, растёт при уменьшении размера набора данных](../papers/2510.25966.grokking-in-the-ising-model/2510.25966.grokking-in-the-ising-model.card.md#p2-2)»*
 
 ###### ref-3-7
 **\[3.7\]** 2606.17120 — Ersoy et al., «Noise-Driven Escape from Metastable

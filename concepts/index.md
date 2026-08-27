@@ -308,7 +308,7 @@
 
 ### Разрежённость активаций (activation sparsity) — 1 статей
 
-- 2510.25966: [`"The activation sparsity, e.g. the fraction of"`](https://arxiv.org/abs/2510.25966)
+- 2510.25966: [`"The activation sparsity, e.g. the fraction of"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3)
 
 ### Адаптивное ядро для feature learning (adaptive kernel feature learning) — 1 статей
 
@@ -396,7 +396,7 @@
 
 ### Dropout устраняет грокинг (dropout eliminates grokking) — 1 статей
 
-- 2510.25966: [`"dropout can eliminate grokking"`](https://arxiv.org/abs/2510.25966)
+- 2510.25966: [`"dropout can eliminate grokking"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-2)
 
 ### Кривая устойчивости к dropout (Dropout Robustness Curve, DRC) — 1 статей
 
@@ -805,7 +805,7 @@
 
 ### Упрощённые границы решений (simplified decision boundaries) — 1 статей
 
-- 2510.25966: [`"simplified decision boundaries in the input space"`](https://arxiv.org/abs/2510.25966)
+- 2510.25966: [`"simplified decision boundaries in the input space"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3)
 
 ### Сингулярная теория обучения (Singular Learning Theory, SLT) — 1 статей
 
@@ -857,7 +857,7 @@
 
 ### Модель Изинга (Ising model task) — 1 статей
 
-- 2510.25966: [`"Grokking in the Ising Model"`](https://arxiv.org/abs/2510.25966)
+- 2510.25966: [`"Grokking in the Ising Model"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md)
 
 ### Ограниченный выход через температуру (temperature-bounded output) — 1 статей
 
