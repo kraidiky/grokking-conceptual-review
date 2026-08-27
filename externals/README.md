@@ -22,9 +22,9 @@
 - `2212.04458` · General-Purpose In-Context Learning by Meta-Learning Transformers (Kirsch et al.) · триаж task-021: предмет — мета-обучение ICL; гроккинг — приложение A.6 с отрицательным итогом · пока никто · 2026-08-26
 - `2302.09160` · Identifying Equivalent Training Dynamics (Redman et al.) · триаж task-021: купмановская эквивалентность динамик; гроккинг — наименьшее из пяти применений · 2605.08237 · 2026-08-26
 - `2310.11282` · ChapGTP, ILLC's Attempt at Raising a BabyLM (Jumelet et al.) · триаж task-021: конкурсный отчёт BabyLM; гроккинг — одна из неудавшихся стратегий · пока никто · 2026-08-26
-- `2310.12956` · Eureka-Moments in Transformers (Hoffmann et al.) · триаж task-021: статья сама отделяет своё явление от гроккинга (softmax-причина, нет зазора train/val) · 2506.13688 · 2026-08-26
+- `2310.12956` · Eureka-Moments in Transformers (Hoffmann et al.) · триаж task-021: статья сама отделяет своё явление от гроккинга (softmax-причина, нет зазора train/val) · пока никто (цитирует внешняя 2506.13688) · 2026-08-26
 - `2311.04163` · Outliers with Opposing Signals… (Rosenfeld & Risteski) · триаж task-021: гроккингу отведены два хеджированных предложения без опытов · пока никто · 2026-08-26
-- `2311.04354` · Uncovering Intermediate Variables in Transformers using Circuit Probing (Lepori et al.) · триаж task-021: инструмент интерпретируемости; гроккинг — одно из четырёх применений · 2508.15841 · 2026-08-26
+- `2311.04354` · Uncovering Intermediate Variables in Transformers using Circuit Probing (Lepori et al.) · триаж task-021: инструмент интерпретируемости; гроккинг — одно из четырёх применений · пока никто (цитирует внешняя 2508.15841) · 2026-08-26
 - `2402.10688` · Towards Uncovering How Large Language Model Works (Zhao et al.) · триаж task-021: обзор объяснимости LLM; гроккинг — полторы страницы пересказа · 2504.03162 · 2026-08-26
 - `2403.06925` · Transformers Learn Low Sensitivity Functions (Vasudeva et al.) · триаж task-021: предмет — чувствительность как индуктивное смещение; гроккинг — третье из трёх следствий · пока никто · 2026-08-26
 - `2409.16767` · Exploring Information-Theoretic Metrics Associated with Neural Collapse (Song et al.) · триаж task-021: расширенная версия 2406.03999, держать вместе; гроккинг — один подраздел · пока никто · 2026-08-26
@@ -42,7 +42,7 @@
 - `2510.00468` · Feature Identification via the Empirical NTK (Lin) · триаж task-021: eNTK как словарь признаков; гроккинг — обстановка двух игрушечных опытов · пока никто · 2026-08-26
 - `2510.25791` · The Kinetics of Reasoning (Pengmei et al.) · триаж task-021, решение пользователя: CoT «через призму гроккинга», отграничение от позднего обучения слабое · пока никто · 2026-08-26
 - `2512.04165` · Mitigating the Curse of Detail (Rubin, Davidovich & Ringel) · триаж task-021: скейлинговая эвристика FL; гроккинг — сноска с хеджем · пока никто · 2026-08-26
-- `2512.13568` · Superposition as Lossy Compression (Bereska et al.) · триаж task-021: мера суперпозиции через SAE; гроккинг — стенд одного прогона · 2605.16325 · 2026-08-26
+- `2512.13568` · Superposition as Lossy Compression (Bereska et al.) · триаж task-021: мера суперпозиции через SAE; гроккинг — стенд одного прогона · пока никто (цитирует внешняя 2605.16325) · 2026-08-26
 - `2601.08316` · Deep Exploration of Epoch-wise Double Descent in Noisy Data (Kubo, Uda & Iida) · триаж task-021: предмет — двойной спуск при шуме меток; ценно для карточки double-descent · пока никто · 2026-08-26
 - `2603.11161` · Algorithmic Task Capture… of Infinite Transformers (Davidovich & Ringel) · триаж task-021: критерий «захвата алгоритма» неприменим к канонической постановке гроккинга · пока никто · 2026-08-26
 - `2604.19740` · Generalization at the Edge of Stability (Tuci et al.) · триаж task-021: случайные динамические системы; гроккинг — один из проверочных опытов · пока никто · 2026-08-26
