@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать семь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 41 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 41 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто двадцать восемь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 40 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 40 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -520,7 +520,9 @@
 
   В спектральной линии корпуса спектр здесь впервые взят как рукоять управления, а не измеритель: к спору о направлении влияния weight decay добавлена ось «радиальный против спектрального» — при масштабной инвариантности блока (RMSNorm, QK-Norm) фробениусов распад действует вдоль вырожденного радиального направления и после запоминания функционально инертен, а шаг вдоль полярного множителя ядерной нормы продолжает вычитать из сингулярных чисел и при нулевом градиенте задачи. Подтверждено обрушение устойчивого ранга QK-матриц под таким шагом. Чего нет: числа итераций, семян, оптимизатора и бюджета шагов; сам шаг записан в статье трижды по-разному; заявленный сдвиг границы по доле данных — один шаг сетки, а прямой предшественник с ядерной нормой (Notsawo et al.) не процитирован; причинность обрушения ранга признана неустановленной — числа в карточке.
 
-- `2606.05863` · всего: **1** · в картотеке: **1** · Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction
+- `2606.05863` · всего: **1** · в картотеке: **1** · [Tan, Gai & Zhang 2026 — Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction](2606.05863.deciphering-two-training-clocks-in-grokking-via-deep-linear-network-theory-with-conditional-relu-reduction/2606.05863.deciphering-two-training-clocks-in-grokking-via-deep-linear-network-theory-with-conditional-relu-reduction.card.md)
+
+  Вместе с работой Truong et al. — редкая пара, делающая предметом само время, а не порог: гроккинг переформулирован как рассогласование двух времён остановки с разными законами сходимости — логарифмические часы подгонки против полиномиальных часов упрощения представления, чьим источником назван шаттеновский штраф от послойного weight decay в глубокой линейной сети. Корпус наследует три вещи: отрицательную лемму о том, что запас не даёт условия Поляка—Лоясевича (аккуратность в стандартно замалчиваемом месте), таблицы статусов заявлений, где область каждого утверждения выписана построчно, и готовый протокол измерения двух часов на чужих прогонах. Чего нет: оба закона висят на несовместимых для одной траектории допущениях, показатель KL-хвоста не измерен, сами часы в собственном опыте не вычислены, а разрыв в нём — множитель порядка четырёх; ближайшие родственники по формализму и спектральные линии корпуса не цитируются — числа в карточке.
 
 - `2606.08985` · всего: **1** · в картотеке: **1** · Beyond Neural Collapse: Task-Intrinsic Geometry Governs Neural Representations in Modular Arithmetic
 
@@ -756,7 +758,7 @@
 | `2605.24057` | **0** | **0** | Feature Lottery? A Bifurcation Theory of Concept Emergence |
 | `2606.00230` | **0** | **0** | A Pre-Training Analogue of Grokking in Language Models: Tracing Delayed Grammatical Generalization |
 | `2606.04405` | **1** | **1** | [Li 2026 — Low-Rank Decay for Grokking in Scale-Invariant Transformers: A Spectral-Geometric View](2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view/2606.04405.low-rank-decay-for-grokking-in-scale-invariant-transformers-a-spectral-geometric-view.card.md) |
-| `2606.05863` | **1** | **1** | Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction |
+| `2606.05863` | **1** | **1** | [Tan, Gai & Zhang 2026 — Deciphering Two Training Clocks in Grokking via Deep Linear Network Theory with Conditional ReLU Reduction](2606.05863.deciphering-two-training-clocks-in-grokking-via-deep-linear-network-theory-with-conditional-relu-reduction/2606.05863.deciphering-two-training-clocks-in-grokking-via-deep-linear-network-theory-with-conditional-relu-reduction.card.md) |
 | `2606.08985` | **1** | **1** | Beyond Neural Collapse: Task-Intrinsic Geometry Governs Neural Representations in Modular Arithmetic |
 | `2606.12966` | **2** | **2** | [Sivasankar 2026 — Circuit Synchronization Precedes Generalization: A Causal Precursor to Grokking](2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking/2606.12966.circuit-synchronization-precedes-generalization-a-causal-precursor-to-grokking.card.md) |
 | `2606.13753` | **2** | **2** | [Truong et al. 2026 — The Weight Norm Sets the Grokking Timescale: A Causal Delay Law](2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law/2606.13753.the-weight-norm-sets-the-grokking-timescale-a-causal-delay-law.card.md) |
