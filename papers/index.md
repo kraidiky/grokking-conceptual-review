@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 38 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 38 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать одну из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 37 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 37 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -532,7 +532,9 @@
 
   Третья работа Truong в корпусе — и самоопровержение предыдущей (2606.13753): чтение «норма весов задаёт временной масштаб» объявлено смешением скалярной нормы с масштабом логитов, который перемасштабирование зажима тянет за собой, причём прежняя работа в списке литературы не названа, хотя совпадают постановка и калибровка. Корпус наследует приём разведения: необучаемая выходная температура вне нормы возвращает при зажатой норме 0.83–0.89 наведённой нормой задержки восстановлением одного лишь действенного масштаба логитов, задержка схлопывается на него по всей сетке доз и температур, а канал совпадает с насыщением софтмакса Prieto; плюс контроль на времени запоминания и ветвление четырёх рукавов из общего состояния, закрывающее артефакт операции зажима. Чего нет: под среднеквадратичной ошибкой канала нет и вдвое меньший эффект нормы остаётся без механизма, доля возврата интерполяционна, ось коллапса данных эндогенна, трансформер даёт только направление — числа в карточке.
 
-- `2606.32000` · всего: **1** · в картотеке: **1** · HiLD 2025: 3rd Workshop on High-dimensional Learning Dynamics 1–16
+- `2606.32000` · всего: **1** · в картотеке: **1** · [Tiwari, Chauhan & Singh 2026 — Radial Suppression Accelerates Algorithmic Generalization: A Geometric Analysis of Delayed Generalization](2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization/2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization.card.md)
+
+  Причина задержки гроккинга перенесена из пространства весов в пространство активаций: кросс-энтропия «радиально раздувает» скрытые представления, заталкивая логиты в насыщение софтмакса (механизм Prieto), а мягкий штраф, удерживающий активации на гиперсфере радиуса корень из d, — лагранжева релаксация риманова потока, мягкая родня жёсткой проекции Yıldırım — переводит обучение в угловые обновления и ускоряет гроккинг до 6.3 раза на MLP, поднимая действенный ранг со 135 до 443 при тридцатикратном падении следа гессиана. Корпус наследует дешёвую меру радиальности шага с нуль-уровнем единица, таксономию геометрических вмешательств и малоданный результат: при трети данных штраф гроккает там, где сильный weight decay отказывает. Чего нет: сам радиус активаций нигде не показан, свидетельство признано соотносительным, «опорный прогон» вовсе не гроккает, срок под штрафом двоится (2,460 против 6,167), а заголовочное «до шести раз» не держится для трансформера — числа в карточке.
 
 - `2607.08350` · всего: **1** · в картотеке: **0** · Grokking and epoch-wise double descent in quantum neural networks
 
@@ -770,7 +772,7 @@
 | `2606.17399` | **0** | **0** | The Discrete-Log Clock: How a Transformer Learns Modular Multiplication |
 | `2606.18465` | **1** | **1** | [Truong 2026 — What Does the Weight Norm Control in Grokking? Logit-Scale Mediation under Cross-Entropy](2606.18465.what-does-the-weight-norm-control-in-grokking-logit-scale-mediation-under-cross-entropy/2606.18465.what-does-the-weight-norm-control-in-grokking-logit-scale-mediation-under-cross-entropy.card.md) |
 | `2606.26050` | **0** | **0** | Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining |
-| `2606.32000` | **1** | **1** | HiLD 2025: 3rd Workshop on High-dimensional Learning Dynamics 1–16 |
+| `2606.32000` | **1** | **1** | [Tiwari, Chauhan & Singh 2026 — Radial Suppression Accelerates Algorithmic Generalization: A Geometric Analysis of Delayed Generalization](2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization/2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization.card.md) |
 | `2607.04333` | **0** | **0** | Structure-Specific Representational Priors Causally Control the Grokking Delay |
 | `2607.05104` | **0** | **0** | Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters |
 | `2607.06628` | **0** | **0** | Cross-Trajectory Chimera Interventions Reveal Dissociable Roles of Weight Magnitude and Direction in Grokking |
