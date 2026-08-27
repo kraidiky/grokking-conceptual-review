@@ -400,7 +400,7 @@
 
 ### Кривая устойчивости к dropout (Dropout Robustness Curve, DRC) — 1 статей
 
-- 2507.11645: [`"a Dropout Robustness Curve (DRC)"`](https://arxiv.org/abs/2507.11645)
+- 2507.11645: [`"a Dropout Robustness Curve (DRC)"`](../papers/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation/original/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation.md#p1-5)
 
 ### Раннее предсказание грокинга (early grokking prediction) — 1 статей
 
@@ -416,7 +416,7 @@
 
 ### Косинусная близость эмбеддингов (embedding cosine similarity) — 1 статей
 
-- 2507.11645: [`"similarity between embeddings in a high-dimensional spaces"`](https://arxiv.org/abs/2507.11645)
+- 2507.11645: [`"similarity between embeddings in a high-dimensional spaces"`](../papers/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation/original/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation.md#p2-3)
 
 ### Униформность эмбеддинг-пространства (embedding-space uniformity) — 1 статей
 
@@ -564,7 +564,7 @@
 
 ### Метрика неактивных нейронов (inactive neurons metric) — 1 статей
 
-- 2507.11645: [`"percentage of inactive neurons decreases during generalization"`](https://arxiv.org/abs/2507.11645)
+- 2507.11645: [`"percentage of inactive neurons decreases during generalization"`](../papers/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation/original/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation.md#p1-5)
 
 ### Информационное узкое место (information bottleneck) — 1 статей
 
