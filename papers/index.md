@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать две из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 36 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 36 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать три из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 35 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 35 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -602,7 +602,9 @@
 
 - `2607.11666` · всего: **0** · в картотеке: **0** · How to Tame Grokking: Representation Geometry as a Control Signal
 
-- `2607.12735` · всего: **0** · в картотеке: **1** · What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking
+- `2607.12735` · всего: **0** · в картотеке: **1** · [Howe 2026 — What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking](2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking/2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking.card.md)
+
+  Продолжение сопутствующей 2607.04333 тем же автором: на 188 прогонах выясняется, чем работающая представленческая прививка отличается от неработающей. Три ответа: «работает ли» решает совпадение семейства признаков — связное, но чуждое фурье-цепи полосовое разбиение запирает обобщение как случайное (1/15 против 0/20), родственное на тех же признаках сохраняет; для ускорения достаточно безметочной неизменности — прививка коммутативности грокает 15/15 при 2.7 раза и надёжнее надзорной; почти вся польза достаётся за раннее окно в 4% бюджета. Главное для корпуса — развёртка зажима, впервые измерившая показатель закона задержки 2606.13753 в обоих режимах: прививка уплощает его примерно в 17 раз, и показатель переописан как функция присутствующих представленческих сил. Чего нет: заголовочные 17 раз — связка с зажимом при его оптимуме, где чистая кросс-энтропия так же быстра; выводы об окне — разности медиан без значимости; сама задержка не измеряется — числа в карточке.
 
 - `2607.13749` · всего: **0** · в картотеке: **0** · Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations
 
@@ -781,7 +783,7 @@
 | `2607.06639` | **0** | **0** | At-Grok Is Not Converged: A Measurement-Validity Audit for Grokking Representation Metrics |
 | `2607.08350` | **1** | **0** | Grokking and epoch-wise double descent in quantum neural networks |
 | `2607.11666` | **0** | **0** | How to Tame Grokking: Representation Geometry as a Control Signal |
-| `2607.12735` | **0** | **1** | What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking |
+| `2607.12735` | **0** | **1** | [Howe 2026 — What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking](2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking/2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking.card.md) |
 | `2607.13749` | **0** | **0** | Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations |
 | `2607.20512` | **1** | **1** | The Active Ingredient in Muon’s Grokking |
 | `2607.20552` | **0** | **0** | Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat |
