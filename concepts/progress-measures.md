@@ -192,9 +192,7 @@ Amplifying Slow Gradients». Нюанс: поддерживает вывод, ч
 ###### ref-3-3
 **\[3.3\]** 2411.05353 — Salah et al., «Controlling Grokking with Nonlinearity
 and Data Symmetry». Нюанс: энтропия весов последнего слоя как мера степени
-гроккинга. `"Here a metric is introduced to quantify the extent of grokking of a network based on of the weights of the last layer"` (line 280). *«здесь вводится
-метрика, количественно оценивающая степень гроккинга сети на основе весов
-последнего слоя»*
+гроккинга. [`"Here a metric is introduced to quantify the extent of grokking of a network based on of the weights of the last layer"`](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/original/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.md#p4-3). *«[Здесь вводится мера, количественно выражающая степень гроккинга сети на основе весов последнего слоя](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.card.md#p4-3)»*
 
 ###### ref-3-4
 **\[3.4\]** 2503.23298 — Wang et al., «Learning Towards Emergence: Paving the Way

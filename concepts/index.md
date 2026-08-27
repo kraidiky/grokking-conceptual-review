@@ -304,7 +304,7 @@
 
 ### Контроль через нелинейность активации (activation nonlinearity control) — 1 статей
 
-- 2411.05353: [`"can be controlled by modifying the profile of the activation function"`](https://arxiv.org/abs/2411.05353)
+- 2411.05353: [`"can be controlled by modifying the profile of the activation function"`](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/original/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.md#p1-5)
 
 ### Разрежённость активаций (activation sparsity) — 1 статей
 
@@ -348,7 +348,7 @@
 
 ### Очистка убирает меморизацию (cleanup removes memorization) — 1 статей
 
-- 2301.05217: [`"removes the memorization components"`](../papers/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability.card.md#p2-3)
+- 2301.05217: [`"removes the memorization components"`](../papers/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability.card.md#p2-4)
 
 ### Со-грокинг в мультизадачном обучении (co-grokking) — 1 статей
 
@@ -444,7 +444,7 @@
 
 ### Ядро feature learning / RFM (feature-learning kernel, RFM) — 1 статей
 
-- 2604.00316: [`"via the Recursive Feature Machine (RFM)"`](../papers/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/original/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.md#p1-4)
+- 2604.00316: [`"via the Recursive Feature Machine (RFM)"`](../papers/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/original/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.md#p1-5)
 
 ### Коллапс ранга признаков (feature rank collapse) — 1 статей
 
@@ -452,11 +452,11 @@
 
 ### Конечно-размерное масштабирование (finite-size scaling, FSS) — 1 статей
 
-- 2603.24746: [`"finite-size scaling (FSS) pro-"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-4)
+- 2603.24746: [`"finite-size scaling (FSS) pro-"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-5)
 
 ### Плоские минимумы и генерализация (flat minima generalization) — 1 статей
 
-- 2603.01192: [`"“flatter” regions of the loss landscape generalise better"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-4)
+- 2603.01192: [`"“flatter” regions of the loss landscape generalise better"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-5)
 
 ### Регуляризация к плоскостности (flatness regularization) — 1 статей
 
@@ -488,7 +488,7 @@
 
 ### Гауссово feature learning (Gaussian Feature Learning, GFL) — 1 статей
 
-- 2310.03789: [`"that of Gaussian Feature Learning (GFL)"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-4)
+- 2310.03789: [`"that of Gaussian Feature Learning (GFL)"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-5)
 
 ### Контур генерализации (Generalization Circuit) — 1 статей
 
@@ -613,7 +613,7 @@
 
 ### Детекция в линейном пространстве обучения (linear training-space detection) — 1 статей
 
-- 2511.12768: [`"detected directly in *linear training space*, rather than only after log rescaling"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
+- 2511.12768: [`"detected directly in *linear training space*, rather than only after log rescaling"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-5)
 
 ### LLC-траектория как зонд (LLC trajectory probe) — 1 статей
 
@@ -721,7 +721,7 @@
 
 ### Переопараметризация / глубина и грокинг (overparameterization / depth) — 1 статей
 
-- 2506.05718: [`"depth makes it possible to grok or ungrok simply from"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p2-3)
+- 2506.05718: [`"depth makes it possible to grok or ungrok simply from"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p2-4)
 
 ### Принцип экономии / MDL (parsimony / MDL complexity) — 1 статей
 
@@ -733,7 +733,7 @@
 
 ### PCA-факторизация симметрии (PCA symmetry factorization) — 1 статей
 
-- 2411.05353: [`"can yield a factorization of the modulus"`](https://arxiv.org/abs/2411.05353)
+- 2411.05353: [`"can yield a factorization of the modulus"`](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/original/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.md#p2-4)
 
 ### PCA-анализ траекторий (PCA trajectory analysis) — 1 статей
 
@@ -749,11 +749,11 @@
 
 ### Пуассоновская статистика (Poisson statistics) — 1 статей
 
-- 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
+- 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-5)
 
 ### Полисемантичность / суперпозиция (polysemanticity / superposition) — 1 статей
 
-- 2503.23298: [`"polysemantic neurons are activated for multiple features"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-4)
+- 2503.23298: [`"polysemantic neurons are activated for multiple features"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-5)
 
 ### Пост-меморизационная динамика (post-memorization dynamics) — 1 статей
 
@@ -765,7 +765,7 @@
 
 ### Проблемно-специфичная регуляризация потерь (problem-specific loss regularization) — 1 статей
 
-- 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-3)
+- 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-4)
 
 ### Доказуемый грокинг в ридж-регрессии (provable grokking in ridge regression) — 1 статей
 
@@ -785,7 +785,7 @@
 
 ### Спад нормы как достаточное условие (robustness sufficient condition) — 1 статей
 
-- 2311.06597: [`"the decrease of weight norm usually happens before the grokking on the test dataset, making it seemingly a sufficient condition for grokking but not a necessary condition"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p1-4)
+- 2311.06597: [`"the decrease of weight norm usually happens before the grokking on the test dataset, making it seemingly a sufficient condition for grokking but not a necessary condition"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p1-5)
 
 ### Граница выборочной сложности (sample complexity bound) — 1 статей
 
@@ -897,7 +897,7 @@
 
 ### Энтропия весов (weight entropy metric) — 1 статей
 
-- 2411.05353: [`"a metric for the generalization ability of"`](https://arxiv.org/abs/2411.05353)
+- 2411.05353: [`"a metric for the generalization ability of"`](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/original/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.md#p1-5)
 
 ### Сжатие внутриклассовой дисперсии (within-class variance contraction) — 1 статей
 
