@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать одну из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 37 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 37 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто тридцать две из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 36 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 36 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -510,7 +510,9 @@
 
 - `2604.25143` · всего: **1** · в картотеке: **0** · Gradient-Direction Sensitivity Reveals Linear-Centroid Coupling Hidden by Optimizer Trajectories
 
-- `2605.04396` · всего: **1** · в картотеке: **1** · Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize
+- `2605.04396` · всего: **1** · в картотеке: **1** · [Ali 2026 — Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize](2605.04396.critical-windows-of-complexity-control-when-transformers-decide-to-reason-or-memorize/2605.04396.critical-windows-of-complexity-control-when-transformers-decide-to-reason-or-memorize.card.md)
+
+  Работа о композиционной генерализации (anchor-задача Zhang et al.), важная корпусу двумя вещами. Первая — временна́я ось контроля сложности: судьба «запоминание против рассуждения» решается в резком окне обучения, weight decay на 25% обучения внутри окна равен полнообучительному, при уравненном бюджете середина в 5–9 раз лучше начала, граница окна остра до ста шагов, а бассейн рассуждения при малой инициализации сужается — вопреки рецепту «меньше — лучше»; подведена двухмасштабная теория. Вторая — редкий прямой опыт «оконный против постоянного weight decay» на модульной арифметике: явление объявлено непереносимым, постоянный гроккает в пять раз быстрее оконного. Чего нет: в этом решающем опыте бюджет как раз не уравнен (окно получает половину), коэффициент подобран для постоянного расписания, а по рисунку гроккинг наступает сразу после включения weight decay — показан скорее сдвиг момента гроккинга вслед моменту включения, чем бесполезность времени — числа в карточке.
 
 - `2605.12394` · всего: **1** · в картотеке: **1** · [Prakash & Martin 2026 — Detecting overfitting in Neural Networks during long-horizon grokking using Random Matrix Theory](2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory/2605.12394.detecting-overfitting-in-neural-networks-during-long-horizon-grokking-using-random-matrix-theory.card.md)
 
@@ -749,7 +751,7 @@
 | `2604.17673` | **0** | **0** | Grokking of Diffusion Models: Case Study on Modular Addition |
 | `2604.20923` | **2** | **2** | [Golwala 2026 — ILDR: Geometric Early Detection of Grokking](2604.20923.ildr-geometric-early-detection-of-grokking/2604.20923.ildr-geometric-early-detection-of-grokking.card.md) |
 | `2604.25143` | **1** | **0** | Gradient-Direction Sensitivity Reveals Linear-Centroid Coupling Hidden by Optimizer Trajectories |
-| `2605.04396` | **1** | **1** | Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize |
+| `2605.04396` | **1** | **1** | [Ali 2026 — Critical Windows of Complexity Control: When Transformers Decide to Reason or Memorize](2605.04396.critical-windows-of-complexity-control-when-transformers-decide-to-reason-or-memorize/2605.04396.critical-windows-of-complexity-control-when-transformers-decide-to-reason-or-memorize.card.md) |
 | `2605.06152` | **1** | **0** | [Liu, Cao, Li, Zhou 2026 — Grokking or Glitching? How Low-Precision Drives Slingshot Loss Spikes](2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes.card.md) |
 | `2605.06352` | **2** | **2** | [Tang et al. 2026 — Topological Signatures of Grokking](2605.06352.topological-signatures-of-grokking/2605.06352.topological-signatures-of-grokking.card.md) |
 | `2605.08119` | **0** | **0** | Feature Repulsion and Spectral Lock-in: An Empirical Study of Two-Layer Network Grokking |
