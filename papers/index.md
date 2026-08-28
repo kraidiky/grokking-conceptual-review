@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто шестьдесят семь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальная 1 перечислена строкой: её карточка не заведена, и описывать пока нечего; она стоит в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на все сто шестьдесят восемь — на них стоят ссылки, и у каждой такой работы есть описание; очередь импорта пуста.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -682,7 +682,9 @@
 
   Прямое продолжение 2505.11411 тем же коллективом: стеклянная картина гроккинга, до сих пор державшаяся на макроскопической энтропии, впервые проверена на самой динамике обучения. Тройка мер — подвижность параметров, корреляция независимо эволюционирующих реплик и фрактальная размерность траектории — показывает, что ровно при 99% обучающей точности подвижность обваливается на порядки, отклик на возмущение начинает зависеть от прожитого времени (старение), а путь в пространстве весов схлопывается в почти баллистический канал $D_{f}\approx 1$. Отсюда SAM-Swap: случайный обмен значений параметров внутри слоя по порогу размерности, сокращающий срок с $t\approx 3000$ до $t\approx 650$. Оговорки: обе стекольные меры существуют только у сети с подмешанным шумом; подгонки к стекольному закону нет ни одной; обещанного технического приложения в подаче нет; простой крупный гауссов шум обгоняет предложенный обмен, и это не отмечено — числа в карточке.
 
-- `2608.07436` · всего: **0** · в картотеке: **0** · Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers
+- `2608.07436` · всего: **0** · в картотеке: **0** · [Janati et al. 2026 — Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers](2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers.card.md)
+
+  Самая крупная в корпусе работа о том, что бывает **после** гроккинга: при стандартной раздельной маршрутизации (Muon на скрытых матрицах, AdamW на вложениях и голове) все девять настроек развёртки гроккают и все затем теряют обобщение, но и у AdamW обваливаются четыре из семи гроккающих — различие в тяжести на два порядка, а не в наличии сбоя. Устройство привязано к границе, которую потеря опознаёт лишь совместно, через произведение $W_{U}h$: после решения выборки шаг Muon перестаёт следовать за градиентом (упругость $-0.03$ против $+1.5$), стороны расходятся в $8.0$ раза на параметр, и заморозка любой из них сбой снимает. Сильнейшее место — слепота мер прогресса: в шаг обвала носитель не меняется, мощность сдвигается на процент. Оговорки: ускорение измерено в шагах, а не в секундах; причинные опыты односеменные — числа в карточке.
 
 ## В порядке появления
 
@@ -857,4 +859,4 @@
 | `2607.20552` | **0** | **0** | [Pandey 2026 — Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat](2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat.card.md) |
 | `2607.29503` | **0** | **0** | [Zhang et al. 2026 — The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting](2607.29503.the-grokked-illusion-true-equilibrium-mitigates-catastrophic-forgetting/2607.29503.the-grokked-illusion-true-equilibrium-mitigates-catastrophic-forgetting.card.md) |
 | `2608.01833` | **0** | **0** | [Chan et al. 2026 — Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping](2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping.card.md) |
-| `2608.07436` | **0** | **0** | Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers |
+| `2608.07436` | **0** | **0** | [Janati et al. 2026 — Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers](2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers.card.md) |
