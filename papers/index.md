@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто шестьдесят шесть из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 2 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 2 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто шестьдесят семь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальная 1 перечислена строкой: её карточка не заведена, и описывать пока нечего; она стоит в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -678,7 +678,9 @@
 
   Работа коллектива City University of Hong Kong, продолжающая линию 2505.11411 тем же сэмплированием Wang–Landau: предмет измерения сменён с обобщения на удержание знания. Две сети на гиперсфере $\|w\|=30$ с одинаковой 100% тестовой точностью на $x+y\bmod 67$ — обученная AdamW и равновесная (максимум энтропии) — доучиваются полностью запомнить 500 шумных примеров при сохранении исходных данных в обучении: AdamW теряет четверть тестовой точности (до 75%), равновесная держит около 95%, и разрыв монотонно сужается по мере структурного сближения шума с задачей. Объяснение — эффективный ранг: у равновесной он много выше во внимании и MLP до и после впрыска, служа буфером. Оговорки: сам гроккинг как задержка не измеряется ни разу, понятие переопределено через насыщенную точность; обещанного четырежды приложения в v1 нет; по одной предобученной сети на вид — числа в карточке.
 
-- `2608.01833` · всего: **0** · в картотеке: **0** · Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping
+- `2608.01833` · всего: **0** · в картотеке: **0** · [Chan et al. 2026 — Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping](2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping.card.md)
+
+  Прямое продолжение 2505.11411 тем же коллективом: стеклянная картина гроккинга, до сих пор державшаяся на макроскопической энтропии, впервые проверена на самой динамике обучения. Тройка мер — подвижность параметров, корреляция независимо эволюционирующих реплик и фрактальная размерность траектории — показывает, что ровно при 99% обучающей точности подвижность обваливается на порядки, отклик на возмущение начинает зависеть от прожитого времени (старение), а путь в пространстве весов схлопывается в почти баллистический канал $D_{f}\approx 1$. Отсюда SAM-Swap: случайный обмен значений параметров внутри слоя по порогу размерности, сокращающий срок с $t\approx 3000$ до $t\approx 650$. Оговорки: обе стекольные меры существуют только у сети с подмешанным шумом; подгонки к стекольному закону нет ни одной; обещанного технического приложения в подаче нет; простой крупный гауссов шум обгоняет предложенный обмен, и это не отмечено — числа в карточке.
 
 - `2608.07436` · всего: **0** · в картотеке: **0** · Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers
 
@@ -854,5 +856,5 @@
 | `2607.20512` | **1** | **1** | [Wang 2026 — The Active Ingredient in Muon’s Grokking](2607.20512.the-active-ingredient-in-muons-grokking/2607.20512.the-active-ingredient-in-muons-grokking.card.md) |
 | `2607.20552` | **0** | **0** | [Pandey 2026 — Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat](2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat.card.md) |
 | `2607.29503` | **0** | **0** | [Zhang et al. 2026 — The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting](2607.29503.the-grokked-illusion-true-equilibrium-mitigates-catastrophic-forgetting/2607.29503.the-grokked-illusion-true-equilibrium-mitigates-catastrophic-forgetting.card.md) |
-| `2608.01833` | **0** | **0** | Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping |
+| `2608.01833` | **0** | **0** | [Chan et al. 2026 — Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping](2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping.card.md) |
 | `2608.07436` | **0** | **0** | Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers |
