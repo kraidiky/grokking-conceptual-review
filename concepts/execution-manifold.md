@@ -1,6 +1,6 @@
 # Многообразие исполнения (execution manifold)
 
-[polysemanticity-superposition](polysemanticity-superposition.md) ← предыдущая карточка, следующая → —
+[activation-sparsity](activation-sparsity.md) ← предыдущая карточка, следующая → [polysemanticity-superposition](polysemanticity-superposition.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\
@@ -48,3 +48,6 @@
 
 ###### ref-3-1
 **\[3.1\]** 2602.16746 — Xu, «Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking». Нюанс: малоразмерность не качественная, а измеренная — первая главная компонента забирает 68–83% дисперсии траектории. [`"the first principal component captures 68–83% of trajectory variance across all grokking conditions"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p6-7). *«[первая главная компонента улавливает 68–83 % дисперсии траектории во всех грокающих условиях](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md#p6-7)»*
+
+###### ref-3-2
+**\[3.2\]** 2606.17120 — Ersoy & Wiesner, «Noise-Driven Escape from Metastable Phases explains Grokking in Deep Neural Networks». Нюанс: выход из удержания описан как гистерезис при фазовом переходе первого рода по силе L2-сглаживания. [`"grokking is consistent with hysteresis in first-order L2 phase transitions"`](../papers/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking/original/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking.md#p1-2). *«[гроккинг согласуется с гистерезисом при фазовых переходах L2 первого рода](../papers/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking.card.md#p1-2)»*

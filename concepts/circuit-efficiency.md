@@ -32,6 +32,8 @@
 `Cgen`, вызывая [фазовый переход](phase-transition.md) тестовой точности
 \[[1.1](#ref-1-1)\].
 
+Мера, которой действенность оценивают без разбора самой схемы, называется **локальной сложностью контура** (local circuit complexity).
+
 Ключевое следствие — зависимость от объёма данных. Обобщающий контур работает и
 на новых точках, поэтому его эффективность от размера набора не зависит; а
 запоминающий вынужден заучивать каждую добавленную точку и потому **теряет
@@ -134,6 +136,9 @@ et al. связывают эффективность контуров с кри�
   выведенных/атомарных фактов настраивается по гипотезе эффективности контуров,
   чтобы ускорить появление обобщающего контура. Источник различия: механизм
   используется как инженерный рычаг постановки эксперимента.
+
+###### ref-3-10
+**\[3.10\]** 2602.02859 — Prakash et al., «Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher». Нюанс: приближённая местная сложность контуров взята как мера продвижения — попытка измерить действенность схемы, не разбирая её. [`"Approximate Local Circuit Complexity, which capture broader"`](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/original/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.md#p2-2). *«[приближённую местную сложность контуров, схватывающие более широкие](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md#p2-2)»*
 
 ## Ссылки
 

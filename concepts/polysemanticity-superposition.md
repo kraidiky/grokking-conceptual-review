@@ -1,6 +1,6 @@
 # Полисемантичность и суперпозиция (polysemanticity / superposition)
 
-[activation-sparsity](activation-sparsity.md) ← предыдущая карточка, следующая → [execution-manifold](execution-manifold.md)
+[execution-manifold](execution-manifold.md) ← предыдущая карточка, следующая → —
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

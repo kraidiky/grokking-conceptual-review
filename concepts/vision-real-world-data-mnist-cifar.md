@@ -110,6 +110,9 @@ MNIST), при продлённом обучении наступает позд
 масштабирование до ImageNet в задаче «раз-обучения» (unlearning)
 \[[3.6](#ref-3-6)\].
 
+###### ref-3-19
+**\[3.19\]** 2405.20233 — Lee et al., «Grokfast: Accelerated Grokking by Amplifying Slow Gradients». Нюанс: перечень областей, на которые переносят приём ускорения, и есть тот случай, когда гроккинг выходит за пределы алгоритмических наборов. [`"diverse tasks involving images, languages,"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2). *«[разнообразным задачам с изображениями, языками и графами](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2)»*
+
 ## Ссылки
 
 ###### ref-1-1

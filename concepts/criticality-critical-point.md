@@ -1,6 +1,6 @@
 # Критичность / критическая точка (criticality / critical point)
 
-[Законы масштабирования](scaling-laws.md) ← предыдущая карточка, следующая → [information-bottleneck](information-bottleneck.md)
+[Колмогоровская сложность](kolmogorov-complexity.md) ← предыдущая карточка, следующая → [Законы масштабирования](scaling-laws.md)
 
 [Индекс карточек понятий](index.md), категория: [7. Теория и формальные результаты](index.md#cat-7)\
 → Следующая категория: [1. Явления](grokking.md)\
@@ -59,3 +59,6 @@
 
 ###### ref-3-4
 **\[3.4\]** 2602.16746 — Xu, «Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking». Нюанс: родственная картина без слова «критичность» — задержка как удержание в метастабильном режиме, из которого траектория выходит. [`"generalization emerges as the trajectory exits this metastable regime"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p3-2). *«[генерализация возникает, когда траектория выходит из этого метастабильного режима](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.card.md#p3-2)»*
+
+###### ref-3-5
+**\[3.5\]** 2603.24746 — Bi et al., «Grokking as a Falsifiable Finite-Size Transition». Нюанс: конечноразмерное масштабирование — приём, которым критичность отличают от резкой, но обычной черты конечной системы. [`"finite-size scaling (FSS) provides precisely the sequential diagnostic protocol"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-4). *«[конечноразмерное масштабирование (FSS) даёт как раз тот последовательный порядок испытаний](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-4)»*

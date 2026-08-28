@@ -1,6 +1,6 @@
 # Законы масштабирования (scaling laws)
 
-[Колмогоровская сложность](kolmogorov-complexity.md) ← предыдущая карточка, следующая → [Критичность / критическая точка](criticality-critical-point.md)
+[Критичность / критическая точка](criticality-critical-point.md) ← предыдущая карточка, следующая → [information-bottleneck](information-bottleneck.md)
 
 [Индекс карточек понятий](index.md), категория: [7. Теория и формальные результаты](index.md#cat-7)\
 → Следующая категория: [1. Явления](grokking.md)\

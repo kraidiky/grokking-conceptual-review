@@ -34,6 +34,8 @@
 может наступать и вовсе **без** последующего гроккинга — из-за численных
 ошибок \[[2.3](#ref-2-3)\].
 
+Ту же пору корпус называет и **пост-меморизационной динамикой** (post-memorization dynamics), когда речь идёт о том, что происходит внутри сети после подгонки.
+
 ## Альтернативные определения и нюансы
 
 ### A. Классическое: фаза переобучения / интерполяции
@@ -248,6 +250,9 @@ Loss-Landscape Geometry». Нюанс: разложение интегрируе
 
 ###### ref-3-26
 **\[3.26\]** 2608.01833 — Chan, Zhang, Shang, Zhang, Yang 2026, «Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping». Плато получает динамический диагноз: ровно при достижении 99% обучающей точности фрактальная размерность траектории в пространстве весов обваливается к $D_{f}\approx 1$ — путь становится прямым, канальным, — подвижность падает с $\sim 1$ до $\sim 10^{-2}$ и далее к $\sim 10^{-4}$, а корреляция реплик выходит на полку; сеть не просто ползёт, она ползёт по коридору и не имеет доступных развилок. Нюанс: обе стекольные меры существуют только у «зондированной» сети (гауссов шум $\sigma=10^{-5}$ во все параметры) — без него $RC\equiv 1$ и $D_{f}$ тривиально равна 1, то есть меряется отклик на подмешанный шум, а не собственная динамика AdamW; полка RC лежит на $q\approx 0.97$ при оси главной панели 0.96–1.00. [`"Once training accuracy reaches 99%, $D_{f}$ collapses toward 1, indicating that the optimization trajectory becomes effectively low-dimensional and ballistic-like."`](../papers/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping/original/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping.md#p4-3). *«[Как только обучающая точность достигает 99%, $D_{f}$ обваливается к 1, указывая, что оптимизационная траектория становится действенно низкоразмерной и баллистикоподобной.](../papers/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping/2608.01833.tunneling-the-loss-landscape-bypassing-memorization-with-monte-carlo-parameter-swapping.card.md#p4-3)»*
+
+###### ref-3-27
+**\[3.27\]** 2206.04817 — Thilak et al., «The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon». Нюанс: то же плато под именем «терминальная фаза обучения» (TPT) — термин, принесённый в корпус работой о слингшоте. [`"Terminal Phase of Training (TPT)"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-3). *«[терминальной фазе обучения* (Terminal Phase of Training, TPT)](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-3)»*
 
 ## Цитирования
 

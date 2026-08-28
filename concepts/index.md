@@ -11,7 +11,7 @@
 
 Феномен отложенной генерализации: сеть сначала почти идеально подгоняет обучающую выборку при низкой тестовой точности, а спустя на порядки более долгое обучение тестовая точность резко возрастает. Термин и явление введены Power et al. (2022).
 
-### [Фаза меморизации / плато](memorization-phase.md) (memorization phase / plateau) — 79 статей
+### [Фаза меморизации / плато](memorization-phase.md) (memorization phase / plateau) — 80 статей
 
 Начальный этап обучения при гроккинге: почти идеальная точность на обучающей выборке при низкой тестовой — затяжное плато, предшествующее резкому переходу к генерализации.
 
@@ -154,13 +154,13 @@
 Три разных наблюдения под одним именем: разрежённость в фурье-области, в структуре подсети и в отклике. Проверка гипотезы устроена честно — модели с той же разрежённостью строят отдельно.
 
 ###### cat-3
+### [Многообразие исполнения](execution-manifold.md) (execution manifold) — 3 статей
+
+Малоразмерная поверхность в пространстве весов, на которой держится траектория обучения: первая главная компонента забирает 68–83% дисперсии. Задержка — удержание на ней, обобщение — выход.
+
 ### [Полисемантичность и суперпозиция](polysemanticity-superposition.md) (polysemanticity / superposition) — 3 статей
 
 Нейрон, откликающийся на несколько несвязанных признаков, и объяснение этому через наложение большего числа признаков, чем есть направлений. Затрагивает все инструменты разбора грокнувших сетей, которые предполагают одно понятие на направление.
-
-### [Многообразие исполнения](execution-manifold.md) (execution manifold) — 2 статей
-
-Малоразмерная поверхность в пространстве весов, на которой держится траектория обучения: первая главная компонента забирает 68–83% дисперсии. Задержка — удержание на ней, обобщение — выход.
 
 ## 3. Задачи и наборы данных (Tasks & datasets)
 
@@ -281,7 +281,7 @@
 
 Интервенция, удерживающая L2-норму весов или активаций фиксированной: параметры принудительно кладутся на сферу, масштабная степень свободы устраняется, и информация кодируется только направлением.
 
-### [Ускорение гроккинга](accelerated-grokking.md) (accelerated grokking) — 3 статей
+### [Ускорение гроккинга](accelerated-grokking.md) (accelerated grokking) — 4 статей
 
 Семейство вмешательств, сокращающих задержку: в градиент, в начальное вложение, в параметры по ходу, в норму. Общая слабость — выигрыш меряется в шагах, а не в секундах, и часто на одном семени.
 
@@ -359,20 +359,20 @@
 
 Длина минимальной программы, порождающей объект; мера сложности, под которой обобщающее решение проще запоминающего, а отложенная генерализация трактуется как спуск модели к меньшей сложности.
 
+### [Критичность / критическая точка](criticality-critical-point.md) (criticality / critical point) — 5 статей
+
+Значение управляющего параметра, вблизи которого динамика замедляется настолько, что обобщение приходит с задержкой. Доказано в одной решаемой постановке, перенос на прочие заявлен как догадка; «критический размер данных» — порог другого рода.
+
 ### [Законы масштабирования](scaling-laws.md) (scaling laws) — 5 статей
 
 Степенные зависимости качества от масштаба, перенесённые в разговор о гроккинге как рамка, которой отложенная генерализация противоречит или в которую укладывается. Отдельно стоит закон границы запоминания и обобщения, выводимый из динамики, и спор о том, не порождена ли ступенька мерой.
-
-### [Критичность / критическая точка](criticality-critical-point.md) (criticality / critical point) — 4 статей
-
-Значение управляющего параметра, вблизи которого динамика замедляется настолько, что обобщение приходит с задержкой. Доказано в одной решаемой постановке, перенос на прочие заявлен как догадка; «критический размер данных» — порог другого рода.
 
 ### [Информационное узкое место](information-bottleneck.md) (information bottleneck) — 3 статей
 
 Рамка сжатия входа при сохранении сведений о цели, предсказывающая подгонку и затем сжатие. В корпусе держится как словарь, общий с двойным спуском и гроккингом, а её место как измеримой величины заняли вычислимые меры сложности.
 
 ###### cat-8
-### [Сингулярная теория обучения](singular-learning-theory.md) (singular learning theory, SLT) — 2 статей
+### [Сингулярная теория обучения](singular-learning-theory.md) (singular learning theory, SLT) — 3 статей
 
 Рамка, исходящая из того, что сети — сингулярные статистические модели, а множество минимумов есть многообразие с особенностями. Центральная величина — местный коэффициент обучения; подтверждение в корпусе смешанное.
 
@@ -440,14 +440,6 @@
 ### Кривизна через коммутаторный дефект (commutator defect curvature) — 0 статей
 
 - 2602.16746: [`"commutator defects—the non-commutativity of"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p1-2)
-
-### Оптимизация с ограничениями (constrained optimization) — 8 статей
-
-- 2511.01938: [`"understood through the lens of constrained optimization"`](../papers/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold/original/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold.md#p1-2)
-
-### Критическое замедление (critical slowing down) — 2 статей
-
-- 2406.05335: [`"Emergence of critical slowing down in training"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md) ↗
 
 ### Межслойное разделение памяти (cross-layer memory sharing) — 0 статей
 
@@ -521,10 +513,6 @@
 
 - 2405.19454: [`"the decreasing of feature ranks and the"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#p1-3)
 
-### Конечно-размерное масштабирование (finite-size scaling, FSS) — 3 статей
-
-- 2603.24746: [`"finite-size scaling (FSS) provides precisely the sequential diagnostic protocol"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-4)
-
 ### Плоские минимумы и генерализация (flat minima generalization) — 0 статей
 
 - 2603.01192: [`"“flatter” regions of the loss landscape generalise better"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-4)
@@ -536,10 +524,6 @@
 ### Точность плавающей запятой (floating-point precision) — 1 статей
 
 - 2605.06152: [`"of floating-point arithmetic precision limits"`](../papers/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes/original/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes.md#p1-2)
-
-### Четыре фазы обучения (four learning phases) — 3 статей
-
-- 2205.10343: [`"four learning phases: comprehension, grokking, memorization, and"`](../papers/2205.10343.towards-understanding-grokking-an-effective-theory-of-representation-learning/original/2205.10343.towards-understanding-grokking-an-effective-theory-of-representation-learning.md#p1-2)
 
 ### Фурье-голова (Fourier head) — 1 статей
 
@@ -593,10 +577,6 @@
 
 - 2402.09469: [`"as $k$ increases, the grokking phenomenon becomes weak"`](../papers/2402.09469.fourier-circuits-in-neural-networks-and-transformers-a-case-study-of-modular-arithmetic-with-multiple-inputs/original/2402.09469.fourier-circuits-in-neural-networks-and-transformers-a-case-study-of-modular-arithmetic-with-multiple-inputs.md#fig-4)
 
-### Грокинг без регуляризации (grokking without regularization) — 5 статей
-
-- 2301.02679: [`"in the absence of any regularization"`](../papers/2301.02679.grokking-modular-arithmetic/2301.02679.grokking-modular-arithmetic.card.md#p1-2)
-
 ### Эвристическое ядро (heuristic core) — 1 статей
 
 - 2403.03942: [`"evidence of a *heuristic core*: a set of attention heads that appear in all generalizing subnetworks but, on their own, do not generalize"`](../papers/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md#fig-1)
@@ -605,21 +585,9 @@
 
 - 2601.19791: [`"through proper hyperparameter tuning"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p1-2)
 
-### Гистерезис / выход из метастабильности (hysteresis / metastable escape) — 4 статей
-
-- 2606.17120: [`"grokking is consistent with hysteresis in first-order L2 phase transitions"`](../papers/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking/original/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking.md#p1-2)
-
-### Неявное смещение Adam (implicit bias of Adam) — 2 статей
-
-- 2407.12332: [`"closely related to the implicit bias of Adam [52, 55]"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p3-6)
-
 ### Неявное смещение адаптивных оптимизаторов (implicit bias of adaptive optimizers) — 0 статей
 
 - 2206.04817: [`"characterizing an implicit bias of such optimizers"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p2-8)
-
-### Неявное смещение градиентного спуска (implicit bias of gradient descent) — 5 статей
-
-- 2410.04489: [`"by appealing to the implicit bias of gradient descent"`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-2)
 
 ### Метрика неактивных нейронов (inactive neurons metric) — 0 статей
 
@@ -650,17 +618,9 @@
 
 - 2206.04817: [`"cyclic behavior of the norm of the"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-2)
 
-### Обучаемое преобразование градиента (learnable gradient transformation, NeuralGrok) — 2 статей
-
-- 2504.17243: [`"learns an optimal gradient transformation to accelerate"`](../papers/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/original/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.md#p1-2)
-
 ### Сначала менее заметные частоты (less-salient frequency first) — 0 статей
 
 - 2405.17479: [`"initially learn the less salient"`](../papers/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network.card.md#p1-2)
-
-### Число линейных отображений (linear mapping number, LMN) — 3 статей
-
-- 2310.05918: [`"We define linear mapping number (LMN) to"`](../papers/2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective/original/2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective.md#p1-2)
 
 ### Детекция в линейном пространстве обучения (linear training-space detection) — 0 статей
 
@@ -670,10 +630,6 @@
 
 - 2603.01192: [`"LLC trajectories estimated from training data track the onset of generalisation"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-2)
 
-### Локальная сложность контура (local circuit complexity) — 3 статей
-
-- 2602.02859: [`"Approximate Local Circuit Complexity, which capture broader"`](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/original/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.md#p2-2)
-
 ### Анализ локальной сложности (local complexity analysis) — 1 статей
 
 - 2512.03437: [`"quantifies the density of linear regions in a neural network’s input space partition"`](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p9-8)
@@ -681,10 +637,6 @@
 ### Локальный асинхронный грокинг (local asynchronous grokking) — 0 статей
 
 - 2506.21551: [`"enter their grokking stages asynchronously"`](../papers/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md#p1-2)
-
-### Локальный коэффициент обучения (local learning coefficient, LLC) — 5 статей
-
-- 2603.01192: [`"The key measure is the local learning coefficient (LLC)"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-2)
 
 ### Неограниченный рост логитов (logit scaling growth) — 0 статей
 
@@ -698,17 +650,9 @@
 
 - 2506.05718: [`"sparse recovery and low rank matrix factorization"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p4-3)
 
-### LU-механизм (LU mechanism) — 4 статей
-
-- 2210.01117: [`"the "LU mechanism" because training and test losses"`](../papers/2210.01117.omnigrok-grokking-beyond-algorithmic-data/original/2210.01117.omnigrok-grokking-beyond-algorithmic-data.md#p1-3)
-
 ### Машинное разучивание (machine unlearning) — 1 статей
 
 - 2512.03437: [`"*machine unlearning*, i.e., removing the influence of specified data without full retraining"`](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p1-2)
-
-### Прунинг по магнитуде для активной подсети (magnitude pruning) — 6 статей
-
-- 2303.11873: [`"weight magnitude pruning (Mozer & Smolensky, 1989) to ﬁnd active"`](../papers/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks/original/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks.md#p2-5)
 
 ### Многообразие стохастических процессов (manifold of stochastic processes) — 0 статей
 
@@ -766,10 +710,6 @@
 
 - 2403.03942: [`"generalize very differently to adversarial out-of-domain (OOD) evaluation sets"`](../papers/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md#p1-5)
 
-### Принцип экономии / MDL (parsimony / MDL complexity) — 4 статей
-
-- 2603.29262: [`"and the Minimum Description Length (MDL) principle"`](../papers/2603.29262.grokking-from-abstraction-to-intelligence/2603.29262.grokking-from-abstraction-to-intelligence.card.md#p1-5)
-
 ### Метрика похожести путей (pathway similarity metric) — 0 статей
 
 - 2506.21551: [`"one computes the pathway similarity"`](../papers/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md#p1-2)
@@ -789,10 +729,6 @@
 ### Пуассоновская статистика (Poisson statistics) — 1 статей
 
 - 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
-
-### Пост-меморизационная динамика (post-memorization dynamics) — 2 статей
-
-- 2511.01938: [`"post-memorization learning dynamics"`](../papers/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold/original/2511.01938.the-geometry-of-grokking-norm-minimization-on-the-zero-loss-manifold.md#p2-2)
 
 ### Предобусловленный градиентный спуск (preconditioned gradient descent) — 1 статей
 
@@ -825,10 +761,6 @@
 ### Граница выборочной сложности (sample complexity bound) — 1 статей
 
 - 2407.12332: [`"can generalize with many fewer samples"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p3-8)
-
-### Селективный рост нормы нейронов (selective norm growth) — 2 статей
-
-- 2303.11873: [`"a small subset of neurons undergoes rapid norm growth"`](../papers/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks/original/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks.md#p1-2)
 
 ### Метрика остроты минимума (sharpness metric) — 1 статей
 
@@ -870,10 +802,6 @@
 
 - 2408.08944: [`"generalizing synergistic sub-network that is growing as it"`](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/original/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.md#p3-3)
 
-### Задачи: изображения, языки, графы (images / languages / graphs) — 11 статей
-
-- 2405.20233: [`"diverse tasks involving images, languages,"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2)
-
 ### Модель Изинга (Ising model task) — 0 статей
 
 - 2510.25966: [`"Grokking in the Ising Model"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md)
@@ -885,10 +813,6 @@
 ### Температурный softmax-сэмплинг (temperature softmax sampling) — 0 статей
 
 - 2406.05335: [`"the $t$-th token $x_{t}$ is drawn from the softmax distribution"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md#p7-5) ↗
-
-### Терминальная фаза обучения (terminal phase of training) — 5 статей
-
-- 2206.04817: [`"Terminal Phase of Training (TPT)"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-3)
 
 ### Трёхстадийная динамика обучения (three-stage training dynamic) — 1 статей
 
@@ -905,10 +829,6 @@
 ### Эффект туннеля (tunnel effect) — 1 статей
 
 - 2405.19454: [`"Emergence of *Tunnel* on various depth of models"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#fig-3)
-
-### Униформное внимание / CBOW (uniform attention / bag-of-tokens) — 5 статей
-
-- 2603.05228: [`"reducing the attention mechanism to a Continuous Bag-of-Words"`](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/original/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.md#p2-4)
 
 ### Гипотеза универсальности (universality hypothesis) — 2 статей
 
