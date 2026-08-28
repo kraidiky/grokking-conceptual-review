@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто шестьдесят четыре из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 4 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 4 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто шестьдесят пять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 3 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 3 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -670,7 +670,9 @@
 
   Теоретическая работа четырёх авторов, вводящая в корпус ось «представимость против запоминания»: до состязания скоростей запоминания и обобщения должно выполняться предварительное условие — запоминание должно быть возможным. Двухслойная комплексная сеть с голоморфной активацией $z^{k}$ на кодировании корнями из единицы имеет выразимый класс, запертый в $(k{+}1)$-мерном подпространстве характеров при любой ширине; доказан точный фурье-критерий ($ma+nb$ представима ⟺ $m+n=k$), непредставимость нелинейно-фазовых целей через гауссовы суммы и ширино-независимая нижняя граница обучающих потерь. 584/585 прогонов совпадают с предсказанием, исходы бинарны (INST/FAIL, без MEM и GROK); мост к обычным сетям — бутылочное горлышко (FAIL → MEM → GROK) и ранговый барьер для обучаемых кодирований, оставляющий $ab$ единственным провалом. Оговорки: доказательство отсылает к несуществующему приложению; один $p=97$; 510 FAIL — гарантия теоремы, посчитанная 510 раз — числа в карточке.
 
-- `2607.20552` · всего: **0** · в картотеке: **0** · Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat
+- `2607.20552` · всего: **0** · в картотеке: **0** · [Pandey 2026 — Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat](2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat.card.md)
+
+  Одноавторская работа независимого исследователя, замыкающая термодинамическую петлю: изоморфизм внимания и канонического ансамбля (заимствован у Kim 2602.08216) даёт «теплоёмкость» $C_{v}=\mathrm{Var}(QK^{\top}/\sqrt{d_{k}})$ как предвестник фазового перехода, а динамический weight decay — как «подачу тепла»; CvAdamW масштабирует $\lambda$ пропорционально сглаженному приросту $C_{v}$ за воротами памяти. На $(a+b)\bmod 97$ пик $C_{v}$ предшествует гроккингу в 10/10 семенах (опережение 2400 эпох — но с моментом гроккинга не коррелирует), холодный старт даёт −257 эпох (6.0%) при расходящихся тестах, изложенных честно; три отказа детектора (шум инициализации, батч-рябь, ослепление слингшотом) поданы как вклад. Оговорки: «база никогда не гроккает» — свойство срезанного бюджета; контроля «просто больше weight decay» нет; второй вариант метода хуже базы; физика не проверена независимо — числа в карточке.
 
 - `2607.29503` · всего: **0** · в картотеке: **0** · The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting
 
@@ -848,7 +850,7 @@
 | `2607.12735` | **0** | **1** | [Howe 2026 — What Makes a Representational Prior Work? Feature Families, Label-Free Invariances, and Critical Windows in Grokking](2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking/2607.12735.what-makes-a-representational-prior-work-feature-families-label-free-invariances-and-critical-windows-in-grokking.card.md) |
 | `2607.13749` | **0** | **0** | [Kam et al. 2026 — Algebraic Representability as the Limiting Regime of Grokking: An Exactly Solvable Model with Holomorphic Activations](2607.13749.algebraic-representability-as-the-limiting-regime-of-grokking-an-exactly-solvable-model-with-holomorphic-activations/2607.13749.algebraic-representability-as-the-limiting-regime-of-grokking-an-exactly-solvable-model-with-holomorphic-activations.card.md) |
 | `2607.20512` | **1** | **1** | [Wang 2026 — The Active Ingredient in Muon’s Grokking](2607.20512.the-active-ingredient-in-muons-grokking/2607.20512.the-active-ingredient-in-muons-grokking.card.md) |
-| `2607.20552` | **0** | **0** | Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat |
+| `2607.20552` | **0** | **0** | [Pandey 2026 — Thermodynamic Weight Decay: Exploring Grokking Acceleration via Attention Specific Heat](2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat.card.md) |
 | `2607.29503` | **0** | **0** | The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting |
 | `2608.01833` | **0** | **0** | Tunneling the Loss Landscape: Bypassing Memorization with Monte Carlo Parameter Swapping |
 | `2608.07436` | **0** | **0** | Post-Grokking Collapse at the Representation–Readout Interface in Muon-Trained Transformers |
