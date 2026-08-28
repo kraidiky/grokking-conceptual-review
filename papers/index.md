@@ -1,6 +1,6 @@
 # Индекс статей корпуса
 
-168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто пятьдесят восемь из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 10 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 10 стоят в очереди импорта.
+168 работ. Тексты работ с карточками хранятся в папках самих карточек (`original/`); txt-экстракции исходного репозитория сюда не копировались. Карточки заведены на сто пятьдесят девять из них — на них стоят ссылки, и у каждой такой работы есть описание. Остальные 9 перечислены строкой: их карточки не заведены, и описывать пока нечего; все 9 стоят в очереди импорта.
 
 Формат строки первого списка: `arxiv-id` · всего: цитирований · в картотеке: цитирований · название, под строкой — описание: что корпус от работы унаследовал, чем она отличается от соседей и чего в ней нет. Второй список — та же подборка в хронологии, таблицей и без описаний.
 
@@ -644,7 +644,9 @@
 
   Одноавторская работа, дающая корпусу самый чистый развод «содержание против геометрии»: в однослойный трансформер на модульном сложении $p=97$ впрыскиваются представленческие приоры через положительные множества контрастной потери SupCon при тождественной форме, силе и геометрии — и исход правится одним содержанием: истинное строение $(a+b)\bmod p$ — 22/30 обобщений и до $2.75\times$ ускорения, родственное $(a-b)\bmod p$ — 14/15 без ускорения, случайное разбиение — 0/20, а сверка с воспроизведённой траекторией нормы — 0/15, отсекая норму как посредника и ограничивая область закона задержки по норме. Снятие раздувания нормы превращает рычаг в ускоритель: зажим $\|W\|=45$ грокает 10/10 с медианой $8.6\times$. Оговорки: «правильность» решается на уровне признаков; вклад зажима в $8.6\times$ не отделён от рычага Truong; поздняя версия недоправлена (§6 против §7 о различающем опыте) — числа в карточке.
 
-- `2607.05104` · всего: **0** · в картотеке: **0** · Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters
+- `2607.05104` · всего: **0** · в картотеке: **0** · [Ootani 2026 — Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters](2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters.card.md)
+
+  Одноавторская работа независимого исследователя, меняющая единицу свидетельства: гроккинг — не свойство задачи, а grok-rate по десяти и более семенам в закреплённой числовой обстановке, измеренный на полностью перечислимом трансформере в 11 856 параметров. Для корпуса главное — числовое лезвие (смена порядка суммирования через число потоков CPU переворачивает 49/300 семян, CPU против GPU — 19/100, оба без сдвига совокупной доли: McNemar $p\geq 0.39$) и опровержение трёх собственных одно-прогонных историй как смещений по семенам; плюс обратная U Omnigrok на 12K параметров, порог покрытия по мощности выхода и отрицательный механистический результат — вложения размерности 16 не образуют фурье-окружности. Оговорки: «гроккинг» операционализован без срока задержки и длинной фазы запоминания нет (дообучение предобученной точки); выигрыш декомпозиции прочитан самими авторами как запоминание плотных поддоменов — числа в карточке.
 
 - `2607.06628` · всего: **0** · в картотеке: **0** · Cross-Trajectory Chimera Interventions Reveal Dissociable Roles of Weight Magnitude and Direction in Grokking
 
@@ -828,7 +830,7 @@
 | `2606.26050` | **0** | **0** | [Li, Sreedhar 2026 — Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining](2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining.card.md) |
 | `2606.32000` | **1** | **1** | [Tiwari, Chauhan & Singh 2026 — Radial Suppression Accelerates Algorithmic Generalization: A Geometric Analysis of Delayed Generalization](2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization/2606.32000.radial-suppression-accelerates-algorithmic-generalization-a-geometric-analysis-of-delayed-generalization.card.md) |
 | `2607.04333` | **0** | **0** | [Howe 2026 — Structure-Specific Representational Priors Causally Control the Grokking Delay](2607.04333.structure-specific-representational-priors-causally-control-the-grokking-delay/2607.04333.structure-specific-representational-priors-causally-control-the-grokking-delay.card.md) |
-| `2607.05104` | **0** | **0** | Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters |
+| `2607.05104` | **0** | **0** | [Ootani 2026 — Grokking Is Conditional and Fragile: A Fully-Tractable, Multi-Seed Study at 12K Parameters](2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters.card.md) |
 | `2607.06628` | **0** | **0** | Cross-Trajectory Chimera Interventions Reveal Dissociable Roles of Weight Magnitude and Direction in Grokking |
 | `2607.06639` | **0** | **0** | At-Grok Is Not Converged: A Measurement-Validity Audit for Grokking Representation Metrics |
 | `2607.08350` | **1** | **0** | Grokking and epoch-wise double descent in quantum neural networks |
