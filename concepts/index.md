@@ -55,11 +55,19 @@
 
 Отложенная генерализация лишь до частичной тестовой точности: сеть грокает, но выходит на неполное качество. Открыт Varma et al. (2023) как следствие той же теории эффективности контуров.
 
+### [Поведенческий против истинного грокинга](behavioral-vs-true-grokking.md) (behavioral vs true grokking) — 4 статей
+
+Что засчитывать за гроккинг: скачок точности или скачок вместе со складыванием обобщающего механизма. Различение измеримо — перестройка схемы продолжается тысячи шагов после того, как кривая уже засчитала переход.
+
+### [Фазы: понимание, гроккинг, запоминание, путаница](comprehension-confusion-phases.md) (comprehension / grokking / memorization / confusion) — 3 статей
+
+Разметка плоскости настроек на четыре области по соотношению сроков выхода на порог по двум кривым. Не путать с трёхчастной разметкой времени обучения: там фазы сменяются по ходу прогона, здесь это области в пространстве настроек.
+
+###### cat-2
 ### [Наивная минимизация потерь](nlm.md) (Naive Loss Minimization) — 2 статей
 
 Компонента градиента, снижающая кросс-энтропию простым масштабированием логитов вверх без изменения предсказаний; за точкой переобучения градиент почти целиком уходит в неё, откладывая генерализацию.
 
-###### cat-2
 ## 2. Механизмы и представления (Mechanisms & representations)
 
 ### [Обучение структурированных представлений](structured-representation-learning.md) (structured representation learning) — 53 статей
@@ -129,6 +137,18 @@
 
 Компонента градиента, ортогональная направлению весов или многообразию нулевой потери, — та часть обновлений, что действительно меняет предсказания; одноимённый приём (perp-Grad) оставляет только её.
 
+### [Компромисс сложность–ошибка](model-complexity-error-tradeoff.md) (model complexity / error tradeoff) — 4 статей
+
+Размен между сложностью выученной функции и ошибкой: сеть добивается нулевой ошибки сложным решением, а затем переходит к простому с той же ошибкой. Слабое место рамки названо в ней самой — единой меры сложности нет.
+
+### [Разрежённые решения и скрытый прогресс](sparse-solutions-hidden-progress.md) (sparse solutions / hidden progress) — 4 статей
+
+Монотонное продвижение внутри сети под внешним плато и разрежённость решения, к которому оно ведёт. Отсюда идея скрытых мер прогресса: величина, растущая во время плато и предсказывающая скачок.
+
+### [Полисемантичность и суперпозиция](polysemanticity-superposition.md) (polysemanticity / superposition) — 3 статей
+
+Нейрон, откликающийся на несколько несвязанных признаков, и объяснение этому через наложение большего числа признаков, чем есть направлений. Затрагивает все инструменты разбора грокнувших сетей, которые предполагают одно понятие на направление.
+
 ###### cat-3
 ## 3. Задачи и наборы данных (Tasks & datasets)
 
@@ -160,6 +180,10 @@
 ### [Рассуждение и графы знаний](reasoning-knowledge-graphs.md) (reasoning / knowledge graphs) — 5 статей
 
 Установленная Wang et al. (2024) связь гроккинга со способностью трансформера к неявному рассуждению над параметрическим знанием, представленным графом знаний: вывод новых фактов без явных промежуточных шагов.
+
+### [Гроккинг вне нейросетей](grokking-in-non-neural-models.md) (grokking in non-neural and solvable models) — 4 статей
+
+Отложенная генерализация в моделях, которые не являются глубокими сетями или являются линейными и потому решаются аналитически: гребневая и логистическая регрессия, линейный «учитель — ученик», модель Изинга. Ценность — строгие определения запоминающего и обобщающего решений.
 
 ###### cat-4
 ## 4. Факторы обучения и оптимизации (Training / optimization factors)
@@ -256,6 +280,10 @@
 
 Задержка между подгонкой обучающей выборки и началом обобщения — величина, по которой корпус сравнивает вмешательства. Определяется операционально через пороги, и от выбора определения (первое касание против устойчивого грока) и единиц (шаги, секунды, FLOPs) зависит, какой метод окажется быстрее.
 
+### [Разброс по семенам и воспроизводимость](seed-variance-reproducibility.md) (seed variance / reproducibility) — 13 статей
+
+Расхождение исходов между прогонами, отличающимися только случайным семенем, и вопрос о том, что из сообщённого переживает его смену. Разброс входит в отчёт, служит порогом значимости для отрицательных результатов и определяет устройство опыта: парные ветви из одного состояния против сравнения средних.
+
 ### [Параметр порядка](order-parameter.md) (order parameter) — 12 статей
 
 Макроскопическая величина, резко меняющаяся при пересечении критического порога управляющим параметром, — канонический маркер фазового перехода, перенесённый в теории гроккинга из статистической физики.
@@ -268,11 +296,15 @@
 
 К замороженным активациям присоединяют лёгкий линейный классификатор-зонд; по его точности судят, линейно ли декодируемо интересующее свойство, то есть о структурированности представления.
 
+### [Фазовая диаграмма](phase-diagram.md) (phase diagram) — 8 статей
+
+Карта режимов обучения в координатах гиперпараметров: где сеть запоминает, где грокает, где не обучается вовсе. Бывает двоичной, раскрашенной величиной (сроком) и аналитической — полученной решением уравнения, а не сеткой прогонов.
+
+###### cat-7
 ### [Корреляционные ловушки](correlation-traps.md) (correlation traps) — 4 статей
 
 Аномально большие собственные значения в спектре поэлементно перемешанной матрицы весов, выходящие далеко за верхний край «объёмной» части распределения Марченко-Пастура.
 
-###### cat-7
 ## 7. Теория и формальные результаты (Theory & formal results)
 
 ### [Эффективная теория / статистическая механика](effective-theory-statistical-mechanics.md) (effective theory / statistical mechanics) — 27 статей
@@ -294,6 +326,14 @@
 ### [Колмогоровская сложность](kolmogorov-complexity.md) (Kolmogorov complexity) — 7 статей
 
 Длина минимальной программы, порождающей объект; мера сложности, под которой обобщающее решение проще запоминающего, а отложенная генерализация трактуется как спуск модели к меньшей сложности.
+
+### [Законы масштабирования](scaling-laws.md) (scaling laws) — 5 статей
+
+Степенные зависимости качества от масштаба, перенесённые в разговор о гроккинге как рамка, которой отложенная генерализация противоречит или в которую укладывается. Отдельно стоит закон границы запоминания и обобщения, выводимый из динамики, и спор о том, не порождена ли ступенька мерой.
+
+### [Критичность / критическая точка](criticality-critical-point.md) (criticality / critical point) — 4 статей
+
+Значение управляющего параметра, вблизи которого динамика замедляется настолько, что обобщение приходит с задержкой. Доказано в одной решаемой постановке, перенос на прочие заявлен как догадка; «критический размер данных» — порог другого рода.
 
 ###### cat-8
 ## 8. Заготовки понятий без карточек (Concept stubs — no card yet)
@@ -341,10 +381,6 @@
 
 - 2606.17120: [`"with escape times following Arrhenius scaling"`](../papers/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking/original/2606.17120.noise-driven-escape-from-metastable-phases-explains-grokking.md#p1-2)
 
-### Поведенческий против истинного грокинга (behavioral vs true grokking) — 16 статей
-
-- 2601.09049: [`"such “Fake grokked” transformer lacks"`](../papers/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers/original/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers.md#p3-4)
-
 ### Анализ каузальной роли (causal role analysis) — 0 статей
 
 - 2509.17738: [`"the causal role of either"`](../papers/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking/original/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking.md#p1-2)
@@ -380,10 +416,6 @@
 ### Критическое замедление (critical slowing down) — 2 статей
 
 - 2406.05335: [`"Emergence of critical slowing down in training"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md) ↗
-
-### Критичность / критическая точка (criticality / critical point) — 14 статей
-
-- 2406.05335: [`"natural languages are critical : They lie near a phase transition point"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md#p1-2) ↗
 
 ### Межслойное разделение памяти (cross-layer memory sharing) — 0 статей
 
@@ -533,10 +565,6 @@
 
 - 2310.05918: [`"many of them share a similar high-level idea which is"`](../papers/2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective/original/2310.05918.grokking-as-compression-a-nonlinear-complexity-perspective.md#p1-3)
 
-### Грокинг вне нейросетей (grokking in non-neural models: GP, linear regression) — 20 статей
-
-- 2310.17247: [`"such as Gaussian process (GP) classification, GP regression, linear regression"`](../papers/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md#p1-1)
-
 ### Переносимость грокнутых моделей (grokking transferability) — 0 статей
 
 - 2601.09049: [`"the downstream transferability of “grokked” Transformers remains largely underexplored"`](../papers/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers/original/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers.md#p4-1)
@@ -610,10 +638,6 @@
 
 - 2504.17243: [`"learns an optimal gradient transformation to accelerate"`](../papers/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/original/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.md#p1-2)
 
-### Фазы: confusion и comprehension (confusion / comprehension phases) — 16 статей
-
-- 2306.13253: [`"memorization, comprehension, confusion and grokking"`](../papers/2306.13253.predicting-grokking-long-before-it-happens/original/2306.13253.predicting-grokking-long-before-it-happens.md#p6-1)
-
 ### Сначала менее заметные частоты (less-salient frequency first) — 0 статей
 
 - 2405.17479: [`"initially learn the less salient"`](../papers/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network.card.md#p1-2)
@@ -681,10 +705,6 @@
 ### Коллапс модели (model collapse) — 2 статей
 
 - 2410.03569: [`"Innovation 2: Loss Regularization to Avoid Model Collapse"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md)
-
-### Компромисс сложность–ошибка (model complexity/error tradeoff) — 19 статей
-
-- 2310.17247: [`"\mathcal{L} = \text{error} + \text{complexity}"`](https://arxiv.org/abs/2310.17247)
 
 ### Снижение сложности модели (model complexity reduction) — 0 статей
 
@@ -760,17 +780,9 @@
 
 - 2407.12332: [`"no permutation-equivariant model can achieve small population error"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p1-2)
 
-### Фазовая диаграмма (phase diagram) — 24 статей
-
-- 2205.10343: [`"phase diagrams from a grid search of hyperparameters"`](../papers/2205.10343.towards-understanding-grokking-an-effective-theory-of-representation-learning/original/2205.10343.towards-understanding-grokking-an-effective-theory-of-representation-learning.md#p2-1)
-
 ### Пуассоновская статистика (Poisson statistics) — 1 статей
 
 - 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
-
-### Полисемантичность / суперпозиция (polysemanticity / superposition) — 14 статей
-
-- 2503.23298: [`"polysemantic neurons are activated for multiple features"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-4)
 
 ### Пост-меморизационная динамика (post-memorization dynamics) — 2 статей
 
@@ -808,10 +820,6 @@
 
 - 2407.12332: [`"can generalize with many fewer samples"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p3-8)
 
-### Законы масштабирования (scaling laws) — 21 статей
-
-- 2503.23298: [`"Studies on Scaling Laws (Henighan et al., 2020; Kaplan et al., 2020)"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-3)
-
 ### Селективный рост нормы нейронов (selective norm growth) — 2 статей
 
 - 2303.11873: [`"a small subset of neurons undergoes rapid norm growth"`](../papers/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks/original/2303.11873.a-tale-of-two-circuits-grokking-as-competition-of-sparse-and-dense-subnetworks.md#p1-2)
@@ -836,10 +844,6 @@
 
 - 2506.05718: [`"Sparse Recovery"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md)
 
-### Разрежённые решения и скрытый прогресс (sparse solutions / hidden progress) — 20 статей
-
-- 2405.20233: [`"amplifying sparse solutions through hidden progress"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p9-2)
-
 ### Коллапс спектральной энтропии (spectral entropy collapse) — 1 статей
 
 - 2604.13123: [`"norm expansion followed by entropy collapse"`](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p1-2)
@@ -851,14 +855,6 @@
 ### Спектральная сигнатура осцилляций как предиктор (spectral signature predictor) — 0 статей
 
 - 2306.13253: [`"We propose spectral signature to quantify the oscilla-"`](../papers/2306.13253.predicting-grokking-long-before-it-happens/original/2306.13253.predicting-grokking-long-before-it-happens.md#p2-2)
-
-### Разброс по семенам и воспроизводимость (seed variance / across seeds) — 31 статей
-
-- 2607.05104: [`"Single runs lie in this regime, systematically."`](../papers/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters/original/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters.md#p11-2)
-
-- 2607.20512: [`"Spec groks in only 1/4 seeds"`](../papers/2607.20512.the-active-ingredient-in-muons-grokking/original/2607.20512.the-active-ingredient-in-muons-grokking.md#p6-1)
-
-- 2608.07436: [`"The two arms are identical before the freeze to a maximum absolute difference of zero across every logged evaluation."`](../papers/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers/original/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers.md#fig-3)
 
 ### Ложные измерения индуцируют грокинг (spurious dimensions induce grokking) — 0 статей
 

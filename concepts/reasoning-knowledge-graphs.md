@@ -1,6 +1,6 @@
 # Рассуждение и графы знаний (reasoning / knowledge graphs)
 
-[Композиция групп / некоммутативность](group-composition-non-commutative-s5.md) ← предыдущая карточка, следующая → —
+[Композиция групп / некоммутативность](group-composition-non-commutative-s5.md) ← предыдущая карточка, следующая → [grokking-in-non-neural-models](grokking-in-non-neural-models.md)
 
 [Индекс карточек понятий](index.md), категория: [3. Задачи и наборы данных](index.md#cat-3)\
 → Следующая категория: [4. Факторы обучения и оптимизации](weight-decay.md)\

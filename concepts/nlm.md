@@ -1,6 +1,6 @@
 # Наивная минимизация потерь (Naive Loss Minimization)
 
-[Полу-грокинг](semi-grokking.md) ← предыдущая карточка, следующая → —
+[comprehension-confusion-phases](comprehension-confusion-phases.md) ← предыдущая карточка, следующая → —
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

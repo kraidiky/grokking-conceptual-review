@@ -1,6 +1,6 @@
 # Унгрокинг (ungrokking)
 
-[Катастрофическое забывание](catastrophic-forgetting.md) ← предыдущая карточка, следующая → [Полу-грокинг](semi-grokking.md)
+[Катастрофическое забывание](catastrophic-forgetting.md) ← предыдущая карточка, следующая → [Полугроккинг](semi-grokking.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

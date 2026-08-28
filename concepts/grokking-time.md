@@ -1,6 +1,6 @@
 # Время гроккинга (grokking time)
 
-[Каузальная абляция](causal-ablation-intervention.md) ← предыдущая карточка, следующая → [Параметр порядка](order-parameter.md)
+[Каузальная абляция](causal-ablation-intervention.md) ← предыдущая карточка, следующая → [seed-variance-reproducibility](seed-variance-reproducibility.md)
 
 [Индекс карточек понятий](index.md), категория: [6. Аналитические инструменты и метрики](index.md#cat-6)\
 → Следующая категория: [7. Теория и формальные результаты](effective-theory-statistical-mechanics.md)\
