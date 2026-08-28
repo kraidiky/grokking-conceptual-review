@@ -1,6 +1,6 @@
 # Параметр порядка (order parameter)
 
-[Каузальная абляция](causal-ablation-intervention.md) ← предыдущая карточка, следующая → [Тяжёлохвостовая саморегуляризация](heavy-tailed-self-regularization-htsr.md)
+[Время гроккинга](grokking-time.md) ← предыдущая карточка, следующая → [Тяжёлохвостовая саморегуляризация](heavy-tailed-self-regularization-htsr.md)
 
 [Индекс карточек понятий](index.md), категория: [6. Аналитические инструменты и метрики](index.md#cat-6)\
 → Следующая категория: [7. Теория и формальные результаты](effective-theory-statistical-mechanics.md)\

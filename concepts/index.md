@@ -252,6 +252,10 @@
 
 Методология установления каузальной, а не корреляционной роли компонентов: частоту, контур или признак целенаправленно удаляют или подменяют и измеряют эффект на поведение сети.
 
+### [Время гроккинга](grokking-time.md) (grokking time) — 18 статей
+
+Задержка между подгонкой обучающей выборки и началом обобщения — величина, по которой корпус сравнивает вмешательства. Определяется операционально через пороги, и от выбора определения (первое касание против устойчивого грока) и единиц (шаги, секунды, FLOPs) зависит, какой метод окажется быстрее.
+
 ### [Параметр порядка](order-parameter.md) (order parameter) — 12 статей
 
 Макроскопическая величина, резко меняющаяся при пересечении критического порога управляющим параметром, — канонический маркер фазового перехода, перенесённый в теории гроккинга из статистической физики.
@@ -532,10 +536,6 @@
 ### Грокинг вне нейросетей (grokking in non-neural models: GP, linear regression) — 20 статей
 
 - 2310.17247: [`"such as Gaussian process (GP) classification, GP regression, linear regression"`](../papers/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md#p1-1)
-
-### Время грокинга (grokking time) — 37 статей
-
-- 2601.19791: [`"which we refer to as the “grokking time”"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p1-2)
 
 ### Переносимость грокнутых моделей (grokking transferability) — 0 статей
 
@@ -856,9 +856,9 @@
 
 - 2607.05104: [`"Single runs lie in this regime, systematically."`](../papers/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters/original/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters.md#p11-2)
 
-- 2607.20512: [`"Spec groks in only 1/4 seeds"`](../papers/2607.20512.the-active-ingredient-in-muons-grokking/original/2607.20512.the-active-ingredient-in-muons-grokking.md#p5-1)
+- 2607.20512: [`"Spec groks in only 1/4 seeds"`](../papers/2607.20512.the-active-ingredient-in-muons-grokking/original/2607.20512.the-active-ingredient-in-muons-grokking.md#p6-1)
 
-- 2608.07436: [`"The two arms are identical before the freeze to a maximum absolute difference of zero across every logged evaluation."`](../papers/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers/original/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers.md#p15-3)
+- 2608.07436: [`"The two arms are identical before the freeze to a maximum absolute difference of zero across every logged evaluation."`](../papers/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers/original/2608.07436.post-grokking-collapse-at-the-representation-readout-interface-in-muon-trained-transformers.md#fig-3)
 
 ### Ложные измерения индуцируют грокинг (spurious dimensions induce grokking) — 0 статей
 
