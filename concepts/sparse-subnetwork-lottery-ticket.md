@@ -58,6 +58,8 @@ Bhaskar et al.: вместо *непересекающихся* конкурир
 становится неактивным, сводя сеть к меньшей эффективной подсети
 \[[3.3](#ref-3-3)\].
 
+Ещё одна форма той же подсети выделяется без прунинга: **синергетическая (соработающая) подсеть** — набор признаков, несущих соработу (synergy — теоретико-информационную величину, которую несёт сочетание признаков, но не каждый из них по отдельности). Её размер растёт именно на переходе от запоминания, и вершина тестовой потери приходится на тот же миг \[[3.9](#ref-3-9)\]. Различие с прунингом существенно: там подсеть определяется по весам и данные не нужны, здесь — по откликам на выборке.
+
 ## Альтернативные определения и нюансы
 
 ### A. Конкуренция плотной и разрежённой подсетей (Merrill)
@@ -100,6 +102,9 @@ Bhaskar et al. оспаривают предпосылку о *непересе�
 весов по глубине \[[3.2](#ref-3-2)\]; Zhang et al. наблюдают при гроккинге
 «имплицитный архитектурный отбор» — массовую деактивацию нейронов, сводящую сеть к
 меньшей эффективной подсети \[[3.3](#ref-3-3)\].
+
+###### ref-3-9
+**\[3.9\]** 2408.08944 — Clauw et al., «Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition». Нюанс: подсеть выделяется не прунингом, а по теоретико-информационной мере — как набор признаков, несущих соработу, и её рост совпадает с переходом. [`"a generalizing synergistic sub-network that is growing as it explores"`](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/original/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.md#p3-3). *«[обобщающую соработающую подсеть, растущую по мере поиска](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.card.md#p3-3)»*
 
 ## Ссылки
 

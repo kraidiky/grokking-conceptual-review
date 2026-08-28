@@ -425,10 +425,6 @@
 
 - 2506.04434: [`"Approximate Local Circuit Complexity"`](../papers/2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory/original/2506.04434.grokking-and-generalization-collapse-insights-from-htsr-theory.md#p2-1)
 
-### Круговая геометрия модуля (circular modular geometry) — 0 статей
-
-- 2410.03569: [`"$0$ and $2\pi$, which corresponds to $q$, are equal in this geometry"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p3-4)
-
 ### Очистка убирает меморизацию (cleanup removes memorization) — 0 статей
 
 - 2301.05217: [`"removes the memorization components"`](../papers/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability.card.md#p2-3)
@@ -493,17 +489,9 @@
 
 - 2504.13292: [`"a simple and principled method for accelerating grokking"`](../papers/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model/original/2504.13292.let-me-grok-for-you-accelerating-grokking-via-embedding-transfer-from-a-weaker-model.md#p1-2)
 
-### Эмерджентные способности при масштабировании (emergent abilities scaling) — 0 статей
-
-- 2511.12768: [`"characterized such emergent behaviors as phase transitions"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-6)
-
 ### Градиентный подъём энергетической функции (energy-function gradient ascent) — 0 статей
 
 - 2509.21519: [`"gradient ascent of an energy function E"`](../papers/2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking/original/2509.21519.provable-scaling-laws-of-feature-emergence-from-learning-dynamics-of-grokking.md#p1-2)
-
-### Метрика entropy gap (entropy gap metric) — 0 статей
-
-- 2502.20763: [`"introduces information-theoretic metrics called entropy gap to better help analyze"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-1) ↗
 
 ### Ядро feature learning / RFM (feature-learning kernel, RFM) — 0 статей
 
@@ -622,10 +610,6 @@
 
 - 2405.17479: [`"initially learn the less salient"`](../papers/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network/2405.17479.a-rationale-from-frequency-perspective-for-grokking-in-training-neural-network.card.md#p1-2)
 
-### Детекция в линейном пространстве обучения (linear training-space detection) — 0 статей
-
-- 2511.12768: [`"detected directly in *linear training space*, rather than only after log rescaling"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
-
 ### LLC-траектория как зонд (LLC trajectory probe) — 0 статей
 
 - 2603.01192: [`"LLC trajectories estimated from training data track the onset of generalisation"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-2)
@@ -654,17 +638,9 @@
 
 - 2512.03437: [`"*machine unlearning*, i.e., removing the influence of specified data without full retraining"`](../papers/2512.03437.grokked-models-are-better-unlearners/2512.03437.grokked-models-are-better-unlearners.card.md#p1-2)
 
-### Многообразие стохастических процессов (manifold of stochastic processes) — 0 статей
-
-- 2406.05335: [`"dimensional manifold of stochastic processes parametrized by"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md#fig-1) ↗
-
 ### Матричная энтропия (matrix Renyi entropy metric) — 0 статей
 
 - 2311.06597: [`"The $\alpha$-order (Rényi) entropy for matrix $\mathbf{R}$ is defined as follows"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p3-4)
-
-### Коллапс модели (model collapse) — 2 статей
-
-- 2410.03569: [`"Innovation 2: Loss Regularization to Avoid Model Collapse"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md)
 
 ### Снижение сложности модели (model complexity reduction) — 0 статей
 
@@ -677,10 +653,6 @@
 ### Пути экспертов MoE (MoE expert pathways) — 0 статей
 
 - 2506.21551: [`"expert choices across layers in MoE"`](../papers/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test/2506.21551.grokking-in-llm-pretraining-monitor-memorization-to-generalization-without-test.card.md#p1-2)
-
-### Подавление моносемантичных нейронов (monosemantic neuron inhibition) — 1 статей
-
-- 2503.23298: [`"actively inhibit monosemantic neurons in relatively small neural networks"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-2)
 
 ### Многостадийная генерализация (multi-stage generalization) — 1 статей
 
@@ -726,10 +698,6 @@
 
 - 2407.12332: [`"no permutation-equivariant model can achieve small population error"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p1-2)
 
-### Пуассоновская статистика (Poisson statistics) — 1 статей
-
-- 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
-
 ### Предобусловленный градиентный спуск (preconditioned gradient descent) — 1 статей
 
 - 2601.03162: [`"the impact of preconditioned gradient descent"`](../papers/2601.03162.on-the-convergence-behavior-of-preconditioned-gradient-descent-toward-the-rich-learning-regime/2601.03162.on-the-convergence-behavior-of-preconditioned-gradient-descent-toward-the-rich-learning-regime.card.md#p1-2)
@@ -737,10 +705,6 @@
 ### Проблемно-специфичная регуляризация потерь (problem-specific loss regularization) — 1 статей
 
 - 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-3)
-
-### Доказуемый грокинг в ридж-регрессии (provable grokking in ridge regression) — 1 статей
-
-- 2601.19791: [`"To Grok Grokking: Provable Grokking in Ridge Regression"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md)
 
 ### Квадратичные сети (quadratic networks) — 4 статей
 
@@ -758,14 +722,6 @@
 
 - 2311.06597: [`"the decrease of weight norm usually happens before the grokking on the test dataset, making it seemingly a sufficient condition for grokking but not a necessary condition"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p1-4)
 
-### Граница выборочной сложности (sample complexity bound) — 1 статей
-
-- 2407.12332: [`"can generalize with many fewer samples"`](../papers/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition/original/2407.12332.why-do-you-grok-a-theoretical-analysis-of-grokking-modular-addition.md#p3-8)
-
-### Метрика остроты минимума (sharpness metric) — 1 статей
-
-- 2502.20763: [`"the traditionally used sharpness metric does not fully explain the intricate interplay and introduces information-theoretic metrics called entropy gap"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-1) ↗
-
 ### Упрощённые границы решений (simplified decision boundaries) — 1 статей
 
 - 2510.25966: [`"simplified decision boundaries in the input space"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3)
@@ -773,10 +729,6 @@
 ### Разрежённая аугментация данных (sparse data augmentation) — 0 статей
 
 - 2410.03569: [`"Sparse data elements are critical for learning"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p7-1)
-
-### Разрежённое восстановление (sparse recovery) — 1 статей
-
-- 2506.05718: [`"Sparse Recovery"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md)
 
 ### Коллапс спектральной энтропии (spectral entropy collapse) — 1 статей
 
@@ -794,25 +746,9 @@
 
 - 2310.17247: [`"via the addition of dimensions containing spurious information"`](../papers/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity/2310.17247.grokking-beyond-neural-networks-an-empirical-exploration-with-model-complexity.card.md#p1-1)
 
-### Зондирование подгрупп (subgroup probing) — 0 статей
-
-- 2601.21150: [`"capture subgroup structure within their internal representations which we can access via the linear probing"`](../externals/2601.21150.can-neural-networks-learn-small-algebraic-worlds/2601.21150.can-neural-networks-learn-small-algebraic-worlds.card.md#p7-6) ↗
-
-### Синергетическая подсеть (synergistic subnetwork) — 1 статей
-
-- 2408.08944: [`"generalizing synergistic sub-network that is growing as it"`](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/original/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.md#p3-3)
-
-### Модель Изинга (Ising model task) — 0 статей
-
-- 2510.25966: [`"Grokking in the Ising Model"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md)
-
 ### Ограниченный выход через температуру (temperature-bounded output) — 0 статей
 
 - 2603.05228: [`"logit magnitudes are strictly bounded by the temperature parameter"`](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/original/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.md#p6-7)
-
-### Температурный softmax-сэмплинг (temperature softmax sampling) — 0 статей
-
-- 2406.05335: [`"the $t$-th token $x_{t}$ is drawn from the softmax distribution"`](../externals/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages/original/2406.05335.phase-transition-in-large-language-models-and-the-criticality-of-natural-languages.md#p7-5) ↗
 
 ### Трёхстадийная динамика обучения (three-stage training dynamic) — 1 статей
 
