@@ -137,6 +137,10 @@
 
 Компонента градиента, ортогональная направлению весов или многообразию нулевой потери, — та часть обновлений, что действительно меняет предсказания; одноимённый приём (perp-Grad) оставляет только её.
 
+### [Контур генерализации](generalization-circuit.md) (generalization circuit) — 4 статей
+
+Часть сети, реализующая обобщающее решение, против запоминающего контура. Различение операционально через пару мер прогресса, а граница между контурами получает число — критический размер данных.
+
 ### [Компромисс сложность–ошибка](model-complexity-error-tradeoff.md) (model complexity / error tradeoff) — 4 статей
 
 Размен между сложностью выученной функции и ошибкой: сеть добивается нулевой ошибки сложным решением, а затем переходит к простому с той же ошибкой. Слабое место рамки названо в ней самой — единой меры сложности нет.
@@ -145,11 +149,19 @@
 
 Монотонное продвижение внутри сети под внешним плато и разрежённость решения, к которому оно ведёт. Отсюда идея скрытых мер прогресса: величина, растущая во время плато и предсказывающая скачок.
 
+### [Разрежённость](activation-sparsity.md) (activation and structural sparsity) — 3 статей
+
+Три разных наблюдения под одним именем: разрежённость в фурье-области, в структуре подсети и в отклике. Проверка гипотезы устроена честно — модели с той же разрежённостью строят отдельно.
+
+###### cat-3
 ### [Полисемантичность и суперпозиция](polysemanticity-superposition.md) (polysemanticity / superposition) — 3 статей
 
 Нейрон, откликающийся на несколько несвязанных признаков, и объяснение этому через наложение большего числа признаков, чем есть направлений. Затрагивает все инструменты разбора грокнувших сетей, которые предполагают одно понятие на направление.
 
-###### cat-3
+### [Многообразие исполнения](execution-manifold.md) (execution manifold) — 2 статей
+
+Малоразмерная поверхность в пространстве весов, на которой держится траектория обучения: первая главная компонента забирает 68–83% дисперсии. Задержка — удержание на ней, обобщение — выход.
+
 ## 3. Задачи и наборы данных (Tasks & datasets)
 
 ### [Модульная арифметика](modular-arithmetic.md) (modular arithmetic) — 78 статей
@@ -184,6 +196,14 @@
 ### [Гроккинг вне нейросетей](grokking-in-non-neural-models.md) (grokking in non-neural and solvable models) — 4 статей
 
 Отложенная генерализация в моделях, которые не являются глубокими сетями или являются линейными и потому решаются аналитически: гребневая и логистическая регрессия, линейный «учитель — ученик», модель Изинга. Ценность — строгие определения запоминающего и обобщающего решений.
+
+### [Сдвиг распределения](distribution-shift.md) (distribution shift) — 2 статей
+
+Расхождение между обучающей и проверочной раздачей: и объяснение задержки (разрежённость данных порождает сдвиг), и условие, в котором гроккнувшую модель проверяют на прочность.
+
+### [Систематическая генерализация](systematic-generalization.md) (systematic / hierarchical generalization) — 2 статей
+
+Обобщение на структурно новые входы, где обучающую выборку одинаково объясняют два правила, а проверочная различает их. Отсюда структурный гроккинг и его немонотонная зависимость от глубины.
 
 ###### cat-4
 ## 4. Факторы обучения и оптимизации (Training / optimization factors)
@@ -238,6 +258,10 @@
 
 Вопрос, в какую сторону и по какому закону сила weight decay сдвигает гроккинг, — одна из немногих точек корпуса, где эмпирические свидетельства формально противоречат друг другу.
 
+### [Переопараметризация и глубина](overparameterization-depth.md) (overparameterization / depth) — 5 статей
+
+Избыток параметров относительно данных и число слоёв как управляющие величины. Глубина действует немонотонно: провал на средней глубине лечится не слоями, а стабилизацией; переопараметризация — обычное условие опытов, а не необходимая часть явления.
+
 ###### cat-5
 ## 5. Интервенции и методы (Interventions & methods)
 
@@ -256,6 +280,10 @@
 ### [Сферическое ограничение нормы](spherical-weight-norm-constraint.md) (spherical weight-norm constraint) — 11 статей
 
 Интервенция, удерживающая L2-норму весов или активаций фиксированной: параметры принудительно кладутся на сферу, масштабная степень свободы устраняется, и информация кодируется только направлением.
+
+### [Ускорение гроккинга](accelerated-grokking.md) (accelerated grokking) — 3 статей
+
+Семейство вмешательств, сокращающих задержку: в градиент, в начальное вложение, в параметры по ходу, в норму. Общая слабость — выигрыш меряется в шагах, а не в секундах, и часто на одном семени.
 
 ###### cat-6
 ## 6. Аналитические инструменты и метрики (Analytical tools & metrics)
@@ -300,11 +328,15 @@
 
 Карта режимов обучения в координатах гиперпараметров: где сеть запоминает, где грокает, где не обучается вовсе. Бывает двоичной, раскрашенной величиной (сроком) и аналитической — полученной решением уравнения, а не сеткой прогонов.
 
-###### cat-7
 ### [Корреляционные ловушки](correlation-traps.md) (correlation traps) — 4 статей
 
 Аномально большие собственные значения в спектре поэлементно перемешанной матрицы весов, выходящие далеко за верхний край «объёмной» части распределения Марченко-Пастура.
 
+### [Отрицательные результаты](negative-results.md) (negative results) — 4 статей
+
+Измерения, показывающие, что ожидаемого действия нет. Требуют того же, что и положительные: объявленного ожидания, меры и порога значимости — которым служит разброс по семенам.
+
+###### cat-7
 ## 7. Теория и формальные результаты (Theory & formal results)
 
 ### [Эффективная теория / статистическая механика](effective-theory-statistical-mechanics.md) (effective theory / statistical mechanics) — 27 статей
@@ -335,7 +367,15 @@
 
 Значение управляющего параметра, вблизи которого динамика замедляется настолько, что обобщение приходит с задержкой. Доказано в одной решаемой постановке, перенос на прочие заявлен как догадка; «критический размер данных» — порог другого рода.
 
+### [Информационное узкое место](information-bottleneck.md) (information bottleneck) — 3 статей
+
+Рамка сжатия входа при сохранении сведений о цели, предсказывающая подгонку и затем сжатие. В корпусе держится как словарь, общий с двойным спуском и гроккингом, а её место как измеримой величины заняли вычислимые меры сложности.
+
 ###### cat-8
+### [Сингулярная теория обучения](singular-learning-theory.md) (singular learning theory, SLT) — 2 статей
+
+Рамка, исходящая из того, что сети — сингулярные статистические модели, а множество минимумов есть многообразие с особенностями. Центральная величина — местный коэффициент обучения; подтверждение в корпусе смешанное.
+
 ## 8. Заготовки понятий без карточек (Concept stubs — no card yet)
 
 Записи этой категории — заготовки: название, английский термин и уже выписанные
@@ -353,17 +393,9 @@
 
 - 2504.17243: [`"a novel Absolute Gradient Entropy (AGE) metric"`](../papers/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/original/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.md#p1-2)
 
-### Ускоренный грокинг (accelerated grokking, EGD) — 7 статей
-
-- 2510.04930: [`"Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking"`](../papers/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking/original/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking.md)
-
 ### Контроль через нелинейность активации (activation nonlinearity control) — 0 статей
 
 - 2411.05353: [`"can be controlled by modifying the profile of the activation function"`](../papers/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry/original/2411.05353.controlling-grokking-with-nonlinearity-and-data-symmetry.md#p1-5)
-
-### Разрежённость активаций (activation sparsity) — 6 статей
-
-- 2510.25966: [`"The activation sparsity, e.g. the fraction of"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3)
 
 ### Адаптивное ядро для feature learning (adaptive kernel feature learning) — 0 статей
 
@@ -437,10 +469,6 @@
 
 - 2604.00316: [`"Breaking Data Symmetry is Needed For Generalization in Feature Learning Kernels"`](../papers/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/original/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.md#p1-1)
 
-### Сдвиг распределения (distribution shift) — 9 статей
-
-- 2511.04760: [`"in data-scarce settings under distribution shift"`](../papers/2511.04760.when-data-falls-short-grokking-below-the-critical-threshold/original/2511.04760.when-data-falls-short-grokking-below-the-critical-threshold.md#p3-1)
-
 ### Dropout устраняет грокинг (dropout eliminates grokking) — 0 статей
 
 - 2510.25966: [`"dropout can eliminate grokking"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-2)
@@ -484,10 +512,6 @@
 ### Метрика entropy gap (entropy gap metric) — 0 статей
 
 - 2502.20763: [`"introduces information-theoretic metrics called entropy gap to better help analyze"`](../externals/2502.20763.information-theoretic-perspectives-on-optimizers/2502.20763.information-theoretic-perspectives-on-optimizers.card.md#p1-1) ↗
-
-### Многообразие исполнения (execution manifold) — 6 статей
-
-- 2602.16746: [`"trajectory during grokking lies on a low-dimensional execution manifold"`](../papers/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking/original/2602.16746.low-dimensional-and-transversely-curved-optimization-dynamics-in-grokking.md#p2-1)
 
 ### Ядро feature learning / RFM (feature-learning kernel, RFM) — 0 статей
 
@@ -536,10 +560,6 @@
 ### Гауссово feature learning (Gaussian Feature Learning, GFL) — 1 статей
 
 - 2310.03789: [`"that of Gaussian Feature Learning (GFL)"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-4)
-
-### Контур генерализации (Generalization Circuit) — 7 статей
-
-- 2601.09049: [`"the emergence of a “Generalization Circuit”"`](../papers/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers/original/2601.09049.is-grokking-worthwhile-functional-analysis-and-transferability-of-generalization-circuits-in-transformers.md#p1-7)
 
 ### Геометрические сигнатуры генерализации (geometric signatures) — 1 статей
 
@@ -604,10 +624,6 @@
 ### Метрика неактивных нейронов (inactive neurons metric) — 0 статей
 
 - 2507.11645: [`"percentage of inactive neurons decreases during generalization"`](../papers/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation/original/2507.11645.tracing-the-path-to-grokking-embeddings-dropout-and-network-activation.md#p1-5)
-
-### Информационное узкое место (information bottleneck) — 6 статей
-
-- 2509.20829: [`"the information bottleneck principle"`](../papers/2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence/2509.20829.explaining-grokking-and-information-bottleneck-through-neural-collapse-emergence.card.md#p1-2)
 
 ### Недостаточная выборка / алиасинг (insufficient sampling / aliasing) — 1 статей
 
@@ -734,12 +750,6 @@
 
 - 2408.08944: [`"higher-order mutual information to analyze the"`](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/original/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.md#p1-2)
 
-### Отрицательные результаты (negative results / reported failure modes) — 8 статей
-
-- 2607.05104: [`"We also report a clear negative result."`](../papers/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters/original/2607.05104.grokking-is-conditional-and-fragile-a-fully-tractable-multi-seed-study-at-12k-parameters.md#p10-1)
-
-- 2607.20552: [`"We emphasize the failure modes as a contribution in their own right."`](../papers/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat/original/2607.20552.thermodynamic-weight-decay-exploring-grokking-acceleration-via-attention-specific-heat.md#p7-2)
-
 ### Натуральный градиентный спуск (natural gradient descent) — 1 статей
 
 - 2510.04930: [`"formal links to natural gradient descent"`](../papers/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking/original/2510.04930.egalitarian-gradient-descent-a-simple-approach-to-accelerated-grokking.md#p1-6)
@@ -755,10 +765,6 @@
 ### Разрыв OOD-генерализации (OOD generalization gap) — 0 статей
 
 - 2403.03942: [`"generalize very differently to adversarial out-of-domain (OOD) evaluation sets"`](../papers/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md#p1-5)
-
-### Переопараметризация / глубина и грокинг (overparameterization / depth) — 11 статей
-
-- 2506.05718: [`"depth makes it possible to grok or ungrok simply from"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p2-3)
 
 ### Принцип экономии / MDL (parsimony / MDL complexity) — 4 статей
 
@@ -832,10 +838,6 @@
 
 - 2510.25966: [`"simplified decision boundaries in the input space"`](../papers/2510.25966.grokking-in-the-ising-model/original/2510.25966.grokking-in-the-ising-model.md#p2-3)
 
-### Сингулярная теория обучения (Singular Learning Theory, SLT) — 6 статей
-
-- 2603.01192: [`"through the lens of Singular Learning"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-2)
-
 ### Разрежённая аугментация данных (sparse data augmentation) — 0 статей
 
 - 2410.03569: [`"Sparse data elements are critical for learning"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p7-1)
@@ -867,10 +869,6 @@
 ### Синергетическая подсеть (synergistic subnetwork) — 1 статей
 
 - 2408.08944: [`"generalizing synergistic sub-network that is growing as it"`](../papers/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition/original/2408.08944.information-theoretic-progress-measures-reveal-grokking-is-an-emergent-phase-transition.md#p3-3)
-
-### Систематическая OOD-генерализация (systematic generalization) — 7 статей
-
-- 2405.15071: [`"fail to systematically generalize for composition but succeed for comparison"`](../papers/2405.15071.grokked-transformers-are-implicit-reasoners/2405.15071.grokked-transformers-are-implicit-reasoners.card.md#p1-2)
 
 ### Задачи: изображения, языки, графы (images / languages / graphs) — 11 статей
 

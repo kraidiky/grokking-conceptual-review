@@ -1,6 +1,6 @@
 # Гроккинг вне нейросетей (grokking in non-neural and solvable models)
 
-[Рассуждение и графы знаний](reasoning-knowledge-graphs.md) ← предыдущая карточка, следующая → —
+[Рассуждение и графы знаний](reasoning-knowledge-graphs.md) ← предыдущая карточка, следующая → [Сдвиг распределения](distribution-shift.md)
 
 [Индекс карточек понятий](index.md), категория: [3. Задачи и наборы данных](index.md#cat-3)\
 → Следующая категория: [4. Факторы обучения и оптимизации](weight-decay.md)\

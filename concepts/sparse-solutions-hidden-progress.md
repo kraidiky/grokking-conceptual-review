@@ -1,6 +1,6 @@
 # Разрежённые решения и скрытый прогресс (sparse solutions / hidden progress)
 
-[model-complexity-error-tradeoff](model-complexity-error-tradeoff.md) ← предыдущая карточка, следующая → [polysemanticity-superposition](polysemanticity-superposition.md)
+[model-complexity-error-tradeoff](model-complexity-error-tradeoff.md) ← предыдущая карточка, следующая → [activation-sparsity](activation-sparsity.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

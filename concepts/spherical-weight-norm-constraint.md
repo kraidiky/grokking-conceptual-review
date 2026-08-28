@@ -1,6 +1,6 @@
 # Сферическое ограничение нормы (spherical weight-norm constraint)
 
-[Замораживание подсети / edge-popup](freezing-subnetwork.md) ← предыдущая карточка, следующая → —
+[Замораживание подсети / edge-popup](freezing-subnetwork.md) ← предыдущая карточка, следующая → [accelerated-grokking](accelerated-grokking.md)
 
 [Индекс карточек понятий](index.md), категория: [5. Интервенции и методы](index.md#cat-5)\
 → Следующая категория: [6. Аналитические инструменты и метрики](progress-measures.md)\

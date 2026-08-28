@@ -1,6 +1,6 @@
 # Компромисс сложность–ошибка (model complexity / error tradeoff)
 
-[Ортогональность градиента](orthogonal-gradient-perp-grad.md) ← предыдущая карточка, следующая → [sparse-solutions-hidden-progress](sparse-solutions-hidden-progress.md)
+[generalization-circuit](generalization-circuit.md) ← предыдущая карточка, следующая → [sparse-solutions-hidden-progress](sparse-solutions-hidden-progress.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

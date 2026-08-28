@@ -1,6 +1,6 @@
 # Доля данных / критический размер набора (data fraction / critical dataset size)
 
-[Weight decay / L2-регуляризация](weight-decay.md) ← предыдущая карточка, следующая → [Оптимизатор](optimizer-adam-adamw-sgd.md)
+[Weight decay](weight-decay.md) ← предыдущая карточка, следующая → [Оптимизатор](optimizer-adam-adamw-sgd.md)
 
 [Индекс карточек понятий](index.md), категория: [4. Факторы обучения и оптимизации](index.md#cat-4)\
 → Следующая категория: [5. Интервенции и методы](gradient-low-pass-filtering.md)\
