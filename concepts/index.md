@@ -127,6 +127,10 @@
 
 Два качественно различных внутренних контура, к которым сеть сходится на модульном сложении, — «Часы» и «Пицца»; различие введено Zhong et al. как свидетельство неединственности выученного алгоритма.
 
+### [Внутренняя симметрия задачи](intrinsic-task-symmetry.md) (intrinsic task symmetry) — 9 статей
+
+Инвариантность порождающего правила относительно преобразования входа — коммутативности, ассоциативности, транзитивности — объявленная причиной обобщения, а не его спутницей. Обратная сторона: та же симметрия в ядровом режиме обобщение запрещает.
+
 ### [Частотный принцип / спектральное смещение](frequency-principle-spectral-bias.md) (frequency principle / spectral bias) — 7 статей
 Слитые алиасы: frequency-principle / spectral-bias / F-Principle / frequency-perspective.
 
@@ -137,6 +141,15 @@
 
 Компонента градиента, ортогональная направлению весов или многообразию нулевой потери, — та часть обновлений, что действительно меняет предсказания; одноимённый приём (perp-Grad) оставляет только её.
 
+### [Гипотеза универсальности](universality-hypothesis.md) (universality hypothesis) — 6 статей
+
+Сети, обученные схожим задачам, приходят к схожему устройству — предположение, без которого разбор одной грокнувшей сети ничего не говорит о следующей. На уровне нейронов опровергнуто, на уровне отвлечённого алгоритма заявлено заново. Омоним из физики — класс универсальности — к нему отношения не имеет.
+
+### [Приближённая китайская теорема об остатках](approximate-chinese-remainder-theorem.md) (approximate Chinese Remainder Theorem, aCRT) — 4 статей
+
+Отвлечённое описание того, что сеть вычисляет, грокнув модульную арифметику: разложение на подсистемы по остаткам с пересечением ответов. Опирается на ослабленное понятие смежного класса — близость по графу Кэли вместо точного деления модуля.
+
+###### cat-3
 ### [Контур генерализации](generalization-circuit.md) (generalization circuit) — 4 статей
 
 Часть сети, реализующая обобщающее решение, против запоминающего контура. Различение операционально через пару мер прогресса, а граница между контурами получает число — критический размер данных.
@@ -153,7 +166,6 @@
 
 Три разных наблюдения под одним именем: разрежённость в фурье-области, в структуре подсети и в отклике. Проверка гипотезы устроена честно — модели с той же разрежённостью строят отдельно.
 
-###### cat-3
 ### [Многообразие исполнения](execution-manifold.md) (execution manifold) — 3 статей
 
 Малоразмерная поверхность в пространстве весов, на которой держится траектория обучения: первая главная компонента забирает 68–83% дисперсии. Задержка — удержание на ней, обобщение — выход.
@@ -262,6 +274,10 @@
 
 Избыток параметров относительно данных и число слоёв как управляющие величины. Глубина действует немонотонно: провал на средней глубине лечится не слоями, а стабилизацией; переопараметризация — обычное условие опытов, а не необходимая часть явления.
 
+### [Архитектурное индуктивное смещение](architectural-inductive-bias.md) (architectural inductive bias) — 4 статей
+
+Предпочтение решений, заложенное устройством сети до обучения: топологией остаточного потока, нормировкой, способом смешивания токенов. Задержку удаётся обойти архитектурой, но лишь при согласии её предпочтений с симметрией задачи — отрицательный контроль на некоммутативной группе это и показывает.
+
 ###### cat-5
 ## 5. Интервенции и методы (Interventions & methods)
 
@@ -367,11 +383,15 @@
 
 Степенные зависимости качества от масштаба, перенесённые в разговор о гроккинге как рамка, которой отложенная генерализация противоречит или в которую укладывается. Отдельно стоит закон границы запоминания и обобщения, выводимый из динамики, и спор о том, не порождена ли ступенька мерой.
 
+### [Квадратичные сети](quadratic-networks.md) (quadratic networks) — 4 статей
+
+Двухслойные сети с активацией $x^2$ — наименьшее отступление от линейности, при котором обучение признакам ещё есть, а выкладки ещё возможны. На них сошлись три несвязанные рамки: точное решение, граница выборочной сложности и байесовская геометрия ландшафта.
+
+###### cat-8
 ### [Информационное узкое место](information-bottleneck.md) (information bottleneck) — 3 статей
 
 Рамка сжатия входа при сохранении сведений о цели, предсказывающая подгонку и затем сжатие. В корпусе держится как словарь, общий с двойным спуском и гроккингом, а её место как измеримой величины заняли вычислимые меры сложности.
 
-###### cat-8
 ### [Сингулярная теория обучения](singular-learning-theory.md) (singular learning theory, SLT) — 3 статей
 
 Рамка, исходящая из того, что сети — сингулярные статистические модели, а множество минимумов есть многообразие с особенностями. Центральная величина — местный коэффициент обучения; подтверждение в корпусе смешанное.
@@ -400,14 +420,6 @@
 ### Адаптивное ядро для feature learning (adaptive kernel feature learning) — 0 статей
 
 - 2310.03789: [`"the adaptive kernel approach, to two teacher-student models"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-2)
-
-### Приближённая китайская теорема об остатках (approximate CRT) — 2 статей
-
-- 2505.18266: [`"we call the approximate Chinese Remainder Theorem"`](../papers/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/original/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.md#p1-2)
-
-### Архитектурное индуктивное смещение (architectural inductive bias) — 4 статей
-
-- 2603.05228: [`"bypassing the generalization delay is possible—but strictly depends on alignment between architectural priors and task symmetry"`](../papers/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology/original/2603.05228.the-geometric-inductive-bias-of-grokking-bypassing-phase-transitions-via-architectural-topology.md#p1-2)
 
 ### Аррениусовское масштабирование (Arrhenius scaling) — 1 статей
 
@@ -589,11 +601,6 @@
 
 - 2410.04489: [`"the interpolation threshold, reminiscent of critical"`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-2)
 
-### Внутренняя симметрия задачи (intrinsic task symmetry) — 1 статей
-
-- 2201.02177: [`"Some of the operations listed in Figure 2 (right) are symmetric with respect to the order of the"`](../papers/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets/2201.02177.grokking-generalization-beyond-overfitting-on-small-algorithmic-datasets.card.md#p3-4)
-- 2603.01968: [`"we propose that intrinsic task symmetry is"`](../papers/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/original/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.md#p1-5)
-
 ### Дистилляция знаний (knowledge distillation) — 2 статей
 
 - 2511.04760: [`"Knowledge Distillation (KD) from a model that has already"`](../papers/2511.04760.when-data-falls-short-grokking-below-the-critical-threshold/original/2511.04760.when-data-falls-short-grokking-below-the-critical-threshold.md#p1-3)
@@ -706,10 +713,6 @@
 
 - 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-3)
 
-### Квадратичные сети (quadratic networks) — 4 статей
-
-- 2603.01192: [`"a basin-selection perspective on grokking in quadratic networks"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-2)
-
 ### Относительная плоскостность (relative flatness) — 1 статей
 
 - 2509.17738: [`"the Hessian trace normalized by the weight"`](../papers/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking/original/2509.17738.flatness-is-necessary-neural-collapse-is-not-rethinking-generalization-via-grokking.md#p2-2)
@@ -765,10 +768,6 @@
 ### Эффект туннеля (tunnel effect) — 1 статей
 
 - 2405.19454: [`"Emergence of *Tunnel* on various depth of models"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#fig-3)
-
-### Гипотеза универсальности (universality hypothesis) — 2 статей
-
-- 2505.18266: [`"We propose a testable universality hypothesis"`](../papers/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks/original/2505.18266.uncovering-a-universal-abstract-algorithm-for-modular-addition-in-neural-networks.md#p1-2)
 
 ### Энтропия весов (weight entropy metric) — 0 статей
 

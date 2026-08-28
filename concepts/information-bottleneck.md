@@ -1,6 +1,6 @@
 # Информационное узкое место (information bottleneck)
 
-[Законы масштабирования](scaling-laws.md) ← предыдущая карточка, следующая → [Сингулярная теория обучения](singular-learning-theory.md)
+[quadratic-networks](quadratic-networks.md) ← предыдущая карточка, следующая → [Сингулярная теория обучения](singular-learning-theory.md)
 
 [Индекс карточек понятий](index.md), категория: [7. Теория и формальные результаты](index.md#cat-7)\
 → Следующая категория: [1. Явления](grokking.md)\

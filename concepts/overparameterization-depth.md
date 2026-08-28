@@ -1,6 +1,6 @@
 # Переопараметризация и глубина (overparameterization / depth)
 
-[Направление влияния weight decay](weight-decay-direction.md) ← предыдущая карточка, следующая → —
+[Направление влияния weight decay](weight-decay-direction.md) ← предыдущая карточка, следующая → [architectural-inductive-bias](architectural-inductive-bias.md)
 
 [Индекс карточек понятий](index.md), категория: [4. Факторы обучения и оптимизации](index.md#cat-4)\
 → Следующая категория: [5. Интервенции и методы](gradient-low-pass-filtering.md)\

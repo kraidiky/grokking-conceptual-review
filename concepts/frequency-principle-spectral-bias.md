@@ -1,6 +1,6 @@
 # Частотный принцип / спектральное смещение (frequency principle / spectral bias)
 
-[Алгоритмы Clock и Pizza](clock-vs-pizza.md) ← предыдущая карточка, следующая → [Ортогональность градиента](orthogonal-gradient-perp-grad.md)
+[intrinsic-task-symmetry](intrinsic-task-symmetry.md) ← предыдущая карточка, следующая → [Ортогональность градиента](orthogonal-gradient-perp-grad.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

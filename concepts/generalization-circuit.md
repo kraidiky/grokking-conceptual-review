@@ -1,6 +1,6 @@
 # Контур генерализации (generalization circuit)
 
-[Ортогональность градиента](orthogonal-gradient-perp-grad.md) ← предыдущая карточка, следующая → [model-complexity-error-tradeoff](model-complexity-error-tradeoff.md)
+[approximate-chinese-remainder-theorem](approximate-chinese-remainder-theorem.md) ← предыдущая карточка, следующая → [model-complexity-error-tradeoff](model-complexity-error-tradeoff.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

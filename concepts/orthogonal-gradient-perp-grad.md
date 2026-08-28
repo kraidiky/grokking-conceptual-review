@@ -1,6 +1,6 @@
 # Ортогональность градиента (orthogonal gradient / perp-Grad)
 
-[Частотный принцип / спектральное смещение](frequency-principle-spectral-bias.md) ← предыдущая карточка, следующая → [generalization-circuit](generalization-circuit.md)
+[Частотный принцип / спектральное смещение](frequency-principle-spectral-bias.md) ← предыдущая карточка, следующая → [Гипотеза универсальности](universality-hypothesis.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

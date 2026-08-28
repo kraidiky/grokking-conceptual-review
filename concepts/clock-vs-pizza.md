@@ -1,6 +1,6 @@
 # Алгоритмы Clock и Pizza (Clock vs Pizza)
 
-[Нейронный коллапс](neural-collapse.md) ← предыдущая карточка, следующая → [Частотный принцип / спектральное смещение](frequency-principle-spectral-bias.md)
+[Нейронный коллапс](neural-collapse.md) ← предыдущая карточка, следующая → [intrinsic-task-symmetry](intrinsic-task-symmetry.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

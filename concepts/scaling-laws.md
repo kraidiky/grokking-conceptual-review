@@ -1,6 +1,6 @@
 # Законы масштабирования (scaling laws)
 
-[Критичность / критическая точка](criticality-critical-point.md) ← предыдущая карточка, следующая → [information-bottleneck](information-bottleneck.md)
+[Критичность / критическая точка](criticality-critical-point.md) ← предыдущая карточка, следующая → [quadratic-networks](quadratic-networks.md)
 
 [Индекс карточек понятий](index.md), категория: [7. Теория и формальные результаты](index.md#cat-7)\
 → Следующая категория: [1. Явления](grokking.md)\

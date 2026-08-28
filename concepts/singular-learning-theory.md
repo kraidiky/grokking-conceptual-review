@@ -1,6 +1,6 @@
 # Сингулярная теория обучения (singular learning theory, SLT)
 
-[information-bottleneck](information-bottleneck.md) ← предыдущая карточка, следующая → —
+[Информационное узкое место](information-bottleneck.md) ← предыдущая карточка, следующая → —
 
 [Индекс карточек понятий](index.md), категория: [7. Теория и формальные результаты](index.md#cat-7)\
 → Следующая категория: [1. Явления](grokking.md)\
