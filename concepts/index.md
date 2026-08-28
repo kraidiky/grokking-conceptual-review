@@ -37,6 +37,11 @@
 
 Численная нестабильность: без регуляризации обучение выталкивает модель на край численной стабильности, ошибки плавающей точки в softmax останавливают обучение и препятствуют гроккингу. Введено Prieto et al. (2025).
 
+### [Анти-грокинг / коллапс генерализации](anti-grokking.md) (anti-grokking / generalization collapse) — 9 статей
+Слитые алиасы: anti-grokking / generalization-collapse.
+
+Третья фаза после гроккинга: при очень долгом продолжении обучения тестовая точность обрушивается обратно к низкой, тогда как обучающая остаётся насыщенной. Введено Prakash & Martin (2025).
+
 ### [Катастрофическое забывание](catastrophic-forgetting.md) (catastrophic forgetting) — 9 статей
 
 Резкая утрата ранее усвоенного при продолжении обучения на новых данных или изменённом распределении; в контексте гроккинга — объяснение потери уже достигнутого обобщающего решения.
@@ -50,11 +55,6 @@
 
 Отложенная генерализация лишь до частичной тестовой точности: сеть грокает, но выходит на неполное качество. Открыт Varma et al. (2023) как следствие той же теории эффективности контуров.
 
-### [Анти-грокинг / коллапс генерализации](anti-grokking.md) (anti-grokking / generalization collapse) — 9 статей
-Слитые алиасы: anti-grokking / generalization-collapse.
-
-Третья фаза после гроккинга: при очень долгом продолжении обучения тестовая точность обрушивается обратно к низкой, тогда как обучающая остаётся насыщенной. Введено Prakash & Martin (2025).
-
 ### [Наивная минимизация потерь](nlm.md) (Naive Loss Minimization) — 2 статей
 
 Компонента градиента, снижающая кросс-энтропию простым масштабированием логитов вверх без изменения предсказаний; за точкой переобучения градиент почти целиком уходит в неё, откладывая генерализацию.
@@ -66,13 +66,18 @@
 
 Объяснение гроккинга: генерализация возникает из постепенного формирования структурированных внутренних представлений, кодирующих устройство задачи, а не из самого запоминания примеров.
 
+### [Фурье-признаки и контуры](fourier-features-circuits.md) (Fourier features / circuits) — 49 статей
+
+Периодические представления входов на немногих ключевых частотах и подсети, складывающие числа через тригонометрические тождества, — язык описания решений модульной арифметики, идущий от разбора Nanda et al.
+
+
 ### [Возникновение признаков](feature-emergence-feature-learning.md) (feature emergence / feature learning) — 38 статей
 
 Появление в ходе обучения признаков, кодирующих устройство задачи; генерализация совпадает с возникновением структуры в эмбеддингах, нарастающей всё время плато.
 
-### [Фурье-признаки и контуры](fourier-features-circuits.md) (Fourier features / circuits) — 49 статей
+### [Ландшафт потерь / бассейны](loss-landscape-basins.md) (loss landscape / basins) — 32 статей
 
-Периодические представления входов на немногих ключевых частотах и подсети, складывающие числа через тригонометрические тождества, — язык описания решений модульной арифметики, идущий от разбора Nanda et al.
+Геометрия функции потерь над пространством весов: отложенная генерализация описывается как перемещение оптимизационной траектории между бассейнами — из запоминающего минимума в обобщающий.
 
 
 ### [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) (lazy-to-rich / kernel-to-feature-learning transition) — 31 статей
@@ -83,11 +88,6 @@
 ### [Эффективность контуров](circuit-efficiency.md) (circuit efficiency) — 28 статей
 
 Свойство контура выдавать нужные логиты при меньшей норме параметров; когда несколько контуров одинаково решают обучающую выборку, weight decay отбирает более эффективный. Основа объяснений гроккинга, унгрокинга и полу-грокинга у Varma et al.
-
-
-### [Ландшафт потерь / бассейны](loss-landscape-basins.md) (loss landscape / basins) — 32 статей
-
-Геометрия функции потерь над пространством весов: отложенная генерализация описывается как перемещение оптимизационной траектории между бассейнами — из запоминающего минимума в обобщающий.
 
 
 ### [Сжатие многообразия представлений](manifold-representation-compression.md) (manifold / representation compression) — 25 статей
@@ -348,7 +348,7 @@
 
 ### Очистка убирает меморизацию (cleanup removes memorization) — 1 статей
 
-- 2301.05217: [`"removes the memorization components"`](../papers/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability.card.md#p2-4)
+- 2301.05217: [`"removes the memorization components"`](../papers/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability/2301.05217.progress-measures-for-grokking-via-mechanistic-interpretability.card.md#p2-3)
 
 ### Со-грокинг в мультизадачном обучении (co-grokking) — 1 статей
 
@@ -444,7 +444,7 @@
 
 ### Ядро feature learning / RFM (feature-learning kernel, RFM) — 1 статей
 
-- 2604.00316: [`"via the Recursive Feature Machine (RFM)"`](../papers/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/original/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.md#p1-5)
+- 2604.00316: [`"via the Recursive Feature Machine (RFM)"`](../papers/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels/original/2604.00316.breaking-data-symmetry-is-needed-for-generalization-in-feature-learning-kernels.md#p1-4)
 
 ### Коллапс ранга признаков (feature rank collapse) — 1 статей
 
@@ -452,11 +452,11 @@
 
 ### Конечно-размерное масштабирование (finite-size scaling, FSS) — 1 статей
 
-- 2603.24746: [`"finite-size scaling (FSS) pro-"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-5)
+- 2603.24746: [`"finite-size scaling (FSS) provides precisely the sequential diagnostic protocol"`](../papers/2603.24746.grokking-as-a-falsifiable-finite-size-transition/2603.24746.grokking-as-a-falsifiable-finite-size-transition.card.md#p1-4)
 
 ### Плоские минимумы и генерализация (flat minima generalization) — 1 статей
 
-- 2603.01192: [`"“flatter” regions of the loss landscape generalise better"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-5)
+- 2603.01192: [`"“flatter” regions of the loss landscape generalise better"`](../papers/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory/2603.01192.a-basin-selection-perspective-on-grokking-via-singular-learning-theory.card.md#p1-4)
 
 ### Регуляризация к плоскостности (flatness regularization) — 1 статей
 
@@ -488,7 +488,7 @@
 
 ### Гауссово feature learning (Gaussian Feature Learning, GFL) — 1 статей
 
-- 2310.03789: [`"that of Gaussian Feature Learning (GFL)"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-5)
+- 2310.03789: [`"that of Gaussian Feature Learning (GFL)"`](../papers/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks/original/2310.03789.grokking-as-a-first-order-phase-transition-in-two-layer-networks.md#p1-4)
 
 ### Контур генерализации (Generalization Circuit) — 1 статей
 
@@ -613,7 +613,7 @@
 
 ### Детекция в линейном пространстве обучения (linear training-space detection) — 1 статей
 
-- 2511.12768: [`"detected directly in *linear training space*, rather than only after log rescaling"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-5)
+- 2511.12768: [`"detected directly in *linear training space*, rather than only after log rescaling"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
 
 ### LLC-траектория как зонд (LLC trajectory probe) — 1 статей
 
@@ -721,7 +721,7 @@
 
 ### Переопараметризация / глубина и грокинг (overparameterization / depth) — 1 статей
 
-- 2506.05718: [`"depth makes it possible to grok or ungrok simply from"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p2-4)
+- 2506.05718: [`"depth makes it possible to grok or ungrok simply from"`](../papers/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters/original/2506.05718.grokking-beyond-the-euclidean-norm-of-model-parameters.md#p2-3)
 
 ### Принцип экономии / MDL (parsimony / MDL complexity) — 1 статей
 
@@ -749,11 +749,11 @@
 
 ### Пуассоновская статистика (Poisson statistics) — 1 статей
 
-- 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-5)
+- 2511.12768: [`"we apply Poisson and sub-Poisson statistics to quantify how words connect"`](../papers/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models/original/2511.12768.evidence-of-phase-transitions-in-small-transformer-based-language-models.md#p1-4)
 
 ### Полисемантичность / суперпозиция (polysemanticity / superposition) — 1 статей
 
-- 2503.23298: [`"polysemantic neurons are activated for multiple features"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-5)
+- 2503.23298: [`"polysemantic neurons are activated for multiple features"`](../papers/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models/2503.23298.learning-towards-emergence-inhibiting-monosemantic-neurons-on-pre-trained-models.card.md#p1-4)
 
 ### Пост-меморизационная динамика (post-memorization dynamics) — 1 статей
 
@@ -765,7 +765,7 @@
 
 ### Проблемно-специфичная регуляризация потерь (problem-specific loss regularization) — 1 статей
 
-- 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-4)
+- 2410.03569: [`"Design a custom loss function with a penalty term specific to modular"`](../papers/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization/original/2410.03569.making-hard-problems-easier-with-custom-data-distributions-and-loss-regularization.md#p2-3)
 
 ### Доказуемый грокинг в ридж-регрессии (provable grokking in ridge regression) — 1 статей
 
@@ -785,7 +785,7 @@
 
 ### Спад нормы как достаточное условие (robustness sufficient condition) — 1 статей
 
-- 2311.06597: [`"the decrease of weight norm usually happens before the grokking on the test dataset, making it seemingly a sufficient condition for grokking but not a necessary condition"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p1-5)
+- 2311.06597: [`"the decrease of weight norm usually happens before the grokking on the test dataset, making it seemingly a sufficient condition for grokking but not a necessary condition"`](../papers/2311.06597.understanding-grokking-through-a-robustness-viewpoint/2311.06597.understanding-grokking-through-a-robustness-viewpoint.card.md#p1-4)
 
 ### Граница выборочной сложности (sample complexity bound) — 1 статей
 
@@ -873,7 +873,7 @@
 
 ### Трёхстадийная динамика обучения (three-stage training dynamic) — 1 статей
 
-- 2603.01968: [`"we identify a consistent three-stage training dynamic:"`](../papers/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/original/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.md#p1-2)
+- 2603.01968: [`"we identify a consistent three-stage training dynamic:"`](../papers/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks/original/2603.01968.intrinsic-task-symmetry-drives-generalization-in-algorithmic-tasks.md#p1-6)
 
 ### Разделение временных масштабов (time-scale separation) — 1 статей
 

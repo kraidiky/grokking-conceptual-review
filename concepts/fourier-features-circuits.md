@@ -1,6 +1,6 @@
 # Фурье-признаки и контуры (Fourier features / circuits)
 
-[Возникновение признаков](feature-emergence-feature-learning.md) ← предыдущая карточка, следующая → [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md)
+[Обучение структурированных представлений](structured-representation-learning.md) ← предыдущая карточка, следующая → [Возникновение признаков](feature-emergence-feature-learning.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

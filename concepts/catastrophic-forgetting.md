@@ -1,6 +1,6 @@
 # Катастрофическое забывание (catastrophic forgetting)
 
-[Коллапс softmax](softmax-collapse.md) ← предыдущая карточка, следующая → [Унгрокинг](ungrokking.md)
+[Анти-грокинг / коллапс генерализации](anti-grokking.md) ← предыдущая карточка, следующая → [Унгрокинг](ungrokking.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

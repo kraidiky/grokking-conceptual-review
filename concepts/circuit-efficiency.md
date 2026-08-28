@@ -1,6 +1,6 @@
 # Эффективность контуров (circuit efficiency)
 
-[Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) ← предыдущая карточка, следующая → [Ландшафт потерь / бассейны](loss-landscape-basins.md)
+[Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) ← предыдущая карточка, следующая → [Сжатие многообразия представлений](manifold-representation-compression.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

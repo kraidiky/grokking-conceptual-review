@@ -1,6 +1,6 @@
 # Коллапс softmax (Softmax Collapse)
 
-[Двойной спуск](double-descent.md) ← предыдущая карточка, следующая → [Катастрофическое забывание](catastrophic-forgetting.md)
+[Двойной спуск](double-descent.md) ← предыдущая карточка, следующая → [Анти-грокинг / коллапс генерализации](anti-grokking.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

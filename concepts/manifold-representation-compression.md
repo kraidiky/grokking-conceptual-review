@@ -1,6 +1,6 @@
 # Сжатие многообразия представлений (manifold / representation compression)
 
-[Ландшафт потерь / бассейны](loss-landscape-basins.md) ← предыдущая карточка, следующая → [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md)
+[Эффективность контуров](circuit-efficiency.md) ← предыдущая карточка, следующая → [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

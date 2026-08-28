@@ -1,6 +1,6 @@
 # Ландшафт потерь / бассейны (loss landscape / basins)
 
-[Эффективность контуров](circuit-efficiency.md) ← предыдущая карточка, следующая → [Сжатие многообразия представлений](manifold-representation-compression.md)
+[Возникновение признаков](feature-emergence-feature-learning.md) ← предыдущая карточка, следующая → [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

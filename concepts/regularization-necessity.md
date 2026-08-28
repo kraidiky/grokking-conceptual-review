@@ -24,7 +24,7 @@ Gromov демонстрирует *«полносвязные двухслойн
 
 ### C. Необходима условно — без регуляризации спасают рогатки
 
-Thilak et al.: *«без явной регуляризации гроккинг возникает почти исключительно в момент начала рогатки и без неё отсутствует»* \[[4.1](#ref-4-1)\] — при кросс-энтропии и адаптивном оптимизаторе гроккинг без регуляризации возможен, но почти исключительно через [эффект рогатки](slingshot.md); Nanda et al. (приложение D.2) воспроизводят рогатки и уточняют, что при включённом weight decay они не необходимы.
+Thilak et al.: *«без явной регуляризации гроккинг, о котором сообщается в [17], происходит почти исключительно в момент начала рогаток и без них отсутствует»* \[[4.1](#ref-4-1)\] — при кросс-энтропии и адаптивном оптимизаторе гроккинг без регуляризации возможен, но почти исключительно через [эффект рогатки](slingshot.md); Nanda et al. (приложение D.2) воспроизводят рогатки и уточняют, что при включённом weight decay они не необходимы.
 
 ### D. «Необходимость» — артефакт численности
 
@@ -120,7 +120,7 @@ Notsawo et al. 2025 обобщают: *«гроккинг может быть в
 ### Версии C–F: условные и переосмысляющие
 
 ###### ref-4-1
-**\[4.1\]** 2206.04817 — Thilak et al., «The Slingshot Mechanism». [`"without explicit regularization, Grokking as reported in [17] almost exclusively happens at the onset of Slingshots, and is absent without it"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-2). *«[без явной регуляризации гроккинг возникает почти исключительно в момент начала рогатки и без неё отсутствует](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-2)»*
+**\[4.1\]** 2206.04817 — Thilak et al., «The Slingshot Mechanism». [`"without explicit regularization, Grokking as reported in [17] almost exclusively happens at the onset of Slingshots, and is absent without it"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-2). *«[без явной регуляризации гроккинг, о котором сообщается в [17], происходит почти исключительно в момент начала рогаток и без них отсутствует](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-2)»*
 
 ###### ref-4-2
 **\[4.2\]** 2501.04697 — Prieto et al., «Grokking at the Edge of Numerical Stability». [`"SC is responsible for the absence of grokking without regularization"`](../papers/2501.04697.grokking-at-the-edge-of-numerical-stability/2501.04697.grokking-at-the-edge-of-numerical-stability.card.md#p2-2). *«[за отсутствие гроккинга без регуляризации отвечает SC](../papers/2501.04697.grokking-at-the-edge-of-numerical-stability/2501.04697.grokking-at-the-edge-of-numerical-stability.card.md#p2-2)»*
