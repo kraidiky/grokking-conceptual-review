@@ -1,6 +1,6 @@
 # Направление влияния weight decay (weight decay direction)
 
-[Край устойчивости](edge-of-stability.md) ← предыдущая карточка, следующая → [Переопараметризация и глубина](overparameterization-depth.md)
+[selective-weight-decay](selective-weight-decay.md) ← предыдущая карточка, следующая → [Переопараметризация и глубина](overparameterization-depth.md)
 
 [Индекс карточек понятий](index.md), категория: [4. Факторы обучения и оптимизации](index.md#cat-4)\
 → Следующая категория: [5. Интервенции и методы](gradient-low-pass-filtering.md)\

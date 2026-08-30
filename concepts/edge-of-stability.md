@@ -1,6 +1,6 @@
 # Край устойчивости (edge of stability)
 
-[Роль шума градиента](gradient-noise.md) ← предыдущая карточка, следующая → [Направление влияния weight decay](weight-decay-direction.md)
+[Роль шума градиента](gradient-noise.md) ← предыдущая карточка, следующая → [selective-weight-decay](selective-weight-decay.md)
 
 [Индекс карточек понятий](index.md), категория: [4. Факторы обучения и оптимизации](index.md#cat-4)\
 → Следующая категория: [5. Интервенции и методы](gradient-low-pass-filtering.md)\
