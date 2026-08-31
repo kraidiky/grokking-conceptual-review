@@ -1,0 +1,60 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2209.04836	id		[1] Ainsworth et al. (2022) S. K. Ainsworth, J. Hayase, and S. Srinivasa Git re-basin: merging models modulo permutation
+2		s2	Circuit tracing: Revealing computational graphs in language models	[2] Ameisen et al. (2025) E. Ameisen, J. Lindsey, A. Pearce, W. Gurnee, N. L. Turner, B. Chen, C. Citro, D. Abrahams, S.
+3		s2	Equivalence of linear time-invariant dynamical systems	[3] Anderson et al. (1966) B. Anderson, R. Newcomb, R. Kalman, and D. Youla Equivalence of linear time-invariant dynamic
+4	2102.12452	s2	Probing Classifiers: Promises, Shortcomings, and Advances	[4] Belinkov (2022) Y. Belinkov Probing classifiers: promises, shortcomings, and advances. Computational Linguistics 48 
+5		s2	Structural identifiability	[5] Bellman and Åström (1970) R. Bellman and K. J. Åström On structural identifiability. Mathematical Biosciences 7 (3-4
+6		s2	Statistical modeling: The two cultures	[6] Breiman (2001) L. Breiman Statistical modeling: the two cultures. Statistical Science. Cited by: §1.
+7		—		[7] Bricken et al. (2023) T. Bricken, A. Templeton, J. Batson, B. Chen, A. Jermyn, T. Conerly, N. Turner, C. Anil, C. De
+8	2102.12086	id		[8] Brunton et al. (2021) S. L. Brunton, M. Budišić, E. Kaiser, and J. N. Kutz Modern koopman theory for dynamical syste
+9	2405.10927	id		[9] Bushnaq et al. (2024) L. Bushnaq, J. Mendel, S. Heimersheim, D. Braun, N. Goldowsky-Dill, K. Hänni, C. Wu, and M. Ho
+10	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	[10] Chughtai et al. (2023) B. Chughtai, L. Chan, and N. Nanda A toy model of universality: reverse engineering how netw
+11		s2	Every Good Regulator of a System Must Be a Model of That System	[11] Conant and Ross Ashby (1970) R. C. Conant and W. Ross Ashby Every good regulator of a system must be a model of tha
+12	2309.08600	id		[12] Cunningham et al. (2023) H. Cunningham, A. Ewart, L. Riggs, R. Huben, and L. Sharkey Sparse autoencoders find highl
+13	1803.00885	s2	Essentially No Barriers in Neural Network Energy Landscape	[13] Draxler et al. (2018) F. Draxler, K. Veschgini, M. Salmhofer, and F. Hamprecht Essentially no barriers in neural ne
+14	2406.11944	s2	Transcoders Find Interpretable LLM Feature Circuits	[14] Dunefsky et al. (2024) J. Dunefsky, P. Chlenski, and N. Nanda Transcoders find interpretable llm feature circuits. 
+15		s2	Degeneracy and complexity in biological systems	[15] Edelman and Gally (2001) G. M. Edelman and J. A. Gally Degeneracy and complexity in biological systems. Proceedings
+16	2209.10652	s2	Toy Models of Superposition	[16] Elhage et al. (2022) N. Elhage, T. Hume, C. Olsson, N. Schiefer, T. Henighan, S. Kravec, Z. Hatfield-Dodds, R. Lase
+17		s2	A mathematical framework for transformer circuits	[17] Elhage et al. (2021) N. Elhage, N. Nanda, C. Olsson, T. Henighan, N. Joseph, B. Mann, A. Askell, Y. Bai, A. Chen, T
+18	2502.12892	id		[18] Fel et al. (2025) T. Fel, E. S. Lubana, J. S. Prince, M. Kowal, V. Boutin, I. Papadimitriou, B. Wang, M. Wattenberg
+19	2106.06087	s2	Causal Analysis of Syntactic Agreement Mechanisms in Neural Language Models	[19] Finlayson et al. (2021) M. Finlayson, A. Mueller, S. Gehrmann, S. M. Shieber, T. Linzen, and Y. Belinkov Causal ana
+20		s2	The internal model principle of control theory	[20] Francis and Wonham (1976) B. A. Francis and W. M. Wonham The internal model principle of control theory. Automatica
+21	1802.10026	s2	Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs	[21] Garipov et al. (2018) T. Garipov, P. Izmailov, D. Podoprikhin, D. P. Vetrov, and A. G. Wilson Loss surfaces, mode c
+22		—		[22] Grattafiori et al. (2024) A. Grattafiori, A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle, A. Letman, A. Mat
+23	2401.12181	id		[23] Gurnee et al. (2024) W. Gurnee, T. Horsley, Z. C. Guo, T. R. Kheirkhah, Q. Sun, W. Hathaway, N. Nanda, and D. Berts
+24	2310.02207	id		[24] Gurnee and Tegmark (2023) W. Gurnee and M. Tegmark Language models represent space and time. arXiv preprint arXiv:2
+25		s2	Low-rank adaptation of large language models	[25] Hu et al. (2022) E. J. Hu, yelong shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, and W. Chen LoRA: low-ran
+26	2405.07987	id		[26] Huh et al. (2024) M. Huh, B. Cheung, T. Wang, and P. Isola The platonic representation hypothesis. arXiv preprint a
+27		s2	Topics in mathematical system theory	[27] Kalman et al. (1969) R. E. Kalman, P. L. Falb, and M. A. Arbib Topics in mathematical system theory. McGraw-Hill, N
+28		s2	CANONICAL STRUCTURE OF LINEAR DYNAMICAL SYSTEMS.	[28] Kalman (1962) R. E. Kalman Canonical structure of linear dynamical systems. Proceedings of the National Academy of 
+29		s2	Mathematical description of linear dynamical systems	[29] Kalman (1963) R. E. Kalman Mathematical description of linear dynamical systems. Journal of the Society for Industr
+30	1905.00414	s2	Similarity of Neural Network Representations Revisited	[30] Kornblith et al. (2019) S. Kornblith, M. Norouzi, H. Lee, and G. Hinton Similarity of neural network representation
+31	2210.13382	id		[31] Li et al. (2022) K. Li, A. K. Hopkins, D. Bau, F. Viégas, H. Pfister, and M. Wattenberg Emergent world representati
+32		—		[32] Lindsey et al. (2025) J. Lindsey, W. Gurnee, E. Ameisen, B. Chen, A. Pearce, N. L. Turner, C. Citro, D. Abrahams, S
+33		s2	Sparse crosscoders for cross-layer features and model diffing	[33] Lindsey et al. (2024) J. Lindsey, A. Templeton, J. Marcus, T. Conerly, J. Batson, and C. Olah Sparse crosscoders fo
+34	1611.01368	s2	Assessing the Ability of LSTMs to Learn Syntax-Sensitive Dependencies	[34] Linzen et al. (2016) T. Linzen, E. Dupoux, and Y. Goldberg Assessing the ability of lstms to learn syntax-sensitive
+35	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	[35] Liu et al. (2022a) Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams Towards understanding g
+36	2210.01117	id		[36] Liu et al. (2022b) Z. Liu, E. J. Michaud, and M. Tegmark Omnigrok: grokking beyond algorithmic data. arXiv preprint
+37	2311.17030	id		[37] Makelov et al. (2023) A. Makelov, G. Lange, and N. Nanda Is this the subspace you are looking for? an interpretabil
+38	1808.09031	s2	Targeted Syntactic Evaluation of Language Models	[38] Marvin and Linzen (2018) R. Marvin and T. Linzen Targeted syntactic evaluation of language models. In Proceedings o
+39	2502.20914	id		[39] Méloux et al. (2025) M. Méloux, S. Maniu, F. Portet, and M. Peyrard Everything, everywhere, all at once: is mechani
+40		s2	Principal component analysis in linear systems: Controllability, observability, and model reduction	[40] Moore (1981) B. Moore Principal component analysis in linear systems: controllability, observability, and model red
+41	1806.05759	s2	Insights on representational similarity in neural networks with canonical correlation	[41] Morcos et al. (2018) A. Morcos, M. Raghu, and S. Bengio Insights on representational similarity in neural networks 
+42	2301.05217	id		[42] Nanda et al. (2023) N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt Progress measures for grokking via 
+43		s2	Zoom In: An Introduction to Circuits	[43] Olah et al. (2020) C. Olah, N. Cammarata, L. Schubert, G. Goh, M. Petrov, and S. Carter Zoom in: an introduction to
+44		—		[44] Olah (2025) C. Olah A toy model of mechanistic (un)faithfulness (Website). Note: Transformer Circuits External Link
+45	2311.03658	id		[45] Park et al. (2023) K. Park, Y. J. Choe, and V. Veitch The linear representation hypothesis and the geometry of larg
+46	2201.02177	id		[46] Power et al. (2022) A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra Grokking: generalization beyond ove
+47		s2	Language Models are Unsupervised Multitask Learners	[47] Radford et al. (2019) A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, I. Sutskever, et al. Language models are uns
+48	2408.00118	id		[48] Riviere et al. (2024) M. Riviere, S. Pathak, P. G. Sessa, C. Hardin, S. Bhupatiraju, L. Hussenot, T. Mesnard, B. Sh
+49		s2	System drift and speciation	[49] Schiffman and Ralph (2022) J. S. Schiffman and P. L. Ralph System drift and speciation. Evolution 76 (2), pp. 236–2
+50	2501.16496	id		[50] Sharkey et al. (2025) L. Sharkey, B. Chughtai, J. Batson, J. Lindsey, J. Wu, L. Bushnaq, N. Goldowsky-Dill, S. Heim
+51	2605.29358	s2	Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet	[51] Templeton et al. (2024) A. Templeton, T. Conerly, J. Marcus, J. Lindsey, T. Bricken, B. Chen, A. Pearce, C. Citro, 
+52	2309.02390	id		[52] Varma et al. (2023) V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar Explaining grokking through circuit effic
+53	1706.03762	s2	Attention is All you Need	[53] Vaswani et al. (2017) A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Pol
+54		s2	Robustness and evolvability: a paradox resolved	[54] Wagner (2008) A. Wagner Robustness and evolvability: a paradox resolved. Proceedings of the Royal Society B: Biolog
+55		s2	The role of robustness in phenotypic adaptation and innovation	[55] Wagner (2012) A. Wagner The role of robustness in phenotypic adaptation and innovation. Proceedings of the Royal So
+56	2211.00593	id		[56] Wang et al. (2022) K. Wang, A. Variengien, A. Conmy, B. Shlegeris, and J. Steinhardt Interpretability in the wild: 
+57		s2	Transformers: State-of-the-Art Natural Language Processing	[57] Wolf et al. (2020) T. Wolf, L. Debut, V. Sanh, J. Chaumond, C. Delangue, A. Moi, P. Cistac, T. Rault, R. Louf, M. F
+58		—		[58] Yang et al. (2025) A. Yang, B. Yang, B. Zhang, B. Hui, B. Zheng, B. Yu, C. Li, D. Liu, F. Huang, H. Wei, H. Lin, J.
+59	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	[59] Zhong et al. (2023) Z. Zhong, Z. Liu, M. Tegmark, and J. Andreas The clock and the pizza: two stories in mechanisti

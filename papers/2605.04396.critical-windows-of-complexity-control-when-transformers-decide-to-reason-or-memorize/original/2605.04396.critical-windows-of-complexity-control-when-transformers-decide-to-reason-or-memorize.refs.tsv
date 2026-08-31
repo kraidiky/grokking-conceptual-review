@@ -1,0 +1,27 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Critical Learning Periods in Deep Networks	[1] A. Achille, M. Rovere, and S. Soatto Critical learning periods in deep networks. In International conference on lear
+2	1905.13655	s2	Implicit Regularization in Deep Matrix Factorization	**[p. 10]** [2] S. Arora, N. Cohen, W. Hu, and Y. Luo Implicit regularization in deep matrix factorization. Advances in 
+3	2510.06954	s2	From Condensation to Rank Collapse: A Two-Stage Analysis of Transformer Training Dynamics	[3] Z. Chen and T. Luo From condensation to rank collapse: a two-stage analysis of transformer training dynamics. In Adv
+4	1805.09545	s2	On the Global Convergence of Gradient Descent for Over-parameterized Models using Optimal Transport	[4] L. Chizat and F. Bach On the global convergence of gradient descent for over-parameterized models using optimal tran
+5	1905.13277	s2	Time Matters in Regularizing Deep Networks: Weight Decay and Data Augmentation Affect Early Learning	[5] A. S. Golatkar, A. Achille, and S. Soatto Time matters in regularizing deep networks: weight decay and data augmenta
+6	1705.09280	s2	Implicit Regularization in Matrix Factorization	[6] S. Gunasekar, B. E. Woodworth, S. Bhojanapalli, B. Neyshabur, and N. Srebro Implicit regularization in matrix factor
+7	2506.05718	s2	Grokking Beyond the Euclidean Norm of Model Parameters	[7] T. N. P. Junior, G. Dumas, and G. Rabusseau Grokking beyond the euclidean norm of model parameters. In Proceedings o
+8	2308.12221	s2	Critical Learning Periods Emerge Even in Deep Linear Networks	[8] M. Kleinman, A. Achille, and S. Soatto Critical learning periods emerge even in deep linear networks. In Internation
+9		s2	Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent 	[9] B. Lake and M. Baroni Generalization without systematicity: on the compositional skills of sequence-to-sequence recu
+10	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	[10] Z. Liu, E. J. Michaud, and M. Tegmark Omnigrok: grokking beyond algorithmic data. In International Conference on Le
+11		s2	Decoupled Weight Decay Regularization	[11] I. Loshchilov and F. Hutter Decoupled weight decay regularization. In International Conference on Learning Represen
+12	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	[12] N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt Progress measures for grokking via mechanistic interpre
+13	1706.08947	s2	Exploring Generalization in Deep Learning	[13] B. Neyshabur, S. Bhojanapalli, D. McAllester, and N. Srebro Exploring generalization in deep learning. Advances in 
+14	2209.11895	id		[14] C. Olsson, N. Elhage, N. Nanda, N. Joseph, N. DasSarma, T. Henighan, B. Mann, A. Askell, Y. Bai, A. Chen, et al. In
+15	1912.01703	s2	PyTorch: An Imperative Style, High-Performance Deep Learning Library	[15] A. Paszke, S. Gross, F. Massa, A. Lerer, J. Bradbury, G. Chanan, T. Killeen, Z. Lin, N. Gimelshein, L. Antiga, et a
+16	2201.02177	id		[16] A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra Grokking: generalization beyond overfitting on small al
+17	2408.09503	s2	Out-of-distribution generalization via composition: A lens through induction heads in Transformers	[17] J. Song, Z. Xu, and Y. Zhong Out-of-distribution generalization via composition: a lens through induction heads in 
+18	2502.15801	id		[18] C. Tang, B. Lake, and M. Jazayeri An explainable transformer circuit for compositional generalization. arXiv prepri
+19	1706.03762	s2	Attention is All you Need	[19] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin Attention is a
+20		s2	High-Dimensional Probability: An Introduction with Applications in Data Science	[20] R. Vershynin High-dimensional probability: an introduction with applications in data science. Vol. 47, Cambridge un
+21	2002.09277	s2	Kernel and Rich Regimes in Overparametrized Models	[21] B. Woodworth, S. Gunasekar, J. D. Lee, E. Moroshko, P. Savarese, I. Golan, D. Soudry, and N. Srebro Kernel and rich
+22	2504.09484	id		[22] Z. J. Xu, Y. Zhang, and Z. Zhou An overview of condensation phenomenon in deep learning. arXiv preprint arXiv:2504.
+23	2502.04375	s2	An Analysis for Reasoning Bias of Language Models with Small Initialization	[23] J. Yao, Z. Zhang, and Z. J. Xu An analysis for reasoning bias of language models with small initialization. In Proc
+24	2501.08537	s2	Complexity Control Facilitates Reasoning-Based Compositional Generalization in Transformers	[24] Z. Zhang, P. Lin, Z. Wang, Y. Zhang, and Z. J. Xu Complexity control facilitates reasoning-based compositional gene
+25	2105.11686	s2	Towards Understanding the Condensation of Neural Networks at Initial Training	[25] H. Zhou, Z. Qixuan, T. Luo, Y. Zhang, and Z. Xu Towards understanding the condensation of neural networks at initia
+26	2305.09947	id		[26] Z. Zhou, H. Zhou, Y. Li, and Z. J. Xu Understanding the initial condensation of convolutional neural networks. arXi

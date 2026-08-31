@@ -1,0 +1,24 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	Belkin, M., Hsu, D., Ma, S., and Mandal, S. Reconciling modern machine-learning practice and the classical bias–variance
+2		—		Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell
+3	2210.14891	s2	Broken Neural Scaling Laws	Caballero, E., Gupta, K., Rish, I., and Krueger, D. Broken neural scaling laws. In *The Eleventh International Conferenc
+4	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Chughtai, B., Chan, L., and Nanda, N. A toy model of universality: Reverse engineering how networks learn group operatio
+5	2303.06173	s2	Unifying Grokking and Double Descent	Davies, X., Langosco, L., and Krueger, D. Unifying grokking and double descent. In *NeurIPS ML Safety Workshop*, 2022. U
+6	2101.03961	s2	Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity	Fedus, W., Zoph, B., and Shazeer, N. Switch transformers: Scaling to trillion parameter models with simple and efficient
+7	2012.14913	s2	Transformer Feed-Forward Layers Are Key-Value Memories	Geva, M., Schuster, R., Berant, J., and Levy, O. Transformer feed-forward layers are key-value memories. In Moens, M., H
+8		s2	emergent abilities with infinite resolution	Hu, S., Liu, X., Han, X., Zhang, X., He, C., Zhao, W., Lin, Y., Ding, N., Ou, Z., Zeng, G., Liu, Z., and Sun, M. Predict
+9	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N., Michaud, E. J., Tegmark, M., and Williams, M. Towards understanding grokking: An effect
+10		s2	Grokking beyond algorithmic data	Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International Conf
+11		s2	Decoupled Weight Decay Regularization	Loshchilov, I. and Hutter, F. Decoupled weight decay regularization. In *7th International Conference on Learning Repres
+12	2303.13506	s2	The Quantization Model of Neural Scaling	Michaud, E. J., Liu, Z., Girit, U., and Tegmark, M. The quantization model of neural scaling. In *Thirty-seventh Confere
+13	1912.02292	s2	Deep double descent: where bigger models and more data hurt	Nakkiran, P., Kaplun, G., Bansal, Y., Yang, T., Barak, B., and Sutskever, I. Deep double descent: Where bigger models an
+14	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+15	2306.13253	s2	Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok	Notsawo Jr., P. T., Zhou, H., Pezeshki, M., Rish, I., and Dumas, G. Predicting grokking long before it happens: A look i
+16	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+17	2304.15004	s2	Are Emergent Abilities of Large Language Models a Mirage?	Schaeffer, R., Miranda, B., and Koyejo, S. Are emergent abilities of large language models a mirage? In *Thirty-seventh 
+18		—		Thilak, V., Littwin, E., Zhai, S., Saremi, O., Paiss, R., and Susskind, J. M. The slingshot mechanism: An empirical stud
+19	2309.02390	s2	Explaining grokking through circuit efficiency	Varma, V., Shah, R., Kenton, Z., Kramár, J., and Kumar, R. Explaining grokking through circuit efficiency. *CoRR*, abs/2
+20	1706.03762	s2	Attention is All you Need	Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. Attention i
+21	2206.07682	s2	Emergent Abilities of Large Language Models	Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi
+22	2201.11903	s2	Chain of Thought Prompting Elicits Reasoning in Large Language Models	Wei, J., Wang, X., Schuurmans, D., Bosma, M., ichter, b., Xia, F., Chi, E., Le, Q. V., and Zhou, D. Chain-of-thought pro
+23		s2	Understanding deep learning (still) requires rethinking generalization	Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. Understanding deep learning (still) requires rethinking gen

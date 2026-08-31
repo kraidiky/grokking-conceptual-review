@@ -1,0 +1,107 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		—		Abramov, R., Steinbauer, F., and Kasneci, G. Grokking in the wild: Data augmentation for real-world multi-hop reasoning 
+2		—		Aharon, M., Elad, M., and Bruckstein, A. K-svd: An algorithm for designing overcomplete dictionaries for sparse represen
+3		—		Arora, S., Cohen, N., and Hazan, E. On the optimization of deep networks: Implicit acceleration by overparameterization,
+4		—		Arora, S., Cohen, N., Hu, W., and Luo, Y. Implicit regularization in deep matrix factorization. *CoRR*, abs/1905.13655, 
+5		—		Aubin, B., Maillard, A., Barbier, J., Krzakala, F., Macris, N., and Zdeborová, L. The committee machine: Computational t
+6		—		Barak, B., Edelman, B. L., Goel, S., Kakade, S., Malach, E., and Zhang, C. Hidden progress in deep learning: Sgd learns 
+7		—		Bauschke, H. H. and Combettes, P. L. The baillon-haddad theorem revisited, 2009. URL https://arxiv.org/abs/0906.0807.
+8		—		Beck, A., Levi, N., and Bar-Sinai, Y. Grokking at the edge of linear separability, 2024. URL https://arxiv.org/abs/2410.
+9		—		Bereska, L. and Gavves, E. Mechanistic interpretability for ai safety – a review, 2024. URL https://arxiv.org/abs/2404.1
+10		—		Biehl, M. and Schwarze, H. Learning by on-line gradient descent. *Journal of Physics A: Mathematical and General*, 28(3)
+11		—		Boyd, S. and Vandenberghe, L. *Convex Optimization*. Cambridge University Press, 2004.
+12		—		Bricken, T., Templeton, A., Batson, J., Chen, B., Jermyn, A., Conerly, T., Turner, N., Anil, C., Denison, C., Askell, A.
+13		—		Candes, E. and Recht, B. Exact matrix completion via convex optimization. *Communications of the ACM*, 55(6):111–119, 20
+14		—		Candès, E. J. and Tao, T. The power of convex relaxation: Near-optimal matrix completion. *IEEE transactions on informat
+15		—		Candes, E. J., Romberg, J. K., and Tao, T. Stable signal recovery from incomplete and inaccurate measurements. *Communic
+16		—		Chandrasekaran, V., Recht, B., Parrilo, P. A., and Willsky, A. S. The convex geometry of linear inverse problems. *Found
+17		—		Charton, F. Learning the greatest common divisor: explaining transformer predictions, 2024. URL https://arxiv.org/abs/23
+18		—		Chatterjee, S. Convergence of gradient descent for deep neural networks, 2022. URL https://arxiv.org/abs/2203.16462.
+19		—		Chen, Y., Bhojanapalli, S., Sanghavi, S., and Ward, R. Coherent matrix completion. In Xing, E. P. and Jebara, T. (eds.),
+20		—		Chughtai, B., Chan, L., and Nanda, N. A toy model of universality: Reverse engineering how networks learn group operatio
+21		—		Clauw, K., Stramaglia, S., and Marinazzo, D. Information-theoretic progress measures reveal grokking is an emergent phas
+22		—		Cunningham, H., Ewart, A., Riggs, L., Huben, R., and Sharkey, L. Sparse autoencoders find highly interpretable features 
+23		—		Czarnecki, W. M., Osindero, S., Jaderberg, M., Świrszcz, G., and Pascanu, R. Sobolev training for neural networks, 2017.
+24		—		Daubechies, I., Defrise, M., and Mol, C. D. An iterative thresholding algorithm for linear inverse problems with a spars
+25		—		Davies, X., Langosco, L., and Krueger, D. Unifying grokking and double descent, 2023. URL https://arxiv.org/abs/2303.061
+26		—		DeMoss, B., Sapora, S., Foerster, J., Hawes, N., and Posner, I. The complexity dynamics of grokking, 2024. URL https://a
+27		—		Donoho, D. Compressed sensing. *IEEE Transactions on Information Theory*, 52(4):1289–1306, 2006a. doi: 10.1109/TIT.2006.
+28		—		Donoho, D. L. For most large underdetermined systems of linear equations the minimal $\ell_{1}$-norm solution is also th
+29		—		Donoho, D. L. and Elad, M. Optimally sparse representation in general (nonorthogonal) dictionaries via &#x2113;¡sup¿1¡/s
+30		—		Doshi, D., Das, A., He, T., and Gromov, A. To grok or not to grok: Disentangling generalization and memorization on corr
+31		—		Doshi, D., He, T., Das, A., and Gromov, A. Grokking modular polynomials, 2024b. URL https://arxiv.org/abs/2406.03495.
+32		—		Engel, A. and Broeck, C. P. L. V. d. *Statistical Mechanics of Learning*. Cambridge University Press, USA, 2001. ISBN 05
+33		—		Fan, S., Pascanu, R., and Jaggi, M. Deep grokking: Would deep neural networks generalize better?, 2024. URL https://arxi
+34		—		Fazel, M., Hindi, H., and Boyd, S. A rank minimization heuristic with application to minimum order system approximation.
+35		—		Fazel, M., Hindi, H., and Boyd, S. Rank minimization and applications in system theory. In *Proceedings of the 2004 Amer
+36		—		Foucart, S. and Rauhut, H. *A Mathematical Introduction to Compressive Sensing*. Birkhäuser Basel, 2013. ISBN 0817649476
+37		—		Gidel, G., Bach, F. R., and Lacoste-Julien, S. Implicit regularization of discrete gradient dynamics in deep linear neur
+38		—		Gissin, D., Shalev-Shwartz, S., and Daniely, A. The implicit bias of depth: How incremental learning drives generalizati
+39		—		Goldt, S., Advani, M. S., Saxe, A. M., Krzakala, F., and Zdeborová, L. Dynamics of stochastic gradient descent for two-l
+40		—		Golechha, S. Progress measures for grokking on real-world tasks, 2024. URL https://arxiv.org/abs/2405.12755.
+41		—		Gromov, A. Grokking modular arithmetic. *arXiv preprint arXiv: Arxiv-2301.02679*, 2023.
+42		—		Gunasekar, S., Woodworth, B. E., Bhojanapalli, S., Neyshabur, B., and Srebro, N. Implicit regularization in matrix facto
+43		—		Han, S., Pool, J., Tran, J., and Dally, W. J. Learning both weights and connections for efficient neural networks. *CoRR
+44		—		Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., and Chen, W. Lora: Low-rank adaptation of la
+45		—		Hu, M. Y., Chen, A., Saphra, N., and Cho, K. Latent state models of training dynamics, 2024. URL https://arxiv.org/abs/2
+46		—		Huang, Y., Hu, S., Han, X., Liu, Z., and Sun, M. Unified view of grokking, double descent and emergent abilities: A pers
+47		—		Huggins, J. H., Campbell, T., and Broderick, T. Coresets for scalable bayesian logistic regression, 2017. URL https://ar
+48		—		Humayun, A. I., Balestriero, R., and Baraniuk, R. Deep networks always grok and here is why, 2024. URL https://arxiv.org
+49		—		Karimi, H., Nutini, J., and Schmidt, M. Linear convergence of gradient and proximal-gradient methods under the polyak-ło
+50	2310.06110	id		Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C. Grokking as the transition from lazy to rich training dynamic
+51		—		Kumar, T., Bordelon, B., Pehlevan, C., Murthy, V. N., and Gershman, S. J. Do mice grok? glimpses of hidden progress duri
+52		—		Langley, P. Crafting papers on machine learning. In Langley, P. (ed.), *Proceedings of the 17th International Conference
+53		—		Lee, J., Kang, B. G., Kim, K., and Lee, K. M. Grokfast: Accelerated grokking by amplifying slow gradients, 2024. URL htt
+54		—		Levi, N., Beck, A., and Bar-Sinai, Y. Grokking in linear estimators - a solvable model that groks without understanding.
+55		—		Li, J. Mechanistic interpretability of binary and ternary transformers, 2024. URL https://arxiv.org/abs/2405.17703.
+56		—		Li, Z., Luo, Y., and Lyu, K. Towards resolving the implicit bias of gradient descent for matrix factorization: Greedy lo
+57		—		Liu, C., Zhu, L., and Belkin, M. Loss landscapes and optimization in over-parameterized non-linear systems and neural ne
+58		—		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International Conf
+59	2310.05918	id		Liu, Z., Zhong, Z., and Tegmark, M. Grokking as compression: A nonlinear complexity perspective. *arXiv preprint arXiv: 
+60		—		Lu, L., Meng, X., Mao, Z., and Karniadakis, G. E. Deepxde: A deep learning library for solving differential equations. *
+61		—		Lucic, M., Faulkner, M., Krause, A., and Feldman, D. Training gaussian mixture models at scale via coresets. *Journal of
+62	2311.18817	id		Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of early and late phase implicit biases can provab
+63		—		Mairal, J., Bach, F., Ponce, J., and Sapiro, G. Online learning for matrix factorization and sparse coding, 2010. URL ht
+64		—		Mairal, J., Bach, F. R., and Ponce, J. Sparse modeling for image and vision processing. *CoRR*, abs/1411.3230, 2014. URL
+65		—		Mallinar, N., Beaglehole, D., Zhu, L., Radhakrishnan, A., Pandit, P., and Belkin, M. Emergence in non-neural models: gro
+66	2303.11873	id		Merrill, W., Tsilivis, N., and Shukla, A. A tale of two circuits: Grokking as competition of sparse and dense subnetwork
+67		—		Miller, J., Gleeson, P., O’Neill, C., Bui, T., and Levi, N. Measuring sharpness in grokking, 2024a. URL https://arxiv.or
+68		—		Miller, J., O’Neill, C., and Bui, T. Grokking beyond neural networks: An empirical exploration with model complexity, 20
+69		—		Minegishi, G., Iwasawa, Y., and Matsuo, Y. Bridging lottery ticket and grokking: Understanding grokking from inner struc
+70		—		Mohamadi, M. A., Li, Z., Wu, L., and Sutherland, D. J. Why do you grok? a theoretical analysis of grokking modular addit
+71		—		Morwani, D., Edelman, B. L., Oncescu, C.-A., Zhao, R., and Kakade, S. Feature emergence via margin maximization: case st
+72		—		Murty, S., Sharma, P., Andreas, J., and Manning, C. D. Characterizing intrinsic compositionality in transformers with tr
+73		—		Murty, S., Sharma, P., Andreas, J., and Manning, C. D. Grokking of hierarchical structure in vanilla transformers, 2023.
+74		—		Mustafa, N. and Burkholz, R. Dynamic rescaling for training gnns. In Globerson, A., Mackey, L., Belgrave, D., Fan, A., P
+75		—		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+76		—		Natarajan, B. K. Sparse approximate solutions to linear systems. *SIAM Journal on Computing*, 24(2):227–234, 1995. doi: 
+77	2306.13253	id		Notsawo, P. J. T., Zhou, H., Pezeshki, M., Rish, I., and Dumas, G. Predicting grokking long before it happens: A look in
+78		—		Olshausen, B. A. and Field, D. J. Emergence of simple-cell receptive field properties by learning a sparse code for natu
+79		—		Park, Y., Kim, M., and Kim, Y. Acceleration of grokking in learning arithmetic operations via kolmogorov-arnold represen
+80		—		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+81		—		Prieto, L., Barsbey, M., Mediano, P. A. M., and Birdal, T. Grokking at the edge of numerical stability, 2025. URL https:
+82		—		Raissi, M., Perdikaris, P., and Karniadakis, G. Physics-informed neural networks: A deep learning framework for solving 
+83		—		Rauhut, H. *Compressive Sensing and Structured Random Matrices*, pp. 1–92. De Gruyter, Berlin, New York, 2010. ISBN 9783
+84		—		Razin, N. and Cohen, N. Implicit regularization in deep learning may not be explainable by norms. *CoRR*, abs/2005.06398
+85		—		Recht, B., Fazel, M., and Parrilo, P. A. Guaranteed minimum-rank solutions of linear matrix equations via nuclear norm m
+86		—		Rockafellar, R. T. *Convex analysis*. Princeton Mathematical Series. Princeton University Press, Princeton, N. J., 1970.
+87		—		Rubin, N., Seroussi, I., and Ringel, Z. Grokking as a first order phase transition in two layer networks, 2024. URL http
+88		—		Saad, D. and Solla, S. Learning with noise and regularizers in multilayer neural networks. In Mozer, M., Jordan, M., and
+89		—		Saad, D. and Solla, S. A. On-line learning in soft committee machines. *Phys. Rev. E*, 52:4225–4243, Oct 1995a. doi: 10.
+90		—		Saad, D. and Solla, S. A. Exact solution for on-line learning in multilayer neural networks. *Phys. Rev. Lett.*, 74:4337
+91		—		Song, K., Tan, Z., Zou, B., Ma, H., and Huang, W. Unveiling the dynamics of information interplay in supervised learning
+92		—		Stander, D., Yu, Q., Fan, H., and Biderman, S. Grokking group multiplication with cosets, 2024. URL https://arxiv.org/ab
+93		—		Thilak, V., Littwin, E., Zhai, S., Saremi, O., Paiss, R., and Susskind, J. The slingshot mechanism: An empirical study o
+94		—		Tsang, I. W., Kwok, J. T., and Cheung, P.-M. Core vector machines: Fast svm training on very large data sets. *Journal o
+95		—		Vandenberghe, L. and Boyd, S. Semidefinite programming. *SIAM Review*, 38(1):49–95, 1996. doi: 10.1137/1038003. URL http
+96	2309.02390	id		Varma, V., Shah, R., Kenton, Z., Kramár, J., and Kumar, R. Explaining grokking through circuit efficiency. *arXiv prepri
+97		—		Vaškevičius, T., Kanade, V., and Rebeschini, P. Implicit regularization for optimal sparse recovery, 2019. URL https://a
+98		—		Wang, B., Yue, X., Su, Y., and Sun, H. Grokked transformers are implicit reasoners: A mechanistic journey to the edge of
+99		—		Wedin, P.-Å. Perturbation bounds in connection with singular value decomposition. *BIT Numerical Mathematics*, 12(1):99–
+100		—		Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W. Benign overfitting and grokking in relu networks for xor cluster data,
+101		—		Xu, Z., Ni, Z., Wang, Y., and Hu, W. Let me grok for you: Accelerating grokking via embedding transfer from a weaker mod
+102		—		Yunis, D., Patel, K. K., Wheeler, S., Savarese, P., Vardi, G., Livescu, K., Maire, M., and Walter, M. R. Approaching dee
+103		—		Zhou, X., Pi, R., Zhang, W., Lin, Y., Chen, Z., and Zhang, T. Probabilistic bilevel coreset selection. In Chaudhuri, K.,
+104		—		Zhou, Z., Zhang, Y., and Xu, Z.-Q. J. A rationale from frequency perspective for grokking in training neural network, 20
+105		—		Zhu, X., Fu, Y., Zhou, B., and Lin, Z. Critical data size of language models from a grokking perspective, 2024. URL http
+106		—		$\mathbf{v}$Zunkovi$\mathbf{v}$c, B. and Ilievski, E. Grokking phase transitions in learning local rules with gradient d

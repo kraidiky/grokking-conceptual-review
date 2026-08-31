@@ -1,0 +1,123 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2209.04836	s2	Git Re-Basin: Merging Models modulo Permutation Symmetries	Ainsworth, S., Hayase, J., and Srinivasa, S. Git re-basin: Merging models modulo permutation symmetries. In *Proceedings
+2	2310.04415	id		Andriushchenko, M., D’Angelo, F., Varre, A., and Flammarion, N. Why do we need weight decay in modern deep learning? *ar
+3	1802.06509	s2	On the Optimization of Deep Networks: Implicit Acceleration by Overparameterization	Arora, S., Cohen, N., and Hazan, E. On the optimization of deep networks: Implicit acceleration by overparameterization.
+4	1905.13655	s2	Implicit Regularization in Deep Matrix Factorization	Arora, S., Cohen, N., Hu, W., and Luo, Y. Implicit regularization in deep matrix factorization. **[p. 16]** In *Advances
+5	2212.12147	s2	The Onset of Variance-Limited Behavior for Networks in the Lazy and Rich Regimes	Atanasov, A., Bordelon, B., Sainathan, S., and Pehlevan, C. The onset of variance-limited behavior for networks in the l
+6	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Barak, B., Edelman, B., Goel, S., Kakade, S., Malach, E., and Zhang, C. Hidden progress in deep learning: SGD learns par
+7		s2	For Valid Generalization the Size of the Weights is More Important than the Size of the Network	Bartlett, P. For valid generalization the size of the weights is more important than the size of the network. *Advances 
+8	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	Belkin, M., Hsu, D., Ma, S., and Mandal, S. Reconciling modern machine-learning practice and the classical bias–variance
+9		s2	On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜	Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S. On the dangers of stochastic parrots: Can language mode
+10	2304.01373	s2	Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling	Biderman, S., Schoelkopf, H., Anthony, Q. G., Bradley, H., O’Brien, K., Hallahan, E., Khan, M. A., Purohit, S., Prashant
+11		s2	Experiment tracking with weights and biases	Biewald, L. Experiment tracking with weights and biases, 2020. URL https://www.wandb.com/. Software available from wandb
+12	2306.07042	s2	Transformers learn through gradual rank increase	Boix-Adserà, E., Littwin, E., Abbe, E., Bengio, S., and Susskind, J. M. Transformers learn through gradual rank increase
+13	2108.07258	id		Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., Bernstein, M. S., Bohg, J., Bosselut, A., B
+14	1907.02911	id		Brea, J., Simsek, B., Illing, B., and Gerstner, W. Weight-space symmetry in deep networks gives rise to permutation sadd
+15	2306.04251	s2	Stochastic collapse: how gradient noise attracts SGD dynamics towards simpler subnetworks	Chen, F., Kunin, D., Yamamura, A., and Ganguli, S. Stochastic collapse: How gradient noise attracts SGD dynamics towards
+16	2303.06173	s2	Unifying Grokking and Double Descent	Davies, X., Langosco, L., and Krueger, D. Unifying grokking and double descent. In *NeurIPS ML Safety Workshop*, 2022.
+17	1812.02566	s2	Singular Values for ReLU Layers	Dittmer, S., King, E. J., and Maass, P. Singular values for ReLU layers. *IEEE Transactions on Neural Networks and Learn
+18	1806.00900	s2	Algorithmic Regularization in Learning Deep Homogeneous Models: Layers are Automatically Balanced	Du, S. S., Hu, W., and Lee, J. D. Algorithmic regularization in learning deep homogeneous models: Layers are automatical
+19	2110.06296	s2	The Role of Permutation Invariance in Linear Mode Connectivity of Neural Networks	Entezari, R., Sedghi, H., Saukh, O., and Neyshabur, B. The role of permutation invariance in linear mode connectivity of
+20	2110.09548	s2	Path Regularization: A Convexity and Sparsity Inducing Regularization for Parallel ReLU Networks	Ergen, T. and Pilanci, M. Path regularization: A convexity and sparsity inducing regularization for parallel relu networ
+21	2206.06072	s2	Rank Diminishing in Deep Neural Networks	Feng, R., Zheng, K., Huang, Y., Zhao, D., Jordan, M., and Zha, Z.-J. Rank diminishing in deep neural networks. In *Advan
+22	2310.19103	id		Ferbach, D., Goujaud, B., Gidel, G., and Dieuleveut, A. Proving linear mode connectivity of neural networks via optimal 
+23	2010.15110	s2	Deep learning versus kernel learning: an empirical study of loss landscape geometry and the time evo	Fort, S., Dziugaite, G. K., Paul, M., Kharaghani, S., Roy, D. M., and Ganguli, S. Deep learning versus kernel learning: 
+24	1803.03635	s2	The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks	Frankle, J. and Carbin, M. The lottery ticket hypothesis: Finding sparse, trainable neural networks. In *Proceedings of 
+25	1912.05671	s2	Linear Mode Connectivity and the Lottery Ticket Hypothesis	Frankle, J., Dziugaite, G. K., Roy, D., and Carbin, M. Linear mode connectivity and the lottery ticket hypothesis. In *P
+26	2210.07082	s2	Implicit Bias in Leaky ReLU Networks Trained on High-Dimensional Data	Frei, S., Vardi, G., Bartlett, P., Srebro, N., and Hu, W. Implicit bias in leaky ReLU networks trained on high-dimension
+27	2206.05794	id		Galanti, T., Siegel, Z. S., Gupte, A., and Poggio, T. SGD and weight decay provably induce a low-rank bias in neural net
+28	2301.02679	id		Gromov, A. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+29	1705.09280	s2	Implicit Regularization in Matrix Factorization	Gunasekar, S., Woodworth, B. E., Bhojanapalli, S., Neyshabur, B., and Srebro, N. Implicit regularization in matrix facto
+30		s2	Comparing Biases for Minimal Network Construction with Back-Propagation	Hanson, S. and Pratt, L. Comparing biases for minimal network construction with back-propagation. In *Advances in Neural
+31	2006.10256	s2	Array programming with NumPy	Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., B
+32	1907.07174	s2	Natural Adversarial Examples	Hendrycks, D., Zhao, K., Basart, S., Steinhardt, J., and Song, D. Natural adversarial examples. In *Proceedings of the I
+33	2006.11239	s2	Denoising Diffusion Probabilistic Models	Ho, J., Jain, A., and Abbeel, P. Denoising diffusion probabilistic models. In *Advances in Neural Information Processing
+34		—		Hochreiter, S. and Schmidhuber, J. Flat minima. *Neural computation*, 9(1):1–42, 1997a.
+35		s2	Long Short-Term Memory	Hochreiter, S. and Schmidhuber, J. Long short-term memory. *Neural computation*, 9(8):1735–1780, 1997b.
+36		s2	Low-rank adaptation of large language models	Hu, E. J., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., Chen, W., et al. Lora: Low-rank adaptation of large la
+37	2103.10427	s2	The Low-Rank Simplicity Bias in Deep Networks	Huh, M., Mobahi, H., Zhang, R., Cheung, B., Agrawal, P., and Isola, P. The low-rank simplicity bias in deep networks. *T
+38	2402.15555	id		Humayun, A. I., Balestriero, R., and Baraniuk, R. Deep networks always grok and here is why. *arXiv preprint arXiv:2402.
+39		s2	Matplotlib: A 2D Graphics Environment	Hunter, J. D. Matplotlib: A 2D graphics environment. *Computing in Science & Engineering*, 9(3):90–95, 2007.
+40	2212.04089	s2	Editing Models with Task Arithmetic	Ilharco, G., Ribeiro, M. T., Wortsman, M., Schmidt, L., Hajishirzi, H., and Farhadi, A. Editing models with task arithme
+41	1905.02175	s2	Adversarial Examples Are Not Bugs, They Are Features	Ilyas, A., Santurkar, S., Tsipras, D., Engstrom, L., Tran, B., and Madry, A. Adversarial examples are not bugs, they are
+42	1502.03167	s2	Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift	Ioffe, S. and Szegedy, C. Batch normalization: Accelerating deep network training by reducing internal covariate shift. 
+43	2402.04051	id		Ito, A., Yamada, M., and Kumagai, A. Analysis of linear mode connectivity via permutation-based weight matching. *arXiv 
+44	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Jacot, A., Gabriel, F., and Hongler, C. Neural tangent kernel: Convergence and generalization in neural networks. In *Ad
+45	1810.02032	s2	Gradient descent aligns the layers of deep linear networks	Ji, Z. and Telgarsky, M. Gradient descent aligns the layers of deep linear networks. In *Proceedings of the Internationa
+46	1912.02178	id		Jiang, Y., Neyshabur, B., Mobahi, H., Krishnan, D., and Bengio, S. Fantastic generalization measures and where to find t
+47	2211.08403	s2	REPAIR: REnormalizing Permuted Activations for Interpolation Repair	Jordan, K., Sedghi, H., Saukh, O., Entezari, R., and Neyshabur, B. REPAIR: REnormalizing Permuted Activations for Interp
+48	2312.02696	id		Karras, T., Aittala, M., Lehtinen, J., Hellsten, J., Aila, T., and Laine, S. Analyzing and improving the training dynami
+49		s2	Learning Multiple Layers of Features from Tiny Images	Krizhevsky, A. Learning multiple layers of features from tiny images, 2009.
+50		s2	A Simple Weight Decay Can Improve Generalization	Krogh, A. and Hertz, J. A simple weight decay can improve generalization. In *Advances in Neural Information Processing 
+51	1906.06247	s2	Explaining Landscape Connectivity of Low-cost Solutions for Multilayer Nets	Kuditipudi, R., Wang, X., Lee, H., Zhang, Y., Li, Z., Hu, W., Ge, R., and Arora, S. Explaining landscape connectivity of
+52	2310.06110	id		Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C. Grokking as the transition from lazy to rich training dynamic
+53	2201.11968	s2	Training invariances and the low-rank phenomenon: beyond linear networks	Le, T. and Jegelka, S. Training invariances and the low-rank phenomenon: beyond linear networks. In *Proceedings of the 
+54		s2	The mnist database of handwritten digits	LeCun, Y. The MNIST database of handwritten digits. http://yann.lecun.com/exdb/mnist/, 1998.
+55	2109.02846	id		Lhoest, Q., del Moral, A. V., Jernite, Y., Thakur, A., von Platen, P., Patil, S., Chaumond, J., Drame, M., Plu, J., Tuns
+56	2208.03306	id		Li, M., Gururangan, S., Dettmers, T., Lewis, M., Althoff, T., Smith, N. A., and Zettlemoyer, L. Branch-train-merge: Emba
+57	2012.09839	s2	Towards Resolving the Implicit Bias of Gradient Descent for Matrix Factorization: Greedy Low-Rank Le	Li, Z., Luo, Y., and Lyu, K. Towards resolving the implicit bias of gradient descent for matrix factorization: Greedy lo
+58	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N. S., Michaud, E., Tegmark, M., and Williams, M. Towards understanding grokking: An effect
+59		—		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *Proceedings of the Internationa
+60	1711.05101	id		Loshchilov, I. and Hutter, F. Fixing weight decay regularization in Adam. *arXiv preprint arXiv:1711.05101*, 2017.
+61	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of early and late phase implicit biases can provab
+62	1901.08278	s2	Heavy-Tailed Universality Predicts Trends in Test Accuracies for Very Large Pre-Trained Deep Neural 	Martin, C. H. and Mahoney, M. W. Heavy-tailed universality predicts trends in test accuracies for very large pre-trained
+63	1810.01075	s2	Implicit Self-Regularization in Deep Neural Networks: Evidence from Random Matrix Theory and Implica	Martin, C. H. and Mahoney, M. W. Implicit self-regularization in deep neural networks: Evidence from random matrix theor
+64	1609.07843	s2	Pointer Sentinel Mixture Models	Merity, S., Xiong, C., Bradbury, J., and Socher, R. Pointer sentinel mixture models. In *Proceedings of the Internationa
+65	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	Merrill, W., Tsilivis, N., and Shukla, A. A tale of two circuits: Grokking as competition of sparse and dense subnetwork
+66	2105.01346	s2	Implicit Regularization in Deep Tensor Factorization	Milanesi, P., Kadri, H., Ayache, S., and Artières, T. Implicit regularization in deep tensor factorization. In *Proceedi
+67	2301.02679	s2	Grokking modular arithmetic	Mohamadi, M. A., Li, Z., Wu, L., and Sutherland, D. Grokking modular arithmetic can be explained by margin maximization.
+68	1906.05478	id		Mohan, S., Kadkhodaie, Z., Simoncelli, E. P., and Fernandez-Granda, C. Robust and interpretable blind image denoising vi
+69		s2	Unique Properties of Flat Minima in Deep Networks	Mulayoff, R. and Michaeli, T. Unique properties of flat minima in deep networks. In *Proceedings of the International Co
+70	1902.04742	s2	Uniform convergence may be unable to explain generalization in deep learning	Nagarajan, V. and Kolter, J. Z. Uniform convergence may be unable to explain generalization in deep learning. In *Advanc
+71	1912.02292	s2	Deep double descent: where bigger models and more data hurt	Nakkiran, P., Kaplun, G., Bansal, Y., Yang, T., Barak, B., and Sutskever, I. Deep double descent: Where bigger models an
+72	2301.05217	id		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+73	1412.6614	id		Neyshabur, B., Tomioka, R., and Srebro, N. In search of the real inductive bias: On the role of implicit regularization 
+74	2008.11687	s2	What is being transferred in transfer learning?	Neyshabur, B., Sedghi, H., and Zhang, C. What is being transferred in transfer learning? In *Advances in Neural Informat
+75	2306.13253	id		Notsawo Jr, P., Zhou, H., Pezeshki, M., Rish, I., Dumas, G., et al. Predicting grokking long before it happens: A look i
+76	2202.00856	id		Ongie, G. and Willett, R. The role of linear layers in nonlinear interpolating networks. *arXiv preprint arXiv:2202.0085
+77		s2	Librispeech: An ASR corpus based on public domain audio books	Panayotov, V., Chen, G., Povey, D., and Khudanpur, S. Librispeech: an asr corpus based on public domain audio books. In 
+78	2301.09554	s2	Deep Learning Meets Sparse Regularization: A signal processing perspective	Parhi, R. and Nowak, R. D. Deep learning meets sparse regularization: A signal processing perspective. *IEEE Signal Proc
+79	1912.01703	s2	PyTorch: An Imperative Style, High-Performance Deep Learning Library	Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L.,
+80	2210.03044	s2	Unmasking the Lottery Ticket Hypothesis: What's Encoded in a Winning Ticket's Mask?	Paul, M., Chen, F., Larsen, B. W., Frankle, J., Ganguli, S., and Dziugaite, G. K. Unmasking the lottery ticket hypothesi
+81	1802.09979	s2	The Emergence of Spectral Universality in Deep Networks	Pennington, J., Schoenholz, S., and Ganguli, S. The emergence of spectral universality in deep networks. In *Proceedings
+82	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+83	2208.06894	id		Praggastis, B., Brown, D., Marrero, C. O., Purvine, E., Shapiro, M., and Wang, B. The SVD of convolutional weights: a CN
+84	2402.05966	id		Qu, X. and Horvath, S. Rethink model re-basin and the linear mode connectivity. *arXiv preprint arXiv:2402.05966*, 2024.
+85	1806.08734	s2	On the Spectral Bias of Neural Networks	Rahaman, N., Baratin, A., Arpit, D., Draxler, F., Lin, M., Hamprecht, F., Bengio, Y., and Courville, A. On the spectral 
+86	1710.05941	id		Ramachandran, P., Zoph, B., and Le, Q. V. Searching for activation functions. *arXiv preprint arXiv:1710.05941*, 2017.
+87	2205.09739	s2	Diverse Weight Averaging for Out-of-Distribution Generalization	Rame, A., Kirchmeyer, M., Rahier, T., Rakotomamonjy, A., Gallinari, P., and Cord, M. Diverse weight averaging for out-of
+88	2204.06125	id		Ramesh, A., Dhariwal, P., Nichol, A., Chu, C., and Chen, M. Hierarchical text-conditional image generation with CLIP lat
+89	2005.06398	s2	Implicit Regularization in Deep Learning May Not Be Explainable by Norms	Razin, N. and Cohen, N. Implicit regularization in deep learning may not be explainable by norms. In *Advances in Neural
+90		—		Ronneberger, O., Fischer, P., and Brox, T. U-net: Convolutional networks for biomedical image segmentation. In *Proceedi
+91		s2	The effective rank: A measure of effective dimensionality	Roy, O. and Vetterli, M. The effective rank: A measure of effective dimensionality. In *Proceedings of the European Sign
+92	2303.03374	s2	To Stay or Not to Stay in the Pre-train Basin: Insights on Ensembling in Transfer Learning	Sadrtdinov, I., Pozdeev, D., Vetrov, D. P., and Lobacheva, E. To stay or not to stay in the pre-train basin: Insights on
+93	1312.6120	s2	Exact solutions to the nonlinear dynamics of learning in deep linear neural networks	Saxe, A., McClelland, J., and Ganguli, S. Exact solutions to the nonlinear dynamics of learning in deep linear neural ne
+94	2205.13571	s2	Low-rank lottery tickets: finding efficient low-rank neural networks via matrix differential equatio	Schotthöfer, S., Zangrando, E., Kusch, J., Ceruti, G., and Tudisco, F. Low-rank lottery tickets: Finding efficient low-r
+95	2305.16534	id		Shenouda, J., Parhi, R., Lee, K., and Nowak, R. D. Vector-valued variation spaces and width bounds for DNNs: Insights on
+96	1409.1556	id		Simonyan, K. and Zisserman, A. Very deep convolutional networks for large-scale image recognition. *arXiv preprint arXiv
+97	2105.12221	s2	Geometry of the Loss Landscape in Overparameterized Neural Networks: Symmetries and Invariances	Simsek, B., Ged, F., Jacot, A., Spadaro, F., Hongler, C., Gerstner, W., and Brea, J. Geometry of the loss landscape in o
+98	1503.03585	s2	Deep Unsupervised Learning using Nonequilibrium Thermodynamics	Sohl-Dickstein, J., Weiss, E., Maheswaranathan, N., and Ganguli, S. Deep unsupervised learning using nonequilibrium ther
+99	1312.6199	id		Szegedy, C., Zaremba, W., Sutskever, I., Bruna, J., Erhan, D., Goodfellow, I., and Fergus, R. Intriguing properties of n
+100	2311.06597	id		Tan, Z. and Huang, W. Understanding grokking through a robustness viewpoint. *arXiv preprint arXiv:2311.06597*, 2023.
+101	2206.04817	id		Thilak, V., Littwin, E., Zhai, S., Saremi, O., Paiss, R., and Susskind, J. The slingshot mechanism: An empirical study o
+102	2201.12760	s2	Implicit Regularization Towards Rank Minimization in ReLU Networks	Timor, N., Vardi, G., and Shamir, O. Implicit regularization towards rank minimization in relu networks. In *Proceedings
+103	1706.05350	id		Van Laarhoven, T. L2 regularization versus batch and weight normalization. *arXiv preprint arXiv:1706.05350*, 2017.
+104	2012.05156	s2	Implicit Regularization in ReLU Networks with the Square Loss	Vardi, G. and Shamir, O. Implicit regularization in relu networks with the square loss. In *Proceedings of the Annual Co
+105	1706.03762	s2	Attention is All you Need	Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., and Polosukhin, I. Attention i
+106		s2	ML from scratch: Stable diffusion, day 2, 2022	Wang, B. and Vastola, J. ML from scratch: Stable diffusion, day 2, 2022. URL https://colab.research.google.com/drive/1Y5
+107	2103.03936	s2	Pufferfish: Communication-efficient Models At No Extra Cost	Wang, H., Agarwal, S., and Papailiopoulos, D. Pufferfish: Communication-efficient models at no extra cost. *Proceedings 
+108	2305.16038	id		Wang, Z. and Jacot, A. Implicit bias of SGD in $l\_${$2$}-regularized linear DNNs: One-way jumps from high to low rank. 
+109		s2	statistical data visualization	Waskom, M. L. seaborn: statistical data visualization. *Journal of Open Source Software*, 6(60):3021, 2021.
+110	2203.05482	s2	Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing in	Wortsman, M., Ilharco, G., Gadre, S. Y., Roelofs, R., Gontijo-Lopes, R., Morcos, A. S., Namkoong, H., Farhadi, A., Carmo
+111	2310.02541	s2	Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data	Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W. Benign overfitting and grokking in ReLU networks for XOR cluster data.
+112		—		Yaras, C., Wang, P., Hu, W., Zhu, Z., Balzano, L., and Qu, Q. Invariant low-dimensional subspaces in gradient descent fo
+113	2306.01154	id		Yaras, C., Wang, P., Hu, W., Zhu, Z., Balzano, L., and Qu, Q. The law of parsimony in gradient descent for learning deep
+114		s2	Compressing Transformers: Features Are Low-Rank, but Weights Are Not!	Yu, H. and Wu, J. Compressing transformers: Features are low-rank, but weights are not! In *Proceedings of the National 
+115		s2	On Compressing Deep Models by Low Rank and Sparse Decomposition	Yu, X., Liu, T., Wang, X., and Tao, D. On compressing deep models by low rank and sparse decomposition. In *Proceedings 
+116		s2	On Convexity and Linear Mode Connectivity in Neural Networks	Yunis, D., Patel, K. K., Savarese, P. H. P., Vardi, G., Frankle, J., Walter, M., Livescu, K., and Maire, M. On convexity
+117	2402.03991	id		Zangrando, E., Deidda, P., Brugiapaglia, S., Guglielmi, N., and Tudisco, F. Neural rank collapse: Weight decay and small
+118		s2	Understanding deep learning (still) requires rethinking generalization	Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. Understanding deep learning (still) requires rethinking gen
+119	1810.12281	id		Zhang, G., Wang, C., Xu, B., and Grosse, R. Three mechanisms of weight decay regularization. *arXiv preprint arXiv:1810.
+120	1901.09321	s2	Fixup Initialization: Residual Learning Without Normalization	Zhang, H., Dauphin, Y. N., and Ma, T. Fixup initialization: Residual learning without normalization. In *Proceedings of 
+121		—		Ziyin, L., Li, B., and Meng, X. Exact solutions of a deep linear network. In *Advances in Neural Information Processing 
+122	2307.15043	id		Zou, A., Wang, Z., Kolter, J. Z., and Fredrikson, M. Universal and transferable adversarial attacks on aligned language 

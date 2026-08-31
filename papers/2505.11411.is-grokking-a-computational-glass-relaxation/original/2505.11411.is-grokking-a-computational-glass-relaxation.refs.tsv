@@ -1,0 +1,37 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2310.03789	id		Noa Rubin, Inbar Seroussi, and Zohar Ringel. Grokking as a first order phase transition in two layer networks. *arXiv pr
+2	2503.13145	id		Entao Yang, Xiaotian Zhang, Yue Shang, and Ge Zhang. High-entropy advantage in neural networks’ generalizability. *arXiv
+3	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+4		s2	ImageNet: A large-scale hierarchical image database	Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical image databa
+5	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosuk
+6	1810.04805	s2	BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding	Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers 
+7	2005.14165	s2	Language Models are Few-Shot Learners	Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shy
+8	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+9		s2	Understanding deep learning (still) requires rethinking generalization	Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals. Understanding deep learning (still) require
+10	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich trai
+11	1803.00885	s2	Essentially No Barriers in Neural Network Energy Landscape	Felix Draxler, Kambis Veschgini, Manfred Salmhofer, and Fred Hamprecht. Essentially no barriers in neural network energy
+12		—		Sepp Hochreiter and Jürgen Schmidhuber. Flat minima. *Neural computation*, 9(1):1–42, 1997.
+13	1609.04836	id		Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang. On large-batch t
+14	1703.04933	s2	Sharp Minima Can Generalize For Deep Nets	Laurent Dinh, Razvan Pascanu, Samy Bengio, and Yoshua Bengio. Sharp minima can generalize for deep nets. In *Internation
+15	1912.10095	s2	Landscape Connectivity and Dropout Stability of SGD Solutions for Over-parameterized Neural Networks	Alexander Shevchenko and Marco Mondelli. Landscape connectivity and dropout stability of sgd solutions for over-paramete
+16	2002.03495	id		Zeke Xie, Issei Sato, and Masashi Sugiyama. A diffusion theory for deep learning dynamics: Stochastic gradient descent e
+17	1703.11008	id		Gintare Karolina Dziugaite and Daniel M Roy. Computing nonvacuous generalization bounds for deep (stochastic) neural net
+18	1912.02178	id		Yiding Jiang, Behnam Neyshabur, Hossein Mobahi, Dilip Krishnan, and Samy Bengio. Fantastic generalization measures and w
+19	2010.01412	id		Pierre Foret, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. Sharpness-aware minimization for efficiently improvin
+20	2203.10736	s2	Activity–weight duality in feed-forward neural networks reveals two co-determinants for generalizati	Yu Feng, Wei Zhang, and Yuhai Tu. Activity–weight duality in feed-forward neural networks reveals two co-determinants fo
+21	1706.08947	s2	Exploring Generalization in Deep Learning	Behnam Neyshabur, Srinadh Bhojanapalli, David McAllester, and Nati Srebro. Exploring generalization in deep learning. *A
+22	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+23	2406.06158	s2	Get rich quick: exact solutions reveal how unbalanced initializations promote rapid feature learning	Daniel Kunin, Allan Raventós, Clémentine Dominé, Feng Chen, David Klindt, Andrew Saxe, and Surya Ganguli. Get rich quick
+24	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Ziming and Kitouni, Ouail and Nolte, Niklas S and Michaud, Eric and Tegmark, Max and Williams, Mike. Towards unders
+25	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+26	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+27	2109.11832	s2	Predicting nonlinear physical aging of glasses from equilibrium relaxation via the material time	Birte Riechers, Lisa A Roed, Saeed Mehri, Trond S Ingebrigtsen, Tina Hecksher, Jeppe C Dyre, and Kristine Niss. Predicti
+28	2405.13098	s2	Glassy dynamics in deep neural networks: A structural comparison	Max Kerr Winter and Liesbeth MC Janssen. Glassy dynamics in deep neural networks: A structural comparison. *Physical Rev
+29	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+30	1401.6184	s2	Molecular Dynamics in the Multicanonical Ensemble: Equivalence of Wang-Landau Sampling, Statistical 	Christoph Junghans, Danny Perez, and Thomas Vogel. Molecular dynamics in the multicanonical ensemble: Equivalence of wan
+31		s2	Statistical-temperature Monte Carlo and molecular dynamics algorithms.	Kim, Jaegil and Straub, John E and Keyes, Thomas. Statistical-temperature Monte Carlo and molecular dynamics algorithms.
+32	1207.6880	s2	Convergence of the Wang-Landau algorithm	Fort, Gersende and Jourdain, Benjamin and Kuhn, Estelle and Lelièvre, Tony and Stoltz, Gabriel. Convergence of the Wang-
+33		s2	Theory of Simple Liquids: with Applications to Soft Matter	Jean-Pierre Hansen and Ian Ranald McDonald. *Theory of simple liquids: with applications to soft matter*. Academic press
+34	2010.05627	s2	Towards Theoretically Understanding Why SGD Generalizes Better Than ADAM in Deep Learning	Zhou, Pan and Feng, Jiashi and Ma, Chao and Xiong, Caiming and Hoi, Steven Chu Hong and others. Towards theoretically un
+35		—		Daan Frenkel and Berend Smit. *Understanding molecular simulation: from algorithms to applications*. Elsevier, 2023.
+36	1611.01838	s2	Entropy-SGD: biasing gradient descent into wide valleys	Chaudhari, Pratik and Choromanska, Anna and Soatto, Stefano and LeCun, Yann and Baldassi, Carlo and Borgs, Christian and

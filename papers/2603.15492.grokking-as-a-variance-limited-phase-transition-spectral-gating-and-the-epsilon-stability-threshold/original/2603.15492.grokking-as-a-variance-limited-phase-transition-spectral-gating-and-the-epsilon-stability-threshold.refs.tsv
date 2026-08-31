@@ -1,0 +1,22 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+2	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *ICLR*, 2023.
+3	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+4		s2	Decoupled Weight Decay Regularization	Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. *ICLR*, 2019.
+5	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+6	2103.00065	s2	Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability	Jeremy Cohen, Simran Kaur, Yuanzhi Li, J. Zico Kolter, and Ameet Talwalkar. Gradient descent on neural networks typicall
+7	2511.01938	id		Tiberiu Musat. The Geometry of Grokking: Norm Minimization on the Zero-Loss Manifold. *arXiv preprint arXiv:2511.01938*,
+8	1710.10345	s2	The Implicit Bias of Gradient Descent on Separable Data	Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar, and Nathan Srebro. The implicit bias of gradient desce
+9		s2	Flat Minima Neural Computation	Sepp Hochreiter, Jurgen Schmidhuber Flat Minima *Neural Computation*, 1997
+10	1705.07774	s2	Dissecting Adam: The Sign, Magnitude and Variance of Stochastic Gradients	Lukas Balles and Philipp Hennig. Dissecting Adam: The sign, magnitude and variance of stochastic gradients. *Proceedings
+11	1905.12558	s2	Limitations of the Empirical Fisher Approximation	Frederik Kunstner, Philipp Hennig, and Lukas Balles. Limitations of the empirical fisher approximation for natural gradi
+12	2207.05931	s2	Towards understanding how momentum improves generalization in deep learning	Samy Jelassi and Yuanzhi Li. Towards understanding how momentum improves generalization in deep learning. *Proceedings o
+13		s2	The scale of initialization determines the edge of stability	Sanjeev Arora, Zhiyuan Li, and Abhishek Panigrahi. The scale of initialization determines the edge of stability. *Advanc
+14	2209.15594	s2	Self-Stabilization: The Implicit Bias of Gradient Descent at the Edge of Stability	Alex Damian, Eshaan Nichani, and Jason D. Lee. Self-stabilization: The implicit bias of gradient descent at the edge of 
+15	1901.06053	s2	A Tail-Index Analysis of Stochastic Gradient Noise in Deep Neural Networks	Umut Simsekli, Levent Sagun, and Mert Gurbuzbalaban. A tail-index analysis of stochastic gradient noise in deep neural n
+16		s2	A Diffusion Theory For Deep Learning Dynamics: Stochastic Gradient Descent Exponentially Favors Flat	Zeke Xie, Issei Sato, and Masashi Sugiyama. A diffusion theory for deep learning dynamics: Stochastic gradient descent e
+17	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+18	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+19	2505.20172	s2	A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation	Scott Pesme, Etienne Boursier, and Radu-Alexandru Dragomir. A Theoretical Framework for Grokking: Interpolation followed
+20	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+21		—		Lucas Prieto, Melih Barsbey, Pedro A.M. Mediano, and Tolga Birdal. Grokking at the Edge of Numerical Stability. *Interna

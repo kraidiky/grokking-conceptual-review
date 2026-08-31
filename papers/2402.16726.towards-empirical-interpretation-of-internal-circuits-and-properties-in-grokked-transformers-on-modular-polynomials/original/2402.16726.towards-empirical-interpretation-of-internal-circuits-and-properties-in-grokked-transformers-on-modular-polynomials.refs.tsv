@@ -1,0 +1,47 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2211.15661	s2	What learning algorithm is in-context learning? Investigations with linear models	Ekin Akyürek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou. What learning algorithm is in-context learning?
+2	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin L. Edelman, Surbhi Goel, Sham M. Kakade, eran malach, and Cyril Zhang. Hidden progress in deep lear
+3	2005.14165	id		Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Sh
+4	2302.03025	id		Bilal Chughtai, Lawrence Chan, and Neel Nanda. A toy model of universality: Reverse engineering how networks learn group
+5	2304.14997	s2	Towards Automated Circuit Discovery for Mechanistic Interpretability	Arthur Conmy, Augustine N. Mavor-Parker, Aengus Lynch, Stefan Heimersheim, and Adri\`a Garriga-Alonso. Towards automated
+6	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. arXiv preprint arXiv:2303.06173,
+7	2310.13061	id		Darshil Doshi, Aritra Das, Tianyu He, and Andrey Gromov. To grok or not to grok: Disentangling generalization and memori
+8	2305.18654	s2	Faith and Fate: Limits of Transformers on Compositionality	Nouha Dziri, Ximing Lu, Melanie Sclar, Xiang Lorraine Li, Liwei Jiang, Bill Yuchen Lin, Peter West, Chandra Bhagavatula,
+9		s2	A mathematical framework for transformer circuits	Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann, Amanda Askell, Yuntao Bai, Anna Ch
+10		—		Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Rober
+11	2311.18751	id		Hiroki Furuta, Yutaka Matsuo, Aleksandra Faust, and Izzeddin Gur. Exposing limitations of language model agents in seque
+12	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. arXiv preprint arXiv:2301.02679, 2023.
+13	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+14		—		Yann A. LeCun, Léon Bottou, Genevieve B. Orr, and Klaus-Robert Müller. Efficient BackProp, pp.\ 9–48. Springer Berlin He
+15	2307.03381	s2	Teaching Arithmetic to Small Transformers	Nayoung Lee, Kartik Sreenivasan, Jason D. Lee, Kangwook Lee, and Dimitris Papailiopoulos. Teaching arithmetic to small t
+16	2310.16441	id		Noam Levi, Alon Beck, and Yohai Bar-Sinai. Grokking in linear estimators – a solvable model that groks without understan
+17	2205.10343	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J. Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking
+18	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In International Conference on 
+19	2310.05918	id		Ziming Liu, Ziqian Zhong, and Max Tegmark. Grokking as compression: A nonlinear complexity perspective. arXiv preprint a
+20		s2	Decoupled Weight Decay Regularization	Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. In International Conference on Learning Represe
+21	2311.18817	id		Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon S. Du, Jason D. Lee, and Wei Hu. Dichotomy of early and late phase implicit bi
+22	2202.05262	id		Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. Locating and editing factual associations in gpt. arXiv prep
+23	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+24	2310.17247	id		Jack Miller, Charles O'Neill, and Thang Bui. Grokking beyond neural networks: An empirical exploration with model comple
+25		—		Gouki Minegishi, Yusuke Iwasawa, and Yutaka Matsuo. Bridging Lottery ticket and Grokking: Is weight norm sufficient to e
+26	2311.07568	id		Depen Morwani, Benjamin L. Edelman, Costin-Andrei Oncescu, Rosie Zhao, and Sham Kakade. Feature emergence via margin max
+27	2305.18741	id		Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D. Manning. Grokking of hierarchical structure in vanill
+28	1912.02292	id		Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya Sutskever. Deep double descent: Where bi
+29	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+30	2306.13253	id		Pascal Jr. Tikeng Notsawo, Hattie Zhou, Mohammad Pezeshki, Irina Rish, and Guillaume Dumas. Predicting grokking long bef
+31		s2	Zoom In: An Introduction to Circuits	Chris Olah, Nick Cammarata, Ludwig Schubert, Gabriel Goh, Michael Petrov, and Shan Carter. Zoom in: An introduction to c
+32	2209.11895	s2	In-context Learning and Induction Heads	Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yunt
+33	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+34	2310.03789	id		Noa Rubin, Inbar Seroussi, and Zohar Ringel. Droplets of good representations: Grokking as a first order phase transitio
+35	2404.07129	s2	What needs to go right for an induction head? A mechanistic study of in-context learning circuits an	Aaditya K. Singh, Ted Moskovitz, Felix Hill, Stephanie C. Y. Chan, and Andrew M. Saxe. What needs to go right for an ind
+36	2312.06581	id		Dashiell Stander, Qinan Yu, Honglu Fan, and Stella Biderman. Grokking group multiplication with cosets. arXiv preprint a
+37	2311.06597	id		Zhiquan Tan and Weiran Huang. Understanding grokking through a robustness viewpoint. arXiv preprint arXiv:2311.06597, 20
+38	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+39	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+40	1706.03762	id		Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosu
+41		s2	Investigating Gender Bias in Language Models Using Causal Mediation Analysis	Jesse Vig, Sebastian Gehrmann, Yonatan Belinkov, Sharon Qian, Daniel Nevo, Yaron Singer, and Stuart Shieber. Investigati
+42	2206.08853	id		Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Z
+43	2310.02541	id		Zhiwei Xu, Yutong Wang, Spencer Frei, Gal Vardi, and Wei Hu. Benign overfitting and grokking in relu networks for xor cl
+44	2309.16042	id		Fred Zhang and Neel Nanda. Towards best practices of activation patching in language models: Metrics and methods. arXiv 
+45	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio
+46	2210.15435	id		Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent. arXiv prepri

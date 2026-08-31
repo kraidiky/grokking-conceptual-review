@@ -1,0 +1,21 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Improving Language Understanding by Generative Pre-Training	A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever, “Improving Language Understanding by Generative Pre-Training,”
+2		s2	Language Models are Unsupervised Multitask Learners	A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever, “Language Models are Unsupervised Multitask Learners,
+3	2005.14165	s2	Language Models are Few-Shot Learners	T. Brown *et al.*, “Language Models are Few-Shot Learners,” in *Advances in Neural Information Processing Systems (NeurI
+4		—		A. Chowdhery *et al.*, “PaLM: Scaling Language Modeling with Pathways,” in *Proc. Int. Conf. Machine Learning (ICML)*, 2
+5	2303.08774	id		OpenAI, “GPT-4 Technical Report,” arXiv:2303.08774 [cs.CL], 2023.
+6	2206.07682	s2	Emergent Abilities of Large Language Models	J. Wei *et al.*, “Emergent Abilities of Large Language Models,” *Transactions on Machine Learning Research*, 2022.
+7	2305.05061	id		T. Hong, “Coherent Wave Dynamics and Language Generation of a Generative Pre-trained Transformer,” arXiv:2305.05061 [cs.
+8		s2	Statistical Physics	L. D. Landau and E. M. Lifshitz, *Statistical Physics*. Elsevier, 2013.
+9		s2	Statistical Physics	D. Tong, “Statistical Physics,” Lecture Notes, Univ. Cambridge, 2011.
+10		s2	More is different.	P. W. Anderson, “More Is Different,” *Science*, vol. 177, no. 4047, pp. 393–396, 1972.
+11		s2	Phase Transitions in Artificial Intelligence Systems	B. A. Huberman and T. Hogg, “Phase Transitions in Artificial Intelligence Systems,” *Artificial Intelligence*, vol. 33, 
+12		s2	“Emergent Computation in Natural and Artificial Systems,”	S. Forrest, “Emergent Computation in Natural and Artificial Systems,” *Physica D: Nonlinear Phenomena*, vol. 42, no. 1–3
+13		—		W. Kinzel, “Phase Transitions of Neural Networks,” *Philosophical Magazine B*, vol. 77, no. 5, pp. 1455–1470, 1998.
+14		s2	Statistical mechanics of deep learning	Y. Bahri, J. Kadmon, J. Pennington, S. S. Schoenholz, J. Sohl-Dickstein, and S. Ganguli, “Statistical Mechanics of Deep 
+15	2309.12345	id		B. Miller, T. Zhang, and S. Ganguli, “Universal Scaling Laws of Absorbing Phase Transitions in Artificial Deep Neural Ne
+16	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra, “Grokking: Generalization Beyond Overfitting on Small Algor
+17	2301.05217	id		S. Agarwal, A. S. Morcos, and A. Krishnamurthy, “Progress Measures for Grokking via Mechanistic Interpretability,” arXiv
+18		s2	“On the Critical Advantages of Large-Scale Model Scaling in Neural Translation,”	N. Dolev, Y. Moskovich, M. Goldberg, and R. Reichart, “On the Critical Advantages of Large-Scale Model Scaling in Neural
+19	2310.03789	id		N. Rubin, I. Seroussi, and Z. Ringel, “Grokking as a First Order Phase Transition in Two Layer Networks,” in *Proc. Int.
+20	2304.15004	id		R. Schaeffer, B. Miranda, and S. Koyejo, “Are Emergent Abilities of Large Language Models a Mirage?,” arXiv:2304.15004 [

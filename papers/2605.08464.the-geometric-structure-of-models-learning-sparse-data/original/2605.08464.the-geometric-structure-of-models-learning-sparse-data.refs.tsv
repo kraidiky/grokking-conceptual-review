@@ -1,0 +1,47 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	A Global Geometric Framework for Nonlinear Dimensionality Reduction	[1] Joshua B. Tenenbaum, Vin de Silva, and John C. Langford. A Global Geometric Framework For Nonlinear Dimensionality R
+2		s2	Nonlinear dimensionality reduction by locally linear embedding.	[2] Sam T. Roweis and Lawrence K. Saul. Nonlinear Dimensionality Reduction by Locally Linear Embedding. Science, 290(550
+3	1710.09412	s2	mixup: Beyond Empirical Risk Minimization	[3] Hongyi Zhang, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. Mixup: Beyond Empirical Risk Minimization. In I
+4	1905.04899	s2	CutMix: Regularization Strategy to Train Strong Classifiers With Localizable Features	[4] Sangdoo Yun, Dongyoon Han, Seong Joon Oh, Sanghyuk Chun, Junsuk Choe, and Young Joon Yoo. CutMix: Regularization Str
+5	1811.09030	s2	Data Augmentation Using Random Image Cropping and Patching for Deep CNNs	[5] Ryo Takahashi, Takashi Matsubara, and Kuniaki Uehara. Data Augmentation Using Random Image Cropping and Patching for
+6	1708.04896	s2	Random Erasing Data Augmentation	[6] Zhun Zhong, Liang Zheng, Guoliang Kang, Shaozi Li, and Yi Yang. Random Erasing Data Augmentation. In Proceedings of 
+7		s2	AutoAugment: Learning Augmentation Strategies From Data	[7] Ekin D Cubuk, Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V Le. Autoaugment: Learning Augmentation Strate
+8		s2	AugMix: A Simple Method to Improve Robustness and Uncertainty Under Data Shift	[8] Dan Hendrycks, Norman Mu, Ekin Dogus Cubuk, Barret Zoph, Justin Gilmer, and Balaji Lakshminarayanan. AugMix: A Simpl
+9		s2	Backpropagation Applied to Handwritten Zip Code Recognition	[9] Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel. Backpropagation Applied 
+10	1706.03762	s2	Attention is All you Need	[10] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Po
+11	2201.02177	id		[11] Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization Beyond Overfi
+12		s2	Mechanism for feature learning in neural networks and backpropagation-free machine learning models	[12] Adityanarayanan Radhakrishnan, Daniel Beaglehole, Parthe Pandit, and Mikhail Belkin. Mechanism for Feature Learning
+13		s2	A Spline Theory of Deep Learning	[13] Randall Balestriero and Richard Baraniuk. A Spline Theory of Deep Learning. In Proceedings of the 35th Internationa
+14	1805.06576	s2	Mad Max: Affine Spline Insights Into Deep Learning	[14] Randall Balestriero and Richard G Baraniuk. Mad Max: Affine Spline Insights Into Deep Learning. Proceedings of the 
+15		s2	Learning long-term dependencies with gradient descent is difficult	[15] Y. Bengio, P. Simard, and P. Frasconi. Learning Long-Term Dependencies with Gradient Descent Is Difficult. IEEE Tra
+16	1211.5063	s2	On the difficulty of training recurrent neural networks	[16] Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. On the Difficulty of Training Recurrent Neural Networks. In Proce
+17		s2	Gradient-based learning applied to document recognition	[17] Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. Gradient-Based Learning Applied to Document Recognition. Proceeding
+18		s2	Learning Multiple Layers of Features from Tiny Images	[18] Alex Krizhevsky and Geoffrey Hinton. Learning Multiple Layers of Features from Tiny Images. Technical report, Unive
+19	1605.07146	id		[19] Sergey Zagoruyko and Nikos Komodakis. Wide Residual Networks. arXiv:1605.07146, 2017. Cited by: Figure 1.
+20	1905.08443	s2	The Geometry of Deep Networks: Power Diagram Subdivision	[20] Randall Balestriero, Romain Cosentino, Behnaam Aazhang, and Richard Baraniuk. The Geometry of Deep Networks: Power 
+21	2302.12828	s2	SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries	[21] Ahmed Imtiaz Humayun, Randall Balestriero, Guha Balakrishnan, and Richard Baraniuk. SplineCam: Exact Visualization 
+22		s2	Packing and Covering	[22] C. A. Rogers. Packing and Covering. Cambridge University Press, 1964. ISBN 978-0-521- 09034-6. Cited by: §3.1.2.
+23		s2	Voronoi Diagram in the Laguerre Geometry and its Applications	[23] Hiroshi Imai, Masao Iri, and Kazuo Murota. Voronoi Diagram in the Laguerre Geometry and Its Applications. SIAM Jour
+24		s2	Scalable Recognition with a Vocabulary Tree	[24] David Nister and Henrik Stewenius. Scalable Recognition With a Vocabulary Tree. In IEEE Conference on Computer Visi
+25	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	[25] Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural Tangent Kernel: Convergence and Generalization in Neural 
+26	1812.07956	s2	On Lazy Training in Differentiable Programming	[26] Lénaïc Chizat, Edouard Oyallon, and Francis Bach. On Lazy Training in Differentiable Programming. In Advances in Ne
+27	2002.09277	s2	Kernel and Rich Regimes in Overparametrized Models	[27] Blake Woodworth, Suriya Gunasekar, Jason D. Lee, Edward Moroshko, Pedro Savarese, Itay Golan, Daniel Soudry, and Na
+28	2007.06738	s2	Implicit Bias in Deep Linear Classification: Initialization Scale vs Training Accuracy	[28] Edward Moroshko, Blake Woodworth, Suriya Gunasekar, Jason D. Lee, Nathan Srebro, and Daniel Soudry. Implicit Bias i
+29	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	[29] Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon Shaolei Du, Jason D. Lee, and Wei Hu. Dichotomy of Early and Late Phase I
+30	2310.03789	s2	Grokking as a First Order Phase Transition in Two Layer Networks	[30] Noa Rubin, Inbar Seroussi, and Zohar Ringel. Grokking as a First Order Phase Transition in Two Layer Networks. In T
+31	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	[31] Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the Transition From Lazy to Ric
+32	2405.20233	id		[32] Jaerin Lee, Bong Gyun Kang, Kihoon Kim, and Kyoung Mu Lee. Grokfast: Accelerated Grokking by Amplifying Slow Gradie
+33	2501.04697	s2	Grokking at the Edge of Numerical Stability	[33] Lucas Prieto, Melih Barsbey, Pedro A. M. Mediano, and Tolga Birdal. Grokking at the Edge of Numerical Stability. In
+34	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	[34] Zhiwei Xu, Zhiyu Ni, Yixin Wang, and Wei Hu. Let Me Grok For You: Accelerating Grokking via Embedding Transfer From
+35	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	[35] Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking Beyond Algorithmic Data. In The 11th International
+36	2407.20199	id		[36] Neil Mallinar, Daniel Beaglehole, Libin Zhu, Adityanarayanan Radhakrishnan, Parthe Pandit, and Mikhail Belkin. Emer
+37		s2	Do we need hundreds of classifiers to solve real world classification problems?	[37] Manuel Fernández-Delgado, Eva Cernadas, Senén Barro, and Dinani Amorim. Do We Need Hundreds of Classifiers to Solve
+38	2506.16791	s2	TabArena: A Living Benchmark for Machine Learning on Tabular Data	[38] Nick Erickson, Lennart Purucker, Andrej Tschalzev, David Holzmüller, Prateek Mutalik Desai, David Salinas, and Fran
+39	1805.12152	s2	Robustness May Be at Odds with Accuracy	[39] Dimitris Tsipras, Shibani Santurkar, Logan Engstrom, Alexander Turner, and Aleksander Madry. Robustness May Be at O
+40	1706.06083	s2	Towards Deep Learning Models Resistant to Adversarial Attacks	[40] Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu. Towards Deep Learning Mod
+41	1512.03385	s2	Deep Residual Learning for Image Recognition	[41] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep Residual Learning for Image Recognition. In IEEE Confer
+42	0706.4138	s2	Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization	[42] Benjamin Recht, Maryam Fazel, and Pablo A. Parrilo. Guaranteed Minimum-rank Solutions of Linear Matrix Equations vi
+43	2405.14544	s2	Nuclear Norm Regularization for Deep Learning	[43] Christopher Scarvelis and Justin Solomon. Nuclear Norm Regularization for Deep Learning. In The 38th Annual Confere
+44		s2	Decoupled Weight Decay Regularization	[44] Ilya Loshchilov and Frank Hutter. Decoupled Weight Decay Regularization. In International Conference on Learning Re
+45	2305.13948	s2	Decoupled Kullback-Leibler Divergence Loss	[45] Jiequan Cui, Zhuotao Tian, Zhisheng Zhong, Xiaojun Qi, Bei Yu, and Hanwang Zhang. Decoupled Kullback-Leibler Diverg
+46	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	[46] Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress Measures for Grokking via Mecha

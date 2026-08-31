@@ -1,0 +1,30 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal. Reconciling modern machine-learning practice and the classical
+2		s2	Towards monosemanticity: Decomposing language models with dictionary learning	Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, Tom Conerly, **[p. 32]** Nick Turner, Cem Anil,
+3	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+4	1803.00885	s2	Essentially No Barriers in Neural Network Energy Landscape	Felix Draxler, Kambis Veschgini, Manfred Salmhofer, and Fred A Hamprecht. Essentially no barriers in neural network ener
+5	2209.10652	s2	Toy Models of Superposition	Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Rober
+6	1906.04724	s2	Large Scale Structure of Neural Network Loss Landscapes	Stanislav Fort and Stanislaw Jastrzebski. Large scale structure of neural network loss landscapes. In *Advances in Neura
+7	1803.03635	s2	The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks	Jonathan Frankle and Michael Carlin. The lottery ticket hypothesis: Finding sparse, trainable neural networks. In *Inter
+8	1802.10026	s2	Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs	Timur Garipov, Pavel Izmailov, Dmitrii Podoprikhin, Dmitry Vetrov, and Andrew Gordon Wilson. Loss surfaces, mode connect
+9	1503.02101	s2	Escaping From Saddle Points - Online Stochastic Gradient for Tensor Decomposition	Rong Ge, Furong Huang, Chi Jin, and Yang Yuan. Escaping from saddle points — online stochastic gradient for tensor decom
+10		—		Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. LoRA: Low-
+11	2001.08361	id		Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey 
+12	1609.04836	s2	On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima	Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang. On large-batch t
+13	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich trai
+14	1804.08838	s2	Measuring the Intrinsic Dimension of Objective Landscapes	Chunyuan Li, Heerad Farkhoor, Rosanne Liu, and Jason Yosinski. Measuring the intrinsic dimension of objective landscapes
+15	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer, and Tom Goldstein. Visualizing the loss landscape of neural nets. In *
+16	2210.01117	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J Michaud, Max Tegmark, and Mike Williams. Omnigrok: Grokking beyond algor
+17	2311.18817	id		Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon S Du, Jason D Lee, and Wei Hu. Dichotomy of early and late phase implicit bias
+18	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+19	2602.01434	id		Andrea Montanari and Zihao Wang. Phase transitions for feature learning in neural networks. *arXiv preprint arXiv:2602.0
+20	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+21		s2	Exploring generalization in deep networks	Behnam Neyshabur, Srinadh Bhojanapalli, David McAllester, and Nati Srebro. Exploring generalization in deep networks. In
+22	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+23	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+24	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Neel Nanda. Explaining grokking through circuit efficiency.
+25	2602.16967	id		Yongzhong Xu. Early-warning signals of grokking via loss-landscape geometry. *arXiv preprint arXiv:2602.16967*, 2026a. U
+26	2602.16746	id		Yongzhong Xu. Low-dimensional and transversely curved optimization dynamics in grokking. *arXiv preprint arXiv:2602.1674
+27	2602.10496	id		Yongzhong Xu. Low-dimensional execution manifolds in transformer learning dynamics: Evidence from modular arithmetic tas
+28	2603.28964	id		Yongzhong Xu. The spectral edge thesis: Intra-signal gap dynamics in transformer training. *arXiv preprint arXiv:2603.28
+29	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio

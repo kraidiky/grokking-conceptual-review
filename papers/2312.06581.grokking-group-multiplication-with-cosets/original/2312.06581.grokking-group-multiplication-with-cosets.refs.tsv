@@ -1,0 +1,65 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1810.03292	s2	Sanity Checks for Saliency Maps	Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M., and Kim, B. Sanity checks for saliency maps, 2020.
+2	2104.07143	s2	An Interpretability Illusion for BERT	Bolukbasi, T., Pearce, A., Yuan, A., Coenen, A., Reif, E., Viégas, F., and Wattenberg, M. An interpretability illusion f
+3		—		Casper, S., Li, Y., Li, J., Bu, T., Zhang, K., Hariharan, K., and Hadfield-Menell, D. Red teaming deep neural networks w
+4	2302.03025	id		Chughtai, B., Chan, L., and Nanda, N. A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operatio
+5		—		Clausen, M. and Baum, U. Fast Fourier Transforms for Symmetric Groups: Theory and Implementation. *Mathematics of Comput
+6		—		Cohen, T. and Welling, M. Group Equivariant Convolutional Networks. In *Proceedings of The 33rd International Conference
+7	2304.14997	id		Conmy, A., Mavor-Parker, A. N., Lynch, A., Heimersheim, S., and Garriga-Alonso, A. Towards Automated Circuit Discovery f
+8		s2	Group representations in probability and statistics	Diaconis, P. *Group Representations in Probability and Statistics*, volume 11 of *Institute of Mathematical Statistics L
+9	1702.08608	s2	Towards A Rigorous Science of Interpretable Machine Learning	Doshi-Velez, F. and Kim, B. Towards a rigorous science of interpretable machine learning, 2017.
+10		s2	Abstract Algebra	Dummit, D. S. and Foote, R. M. *Abstract Algebra*. Wiley, 3rd edition, July 2003. ISBN 978-0-471-43334-7.
+11		s2	Fourier Analysis: An Introduction	Elias M. Stein, R. S. *Fourier analysis: an introduction*. Princeton lectures in analysis 1. Princeton University Press,
+12	1011.3342	id		Ellis, D., Friedgut, E., and Pilpel, H. Intersecting Families of Permutations, July 2017. URL http://arxiv.org/abs/1011.
+13		s2	On an Elementary Proof of Some Asymptotic Formulas in the Theory of Partitions	Erdos, P. On an elementary proof of some asymptotic formulas in the theory of partitions. *Annals of Mathematics*, 43(3)
+14		—		Friedman, D., Lampinen, A., Dixon, L., Chen, D., and Ghandeharioun, A. Interpretability illusions in the generalization 
+15		s2	Representation theory	Fulton, W. and Harris, Joe. *Representation Theory*. Graduate Texts in Mathematics. Springer, New York, NY, October 1991
+16		—		GAP. Gap – groups, algorithms, and programming, version 4.12.2, 2023. URL https://www.gap-system.org.
+17		—		Geiger, A., Potts, C., and Icard, T. Causal abstraction for faithful model interpretation, 2023.
+18	2012.14913	s2	Transformer Feed-Forward Layers Are Key-Value Memories	Geva, M., Schuster, R., Berant, J., and Levy, O. Transformer feed-forward layers are key-value memories, 2021.
+19		—		Goldowsky-Dill, N., MacLeod, C., Sato, L., and Arora, A. Localizing model behavior with path patching, 2023.
+20	2301.02679	id		Gromov, A. Grokking modular arithmetic, January 2023. URL http://arxiv.org/abs/2301.02679. arXiv:2301.02679 [cond-mat].
+21	2305.00586	id		Hanna, M., Liu, O., and Variengien, A. How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pr
+22	2006.10256	s2	Array programming with NumPy	Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., B
+23	2301.04213	s2	Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowled	Hase, P., Bansal, M., Kim, B., and Ghandeharioun, A. Does localization inform editing? surprising differences in causali
+24		s2	Fourier Theoretic Probabilistic Inference over Permutations	Huang, J., Guestrin, C., and Guibas, L. Fourier Theoretic Probabilistic Inference over Permutations. *Journal of Machine
+25	1902.10186	s2	Attention is not Explanation	Jain, S. and Wallace, B. C. Attention is not explanation. In *North American Chapter of the Association for Computationa
+26		—		Janusz, G. and Rotman, J. Outer automorphisms of $S_{6}$. *The American Mathematical Monthly*, 89(6):407–410, 1982. ISSN
+27	2309.05352	s2	Neural Discovery of Permutation Subgroups	Karjol, P., Kashyap, R., and Ap, P. Neural Discovery of Permutation Subgroups. In *Proceedings of The 26th International
+28		s2	A method for stochastic optimization	Kingma, D. P. and Ba, J. Adam: A method for stochastic optimization. *CoRR*, abs/1412.6980, 2014. URL https://api.semant
+29		s2	Group theoretical methods in machine learning	Kondor, R. *Group theoretical methods in machine learning*. PhD thesis, Columbia University, New York, NY, 2008. URL htt
+30	1802.03690	s2	On the Generalization of Equivariance and Convolution in Neural Networks to the Action of Compact Gr	Kondor, R. and Trivedi, S. On the Generalization of Equivariance and Convolution in Neural Networks to the Action of Com
+31	2310.06110	id		Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C. Grokking as the Transition from Lazy to Rich Training Dynamic
+32	2307.09458	s2	Does Circuit Analysis Interpretability Scale? Evidence from Multiple Choice Capabilities in Chinchil	Lieberum, T., Rahtz, M., Kramár, J., Nanda, N., Irving, G., Shah, R., and Mikulik, V. Does circuit analysis interpretabi
+33	1705.07874	s2	A Unified Approach to Interpreting Model Predictions	Lundberg, S. and Lee, S.-I. A unified approach to interpreting model predictions, 2017.
+34		—		Makelov, A., Lange, G., and Nanda, N. Is this the subspace you are looking for? an interpretability illusion for subspac
+35	2307.15771	s2	The Hydra Effect: Emergent Self-repair in Language Model Computations	McGrath, T., Rahtz, M., Kramar, J., Mikulik, V., and Legg, S. The hydra effect: Emergent self-repair in language model c
+36		—		Meng, K., Bau, D., Andonian, A., and Belinkov, Y. Locating and editing factual associations in gpt, 2023.
+37	2303.11873	id		Merrill, W., Tsilivis, N., and Shukla, A. A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetwork
+38	2311.07568	s2	Feature emergence via margin maximization: case studies in algebraic tasks	Morwani, D., Edelman, B. L., Oncescu, C.-A., Zhao, R., and Kakade, S. Feature emergence via margin maximization: case st
+39		s2	Transformerlens	Nanda, N. and Bloom, J. Transformerlens. https://github.com/neelnanda-io/TransformerLens, 2022.
+40	2301.05217	id		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+41	2309.00941	id		Nanda, N., Lee, A., and Wattenberg, M. Emergent Linear Representations in World Models of Self-Supervised Sequence Model
+42		—		OEIS Foundation Inc. The On-Line Encyclopedia of Integer Sequences, 2023. Published electronically at http://oeis.org.
+43		—		Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M., and Carter, S. Zoom In: An Introduction to Circuits. *Distil
+44		—		Olsson, C., Elhage, N., Nanda, N., Joseph, N., DasSarma, N., Henighan, T., Mann, B., Askell, A., Bai, Y., Chen, A., Cone
+45	1912.01703	id		Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L.,
+46		s2	SnFFT: a Julia toolkit for Fourier analysis of functions over permutations	Plumb, G., Pachauri, D., Kondor, R., and Singh, V. SnFFT: A Julia Toolkit for Fourier Analysis of Functions over Permuta
+47	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization Beyond Overfitting on Small Al
+48		s2	Enumerating finite groups of given order	Pyber, L. Enumerating finite groups of given order. *Annals of Mathematics*, 137(1):203–220, 1993. ISSN 0003486X. URL ht
+49		—		Quirke, P. and Barez, F. Understanding addition in transformers, 2024.
+50	2310.03789	id		Rubin, N., Seroussi, I., and Ringel, Z. Droplets of Good Representations: Grokking as a First Order Phase Transition in 
+51	1605.01713	s2	Not Just a Black Box: Learning Important Features Through Propagating Activation Differences	Shrikumar, A., Greenside, P., Shcherbina, A., and Kundaje, A. Not just a black box: Learning important features through 
+52	1312.6034	s2	Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps	Simonyan, K., Vedaldi, A., and Zisserman, A. Deep inside convolutional networks: Visualising image classification models
+53		s2	Sage Mathematics Software (Version 10.0.0)	Stein, W. et al. *Sage Mathematics Software (Version 10.0.0)*. The Sage Development Team, 2023. URL {http://www.sagemath
+54	2310.15154	s2	Linear Representations of Sentiment in Large Language Models	Tigges, C., Hollinsworth, O. J., Geiger, A., and Nanda, N. Linear representations of sentiment in large language models,
+55	2309.02390	id		Varma, V., Shah, R., Kenton, Z., Kramár, J., and Kumar, R. Explaining grokking through circuit efficiency, September 202
+56		—		Vink, R., Gooijer, S. d., Beedie, A., Gorelli, M. E., Zundert, J. v., Hulselmans, G., Grinstead, C., Santamaria, M., Guo
+57	2211.00593	id		Wang, K., Variengien, A., Conmy, A., Shlegeris, B., and Steinhardt, J. Interpretability in the Wild: a Circuit for Indir
+58	2211.00593	s2	Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small	Wang, K., Variengien, A., Conmy, A., Shlegeris, B., and Steinhardt, J. Interpretability in the wild: a circuit for indir
+59		—		Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi
+60	2312.01429	s2	Transformers are uninterpretable with myopic methods: a case study with bounded Dyck grammars	Wen, K., Li, Y., Liu, B., and Risteski, A. Transformers are uninterpretable with myopic methods: a case study with bound
+61		—		Wold, S., Esbensen, K., and Geladi, P. Principal component analysis. *Chemometrics and Intelligent Laboratory Systems*, 
+62	2310.02541	id		Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W. Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data,
+63	2305.14699	id		Zhang, S. D., Tigges, C., Biderman, S., Raginsky, M., and Ringer, T. Can Transformers Learn to Solve Problems Recursivel
+64	2306.17844	id		Zhong, Z., Liu, Z., Tegmark, M., and Andreas, J. The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neur

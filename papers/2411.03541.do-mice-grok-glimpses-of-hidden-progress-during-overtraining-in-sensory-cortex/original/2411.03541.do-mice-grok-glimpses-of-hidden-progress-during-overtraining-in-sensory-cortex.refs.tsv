@@ -1,0 +1,75 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+2	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+3	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+4	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+5	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich trai
+6	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon Shaolei Du, Jason D Lee, and Wei Hu. Dichotomy of early and late phase implici
+7		s2	The role of deliberate practice in the acquisition of expert performance.	K Anders Ericsson, Ralf Th Krampe, and Clemens Tesch-Römer. The role of deliberate practice in the acquisition of expert
+8		s2	Mechanisms of Skill Acquisition and the Law of Practice	Allen Newell and Paul S Rosenbloom. Mechanisms of skill acquisition and the law of practice. In John R Anderson, editor,
+9		s2	Human Performance	Paul M Fitts and Michael I Posner. *Human Performance*. Brooks/Cole Publishing Company, 1967.
+10		s2	Further analysis of the overtraining reversal effect.	Nicholas John Mackintosh. Further analysis of the overtraining reversal effect. *Journal of Comparative and Physiologica
+11		s2	The Overtraining Reversal Effect in Rats: A Function of Task Difficulty	Charles L Richman, Karol Knoblock, and Wayne Coussens 1. The overtraining reversal effect in rats: A function of task di
+12		s2	The effect of overtraining on reversal shift behavior in rats reinforced with electrical brain stimu	Philip G Mead. The effect of overtraining on reversal shift behavior in rats reinforced with electrical brain stimulatio
+13		s2	Deep Neural Networks for Modeling Visual Perceptual Learning	Li K Wenliang and Aaron R Seitz. Deep neural networks for modeling visual perceptual learning. *Journal of Neuroscience*
+14		s2	Can Deep Learning Model Perceptual Learning?	Shahab Bakhtiari. Can deep learning model perceptual learning? *The Journal of Neuroscience*, 39(2):194, 2019.
+15		s2	Feature reliability determines specificity and transfer of perceptual learning in orientation search	Amit Yashar and Rachel N Denison. Feature reliability determines specificity and transfer of perceptual learning in orie
+16		s2	From the neuron doctrine to neural networks	Rafael Yuste. From the neuron doctrine to neural networks. *Nature Reviews Neuroscience*, 16(8):487–497, 2015.
+17		s2	Long-Term Optical Access to an Estimated One Million Neurons in the Live Mouse Cortex	Tae Hoon Kim, Yajun Zhang, Julien Lecoq, Jason C Jung, Jun Li, Hongkui Zeng, and Mark J Schnitzer. Long-term optical acc
+18		s2	Experience-dependent evolution of odor mixture representations in piriform cortex	Alice Berners-Lee, Elizabeth Shtrahman, Julien Grimaud, and Venkatesh N Murthy. Experience-dependent evolution of odor m
+19	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning: 
+20		s2	Arc Visualization of Odor Objects Reveals Experience-Dependent Ensemble Sharpening, Separation, and 	Amin MD Shakhawat, Carolyn W Harley, and Qi Yuan. Arc visualization of odor objects reveals experience-dependent ensembl
+21		s2	Separate encoding of identity and similarity of complex familiar odors in piriform cortex	Mikiko Kadohisa and Donald A Wilson. Separate encoding of identity and similarity of complex familiar odors in piriform 
+22	1812.07956	s2	On Lazy Training in Differentiable Programming	Lenaic Chizat, Edouard Oyallon, and Francis Bach. On lazy training in differentiable programming. *Advances in neural in
+23	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural tangent kernel: Convergence and generalization in neural netwo
+24		s2	From lazy to rich to exclusive task representations in neural networks and neural codes.	Matthew Farrell, Stefano Recanatesi, and Eric Shea-Brown. From lazy to rich to exclusive task representations in neural 
+25		s2	Rich and lazy learning of task representations in brains and neural networks	Timo Flesch, Keno Juechems, Tsvetomira Dumbalska, Andrew Saxe, and Christopher Summerfield. Rich and lazy learning of ta
+26		s2	Orthogonal representations for robust context-dependent task performance in brains and neural networ	Timo Flesch, Keno Juechems, Tsvetomira Dumbalska, Andrew Saxe, and Christopher Summerfield. Orthogonal representations f
+27		s2	Multitask representations in the human cortex transform along a sensory-to-motor hierarchy	Takuya Ito and John D Murray. Multitask representations in the human cortex transform along a sensory-to-motor hierarchy
+28	2407.12332	id		Mohamad Amin Mohamadi, Zhiyuan Li, Lei Wu, and Danica J Sutherland. Why do you grok? a theoretical analysis of grokking 
+29		s2	Margin maximization for robust classification using deep learning	Alexander Matyasko and Lap-Pui Chau. Margin maximization for robust classification using deep learning. In *2017 Interna
+30	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+31	2402.11004	id		Benjamin L Edelman, Ezra Edelman, Surbhi Goel, Eran Malach, and Nikolaos Tsilivis. The evolution of statistical inductio
+32	2408.08944	s2	Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition	Kenzo Clauw, Daniele Marinazzo, and Sebastiano Stramaglia. Information-theoretic progress measures reveal grokking is an
+33	2311.07568	id		Depen Morwani, Benjamin L Edelman, Costin-Andrei Oncescu, Rosie Zhao, and Sham Kakade. Feature emergence via margin maxi
+34		s2	Odor coding in piriform cortex: mechanistic insights into distributed coding	Robin M Blazing and Kevin M Franks. Odor coding in piriform cortex: mechanistic insights into distributed coding. *Curre
+35		s2	A quantitative description of the mouse piriform cortex	Shyam Srinivasan and Charles F Stevens. A quantitative description of the mouse piriform cortex. *bioRxiv*, page 099002,
+36		s2	Representational similarity analysis-connecting the branches of systems neuroscience	Nikolaus Kriegeskorte, Marieke Mur, and Peter A Bandettini. Representational similarity analysis-connecting the branches
+37		s2	GAN Dissection: Visualizing and Understanding Generative Adversarial Networks	David Bau, Bolei Zhou, Aditya Khosla, Aude Oliva, and Antonio Torralba. Gan dissection: Visualizing and understanding ge
+38		—		Chris Olah, Nick Cammarata, Ludwig Schubert, Gabriel Goh, Michael Petrov, and Shan Carter. Zoom in: An introduction to c
+39		s2	A mathematical framework for transformer circuits	Neil Elhage, A Nanda, Chris Olah, Shan Carter, Nick Cammarata Gabriel Schubert Wang, and Curtis Hernandez. A mathematica
+40	2309.16042	id		Fred Zhang and Neel Nanda. Towards best practices of activation patching in language models: Metrics and methods. *arXiv
+41	1906.05890	id		Kaifeng Lyu and Jian Li. Gradient descent maximizes the margin of homogeneous neural networks. *arXiv preprint arXiv:190
+42		s2	Pattern Recognition and Machine Learning	Christopher M. Bishop. *Pattern Recognition and Machine Learning*. Springer, New York, 2006. ISBN 978-0-387-31073-2.
+43	1710.10345	id		D Soudry, E Hoffer, and N Srebro. The implicit bias of gradient descent on separable data. arxiv. *arXiv preprint arXiv:
+44		s2	Principles of Neural Design	Peter Sterling and Simon Laughlin. *Principles of Neural Design*. MIT Press, 2015.
+45	1706.00382	s2	Blind Nonnegative Source Separation Using Biological Neural Networks	Cengiz Pehlevan, Sreyas Mohan, and Dmitri B Chklovskii. Blind nonnegative source separation using biological neural netw
+46		s2	Emergence of simple-cell receptive field properties by learning a sparse code for natural images	Bruno A. Olshausen and David J. Field. Emergence of simple-cell receptive field properties by learning a sparse code for
+47		s2	Algorithms for nonnegative independent component analysis	Mark D. Plumbley. Algorithms for nonnegative independent component analysis. *IEEE Transactions on Neural Networks*, 14(
+48	2210.01768	s2	Disentanglement with Biological Constraints: A Theory of Functional Cell Types	James CR Whittington, Will Dorrell, Surya Ganguli, and Timothy Behrens. Disentanglement with biological constraints: A t
+49		s2	Neural correlates, computation and behavioural impact of decision confidence	Adam Kepecs, Naoshige Uchida, Hatim A Zariwala, and Zachary F Mainen. Neural correlates, computation and behavioural imp
+50		s2	Midbrain dopamine neurons signal belief in choice accuracy during a perceptual decision	Armin Lak, Katsuhiro Nomoto, Mehdi Keramati, Masamichi Sakagami, and Adam Kepecs. Midbrain dopamine neurons signal belie
+51		s2	Effects of Cortical Microstimulation on Confidence in a Perceptual Decision.	Christopher R Fetsch, Roozbeh Kiani, William T Newsome, and Michael N Shadlen. Effects of cortical microstimulation on c
+52		s2	Responses of pulvinar neurons reflect a subject's confidence in visual categorization	Yusuke Komura, Akifumi Nikkuni, Naofumi Hirashima, Takuya Uetake, and Atsushi Miyamoto. Responses of pulvinar neurons re
+53		s2	Analysis of the overlearning reversal effect.	Elijah Lovejoy. Analysis of the overlearning reversal effect. *Psychological Review*, 73(1):87, 1966.
+54		s2	Overtraining and reversal learning by cats and rhesus monkeys.	C. H. Beck, J. M. Warren, and R. Sterner. Overtraining and reversal learning by cats and rhesus monkeys. *Journal of Com
+55		s2	Overtraining and extradimensional shift learning by cats	J. M. Warren. Overtraining and extradimensional shift learning by cats. *Bulletin of the Psychonomic Society*, 12(3):177
+56	1312.6120	id		Andrew M Saxe, James L McClelland, and Surya Ganguli. Exact solutions to the nonlinear dynamics of learning in deep line
+57	2205.09653	s2	Self-consistent dynamical field theory of kernel evolution in wide neural networks	Blake Bordelon and Cengiz Pehlevan. Self-consistent dynamical field theory of kernel evolution in wide neural networks. 
+58		s2	Mouse visual cortex areas represent perceptual and semantic features of learned visual categories	Pieter M Goltstein, Sandra Reinert, Tobias Bonhoeffer, and Mark Hübener. Mouse visual cortex areas represent perceptual 
+59		s2	Selectivity and tolerance (“invariance”) both increase as visual information propagates from cortica	Nicole C. Rust and James J. DiCarlo. Selectivity and tolerance (”invariance”) both increase as visual information propag
+60		s2	Comparison of categorization of stimuli in the monkey prefrontal cortex: Frontal eye field and infer	David J. Freedman, Maximilian Riesenhuber, Tomaso Poggio, and Earl K. Miller. Comparison of categorization of stimuli in
+61		s2	Transient and Persistent Representations of Odor Value in Prefrontal Cortex	Peter Y Wang, Cristian Boboila, Matthew Chin, Alexandra Higashi-Howard, Philip Shamash, Zheng Wu, Nicole P Stein, LF Abb
+62		s2	Multistability of cognitive maps in the hippocampus of old rats	Carol A Barnes, Matthew S Suster, Jiemin Shen, and Bruce L McNaughton. Multistability of cognitive maps in the hippocamp
+63		s2	Long-term stability of the place-field activity of single units recorded from the dorsal hippocampus	LT Thompson and PJ Best. Long-term stability of the place-field activity of single units recorded from the dorsal hippoc
+64		s2	Increased attention to spatial context increases both place field stability and spatial memory.	Clifford G Kentros, Naveen T Agnihotri, Samantha Streater, Robert D Hawkins, and Eric R Kandel. Increased attention to s
+65		s2	Neuronal code for extended time in the hippocampus	Emily A Mankin, Fraser T Sparks, Begum Slayyeh, Robert J Sutherland, Stefan Leutgeb, and Jill K Leutgeb. Neuronal code f
+66		—		Yaniv Ziv, Laurie D Burns, Eric D Cocker, Elizabeth O Hamel, Kunal K Ghosh, Lacey J Kitch, Abbas El Gamal, and Mark J Sc
+67		s2	Causes and consequences of representational drift	Michael E Rule, Timothy O’Leary, and Christopher D Harvey. Causes and consequences of representational drift. *Current o
+68		s2	Representational drift in primary olfactory cortex	Carl E Schoonover, Sarah N Ohashi, Richard Axel, and Andrew JP Fink. Representational drift in primary olfactory cortex.
+69		s2	Coordinated drift of receptive fields in Hebbian/anti-Hebbian network models during noisy representa	Shanshan Qin, Shiva Farashahi, David Lipshutz, Anirvan M Sengupta, Dmitri B Chklovskii, and Cengiz Pehlevan. Coordinated
+70		s2	Representational drift in the mouse visual cortex	K Nakamura, Y Gu, D Kato, et al. Representational drift in the mouse visual cortex. *Nature Communications*, 12:5186, 20
+71		s2	Neural Dynamics as Sampling: A Model for Stochastic Computation in Recurrent Networks of Spiking Neu	Lars Buesing, Johannes Bill, Bernhard Nessler, and Wolfgang Maass. Neural dynamics as sampling: a model for stochastic c
+72		s2	A transformation from temporal to ensemble coding in a model of piriform cortex	Merav Stern, Kevin A Bolding, LF Abbott, and Kevin M Franks. A transformation from temporal to ensemble coding in a mode
+73		s2	Disorder and the Neural Representation of Complex Odors	Kamesh Krishnamurthy, Ann M Hermundstad, Thierry Mora, Aleksandra M Walczak, and Vijay Balasubramanian. Disorder and the
+74		s2	Reading out olfactory receptors: Feedforward circuits detect odors in mixtures without demixing	Alexander Mathis, Dan Rokni, Vikrant Kapoor, Matthias Bethge, and Venkatesh N Murthy. Reading out olfactory receptors: f

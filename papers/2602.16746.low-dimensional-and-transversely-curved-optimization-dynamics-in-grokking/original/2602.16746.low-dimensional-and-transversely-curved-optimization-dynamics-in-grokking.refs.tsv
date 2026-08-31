@@ -1,0 +1,21 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Natural Gradient Works Efficiently in Learning	Shun-ichi Amari. Natural gradient works efficiently in learning. *Neural Computation*, 10(2):251–276, 1998.
+2	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+3	1803.00885	s2	Essentially No Barriers in Neural Network Energy Landscape	Felix Draxler, Kambis Veschgini, Manfred Salmhofer, and Fred A Hamprecht. Essentially no barriers in neural network ener
+4	1906.04724	s2	Large Scale Structure of Neural Network Loss Landscapes	Stanislav Fort and Stanislaw Jastrzebski. Large scale structure of neural network loss landscapes. In *Advances in Neura
+5	1802.10026	s2	Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs	Timur Garipov, Pavel Izmailov, Dmitrii Podoprikhin, Dmitry Vetrov, and Andrew Gordon Wilson. Loss surfaces, mode connect
+6	2001.08361	id		Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey 
+7	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich trai
+8	1804.08838	s2	Measuring the Intrinsic Dimension of Objective Landscapes	Chunyuan Li, Heerad Farkhoor, Rosanne Liu, and Jason Yosinski. Measuring the intrinsic dimension of objective landscapes
+9	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer, and Tom Goldstein. Visualizing the loss landscape of neural nets. In *
+10	2210.01117	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J Michaud, Max Tegmark, and Mike Williams. Omnigrok: Grokking beyond algor
+11	2311.18817	id		Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon S Du, Jason D Lee, and Wei Hu. Dichotomy of early and late phase implicit bias
+12	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+13	2602.01434	id		Andrea Montanari and Zihao Wang. Phase transitions for feature learning in neural networks. *arXiv preprint arXiv:2602.0
+14	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+15	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+16	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+17	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Neel Nanda. Explaining grokking through circuit efficiency.
+18	2602.10496	id		Yongzhong Xu. Low-dimensional execution manifolds in transformer learning dynamics: Evidence from modular arithmetic tas
+19	2603.28964	id		Yongzhong Xu. The spectral edge thesis: Intra-signal gap dynamics in transformer training. *arXiv preprint arXiv:2603.28
+20	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio

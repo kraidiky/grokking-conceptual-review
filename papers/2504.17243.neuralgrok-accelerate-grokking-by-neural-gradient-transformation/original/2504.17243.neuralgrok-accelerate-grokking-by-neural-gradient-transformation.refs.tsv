@@ -1,0 +1,21 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Deep Learning using Rectified Linear Units (ReLU)	Abien Fred Agarap. Deep learning using rectified linear units (relu), 2019. URL https://arxiv.org/abs/1803.08375.
+2	2303.06173	s2	Unifying Grokking and Double Descent	Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent, 2023. URL https://arxiv.org/abs/
+3		—		Branton DeMoss, Silvia Sapora, Jakob Foerster, Nick Hawes, and Ingmar Posner. The complexity dynamics of grokking, 2024.
+4	2405.19454	s2	Deep Grokking: Would Deep Neural Networks Generalize Better?	Simin Fan, Razvan Pascanu, and Martin Jaggi. Deep grokking: Would deep neural networks generalize better?, 2024. URL htt
+5	2405.12755	s2	Progress Measures for Grokking on Real-world Tasks	Satvik Golechha. Progress measures for grokking on real-world tasks, 2024. URL https://arxiv.org/abs/2405.12755.
+6	1509.01240	s2	Train faster, generalize better: Stability of stochastic gradient descent	Moritz Hardt, Benjamin Recht, and Yoram Singer. Train faster, generalize better: Stability of stochastic gradient descen
+7	2402.15555	s2	Deep Networks Always Grok and Here is Why	Ahmed Imtiaz Humayun, Randall Balestriero, and Richard Baraniuk. Deep networks always grok and here is why, 2024. URL ht
+8	2306.00169	s2	Inconsistency, Instability, and Generalization Gap of Deep Neural Network Training	Rie Johnson and Tong Zhang. Inconsistency, instability, and generalization gap of deep neural network training, 2023. UR
+9		s2	A Simple Weight Decay Can Improve Generalization	Anders Krogh and John Hertz. A simple weight decay can improve generalization. *Advances in neural information processin
+10	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+11	2405.20233	s2	Grokfast: Accelerated Grokking by Amplifying Slow Gradients	Jaerin Lee, Bong Gyun Kang, Kihoon Kim, and Kyoung Mu Lee. Grokfast: Accelerated grokking by amplifying slow gradients, 
+12	1902.00621	s2	On Generalization Error Bounds of Noisy Gradient Methods for Non-Convex Learning	Jian Li, Xuanyuan Luo, and Mingda Qiao. On generalization error bounds of noisy gradient methods for non-convex learning
+13	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J. Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking
+14		—		Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data, 2023. URL https://arxiv.org/ab
+15		s2	Do machine learning models memorize or generalize?	Adam Pearce, Asma Ghandeharioun, Nada Hussein, Nithum Thain, Martin Wattenberg, and Lucas Dixon. Do machine learning mod
+16	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+17	2501.04697	s2	Grokking at the Edge of Numerical Stability	Lucas Prieto, Melih Barsbey, Pedro A. M. Mediano, and Tolga Birdal. Grokking at the edge of numerical stability, 2025. U
+18	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+19		—		Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosu
+20	2011.11152	s2	On the Overlooked Pitfalls of Weight Decay and How to Mitigate Them: A Gradient-Norm Perspective	Zeke Xie, Zhiqiang Xu, Jingzhao Zhang, Issei Sato, and Masashi Sugiyama. On the overlooked pitfalls of weight decay and 

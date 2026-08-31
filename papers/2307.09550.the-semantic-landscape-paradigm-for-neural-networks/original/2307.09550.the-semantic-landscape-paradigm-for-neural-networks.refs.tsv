@@ -1,0 +1,59 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1712.00409	id		Joel Hestness, Sharan Narang, Newsha Ardalani, Gregory Diamos, Heewoo Jun, Hassan Kianinejad, Md Mostofa Ali Patwary, Ya
+2	1909.12673	id		Jonathan S Rosenfeld, Amir Rosenfeld, Yonatan Belinkov, and Nir Shavit. A constructive prediction of the generalization 
+3	2001.08361	id		Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey 
+4		s2	Data and Parameter Scaling Laws for Neural Machine Translation	Mitchell A Gordon, Kevin Duh, and Jared Kaplan. Data and parameter scaling laws for neural machine translation. In *Proc
+5	2106.04560	s2	Scaling Vision Transformers	Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby, and Lucas Beyer. Scaling vision transformers. In *Proceedings of the I
+6	2203.15556	id		Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas,
+7	2102.06701	id		Yasaman Bahri, Ethan Dyer, Jared Kaplan, Jaehoon Lee, and Utkarsh Sharma. Explaining neural scaling laws. *arXiv preprin
+8	2102.04074	id		Marcus Hutter. Learning curve theory. *arXiv preprint arXiv:2102.04074*, 2021.
+9		s2	Scaling Laws from the Data Manifold Dimension	Utkarsh Sharma and Jared Kaplan. Scaling laws from the data manifold dimension. *The Journal of Machine Learning Researc
+10	2210.16859	id		Alexander Maloney, Daniel A Roberts, and James Sully. A solvable model of neural scaling laws. *arXiv preprint arXiv:221
+11	2303.13506	id		Eric J Michaud, Ziming Liu, Uzay Girit, and Max Tegmark. The quantization model of neural scaling. *arXiv preprint arXiv
+12	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+13	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+14	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+15	2206.07682	id		Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Z
+16	2202.07785	s2	Predictability and Surprise in Large Generative Models	Deep Ganguli, Danny Hernandez, Liane Lovitt, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Nova Dassarma, Dawn Drai
+17	2210.15435	id		Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent. *arXiv prepr
+18	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+19	2304.15004	id		Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo. Are emergent abilities of large language models a mirage? *arXiv prep
+20	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning: 
+21	1704.05796	s2	Network Dissection: Quantifying Interpretability of Deep Visual Representations	David Bau, Bolei Zhou, Aditya Khosla, Aude Oliva, and Antonio Torralba. Network dissection: Quantifying interpretability
+22	2009.05041	s2	Understanding the role of individual units in a deep neural network	David Bau, Jun-Yan Zhu, Hendrik Strobelt, Agata Lapedriza, Bolei Zhou, and Antonio Torralba. Understanding the role of i
+23		s2	Thread: Circuits	Nick Cammarata, Shan Carter, Gabriel Goh, Chris Olah, Michael Petrov, Ludwig Schubert, Chelsea Voss, Ben Egan, and Swee 
+24		s2	A mathematical framework for transformer circuits	Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann, Amanda Askell, Yuntao Bai, Anna Ch
+25	2209.11895	id		Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yunt
+26	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+27	2306.17844	id		Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio
+28	2302.03025	id		Bilal Chughtai, Lawrence Chan, and Neel Nanda. A toy model of universality: Reverse engineering how networks learn group
+29	1803.08823	s2	A high-bias, low-variance introduction to Machine Learning for physicists	Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre GR Day, Clint Richardson, Charles K Fisher, and David J Schwab. A h
+30		s2	Supercooled liquids and the glass transition	Pablo G Debenedetti and Frank H Stillinger. Supercooled liquids and the glass transition. *Nature*, 410(6825):259–267, 2
+31		s2	Theory of protein folding: the energy landscape perspective.	José Nelson Onuchic, Zaida Luthey-Schulten, and Peter G Wolynes. Theory of protein folding: the energy landscape perspec
+32		s2	Empirical fitness landscapes and the predictability of evolution	J Arjan GM De Visser and Joachim Krug. Empirical fitness landscapes and the predictability of evolution. *Nature Reviews
+33	1901.01608	s2	Scaling description of generalization with number of parameters in deep learning	Mario Geiger, Arthur Jacot, Stefano Spigler, Franck Gabriel, Levent Sagun, Stéphane d’Ascoli, Giulio Biroli, Clément Hon
+34	2106.10165	s2	The Principles of Deep Learning Theory	Daniel A Roberts, Sho Yaida, and Boris Hanin. *The principles of deep learning theory*. Cambridge University Press Cambr
+35	1803.06969	s2	Comparing dynamics: deep neural networks versus glassy systems	Marco Baity-Jesi, Levent Sagun, Mario Geiger, Stefano Spigler, Gérard Ben Arous, Chiara Cammarota, Yann LeCun, Matthieu 
+36	1810.09665	s2	A jamming transition from under- to over-parametrization affects generalization in deep learning	Stefano Spigler, Mario Geiger, Stéphane d’Ascoli, Levent Sagun, Giulio Biroli, and Matthieu Wyart. A jamming transition 
+37		s2	A mechanistic interpretability analysis of grokking	Neel Nanda and Tom Lieberum. A mechanistic interpretability analysis of grokking. In *Alignment Forum*, 2022.
+38		s2	Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I	Kurt Gödel. Über formal unentscheidbare sätze der principia mathematica und verwandter systeme i. *Monatshefte für mathe
+39	2305.18741	id		Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D Manning. Grokking of hierarchical structure in vanilla
+40	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+41	2005.14165	s2	Language Models are Few-Shot Learners	Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shy
+42	2112.11446	id		Jack W Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann, Francis Song, John Aslanides, Sarah Henders
+43	2108.07732	id		Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk Michalewski, David Dohan, Ellen Jiang, Carrie Cai, Mich
+44	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+45		s2	Spin Glass Theory And Beyond: An Introduction To The Replica Method And Its Applications	Marc Mézard, Giorgio Parisi, and Miguel Angel Virasoro. *Spin glass theory and beyond: An Introduction to the Replica Me
+46	1011.2578	s2	Theoretical perspective on the glass transition and amorphous materials	Ludovic Berthier and Giulio Biroli. Theoretical perspective on the glass transition and amorphous materials. *Reviews of
+47		s2	Weak ergodicity breaking and aging in disordered systems	Jean-Philippe Bouchaud. Weak ergodicity breaking and aging in disordered systems. *Journal de Physique I*, 2(9):1705–171
+48		—		Cécile Monthus and Jean-Philippe Bouchaud. Models of traps and glass phenomenology. *Journal of Physics A: Mathematical 
+49		s2	Universality classes for extreme-value statistics	Jean-Philippe Bouchaud and Marc Mézard. Universality classes for extreme-value statistics. *Journal of Physics A: Mathem
+50		s2	Anomalous diffusion in disordered media: Statistical mechanisms, models and physical applications	Jean-Philippe Bouchaud and Antoine Georges. Anomalous diffusion in disordered media: statistical mechanisms, models and 
+51		s2	Scaling laws literature review cite	Pablo Villalobos. Scaling laws literature review cite this post.
+52	cond-mat/9704006	s2	Aging Effects in a Lennard-Jones Glass	Walter Kob and Jean-Louis Barrat. Aging effects in a lennard-jones glass. *Physical review letters*, 78(24):4581, 1997.
+53		s2	Epistasis and the Evolutionary Process	Jason B Wolf, Edmund D Brodie, and Michael John Wade. *Epistasis and the evolutionary process*. Oxford University Press,
+54	2211.00593	id		Kevin Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris, and Jacob Steinhardt. Interpretability in the wild: a ci
+55	2205.10487	id		Danny Hernandez, Tom Brown, Tom Conerly, Nova DasSarma, Dawn Drain, Sheer El-Showk, Nelson Elhage, Zac Hatfield-Dodds, T
+56	2301.05062	id		David Lindner, János Kramár, Matthew Rahtz, Thomas McGrath, and Vladimir Mikulik. Tracr: Compiled transformers as a labo
+57	2304.14997	id		Arthur Conmy, Augustine N Mavor-Parker, Aengus Lynch, Stefan Heimersheim, and Adrià Garriga-Alonso. Towards automated ci
+58	2305.08746	id		Ziming Liu, Eric Gan, and Max Tegmark. Seeing is believing: Brain-inspired modular training for mechanistic interpretabi

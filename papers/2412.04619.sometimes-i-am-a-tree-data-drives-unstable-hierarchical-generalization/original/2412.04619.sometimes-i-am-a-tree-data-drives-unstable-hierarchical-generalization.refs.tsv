@@ -1,0 +1,56 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Learning Syntax Without Planting Trees: Understanding When and Why Transformers Generalize Hierarchi	Kabir Ahuja, Vidhisha Balachandran, Madhur Panwar, Tianxing He, Noah A Smith, Navin Goyal, and Yulia Tsvetkov. 2024. Lea
+2	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin L Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. 2022. Hidden progress in deep le
+3		—		Ian Berlot-Attwell, Kumar Krishna Agrawal, A Michael Carrell, Yash Sharma, and Naomi Saphra. 2023. Attribute diversity d
+4		s2	Poverty of the Stimulus Revisited	Robert C Berwick, Paul Pietroski, Beracah Yankama, and Noam Chomsky. 2011. Poverty of the stimulus revisited. *Cogn. Sci
+5	2309.07311	s2	Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs	Angelica Chen, Ravid Shwartz-Ziv, Kyunghyun Cho, Matthew L Leavitt, and Naomi Saphra. 2023. Sudden drops in the loss: Sy
+6		s2	Aspects of the theory of syntax , 50 edition	Noam Chomsky. 2015. *Aspects of the theory of syntax*, 50 edition. The MIT Press. MIT Press, London, England.
+7		s2	2022. The grammar-learning trajectories of neural language models	Leshem Choshen, Guy Hacohen, Daphna Weinshall, and Omri Abend. 2022. The grammar-learning trajectories of neural languag
+8	2011.03395	s2	Underspecification Presents Challenges for Credibility in Modern Machine Learning	Alexander D’Amour, Katherine Heller, Dan Moldovan, Ben Adlam, Babak Alipanahi, Alex Beutel, Christina Chen, Jonathan Dea
+9	2002.06305	s2	Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping	Jesse Dodge, Gabriel Ilharco, Roy Schwartz, Ali Farhadi, Hannaneh Hajishirzi, and Noah Smith. 2020. Fine-tuning pretrain
+10		—		Robert Frank and Donald Mathis. 2007. Transformational networks. *Models of Human Language Acquisition*, 22.
+11		s2	2024. A dependency distance approach to the syntactic complexity variation in the connected speech o	Nan Gao and Qingshun He. 2024. A dependency distance approach to the syntactic complexity variation in the connected spe
+12	2004.07780	s2	Shortcut learning in deep neural networks	Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A Wi
+13	2006.12433	s2	What shapes feature representations? Exploring datasets, architectures, and training	Katherine L Hermann and Andrew K Lampinen. 2020. What shapes feature representations? exploring datasets, architectures,
+14		s2	A Structural Probe for Finding Syntax in Word Representations	John Hewitt and Christopher D Manning. 2019. A structural probe for finding syntax in word representations. In *Proceedi
+15	2308.09543	s2	Latent State Models of Training Dynamics	Michael Y Hu, Angelica Chen, Naomi Saphra, and Kyunghyun Cho. 2023. Latent state models of training dynamics. *arXiv [cs
+16	2305.16585	s2	ParaAMR: A Large-Scale Syntactically Diverse Paraphrase Dataset by AMR Back-Translation	Kuan-Hao Huang, Varun Iyer, I-Hung Hsu, Anoop Kumar, Kai-Wei Chang, and Aram Galstyan. 2023. ParaAMR: A large-scale synt
+17	2402.15175	s2	Unified View of Grokking, Double Descent and Emergent Abilities: A Perspective from Circuits Competi	Yufei Huang, Shengding Hu, Xu Han, Zhiyuan Liu, and Maosong Sun. 2024. Unified view of grokking, double descent and emer
+18		s2	2022. Linear connectivity reveals generalization strategies	Jeevesh Juneja, Rachit Bansal, Kyunghyun Cho, João Sedoc, and Naomi Saphra. 2022. Linear connectivity reveals generaliza
+19	1412.6980	s2	Adam: A Method for Stochastic Optimization	Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. *arXiv [cs.LG]*.
+20	1612.01474	s2	Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles	Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. 2016. Simple and scalable predictive uncertainty estim
+21		s2	The child's trigger experience: Degree-0 learnability	David Lightfoot. 1989. The child’s trigger experience: Degree-0 learnability. *Behavioral and brain sciences*, 12(2):321
+22	1611.01368	s2	Assessing the Ability of LSTMs to Learn Syntax-Sensitive Dependencies	Tal Linzen, Emmanuel Dupoux, and Yoav Goldberg. 2016. Assessing the ability of LSTMs to learn syntax-sensitive dependenc
+23		s2	2022. Omnigrok: Grokking beyond algorithmic data	Ziming Liu, Eric J Michaud, and Max Tegmark. 2022. Omnigrok: Grokking beyond algorithmic data. *arXiv [cs.LG]*.
+24	2408.12578	s2	A Percolation Model of Emergence: Analyzing Transformers Trained on a Formal Language	Ekdeep Singh Lubana, Kyogo Kawaguchi, Robert P Dick, and Hidenori Tanaka. 2024. A percolation model of emergence: Analyz
+25		s2	The Childes Project: Tools for Analyzing Talk, Volume II: the Database	Brian MacWhinney. 2014. *The childes project: Tools for analyzing talk, volume II: The database*, 3 edition. Psychology 
+26	1802.09091	s2	Revisiting the poverty of the stimulus: hierarchical generalization without a hierarchical bias in r	R Thomas McCoy, Robert Frank, and Tal Linzen. 2018. Revisiting the poverty of the stimulus: hierarchical generalization 
+27	2001.03632	s2	Does Syntax Need to Grow on Trees? Sources of Hierarchical Inductive Bias in Sequence-to-Sequence Ne	R Thomas McCoy, Robert Frank, and Tal Linzen. 2020a. Does syntax need to grow on trees? sources of hierarchical inductiv
+28	1902.01007	s2	Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference	R Thomas McCoy, Ellie Pavlick, and Tal Linzen. 2019. Right for the wrong reasons: Diagnosing syntactic heuristics in nat
+29	2001.03632	s2	Does Syntax Need to Grow on Trees? Sources of Hierarchical Inductive Bias in Sequence-to-Sequence Ne	Tom McCoy, Robert Frank, and Tal Linzen. 2020b. Does syntax need to grow on trees? sources of hierarchical inductive bia
+30	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	William Merrill, Nikolaos Tsilivis, and Aman Shukla. 2023. A tale of two circuits: Grokking as competition of sparse and
+31	2203.09397	s2	Coloring the Blank Slate: Pre-training Imparts a Hierarchical Inductive Bias to Sequence-to-sequence	Aaron Mueller, Robert Frank, Tal Linzen, Luheng Wang, and Sebastian Schuster. 2022. Coloring the blank slate: Pre-traini
+32	2305.19905	s2	How to Plant Trees in Language Models: Data and Architectural Effects on the Emergence of Syntactic 	Aaron Mueller and Tal Linzen. 2023. How to plant trees in language models: Data and architectural effects on the emergen
+33	2311.07811	s2	In-context Learning Generalizes, But Not Always Robustly: The Case of Syntax	Aaron Mueller, Albert Webson, Jackson Petty, and Tal Linzen. 2024. In-context learning generalizes, but not always robus
+34	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher Manning. 2023. Grokking of hierarchical structure in van
+35	2211.01288	s2	Characterizing Intrinsic Compositionality in Transformers with Tree Projections	Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D Manning. 2022. Characterizing intrinsic compositionali
+36	1806.00692	s2	Stress Test Evaluation for Natural Language Inference	Aakanksha Naik, Abhilasha Ravichander, Norman Sadeh, Carolyn Rose, and Graham Neubig. 2018. Stress test evaluation for n
+37	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. 2023. Progress measures for grokking via mech
+38		—		Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yunt
+39		s2	Learning Music Helps You Read: Using Transfer to Study Linguistic Structure in Language Models	Isabel Papadimitriou and Dan Jurafsky. 2020. Learning music helps you read: Using transfer to study linguistic structure
+40	2304.13060	s2	Injecting structural hints: Using language models to study inductive biases in language learning	Isabel Papadimitriou and Dan Jurafsky. 2023. Injecting structural hints: Using language models to study inductive biases
+41	2412.01003	s2	Competition Dynamics Shape Algorithmic Phases of In-Context Learning	Core Francisco Park, Ekdeep Singh Lubana, Itamar Pres, and Hidenori Tanaka. 2024. Competition dynamics shape algorithmic
+42	2109.12036	s2	Transformers Generalize Linearly	Jackson Petty and Robert Frank. 2021. Transformers generalize linearly. *arXiv [cs.CL]*.
+43	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. 2022. Grokking: Generalization beyond overf
+44		s2	Crowdsourcing Syntactically Diverse Paraphrases with Diversity-Aware Prompts and Workflows	Jorge Ramírez, Marcos Baez, Auday Berro, Boualem Benatallah, and Fabio Casati. 2022. Crowdsourcing syntactically diverse
+45		—		Naomi Saphra and Adam Lopez. 2018. Understanding learning dynamics of language models with SVCCA. *arXiv [cs.CL]*.
+46		—		Naomi Saphra and Adam Lopez. 2019. Understanding learning dynamics of language models with. In *Proceedings of the 2019 
+47	2304.15004	s2	Are Emergent Abilities of Large Language Models a Mirage?	Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo. 2023. Are emergent abilities of large language models a mirage? *arXi
+48	2106.16163	s2	The MultiBERTs: BERT Reproductions for Robustness Analysis	Thibault Sellam, Steve Yadlowsky, Ian Tenney, Jason Wei, Naomi Saphra, Alexander D’Amour, Tal Linzen, Jasmijn Bastings, 
+49	2404.08817	s2	Revisiting Code Similarity Evaluation with Abstract Syntax Tree Edit Distance	Yewei Song, Cedric Lothritz, Daniel Tang, Tegawendé F Bissyandé, and Jacques Klein. 2024. Revisiting code similarity eva
+50		s2	Benign interpolation of noise in deep learning	Marthinus Wilhelmus Theunissen, Marelie Davel, and Etienne Barnard. 2020. Benign interpolation of noise in deep learning
+51		s2	2023. Explaining grokking through circuit efficiency	Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. 2023. Explaining grokking through circuit eff
+52		s2	Formal Principles of Language Acquisition	Kenneth Wexler. 1980. Formal principles of language acquisition.
+53		s2	Simple Fast Algorithms for the Editing Distance Between Trees and Related Problems	Kaizhong Zhang and Dennis Shasha. 1989. Simple fast algorithms for the editing distance between trees and related proble
+54	2004.13606	s2	The Curse of Performance Instability in Analysis Datasets: Consequences, Source, and Suggestions	Xiang Zhou, Yixin Nie, Hao Tan, and Mohit Bansal. 2020. The curse of performance instability in analysis datasets: Conse
+55	2401.10463	s2	Critical Data Size of Language Models from a Grokking Perspective	Xuekai Zhu, Yao Fu, Bowen Zhou, and Zhouhan Lin. 2024. Critical data size of language models from a grokking perspective

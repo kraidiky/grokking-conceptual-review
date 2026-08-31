@@ -1,0 +1,57 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2208.03113	id		Emmanuel Abbe and Enric Boix-Adsera “On the non-universality of deep learning: quantifying the cost of symmetry” In *Neu
+2		s2	PyTorch 2: Faster Machine Learning Through Dynamic Python Bytecode Transformation and Graph Compilat	Jason Ansel, Edward Yang, Horace He, Natalia Gimelshein, Animesh Jain, Michael Voznesensky, Bin Bao, Peter Bell, David B
+3	1905.13655	id		Sanjeev Arora, Nadav Cohen, Wei Hu and Yuping Luo “Implicit Regularization in Deep Matrix Factorization” In *NeurIPS*, 2
+4	1904.11955	id		Sanjeev Arora, Simon S Du, Wei Hu, Zhiyuan Li, Russ R Salakhutdinov and Ruosong Wang “On exact computation with an infin
+5	2207.08799	id		Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach and Cyril Zhang “Hidden progress in deep learning: S
+6	2211.12316	id		Satwik Bhattamishra, Arkil Patel, Varun Kanade and Phil Blunsom “Simplicity Bias in Transformers and their Ability to Le
+7	1904.09080	id		Guy Blanc, Neha Gupta, Gregory Valiant and Paul Valiant “Implicit regularization for deep neural networks driven by an O
+8		s2	“JAX: composable transformations of Python+NumPy programs	James Bradbury, Roy Frostig, Peter Hawkins, Matthew James Johnson, Chris Leary, Dougal Maclaurin, George Necula, Adam Pa
+9	2308.15594	id		François Charton “Learning the greatest common divisor: explaining transformer predictions” In *ICLR*, 2024 arXiv:2308.1
+10	1812.07956	id		Lenaic Chizat, Edouard Oyallon and Francis Bach “On Lazy Training in Differentiable Programming” In *NeurIPS*, 2019 arXi
+11		—		Richard Courant and David Hilbert “Methods of Mathematical Physics” Interscience Publishers, 1953
+12	2106.06530	id		Alex Damian, Tengyu Ma and Jason D. Lee “Label Noise SGD Provably Prefers Flat Global Minimizers” In *NeurIPS*, 2021 arX
+13	2010.15110	id		Stanislav Fort, Gintare Karolina Dziugaite, Mansheej Paul, Sepideh Kharaghani, Daniel M. Roy and Surya Ganguli “Deep lea
+14	1906.08034	id		Mario Geiger, Stefano Spigler, Arthur Jacot and Matthieu Wyart “Disentangling feature and lazy training in deep neural n
+15	2301.02679	id		Andrey Gromov “Grokking modular arithmetic”, 2023 arXiv:2301.02679
+16	1802.08246	id		Suriya Gunasekar, Jason Lee, Daniel Soudry and Nathan Srebro “Characterizing Implicit Bias in Terms of Optimization Geom
+17	1705.09280	id		Suriya Gunasekar, Blake Woodworth, Srinadh Bhojanapalli, Behnam Neyshabur and Nathan Srebro “Implicit Regularization in 
+18	2006.08680	id		Jeff Z. HaoChen, Colin Wei, Jason D. Lee and Tengyu Ma “Shape Matters: Understanding the Implicit Bias of the Noise Cova
+19	1502.01852	id		Kaiming He, Xiangyu Zhang, Shaoqing Ren and Jian Sun “Delving deep into rectifiers: Surpassing human-level performance o
+20	1806.07572	id		Arthur Jacot, Franck Gabriel and Clément Hongler “Neural tangent kernel: Convergence and generalization in neural networ
+21	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J. Gershman and Cengiz Pehlevan “Grokking as the Transition from Lazy to Rich Trai
+22	1902.06720	id		Jaehoon Lee, Lechao Xiao, Samuel Schoenholz, Yasaman Bahri, Roman Novak, Jascha Sohl-Dickstein and Jeffrey Pennington “W
+23	2310.16441	id		Noam Levi, Alon Beck and Yohai Bar-Sinai “Grokking in Linear Estimators – A Solvable Model that Groks without Understand
+24	2110.06914	id		Zhiyuan Li, Tianhao Wang and Sanjeev Arora “What Happens after SGD Reaches Zero Loss? –A Mathematical Framework” In *ICL
+25	2010.08515	id		Zhiyuan Li, Yi Zhang and Sanjeev Arora “Why are convolutional nets more sample-efficient than fully-connected nets?” In 
+26	2205.10343	id		Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark and Mike Williams “Towards understanding grokking: 
+27	2210.01117	id		Ziming Liu, Eric J Michaud and Max Tegmark “Omnigrok: Grokking beyond algorithmic data” In *ICLR*, 2023 arXiv:2210.01117
+28	2311.18817	id		Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon S. Du, Jason D. Lee and Wei Hu “Dichotomy of Early and Late Phase Implicit Bia
+29	1906.05890	id		Kaifeng Lyu and Jian Li “Gradient descent maximizes the margin of homogeneous neural networks” In *ICLR*, 2020 arXiv:190
+30	2008.08059	id		Eran Malach and Shai Shalev-Shwartz “When Hardness of Approximation Meets Hardness of Learning” In *Journal of Machine L
+31		s2	Simplified PAC-Bayesian Margin Bounds	David A. McAllester “Simplified PAC-Bayesian Margin Bounds” In *COLT*, 2003
+32	2206.12543	s2	A Fast, Well-Founded Approximation to the Empirical Neural Tangent Kernel	Mohamad Amin Mohamadi, Wonho Bae and Danica J Sutherland “A fast, well-founded approximation to the empirical neural tan
+33		—		Mehryar Mohri, Afshin Rostamizadeh and Ameet Talkwalkar “Foundations of Machine Learning” MIT Press, 2018 URL: https://c
+34	2007.06738	id		Edward Moroshko, Suriya Gunasekar, Blake Woodworth, Jason D. Lee, Nathan Srebro and Daniel Soudry “Implicit Bias in Deep
+35	2311.07568	id		Depen Morwani, Benjamin L. Edelman, Costin-Andrei Oncescu, Rosie Zhao and Sham Kakade “Feature emergence via margin maxi
+36	1905.07325	id		Mor Shpigel Nacson, Suriya Gunasekar, Jason D. Lee, Nathan Srebro and Daniel Soudry “Lexicographic and Depth-Sensitive M
+37	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith and Jacob Steinhardt “Progress measures for grokking via mechanistic 
+38	1707.09564	id		Behnam Neyshabur, Srinadh Bhojanapalli and Nathan Srebro “A PAC-Bayesian Approach to Spectrally-Normalized Margin Bounds
+39		—		Andrew Y Ng “Feature selection, $L_{1}$ vs. $L_{2}$ regularization, and rotational invariance” In *ICML*, 2004
+40	2306.13253	id		Pascal Jr. Tikeng Notsawo, Hattie Zhou, Mohammad Pezeshki, Irina Rish and Guillaume Dumas “Predicting Grokking Long Befo
+41	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin and Vedant Misra “Grokking: Generalization Beyond Overfitting 
+42		s2	"Balls into Bins" - A Simple and Tight Analysis	Martin Raab and Angelika Steger “‘Balls into Bins’ — A Simple and Tight Analysis” In *Randomization and Approximation Te
+43	2310.03789	id		Noa Rubin, Inbar Seroussi and Zohar Ringel “Grokking as a First Order Phase Transition in Two Layer Networks” In *ICLR*,
+44	1710.10345	id		Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar and Nathan Srebro “The Implicit Bias of Gradient Descen
+45	1009.3896	id		Nathan Srebro, Karthik Sridharan and Ambuj Tewari “Smoothness, low noise and fast rates” In *NeurIPS*, 2010 arXiv:1009.3
+46	2208.02789	id		Matus Telgarsky “Feature selection with gradient descent on two-layer networks in low-rotation regimes”, 2022 arXiv:2208
+47	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss and Joshua Susskind “The slingshot mechanism: An emp
+48	1501.01571	id		Joel A. Tropp “An Introduction to Matrix Concentration Inequalities” In *Foundations and Trends® in Machine Learning* **
+49	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár and Ramana Kumar “Explaining grokking through circuit efficiency
+50		—		Martin J. Wainwright “High-Dimensional Statistics: A Non-Asymptotic Viewpoint” Cambridge University Press, 2019
+51	1810.05369	id		Colin Wei, Jason D. Lee, Qiang Liu and Tengyu Ma “Regularization Matters: Generalization and Optimization of Neural Nets
+52	2404.04454	id		Shuo Xie and Zhiyuan Li “Implicit Bias of AdamW: $\ell_{\infty}$ Norm Constrained Optimization” In *ICML*, 2024 arXiv:24
+53	2310.02541	id		Zhiwei Xu, Yutong Wang, Spencer Frei, Gal Vardi and Wei Hu “Benign Overfitting and Grokking in ReLU Networks for XOR Clu
+54	2011.14522	id		Greg Yang and Edward J. Hu “Tensor Programs IV: Feature Learning in Infinite-Width Neural Networks” In *ICML*, 2021 arXi
+55	2406.10650	id		Chenyang Zhang, Difan Zou and Yuan Cao “The Implicit Bias of Adam on Separable Data”, 2024 arXiv:2406.10650
+56	1106.6251	id		Mauricio A Álvarez, Lorenzo Rosasco and Neil D Lawrence “Kernels for vector-valued functions: A review” In *Foundations 

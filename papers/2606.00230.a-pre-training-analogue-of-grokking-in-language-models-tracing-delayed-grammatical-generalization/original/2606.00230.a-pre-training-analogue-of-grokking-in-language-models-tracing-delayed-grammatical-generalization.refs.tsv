@@ -1,0 +1,19 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Fifty shapes of BLiMP: syntactic learning curves in language models are not uniform, but sometimes u	Bunzeck and Zarrieß (2024) B. Bunzeck and S. Zarrieß Fifty shapes of BLiMP: syntactic learning curves in language models
+2		—		Gao et al. (2024) L. Gao, J. Tow, B. Abbasi, S. Biderman, S. Black, A. DiPofi, C. Foster, L. Golding, J. Hsu, A. Le Noac
+3	2301.02679	id		Gromov (2023) A. Gromov Grokking modular arithmetic. arXiv preprint arXiv:2301.02679. Cited by: §2.
+4	2509.23024	s2	Tracing the Representation Geometry of Language Models from Pretraining to Post-training	Li et al. (2026a) M. Z. Li, K. K. Agrawal, A. Ghosh, K. K. Teru, A. Santoro, G. Lajoie, and B. A. Richards Tracing the r
+5	2506.21551	s2	Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test	Li et al. (2026b) Z. Li, C. Fan, and T. Zhou Grokking in LLM pretraining? monitor memorization-to-generalization without
+6		—		Lv et al. (2025) A. Lv, R. Xie, X. Sun, Z. Kang, and R. Yan Language models “grok” to copy. In Proceedings of the 2025 C
+7	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Murty et al. (2023) S. Murty, P. Sharma, J. Andreas, and C. Manning Grokking of hierarchical structure in vanilla transf
+8	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda et al. (2023) N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt Progress measures for grokking via mecha
+9		—		Park et al. (2024) K. Park, Y. J. Choe, and V. Veitch The linear representation hypothesis and the geometry of large lan
+10	2201.02177	id		Power et al. (2022) A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra Grokking: generalization beyond overfitt
+11	1910.10683	s2	Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer	Raffel et al. (2020) C. Raffel, N. Shazeer, A. Roberts, K. Lee, S. Narang, M. Matena, Y. Zhou, W. Li, and P. J. Liu Expl
+12	2311.05928	s2	The Shape of Learning: Anisotropy and Intrinsic Dimensions in Transformer-Based Models	Razzhigaev et al. (2024) A. Razzhigaev, M. Mikhalchuk, E. Goncharova, I. Oseledets, D. Dimitrov, and A. Kuznetsov The sh
+13	2312.06681	s2	Steering Llama 2 via Contrastive Activation Addition	Rimsky et al. (2024) N. Rimsky, N. Gabrieli, J. Schulz, M. Tong, E. Hubinger, and A. Turner Steering llama 2 via contras
+14		s2	The effective rank: A measure of effective dimensionality	Roy and Vetterli (2007) O. Roy and M. Vetterli The effective rank: a measure of effective dimensionality. Proceedings of
+15	2302.13971	id		Touvron et al. (2023) H. Touvron, T. Lavril, G. Izacard, X. Martinet, M. Lachaux, T. Lacroix, B. Rozière, N. Goyal, E. H
+16	1912.00582	s2	BLiMP: The Benchmark of Linguistic Minimal Pairs for English	Warstadt et al. (2020) A. Warstadt, A. Parrish, H. Liu, A. Mohananey, W. Peng, S. Wang, and S. R. Bowman BLiMP: the benc
+17	2403.03507	s2	GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection	Zhao et al. (2024) J. Zhao, Z. Zhang, B. Chen, Z. Wang, A. Anandkumar, and Y. Tian GaLore: memory-efficient LLM training
+18	2310.01405	id		Zou et al. (2023) A. Zou, L. Phan, S. Chen, J. Campbell, P. Guo, R. Ren, A. Pan, X. Yin, M. Mazeika, A. **[p. 10]** Domb

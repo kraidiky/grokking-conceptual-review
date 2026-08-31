@@ -1,0 +1,64 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Syntax Directed Translations and the Pushdown Assembler	Alfred V. Aho and Jeffrey D. Ullman. Syntax directed translations and the pushdown assembler. *J. Comput. Syst. Sci.*, 3
+2	1610.01644	s2	Understanding intermediate layers using linear classifier probes	Guillaume Alain and Yoshua Bengio. Understanding intermediate layers using linear classifier probes, 2017. URL https://o
+3	2305.13673	s2	Physics of Language Models: Part 1, Learning Hierarchical Language Structures	Zeyuan Allen-Zhu and Yuanzhi Li. Physics of Language Models: Part 1, Learning Hierarchical Language Structures. *ArXiv e
+4		s2	Bayesian Theory of Mind: Modeling Joint Belief-Desire Attribution	Chris Baker, Rebecca Saxe, and Joshua Tenenbaum. Bayesian theory of mind: Modeling joint belief-desire attribution. In *
+5		s2	Trainable grammars for speech recognition	James K. Baker. Trainable grammars for speech recognition. *Journal of the Acoustical Society of America*, 65, 1979. URL
+6	2403.03942	s2	The Heuristic Core: Understanding Subnetwork Generalization in Pretrained Language Models	Adithya Bhaskar, Dan Friedman, and Danqi Chen. The heuristic core: Understanding subnetwork generalization in pretrained
+7	2211.12316	s2	Simplicity Bias in Transformers and their Ability to Learn Sparse Boolean Functions	Satwik Bhattamishra, Arkil Patel, Varun Kanade, and Phil Blunsom. Simplicity bias in transformers and their ability to l
+8	2005.14165	s2	Language Models are Few-Shot Learners	Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Sh
+9	2309.07311	s2	Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs	Angelica Chen, Ravid Shwartz-Ziv, Kyunghyun Cho, Matthew L Leavitt, and Naomi Saphra. Sudden drops in the loss: Syntax a
+10	1707.05436	s2	Improved Neural Machine Translation with a Syntax-Aware Encoder and Decoder	Huadong Chen, Shujian Huang, David Chiang, and Jiajun Chen. Improved neural machine translation with a syntax-aware enco
+11	1802.03691	s2	Tree-to-tree Neural Networks for Program Translation	Xinyun Chen, Chang Liu, and Dawn Song. Tree-to-tree neural networks for program translation. In S. Bengio, H. Wallach, H
+12	1406.1078	s2	Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation	Kyunghyun Cho, Bart van Merriënboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengi
+13		—		Noam Chomsky. *Language and Mind*. Cambridge University Press, 1 edition, 1968.
+14		s2	Language and Learning: The Debate Between Jean Piaget and Noam Chomsky	Noam Chomsky. *Language and Learning: The Debate Between Jean Piaget and Noam Chomsky*. Harvard University Press, 1980.
+15		s2	Deep neural networks are biased towards simple functions	Giacomo De Palma, Bobak Kiani, and Seth Lloyd. Random deep neural networks are biased towards simple functions. *Advance
+16	1810.04805	s2	BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding	Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers 
+17	1905.03197	s2	Unified Language Model Pre-training for Natural Language Understanding and Generation	Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. Unified la
+18	1905.03197	s2	Unified Language Model Pre-training for Natural Language Understanding and Generation	Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. *Unified l
+19		s2	Predicting Pragmatic Reasoning in Language Games	Michael C. Frank and Noah D. Goodman. Predicting pragmatic reasoning in language games. *Science*, 336(6084):998–998, 20
+20		s2	Transformational Networks	Robert Frank and Donald Mathis. Transformational networks. *Models of Human Language Acquisition*, 22, 2007.
+21		s2	A Rational Analysis of Rule-Based Concept Learning	Noah D Goodman, Joshua B Tenenbaum, Jacob Feldman, and Thomas L Griffiths. A rational analysis of rule-based concept lea
+22	2212.06801	s2	A fine-grained comparison of pragmatic language understanding in humans and language models	Jennifer Hu, Sammy Floyd, Olessia Jouravlev, Evelina Fedorenko, and Edward Gibson. A fine-grained comparison of pragmati
+23	1412.6980	s2	Adam: A Method for Stochastic Optimization	Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization. In Yoshua Bengio and Yann LeCun, editors, *
+24		s2	Human-level concept learning through probabilistic program induction	Brenden M. Lake, Ruslan Salakhutdinov, and Joshua B. Tenenbaum. Human-level concept learning through probabilistic progr
+25		s2	Learnability and the Statistical Structure of Language: Poverty of Stimulus Arguments Revisited	John D Lewis and Jeffrey L Elman. Learnability and the statistical structure of language: Poverty of stimulus arguments 
+26	1906.01698	s2	Open Sesame: Getting inside BERT’s Linguistic Knowledge	Yongjie Lin, Yi Chern Tan, and Robert Frank. Open sesame: Getting inside BERT’s linguistic knowledge. In Tal Linzen, Grz
+27	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+28		—		Christos Louizos, Max Welling, and Diederik P. Kingma. Learning sparse neural networks through l_0 regularization. In *I
+29		s2	The CHILDES project: tools for analyzing talk	Brian Macwhinney. The childes project: tools for analyzing talk. *Child Language Teaching and Therapy*, 8, 01 2000. doi:
+30		s2	The Philosophy and the Approach	David Marr. The Philosophy and the Approach. In *Vision*, pages 8–37. W. H. Freeman, 1982. ISBN 9780262514620.
+31	1802.09091	s2	Revisiting the poverty of the stimulus: hierarchical generalization without a hierarchical bias in r	R. Thomas McCoy, Roberta Frank, and Tal Linzen. Revisiting the poverty of the stimulus: hierarchical generalization with
+32	2001.03632	s2	Does Syntax Need to Grow on Trees? Sources of Hierarchical Inductive Bias in Sequence-to-Sequence Ne	R. Thomas McCoy, Robert Frank, and Tal Linzen. Does syntax need to grow on trees? sources of hierarchical inductive bias
+33	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+34		—		Beren Millidge. Grokking ‘grokking’, 2023. URL http://www.beren.io/2022-01-11-Grokking-Grokking/.
+35	2305.19905	s2	How to Plant Trees in Language Models: Data and Architectural Effects on the Emergence of Syntactic 	Aaron Mueller and Tal Linzen. How to plant trees in language models: Data and architectural effects on the emergence of 
+36	2203.09397	s2	Coloring the Blank Slate: Pre-training Imparts a Hierarchical Inductive Bias to Sequence-to-sequence	Aaron Mueller, Robert Frank, Tal Linzen, Luheng Wang, and Sebastian Schuster. Coloring the blank slate: Pre-training imp
+37	2311.07811	id		Aaron Mueller, Albert Webson, Jackson Petty, and Tal Linzen. In-context Learning Generalizes, But Not Always Robustly: T
+38	2112.10510	s2	Transformers Can Do Bayesian Inference	Samuel Müller, Noah Hollmann, Sebastian Pineda Arango, Josif Grabocka, and Frank Hutter. Transformers can do bayesian in
+39	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher Manning. Grokking of hierarchical structure in vanilla t
+40	2211.01288	s2	Characterizing Intrinsic Compositionality in Transformers with Tree Projections	Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D Manning. Characterizing intrinsic compositionality in 
+41	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+42	2310.11634	id		Arkil Patel, Satwik Bhattamishra, Siva Reddy, and Dzmitry Bahdanau. Magnifico: Evaluating the in-context learning abilit
+43		s2	Poverty of the Stimulus? A Rational Approach	Amy Perfors, Terry Regier, and Joshua B Tenenbaum. Poverty of the stimulus? a rational approach. In *Proceedings of the 
+44		s2	The learnability of abstract syntactic principles.	Amy Perfors, Joshua B. Tenenbaum, and Terry Regier. The learnability of abstract syntactic principles. *Cognition*, 118(
+45	1808.08949	s2	Dissecting Contextual Word Embeddings: Architecture and Representation	Matthew E. Peters, Mark Neumann, Luke Zettlemoyer, and Wen-tau Yih. Dissecting contextual word embeddings: Architecture 
+46	2109.12036	id		Jackson Petty and Robert Frank. Transformers Generalize Linearly, September 2021. URL http://arxiv.org/abs/2109.12036. a
+47	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harrison Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitt
+48		s2	Structure Dependence in Language Acquisition: Uncovering the Statistical Richness of the Stimulus	Florencia Reali and Morten H Christiansen. Structure dependence in language acquisition: Uncovering the statistical rich
+49		s2	Distributional Information: A Powerful Cue for Acquiring Syntactic Categories	Martin Redington, Nick Chater, and Steven Finch. Distributional information: A powerful cue for acquiring syntactic cate
+50		s2	Modeling By Shortest Data Description*	J. Rissanen. Modeling by shortest data description. *Automatica*, 14(5):465–471, 1978. ISSN 0005-1098. doi:https://doi.o
+51		—		Rohin Shah. [AN #159]: Building agents that know how to experiment, by training on procedurally generated games. 2023. U
+52	2305.14763	id		Natalie Shapira, Mosh Levy, Seyed Hossein Alavi, Xuhui Zhou, Yejin Choi, Yoav Goldberg, Maarten Sap, and Vered Shwartz. 
+53		s2	A Formal Theory of Inductive Inference. Part I	R.J. Solomonoff. A formal theory of inductive inference. part i. *Information and Control*, 7(1):1–22, 1964. ISSN 0019-9
+54	cmp-lg/9409010	s2	Inducing Probabilistic Grammars by Bayesian Model Merging	Andreas Stolcke and Stephen Omohundro. Inducing probabilistic grammars by bayesian model merging. In *International Coll
+55	1409.3215	s2	Sequence to Sequence Learning with Neural Networks	Ilya Sutskever, Oriol Vinyals, and Quoc V Le. Sequence to sequence learning with neural networks. *Advances in neural in
+56	1905.06316	s2	What do you learn from context? Probing for sentence structure in contextualized word representation	Ian Tenney, Patrick Xia, Berlin Chen, Alex Wang, Adam Poliak, R Thomas McCoy, Najoung Kim, Benjamin Van Durme, Sam Bowma
+57	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+58	1805.08522	s2	Deep learning generalizes because the parameter-function map is biased towards simple functions	Guillermo Valle-Perez, Chico Q. Camargo, and Ard A. Louis. Deep learning generalizes because the parameter-function map 
+59	2309.02390	s2	Explaining grokking through circuit efficiency	Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+60	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosuk
+61	1905.09418	s2	Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned	Elena Voita, David Talbot, Fedor Moiseev, Rico Sennrich, and Ivan Titov. Analyzing multi-head self-attention: Specialize
+62	2004.14786	s2	Perturbed Masking: Parameter-free Probing for Analyzing and Interpreting BERT	Zhiyong Wu, Yun Chen, Ben Kao, and Qun Liu. Perturbed masking: Parameter-free probing for analyzing and interpreting BER
+63		s2	Word learning as Bayesian inference.	Fei Xu and Joshua B Tenenbaum. Word learning as bayesian inference. *Psychological review*, 114(2):245, 2007.

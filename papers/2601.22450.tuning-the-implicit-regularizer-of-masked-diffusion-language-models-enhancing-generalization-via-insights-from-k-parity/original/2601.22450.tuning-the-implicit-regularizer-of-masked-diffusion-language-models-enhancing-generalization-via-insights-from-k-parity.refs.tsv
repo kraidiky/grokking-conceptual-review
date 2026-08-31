@@ -1,0 +1,74 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2202.08658	s2	The merged-staircase property: a necessary and nearly sufficient condition for SGD learning of spars	[1] E. Abbe, E. B. Adsera, and T. Misiakiewicz (2022) The merged-staircase property: a necessary and nearly sufficient c
+2	2302.11055	s2	SGD learning on neural networks: leap complexity and saddle-to-saddle dynamics	[2] E. Abbe, E. B. Adsera, and T. Misiakiewicz (2023) Sgd learning on neural networks: leap complexity and saddle-to-sad
+3	2503.09573	id		[3] M. Arriola, A. Gokaslan, J. T. Chiu, Z. Yang, Z. Qi, J. Han, S. S. Sahoo, and V. Kuleshov (2025) Block diffusion: in
+4	2510.21961	id		[4] I. Azangulov, T. Pandeva, N. Prasad, J. Zazo, and S. Karmalkar (2025) Parallel sampling from masked diffusion models
+5	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	[5] B. Barak, B. Edelman, S. Goel, S. Kakade, E. Malach, and C. Zhang (2022) Hidden progress in deep learning: sgd learn
+6		s2	Feature Learning Dynamics under Grokking in a Sparse Parity Task	[6] J. S. Bautiste, G. Bachmann, B. He, L. Noci, and T. Hofmann (2024) Feature learning dynamics under grokking in a spa
+7	2303.00055	s2	Learning Time-Scales in Two-Layers Neural Networks	[7] R. Berthier, A. Montanari, and K. Zhou (2025) Learning time-scales in two-layers neural networks. Foundations of Com
+8	1803.05457	id		[8] P. Clark, I. Cowhey, O. Etzioni, T. Khot, A. Sabharwal, C. Schoenick, and O. Tafjord (2018) Think you have solved qu
+9	2110.14168	id		[9] K. Cobbe, V. Kosaraju, M. Bavarian, M. Chen, H. Jun, L. Kaiser, M. Plappert, J. Tworek, J. Hilton, R. Nakano, et al.
+10	2507.06261	id		[10] G. Comanici, E. Bieber, M. Schaekermann, I. Pasupat, N. Sachdeva, I. Dhillon, M. Blistein, O. Ram, D. Zhang, E. Ros
+11	2002.07400	s2	Learning Parities with Neural Networks	[11] A. Daniely and E. Malach (2020) Learning parities with neural networks. Advances in Neural Information Processing S
+12		—		[12] J. Devlin, M. Chang, K. Lee, and K. Toutanova (2019) Bert: pre-training of deep bidirectional transformers for lang
+13	2409.14623	s2	From Lazy to Rich: Exact Learning Dynamics in Deep Linear Networks	[13] C. C. J. Dominé, N. Anguita, A. M. Proca, L. Braun, D. Kunin, P. A. M. Mediano, and A. M. **[p. 10]** Saxe (2025) F
+14	2510.18165	id		[14] Y. Dong, Z. Ma, X. Jiang, Z. Fan, J. Qian, Y. Li, J. Xiao, Z. Jin, R. Cao, B. Li, et al. (2025) Saber: an efficient
+15		s2	Pareto Frontiers in Deep Feature Learning: Data, Compute, Width, and Luck	[15] B. L. Edelman, S. Goel, S. M. Kakade, eran malach, and C. Zhang (2023) Pareto frontiers in deep feature learning: d
+16	2410.17891	s2	Scaling Diffusion Language Models via Adaptation from Autoregressive Models	[16] S. Gong, S. Agarwal, Y. Zhang, J. Ye, L. Zheng, M. Li, C. An, P. Zhao, W. Bi, J. Han, H. Peng, and L. Kong (2025a) 
+17	2506.20639	id		[17] S. Gong, R. Zhang, H. Zheng, J. Gu, N. Jaitly, L. Kong, and Y. Zhang (2025b) DiffuCoder: understanding and improvin
+18	2508.13148	id		[18] H. He, K. Renz, Y. Cao, and A. Geiger (2025) Mdpo: overcoming the training-inference divide of masked diffusion lan
+19	2009.03300	s2	Measuring Massive Multitask Language Understanding	[19] D. Hendrycks, C. Burns, S. Basart, A. Zou, M. Mazeika, D. Song, and J. Steinhardt (2021a) Measuring massive multita
+20	2103.03874	s2	Measuring Mathematical Problem Solving With the MATH Dataset	[20] D. Hendrycks, C. Burns, S. Kadavath, A. Arora, S. Basart, E. Tang, D. Song, and J. Steinhardt (2021b) Measuring mat
+21	2510.05725	id		[21] C. Hong, S. An, M. Kim, and J. C. Ye (2025a) Improving discrete diffusion unmasking policies beyond explicit refere
+22	2507.18578	id		[22] F. Hong, G. Yu, Y. Ye, H. Huang, H. Zheng, Y. Zhang, Y. Wang, and J. Yao (2025b) Wide-in, narrow-out: revokable dec
+23	2502.21212	s2	Transformers Learn to Implement Multi-step Gradient Descent with Chain of Thought	[23] J. Huang, Z. Wang, and J. D. Lee (2025) Transformers learn to implement multi-step gradient descent with chain of t
+24	2508.13021	s2	Empirical Analysis of Decoding Biases in Masked Diffusion Models	[24] P. Huang, T. Liu, Z. Liu, Y. Yan, S. Wang, T. Xiao, Z. Chen, and M. Sun (2026) Empirical analysis of decoding biase
+25	2512.09106	id		[25] M. Jazbec, T. X. Olausson, L. Béthune, P. Ablin, M. Kirchhof, J. Monterio, V. Turrisi, J. Ramapuram, and M. Cuturi 
+26		—		[26] D. Jurafsky and J. H. Martin (2026) Speech and language processing: an introduction to natural language processing,
+27	2502.06768	id		[27] J. Kim, K. Shah, V. Kontonis, S. Kakade, and S. Chen (2025) Train for the worst, plan for the best: understanding t
+28	2410.08633	s2	Transformers Provably Solve Parity Efficiently with Chain of Thought	[28] J. Kim and T. Suzuki (2025) Transformers provably solve parity efficiently with chain of thought. In The Thirteenth
+29	2509.05056	s2	Masked Diffusion Language Models with Frequency-Informed Training	[29] D. Kosmopoulou, E. Georgiou, V. Dorovatas, G. Paraskevopoulos, and A. Potamianos (2025) Masked diffusion language m
+30	2404.12376	s2	Matching the Statistical Query Lower Bound for k-Sparse Parity Problems with Sign Stochastic Gradien	[30] Y. Kou, Z. Chen, Q. Gu, and S. Kakade (2024) Matching the statistical query lower bound for $k$-sparse parity probl
+31	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	[31] T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan (2023) Grokking as the transition from lazy to rich training
+32		—		[32] N. Lambert, J. Morrison, V. Pyatkin, S. Huang, H. Ivison, F. Brahman, L. J. V. Miranda, A. Liu, N. Dziri, X. Lyu, Y
+33	2406.11794	s2	DataComp-LM: In search of the next generation of training sets for language models	[33] J. Li, A. Fang, G. Smyrnis, M. Ivgi, M. Jordan, S. Y. Gadre, H. Bansal, E. Guha, S. S. Keh, K. Arora, et al. (2024)
+34	2412.19437	id		[34] A. Liu, B. Feng, B. Xue, B. Wang, B. Wu, C. Lu, C. Zhao, C. Deng, C. Zhang, C. Ruan, et al. (2024) Deepseek-v3 tech
+35	2511.08923	id		[35] J. Liu, X. Dong, Z. Ye, R. Mehta, Y. Fu, V. Singh, J. Kautz, C. Zhang, and P. Molchanov (2025) Tidar: think in diff
+36	2310.16834	s2	Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution	[36] A. Lou, C. Meng, and S. Ermon (2024) Discrete diffusion modeling by estimating the ratios of the data distribution.
+37	2304.09576	s2	Leveraging the two timescale regime to demonstrate convergence of neural networks	[37] P. Marion and R. Berthier (2023) Leveraging the two-timescale regime to demonstrate convergence of neural networks.
+38	1609.07843	s2	Pointer Sentinel Mixture Models	[38] S. Merity, C. Xiong, J. Bradbury, and R. Socher (2017) Pointer sentinel mixture models. In International Conference
+39	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	[39] W. Merrill, N. Tsilivis, and A. Shukla (2023) A tale of two circuits: grokking as competition of sparse and dense s
+40	1310.4546	s2	Distributed Representations of Words and Phrases and their Compositionality	[40] T. Mikolov, I. Sutskever, K. Chen, G. S. Corrado, and J. Dean (2013) Distributed representations of words and phras
+41	2511.03276	id		[41] J. Ni, Q. Liu, L. Dou, C. Du, Z. Wang, H. Yan, T. Pang, and M. Q. Shieh (2025a) Diffusion language models are super
+42	2510.03280	id		[42] J. Ni, Q. Liu, C. Du, L. Dou, H. Yan, Z. Wang, T. Pang, and M. Q. Shieh (2025b) Training optimal large diffusion la
+43	2402.14735	s2	How Transformers Learn Causal Structure with Gradient Descent	[43] E. Nichani, A. Damian, and J. D. Lee (2024) How transformers learn causal structure with gradient descent. In Forty
+44	2410.18514	s2	Scaling up Masked Diffusion Models on Text	[44] S. Nie, F. Zhu, C. Du, T. Pang, Q. Liu, G. Zeng, M. Lin, and C. Li (2025a) Scaling up masked diffusion models on te
+45	2502.09992	s2	Large Language Diffusion Models	[45] S. Nie, F. Zhu, Z. You, X. Zhang, J. Ou, J. Hu, J. Zhou, Y. Lin, J. Wen, and C. Li (2025b) Large language diffusion
+46	2303.08774	id		[46] OpenAI (2023) Gpt-4 technical report. arXiv preprint arXiv:2303.08774. Cited by: §1.
+47	2406.03736	s2	Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data	[47] J. Ou, S. Nie, K. Xue, F. Zhu, J. Sun, Z. Li, and C. Li (2025) Your absorbing discrete diffusion secretly models th
+48	2510.04930	s2	Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking	[48] A. S. Pasand and E. Dohmatob (2025) Egalitarian gradient descent: a simple approach to accelerated grokking. Extern
+49	2511.21338	id		[49] J. Piskorz, C. Pinneri, A. Correia, M. Alfarra, R. Garrepalli, and C. Louizos (2025) Masks can be distracting: on c
+50	2201.02177	id		[50] A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022) Grokking: generalization beyond overfitting on s
+51	2501.04697	s2	Grokking at the Edge of Numerical Stability	[51] L. Prieto, M. Barsbey, P. A. M. Mediano, and T. Birdal (2025) Grokking at the edge of numerical stability. In The T
+52	2311.12022	s2	GPQA: A Graduate-Level Google-Proof Q&A Benchmark	[52] D. Rein, B. L. Hou, A. C. Stickland, J. Petty, R. Y. Pang, J. Dirani, J. Michael, and S. R. Bowman (2024) Gpqa: a g
+53	1902.11239	s2	Quantifying High-order Interdependencies via Multivariate Extensions of the Mutual Information	[53] F. E. Rosas, P. A. Mediano, M. Gastpar, and H. J. **[p. 12]** Jensen (2019) Quantifying high-order interdependencie
+54	2406.07524	s2	Simple and Effective Masked Diffusion Language Models	[54] S. S. Sahoo, M. Arriola, A. Gokaslan, E. M. Marroquin, A. M. Rush, Y. Schiff, J. T. Chiu, and V. Kuleshov (2024) Si
+55		s2	Prediction and Entropy of Printed English	[55] C. E. Shannon (1951) Prediction and entropy of printed english. Bell system technical journal 30 (1), pp. 50–64. Ci
+56	2406.04329	s2	Simplified and Generalized Masked Diffusion for Discrete Data	[56] J. Shi, K. Han, Z. Wang, A. Doucet, and M. Titsias (2024) Simplified and generalized masked diffusion for discrete 
+57	2511.19664	id		[57] J. Shi and M. K. Titsias (2025) Demystifying diffusion objectives: reweighted losses are better variational bounds.
+58	2305.16380	s2	Scan and Snap: Understanding Training Dynamics and Token Composition in 1-layer Transformer	[58] Y. Tian, Y. Wang, B. Chen, and S. S. Du (2023) Scan and snap: understanding training dynamics and token composition
+59	2509.21519	id		[59] Y. Tian (2025) Provable scaling laws of feature emergence from learning dynamics of grokking. arXiv preprint arXiv:
+60	2508.09138	id		[60] W. Wang, B. Fang, C. Jing, Y. Shen, Y. Shen, Q. Wang, H. Ouyang, H. Chen, and C. Shen (2025a) Time is a feature: ex
+61	2508.09192	id		[61] X. Wang, C. Xu, Y. Jin, J. Jin, H. Zhang, and Z. Deng (2025b) Diffusion llms can do faster-than-ar inference via di
+62	2410.05459	s2	From Sparse Dependence to Sparse Attention: Unveiling How Chain-of-Thought Enhances Transformer Samp	[62] K. Wen, H. Zhang, H. Lin, and J. Zhang (2025) From sparse dependence to sparse attention: unveiling how chain-of-th
+63	1004.2515	id		[63] P. L. Williams and R. D. Beer (2010) Nonnegative decomposition of multivariate information. arXiv preprint arXiv:10
+64	2505.22618	id		[64] C. Wu, H. Zhang, S. Xue, Z. Liu, S. Diao, L. Zhu, P. Luo, S. Han, and E. Xie (2025) Fast-dllm: training-free accele
+65	2310.02541	s2	Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data	[65] Z. Xu, Y. Wang, S. Frei, G. Vardi, and W. Hu (2024) Benign overfitting and grokking in reLU networks for XOR cluste
+66	2505.09388	id		[66] A. Yang, A. Li, B. Yang, B. Zhang, B. Hui, B. Zheng, B. Yu, C. Gao, C. Huang, C. Lv, et al. (2025) Qwen3 technical 
+67	2508.15487	id		[67] J. Ye, Z. Xie, L. Zheng, J. Gao, Z. Wu, X. Jiang, Z. Li, and L. Kong (2025) Dream 7b: diffusion large language mode
+68	1905.07830	s2	HellaSwag: Can a Machine Really Finish Your Sentence?	[68] R. Zellers, A. Holtzman, Y. Bisk, A. Farhadi, and Y. Choi (2019) HellaSwag: can a machine really finish your senten
+69	2306.09927	s2	Trained Transformers Learn Linear Models In-Context	[69] R. Zhang, S. Frei, and P. L. Bartlett (2024) Trained transformers learn linear models in-context. Journal of Machin
+70	2510.02212	id		[70] H. Zhao, D. Liang, W. Tang, D. Yao, and N. Kallus (2025a) Diffpo: training diffusion llms to reason fast and furiou
+71	2504.12216	id		[71] S. Zhao, D. Gupta, Q. Zheng, and A. Grover (2025b) D1: scaling reasoning in diffusion large language models via rei
+72	2509.10396	id		[72] S. Zhao, M. Liu, J. Huang, M. Liu, C. Wang, B. Liu, Y. Tian, G. Pang, S. Bell, A. Grover, et al. (2025c) Inpainting
+73	2602.22661	s2	dLLM: Simple Diffusion Language Modeling	[73] Z. Zhou, L. Chen, H. Tong, and D. Song (2026) DLLM: simple diffusion language modeling. External Links: 2602.22661,

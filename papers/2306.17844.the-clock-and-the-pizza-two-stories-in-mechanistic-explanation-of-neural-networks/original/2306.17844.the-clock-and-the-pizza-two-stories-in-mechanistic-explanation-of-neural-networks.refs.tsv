@@ -1,0 +1,30 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+2		s2	Zoom In: An Introduction to Circuits	Chris Olah, Nick Cammarata, Ludwig Schubert, Gabriel Goh, Michael Petrov, and Shan Carter. Zoom in: An introduction to c
+3	2209.11895	s2	In-context Learning and Induction Heads	Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yunt
+4	2211.00593	s2	Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small	Kevin Ro Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris, and Jacob Steinhardt. Interpretability in the wild: a
+5	2303.13506	id		Eric J Michaud, Ziming Liu, Uzay Girit, and Max Tegmark. The quantization model of neural scaling. *arXiv preprint arXiv
+6	2211.15661	s2	What learning algorithm is in-context learning? Investigations with linear models	Ekin Akyürek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou. What learning algorithm is in-context learning?
+7	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosuk
+8	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+9	1803.03635	s2	The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks	Jonathan Frankle and Michael Carbin. The lottery ticket hypothesis: Finding sparse, trainable neural networks. In *Inter
+10		s2	A mathematical framework for transformer circuits	Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben Mann, Amanda Askell, Yuntao Bai, Anna Ch
+11	2209.10652	s2	Toy Models of Superposition	Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Rober
+12	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Bilal Chughtai, Lawrence Chan, and Neel Nanda. A toy model of universality: Reverse engineering how networks learn group
+13	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International 
+14	2304.14997	id		Arthur Conmy, Augustine N Mavor-Parker, Aengus Lynch, Stefan Heimersheim, and Adrià Garriga-Alonso. Towards automated ci
+15	2305.01610	id		Wes Gurnee, Neel Nanda, Matthew Pauly, Katherine Harvey, Dmitrii Troitskii, and Dimitris Bertsimas. Finding neurons in a
+16	1506.02264	s2	Visual Learning of Arithmetic Operation	Yedid Hoshen and Shmuel Peleg. Visual learning of arithmetic operation. In *Proceedings of the AAAI Conference on Artifi
+17	1912.04825	s2	Integration of Neural Network-Based Symbolic Regression in Deep Learning for Scientific Discovery	Samuel Kim, Peter Y Lu, Srijon Mukherjee, Michael Gilbert, Li Jing, Vladimir Čeperić, and Marin Soljačić. Integration of
+18	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+19	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning: 
+20	2101.06317	s2	Machine-Learning Mathematical Structures	Yang-Hui He. Machine-learning mathematical structures. *International Journal of Data Science in the Mathematical Scienc
+21	2010.16263	s2	Learning to unknot	Sergei Gukov, James Halverson, Fabian Ruehle, and Piotr Sułkowski. Learning to unknot. *Machine Learning: Science and Te
+22		s2	Advancing mathematics by guiding human intuition with AI	Alex Davies, Petar Veličković, Lars Buesing, Sam Blackwell, Daniel Zheng, Nenad Tomašev, Richard Tanburn, Peter Battagli
+23		s2	Phase Transitions in Combinatorial Optimization Problems - Basics, Algorithms and Statistical Mechan	Alexander K Hartmann and Martin Weigt. *Phase transitions in combinatorial optimization problems: basics, algorithms and
+24		s2	Phase Transitions in Machine Learning	Lorenza Saitta, Attilio Giordana, and Antoine Cornuejols. *Phase transitions in machine learning*. Cambridge University 
+25	2211.08422	s2	Mechanistic Mode Connectivity	Ekdeep Singh Lubana, Eric J Bigelow, Robert P Dick, David Krueger, and Hidenori Tanaka. Mechanistic mode connectivity. I
+26	2206.07682	s2	Emergent Abilities of Large Language Models	Jason Wei, Yi Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian Borgeaud, Dani Yogatama, Maarten Bosma, Denny Z
+27	2304.15004	id		Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo. Are emergent abilities of large language models a mirage? *arXiv prep
+28	2211.03495	s2	How Much Does Attention Actually Attend? Questioning the Importance of Attention in Pretrained Trans	Michael Hassid, Hao Peng, Daniel Rotem, Jungo Kasai, Ivan Montero, Noah A. Smith, and Roy Schwartz. How much does attent
+29		s2	Decoupled Weight Decay Regularization	Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. In *International Conference on Learning Repres

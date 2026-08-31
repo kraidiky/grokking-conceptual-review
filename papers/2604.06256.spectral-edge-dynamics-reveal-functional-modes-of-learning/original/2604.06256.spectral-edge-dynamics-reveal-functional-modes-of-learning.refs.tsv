@@ -1,0 +1,15 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Towards monosemanticity: Decomposing language models with dictionary learning	T. Bricken et al. Towards monosemanticity: Decomposing language models with dictionary learning. *Transformer Circuits T
+2	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	B. Chughtai, L. Chan, and N. Nanda. A toy model of universality: Reverse engineering how networks learn group operations
+3	2309.08600	s2	Sparse Autoencoders Find Highly Interpretable Features in Language Models	H. Cunningham, A. Ewart, L. Riggs, R. Huben, and L. Sharkey. Sparse autoencoders find highly interpretable features in l
+4		s2	A mathematical framework for transformer circuits	N. Elhage et al. A mathematical framework for transformer circuits. *Transformer Circuits Thread*, 2021.
+5	2209.10652	s2	Toy Models of Superposition	N. Elhage et al. Toy models of superposition. *Transformer Circuits Thread*, 2022.
+6		s2	A toy model of interference weights	C. Olah, N. Elhage, T. Henighan, and others. A toy model of interference weights. *Transformer Circuits Thread*, 2025. h
+7	1804.08838	s2	Measuring the Intrinsic Dimension of Objective Landscapes	C. Li, H. Farkhoor, R. Liu, and J. Yosinski. Measuring the intrinsic dimension of objective landscapes. In *ICLR*, 2018.
+8	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt. Progress measures for grokking via mechanistic interpretabi
+9	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra. Grokking: Generalization beyond overfitting on small algori
+10	2312.06581	id		D. Stander, Q. Yu, H. Fan, and E. Vonosek. Grokking group multiplication with cosets. *arXiv:2312.06581*, 2024.
+11	2602.16746	id		Y. Xu. Low-dimensional and transversely curved optimization dynamics in grokking. *arXiv:2602.16746*, 2026.
+12	2602.18523	id		Y. Xu. The geometry of multi-task grokking: Transverse instability, superposition, and weight decay phase structure. *ar
+13	2603.28964	id		Y. Xu. The spectral edge thesis: A mathematical framework for intra-signal phase transitions in neural network training.
+14	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Z. Zhong, Z. Liu, M. Tegmark, and J. Andreas. The clock and the pizza: Two stories in mechanistic explanation of neural 

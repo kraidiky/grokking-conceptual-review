@@ -1,0 +1,43 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Gradient-based learning applied to document recognition	[1] Y. Lecun, L. Bottou, Y. Bengio, and P. Haffner. Gradient-based learning applied to document recognition. *Proceeding
+2	2302.12828	s2	SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries	[2] Ahmed Imtiaz Humayun, Randall Balestriero, Guha Balakrishnan, and Richard Baraniuk. SplineCam: Exact Visualization a
+3	1905.08443	s2	The Geometry of Deep Networks: Power Diagram Subdivision	[3] Randall Balestriero, Romain Cosentino, B. Aazhang, and Richard Baraniuk. The Geometry of Deep Networks: Power Diagra
+4	2201.02177	id		[4] Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization Beyond Overfit
+5		s2	Loss landscape geometry reveals stagewise development of transformers	[5] George Wang, Matthew Farrugia-Roberts, Jesse Hoogland, Liam Carroll, Susan Wei, and Daniel Murfet. Loss landscape ge
+6	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	[6] Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking Beyond Algorithmic Data. In *The Eleventh Internati
+7	2402.15555	s2	Deep Networks Always Grok and Here is Why	[7] Ahmed Imtiaz Humayun, Randall Balestriero, and Richard Baraniuk. Deep Networks Always Grok and Here is Why. In *High
+8	1805.12152	s2	Robustness May Be at Odds with Accuracy	[8] Dimitris Tsipras, Shibani Santurkar, Logan Engstrom, Alexander Turner, and Aleksander Madry. Robustness may be at od
+9	1901.08573	s2	Theoretically Principled Trade-off between Robustness and Accuracy	[9] Hongyang Zhang, Yaodong Yu, Jiantao Jiao, Eric Xing, Laurent El Ghaoui, and Michael Jordan. Theoretically Principled
+10	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	[10] Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon Shaolei Du, Jason D. Lee, and Wei Hu. Dichotomy of Early and Late Phase I
+11	2310.03789	s2	Grokking as a First Order Phase Transition in Two Layer Networks	[11] Noa Rubin, Inbar Seroussi, and Zohar Ringel. Grokking as a First Order Phase Transition in Two Layer Networks. In *
+12	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	[12] Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to ric
+13	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	[13] Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural tangent kernel: convergence and generalization in neural 
+14	2112.15383	s2	Separation of scales and a thermodynamic description of feature learning in some CNNs	[14] Inbar Seroussi, Gadi Naveh, and Zohar Ringel. Separation of scales and a thermodynamic description of feature learn
+15	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	[15] Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mecha
+16	2309.02390	id		[16] Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit effi
+17		s2	Contractive Auto-Encoders: Explicit Invariance During Feature Extraction	[17] Salah Rifai, Pascal Vincent, Xavier Muller, Xavier Glorot, and Yoshua Bengio. Contractive auto-encoders: explicit i
+18	1803.08680	s2	Improving DNN Robustness to Adversarial Attacks using Jacobian Regularization	[18] Daniel Jakubovitz and Raja Giryes. Improving DNN Robustness to Adversarial Attacks Using Jacobian Regularization. I
+19	1908.02729	id		[19] Judy Hoffman, Daniel A. Roberts, and Sho Yaida. Robust Learning with Jacobian Regularization, August 2019. arXiv:19
+20	1905.04172	s2	On the Connection Between Adversarial Robustness and Saliency Map Interpretability	[20] Christian Etmann, Sebastian Lunz, Peter Maass, and Carola Schoenlieb. On the Connection Between Adversarial Robustn
+21	1912.10185	s2	Jacobian Adversarially Regularized Networks for Robustness	[21] Alvin Chan, Yi Tay, Yew Soon Ong, and Jie Fu. Jacobian adversarially regularized networks for robustness. In *Inter
+22	2201.11968	s2	Training invariances and the low-rank phenomenon: beyond linear networks	[22] Thien Le and Stefanie Jegelka. Training invariances and the low-rank phenomenon: beyond linear networks. In *Intern
+23	2103.10427	s2	The Low-Rank Simplicity Bias in Deep Networks	[23] Minyoung Huh, Hossein Mobahi, Richard Zhang, Brian Cheung, Pulkit Agrawal, and Phillip Isola. The low-rank simplici
+24	2201.12760	s2	Implicit Regularization Towards Rank Minimization in ReLU Networks	[24] Nadav Timor, Gal Vardi, and Ohad Shamir. Implicit Regularization Towards Rank Minimization in ReLU Networks. In *Pr
+25		s2	Rank Minimization, Alignment and Weight Decay in Neural Networks	[25] David Yunis, Kumar Kshitij Patel, Samuel Wheeler, Pedro Henrique Pamplona Savarese, Gal Vardi, Jonathan Frankle, Ka
+26		s2	SGD with Weight Decay Secretly Minimizes the Ranks of Your Neural Networks	[26] Tomer Galanti, Zachary S. Siegel, Aparna Gupte, and Tomaso A. Poggio. SGD with Weight Decay Secretly Minimizes the 
+27	2104.00219	id		[27] Randall Balestriero and Richard Baraniuk. Fast Jacobian-Vector Product for Deep Networks, April 2021. arXiv:2104.00
+28		s2	A Spline Theory of Deep Learning	[28] Randall Balestriero and Richard Baraniuk. A Spline Theory of Deep Learning. In *Proceedings of the 35th Internation
+29		s2	Decoupled Weight Decay Regularization	[29] Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. In *International Conference on Learning R
+30	1412.5068	s2	Towards Deep Neural Network Architectures Robust to Adversarial Examples	[30] S. Gu and Luca Rigazio. Towards Deep Neural Network Architectures Robust to Adversarial Examples. *CoRR*, December 
+31		s2	A Closer Look at Accuracy vs. Robustness	[31] Yao-Yuan Yang, Cyrus Rashtchian, Hongyang Zhang, Ruslan Salakhutdinov, and Kamalika Chaudhuri. A closer look at acc
+32	2405.20233	id		[32] Jaerin Lee, Bong Gyun Kang, Kihoon Kim, and Kyoung Mu Lee. Grokfast: Accelerated Grokking by Amplifying Slow Gradie
+33	1812.07956	s2	On Lazy Training in Differentiable Programming	[33] Lénaïc Chizat, Edouard Oyallon, and Francis Bach. On Lazy Training in Differentiable Programming. In *Advances in N
+34	2002.09277	s2	Kernel and Rich Regimes in Overparametrized Models	[34] Blake Woodworth, Suriya Gunasekar, Jason D. Lee, Edward Moroshko, Pedro Savarese, Itay Golan, Daniel Soudry, and Na
+35	2007.06738	s2	Implicit Bias in Deep Linear Classification: Initialization Scale vs Training Accuracy	[35] Edward Moroshko, Blake Woodworth, Suriya Gunasekar, Jason D. Lee, Nathan Srebro, and Daniel Soudry. Implicit bias i
+36	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	[36] Zhiwei Xu, Zhiyu Ni, Yixin Wang, and Wei Hu. Let me grok for you: Accelerating grokking via embedding transfer from
+37		s2	Learning Multiple Layers of Features from Tiny Images	[37] Alex Krizhevsky and Geoffrey Hinton. Learning multiple layers of features from tiny images. Technical report, Techn
+38	2003.01690	s2	Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks	[38] Francesco Croce and Matthias Hein. Reliable evaluation of adversarial robustness with an ensemble of diverse parame
+39	2311.06597	id		[39] Zhiquan Tan and Weiran Huang. Understanding Grokking Through A Robustness Viewpoint, February 2024. arXiv:2311.0659
+40	1706.03762	s2	Attention is All you Need	[40] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Po
+41	1902.06720	s2	Wide neural networks of any depth evolve as linear models under gradient descent	[41] Jaehoon Lee, Lechao Xiao, Samuel Schoenholz, Yasaman Bahri, Roman Novak, Jascha Sohl-Dickstein, and Jeffrey Penning
+42		s2	Disentangling feature and lazy training in deep neural networks	[42] Mario Geiger, Stefano Spigler, Arthur Jacot, and Matthieu Wyart. Disentangling feature and lazy training in deep ne

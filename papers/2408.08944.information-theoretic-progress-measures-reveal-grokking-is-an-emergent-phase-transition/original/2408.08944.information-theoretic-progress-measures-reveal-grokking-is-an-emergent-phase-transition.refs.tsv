@@ -1,0 +1,33 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	id		Barak, B., Edelman, B. L., Goel, S., Kakade, S., Malach, E., and Zhang, C. Hidden Progress in Deep Learning: SGD Learns 
+2	2211.00416	id		Clauw, K., Stramaglia, S., and Marinazzo, D. Higher-order mutual information reveals synergistic sub-networks for multi-
+3	2103.00065	s2	Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability	Cohen, J., Kaur, S., Li, Y., Kolter, J. Z., and Talwalkar, A. Gradient descent on neural networks typically occurs at th
+4	2310.13061	id		Doshi, D., Das, A., He, T., and Gromov, A. To grok or not to grok: Disentangling generalization and memorization on corr
+5	1807.02581	id		Fort, S. and Scherlis, A. The Goldilocks zone: Towards better understanding of neural network loss landscapes, November 
+6	1802.10026	s2	Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs	Garipov, T., Izmailov, P., Podoprikhin, D., Vetrov, D. P., and Wilson, A. G. Loss Surfaces, Mode Connectivity, and Fast 
+7		—		Hochreiter, S. and Schmidhuber, J. Flat Minima. *Neural Computation*, 9(1):1–42, January 1997. ISSN 0899-7667. doi: 10.1
+8	2110.08058	id		Hod, S., Filan, D., Casper, S., Critch, A., and Russell, S. Quantifying Local Specialization in Deep Neural Networks, Fe
+9	2402.15175	id		Huang, Y., Hu, S., Han, X., Liu, Z., and Sun, M. Unified View of Grokking, Double Descent and Emergent Abilities: A Pers
+10		s2	A statistical framework for neuroimaging data analysis based on mutual information estimated via a g	Ince, R. A., Giordano, B. L., Kayser, C., Rousselet, G. A., Gross, J., and Schyns, P. G. A statistical framework for neu
+11	2302.12250	id		Kalra, D. S. and Barkeshli, M. Phase diagram of early training dynamics in deep neural networks: effect of the learning 
+12	1609.04836	id		Keskar, N. S., Mudigere, D., Nocedal, J., Smelyanskiy, M., and Tang, P. T. P. On Large-Batch Training for Deep Learning:
+13	2310.06110	id		Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C. Grokking as the Transition from Lazy to Rich Training Dynamic
+14	2203.11815	id		Lange, R. D., Rolnick, D. S., and Kording, K. P. Clustering units in neural networks: upstream vs downstream information
+15	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Li, H., Xu, Z., Taylor, G., Studer, C., and Goldstein, T. Visualizing the Loss Landscape of Neural Nets. In *Advances in
+16	1804.06679	id		Liu, K., Amjad, R. A., and Geiger, B. C. Understanding individual neuron importance using information theory. *arXiv pre
+17	2310.05918	s2	Grokking as Compression: A Nonlinear Complexity Perspective	Liu, Z., Zhong, Z., and Tegmark, M. Grokking as Compression: A Nonlinear Complexity Perspective.
+18	2210.01117	id		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking Beyond Algorithmic Data. *arXiv preprint arXiv:2210.01117*, 
+19	1711.05101	s2	Fixing Weight Decay Regularization in Adam	Loshchilov, I. and Hutter, F. Fixing Weight Decay Regularization in Adam. February 2018. URL https://openreview.net/foru
+20	2311.18817	id		Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of Early and Late Phase Implicit Biases Can Provab
+21	2303.11873	id		Merrill, W., Tsilivis, N., and Shukla, A. A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetwork
+22	2310.17247	id		Miller, J., O’Neill, C., and Bui, T. Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity, Oc
+23	2003.01897	id		Nakkiran, P., Venkat, P., Kakade, S., and Ma, T. Optimal Regularization Can Mitigate Double Descent, April 2021. URL htt
+24	2301.05217	id		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+25	2306.13253	id		Notsawo, P. J. T., Zhou, H., Pezeshki, M., Rish, I., and Dumas, G. Predicting Grokking Long Before it Happens: A look in
+26	1902.11239	s2	Quantifying High-order Interdependencies via Multivariate Extensions of the Mutual Information	Rosas, F. E., Mediano, P. A., Gastpar, M., and Jensen, H. J. Quantifying high-order interdependencies via multivariate e
+27	2304.15004	s2	Are Emergent Abilities of Large Language Models a Mirage?	Schaeffer, R., Miranda, B., and Koyejo, S. Are Emergent Abilities of Large Language Models a Mirage?
+28		s2	Dropout: a simple way to prevent neural networks from overfitting	Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. Dropout: a simple way to prevent neural
+29	2311.06597	id		Tan, Z. and Huang, W. Understanding Grokking Through A Robustness Viewpoint, November 2023. URL http://arxiv.org/abs/231
+30	2402.03579	id		Vysogorets, A., Dawid, A., and Kempe, J. Deconstructing the Goldilocks Zone of Neural Network Initialization, February 2
+31	2206.07682	id		Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi
+32	2310.02541	id		Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W. Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data,

@@ -1,0 +1,14 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Barak, B., Edelman, B., Goel, S., Kakade, S., Malach, E., and Zhang, C. Hidden progress in deep learning: SGD learns par
+2		s2	Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent 	Lake, B. M. and Baroni, M. Generalization without systematicity: On the compositional skills of sequence-to-sequence rec
+3		s2	Grokking beyond algorithmic data	Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *ICLR*, 2023.
+4	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N., Michaud, E. J., Tegmark, M., and Williams, M. Towards understanding grokking: An effect
+5		s2	Decoupled Weight Decay Regularization	Loshchilov, I. and Hutter, F. Decoupled weight decay regularization. In *ICLR*, 2019.
+6	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of early and late phase implicit biases can provab
+7	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Murty, S., Sharma, P., Andreas, J., and Manning, C. D. Grokking of hierarchical structure in vanilla transformers. In *A
+8	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+9	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+10	2602.10496	id		Xu, Y. Low-dimensional execution manifolds in transformer learning dynamics: Evidence from modular arithmetic tasks. *ar
+11	2602.16746	s2	Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking	Xu, Y. Low-dimensional and transversely curved optimization dynamics in grokking. *arXiv preprint*, 2026.
+12	2603.28964	id		Xu, Y. The spectral edge thesis: A mathematical framework for intra-signal phase transitions in neural network training.
+13	1912.10077	s2	Are Transformers universal approximators of sequence-to-sequence functions?	Yun, C., Bhojanapalli, S., Rawat, A. S., Reddi, S. J., and Kumar, S. Are transformers universal approximators of sequenc

@@ -1,0 +1,56 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Accurate structure prediction of biomolecular interactions with AlphaFold 3	J. Abramson, J. Adler, J. Dunger, R. Evans, T. Green, A. Pritzel, O. Ronneberger, L. Willmore, A. J. Ballard, J. Bambric
+2	2406.09358	s2	Understanding Hallucinations in Diffusion Models through Mode Interpolation	S. K. Aithal, P. Maini, Z. Lipton, and J. Z. Kolter (2024) Understanding hallucinations in diffusion models through mode
+3	2505.17638	id		T. Bonnaire, R. Urfin, G. Biroli, and M. Mézard (2025) Why diffusion models don’t memorize: the role of implicit dynamic
+4	2402.15391	s2	Genie: Generative Interactive Environments	J. Bruce, M. D. Dennis, A. Edwards, J. Parker-Holder, Y. Shi, E. Hughes, M. Lai, A. Mavalankar, R. Steigerwald, C. Apps,
+5	2508.17689	id		S. Buchanan, D. Pai, Y. Ma, and V. De Bortoli (2025) On the edge of memorization in diffusion models. arXiv preprint arX
+6		s2	Thread: Circuits	N. Cammarata, S. Carter, G. Goh, C. Olah, M. Petrov, L. Schubert, C. Voss, B. Egan, and S. K. Lim (2020) Thread: circuit
+7	1812.01718	s2	Deep Learning for Classical Japanese Literature	T. Clanuwat, M. Bober-Irizar, A. Kitamoto, A. Lamb, K. Yamamoto, and D. Ha (2018) Deep learning for classical japanese l
+8	1702.05373	id		G. Cohen, S. Afshar, J. Tapson, and A. van Schaik (2017) EMNIST: an extension of mnist to handwritten letters. arXiv pre
+9	2304.14997	s2	Towards Automated Circuit Discovery for Mechanistic Interpretability	A. Conmy, A. Mavor-Parker, A. Lynch, S. Heimersheim, and A. Garriga-Alonso (2023) Towards automated circuit discovery fo
+10	2309.08600	id		H. Cunningham, A. Ewart, L. Riggs, R. Huben, and L. Sharkey (2023) Sparse autoencoders find highly interpretable feature
+11	2303.06173	id		X. Davies, L. Langosco, and D. Krueger (2023) Unifying grokking and double descent. arXiv preprint arXiv:2303.06173. Cit
+12	2405.19201	s2	Going beyond Compositions, DDPMs Can Produce Zero-Shot Interpolations	J. Deschenaux, I. Krawczuk, G. Chrysos, and V. Cevher (2024) Going beyond compositions, ddpms can produce zero-shot inte
+13		s2	A mathematical framework for transformer circuits	N. Elhage, N. Nanda, C. Olsson, T. Henighan, N. Joseph, B. Mann, A. Askell, Y. Bai, A. Chen, T. Conerly, N. DasSarma, D.
+14	1512.03385	s2	Deep Residual Learning for Image Recognition	K. He, X. Zhang, S. Ren, and J. Sun (2015) Deep residual learning for image recognition. External Links: 1512.03385, Lin
+15		—		D. Hendrycks and K. Gimpel (2023) Gaussian error linear units (gelus). External Links: 1606.08415, Link Cited by: Append
+16	2006.11239	s2	Denoising Diffusion Probabilistic Models	J. Ho, A. Jain, and P. Abbeel (2020) Denoising diffusion probabilistic models. Advances in neural information processing
+17	2310.02557	id		Z. Kadkhodaie, F. Guth, E. P. Simoncelli, and S. Mallat (2023) Generalization in diffusion models arises from geometry-a
+18	2412.20292	s2	An analytic theory of creativity in convolutional diffusion models	M. Kamb and S. Ganguli (2025) An analytic theory of creativity in convolutional diffusion models. In Forty-second Intern
+19	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan (2023) Grokking as the transition from lazy to rich training dyna
+20	2210.10960	s2	Diffusion Models already have a Semantic Latent Space	M. Kwon, J. Jeong, and Y. Uh (2023) Diffusion models already have a semantic latent space. External Links: 2210.10960, L
+21	2511.13720	id		T. Li and K. He (2025) Back to basics: let denoising generative models denoise. arXiv preprint arXiv:2511.13720. Cited b
+22		s2	Back to basics: Let denoising generative models	T. Li and K. He (2026) Back to basics: let denoising generative models denoise. External Links: 2511.13720, Link Cited b
+23	2210.02747	id		Y. Lipman, R. T. Chen, H. Ben-Hamu, M. Nickel, and M. Le (2022) Flow matching for generative modeling. arXiv preprint ar
+24	2209.03003	id		X. Liu, C. Gong, and Q. Liu (2022a) Flow straight and fast: learning to generate and transfer data with rectified flow. 
+25	2210.01117	id		Z. Liu, E. J. Michaud, and M. Tegmark (2022b) Omnigrok: grokking beyond algorithmic data. arXiv preprint arXiv:2210.0111
+26	2503.03595	s2	Towards Understanding Text Hallucination of Diffusion Models via Local Generation Bias	R. Lu, R. Wang, K. Lyu, X. Jiang, G. Huang, and M. Wang (2025) Towards understanding text hallucination of diffusion mod
+27	2301.05217	id		N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023) Progress measures for grokking via mechanistic interp
+28	2310.09336	s2	Compositional Abilities Emerge Multiplicatively: Exploring Diffusion Models on a Synthetic Task	M. Okawa, E. S. Lubana, R. P. Dick, and H. Tanaka (2025) Compositional abilities emerge multiplicatively: exploring diff
+29	2209.11895	s2	In-context Learning and Induction Heads	C. Olsson, N. Elhage, N. Nanda, N. Joseph, N. DasSarma, T. Henighan, B. Mann, A. Askell, Y. Bai, A. Chen, T. Conerly, D.
+30	2406.19370	s2	Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space	C. F. Park, M. Okawa, A. Lee, H. Tanaka, and E. S. Lubana (2024) Emergence of hidden capabilities: exploring learning dy
+31	2307.12868	s2	Understanding the Latent Space of Diffusion Models through the Lens of Riemannian Geometry	Y. Park, M. Kwon, J. Choi, J. Jo, and Y. Uh (2023) Understanding the latent space of diffusion models through the lens o
+32	2212.09748	s2	Scalable Diffusion Models with Transformers	W. Peebles and S. Xie (2023) Scalable diffusion models with transformers. In Proceedings of the IEEE/CVF international c
+33	2505.21777	id		B. Pham, G. Raya, M. Negri, M. J. Zaki, L. Ambrogioni, and D. Krotov (2025) Memorization to generalization: emergence of
+34	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022) Grokking: generalization beyond overfitting on small 
+35		s2	Probabilistic weather forecasting with machine learning	I. Price, A. Sanchez-Gonzalez, F. Alet, T. R. Andersson, A. El-Kadi, D. Masters, T. Ewalds, J. Stott, S. Mohamed, P. Bat
+36	2204.06125	id		A. Ramesh, P. Dhariwal, A. Nichol, C. Chu, and M. Chen (2022) Hierarchical text-conditional image generation with clip l
+37	2112.10752	s2	High-Resolution Image Synthesis with Latent Diffusion Models	R. Rombach, A. Blattmann, D. Lorenz, P. Esser, and B. Ommer (2022) High-resolution image synthesis with latent diffusion
+38	2205.11487	s2	Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding	C. Saharia, W. Chan, S. Saxena, L. Li, J. Whang, E. L. Denton, K. Ghasemipour, R. Gontijo Lopes, B. Karagol Ayan, T. Sal
+39	2002.05202	s2	GLU Variants Improve Transformer	N. Shazeer (2020) GLU variants improve transformer. External Links: 2002.05202, Link Cited by: Appendix A.
+40	1503.03585	s2	Deep Unsupervised Learning using Nonequilibrium Thermodynamics	J. Sohl-Dickstein, E. Weiss, N. Maheswaranathan, and S. Ganguli (2015) Deep unsupervised learning using nonequilibrium t
+41	2510.01378	id		K. Song, J. Kim, S. Chen, Y. Du, S. Kakade, and V. Sitzmann (2025) Selective underfitting in diffusion models. arXiv pre
+42	2011.13456	id		Y. Song, J. Sohl-Dickstein, D. P. Kingma, A. Kumar, S. Ermon, and B. Poole (2020) Score-based generative modeling throug
+43	2104.09864	s2	RoFormer: Enhanced Transformer with Rotary Position Embedding	J. Su, M. Ahmed, Y. Lu, S. Pan, W. Bo, and Y. Liu (2024) Roformer: enhanced transformer with rotary position embedding. 
+44	2410.22366	s2	One-Step is Enough: Sparse Autoencoders for Text-to-Image Diffusion Models	V. Surkov, C. Wendler, A. Mari, M. Terekhov, J. Deschenaux, R. West, C. Gulcehre, and D. Bau (2025) One-step is enough: 
+45	2503.09446	s2	Sparse Autoencoder as a Zero-Shot Classifier for Concept Erasing in Text-to-Image Diffusion Models	Z. Tian, S. Nan, M. Xu, S. Zhai, W. Qu, J. Liu, R. Jia, and J. Zhang (2025) Sparse autoencoder as a zero-shot classifier
+46	2309.02390	id		V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar (2023) Explaining grokking through circuit efficiency. arXiv prepr
+47	2212.07677	s2	Transformers learn in-context by gradient descent	J. Von Oswald, E. Niklasson, E. Randazzo, J. Sacramento, A. Mordvintsev, A. Zhmoginov, and M. Vladymyrov (2023) Transfor
+48	2503.20314	id		T. Wan, A. Wang, B. Ai, B. Wen, C. Mao, C. Xie, D. Chen, F. Yu, H. Zhao, J. Yang, et al. (2025) Wan: open and advanced l
+49	2211.00593	id		K. Wang, A. Variengien, A. Conmy, B. Shlegeris, and J. Steinhardt (2022) Interpretability in the wild: a circuit for ind
+50	2509.20328	id		T. Wiedemer, Y. Li, P. Vicol, S. S. Gu, N. Matarese, K. Swersky, B. Kim, P. Jaini, and R. Geirhos (2025) Video models ar
+51		s2	generalization from first	T. Wiedemer, P. Mayilvahanan, M. Bethge, and W. Brendel (2023) Compositional generalization from first principles. Exter
+52	2511.18870	id		B. Wu, C. Zou, C. Li, D. Huang, F. Yang, H. Tan, J. Peng, J. Wu, J. Xiong, J. Jiang, et al. (2025) HunyuanVideo 1.5 tech
+53	2303.13336	id		C. Zhang, C. Zhang, S. Zheng, M. Zhang, M. Qamar, S. Bae, and I. S. Kweon (2023) A survey on audio diffusion models: tex
+54	2206.05564	id		Q. Zhang, M. Tao, and Y. Chen (2022) Gddim: generalized denoising diffusion implicit models. arXiv preprint arXiv:2206.0
+55	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Z. Zhong, Z. Liu, M. Tegmark, and J. Andreas (2023) The clock and the pizza: two stories in mechanistic explanation of n

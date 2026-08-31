@@ -1,0 +1,32 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2404.05405	id		[1] Z. **[p. 10]** Allen-Zhu and Y. Li Physics of language models: part 3.3, knowledge capacity scaling laws. arXiv prep
+2	1706.05394	s2	A Closer Look at Memorization in Deep Networks	[2] D. Arpit, S. Jastrzębski, N. Ballas, D. Krueger, E. Bengio, M. S. Kanwal, T. Maharaj, A. Fischer, A. Courville, Y. B
+3	2202.07646	s2	Quantifying Memorization Across Neural Language Models	[3] N. Carlini, D. Ippolito, M. Jagielski, K. Lee, F. Tramer, and C. Zhang Quantifying memorization across neural langua
+4	2408.08944	id		[4] K. Clauw, S. Stramaglia, and D. Marinazzo Information-theoretic progress measures reveal grokking is an emergent pha
+5	2303.06173	id		[5] X. Davies, L. Langosco, and D. Krueger Unifying grokking and double descent. arXiv preprint arXiv:2303.06173. Cited 
+6	2412.09810	id		[6] B. DeMoss, S. Sapora, J. Foerster, N. Hawes, and I. Posner The complexity dynamics of grokking. arXiv preprint arXiv
+7	2402.16726	id		[7] H. Furuta, G. Minegishi, Y. Iwasawa, and Y. Matsuo Interpreting grokked transformers in complex modular arithmetic. 
+8	2406.02550	id		[8] T. He, D. Doshi, A. Das, and A. Gromov Learning to grok: emergence of in-context learning and skill composition in m
+9	2402.15175	id		[9] Y. Huang, S. Hu, X. Han, Z. Liu, and M. Sun Unified view of grokking, double descent and emergent abilities: a persp
+10	2402.15555	s2	Deep Networks Always Grok and Here is Why	[10] A. I. Humayun, R. Balestriero, and R. Baraniuk Deep networks always grok and here is why. In Proceedings of the 41s
+11	2310.06110	id		[11] T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan Grokking as the transition from lazy to rich training dynami
+12	2405.20233	id		[12] J. Lee, B. G. Kang, K. Kim, and K. M. Lee Grokfast: accelerated grokking by amplifying slow gradients. arXiv prepri
+13	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	[13] Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams Towards understanding grokking: an effecti
+14	2210.01117	id		[14] Z. Liu, E. J. Michaud, and M. Tegmark Omnigrok: grokking beyond algorithmic data. arXiv preprint arXiv:2210.01117. 
+15	1711.05101	id		[15] I. Loshchilov and F. Hutter Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101. Cited by: §4.2.
+16	2406.15720	s2	Scaling Laws for Fact Memorization of Large Language Models	[16] X. Lu, X. Li, Q. Cheng, K. Ding, X. **[p. 11]** Huang, and X. Qiu Scaling laws for fact memorization of large langu
+17	2311.18817	id		[17] K. Lyu, J. Jin, Z. Li, S. S. Du, J. D. Lee, and W. Hu Dichotomy of early and late phase implicit biases can provabl
+18	2603.25009	id		[18] S. B. Manir and A. P. Rupa A systematic empirical study of grokking: depth, architecture, activation, and regulariz
+19	2303.11873	id		[19] W. Merrill, N. Tsilivis, and A. Shukla A tale of two circuits: grokking as competition of sparse and dense subnetwo
+20		—		[20] M. A. Mohamadi, Z. Li, L. Wu, and D. J. Sutherland Why do you grok? A theoretical analysis on grokking modular addi
+21	2505.24832	id		[21] J. X. Morris, C. Sitawarin, C. Guo, N. Kokhlikyan, G. E. Suh, A. M. Rush, K. Chaudhuri, and S. Mahloujifar How much
+22	1912.02292	id		[22] P. Nakkiran, G. Kaplun, Y. Bansal, T. Yang, B. Barak, and I. Sutskever Deep double descent: where bigger models and
+23	2301.05217	id		[23] N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt Progress measures for grokking via mechanistic interpre
+24	2201.02177	id		[24] A. Power, Y. Burda, H. Edwards, I. Babuschkin, V. Misra, A. Mishkin, J. Kramer, J. Skalse, M. Andrychowicz, I. Suts
+25	2002.08910	id		[25] A. Roberts, C. Raffel, and N. Shazeer How much knowledge can you pack into the parameters of a language model?. arX
+26	2310.03789	id		[26] N. Rubin, I. Seroussi, and Z. Ringel Grokking as a first order phase transition in two layer networks. arXiv prepri
+27	2206.04817	id		[27] V. Thilak, E. Littwin, S. Zhai, O. Saremi, and R. Paiss The slingshot mechanism. arXiv preprint arXiv:2206.04817. E
+28	2205.10770	s2	Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models	[28] K. Tirumala, A. Markosyan, L. Zettlemoyer, and A. Aghajanyan Memorization without overfitting: analyzing the traini
+29	2309.02390	id		[29] V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar Explaining grokking through circuit efficiency. arXiv preprin
+30	2405.15071	id		[30] B. Wang, X. Yue, Y. Su, and H. Sun Grokked transformers are implicit reasoners: a mechanistic journey to the edge o
+31	1611.03530	s2	Understanding deep learning requires rethinking generalization	[31] C. Zhang, S. Bengio, M. Hardt, B. Recht, and O. Vinyals Understanding deep learning requires rethinking generalizat

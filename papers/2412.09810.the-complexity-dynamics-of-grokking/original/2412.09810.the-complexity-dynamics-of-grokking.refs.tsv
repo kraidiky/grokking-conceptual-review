@@ -1,0 +1,32 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	A. Power, Y. Burda, H. Edwards, I. Babuschkin, V. Misra, Grokking: Generalization beyond overfitting on small algorithmi
+2	1405.6903	id		S. Aaronson, S. M. Carroll, L. Ouellette, Quantifying the rise and fall of complexity in closed systems: The coffee auto
+3		s2	Modeling By Shortest Data Description*	J. Rissanen, Modeling by shortest data description*, Autom. 14 (1978) 465–471.
+4		s2	A Mathematical Theory of Communication	C. E. Shannon, A mathematical theory of communication, Bell Syst. Tech. J. 27 (1948) 623–656.
+5		s2	Principles of Risk Minimization for Learning Theory	V. N. Vapnik, Principles of risk minimization for learning theory, in: Neural Information Processing Systems, 1991.
+6		s2	Rademacher and Gaussian Complexities: Risk Bounds and Structural Results	P. L. Bartlett, S. Mendelson, Rademacher and gaussian complexities: Risk bounds and structural results, J. Mach. Learn. 
+7		s2	Chervonenkis: On the uniform convergence of relative frequencies of events to their probabilities	V. N. Vapnik, A. Chervonenkis, On the uniform convergence of relative frequencies of events to their probabilities, 1971
+8	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Z. Liu, O. Kitouni, N. Nolte, E. J. Michaud, M. Tegmark, M. Williams, Towards understanding grokking: An effective theor
+9		s2	: Grokking beyond algorithmic data	Z. Liu, E. J. Michaud, M. Tegmark, Omnigrok: Grokking beyond algorithmic data, ArXiv abs/2210.01117 (2022b).
+10		—		V. Varma, R. Shah, Z. Kenton, J. Kram’ar, R. Kumar, Explaining grokking through circuit efficiency, ArXiv abs/2309.02390
+11	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	N. Nanda, L. Chan, T. Lieberum, J. Smith, J. Steinhardt, Progress measures for grokking via mechanistic interpretability
+12	1912.02292	s2	Deep double descent: where bigger models and more data hurt	P. Nakkiran, G. Kaplun, Y. Bansal, T. Yang, B. Barak, I. Sutskever, Deep double descent: where bigger models and more da
+13	2001.08361	id		J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, J. Wu, D. Amodei, Scaling l
+14	2010.14701	s2	Scaling Laws for Autoregressive Generative Modeling	T. Henighan, J. Kaplan, M. Katz, M. Chen, C. Hesse, J. Jackson, H. Jun, T. B. Brown, P. Dhariwal, S. Gray, C. Hallacy, B
+15	2312.17173	id		S. Lotfi, M. Finzi, Y. Kuang, T. G. J. Rudner, M. Goldblum, A. G. Wilson, Non-vacuous generalization bounds for large la
+16	2304.05366	s2	The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learni	M. Goldblum, M. Finzi, K. Rowan, A. G. Wilson, The no free lunch theorem, kolmogorov complexity, and the role of inducti
+17		s2	Bounds for averaging classifiers	J. Langford, M. Seeger, Bounds for averaging classifiers., Carnegie Mellon (2001). URL: https://www.cs.cmu.edu/˜jcl/pape
+18		s2	An Introduction to Kolmogorov Complexity and Its Applications	M. Li, P. M. B. Vitányi, An introduction to kolmogorov complexity and its applications, in: Graduate Texts in Computer S
+19	1901.07821	s2	Rethinking Lossy Compression: The Rate-Distortion-Perception Tradeoff	Y. Blau, T. Michaeli, Rethinking lossy compression: The rate-distortion-perception tradeoff, in: International Conferenc
+20	cs/0411014	s2	Rate Distortion and Denoising of Individual Data Using Kolmogorov Complexity	N. K. Vereshchagin, P. M. B. Vitányi, Rate distortion and denoising of individual data using kolmogorov complexity, IEEE
+21		—		P. Micikevicius, S. Narang, J. Alben, G. F. Diamos, E. Elsen, D. García, B. Ginsburg, M. Houston, O. Kuchaiev, G. Venkat
+22	2402.17764	s2	The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits	S. Ma, H. Wang, L. Ma, L. Wang, W. Wang, S. Huang, L. Dong, R. Wang, J. Xue, F. Wei, The era of 1-bit llms: All large la
+23		s2	Keeping the neural networks simple by minimizing the description length of the weights	G. E. Hinton, D. van Camp, Keeping the neural networks simple by minimizing the description length of the weights, in: A
+24		—		J. E. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, W. Chen, Lora: Low-rank adaptation of large language models,
+25	2305.14314	s2	QLoRA: Efficient Finetuning of Quantized LLMs	T. Dettmers, A. Pagnoni, A. Holtzman, L. Zettlemoyer, Qlora: Efficient finetuning of quantized llms, ArXiv abs/2305.1431
+26	1804.08838	s2	Measuring the Intrinsic Dimension of Objective Landscapes	C. Li, H. Farkhoor, R. Liu, J. Yosinski, Measuring the intrinsic dimension of objective landscapes, ArXiv abs/1804.08838
+27		—		A. Aghajanyan, L. Zettlemoyer, S. Gupta, Intrinsic dimensionality explains the effectiveness of language model fine-tuni
+28		s2	The effective rank: A measure of effective dimensionality	O. Roy, M. Vetterli, The effective rank: A measure of effective dimensionality, 2007 15th European Signal Processing Con
+29	2308.06927	s2	Foundations of algorithmic thermodynamics.	A. Ebtekar, M. Hutter, Foundations of algorithmic thermodynamics, Phys. Rev. E 111 (2025) 014118. URL: https://link.aps.
+30	1010.2067	s2	Algorithmic thermodynamics	J. Baez, M. Stay, Algorithmic thermodynamics, Mathematical Structures in Computer Science 22 (2012) 771–787. doi:10.1017
+31	1912.04685	s2	Thermodynamic costs of Turing Machines	A. Kolchinsky, D. H. Wolpert, Thermodynamic costs of turing machines, Phys. Rev. Res. 2 (2020) 033312. URL: https://link

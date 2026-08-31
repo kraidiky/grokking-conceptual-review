@@ -1,0 +1,30 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1706.05394	s2	A Closer Look at Memorization in Deep Networks	D. Arpit, S. Jastrzebski, N. Ballas, D. Krueger, E. Bengio, M. S. Kanwal, T. Maharaj, A. Fischer, A. Courville, Y. **[p.
+2	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	B. Barak, B. Edelman, S. Goel, S. Kakade, E. Malach, and C. Zhang Hidden progress in deep learning: sgd learns parities 
+3	1802.08232	s2	The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural Networks	N. Carlini, C. Liu, Ú. Erlingsson, J. Kos, and D. Song The secret sharer: evaluating and testing unintended memorization
+4	2012.07805	s2	Extracting Training Data from Large Language Models	N. Carlini, F. Tramer, E. Wallace, M. Jagielski, A. Herbert-Voss, K. Lee, A. Roberts, T. Brown, D. Song, U. Erlingsson, 
+5	2308.15594	s2	Learning the greatest common divisor: explaining transformer predictions	F. Charton Learning the greatest common divisor: explaining transformer predictions. In ICLR, 2024. Cited by: §2.
+6	2008.03703	s2	What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation	V. Feldman and C. Zhang What neural networks memorize and why: discovering the long tail via influence estimation. In Ne
+7	1712.00409	id		J. Hestness, S. Narang, N. Ardalani, G. Diamos, H. Jun, H. Kianinejad, Md. M. A. Patwary, Y. Yang, and Y. Zhou Deep lear
+8	2203.15556	id		J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai, E. Rutherford, D. de Las Casas, L. A. Hendricks, J. Welbl, 
+9	2402.15175	id		Y. Huang, S. Hu, X. Han, Z. Liu, and M. Sun Unified view of grokking, double descent and emergent abilities: a perspecti
+10	2001.08361	id		J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei Scalin
+11	2307.03381	id		N. Lee, K. Sreenivasan, J. D. Lee, K. Lee, and D. Papailiopoulos Teaching arithmetic to small transformers. arXiv prepri
+12	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams Towards understanding grokking: an effective th
+13	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Z. Liu, E. J. Michaud, and M. Tegmark Omnigrok: grokking beyond algorithmic data. In ICLR, 2023. Cited by: §2.
+14		s2	Decoupled Weight Decay Regularization	I. Loshchilov and F. Hutter Decoupled weight decay regularization. In ICLR, 2019. Cited by: §3.2.
+15	2311.18817	id		K. Lyu, J. Jin, Z. Li, S. S. Du, J. D. Lee, and W. Hu Dichotomy of early and late phase implicit biases can provably ind
+16	2310.19470	s2	Bridging Lottery Ticket and Grokking: Understanding Grokking from Inner Structure of Networks	G. Minegishi, Y. Iwasawa, and Y. Matsuo Bridging lottery ticket and grokking: understanding grokking from inner structur
+17	2505.24832	id		J. X. Morris, C. Sitawarin, C. Guo, N. Kokhlikyan, G. E. Suh, A. M. Rush, K. Chaudhuri, and S. Mahloujifar How much do l
+18	1912.02292	s2	Deep double descent: where bigger models and more data hurt	P. Nakkiran, G. Kaplun, Y. Bansal, T. Yang, B. Barak, and I. Sutskever Deep double descent: where bigger models and more
+19	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	N. Nanda, L. Chan, T. Lieberum, J. **[p. 11]** Smith, and J. Steinhardt Progress measures for grokking via mechanistic i
+20		s2	A general method applicable to the search for similarities in the amino acid sequence of two protein	S. B. Needleman and C. D. Wunsch A general method applicable to the search for similarities in the amino acid sequence o
+21	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra Grokking: generalization beyond overfitting on small algorit
+22		s2	Identification of common molecular subsequences.	T. F. Smith and M. S. Waterman Identification of common molecular subsequences. Journal of Molecular Biology, 1981. Cite
+23	2309.02390	id		V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar Explaining grokking through circuit efficiency. arXiv preprint arX
+24	1706.03762	s2	Attention is All you Need	A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin Attention is all yo
+25		s2	Error bounds for convolutional codes and an asymptotically optimum decoding algorithm	A. J. Viterbi Error bounds for convolutional codes and an asymptotically optimum decoding algorithm. IEEE Transactions o
+26		s2	The String-to-String Correction Problem	R. A. Wagner and M. J. Fischer The string-to-string correction problem. Journal of the ACM, 1974. Cited by: §2, §6.
+27		s2	Recognition and Parsing of Context-Free Languages in Time n^3	D. H. Younger Recognition and parsing of context-free languages in time $n^{3}$. Information and Control, 1967. Cited by
+28	1611.03530	s2	Understanding deep learning requires rethinking generalization	C. Zhang, S. Bengio, M. Hardt, B. Recht, and O. Vinyals Understanding deep learning requires rethinking generalization. 
+29	2401.10463	id		X. Zhu, Y. Fu, B. Zhou, and Z. Lin Critical data size of language models from a grokking perspective. arXiv preprint arX

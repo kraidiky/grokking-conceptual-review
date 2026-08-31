@@ -1,0 +1,43 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1803.08375	id		A. F. Agarap. Deep learning using rectified linear units (ReLU). *arXiv preprint arXiv:1803.08375*, 2018.
+2	1706.05394	s2	A Closer Look at Memorization in Deep Networks	Devansh Arpit, Stanislaw Jastrzkebski, Nicolas Ballas, David Krueger, Emmanuel Bengio, Maxinder S Kanwal, Tegan Maharaj,
+3		s2	A Spline Theory of Deep Networks	Randall Balestriero and Richard Baraniuk. A spline theory of deep networks. In *Proc. ICML*, pp. 374–383, 2018.
+4	2209.14778	id		Randall Balestriero and Richard G Baraniuk. Batch normalization explained. *arXiv preprint arXiv:2209.14778*, 2022.
+5	1905.08443	s2	The Geometry of Deep Networks: Power Diagram Subdivision	Randall Balestriero, Romain Cosentino, Behnaam Aazhang, and Richard Baraniuk. The geometry of deep networks: Power diagr
+6	2110.09485	id		Randall Balestriero, Jerome Pesenti, and Yann LeCun. Learning in high dimension always amounts to extrapolation. *arXiv 
+7	2009.11162	s2	Implicit Gradient Regularization	David G. T. Barrett and Benoit Dherin. Implicit gradient regularization. *CoRR*, abs/2009.11162, 2020. URL https://arxiv
+8	1905.12173	s2	On the Inductive Bias of Neural Tangent Kernels	Alberto Bietti and Julien Mairal. On the inductive bias of neural tangent kernels. *Advances in Neural Information Proce
+9		—		Florian Bordes, Randall Balestriero, Quentin Garrido, Adrien Bardes, and Pascal Vincent. Guillotine regularization: Why 
+10	2303.01986	id		Florian Bordes, Randall Balestriero, and Pascal Vincent. Towards democratizing joint-embedding self-supervised learning.
+11	2302.02774	s2	The SSL Interplay: Augmentations, Inductive Bias, and Generalization	Vivien Cabannes, Bobak Kiani, Randall Balestriero, Yann LeCun, and Alberto Bietti. The ssl interplay: Augmentations, ind
+12		s2	A Course In Approximation Theory , volume 101	Elliott Ward Cheney and William Allan Light. *A Course In Approximation Theory*, volume 101. American Mathematical Soc.,
+13		s2	Control Theoretic Splines: Optimal Control, Statistics, and Path Planning	Magnus Egerstedt and Clyde Martin. *Control theoretic splines: optimal control, statistics, and path planning*. Princeto
+14		s2	Identification of piecewise affine models in noisy environment	Cesare Fantuzzi, Silvio Simani, Sergio Beghelli, and Riccardo Rovatti. Identification of piecewise affine models in nois
+15		s2	Dropout vs. batch normalization: an empirical study of their impact to deep learning	Christian Garbin, Xingquan Zhu, and Oge Marques. Dropout vs. batch normalization: an empirical study of their impact to 
+16		s2	Landscape and training regimes in deep learning	Mario Geiger, Leonardo Petrini, and Matthieu Wyart. Landscape and training regimes in deep learning. *Physics Reports*, 
+17	1806.00468	s2	Implicit Bias of Gradient Descent on Linear Convolutional Networks	Suriya Gunasekar, Jason D Lee, Daniel Soudry, and Nati Srebro. Implicit bias of gradient descent on linear convolutional
+18	1901.09021	id		Boris Hanin and David Rolnick. Complexity of linear regions in deep networks. *arXiv preprint arXiv:1901.09021*, 2019.
+19	1806.03852	id		Alex Hernández-García and Peter König. Data augmentation instead of explicit regularization. *arXiv preprint arXiv:1806.
+20	1909.08156	s2	Dynamics of Deep Neural Networks and Neural Tangent Hierarchy	Jiaoyang Huang and Horng-Tzer Yau. Dynamics of deep neural networks and neural tangent hierarchy. In *International conf
+21	2110.08009	s2	MaGNET: Uniform Sampling from Deep Generative Network Manifolds Without Retraining	Ahmed Imtiaz Humayun, Randall Balestriero, and Richard Baraniuk. MaGNET: Uniform sampling from deep generative network m
+22	2203.01993	s2	Polarity Sampling: Quality and Diversity Control of Pre-Trained Generative Networks via Singular Val	Ahmed Imtiaz Humayun, Randall Balestriero, and Richard Baraniuk. Polarity sampling: Quality and diversity control of pre
+23	2302.12828	s2	SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries	Ahmed Imtiaz Humayun, Randall Balestriero, Guha Balakrishnan, and Richard G Baraniuk. Splinecam: Exact visualization and
+24	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural tangent kernel: Convergence and generalization in neural netwo
+25	2303.00586	id		Wei-Yin Ko, Daniel D’souza, Karina Nguyen, Randall Balestriero, and Sara Hooker. Fair-ensemble: When fairness naturally 
+26	1903.01997	id		Masayoshi Kubo, Ryotaro Banno, Hidetaka Manabe, and Masataka Minoji. Implicit regularization in over-parameterized neura
+27		s2	Deep Learning	Yann LeCun, Yoshua Bengio, and Geoffrey Hinton. Deep learning. *Nature*, 521(7553):436–444, 2015.
+28	2003.02218	id		Aitor Lewkowycz, Yasaman Bahri, Ethan Dyer, Jascha Sohl-Dickstein, and Guy Gur-Ari. The large learning rate phase of dee
+29	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer, and Tom Goldstein. Visualizing the loss landscape of neural nets. *Adv
+30	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+31	1402.1869	s2	On the Number of Linear Regions of Deep Neural Networks	Guido F Montufar, Razvan Pascanu, Kyunghyun Cho, and Yoshua Bengio. On the number of linear regions of deep neural netwo
+32	2008.08186	s2	Prevalence of neural collapse during the terminal phase of deep learning training	Vardan Papyan, XY Han, and David L Donoho. Prevalence of neural collapse during the terminal phase of deep learning trai
+33	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+34	1606.05336	s2	On the Expressive Power of Deep Neural Networks	Maithra Raghu, Ben Poole, Jon Kleinberg, Surya Ganguli, and Jascha Sohl Dickstein. On the expressive power of deep neura
+35	2005.06398	s2	Implicit Regularization in Deep Learning May Not Be Explainable by Norms	Noam Razin and Nadav Cohen. Implicit regularization in deep learning may not be explainable by norms. *Advances in neura
+36	2203.03099	s2	Singular Value Perturbation and Deep Network Optimization	Rudolf H Riedi, Randall Balestriero, and Richard G Baraniuk. Singular value perturbation and deep network optimization. 
+37	2009.10795	s2	Dataset Cartography: Mapping and Diagnosing Datasets with Training Dynamics	Swabha Swayamdipta, Roy Schwartz, Nicholas Lourie, Yizhong Wang, Hannaneh Hajishirzi, Noah A. Smith, and Yejin Choi. Dat
+38	2205.14055	s2	A Blessing of Dimensionality in Membership Inference through Regularization	Jasper Tan, Daniel LeJeune, Blake Mason, Hamid Javadi, and Richard G Baraniuk. A blessing of dimensionality in membershi
+39	physics/0004057	s2	The information bottleneck method	Naftali Tishby, Fernando C Pereira, and William Bialek. The information bottleneck method. *arXiv preprint physics/00040
+40	2101.02338	id		Haoran You, Randall Balestriero, Zhihan Lu, Yutong Kou, Huihong Shi, Shunyao Zhang, Shang Wu, Yingyan Lin, and Richard B
+41	1611.03530	s2	Understanding deep learning requires rethinking generalization	Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals. Understanding deep learning requires rethin
+42	1902.04698	id		Chiyuan Zhang, Samy Bengio, Moritz Hardt, Michael C Mozer, and Yoram Singer. Identity crisis: Memorization and generaliz

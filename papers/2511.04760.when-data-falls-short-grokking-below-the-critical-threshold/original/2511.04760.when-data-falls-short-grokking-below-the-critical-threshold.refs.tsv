@@ -1,0 +1,39 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1706.05394	s2	A Closer Look at Memorization in Deep Networks	A closer look at memorization in deep networks. In International Conference on Machine Learning, Cited by: §1.
+2	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Hidden progress in deep learning: sgd learns parities near the computational limit. Advances in Neural Information Proce
+3		s2	Learning a Classifier when the Labeling Is Known	Learning a classifier when the labeling is known. In International Conference on Algorithmic Learning Theory, pp. 440–45
+4		—		Towards a theory of model distillation. External Links: 2403.09053, Link Cited by: §4.
+5	1910.01348	s2	On the Efficacy of Knowledge Distillation	On the efficacy of knowledge distillation. In Proceedings of the IEEE/CVF International Conference on Computer Vision (I
+6	2310.13061	id		To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets. arXiv preprint 
+7	2006.04662	s2	Rethinking Importance Weighting for Deep Learning under Distribution Shift	Rethinking importance weighting for deep learning under distribution shift. Advances in neural information processing sy
+8	2402.15555	id		Deep networks always grok and here is why. arXiv preprint arXiv:2402.15555. Cited by: §2.
+9	2002.08709	s2	Do We Need Zero Training Loss After Achieving Zero Training Error?	Do we need zero training loss after achieving zero training error?. ArXiv abs/2002.08709. External Links: Link Cited by:
+10		s2	Continual Learning of Language Models	Continual learning of language models. In International Conference on Learning Representations (ICLR), Cited by: §5.
+11		s2	Learning Multiple Layers of Features from Tiny Images	Learning multiple layers of features from tiny images. University of Toronto, pp.. Cited by: §2.
+12	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Grokking as the transition from lazy to rich training dynamics. In The Twelfth International Conference on Learning Repr
+13	2405.20233	id		Grokfast: accelerated grokking by amplifying slow gradients. arXiv preprint arXiv:2405.20233. Cited by: §2.
+14	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Grokking in linear estimators – a solvable model that groks without understanding. In The Twelfth International Conferen
+15	2303.15361	s2	A Comprehensive Survey on Test-Time Adaptation Under Distribution Shifts	A comprehensive survey on test-time adaptation under distribution shifts. International Journal of Computer Vision, pp. 
+16	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Towards understanding grokking: an effective theory of representation learning. Advances in Neural Information Processin
+17	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Omnigrok: grokking beyond algorithmic data. In The Eleventh International Conference on Learning Representations, Cited 
+18	1711.05101	id		Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101. Cited by: §3.
+19	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Dichotomy of early and late phase implicit biases can provably induce grokking. In The Twelfth International Conference 
+20		s2	A statistical perspective on distillation	A statistical perspective on distillation. In Proceedings of the 38th International Conference on Machine Learning, Proc
+21	2303.11873	id		A tale of two circuits: grokking as competition of sparse and dense subnetworks. arXiv preprint arXiv:2303.11873. Cited 
+22	2310.19470	id		Bridging lottery ticket and grokking: is weight norm sufficient to explain delayed generalization?. arXiv preprint arXiv
+23	2301.05217	id		Progress measures for grokking via mechanistic interpretability. arXiv preprint arXiv:2301.05217. Cited by: Figure 7, Fi
+24	2306.13253	id		Predicting grokking long before it happens: a look into the loss landscape of models which grok. arXiv preprint arXiv:23
+25	2105.13093	s2	Towards Understanding Knowledge Distillation	Towards understanding knowledge distillation. In Proceedings of the 36th International Conference on Machine Learning, P
+26	2201.02177	id		Grokking: generalization beyond overfitting on small algorithmic datasets. arXiv preprint arXiv:2201.02177. Cited by: §1
+27	2501.04697	s2	Grokking at the Edge of Numerical Stability	Grokking at the edge of numerical stability. In The Thirteenth International Conference on Learning Representations, Ext
+28	2310.03789	s2	Grokking as a First Order Phase Transition in Two Layer Networks	Grokking as a first order phase transition in two layer networks. In The Twelfth International Conference on Learning Re
+29	2406.13653	id		Controlling forgetting with test-time data in continual learning. arXiv preprint arXiv:2406.13653. Cited by: §1.
+30		s2	Wake-Sleep Energy Based Models for Continual Learning	Wake-sleep energy based models for continual learning. In Proceedings of the IEEE/CVF Conference on Computer Vision and 
+31	2002.03532	id		Understanding and improving knowledge distillation. arXiv preprint arXiv:2002.03532. Cited by: §4.
+32	2206.04817	id		The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon. arXiv preprint arXiv:220
+33	1904.07734	id		Three scenarios for continual learning. arXiv preprint arXiv:1904.07734. Cited by: §1.
+34	2309.02390	id		Explaining grokking through circuit efficiency. arXiv preprint arXiv:2309.02390. Cited by: Figure 7, Figure 7, §A.1, §A.
+35	1706.03762	s2	Attention is All you Need	Attention is all you need. In Neural Information Processing Systems, External Links: Link Cited by: §1.
+36	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	Let me grok for you: accelerating grokking via embedding transfer from a weaker model. In The Thirteenth International C
+37		s2	Revisiting Knowledge Distillation via Label Smoothing Regularization	Revisiting knowledge distillation via label smoothing regularization. In Proceedings of the IEEE/CVF Conference on Compu
+38	2401.10463	s2	Critical Data Size of Language Models from a Grokking Perspective	Critical data size of language models from a grokking perspective. CoRR abs/2401.10463. External Links: Link Cited by: §

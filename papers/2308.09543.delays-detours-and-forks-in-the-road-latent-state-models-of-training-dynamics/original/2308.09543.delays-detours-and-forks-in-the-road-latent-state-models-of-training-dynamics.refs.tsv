@@ -1,0 +1,63 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Information Theory and an Extension of the Maximum Likelihood Principle	Hirotogu Akaike. *Information Theory and an Extension of the Maximum Likelihood Principle*, pp. 199–213. Springer New Yo
+2	1812.03981	s2	Theoretical Analysis of Auto Rate-Tuning by Batch Normalization	Sanjeev Arora, Zhiyuan Li, and Kaifeng Lyu. Theoretical analysis of auto rate-tuning by batch normalization. In *Interna
+3	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin L. Edelman, Surbhi Goel, Sham M. Kakade, eran malach, and Cyril Zhang. Hidden progress in deep lear
+4		s2	Latent Markov models: a review of a general framework for the analysis of longitudinal data with cov	Francesco Bartolucci, Alessio Farcomeni, and Fulvia Pennoni. Latent markov models: a review of a general framework for t
+5		s2	BehaveNet: nonlinear embedding and Bayesian neural decoding of behavioral videos	Eleanor Batty, Matthew R Whiteway, Shreya Saxena, Dan Biderman, Taiga Abe, Simon Musall, Winthrop F. Gillis, Jeffrey E. 
+6		s2	Statistical Inference for Probabilistic Functions of Finite State Markov Chains	Leonard E. Baum and Ted Petrie. Statistical Inference for Probabilistic Functions of Finite State Markov Chains. *The An
+7		s2	A Maximization Technique Occurring in the Statistical Analysis of Probabilistic Functions of Markov 	Leonard E. Baum, Ted Petrie, George W. Soules, and Norman Weiss. A maximization technique occurring in the statistical a
+8	2109.06096	id		Leshem Choshen, Guy Hacohen, Daphna Weinshall, and Omri Abend. The Grammar-Learning Trajectories of Neural Language Mode
+9	1810.04805	s2	BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding	Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of deep bidirectional transformers 
+10		s2	Effects of Random Seeds on the Accuracy of Convolutional Neural Networks	Christofer Fellicious, Thomas Weissgerber, and Michael Granitzer. Effects of random seeds on the accuracy of convolution
+11	1807.02581	s2	The Goldilocks zone: Towards better understanding of neural network loss landscapes	Stanislav Fort and Adam Scherlis. The goldilocks zone: Towards better understanding of neural network loss landscapes. *
+12	2010.15110	s2	Deep learning versus kernel learning: an empirical study of loss landscape geometry and the time evo	Stanislav Fort, Gintare Karolina Dziugaite, Mansheej Paul, Sepideh Kharaghani, Daniel M. Roy, and Surya Ganguli. Deep le
+13	2002.10365	s2	The Early Phase of Neural Network Training	Jonathan Frankle, David J. Schwab, and Ari S. Morcos. The early phase of neural network training. In *International Conf
+14		—		Tomer Galanti, Zachary S. Siegel, Aparna Gupte, and Tomaso Poggio. Sgd and weight decay provably induce a low-rank bias 
+15	1501.01711	s2	Frequent Directions: Simple and Deterministic Matrix Sketching	Mina Ghashami, Edo Liberty, Jeff M. Phillips, and David P. Woodruff. Frequent directions: Simple and deterministic matri
+16	1909.05207	s2	Introduction to Online Convex Optimization	Elad Hazan. Introduction to online convex optimization. *CoRR*, abs/1909.05207, 2019. URL http://arxiv.org/abs/1909.0520
+17	1512.03385	s2	Deep Residual Learning for Image Recognition	Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In *2016 IEEE Confe
+18	2006.14599	s2	The Surprising Simplicity of the Early-Time Learning Dynamics of Neural Networks	Wei Hu, L. Xiao, Ben Adlam, and Jeffrey Pennington. The Surprising Simplicity of the Early-Time Learning Dynamics of Neu
+19		s2	Hidden Markov models for sequence analysis: extension and analysis of the basic method	Richard Hughey and Anders Krogh. Hidden markov models for sequence analysis: extension and analysis of the basic method.
+20	0811.4706	s2	Comparing Measures of Sparsity	Niall P. Hurley and Scott T. Rickard. Comparing measures of sparsity. *IEEE Transactions on Information Theory*, 55:4723
+21	1502.03167	s2	Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift	Sergey Ioffe and Christian Szegedy. Batch normalization: Accelerating deep network training by reducing internal covaria
+22	1806.07572	id		Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural Tangent Kernel: Convergence and Generalization in Neural Netwo
+23	2409.14981	s2	On The Specialization of Neural Modules	Devon Jarvis, Richard Klein, Benjamin Rosman, and Andrew M Saxe. On the specialization of neural modules. In *The Eleven
+24	2205.12411	s2	Linear Connectivity Reveals Generalization Strategies	Jeevesh Juneja, Rachit Bansal, Kyunghyun Cho, João Sedoc, and Naomi Saphra. Linear connectivity reveals generalization s
+25		—		Dan Jurafsky and James H. Martin. Speech and language processing - an introduction to natural language processing, compu
+26		s2	Mathematical Methods of Organizing and Planning Production	Leonid V Kantorovich. Mathematical methods of organizing and planning production. *Management science*, 6(4), 1939.
+27	2001.08361	id		Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey
+28	1609.04836	s2	On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima	Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang. On large-batch t
+29	1711.10421	s2	A review of dynamic network models with latent variables	Bomin Kim, Kevin H. Lee, Lingzhou Xue, and Xiaoyue Niu. A review of dynamic network models with latent variables. *Stati
+30		s2	Learning Multiple Layers of Features from Tiny Images	Alex Krizhevsky. Learning multiple layers of features from tiny images. Master’s thesis, University of Toronto, 2009. UR
+31	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Hao Li, Zheng Xu, Gavin Taylor, and Tom Goldstein. Visualizing the loss landscape of neural nets, 2018. URL https://open
+32	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International 
+33	2206.07085	s2	Understanding the Generalization Benefit of Normalization Layers: Sharpness Reduction	Kaifeng Lyu, Zhiyuan Li, and Sanjeev Arora. Understanding the generalization benefit of normalization layers: Sharpness 
+34	1909.10447	s2	On Model Stability as a Function of Random Seed	Pranava Madhyastha and Rishabh Jain. On model stability as a function of random seed. In *Proceedings of the 23rd Confer
+35		s2	Do deep neural networks learn shallow learnable examples first	Karttikeya Mangalam and Vinay Uday Prabhu. Do deep neural networks learn shallow learnable examples first? *ICML 2019 Wo
+36	1907.02649	s2	A Unified Framework of Online Learning Algorithms for Training Recurrent Neural Networks	Owen Marschall, Kyunghyun Cho, and Cristina Savin. A unified framework of online learning algorithms for training recurr
+37	2108.08845	s2	PyParSVD: A streaming, distributed and randomized singular-value-decomposition library	Romit Maulik and Gianmarco Mengaldo. Pyparsvd: A streaming, distributed and randomized singular-value-decomposition libr
+38	1911.02969	s2	BERTs of a feather do not generalize together: Large variability in generalization across models wit	R. Thomas McCoy, Junghyun Min, and Tal Linzen. BERTs of a feather do not generalize together: Large variability in gener
+39	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+40	1905.11604	id		Preetum Nakkiran, Gal Kaplun, Dimitris Kalimeris, Tristan Yang, Benjamin L. Edelman, Fred Zhang, and Boaz Barak. SGD on 
+41	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+42	2209.11895	s2	In-context Learning and Induction Heads	Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma, Tom Henighan, Ben Mann, Amanda Askell, Yunt
+43		s2	manual_seed(3407) is all you need: On the influence of random seeds in deep learning architectures	David Picard. Torch.manual_seed(3407) is all you need: On the influence of random seeds in deep learning architectures f
+44	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harrison Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitt
+45	1706.05806	id		Maithra Raghu, Justin Gilmer, Jason Yosinski, and Jascha Sohl-Dickstein. SVCCA: Singular Vector Canonical Correlation An
+46		s2	Impact of Pretraining Term Frequencies on Few-Shot Numerical Reasoning	Yasaman Razeghi, Robert L Logan IV, Matt Gardner, and Sameer Singh. Impact of Pretraining Term Frequencies on Few-Shot N
+47		s2	Euclid in a taxicab: Sparse blind deconvolution with smoothed regularization	Audrey Repetti, Mai Quyen Pham, Laurent Duval, Emilie Chouzenoux, and Jean-Christophe Pesquet. Euclid in a taxicab: Spar
+48		s2	Information Processing Systems	Shibani Santurkar, Dimitris Tsipras, Andrew Ilyas, and Aleksander Mądry. How does batch normalization help optimization?
+49	1810.10531	s2	A mathematical theory of semantic development in deep neural networks	Andrew M. Saxe, James L. McClelland, and Surya Ganguli. A mathematical theory of semantic development in deep neural net
+50		s2	Estimating the Dimension of a Model	Gideon Schwarz. Estimating the dimension of a model. *Annals of Statistics*, 6:461–464, 1978.
+51	2106.16163	s2	The MultiBERTs: BERT Reproductions for Robustness Analysis	Thibault Sellam, Steve Yadlowsky, Ian Tenney, Jason Wei, Naomi Saphra, Alexander D’Amour, Tal Linzen, Jasmijn Bastings, 
+52		s2	Best practices for convolutional neural networks applied to visual document analysis	Patrice Y. Simard, Dave Steinkraus, and John Platt. Best practices for convolutional neural networks applied to visual d
+53	2101.12176	s2	On the Origin of Implicit Regularization in Stochastic Gradient Descent	Samuel L Smith, Benoit Dherin, David Barrett, and Soham De. On the origin of implicit regularization in stochastic gradi
+54	2206.04615	id		Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R. Brown, Adam Sant
+55	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+56		s2	Markov processes over denumerable products of spaces, describing large systems of automata	Leonid Nisonovich Vaserstein. Markov processes over denumerable products of spaces, describing large systems of automata
+57	1711.09576	s2	Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples	Gail Weiss, Yoav Goldberg, and Eran Yahav. Extracting automata from recurrent neural networks using queries and countere
+58	1910.13895	s2	Learning Deterministic Weighted Automata with Queries and Counterexamples	Gail Weiss, Yoav Goldberg, and Eran Yahav. Learning deterministic weighted automata with queries and counterexamples. In
+59		s2	Training recurrent networks using the extended Kalman filter	R.J. Williams. Training recurrent networks using the extended kalman filter. In *[Proceedings 1992] IJCNN International 
+60	1908.06477	s2	Demystifying Learning Rate Policies for High Accuracy Training of Deep Neural Networks	Y. Wu, L. Liu, J. Bae, K. Chow, A. Iyengar, C. Pu, W. Wei, L. Yu, and Q. Zhang. Demystifying learning rate policies for 
+61		s2	Information Processing Systems	Greg Yang, Edward J Hu, Igor Babuschkin, Szymon Sidor, Xiaodong Liu, David Farhi, Nick Ryder, Jakub Pachocki, Weizhu Che
+62	1704.07669	s2	Single-Pass PCA of Large High-Dimensional Data	Wenjian Yu, Yu Gu, and Jian Li. Single-pass pca of large high-dimensional data. In *Proceedings of the 26th Internationa

@@ -1,0 +1,24 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2212.06757	s2	Gradient flow in the gaussian covariate model: exact solution of learning curves and multiple descen	Antoine Bodin and Nicolas Macris. Gradient flow in the gaussian covariate model: exact solution of learning curves and m
+2		s2	Dynamics of generalization in learning with gradient descent for piecewise linear neural networks	Eric Bodin and Nicolas Macris. Dynamics of generalization in learning with gradient descent for piecewise linear neural 
+3	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Bilal Chughtai, Lawrence Chan, and Neel Nanda. A toy model of universality: Reverse engineering how networks learn group
+4		s2	Dynamics of learning in deep linear neural networks: A mean-field approach	Andrea Crisanti and Haim Sompolinsky. Dynamics of learning in deep linear neural networks: A mean-field approach. *Physi
+5	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+6	1507.03003	s2	High-Dimensional Asymptotics of Prediction: Ridge Regression and Classification	Edgar Dobriban and Stefan Wager. High-dimensional asymptotics of prediction: Ridge regression and classification, 2015.
+7		s2	Modelling the infinite width limit of neural networks with mean field theory	Sebastian Goldt, Marc M’ezard, Florent Krzakala, and Lenka Zdeborov’a. Modelling the infinite width limit of neural netw
+8		s2	A Simple Weight Decay Can Improve Generalization	Anders Krogh and John A. Hertz. A simple weight decay can improve generalization. In *NIPS*, 1991.
+9	1902.06720	s2	Wide neural networks of any depth evolve as linear models under gradient descent	Jaehoon Lee, Lechao Xiao, Samuel Schoenholz, Yasaman Bahri, Jascha Sohl-Dickstein, and Jeffrey Pennington. Wide neural n
+10	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+11		—		Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data, 2023.
+12	2102.08127	s2	Learning curves of generic features maps for realistic datasets with a teacher-student model	Bruno Loureiro, Cedric Gerbelot, Hugo Cui, Sebastian Goldt, Florent Krzakala, Marc Mezard, and Lenka Zdeborova. Learning
+13		s2	DISTRIBUTION OF EIGENVALUES FOR SOME SETS OF RANDOM MATRICES	V A Marčenko and L A Pastur. Distribution of eigenvalues for some sets of random matrices. *Mathematics of the USSR-Sbor
+14	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+15		—		Beren Millidge. Grokking ’grokking’, 2022.
+16	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+17	2306.13253	s2	Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok	Pascal Jr. Tikeng Notsawo, Hattie Zhou, Mohammad Pezeshki, Irina Rish, and Guillaume Dumas. Predicting grokking long bef
+18	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+19	2006.06386	s2	Asymptotics of Ridge(less) Regression under General Source Condition	Dominic Richards, Jaouad Mourtada, and Lorenzo Rosasco. Asymptotics of ridge (less) regression under general source cond
+20		s2	Statistical mechanics of learning from examples.	Hyunjune Sebastian Seung, Haim Sompolinsky, and Naftali Tishby. Statistical mechanics of learning from examples. *Physic
+21	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+22	1810.12281	s2	Three Mechanisms of Weight Decay Regularization	Guodong Zhang, Chaoqi Wang, Bowen Xu, and Roger B. Grosse. Three mechanisms of weight decay regularization. *CoRR*, abs/
+23		s2	Grokking phase transitions	Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent, 2022.

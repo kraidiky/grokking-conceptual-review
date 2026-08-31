@@ -1,0 +1,46 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2410.04489	s2	Grokking at the Edge of Linear Separability	A. Beck, N. I. Levi, and Y. Bar-Sinai. Grokking at the edge of linear separability. In *International Conference on Mach
+2	2112.07572	id		M. Celentano, C. Cheng, and A. Montanari. The high-dimensional asymptotics of first order methods with random data. *arX
+3	2206.14532	s2	Revisiting Label Smoothing and Knowledge Distillation Compatibility: What was Missing?	K. Chandrasegaran, N.-T. Tran, Y. Zhao, and N.-M. Cheung. Revisiting label smoothing and knowledge distillation compatib
+4		s2	Geometrical and Statistical Properties of Systems of Linear Inequalities with Applications in Patter	T. M. Cover. Geometrical and statistical properties of systems of linear inequalities with applications in pattern recog
+5		s2	Deconstructing the Regularization of BatchNorm	Y. Dauphin and E. D. Cubuk. Deconstructing the regularization of batchnorm. In *International Conference on Learning Rep
+6	1912.00887	id		Z. Deng, A. Kammoun, et al. A model of double descent for high-dimensional binary classification. *arXiv preprint arXiv:
+7		s2	THE USE OF MULTIPLE MEASUREMENTS IN TAXONOMIC PROBLEMS	R. A. Fisher. The use of multiple measurements in taxonomic problems. *Annals of Eugenics*, 7:179–188, 1936. doi: 10.111
+8		s2	Towards a Better Understanding of Label Smoothing in Neural Machine Translation	Y. Gao, W. Wang, C. Herold, Z. Yang, and H. Ney. Towards a better understanding of label smoothing in neural machine tra
+9		s2	The space of interactions in neural network models	E. Gardner. The space of interactions in neural network models. *Journal of Physics A: Mathematical and General*, 21(1):
+10		s2	Three unfinished works on the optimal storage capacity of networks	E. Gardner and B. Derrida. Three unfinished works on the optimal storage capacity of networks. *Journal of Physics A: Ma
+11		—		C. Garrod and J. P. Keating. The persistence of neural collapse despite low-rank bias, 2025. URL https://arxiv.org/abs/2
+12	1706.04599	s2	On Calibration of Modern Neural Networks	C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger. On calibration of modern neural networks. In *Proceedings of the Intern
+13	2402.03979	id		L. Guo, K. Ross, Z. Zhao, G. Andriopoulos, S. Ling, Y. Xu, and Z. Dong. Cross entropy versus label smoothing: A neural c
+14		s2	Neural collapse under mse loss: Proximity to and dynamics on the simplex etf	X. Y. Han, V. Papyan, and D. L. Donoho. Neural collapse under mse loss: Proximity to and dynamics on the simplex etf. In
+15	1512.03385	s2	Deep Residual Learning for Image Recognition	K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition, 2015. URL https://arxiv.org/abs/1512.
+16	1903.12261	s2	Benchmarking Neural Network Robustness to Common Corruptions and Perturbations	D. Hendrycks and T. Dietterich. Benchmarking neural network robustness to common corruptions and perturbations. In *Inte
+17	1503.02531	id		G. Hinton, O. Vinyals, and J. Dean. Distilling the knowledge in a neural network. *arXiv preprint arXiv:1503.02531*, 201
+18		s2	The implicit bias of gradient descent on nonseparable data	Z. Ji and M. Telgarsky. The implicit bias of gradient descent on nonseparable data. In *Proceedings of The 32nd Conferen
+19	2010.16402	s2	Why Do Better Loss Functions Lead to Less Transferable Features?	S. Kornblith, T. Chen, H. Lee, and M. Norouzi. Why do better loss functions lead to less transferable features? *Advance
+20		s2	Learning Multiple Layers of Features from Tiny Images	A. Krizhevsky. Learning multiple layers of features from tiny images. Technical report, University of Toronto, 2009.
+21	2210.13459	id		D. Lee, K. C. Cheung, and N. L. Zhang. Adaptive label smoothing with self-knowledge in natural language generation. *arX
+22	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	N. I. Levi, A. Beck, and Y. Bar-Sinai. Grokking in linear estimators – a solvable model that groks without understanding
+23	2207.12980	s2	Efficient One Pass Self-distillation with Zipf's Label Smoothing	J. Liang, L. Li, Z. Bing, B. Zhao, Y. Tang, B. Lin, and H. Fan. Efficient one pass self-distillation with zipf’s label s
+24	1906.05890	s2	Gradient Descent Maximizes the Margin of Homogeneous Neural Networks	K. Lyu and J. Li. Gradient descent maximizes the margin of homogeneous neural networks. In *International Conference on 
+25	2002.11544	s2	The role of regularization in classification of high-dimensional noisy Gaussian mixture	F. Mignacco, F. Krzakala, L. Zdeborová, et al. The role of regularization in classification of high-dimensional noisy ga
+26	1911.01544	id		A. Montanari, F. Ruan, Y. Sohn, and J. Yan. The generalization error of max-margin linear classifiers: High-dimensional 
+27	1906.02629	s2	When Does Label Smoothing Help?	R. Müller, S. Kornblith, and G. E. Hinton. When does label smoothing help? In *Advances in Neural Information Processing
+28	2008.08186	s2	Prevalence of neural collapse during the terminal phase of deep learning training	V. Papyan, X. Han, and D. L. Donoho. Prevalence of neural collapse during the terminal phase of deep learning training. 
+29	1701.06548	id		G. Pereyra, G. Tucker, J. Chorowski, Ł. Kaiser, and G. Hinton. Regularizing neural networks by penalizing confident outp
+30	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra. Grokking: Generalization beyond overfitting on small algori
+31	2501.04697	s2	Grokking at the Edge of Numerical Stability	L. Prieto, M. Barsbey, P. A. M. Mediano, and T. Birdal. Grokking at the edge of numerical stability, 2025. URL https://a
+32	2104.00676	id		Z. Shen, Z. Liu, D. Xu, Z. Chen, K.-T. Cheng, and M. Savvides. Is label smoothing truly incompatible with knowledge dist
+33	1710.10345	s2	The Implicit Bias of Gradient Descent on Separable Data	D. Soudry, E. Hoffer, M. S. Nacson, S. Gunasekar, and N. Srebro. The implicit bias of gradient descent on separable data
+34	2405.14468	id		P. Súkeník, M. Mondelli, and C. Lampert. Neural collapse versus low-rank bias: Is deep neural collapse really optimal? *
+35	1803.06964	s2	A modern maximum-likelihood theory for high-dimensional logistic regression	P. Sur and E. J. Candès. A modern maximum-likelihood theory for high-dimensional logistic regression. In *Proceedings of
+36	1512.00567	s2	Rethinking the Inception Architecture for Computer Vision	C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna. Rethinking the inception architecture for computer vision. 
+37		s2	Solutions of ill-posed problems	A. N. Tikhonov and V. Y. Arsenin. Solutions of ill-posed problems. 1977. URL https://api.semanticscholar.org/CorpusID:12
+38		s2	Binary classification of gaussian mixtures: Abundance of support vectors, robustness, and generaliza	K. Wang and C. Thrampoulidis. Binary classification of gaussian mixtures: Abundance of support vectors, robustness, and 
+39	2205.09310	s2	Mitigating Neural Network Overconfidence with Logit Normalization	H. Wei, R. Xie, H. Cheng, L. Feng, B. An, and Y. Li. Mitigating neural network overconfidence with logit normalization, 
+40	2403.14715	s2	Towards Understanding Why Label Smoothing Degrades Selective Classification and How to Fix It	G. Xia, O. Laurent, G. Franchi, and C.-S. Bouganis. Towards understanding why label smoothing degrades selective classif
+41	2306.03440	s2	Quantifying the Variability Collapse of Neural Networks	J. Xu and H. Liu. Quantifying the variability collapse of neural networks. In *Proceedings of the International Conferen
+42		s2	Revisiting Knowledge Distillation via Label Smoothing Regularization	L. Yuan, F. E. Tay, G. Li, T. Wang, and J. Feng. Revisiting knowledge distillation via label smoothing regularization. I
+43	2011.12562	s2	Delving Deep Into Label Smoothing	C.-B. Zhang, P.-T. Jiang, Q. Hou, Y. Wei, Q. Han, Z. Li, and M.-M. Cheng. Delving deep into label smoothing. *IEEE Trans
+44	2210.02192	s2	Are All Losses Created Equal: A Neural Collapse Perspective	J. Zhou, C. You, X. Li, K. Liu, S. Liu, Q. Qu, and Z. Zhu. Are all losses created equal: A neural collapse perspective. 
+45	2303.02970	s2	Rethinking Confidence Calibration for Failure Prediction	F. Zhu, Z. Cheng, X.-Y. Zhang, and C.-L. Liu. Rethinking confidence calibration for failure prediction. In *European Con

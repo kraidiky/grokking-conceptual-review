@@ -1,0 +1,29 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1802.06509	s2	On the Optimization of Deep Networks: Implicit Acceleration by Overparameterization	Arora, S., Cohen, N., and Hazan, E. On the optimization of deep networks: Implicit acceleration by overparameterization,
+2	1905.13655	s2	Implicit Regularization in Deep Matrix Factorization	Arora, S., Cohen, N., Hu, W., and Luo, Y. Implicit regularization in deep matrix factorization. *CoRR*, abs/1905.13655, 
+3	0805.4471	s2	Exact Matrix Completion via Convex Optimization	Candes, E. and Recht, B. Exact matrix completion via convex optimization. *Communications of the ACM*, 55(6):111–119, 20
+4	0903.1476	s2	The Power of Convex Relaxation: Near-Optimal Matrix Completion	Candès, E. J. and Tao, T. The power of convex relaxation: Near-optimal matrix completion. *IEEE transactions on informat
+5		—		Chen, Y., Bhojanapalli, S., Sanghavi, S., and Ward, R. Coherent matrix completion. In Xing, E. P. and Jebara, T. (eds.),
+6	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Chughtai, B., Chan, L., and Nanda, N. A toy model of universality: Reverse engineering how networks learn group operatio
+7		s2	Deep learning for chemical reaction prediction	Fooshee, D., Mood, A., Gutman, E., Tavakoli, M., Urban, G., Liu, F., Huynh, N., Van Vranken, D., and Baldi, P. Deep lear
+8	1904.13262	s2	Implicit Regularization of Discrete Gradient Dynamics in Deep Linear Neural Networks	Gidel, G., Bach, F. R., and Lacoste-Julien, S. Implicit regularization of discrete gradient dynamics in deep linear neur
+9	1909.12051	s2	The Implicit Bias of Depth: How Incremental Learning Drives Generalization	Gissin, D., Shalev-Shwartz, S., and Daniely, A. The implicit bias of depth: How incremental learning drives generalizati
+10	2301.02679	id		Gromov, A. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+11	1705.09280	s2	Implicit Regularization in Matrix Factorization	Gunasekar, S., Woodworth, B. E., Bhojanapalli, S., Neyshabur, B., and Srebro, N. Implicit regularization in matrix facto
+12		s2	Extensions of Lipschitz mappings into Hilbert space	Johnson, W. B. and Lindenstrauss, J. Extensions of lipschitz mappings into hilbert space. *Contemporary mathematics*, 26
+13		s2	Tensor Decompositions and Applications	Kolda, T. G. and Bader, B. W. Tensor decompositions and applications. *SIAM review*, 51(3):455–500, 2009.
+14	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Kumar, T., Bordelon, B., Gershman, S. J., and Pehlevan, C. Grokking as the transition from lazy to rich training dynamic
+15		s2	On the computational basis of learning and cognition: Arguments from LSA	Landauer, T. K. On the computational basis of learning and cognition: Arguments from lsa. In *On the computational basis
+16	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Levi, N. I., Beck, A., and Bar-Sinai, Y. Grokking in linear estimators – a solvable model that groks without understandi
+17	2012.09839	s2	Towards Resolving the Implicit Bias of Gradient Descent for Matrix Factorization: Greedy Low-Rank Le	Li, Z., Luo, Y., and Lyu, K. Towards resolving the implicit bias of gradient descent for matrix factorization: Greedy lo
+18	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N., Michaud, E. J., Tegmark, M., and Williams, M. Towards understanding grokking: An effect
+19		—		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International Conf
+20	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of early and late phase implicit biases can provab
+21	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+22	2506.05718	id		Notsawo, P. J. T., Dumas, G., and Rabusseau, G. Grokking beyond the euclidean norm of model parameters. *arXiv preprint 
+23	2306.13253	id		Notsawo Jr, P., Zhou, H., Pezeshki, M., Rish, I., Dumas, G., et al. Predicting grokking long before it happens: A look i
+24		—		Olsson, C., Elhage, N., Nanda, N., Joseph, N., DasSarma, N., Henighan, T., Mann, B., Askell, A., Bai, Y., Chen, A., Cone
+25	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+26	2005.06398	s2	Implicit Regularization in Deep Learning May Not Be Explainable by Norms	Razin, N. and Cohen, N. Implicit regularization in deep learning may not be explainable by norms. *CoRR*, abs/2005.06398
+27	2312.06581	s2	Grokking Group Multiplication with Cosets	Stander, D., Yu, Q., Fan, H., and Biderman, S. Grokking group multiplication with cosets. In *Forty-first International 
+28	1405.7908	id		Turney, P. D. Semantic composition and decomposition: From recognition to generation. *arXiv preprint arXiv:1405.7908*, 

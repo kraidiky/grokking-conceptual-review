@@ -1,0 +1,35 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin. Edelman, Surbhi Goel, Sham Kakade, Eran Malach and Cyril Zhang “Hidden Progress in Deep Learning: 
+2	1906.11300	s2	Benign overfitting in linear regression	Peter Bartlett, Philip Long, Gábor Lugosi and Alexander Tsigler “Benign overfitting in linear regression” In *Proceeding
+3	2103.09177	s2	Deep learning: a statistical viewpoint	Peter. Bartlett, Andrea Montanari and Alexander Rakhlin “Deep learning: a statistical viewpoint” In *Acta Numerica* **30
+4	2105.14368	s2	Fit without fear: remarkable mathematical phenomena of deep learning through the prism of interpolat	Mikhail Belkin “Fit without fear: remarkable mathematical phenomena of deep learning through the prism of interpolation”
+5	1806.09471	s2	Does data interpolation contradict statistical optimality?	Mikhail Belkin, Alexander Rakhlin and Alexandre. Tsybakov “Does data interpolation contradict statistical optimality?” I
+6	2202.06526	id		Yuan Cao, Zixiang Chen, Mikhail Belkin and Quanquan Gu “Benign overfitting in two-layer convolutional neural networks” I
+7	2004.12019	s2	Finite-sample analysis of interpolating linear classifiers in the overparameterized regime	Niladri. Chatterji and Philip. Long “Finite-sample Analysis of Interpolating Linear Classifiers in the Overparameterized
+8	2004.12019	s2	Finite-sample analysis of interpolating linear classifiers in the overparameterized regime	Niladri. Chatterji and Philip. Long “Finite-sample analysis of interpolating linear classifiers in the overparameterized
+9	2109.02355	id		Yehuda Dar, Vidya Muthukumar and Richard. Baraniuk “A Farewell to the Bias-Variance Tradeoff? An Overview of the Theory 
+10	2303.06173	id		Xander Davies, Lauro Langosco and David Krueger “Unifying Grokking and Double Descent”, 2023 arXiv:2303.06173 [cs.LG]
+11		—		Rick Durrett “Probability: theory and examples” Cambridge university press, 2019
+12	2202.07626	id		Spencer Frei, Niladri Chatterji and Peter Bartlett “Random feature amplification: Feature learning and generalization in
+13	2202.05928	s2	Benign Overfitting without Linearity: Neural Network Classifiers Trained by Gradient Descent for Noi	Spencer Frei, Niladri. Chatterji and Peter. Bartlett “Benign Overfitting without Linearity: Neural Network Classifiers T
+14	2303.01462	s2	Benign Overfitting in Linear Classifiers and Leaky ReLU Networks from KKT Conditions for Margin Maxi	Spencer Frei, Gal Vardi, Peter. Bartlett and Nathan Srebro “Benign Overfitting in Linear Classifiers and Leaky ReLU Netw
+15	2210.07082	s2	Implicit Bias in Leaky ReLU Networks Trained on High-Dimensional Data	Spencer Frei, Gal Vardi, Peter. Bartlett, Nathan Srebro and Wei Hu “Implicit Bias in Leaky ReLU Networks Trained on High
+16	2301.02679	id		Andrey Gromov “Grokking modular arithmetic” In *Preprint, arXiv:2301.02679*, 2023
+17	1903.08560	id		Trevor Hastie, Andrea Montanari, Saharon Rosset and Ryan Tibshirani “Surprises in high-dimensional ridgeless least squar
+18	2305.15141	id		Guy Kornowski, Gilad Yehudai and Ohad Shamir “From Tempered to Benign Overfitting in ReLU Neural Networks” In *Preprint,
+19		—		Yiwen Kou, Zixiang Chen, Yuanzhou Chen and Quanquan Gu “Benign Overfitting for Two-layer ReLU Convolutional Networks” In
+20	1808.00387	s2	Just Interpolate: Kernel "Ridgeless" Regression Can Generalize	Tengyuan Liang and Alexander Rakhlin “Just interpolate: Kernel “ridgeless” regression can generalize” In *Annals of Stat
+21	2205.10343	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric. Michaud, Max Tegmark and Mike Williams “Towards Understanding Grokking: A
+22	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric. Michaud and Max Tegmark “Omnigrok: Grokking Beyond Algorithmic Data” In *International Conference on L
+23	2207.06569	s2	Benign, Tempered, or Catastrophic: A Taxonomy of Overfitting	Neil Mallinar, James Simon, Amirhesam Abedsoltan, Parthe Pandit, Mikhail Belkin and Preetum Nakkiran “Benign, tempered, 
+24	2303.11873	id		William Merrill, Nikolaos Tsilivis and Aman Shukla “A Tale of Two Circuits: Grokking as Competition of Sparse and Dense 
+25	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith and Jacob Steinhardt “Progress measures for grokking via mechanistic
+26	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin and Vedant Misra “Grokking: Generalization beyond overfitting 
+27		s2	Feature selection and low test error in shallow low-rotation ReLU networks	Matus Telgarsky “Feature selection and low test error in shallow low-rotation ReLU networks” In *International Conferenc
+28	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss and Joshua Susskind “The Slingshot Mechanism: An Emp
+29	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár and Ramana Kumar “Explaining grokking through circuit efficiency
+30		s2	High-Dimensional Statistics: A Non-Asymptotic Viewpoint. Cambridge Series in Statistical and Probabi	Martin. Wainwright “High-Dimensional Statistics: A Non-Asymptotic Viewpoint”, Cambridge Series in Statistical and Probab
+31	2011.09148	id		Ke Wang and Christos Thrampoulidis “Binary Classification of Gaussian Mixtures: Abundance of Support Vectors, Benign Ove
+32	1810.05369	s2	Regularization Matters: Generalization and Optimization of Neural Nets v.s. their Induced Kernel	Colin Wei, Jason. Lee, Qiang Liu and Tengyu Ma “Regularization Matters: Generalization and Optimization of Neural Nets v
+33		s2	Benign overfitting of non-smooth neural networks beyond lazy training	Xingyu Xu and Yuantao Gu “Benign overfitting of non-smooth neural networks beyond lazy training” In *Proceedings of The 
+34	2210.15435	id		Bojan Žunkovič and Enej Ilievski “Grokking phase transitions in learning local rules with gradient descent” In *arXiv pr

@@ -1,0 +1,35 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		—		Ernesto Cesàro. Question 75 (solution). *Mathesis*, (3):224–225, 1883.
+2	2112.01898	id		François Charton. Linear algebra with transformers. *arXiv preprint arXiv:2112.01898*, 2021.
+3	2006.06462	id		François Charton, Amaury Hayat, and Guillaume Lample. Learning advanced mathematical computations from examples. *arXiv 
+4	2211.00170	id		François Charton. What is my math transformer doing? – three results on interpretability and generalization. *arXiv prep
+5		s2	Computing the roots of polynomials	François Charton. Computing the roots of polynomials, 2022b. https://f-charton.github.io/polynomial-roots.
+6	1406.1078	id		Kyunghyun Cho, Bart Van Merriënboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengi
+7		—		Ernest Davis. Mathematics, word problems, common sense, and artificial intelligence, 2023.
+8		—		Nouha Dziri, Ximing Lu, Melanie Sclar, Xiang Lorraine Li, Liwei Jiang, Bill Yuchen Lin, Peter West, Chandra Bhagavatula,
+9	2106.00893	id		Kaden Griffith and Jugal Kalita. Solving arithmetic word problems with transformers and preprocessing of problem text. *
+10		—		Andrey Gromov. Grokking modular arithmetic, 2023.
+11		s2	Long Short-Term Memory	Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. *Neural computation*, 9(8):1735–1780, 1997.
+12	1511.08228	id		Łukasz Kaiser and Ilya Sutskever. Neural gpus learn algorithms. *arXiv preprint arXiv:1511.08228*, 2015.
+13	1507.01526	s2	Grid Long Short-Term Memory	Nal Kalchbrenner, Ivo Danihelka, and Alex Graves. Grid long short-term memory. *arXiv preprint arxiv:1507.01526*, 2015.
+14	1412.6980	id		Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. *arXiv preprint arXiv:1412.6980*, 2014.
+15	1912.01412	id		Guillaume Lample and François Charton. Deep learning for symbolic mathematics. *arXiv preprint arXiv:1912.01412*, 2019.
+16	2307.03381	id		Nayoung Lee, Kartik Sreenivasan, Jason D. Lee, Kangwook Lee, and Dimitris Papailiopoulos. Teaching arithmetic to small t
+17		—		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J. Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking
+18	1908.10924	id		Yuanliang Meng and Anna Rumshisky. Solving math word problems with double-decoder transformer. *arXiv preprint arXiv:190
+19		s2	An investigation into neural arithmetic logic modules . PhD thesis, University of Southampton,	Bhumika Mistry. *An investigation into neural arithmetic logic modules*. PhD thesis, University of Southampton, July 202
+20	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+21	2102.13019	id		Rodrigo Nogueira, Zhiying Jiang, and Jimmy Lin. Investigating the limitations of transformers with simple arithmetic tas
+22	2112.00114	id		Maxwell Nye, Anders Johan Andreassen, Guy Gur-Ari, Henryk Michalewski, Jacob Austin, David Bieber, David Dohan, Aitor Le
+23		s2	Investigating the ability of neural networks to learn simple modular arithmetic	Theodoros Palamas. Investigating the ability of neural networks to learn simple modular arithmetic. 2017.
+24	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization Beyond Overfitting
+25	1904.01557	s2	Analysing Mathematical Reasoning Abilities of Neural Models	David Saxton, Edward Grefenstette, Felix Hill, and Pushmeet Kohli. Analysing mathematical reasoning abilities of neural 
+26	2107.07116	id		Feng Shi, Chonghan Lee, Mohammad Khairul Bashar, Nikhil Shukla, Song-Chun Zhu, and Vijaykrishnan Narayanan. Transformer-
+27		s2	Optimal Depth Neural Networks for Multiplication and Related Problems	Kai-Yeung Siu and Vwani Roychowdhury. Optimal depth neural networks for multiplication and related problems. In S. Hanso
+28	1808.00508	id		Andrew Trask, Felix Hill, Scott Reed, Jack Rae, Chris Dyer, and Phil Blunsom. Neural arithmetic logic units. *arXiv prep
+29	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosuk
+30		s2	Chain-of-thought prompting elicits	Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. Chain-of
+31	2109.13986	s2	Symbolic Brittleness in Sequence Models: on Systematic Generalization in Symbolic Mathematics	Sean Welleck, Peter West, Jize Cao, and Yejin Choi. Symbolic Brittleness in Sequence Models: on Systematic Generalizatio
+32	1511.07275	s2	Learning Simple Algorithms from Examples	Wojciech Zaremba, Tomas Mikolov, Armand Joulin, and Rob Fergus. Learning simple algorithms from examples, 2015.
+33	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio
+34	2211.09066	id		Hattie Zhou, Azade Nova, Hugo Larochelle, Aaron Courville, Behnam Neyshabur, and Hanie Sedghi. Teaching algorithmic reas

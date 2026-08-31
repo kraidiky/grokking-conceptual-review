@@ -1,0 +1,44 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1811.03962	s2	A Convergence Theory for Deep Learning via Over-Parameterization	Zeyuan Allen-Zhu, Yuanzhi Li, and Zhao Song. A convergence theory for deep learning via over-parameterization, 2019.
+2	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+3	1803.03635	s2	The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks	Jonathan Frankle and Michael Carbin. The lottery ticket hypothesis: Finding sparse, trainable neural networks, 2019.
+4		s2	Stabilizing the Lottery Ticket Hypothesis	Jonathan Frankle, Gintare Karolina Dziugaite, Daniel M. Roy, and Michael Carbin. Stabilizing the lottery ticket hypothes
+5		s2	Interpreting grokked transformers in	Hiroki Furuta, Gouki Minegishi, Yusuke Iwasawa, and Yutaka Matsuo. Interpreting grokked transformers in complex modular 
+6	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+7		s2	Don't just prune by magnitude! Your mask topology is a secret weapon	Duc N.M Hoang, Souvik Kundu, Shiwei Liu, and Zhangyang Wang. Don’t just prune by magnitude! your mask topology is a secr
+8		s2	Revisiting Pruning at Initialization Through the Lens of Ramanujan Graph	Duc N.M Hoang, Shiwei Liu, Radu Marculescu, and Zhangyang Wang. REVISITING PRUNING AT INITIALIZATION THROUGH THE LENS OF
+9		s2	Etude comparative de la distribution florale dans une portion des Alpes et du Jura	P. Jaccard. *Etude comparative de la distribution florale dans une portion des Alpes et du Jura*. Bulletin de la Société
+10		s2	SWANN: Small-World Architecture for Fast Convergence of Neural Networks	Mojan Javaheripi, Bita Darvish Rouhani, and Farinaz Koushanfar. Swann: Small-world architecture for fast convergence of 
+11		s2	ImageNet classification with deep convolutional neural networks	Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton. Imagenet classification with deep convolutional neural networks
+12	2310.06110	id		Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+13	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+14	1810.02340	s2	SNIP: Single-shot Network Pruning based on Connection Sensitivity	Namhoon Lee, Thalaiyasingam Ajanthan, and Philip H. S. Torr. Snip: Single-shot network pruning based on connection sensi
+15	2205.10343	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J. Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking
+16	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *International Conference on
+17	2310.05918	id		Ziming Liu, Ziqian Zhong, and Max Tegmark. Grokking as compression: A nonlinear complexity perspective. *arXiv preprint 
+18		s2	Decoupled weight decay	Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization, 2019.
+19	2303.11873	id		William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+20	2310.17247	id		Jack Miller, Charles O’Neill, and Thang Bui. Grokking beyond neural networks: An empirical exploration with model comple
+21		—		Beren Millidge. Grokking ’grokking’, 2022. URL https://www.beren.io/2022-01-11-Grokking-Grokking/.
+22	2305.18741	id		Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D. Manning. Grokking of hierarchical structure in vanill
+23		s2	Rectified Linear Units Improve Restricted Boltzmann Machines	Vinod Nair and Geoffrey E. Hinton. Rectified linear units improve restricted boltzmann machines. In *Proceedings of the 
+24	1912.02292	id		Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya Sutskever. Deep double descent: Where bi
+25	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+26	2007.13657	s2	Towards Learning Convolutions from Scratch	Behnam Neyshabur. Towards learning convolutions from scratch, 2020. URL https://arxiv.org/abs/2007.13657.
+27	2007.04091	s2	Bespoke vs. Prêt-à-Porter Lottery Tickets: Exploiting Mask Similarity for Trainable Sub-Network Find	Michela Paganini and Jessica Zosa Forde. Bespoke vs. prêt-à-porter lottery tickets: Exploiting mask similarity for train
+28		s2	Do machine learning models memorize or generalize? https://	Adam Pearce, Asma Ghandeharioun, Nada Hussein, Nithum Thain, Martin Wattenberg, and Lucas Dixo. Do machine learning mode
+29	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+30	2212.13881	id		Adityanarayanan Radhakrishnan, Daniel Beaglehole, Parthe Pandit, and Mikhail Belkin. Mechanism of feature learning in de
+31	1911.13299	s2	What’s Hidden in a Randomly Weighted Neural Network?	Vivek Ramanujan, Mitchell Wortsman, Aniruddha Kembhavi, Ali Farhadi, and Mohammad Rastegari. What’s hidden in a randomly
+32	2310.03789	id		Noa Rubin, Inbar Seroussi, and Zohar Ringel. Droplets of good representations: Grokking as a first order phase transitio
+33		s2	Learning representations by back-propagating errors	David E Rumelhart, Geoffrey E Hinton, and Ronald J Williams. Learning representations by back-propagating errors. *natur
+34	2205.07320	s2	Analyzing Lottery Ticket Hypothesis from PAC-Bayesian Theory Perspective	Keitaro Sakamoto and Issei Sato. Analyzing lottery ticket hypothesis from pac-bayesian theory perspective, 2022.
+35	2312.06581	id		Dashiell Stander, Qinan Yu, Honglu Fan, and Stella Biderman. Grokking group multiplication with cosets. *arXiv preprint 
+36	2006.05467	s2	Pruning neural networks without any data by iteratively conserving synaptic flow	Hidenori Tanaka, Daniel Kunin, Daniel L. K. Yamins, and Surya Ganguli. Pruning neural networks without any data by itera
+37	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+38	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+39	2002.07376	s2	Picking Winning Tickets Before Training by Preserving Gradient Flow	Chaoqi Wang, Guodong Zhang, and Roger Grosse. Picking winning tickets before training by preserving gradient flow, 2020.
+40	1909.12579	s2	Pruning from Scratch	Yulong Wang, Xiaolu Zhang, Lingxi Xie, Jun Zhou, Hang Su, Bo Zhang, and Xiaolin Hu. Pruning from scratch, 2019.
+41	2007.06559	s2	Graph Structure of Neural Networks	Jiaxuan You, Jure Leskovec, Kaiming He, and Saining Xie. Graph structure of neural networks. In Hal Daumé III and Aarti 
+42	2106.03225	s2	Efficient Lottery Ticket Finding: Less Data is More	Zhenyu Zhang, Xuxi Chen, Tianlong Chen, and Zhangyang Wang. Efficient lottery ticket finding: Less data is more, 2021.
+43	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	Ziqian Zhong, Ziming Liu, Max Tegmark, and Jacob Andreas. The clock and the pizza: Two stories in mechanistic explanatio

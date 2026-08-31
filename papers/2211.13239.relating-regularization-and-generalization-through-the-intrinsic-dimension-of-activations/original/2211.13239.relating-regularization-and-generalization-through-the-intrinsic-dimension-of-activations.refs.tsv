@@ -1,0 +1,37 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1612.00410	s2	Deep Variational Information Bottleneck	Alexander A. Alemi, Ian Fischer, Joshua V. Dillon, and Kevin Murphy. Deep variational information bottleneck. 2016. 10.4
+2	1905.12784	s2	Intrinsic dimension of data representations in deep neural networks	Alessio Ansuini, Alessandro Laio, Jakob H Macke, and Davide Zoccolan. Intrinsic dimension of data representations in dee
+3	1206.5538	s2	Representation Learning: A Review and New Perspectives	Yoshua Bengio, Aaron Courville, and Pascal Vincent. Representation learning: A review and new perspectives, 2012. URL ht
+4	1906.05441	s2	CoopSubNet: Cooperating Subnetwork for Data-Driven Regularization of Deep Networks under Limited Tra	Riddhish Bhalodia, Shireen Elhabian, Ladislav Kavan, and Ross Whitaker. Coopsubnet: Cooperating subnetwork for data-driv
+5	2111.13171	s2	Intrinsic Dimension, Persistent Homology and Generalization in Neural Networks	Tolga Birdal, Aaron Lou, Leonidas Guibas, and Umut Şimşekli. Intrinsic dimension, persistent homology and generalization
+6	1802.07044	s2	The Description Length of Deep Learning models	Léonard Blier and Yann Ollivier. The description length of deep learning models, 2018. URL https://arxiv.org/abs/1802.07
+7	2106.04018	s2	Intrinsic Dimension Estimation Using Wasserstein Distance	Adam Block, Zeyu Jia, Yury Polyanskiy, and Alexander Rakhlin. Intrinsic dimension estimation using wasserstein distances
+8		s2	The Union of Manifolds Hypothesis and its Implications for Deep Generative Modelling	Bradley C. A. Brown, Anthony L. Caterini, Brendan Leigh Ross, Jesse C. Cresswell, and Gabriel Loaiza-Ganem. The union of
+9	1806.10714	s2	A Topological Regularizer for Classifiers via Persistent Homology	Chao Chen, Xiuyan Ni, Qinxun Bai, and Yusu Wang. A topological regularizer for classifiers via persistent homology, 2018
+10	2107.06409	s2	The Foes of Neural Network's Data Efficiency Among Unnecessary Input Dimensions	Vanessa D’Amario, Sanjana Srivastava, Tomotake Sasaki, and Xavier Boix. The foes of neural network’s data efficiency amo
+11	2209.13083	s2	Why neural networks find simple solutions: the many regularizers of geometric complexity	Benoit Dherin, Michael Munn, Mihaela C. Rosca, and David G. T. Barrett. Why neural networks find simple solutions: the m
+12	1803.06992	s2	Estimating the intrinsic dimension of datasets by a minimal neighborhood information	Elena Facco, Maria d’Errico, Alex Rodriguez, and Alessandro Laio. Estimating the intrinsic dimension of datasets by a mi
+13	1603.09260	s2	Degrees of Freedom in Deep Neural Networks	Tianxiang Gao and Vladimir Jojic. Degrees of freedom in deep neural networks, 2016. URL https://arxiv.org/abs/1603.09260
+14	1904.06151	s2	Geometry-Aware Maximum Likelihood Estimation of Intrinsic Dimension	Marina Gomtsyan, Nikita Mokrov, Maxim Panov, and Yury Yanovich. Geometry-aware maximum likelihood estimation of intrinsi
+15	1512.03385	s2	Deep Residual Learning for Image Recognition	Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition, 2015. URL https://a
+16		s2	The Effect of Manifold Entanglement and Intrinsic Dimensionality on Learning	Daniel Kienitz, Ekaterina Komendantskaya, and Michael Lones. The effect of manifold entanglement and intrinsic dimension
+17	1412.6980	s2	Adam: A Method for Stochastic Optimization	Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization, 2014. URL https://arxiv.org/abs/1412.6980.
+18		s2	Learning Multiple Layers of Features from Tiny Images	Alex Krizhevsky, Geoffrey Hinton, et al. Learning multiple layers of features from tiny images. 2009.
+19		s2	A Simple Weight Decay Can Improve Generalization	Anders Krogh and John Hertz. A simple weight decay can improve generalization. In J. Moody, S. Hanson, and R.P. Lippmann
+20	1710.10686	s2	Regularization for Deep Learning: A Taxonomy	Jan Kukačka, Vladimir Golkov, and Daniel Cremers. Regularization for deep learning: A taxonomy, 2017. URL https://arxiv.
+21	2106.11486	s2	Unsupervised Embedding Adaptation via Early-Stage Feature Reconstruction for Few-Shot Classification	Dong Hoon Lee and Sae-Young Chung. Unsupervised embedding adaptation via early-stage feature reconstruction for few-shot
+22		s2	Maximum Likelihood Estimation of Intrinsic Dimension	Elizaveta Levina and Peter Bickel. Maximum likelihood estimation of intrinsic dimension. *Advances in neural information
+23	2110.06357	id		Uzu Lim, Vidit Nanda, and Harald Oberhauser. Tangent space and dimension estimation with the wasserstein distance. *arXi
+24	1806.02612	s2	Dimensionality-Driven Learning with Noisy Labels	Xingjun Ma, Yisen Wang, Michael E. Houle, Shuo Zhou, Sarah M. Erfani, Shu-Tao Xia, Sudanthi Wijewickrema, and James Bail
+25		s2	Information Theory, Inference, and Learning Algorithms	David JC MacKay, David JC Mac Kay, et al. *Information theory, inference and learning algorithms*. Cambridge university 
+26	2104.08894	s2	The Intrinsic Dimension of Images and Its Impact on Learning	Phillip Pope, Chen Zhu, Ahmed Abdelkader, Micah Goldblum, and Tom Goldstein. The intrinsic dimension of images and its i
+27	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+28	1906.00443	s2	Dimensionality compression and expansion in Deep Neural Networks	Stefano Recanatesi, Matthew Farrell, Madhu Advani, Timothy Moore, Guillaume Lajoie, and Eric Shea-Brown. Dimensionality 
+29	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Charlie Snell. unofficial re-implementation of ”grokking: Generalization beyond overfitting on small algorithmic dataset
+30		s2	Dropout: a simple way to prevent neural networks from overfitting	Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. Dropout: A simple way to 
+31	2206.14882	s2	LIDL: Local Intrinsic Dimension Estimation Using Approximate Likelihood	Piotr Tempczyk, Rafał Michaluk, Lukasz Garncarek, Przemysław Spurek, Jacek Tabor, and Adam Golinski. Lidl: Local intrins
+32	physics/0004057	s2	The information bottleneck method	Naftali Tishby, Fernando C. Pereira, and William Bialek. The information bottleneck method, 2000. URL https://arxiv.org/
+33	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosu
+34		—		Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Rém
+35	1611.03530	s2	Understanding deep learning requires rethinking generalization	Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals. Understanding deep learning requires rethin
+36	1711.06246	s2	LDMNet: Low Dimensional Manifold Regularized Neural Networks	Wei Zhu, Qiang Qiu, Jiaji Huang, Robert Calderbank, Guillermo Sapiro, and Ingrid Daubechies. Ldmnet: Low dimensional man

@@ -1,0 +1,53 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1610.01644	s2	Understanding intermediate layers using linear classifier probes	Guillaume Alain and Yoshua Bengio. Understanding intermediate layers using linear classifier probes, 2018. URL https://a
+2		s2	Information Geometry and its Applications vol	Shun-ichi Amari. *Information geometry and its applications*, volume 194. Springer, 2016.
+3		—		Shun-ichi Amari, Ryo Karakida, and Masafumi Oizumi. Fisher information and natural gradient learning in random deep netw
+4		—		R.J. Baxter. *Exactly Solved Models in Statistical Mechanics*. Dover books on physics. Dover Publications, 2007. ISBN 97
+5	2212.11379	s2	The Inverse of Exact Renormalization Group Flows as Statistical Inference	David S. Berman and Marc S. Klinger. The Inverse of Exact Renormalization Group Flows as Statistical Inference. *Entropy
+6	2204.12939	s2	On the Dynamics of Inference and Learning	David S. Berman, Jonathan J. Heckman, and Marc Klinger. On the Dynamics of Inference and Learning, 4 2022.
+7		—		David S. Berman, Marc S. Klinger, and Alexander G. Stapleton. Bayesian renormalization. *Mach. Learn. Sci. Tech.*, 4(4):
+8	2402.00944	s2	NCoder—a quantum field theory approach to encoding data	David S. Berman, Marc S. Klinger, and Alexander G. Stapleton. NCoder – A Quantum Field Theory approach to encoding data,
+9		—		Guy Blanc, Neha Gupta, Gregory Valiant, and Paul Valiant. Implicit regularization for deep neural networks driven by an 
+10	2310.06301	s2	Dynamical versus Bayesian Phase Transitions in a Toy Model of Superposition	Zhongtian Chen, Edmund Lau, Jake Mendel, Susan Wei, and Daniel Murfet. Dynamical versus bayesian phase transitions in a 
+11		—		Hongrong Cheng, Miao Zhang, and Javen Qinfeng Shi. A survey on deep neural network pruning-taxonomy, comparison, analysi
+12	2412.09810	id		Branton DeMoss, Silvia Sapora, Jakob Foerster, Nick Hawes, and Ingmar Posner. The Complexity Dynamics of Grokking. *arXi
+13	2310.13061	s2	To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datas	Darshil Doshi, Aritra Das, Tianyu He, and Andrey Gromov. To grok or not to grok: Disentangling generalization and memori
+14		—		Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Rober
+15	2405.19454	s2	Deep Grokking: Would Deep Neural Networks Generalize Better?	Simin Fan, Razvan Pascanu, and Martin Jaggi. Deep grokking: Would deep neural networks generalize better?, 2024. URL htt
+16		s2	NNGeometry: easy and fast Fisher information matrices and neural tangent kernels in PyTorch	Thomas George. NNGeometry: Easy and Fast Fisher Information Matrices and Neural Tangent Kernels in PyTorch, February 202
+17		s2	Time-Dependent Statistics of the Ising Model	Roy J. Glauber. Time-Dependent Statistics of the Ising Model. *J. Math. Phys.*, 4(2):294–307, February 1963. ISSN 0022-2
+18		—		Andrey Gromov. A simple and interpretable model of grokking modular arithmetic tasks, 2024. URL https://openreview.net/f
+19		—		Jesse Hoogland, George Wang, Matthew Farrugia-Roberts, Liam Carroll, Susan Wei, and Daniel Murfet. The developmental lan
+20	2405.17538	s2	Bayesian RG Flow in Neural Network Field Theories	Jessica N. Howard, Marc S. Klinger, Anindita Maiti, and Alexander G. Stapleton. Bayesian rg flow in neural network field
+21	1704.00080	s2	Discovering phases, phase transitions, and crossovers through unsupervised machine learning: A criti	Wenjian Hu, Rajiv R. P. Singh, and Richard T. Scalettar. Discovering phases, phase transitions, and crossovers through u
+22		—		Dongseong Hwang. Fadam: Adam is a natural gradient optimizer using diagonal empirical fisher information, 2024. URL http
+23	2402.15555	id		Ahmed Imtiaz Humayun, Randall Balestriero, and Richard Baraniuk. Deep Networks Always Grok and Here is Why. *arXiv e-pri
+24		s2	Beitrag zur Theorie des Ferromagnetismus	Ernst Ising. Beitrag zur theorie des ferromagnetismus. *Zeitschrift für Physik*, 31(1):253–258, Feb 1925. ISSN 0044-3328
+25		—		Alan Jeffares, Alicia Curth, and Mihaela van der Schaar. Deep learning through a telescoping lens: A simple model provid
+26		s2	Apocrita - high Performance Computing Cluster for Queen	Thomas King, Simon Butcher, and Lukasz Zalewski. *Apocrita - High Performance Computing Cluster for Queen Mary Universit
+27	1412.6980	s2	Adam: A Method for Stochastic Optimization	Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization, 2017. URL https://arxiv.org/abs/1412.6980.
+28	2412.18624	id		S. V. Kozyrev. How to explain grokking. *arXiv e-prints*, art. arXiv:2412.18624, December 2024. doi: 10.48550/arXiv.2412
+29	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+30	2308.12108	s2	The Local Learning Coefficient: A Singularity-Aware Complexity Measure	Edmund Lau, Zach Furman, George Wang, Daniel Murfet, and Susan Wei. The local learning coefficient: A singularity-aware 
+31		—		Yann LeCun, John Denker, and Sara Solla. Optimal brain damage. *Advances in neural information processing systems*, 2, 1
+32		—		Aitor Lewkowycz and Guy Gur-Ari. On the training dynamics of deep networks with $l_{2}$ regularization, 2021. URL https:
+33	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J. Michaud, Max Tegmark, and Mike Williams. Towards Understanding Grokking
+34	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+35		—		Ziming Liu, Eric J. Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data, 2023a.
+36	2310.05918	s2	Grokking as Compression: A Nonlinear Complexity Perspective	Ziming Liu, Ziqian Zhong, and Max Tegmark. Grokking as compression: A nonlinear complexity perspective, 2023b. URL https
+37		s2	Deep neural networks compression: A comparative survey and choice recommendations	Giosué Cataldo Marinó, Alessandro Petrini, Dario Malchiodi, and Marco Frasca. Deep neural networks compression: A compar
+38		—		Gouki Minegishi, Yusuke Iwasawa, and Yutaka Matsuo. Bridging lottery ticket and grokking: Is weight norm sufficient to e
+39	2407.12332	s2	Why Do You Grok? A Theoretical Analysis of Grokking Modular Addition	Mohamad Amin Mohamadi, Zhiyuan Li, Lei Wu, and Danica J. Sutherland. Why do you grok? a theoretical analysis of grokking
+40	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+41		—		Nina Panickserry and Dmitry Vaintrob. devinterp, 2024. URL https://github.com/nrimsky/devinterp.
+42	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+43	2501.04697	s2	Grokking at the Edge of Numerical Stability	Lucas Prieto, Melih Barsbey, Pedro A. M. Mediano, and Tolga Birdal. Grokking at the edge of numerical stability, 2025. U
+44	2310.03789	s2	Grokking as a First Order Phase Transition in Two Layer Networks	Noa Rubin, Inbar Seroussi, and Zohar Ringel. Grokking as a first order phase transition in two layer networks, 2024. URL
+45		—		Inbar Seroussi, Gadi Naveh, and Zohar Ringel. Separation of scales and a thermodynamic description of feature **[p. 11]*
+46	1802.09876	s2	Parameter diagnostics of phases and phase transition learning by neural networks	Philippe Suchsland and Stefan Wessel. Parameter diagnostics of phases and phase transition learning by neural networks. 
+47	1802.09876	s2	Parameter diagnostics of phases and phase transition learning by neural networks	Philippe Suchsland and Stefan Wessel. Parameter diagnostics of phases and phase transition learning by neural networks. 
+48	2311.06597	s2	Understanding Grokking Through A Robustness Viewpoint	Zhiquan Tan and Weiran Huang. Understanding grokking through a robustness viewpoint, 2024. URL https://arxiv.org/abs/231
+49		—		Hugo Tessier, Vincent Gripon, Mathieu Léonardon, Matthieu Arzel, Thomas Hannagan, and David Bertrand. Rethinking weight 
+50	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+51		—		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+52		—		Dustin Wright, Christian Igel, and Raghavendra Selvan. Bmrs: Bayesian model reduction for structured pruning, 2024. URL 

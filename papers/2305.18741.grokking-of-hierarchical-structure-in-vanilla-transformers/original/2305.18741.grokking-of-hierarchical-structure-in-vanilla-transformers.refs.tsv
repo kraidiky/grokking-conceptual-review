@@ -1,0 +1,20 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	A Procedure for Quantitatively Comparing the Syntactic Coverage of English Grammars	E. Black, S. Abney, D. Flickenger, C. Gdaniec, R. Grishman, P. Harrison, D. Hindle, R. Ingria, F. Jelinek, J. Klavans, M
+2		—		Noam Chomsky. 1965. *Aspects of the Theory of Syntax*. The MIT Press, Cambridge.
+3		s2	Structure dependence in grammar formation	Stephen Crain and Mineharu Nakayama. 1987. Structure dependence in grammar formation. *Language*, 63(3):522–543.
+4	2108.12284	s2	The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers	Róbert Csordás, Kazuki Irie, and Juergen Schmidhuber. 2021. The devil is in the detail: Simple tricks improve systematic
+5	1906.06755	s2	Theoretical Limitations of Self-Attention in Neural Sequence Models	Michael Hahn. 2020. Theoretical limitations of self-attention in neural sequence models. *Transactions of the Associatio
+6		—		Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas,
+7	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. 2022. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh Internat
+8	2001.03632	s2	Does Syntax Need to Grow on Trees? Sources of Hierarchical Inductive Bias in Sequence-to-Sequence Ne	R. Thomas McCoy, Robert Frank, and Tal Linzen. 2020. Does syntax need to grow on trees? Sources of hierarchical inductiv
+9	2010.09697	s2	Effects of Parameter Norm Growth During Transformer Training: Inductive Bias from Gradient Descent	William Merrill, Vivek Ramanujan, Yoav Goldberg, Roy Schwartz, and Noah A. Smith. 2021. Effects of parameter norm growth
+10	2106.16213	s2	Saturated Transformers are Constant-Depth Threshold Circuits	William Merrill, Ashish Sabharwal, and Noah A. Smith. 2022. Saturated transformers are constant-depth threshold circuits
+11	2203.09397	s2	Coloring the Blank Slate: Pre-training Imparts a Hierarchical Inductive Bias to Sequence-to-sequence	Aaron Mueller, Robert Frank, Tal Linzen, Luheng Wang, and Sebastian Schuster. 2022. **[p. 6]** Coloring the blank slate:
+12	2211.01288	s2	Characterizing Intrinsic Compositionality in Transformers with Tree Projections	Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher D Manning. 2023. Characterizing intrinsic compositionali
+13	2109.12036	id		Jackson Petty and Robert Frank. 2021. Transformers generalize linearly. *arXiv preprint arXiv:2109.12036*.
+14	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. 2022. Grokking: Generalization beyond overf
+15	1608.05859	s2	Using the Output Embedding to Improve Language Models	Ofir Press and Lior Wolf. 2017. Using the output embedding to improve language models. In *Proceedings of the 15th Confe
+16	1710.10345	s2	The Implicit Bias of Gradient Descent on Separable Data	Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar, and Nathan Srebro. 2018. The implicit bias of gradient
+17	1503.00075	s2	Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks	Kai Sheng Tai, Richard Socher, and Christopher D. Manning. 2015. Improved semantic representations from tree-structured 
+18	1803.03585	s2	The Importance of Being Recurrent for Modeling Hierarchical Structure	Ke M Tran, Arianna Bisazza, and Christof Monz. 2018. The importance of being recurrent for modeling hierarchical structu
+19	1706.03762	s2	Attention is All you Need	Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosuk

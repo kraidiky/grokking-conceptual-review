@@ -1,0 +1,54 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2506.04805	id		Adaptive preconditioners trigger loss spikes in Adam. arXiv preprint arXiv:2506.04805. Cited by: §A.2, §2.
+2	2505.20172	s2	A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation	A theoretical framework for grokking: interpolation followed by riemannian norm minimisation. In The Thirty-ninth Annual
+3	2204.02311	s2	PaLM: Scaling Language Modeling with Pathways	Palm: scaling language modeling with pathways. Journal of Machine Learning Research 24 (240), pp. 1–113. Cited by: §A.4,
+4	2410.24206	s2	Understanding Optimization in Deep Learning with Central Flows	Understanding optimization in deep learning with central flows. In The Thirteenth International Conference on Learning R
+5	2207.14484	s2	Adaptive Gradient Methods at the Edge of Stability	Adaptive gradient methods at the edge of stability. In NeurIPS 2023 Workshop Heavy Tails in Machine Learning, Cited by: 
+6	2103.00065	s2	Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability	Gradient descent on neural networks typically occurs at the edge of stability. In International Conference on Learning R
+7		s2	Batch normalization provably avoids ranks collapse for randomly initialised deep networks	Batch normalization provably avoids ranks collapse for randomly initialised deep networks. Advances in Neural Informatio
+8		—		Neural collapse for cross-entropy class-imbalanced learning with unconstrained reLU features model. In Forty-first Inter
+9	2010.11929	s2	An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale	An image is worth 16x16 words: transformers for image recognition at scale. In 9th International Conference on Learning 
+10	1907.12009	s2	Representation Degeneration Problem in Training Natural Language Generation Models	Representation degeneration problem in training natural language generation models. In International Conference on Learn
+11		—		The persistence of neural collapse despite low-rank bias. In The Thirty-ninth Annual Conference on Neural Information Pr
+12	2405.12755	id		Progress measures for grokking on real-world tasks. arXiv preprint arXiv:2405.12755. Cited by: §2.
+13	2301.02679	id		Grokking modular arithmetic. arXiv preprint arXiv:2301.02679. Cited by: §2.
+14	2509.17738	s2	Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking	Flatness is necessary, neural collapse is not: rethinking generalization via grokking. In The Thirty-ninth Annual Confer
+15	1512.03385	s2	Deep Residual Learning for Image Recognition	Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recog
+16		s2	IEEE Standard for Floating-Point Arithmetic	(2019) IEEE standard for floating-point arithmetic. IEEE Std 754-2019 (Revision of IEEE 754-2008) (), pp. 1–84. Cited by
+17	1609.04836	s2	On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima	On large-batch training for deep learning: generalization gap and sharp minima. In International Conference on Learning 
+18		s2	A method for stochastic optimization	Adam: A method for stochastic optimization. In The Third International Conference on Learning Representations, Cited by:
+19	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Grokking as the transition from lazy to rich training dynamics. In The Twelfth International Conference on Learning Repr
+20	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Omnigrok: grokking beyond algorithmic data. In The Eleventh International Conference on Learning Representations, Cited 
+21		s2	Neural collapse under cross-entropy loss	Neural collapse under cross-entropy loss. Applied and Computational Harmonic Analysis 59, pp. 224–241. Note: Special Iss
+22	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Dichotomy of early and late phase implicit biases can provably induce grokking. In The Twelfth International Conference 
+23	1906.05890	s2	Gradient Descent Maximizes the Margin of Homogeneous Neural Networks	Gradient descent maximizes the margin of homogeneous neural networks. In International Conference on Learning Representa
+24		—		A qualitative study of the dynamic behavior for adaptive gradient algorithms. In Proceedings of the 2nd Mathematical and
+25	2011.11619	s2	Neural collapse with unconstrained features	Neural collapse with unconstrained features. Sampling Theory, Signal Processing, and Data Analysis 20 (2), pp. 11. Cited
+26	2304.09871	id		A theory on Adam instability in large-scale machine learning. arXiv preprint arXiv:2304.09871. Cited by: §2.
+27	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Progress measures for grokking via mechanistic interpretability. In The Eleventh International Conference on Learning Re
+28	2505.21829	s2	In Search of Adam's Secret Sauce	In search of Adam’s secret sauce. In The Thirty-ninth Annual Conference on Neural Information Processing Systems, Cited 
+29	2008.08186	s2	Prevalence of neural collapse during the terminal phase of deep learning training	Prevalence of neural collapse during the terminal phase of deep learning training. Proceedings of the National Academy o
+30	2008.11865	s2	Traces of Class/Cross-Class Structure Pervade Deep Learning Spectra	Traces of class/cross-class structure pervade deep learning spectra. Journal of Machine Learning Research 21 (252), pp. 
+31	1912.01703	s2	PyTorch: An Imperative Style, High-Performance Deep Learning Library	PyTorch: an imperative style, high-performance deep learning library. Advances in neural information processing systems 
+32	2201.02177	id		Grokking: generalization beyond overfitting on small algorithmic datasets. arXiv preprint arXiv:2201.02177. Cited by: §1
+33	2506.04434	id		Grokking and generalization collapse: insights from HTSR theory. arXiv preprint arXiv:2506.04434. Cited by: §2.
+34	2501.04697	s2	Grokking at the Edge of Numerical Stability	Grokking at the edge of numerical stability. In The Thirteenth International Conference on Learning Representations, Cit
+35	2510.04212	s2	Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention	Why low-precision transformer training fails: an analysis on flash attention. In The Fourteenth International Conference
+36	1904.09237	s2	On the Convergence of Adam and Beyond	On the convergence of adam and beyond. In International Conference on Learning Representations, Cited by: §2.
+37	2509.20829	id		Explaining grokking and information bottleneck through neural collapse emergence. arXiv preprint arXiv:2509.20829. Cited
+38	1804.04235	s2	Adafactor: Adaptive Learning Rates with Sublinear Memory Cost	Adafactor: adaptive learning rates with sublinear memory cost. In International Conference on Machine Learning, pp. 4596
+39	1409.1556	s2	Very Deep Convolutional Networks for Large-Scale Image Recognition	Very deep convolutional networks for large-scale image recognition. In 3rd International Conference on Learning Represen
+40	1710.06451	s2	A Bayesian Perspective on Generalization and Stochastic Gradient Descent	A bayesian perspective on generalization and stochastic gradient descent. In International Conference on Learning Repres
+41	1710.10345	s2	The Implicit Bias of Gradient Descent on Separable Data	The implicit bias of gradient descent on separable data. Journal of Machine Learning Research 19 (70), pp. 1–57. Cited b
+42	2601.02031	id		Output embedding centering for stable llm pretraining. arXiv preprint arXiv:2601.02031. Cited by: §A.4, §D.3.
+43		s2	The Slingshot Effect: A Late-Stage Optimization Anomaly in Adaptive Gradient Methods	The slingshot effect: a late-stage optimization anomaly in adaptive gradient methods. Transactions on Machine Learning R
+44	2206.04817	id		The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon. arXiv preprint arXiv:220
+45	2509.21519	s2	Provable Scaling Laws of Feature Emergence from Learning Dynamics of Grokking	Provable scaling laws of feature emergence from learning dynamics of grokking. In The Fourteenth International Conferenc
+46	1706.03762	s2	Attention is All you Need	Attention is all you need. Advances in neural information processing systems 30. Cited by: 1st item.
+47	2304.13013	s2	Stable and low-precision training for large-scale vision-language models	Stable and low-precision training for large-scale vision-language models. In Thirty-seventh Conference on Neural Informa
+48	2309.14322	s2	Small-scale proxies for large-scale Transformer training instabilities	Small-scale proxies for large-scale transformer training instabilities. In The Twelfth International Conference on Learn
+49	2309.17453	s2	Efficient Streaming Language Models with Attention Sinks	Efficient streaming language models with attention sinks. In The Twelfth International Conference on Learning Representa
+50		—		Implicit bias of adamw: $\ell_{\infty}$-norm constrained optimization. In Forty-first International Conference on Machin
+51	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	Let me grok for you: accelerating grokking via embedding transfer from a weaker model. In The Thirteenth International C
+52	2208.09632	s2	Adam Can Converge Without Any Modification on Update Rules	Adam can converge without any modification on update rules. In Advances in Neural Information Processing Systems, Cited 
+53	2505.12387	s2	Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning	Neural thermodynamics: entropic forces in deep and universal representation learning. In The Thirty-ninth Annual Confere

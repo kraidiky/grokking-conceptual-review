@@ -1,0 +1,31 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+2	2205.10343	id		Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+3	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+4	2207.08799	id		Boaz Barak, Benjamin L Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning
+5	1807.02581	s2	The Goldilocks zone: Towards better understanding of neural network loss landscapes	Stanislav Fort and Adam Scherlis. The goldilocks zone: Towards better understanding of neural network loss landscapes. I
+6	1912.02292	s2	Deep double descent: where bigger models and more data hurt	Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya Sutskever. Deep double descent: Where bi
+7		s2	CS229 Lecture notes	Andrew Ng and Tengyu Ma. Cs229 lecture notes. *https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf*, page 115,
+8	1611.01232	id		Samuel S Schoenholz, Justin Gilmer, Surya Ganguli, and Jascha Sohl-Dickstein. Deep information propagation. *arXiv prepr
+9	1712.08969	s2	Mean Field Residual Networks: On the Edge of Chaos	Ge Yang and Samuel Schoenholz. Mean field residual networks: On the edge of chaos. *Advances in neural information proce
+10		—		Li Deng. The mnist database of handwritten digit images for machine learning research. *IEEE Signal Processing Magazine*
+11		s2	Long Short-Term Memory	Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. *Neural computation*, 9(8):1735–1780, 1997.
+12		s2	Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics	Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. Learning word vectors fo
+13		s2	Quantum chemistry structures and properties of 134 kilo molecules	Raghunathan Ramakrishnan, Pavlo O Dral, Matthias Rupp, and O Anatole von Lilienfeld. Quantum chemistry structures and pr
+14	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+15		s2	Alignment Newsletter #159	Rohin Shah. Alignment Newsletter #159. https://www.alignmentforum.org/posts/zvWqPmQasssaAWkrj/an-159-building-agents-tha
+16		—		Beren Millidge. Grokking ’grokking’. https://beren.io/2022-01-11-Grokking-Grokking/, 2022.
+17	2206.01378	s2	Regularization-wise double descent: Why it occurs and how to eliminate it	Fatih Furkan Yilmaz and Reinhard Heckel. Regularization-wise double descent: Why it occurs and how to eliminate it. In *
+18	2008.01036	s2	Multiple Descent: Design Your Own Generalization Curve	Lin Chen, Yifei Min, Mikhail Belkin, and Amin Karbasi. Multiple descent: Design your own generalization curve. *Advances
+19		—		Stéphane d’Ascoli, Levent Sagun, and Giulio Biroli. Triple descent and the two kinds of overfitting: Where & why do they
+20		s2	Understanding the difficulty of training deep feedforward neural networks	Xavier Glorot and Yoshua Bengio. Understanding the difficulty of training deep feedforward neural networks. In *Proceedi
+21	1502.01852	s2	Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification	Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Delving deep into rectifiers: Surpassing human-level performance 
+22		s2	Statistical mechanics of deep learning	Yasaman Bahri, Jonathan Kadmon, Jeffrey Pennington, Sam S Schoenholz, Jascha Sohl-Dickstein, and Surya Ganguli. Statisti
+23	1612.05231	s2	Tunable Efficient Unitary Neural Networks (EUNN) and their application to RNNs	Li Jing, Yichen Shen, Tena Dubcek, John Peurifoy, Scott Skirlo, Yann LeCun, Max Tegmark, and Marin Soljačić. Tunable eff
+24	2004.09506	id		Maciej Skorski, Alessandro Temperoni, and Martin Theobald. Revisiting initialization of neural networks. *arXiv preprint
+25	1807.01251	s2	Training behavior of deep neural network in frequency domain	Zhi-Qin John Xu, Yaoyu Zhang, and Yanyang Xiao. Training behavior of deep neural network in frequency domain. In *Intern
+26	1905.07777	s2	A type of generalization error induced by initialization in deep neural networks	Yaoyu Zhang, Zhi-Qin John Xu, Tao Luo, and Zheng Ma. A type of generalization error induced by initialization in deep ne
+27	1810.12281	id		Guodong Zhang, Chaoqi Wang, Bowen Xu, and Roger Grosse. Three mechanisms of weight decay regularization. *arXiv preprint
+28	1706.05350	id		Twan Van Laarhoven. L2 regularization versus batch and weight normalization. *arXiv preprint arXiv:1706.05350*, 2017.
+29		—		Aitor Lewkowycz and Guy Gur-Ari. On the training dynamics of deep networks with $l\_2$ regularization. *Advances in Neur
+30	1412.6980	id		Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. *arXiv preprint arXiv:1412.6980*, 2014.

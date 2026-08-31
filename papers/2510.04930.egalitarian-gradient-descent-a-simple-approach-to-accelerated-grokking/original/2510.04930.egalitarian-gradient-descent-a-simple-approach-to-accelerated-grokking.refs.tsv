@@ -1,0 +1,51 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1412.6980	id		A method for stochastic optimization. arXiv preprint arXiv:1412.6980 1412 (6). Cited by: Appendix D, Appendix E.
+2		s2	Dynamics of Learning in MLP: Natural Gradient and Singularity Revisited	Dynamics of learning in mlp: natural gradient and singularity revisited. Neural Computation 30 (1), pp. 1–33. Cited by: 
+3		s2	Natural Gradient Works Efficiently in Learning	Natural gradient works efficiently in learning. Neural computation 10 (2), pp. 251–276. Cited by: §4.1.
+4	math/0403022	s2	Phase transition of the largest eigenvalue for nonnull complex sample covariance matrices	Phase transition of the largest eigenvalue for nonnull complex sample covariance matrices. Annals of Probability 33. Cit
+5	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Hidden progress in deep learning: sgd learns parities near the computational limit. Advances in Neural Information Proce
+6	2410.04489	s2	Grokking at the Edge of Linear Separability	Grokking at the edge of linear separability. In International Conference on Machine Learning, pp. 3307–3334. Cited by: §
+7	2409.20325	id		Old optimizer, new norm: an anthology. arXiv preprint arXiv:2409.20325. Cited by: §4.3.
+8	2506.15544	id		Stable gradients for stable learning at scale in deep reinforcement learning. arXiv preprint arXiv:2506.15544. Cited by:
+9	2303.06173	id		Unifying grokking and double descent. arXiv preprint arXiv:2303.06173. Cited by: §2, §2.
+10	2406.03495	s2	Grokking Modular Polynomials	Grokking modular polynomials. External Links: 2406.03495, Link Cited by: §1, §2, §5.2.
+11	2301.02679	s2	Grokking modular arithmetic	Grokking modular arithmetic. External Links: 2301.02679, Link Cited by: §1, §2, §5.2.
+12	0909.4061	s2	Finding Structure with Randomness: Probabilistic Algorithms for Constructing Approximate Matrix Deco	Finding structure with randomness: probabilistic algorithms for constructing approximate matrix decompositions. SIAM rev
+13	2402.15175	id		Unified view of grokking, double descent and emergent abilities: a perspective from circuits competition. arXiv preprint
+14		s2	Muon: An optimizer for hidden layers in neural networks	Muon: an optimizer for hidden layers in neural networks, 2024. URL https://kellerjordan. github. io/posts/muon 6 (3), pp
+15		s2	Learning Multiple Layers of Features from Tiny Images	Learning multiple layers of features from tiny images. Cited by: Appendix E.
+16	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Grokking as the transition from lazy to rich training dynamics. In International Conference on Learning Representations 
+17		s2	Gradient-based learning applied to document recognition	Gradient-based learning applied to document recognition. Proceedings of the IEEE 86 (11), pp. 2278–2324. Cited by: Appen
+18	2405.20233	s2	Grokfast: Accelerated Grokking by Amplifying Slow Gradients	Grokfast: accelerated grokking by amplifying slow gradients. Note: v2, 5 Jun 2024 External Links: 2405.20233, Link Cited
+19	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Grokking in linear estimators–a solvable model that groks without understanding. In The Twelfth International Conference
+20	2502.16982	id		Muon is scalable for llm training. arXiv preprint arXiv:2502.16982. Cited by: §4.3.
+21	1908.03265	id		On the variance of the adaptive learning rate and beyond. arXiv preprint arXiv:1908.03265. Cited by: Appendix E.
+22	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Towards understanding grokking: an effective theory of representation learning. Advances in Neural Information Processin
+23	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Omnigrok: grokking beyond algorithmic data. In International Conference on Learning Representations (ICLR), Note: Spotli
+24	1711.05101	id		Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101. Cited by: Appendix D.
+25	2507.20057	id		What can grokking teach us about learning under nonstationarity?. arXiv preprint arXiv:2507.20057. Cited by: §2, §2.
+26	2303.11873	id		A tale of two circuits: grokking as competition of sparse and dense subnetworks. arXiv preprint arXiv:2303.11873. Cited 
+27		—		Why do you grok? a theoretical analysis on grokking modular addition. In International Conference on Machine Learning (I
+28	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Grokking of hierarchical structure in vanilla transformers. In The 61st Annual Meeting Of The Association For Computatio
+29	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Progress measures for grokking via mechanistic interpretability. Note: v3, 19 Oct 2023 External Links: 2301.05217, Link 
+30	2506.05718	s2	Grokking Beyond the Euclidean Norm of Model Parameters	Grokking beyond the euclidean norm of model parameters. In International Conference on Machine Learning (ICML), Cited by
+31	2306.13253	id		Predicting grokking long before it happens: a look into the loss landscape of models which grok. arXiv preprint arXiv:23
+32	1106.3708	s2	Information-Geometric Optimization Algorithms: A Unifying Picture via Invariance Principles	Information-geometric optimization algorithms: a unifying picture via invariance principles. Journal of Machine Learning
+33	1301.3584	id		Revisiting natural gradient for deep networks. arXiv preprint arXiv:1301.3584. Cited by: §4.1.
+34		—		Training neural networks at any scale. External Links: 2511.11163, Link Cited by: §4.3.
+35	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Grokking: generalization beyond overfitting on small algorithmic datasets. External Links: 2201.02177, Link Cited by: §1
+36	2501.04697	s2	Grokking at the Edge of Numerical Stability	Grokking at the edge of numerical stability. External Links: 2501.04697, Link Cited by: §2, §5.2.
+37		s2	On-line learning in soft committee machines.	On-line learning in soft committee machines. Physical Review E 52 (4), pp. 4225. Cited by: §2.
+38		—		Sklearn.utils.extmath.randomized_svd. **[p. 13]** Note: https://scikit-learn.org/stable/modules/generated/sklearn.utils.
+39	2302.12902	s2	The Dormant Neuron Phenomenon in Deep Reinforcement Learning	The dormant neuron phenomenon in deep reinforcement learning. In International Conference on Machine Learning, pp. 32145
+40	2507.20534	id		Kimi k2: open agentic intelligence. arXiv preprint arXiv:2507.20534. Cited by: §4.3, §4.3.
+41	2206.04817	id		The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon. arXiv preprint arXiv:220
+42		s2	Divide the gradient by a running average of its recent magnitude	Divide the gradient by a running average of its recent magnitude. coursera: neural networks for machine learning. In Tec
+43	2309.02390	id		Explaining grokking through circuit efficiency. arXiv preprint arXiv:2309.02390. Cited by: §2, §2.
+44	2506.12284	s2	GrokAlign: Geometric Characterisation and Acceleration of Grokking	GrokAlign: geometric characterisation and acceleration of grokking. arXiv preprint arxiv:2506.12284. Cited by: §2.
+45		s2	Algebraic geometry and statistical learning theory	Algebraic geometry and statistical learning theory. Vol. 25, Cambridge university press. Cited by: §2.
+46		s2	Dynamics of Learning Near Singularities in Layered Networks	Dynamics of learning near singularities in layered networks. Neural Comput. 20 (3). Cited by: §2.
+47	2001.03371	s2	Data-dependence of plateau phenomenon in learning with neural network—statistical mechanical analysi	Data-dependence of plateau phenomenon in learning with neural network—statistical mechanical analysis. Advances in Neura
+48	2403.03507	id		Galore: memory-efficient llm training by gradient low-rank projection. arXiv preprint arXiv:2403.03507. Cited by: §4.3.
+49	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	The clock and the pizza: two stories in mechanistic explanation of neural networks. In Advances in Neural Information Pr
+50	2401.10463	id		Critical data size of language models from a grokking perspective. arXiv preprint arXiv:2401.10463. Cited by: §2.

@@ -1,0 +1,36 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		—		[1] T. Agrawal and M. Kumar (2025) Grokking in neural networks: a review. SN Computer Science 6 (3), pp. 4182. Cited by:
+2		—		[2] S. K. Ainsworth, J. Hayase, and S. Srinivasa (2022) Git re-basin: merging models modulo permutation symmetries. Exte
+3	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	[3] M. Belkin, D. Hsu, S. Ma, and S. Mandal (2019) Reconciling modern machine-learning practice and the classical bias–v
+4	1011.2578	s2	Theoretical perspective on the glass transition and amorphous materials	[4] L. Berthier and G. Biroli (2011) Theoretical perspective on the glass transition and amorphous materials. Reviews of
+5		—		[5] L. Berthier, J. Coslovich, A. Ninarello, and M. Ozawa (2016) Efficient equilibration of hard spheres up to the jammi
+6		s2	Group Invariance, Stability to Deformations, and Complexity of Deep Convolutional Representations	[6] A. Bietti and J. Mairal (2019) Group invariance, stability to deformations, and complexity of deep convolutional rep
+7	1611.01838	s2	Entropy-SGD: biasing gradient descent into wide valleys	[7] P. Chaudhari, A. Choromanska, S. Soatto, Y. LeCun, C. Baldassi, C. Borgs, J. Chayes, L. Sagun, and R. Zecchina (2017
+8		s2	Loss Landscapes are All You Need: Neural Network Generalization Can Be Explained Without the Implici	[8] P. Chiang, R. Ni, D. Y. Miller, A. Bansal, J. Geiping, M. Goldblum, and T. Goldstein (2023) Loss landscapes are all 
+9	2109.05937	s2	Estimating fractal dimensions: A comparative review and open source implementations.	[9] G. Datseris, I. Kottlarz, A. P. Braun, and U. Parlitz (2023) Estimating fractal dimensions: a comparative review and
+10		s2	The glass transition and elastic models of glass-forming liquids	[10] J. C. Dyre (2006) The glass transition and elastic models of glass-forming liquids. Reviews of Modern Physics 78 (3
+11		s2	2026. Noise-Driven Escape from Metastable Phases Explains Grokking in Deep Neural Networks	[11] I. T. Ersoy and K. Wiesner (2026) Noise-driven escape from metastable phases explains grokking in deep neural netwo
+12	cond-mat/0011074	s2	Fast Monte Carlo algorithm for supercooled soft spheres.	[12] T. S. Grigera and G. Parisi (2001) Fast monte carlo algorithm for supercooled soft spheres. Physical Review E 63 (1
+13	2402.15555	s2	Deep Networks Always Grok and Here is Why	[13] A. I. Humayun, R. Balestriero, and R. Baraniuk (2024) Deep networks always grok and here is why. In Proceedings of 
+14	1609.04836	s2	On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima	[14] N. S. Keskar, D. Mudigere, J. Nocedal, M. Smelyanskiy, and P. T. P. Tang (2017) On large-batch training for deep le
+15	cond-mat/9505118	s2	Testing mode-coupling theory for a supercooled binary Lennard-Jones mixture. II. Intermediate scatte	[15] W. Kob and H. C. Andersen (1995) Testing mode-coupling theory for a supercooled binary lennard-jones mixture. ii. i
+16	cond-mat/9704006	s2	Aging Effects in a Lennard-Jones Glass	[16] W. Kob and J. Barrat (1997) Aging effects in a lennard-jones glass. Physical review letters 78 (24), pp. 4581. Cite
+17	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	[17] T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan (2023) Grokking as the transition from lazy to rich training
+18		—		[18] J. Lee, B. G. Kang, K. Kim, and K. M. Lee (2024) Grokfast: accelerated grokking by amplifying slow gradients. Exter
+19	2501.00338	s2	Universal activated aging and weak ergodicity breaking in spin and structural glasses	[19] B. Li, D. Pan, T. Qu, and Y. Jin (2026) Universal activated aging and weak ergodicity breaking in spin and structur
+20	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	[20] Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams (2022) Towards understanding grokking: an 
+21		s2	2023. Omnigrok: grokking beyond algorithmic data	[21] Z. Liu, E. Michaud, and M. Tegmark (2023) Omnigrok: grokking beyond algorithmic data. In Proceedings of the Interna
+22	1605.06265	s2	End-to-End Kernel Learning with Supervised Convolutional Kernel Networks	[22] J. Mairal (2016) End-to-end kernel learning with supervised convolutional kernel networks. In Advances in Neural In
+23	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	[23] W. Merrill, N. Tsilivis, and A. Shukla (2023) A tale of two circuits: grokking as competition of sparse and dense s
+24	0910.2838	s2	Glasses and replicas	[24] M. Mézard and G. Parisi (2012) Glasses and replicas. In Structural Glasses and Supercooled Liquids: Theory, Experim
+25	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	[25] N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023) Progress measures for grokking via mechanistic i
+26		s2	2026. Revisiting the Volume Hypothesis	[26] A. Pakman, L. Kreimer, and Y. Berchenko (2026) Revisiting the volume hypothesis. External Links: 2606.31282 Cited b
+27	2407.03848	s2	Bias of Stochastic Gradient Descent or the Architecture: Disentangling the Effects of Overparameteri	[27] A. Peleg and M. Hein (2024) Bias of stochastic gradient descent or the architecture: disentangling the effects of o
+28	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	[28] A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022) Grokking: generalization beyond overfitting on s
+29	2501.04697	s2	Grokking at the Edge of Numerical Stability	[29] L. Prieto, M. Barsbey, P. Mediano, and T. Birdal (2025) Grokking at the edge of numerical stability. In Internation
+30	1706.04454	s2	Empirical Analysis of the Hessian of Over-Parametrized Neural Networks	**[p. 9]** [30] L. Sagun, U. Evci, V. U. Guney, Y. Dauphin, and L. Bottou (2017) Empirical analysis of the hessian of ov
+31	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	[31] V. Thilak, E. Littwin, S. Zhai, O. Saremi, R. Paiss, and J. M. Susskind (2022) The slingshot mechanism: an empirica
+32		s2	2023. Explaining Grokking through Circuit Efficiency	[32] V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar (2023) Explaining grokking through circuit efficiency. Extern
+33	2503.13145	s2	High-entropy Advantage in Neural Networks' Generalizability	[33] E. Yang, X. Zhang, Y. Shang, and G. Zhang (2026) High-entropy advantage in neural networks’ generalizability. npj A
+34	1611.03530	s2	Understanding deep learning requires rethinking generalization	[34] C. Zhang, S. Bengio, M. Hardt, B. Recht, and O. Vinyals (2016) Understanding deep learning requires rethinking gene
+35	2505.11411	s2	Is Grokking a Computational Glass Relaxation?	[35] X. Zhang, Y. Shang, E. Yang, and G. Zhang (2025) Is grokking a computational glass relaxation?. In Advances in Neur

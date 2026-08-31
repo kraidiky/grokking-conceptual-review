@@ -1,0 +1,26 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1		s2	Ridge Regression: Biased Estimation for Nonorthogonal Problems	A. E. Hoerl and R. W. Kennard, “Ridge regression: Biased estimation for nonorthogonal problems,” *Technometrics* **12**,
+2		s2	Deep Learning	I. Goodfellow, Y. Bengio, and A. Courville, *Deep Learning* (MIT Press, Cambridge, MA, 2017).
+3		s2	Zeroth, first, and second-order phase transitions in deep neural networks	Ziyin, L. & Ueda, M. Zeroth, first, and second-order phase transitions in deep neural networks. *Physical Review Researc
+4		—		S. Amari, *Information Geometry and Its Applications*, Vol. 194 (Springer, Tokyo, 2016).
+5		s2	Algebraic geometry and statistical learning theory	S. Watanabe, *Algebraic Geometry and Statistical Learning Theory*, Vol. 25 (Cambridge University Press, Cambridge, 2009)
+6		s2	“Exploring L2-phase transitions on error landscapes,”	I. T. Ersoy and K. Wiesner, “Exploring L2-phase transitions on error landscapes,” *Workshop on High-Dimensional Learning
+7	2512.11866	id		I. T. Ersoy, A. F. C. Licha, and K. Wiesner, “Phase transitions reveal hierarchical structure in deep neural networks,” 
+8		—		B. Ladewig, I. T. Ersoy, and K. Wiesner, “Cascading through the Hierarchy: Regulariser-induced Feature Detection as Phas
+9	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra, “Grokking: Generalization beyond overfitting on small algor
+10	2210.01117	id		Z. Liu, E. J. Michaud, and M. Tegmark, “Omnigrok: Grokking beyond algorithmic data,” arXiv:2210.01117 (2022).
+11	2310.03789	s2	Grokking as a First Order Phase Transition in Two Layer Networks	N. Rubin, I. Seroussi, and Z. Ringel, “Grokking as a first order phase transition in two layer networks,” *International
+12		s2	Brownian Motion in a Field of Force and the Diffusion Model of Chemical Reactions	H. A. Kramers, “Brownian motion in a field of force and the diffusion model of chemical reactions,” *Physica* **7**, 284
+13		s2	Reaction-rate theory: fifty years after Kramers	P. Hänggi, P. Talkner, and M. Borkovec, “Reaction-rate theory: fifty years after Kramers,” *Rev. Mod. Phys.* **62**, 251
+14	1704.04289	s2	Stochastic Gradient Descent as Approximate Bayesian Inference	S. Mandt, M. D. Hoffman, and D. M. Blei, “Stochastic gradient descent as approximate Bayesian inference,” *J. Mach. Lear
+15	1711.00489	s2	Don't Decay the Learning Rate, Increase the Batch Size	Smith, S., Kindermans, P., Ying, C. & Le, Q. Don’t decay the learning rate, increase the batch size. *ArXiv Preprint ArX
+16		s2	Bayesian Learning via Stochastic Gradient Langevin Dynamics	Welling, M. & Teh, Y. Bayesian learning via stochastic gradient Langevin dynamics. *Proceedings Of The 28th Internationa
+17	1312.6120	s2	Exact solutions to the nonlinear dynamics of learning in deep linear neural networks	Saxe, A., McClelland, J. & Ganguli, S. Exact solutions to the nonlinear dynamics of learning in deep linear neural netwo
+18	2305.16038	s2	Implicit bias of SGD in L2-regularized linear DNNs: One-way jumps from high to low rank	Wang, Z. & Jacot, A. Implicit bias of SGD in L2-regularized linear DNNs: One-way jumps from high to low rank. *ArXiv Pre
+19	2105.09557	s2	Power-Law Escape Rate of SGD	T. Mori, L. Ziyin, K. Liu, and M. Ueda, “Power-law escape rate of SGD,” *Proceedings of the 39th International Conferenc
+20	1803.00885	s2	Essentially No Barriers in Neural Network Energy Landscape	Draxler, F., Veschgini, K., Salmhofer, M. & Hamprecht, F. Essentially No Barriers in Neural Network Energy Landscape. (2
+21	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda, N., Chan, L., Lieberum, T., Smith, J. & Steinhardt, J. Progress measures for grokking via mechanistic interpretab
+22	2509.21519	id		Y. Tian, “Provable scaling laws of feature emergence from learning dynamics of grokking,” arXiv:2509.21519 (2025).
+23	2505.11411	s2	Is Grokking a Computational Glass Relaxation?	Zhang, X., Shang, Y., Yang, E. & Zhang, G. Is Grokking a Computational Glass Relaxation?. (2026), https://arxiv.org/abs/
+24	2310.16441	id		N. Levi, A. Beck, and Y. Bar-Sinai, “Grokking in linear estimators—a solvable model that groks without understanding,” *
+25	2311.18817	id		K. Lyu, J. Jin, Z. Li, S. S. Du, J. D. Lee, and W. Hu, “Dichotomy of early and late phase implicit biases can provably i

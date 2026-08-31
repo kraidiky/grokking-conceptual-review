@@ -1,0 +1,48 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Hidden progress in deep learning: sgd learns parities near the computational limit. Advances in Neural Information Proce
+2		s2	Rademacher and Gaussian Complexities: Risk Bounds and Structural Results	Rademacher and gaussian complexities: risk bounds and structural results. Journal of Machine Learning Research 3 (Nov), 
+3	2410.04489	s2	Grokking at the Edge of Linear Separability	Grokking at the edge of linear separability. In Forty-second International Conference on Machine Learning, Cited by: §1.
+4	1904.09080	s2	Implicit regularization for deep neural networks driven by an Ornstein-Uhlenbeck like process	Implicit regularization for deep neural networks driven by an ornstein-uhlenbeck like process. In Conference on Learning
+5	2505.20172	s2	A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation	A theoretical framework for grokking: interpolation followed by riemannian norm minimisation. Advances in Neural Informa
+6	2308.15594	s2	Learning the greatest common divisor: explaining transformer predictions	Learning the greatest common divisor: explaining transformer predictions. The Twelfth International Conference on Learni
+7	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	A toy model of universality: reverse engineering how networks learn group operations. In International Conference on Mac
+8	2303.06173	id		Unifying grokking and double descent. arXiv preprint arXiv:2303.06173. Cited by: §1.1.
+9		s2	Learning Single-Index Models in Gaussian Space	Learning single-index models in gaussian space. In Conference On Learning Theory, pp. 1887–1930. Cited by: Appendix A.
+10	2405.19454	id		Deep grokking: would deep neural networks generalize better?. arXiv preprint arXiv:2405.19454. Cited by: §1.
+11		s2	Regression Towards Mediocrity in Hereditary Stature.	Regression towards mediocrity in hereditary stature. The Journal of the Anthropological Institute of Great Britain and I
+12	2301.02679	id		Grokking modular arithmetic. arXiv preprint arXiv:2301.02679. Cited by: §1.1, §6.
+13	1802.08246	s2	Characterizing Implicit Bias in Terms of Optimization Geometry	Characterizing implicit bias in terms of optimization geometry. In International Conference on Machine Learning, pp. 183
+14		s2	Ridge Regression: Biased Estimation for Nonorthogonal Problems	Ridge regression: biased estimation for nonorthogonal problems. Technometrics 12 (1), pp. 55–67. Cited by: §1.
+15	2402.15555	s2	Deep Networks Always Grok and Here is Why	Deep networks always grok and here is why. In International Conference on Machine Learning, pp. 20722–20745. Cited by: §
+16	2411.00247	s2	Deep Learning Through A Telescoping Lens: A Simple Model Provides Empirical Insights On Grokking, Gr	Deep learning through a telescoping lens: a simple model provides empirical insights on grokking, gradient boosting & be
+17	2506.23286	s2	Not All Explanations for Deep Learning Phenomena Are Equally Valuable	Position: not all explanations for deep learning phenomena are equally valuable. In Forty-second International Conferenc
+18	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Grokking as the transition from lazy to rich training dynamics. In The Twelfth International Conference on Learning Repr
+19	2502.07998	s2	Adaptive kernel predictors from feature-learning infinite limits of neural networks	Adaptive kernel predictors from feature-learning infinite limits of neural networks. In Proceedings of the Forty-second 
+20	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Grokking in linear estimators–a solvable model that groks without understanding. In The Twelfth International Conference
+21	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Towards understanding grokking: an effective theory of representation learning. Advances in Neural Information Processin
+22		—		Omnigrok: grokking beyond algorithmic data. The Eleventh International Conference on Learning Representations. Cited by:
+23	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Dichotomy of early and late phase implicit biases can provably induce grokking. The Twelfth International Conference on 
+24	2407.20199	s2	Emergence in non-neural models: grokking modular arithmetic via average gradient outer product	Emergence in non-neural models: grokking modular arithmetic via average gradient outer product. In Forty-second Internat
+25		s2	DISTRIBUTION OF EIGENVALUES FOR SOME SETS OF RANDOM MATRICES	Distribution of eigenvalues for some sets of random matrices. Mathematics of the USSR-Sbornik 1 (4), pp. 457. Cited by: 
+26	2303.11873	id		A tale of two circuits: grokking as competition of sparse and dense subnetworks. arXiv preprint arXiv:2303.11873. Cited 
+27	2310.17247	s2	Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity	Grokking beyond neural networks: an empirical exploration with model complexity. Transactions on Machine Learning Resear
+28		—		Why do you grok? a theoretical analysis on grokking modular addition. In International Conference on Machine Learning, p
+29	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Progress measures for grokking via mechanistic interpretability. In The Eleventh International Conference on Learning Re
+30	2306.13253	id		Predicting grokking long before it happens: a look into the loss landscape of models which grok. arXiv preprint arXiv:23
+31	2201.02177	id		Grokking: generalization beyond overfitting on small algorithmic datasets. arXiv preprint arXiv:2201.02177. Cited by: Fi
+32	2501.04697	s2	Grokking at the Edge of Numerical Stability	Grokking at the edge of numerical stability. In The Thirteenth International Conference on Learning Representations, Cit
+33	2212.13881	id		Mechanism of feature learning in deep fully connected networks and kernel machines that recursively learn features. arXi
+34		s2	Understanding Machine Learning - From Theory to Algorithms	Understanding machine learning: from theory to algorithms. Cambridge university press. Cited by: Lemma A.13.
+35	2311.06597	id		Understanding grokking through a robustness viewpoint. arXiv preprint arXiv:2311.06597. Cited by: §1.
+36	2206.04817	id		The slingshot mechanism: an empirical study of adaptive optimizers and the grokking phenomenon. arXiv preprint arXiv:220
+37	2506.05718	s2	Grokking Beyond the Euclidean Norm of Model Parameters	Grokking beyond the Euclidean norm of model parameters. In Proceedings of the 42nd International Conference on Machine L
+38		s2	Solution of Incorrectly Formulated Problems and the Regularization Method	Solution of incorrectly formulated problems and the regularization method.. Sov Dok 4, pp. 1035–1038. Cited by: §1.
+39		s2	A Study on Multiple Linear Regression Analysis	A study on multiple linear regression analysis. Procedia-Social and Behavioral Sciences 106, pp. 234–240. Cited by: §1.
+40	2012.05156	s2	Implicit Regularization in ReLU Networks with the Square Loss	Implicit regularization in relu networks with the square loss. In Conference on Learning Theory, pp. 4224–4258. Cited by
+41	2309.02390	id		Explaining grokking through circuit efficiency. arXiv preprint arXiv:2309.02390. Cited by: §1.1.
+42		s2	Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization	Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization. Advances in Neural 
+43	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	Let me grok for you: accelerating grokking via embedding transfer from a weaker model. The Thirteenth International Conf
+44	2310.02541	s2	Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data	Benign overfitting and grokking in relu networks for xor cluster data. The Twelfth International Conference on Learning 
+45	2408.11804	id		Approaching deep learning through the spectral dynamics of weights. arXiv preprint arXiv:2408.11804. Cited by: §1.1.
+46	2401.10463	id		Critical data size of language models from a grokking perspective. arXiv preprint arXiv:2401.10463. Cited by: §1.
+47	2210.15435	s2	Grokking phase transitions in learning local rules with gradient descent	Grokking phase transitions in learning local rules with gradient descent. Journal of Machine Learning Research 25 (199),

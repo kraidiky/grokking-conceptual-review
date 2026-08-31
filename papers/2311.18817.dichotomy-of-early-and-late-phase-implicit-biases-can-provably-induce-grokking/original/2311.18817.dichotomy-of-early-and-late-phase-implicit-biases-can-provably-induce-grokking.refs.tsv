@@ -1,0 +1,69 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1811.03962	s2	A Convergence Theory for Deep Learning via Over-Parameterization	Zeyuan Allen-Zhu, Yuanzhi Li, and Zhao Song. A convergence theory for deep learning via over-parameterization. In Kamali
+2	1905.13655	s2	Implicit Regularization in Deep Matrix Factorization	Sanjeev Arora, Nadav Cohen, Wei Hu, and Yuping Luo. Implicit regularization in deep matrix factorization. In H. Wallach,
+3	1901.08584	s2	Fine-Grained Analysis of Optimization and Generalization for Overparameterized Two-Layer Neural Netw	Sanjeev Arora, Simon Du, Wei Hu, Zhiyuan Li, and Ruosong Wang. Fine-grained analysis of optimization and generalization 
+4	1904.11955	s2	On Exact Computation with an Infinitely Wide Neural Net	Sanjeev Arora, Simon S Du, Wei Hu, Zhiyuan Li, Russ R Salakhutdinov, and Ruosong Wang. On exact computation with an infi
+5	2007.11045	id		Pranjal Awasthi, Natalie Frank, and Mehryar Mohri. On the Rademacher complexity of linear hypothesis sets. *arXiv prepri
+6	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning: 
+7	2211.12316	s2	Simplicity Bias in Transformers and their Ability to Learn Sparse Boolean Functions	Satwik Bhattamishra, Arkil Patel, Varun Kanade, and Phil Blunsom. Simplicity bias in transformers and their ability to l
+8	1904.09080	s2	Implicit regularization for deep neural networks driven by an Ornstein-Uhlenbeck like process	Guy Blanc, Neha Gupta, Gregory Valiant, and Paul Valiant. Implicit regularization for deep neural networks driven by an 
+9	0903.3131	s2	Matrix Completion With Noise	Emmanuel J Candes and Yaniv Plan. Matrix completion with noise. *Proceedings of the IEEE*, 98(6):925–936, 2010.
+10	1905.13210	s2	Generalization Bounds of Stochastic Gradient Descent for Wide and Deep Neural Networks	Yuan Cao and Quanquan Gu. Generalization bounds of stochastic gradient descent for wide and deep neural networks. In H. 
+11	2308.15594	s2	Learning the greatest common divisor: explaining transformer predictions	Francois Charton. Learning the greatest common divisor: explaining transformer predictions. In *The Twelfth Internationa
+12	2002.04486	s2	Implicit Bias of Gradient Descent for Wide Two-layer Neural Networks Trained with the Logistic Loss	Lenaic Chizat and Francis Bach. Implicit bias of gradient descent for wide two-layer neural networks trained with the lo
+13	1812.07956	s2	On Lazy Training in Differentiable Programming	Lénaïc Chizat, Edouard Oyallon, and Francis Bach. On lazy training in differentiable programming. In H. Wallach, H. Laro
+14	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Bilal Chughtai, Lawrence Chan, and Neel Nanda. A toy model of universality: Reverse engineering how networks learn group
+15		s2	Nonsmooth Analysis in Control Theory: A Survey	Francis Clarke. Nonsmooth analysis in control theory: a survey. *European Journal of Control*, 7(2-3):145–159, 2001.
+16		s2	Generalized gradients and applications	Frank H Clarke. Generalized gradients and applications. *Transactions of the American Mathematical Society*, 205:247–262
+17	2106.06530	s2	Label Noise SGD Provably Prefers Flat Global Minimizers	Alex Damian, Tengyu Ma, and Jason D Lee. Label noise SGD provably prefers flat global minimizers. In M. Ranzato, A. Beyg
+18	2303.06173	s2	Unifying Grokking and Double Descent	Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. In *NeurIPS ML Safety Workshop*,
+19	2203.03756	id		Lijun Ding, Dmitriy Drusvyatskiy, Maryam Fazel, and Zaid Harchaoui. Flat minima generalize for low-rank matrix recovery.
+20	1811.03804	s2	Gradient Descent Finds Global Minima of Deep Neural Networks	Simon Du, Jason Lee, Haochuan Li, Liwei Wang, and Xiyu Zhai. Gradient descent finds global minima of deep neural network
+21	1810.02054	s2	Gradient Descent Provably Optimizes Over-parameterized Neural Networks	Simon S. Du, Xiyu Zhai, Barnabas Poczos, and Aarti Singh. Gradient descent provably optimizes over-parameterized neural 
+22	1807.02581	s2	The Goldilocks zone: Towards better understanding of neural network loss landscapes	Stanislav Fort and Adam Scherlis. The Goldilocks zone: Towards better understanding of neural network loss landscapes. I
+23	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+24	2303.01215	s2	Why (and When) does Local SGD Generalize Better than SGD?	Xinran Gu, Kaifeng Lyu, Longbo Huang, and Sanjeev Arora. Why (and when) does local SGD generalize better than SGD? In *T
+25	1705.09280	s2	Implicit Regularization in Matrix Factorization	Suriya Gunasekar, Blake E Woodworth, Srinadh Bhojanapalli, Behnam Neyshabur, and Nati Srebro. Implicit regularization in
+26	1802.08246	s2	Characterizing Implicit Bias in Terms of Optimization Geometry	Suriya Gunasekar, Jason Lee, Daniel Soudry, and Nathan Srebro. Characterizing implicit bias in terms of optimization geo
+27	1806.00468	s2	Implicit Bias of Gradient Descent on Linear Convolutional Networks	Suriya Gunasekar, Jason D Lee, Daniel Soudry, and Nati Srebro. Implicit bias of gradient descent on linear convolutional
+28	2006.08680	s2	Shape Matters: Understanding the Implicit Bias of the Noise Covariance	Jeff Z HaoChen, Colin Wei, Jason Lee, and Tengyu Ma. Shape matters: Understanding the implicit bias of the noise covaria
+29	1502.01852	s2	Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification	Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Delving deep into rectifiers: Surpassing human-level performance 
+30	2308.09543	s2	Latent State Models of Training Dynamics	Michael Y Hu, Angelica Chen, Naomi Saphra, and Kyunghyun Cho. Latent state models of training dynamics. *Transactions on
+31		s2	Simple and Effective Regularization Methods for Training on Noisily Labeled Data with Generalization	Wei Hu, Zhiyuan Li, and Dingli Yu. Simple and effective regularization methods for training on noisily labeled data with
+32	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Arthur Jacot, Franck Gabriel, and Clement Hongler. Neural tangent kernel: Convergence and generalization in neural netwo
+33	2006.06657	s2	Directional convergence and alignment in deep learning	Ziwei Ji and Matus Telgarsky. Directional convergence and alignment in deep learning. In H. Larochelle, M. Ranzato, R. H
+34	1909.12292	s2	Polylogarithmic width suffices for gradient descent to achieve arbitrarily small test error with sha	Ziwei Ji and Matus Telgarsky. Polylogarithmic width suffices for gradient descent to achieve arbitrarily small test erro
+35	math/0405343	s2	Empirical margin distributions and bounding the generalization error of combined classifiers	V. Koltchinskii and D. Panchenko. Empirical Margin Distributions and Bounding the Generalization Error of Combined Class
+36	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+37	2210.03820	s2	The Asymmetric Maximum Margin Bias of Quasi-Homogeneous Neural Networks	Daniel Kunin, Atsushi Yamamura, Chao Ma, and Surya Ganguli. The asymmetric maximum margin bias of quasi-homogeneous neur
+38	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Noam Itzhak Levi, Alon Beck, and Yohai Bar-Sinai. Grokking in linear estimators – a solvable model that groks without un
+39		—		Aitor Lewkowycz and Guy Gur-Ari. On the training dynamics of deep networks with l_2 regularization. In H. Larochelle, M.
+40	2012.09839	s2	Towards Resolving the Implicit Bias of Gradient Descent for Matrix Factorization: Greedy Low-Rank Le	Zhiyuan Li, Yuping Luo, and Kaifeng Lyu. Towards resolving the implicit bias of gradient descent for matrix factorizatio
+41	2110.06914	s2	What Happens after SGD Reaches Zero Loss? -A Mathematical Framework	Zhiyuan Li, Tianhao Wang, and Sanjeev Arora. What happens after SGD reaches zero loss? –a mathematical framework. In *In
+42	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+43	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International 
+44	1906.05890	s2	Gradient Descent Maximizes the Margin of Homogeneous Neural Networks	Kaifeng Lyu and Jian Li. Gradient descent maximizes the margin of homogeneous neural networks. In *International Confere
+45	2206.07085	s2	Understanding the Generalization Benefit of Normalization Layers: Sharpness Reduction	Kaifeng Lyu, Zhiyuan Li, and Sanjeev Arora. Understanding the generalization benefit of normalization layers: Sharpness 
+46	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	William Merrill, Nikolaos Tsilivis, and Aman Shukla. A tale of two circuits: Grokking as competition of sparse and dense
+47		—		Beren Millidge. Grokking. 2022. URL https://www.beren.io/2022-01-11-Grokking-Grokking/.
+48		s2	Foundations of Machine Learning	Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar. *Foundations of Machine Learning*. MIT press, 2018.
+49	2007.06738	s2	Implicit Bias in Deep Linear Classification: Initialization Scale vs Training Accuracy	Edward Moroshko, Blake E Woodworth, Suriya Gunasekar, Jason D Lee, Nati Srebro, and Daniel Soudry. Implicit bias in deep
+50	2311.07568	s2	Feature emergence via margin maximization: case studies in algebraic tasks	Depen Morwani, Benjamin L. Edelman, Costin-Andrei Oncescu, Rosie Zhao, and Sham M. Kakade. Feature emergence via margin 
+51	1905.07325	s2	Lexicographic and Depth-Sensitive Margins in Homogeneous and Non-Homogeneous Deep Models	Mor Shpigel Nacson, Suriya Gunasekar, Jason Lee, Nathan Srebro, and Daniel Soudry. Lexicographic and depth-sensitive mar
+52	1803.01905	s2	Convergence of Gradient Descent on Separable Data	Mor Shpigel Nacson, Jason Lee, Suriya Gunasekar, Pedro Henrique Pamplona Savarese, Nathan Srebro, and Daniel Soudry. Con
+53	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+54	2306.13253	id		Pascal Notsawo Jr, Hattie Zhou, Mohammad Pezeshki, Irina Rish, Guillaume Dumas, et al. Predicting grokking long before i
+55	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+56	2212.13881	id		Adityanarayanan Radhakrishnan, Daniel Beaglehole, Parthe Pandit, and Mikhail Belkin. Mechanism of feature learning in de
+57	2005.06398	s2	Implicit Regularization in Deep Learning May Not Be Explainable by Norms	Noam Razin and Nadav Cohen. Implicit regularization in deep learning may not be explainable by norms. In H. Larochelle, 
+58	1710.10345	s2	The Implicit Bias of Gradient Descent on Separable Data	Daniel Soudry, Elad Hoffer, Mor Shpigel Nacson, Suriya Gunasekar, and Nathan Srebro. The implicit bias of gradient desce
+59		s2	Feature selection and low test error in shallow low-rotation ReLU networks	Matus Telgarsky. Feature selection and low test error in shallow low-rotation reLU networks. In *The Eleventh Internatio
+60	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+61	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+62	2012.06244	s2	The Implicit Bias for Adaptive Optimization Algorithms on Homogeneous Neural Networks	Bohan Wang, Qi Meng, Wei Chen, and Tie-Yan Liu. The implicit bias for adaptive optimization algorithms on homogeneous ne
+63		s2	Characterization of the subdifferential of some matrix norms	G Alistair Watson. Characterization of the subdifferential of some matrix norms. *Linear algebra and its applications*, 
+64		s2	How Sharpness-Aware Minimization Minimizes Sharpness?	Kaiyue Wen, Tengyu Ma, and Zhiyuan Li. How sharpness-aware minimization minimizes sharpness? In *The Eleventh Internatio
+65	2002.09277	s2	Kernel and Rich Regimes in Overparametrized Models	Blake Woodworth, Suriya Gunasekar, Jason D Lee, Edward Moroshko, Pedro Savarese, Itay Golan, Daniel Soudry, and Nathan S
+66	2310.02541	s2	Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data	Zhiwei Xu, Yutong Wang, Spencer Frei, Gal Vardi, and Wei Hu. Benign overfitting and grokking in reLU networks for XOR cl
+67		s2	Gradient descent optimizes over-parameterized deep ReLU networks	Difan Zou, Yuan Cao, Dongruo Zhou, and Quanquan Gu. Gradient descent optimizes over-parameterized deep ReLU networks. *M
+68	2210.15435	id		Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent. *arXiv prepr

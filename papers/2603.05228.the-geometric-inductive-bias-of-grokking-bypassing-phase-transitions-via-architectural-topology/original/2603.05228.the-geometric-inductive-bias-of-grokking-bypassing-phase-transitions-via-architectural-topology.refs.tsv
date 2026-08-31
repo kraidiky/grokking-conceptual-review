@@ -1,0 +1,24 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2504.20752	s2	Grokking in the Wild: Data Augmentation for Real-World Multi-Hop Reasoning with Transformers	Grokking in the wild: data augmentation for real-world multi-hop reasoning with transformers. In Proceedings of ICML, Ci
+2		s2	Neural networks learn representation theory: Reverse engineering how networks perform group operatio	Neural networks learn representation theory: reverse engineering how networks perform group operations. In ICLR 2023 Wor
+3	2505.12909	s2	Sinusoidal Initialization, Time for a New Start	Sinusoidal initialization, time for a new start. In The Thirty-ninth Annual Conference on Neural Information Processing 
+4	2410.22269	s2	Fourier Head: Helping Large Language Models Learn Complex Probability Distributions	Fourier head: helping large language models learn complex probability distributions. In The Thirteenth International Con
+5	2511.23443	s2	Provable Benefits of Sinusoidal Activation for Modular Addition	Provable benefits of sinusoidal activation for modular addition. In The Thirteenth International Conference on Learning 
+6	2405.20233	id		Grokfast: accelerated grokking by amplifying slow gradients. arXiv preprint arXiv:2405.20233. Cited by: §1, §2, §2.
+7		s2	Construct-then-compress: Geometric dynamics of grokking in transformers	Construct-then-compress: geometric dynamics of grokking in transformers. Note: Published on OpenReview (Originally submi
+8	2410.01131	s2	nGPT: Normalized Transformer with Representation Learning on the Hypersphere	NGPT: normalized transformer with representation learning on the hypersphere. External Links: 2410.01131, Link Cited by:
+9	2602.01992	s2	Emergent Analogical Reasoning in Transformers	Emergent analogical reasoning in transformers. External Links: 2602.01992, Link Cited by: §2.
+10	2311.07568	s2	Feature emergence via margin maximization: case studies in algebraic tasks	Feature emergence via margin maximization: case studies in algebraic tasks. **[p. 20]** In The Twelfth International Con
+11	2511.01938	id		The geometry of grokking: norm minimization on the zero-loss manifold. arXiv preprint arXiv:2511.01938. Cited by: §2.
+12	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Progress measures for grokking via mechanistic interpretability. In The Eleventh International Conference on Learning Re
+13	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Grokking: generalization beyond overfitting on small algorithmic datasets. In ICLR Workshop on Mathematical Reasoning, C
+14	2501.04697	s2	Grokking at the Edge of Numerical Stability	Grokking at the edge of numerical stability. In The Thirteenth International Conference on Learning Representations, Ext
+15	2602.06702	id		Explaining grokking in transformers through the lens of inductive bias. arXiv preprint arXiv:2602.06702. Cited by: §2.
+16		—		Grokking group multiplication with cosets. External Links: 2312.06581 Cited by: §1, §2, §3.5, §5.1, §5.1.
+17	2508.13773	id		PENGUIN: enhancing transformer with periodic-nested group attention for long-term time series forecasting. arXiv preprin
+18		—		The bitter lesson. Incomplete Ideas (blog) 13 (1), pp. 38. External Links: Link Cited by: §5.3.
+19		—		The slingshot mechanism: an empirical study of adaptive optimizers and the \emph{grokking phenomenon}. In Has it Trained
+20	2603.13331	id		The norm-separation delay law of grokking: a first-principles theory of delayed generalization. arXiv preprint arXiv:260
+21		s2	Delays in generalization match delayed changes in representational geometry	Delays in generalization match delayed changes in representational geometry. In UniReps: 2nd Edition of the Workshop on 
+22	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	The clock and the pizza: two stories in mechanistic explanation of neural networks. In Advances in Neural Information Pr
+23	2406.03445	s2	Pre-trained Large Language Models Use Fourier Features to Compute Addition	Pre-trained large language models use fourier features to compute addition. In The Thirty-eighth Annual Conference on Ne

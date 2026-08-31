@@ -1,0 +1,24 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	id		B. Barak, B. L. Edelman, S. Goel, S. Kakade, E. Malach, and C. Zhang (2022) Hidden progress in deep learning: SGD learns
+2	2103.03098	id		X. Bouthillier, P. Delaunay, M. Bronzi, A. Trofimov, B. Nichyporuk, J. Szeto, N. Mohammadi Sepahvand, E. Raff, K. Madan,
+3	2302.03025	id		B. Chughtai, L. Chan, and N. Nanda (2023) A toy model of universality: reverse engineering how networks learn group oper
+4		—		CompactAI (2026) Glimmer-1: an 11.9K-parameter Llama-style transformer. Glint Research. External Links: Link Cited by: §
+5	2406.03495	id		D. Doshi, T. He, A. Das, and A. Gromov (2024) Grokking modular polynomials. arXiv preprint arXiv:2406.03495. Cited by: §
+6	2101.03961	s2	Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity	W. Fedus, B. Zoph, and N. Shazeer (2022) Switch transformers: scaling to trillion parameter models with simple and effic
+7		s2	What every computer scientist should know about floating-point arithmetic	D. Goldberg (1991) What every computer scientist should know about floating-point arithmetic. ACM Computing Surveys 23 (
+8	2301.02679	id		A. Gromov (2023) Grokking modular arithmetic. arXiv preprint arXiv:2301.02679. Cited by: §2.
+9	2310.06110	id		T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan (2024) Grokking as the transition from lazy to rich training dyna
+10	2205.10343	id		Z. Liu, O. Kitouni, N. Nolte, E. J. Michaud, M. Tegmark, and M. **[p. 14]** Williams (2022) Towards understanding grokki
+11	2210.01117	id		Z. Liu, E. J. Michaud, and M. Tegmark (2023) Omnigrok: grokking beyond algorithmic data. In International Conference on 
+12	2303.11873	id		W. Merrill, N. Tsilivis, and A. Shukla (2023) A tale of two circuits: grokking as competition of sparse and dense subnet
+13	2301.05217	id		N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023) Progress measures for grokking via mechanistic interp
+14	2306.13253	id		P. Jr. T. Notsawo, H. Zhou, M. Pezeshki, I. Rish, and G. Dumas (2023) Predicting grokking long before it happens: a look
+15	2109.08203	id		D. Picard (2021) torch.manual_seed(3407) is all you need: on the influence of random seeds in deep learning architecture
+16	2201.02177	id		A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022) Grokking: generalization beyond overfitting on small 
+17	2501.04697	id		L. Prieto, M. Barsbey, P. A. M. Mediano, and T. Birdal (2025) Grokking at the edge of numerical stability. In Internatio
+18	2304.15004	id		R. Schaeffer, B. Miranda, and S. Koyejo (2023) Are emergent abilities of large language models a mirage?. In Advances in
+19	1701.06538	id		N. Shazeer, A. Mirhoseini, K. Maziarz, A. Davis, Q. Le, G. Hinton, and J. Dean (2017) Outrageously large neural networks
+20	2103.04514	s2	Nondeterminism and Instability in Neural Network Optimization	C. Summers and M. J. Dinneen (2021) Nondeterminism and instability in neural network optimization. In Proceedings of the
+21	2206.04817	id		V. Thilak, E. Littwin, S. Zhai, O. Saremi, R. Paiss, and J. Susskind (2022) The slingshot mechanism: an empirical study 
+22	2309.02390	id		V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar (2023) Explaining grokking through circuit efficiency. arXiv prepr
+23	2306.17844	id		Z. Zhong, Z. Liu, M. Tegmark, and J. Andreas (2023) The clock and the pizza: two stories in mechanistic explanation of n

@@ -1,0 +1,38 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2206.06232	s2	Towards Understanding Sharpness-Aware Minimization	Andriushchenko, M. and Flammarion, N. Towards understanding sharpness-aware minimization. In *International Conference o
+2		s2	A Spline Theory of Deep Networks	Balestriero, R. and Baraniuk, R. A spline theory of deep networks. In *Proc. ICML*, pp. 374–383, 2018.
+3	2209.14778	id		Balestriero, R. and Baraniuk, R. G. Batch normalization explained. *arXiv preprint arXiv:2209.14778*, 2022.
+4	2211.01340	s2	Police: Provably Optimal Linear Constraint Enforcement For Deep Neural Networks	Balestriero, R. and LeCun, Y. Police: Provably optimal linear constraint enforcement for deep neural networks. In *ICASS
+5	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Barak, B., Edelman, B., Goel, S., Kakade, S., Malach, E., and Zhang, C. Hidden progress in deep learning: Sgd learns par
+6	1703.02930	s2	Nearly-tight VC-dimension and Pseudodimension Bounds for Piecewise Linear Neural Networks	Bartlett, P. L., Harvey, N., Liaw, C., and Mehrabian, A. Nearly-tight vc-dimension and pseudodimension bounds for piecew
+7	2003.01690	s2	Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks	Croce, F. and Hein, M. Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks.
+8	2202.11749	s2	Are All Linear Regions Created Equal?	Gamba, M., Chmielewski-Anders, A., Sullivan, J., Azizpour, H., and Bjorkman, M. Are all linear regions created equal? In
+9		s2	Dropout vs. batch normalization: an empirical study of their impact to deep learning	Garbin, C., Zhu, X., and Marques, O. Dropout vs. batch normalization: an empirical study of their impact to deep learnin
+10	1901.09021	id		Hanin, B. and Rolnick, D. Complexity of linear regions in deep networks. *arXiv preprint arXiv:1901.09021*, 2019.
+11	2203.01993	s2	Polarity Sampling: Quality and Diversity Control of Pre-Trained Generative Networks via Singular Val	Humayun, A. I., Balestriero, R., and Baraniuk, R. Polarity sampling: Quality and diversity control of pre-trained genera
+12	2302.12828	s2	SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries	Humayun, A. I., Balestriero, R., Balakrishnan, G., and Baraniuk, R. G. Splinecam: Exact visualization and characterizati
+13	2302.12828	s2	SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries	Humayun, A. I., Balestriero, R., Balakrishnan, G., and Baraniuk, R. G. Splinecam: Exact visualization and characterizati
+14		s2	Provable Instance Specific Robustness via Linear Constraints	Humayun, A. I., Casco-Rodriguez, J., Balestriero, R., and Baraniuk, R. Provable instance specific robustness via linear 
+15	1905.02175	s2	Adversarial Examples Are Not Bugs, They Are Features	Ilyas, A., Santurkar, S., Tsipras, D., Engstrom, L., Tran, B., and Madry, A. Adversarial examples are not bugs, they are
+16	1502.03167	id		Ioffe, S. and Szegedy, C. Batch normalization: Accelerating deep network training by reducing internal covariate shift. 
+17	2106.08365	s2	Test Sample Accuracy Scales with Training Sample Density in Neural Networks	Ji, X., Pascanu, R., Hjelm, R. D., Lakshminarayanan, B., and Vedaldi, A. Test sample accuracy scales with training sampl
+18	1903.01997	id		Kubo, M., Banno, R., Manabe, H., and Minoji, M. Implicit regularization in over-parameterized neural networks. *arXiv pr
+19	2205.13863	s2	Why Robust Generalization in Deep Learning is Difficult: Perspective of Expressive Power	Li, B., Jin, J., Zhong, H., Hopcroft, J., and Wang, L. Why robust generalization in deep learning is difficult: Perspect
+20	2210.01117	id		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.01117*, 
+21	1706.06083	id		Madry, A., Makelov, A., Schmidt, L., Tsipras, D., and Vladu, A. Towards deep learning models resistant to **[p. 11]** ad
+22	1402.1869	s2	On the Number of Linear Regions of Deep Neural Networks	Montufar, G. F., Pascanu, R., Cho, K., and Bengio, Y. On the number of linear regions of deep neural networks. In *NeurI
+23	2301.05217	id		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+24	1802.08760	id		Novak, R., Bahri, Y., Abolafia, D. A., Pennington, J., and Sohl-Dickstein, J. Sensitivity and generalization in neural n
+25		s2	Zoom In: An Introduction to Circuits	Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M., and Carter, S. Zoom in: An introduction to circuits. *Distil
+26	2008.08186	s2	Prevalence of neural collapse during the terminal phase of deep learning training	Papyan, V., Han, X., and Donoho, D. L. Prevalence of neural collapse during the terminal phase of deep learning training
+27	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+28	1907.02610	s2	Adversarial Robustness through Local Linearization	Qin, C., Martens, J., Gowal, S., Krishnan, D., Dvijotham, K., Fawzi, A., De, S., Stanforth, R., and Kohli, P. Adversaria
+29	1606.05336	s2	On the Expressive Power of Deep Neural Networks	Raghu, M., Poole, B., Kleinberg, J., Ganguli, S., and Dickstein, J. S. On the expressive power of deep neural networks. 
+30	2205.14055	s2	A Blessing of Dimensionality in Membership Inference through Regularization	Tan, J., LeJeune, D., Mason, B., Javadi, H., and Baraniuk, R. G. A blessing of dimensionality in membership inference th
+31		—		Toth, C. D., O’Rourke, J., and Goodman, J. E. *Handbook of discrete and computational geometry*. CRC press, 2017.
+32	1805.12152	id		Tsipras, D., Santurkar, S., Engstrom, L., Turner, A., and Madry, A. Robustness may be at odds with accuracy. *arXiv prep
+33	2309.02390	id		Varma, V., Shah, R., Kenton, Z., Kramár, J., and Kumar, R. Explaining grokking through circuit efficiency. *arXiv prepri
+34	1005.2243	s2	Robustness and generalization	Xu, H. and Mannor, S. Robustness and generalization. *Machine learning*, 86:391–423, 2012.
+35	1905.05968	s2	Comparing Wiener complexity with eccentric complexity	Xu, K., Ilić, A., Iršič, V., Klavžar, S., and Li, H. Comparing wiener complexity with eccentric complexity. *Discrete Ap
+36	2310.02541	id		Xu, Z., Wang, Y., Frei, S., Vardi, G., and Hu, W. Benign overfitting and grokking in relu networks for xor cluster data.
+37	2101.02338	id		You, H., Balestriero, R., Lu, Z., Kou, Y., Shi, H., Zhang, S., Wu, S., Lin, Y., and Baraniuk, R. Max-affine spline insig

@@ -1,0 +1,35 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2211.15661	s2	What learning algorithm is in-context learning? Investigations with linear models	Akyurek et al. (2023) E. Akyurek, D. Schuurmans, J. Andreas, T. Ma, and D. Zhou What learning algorithm is in-context le
+2	2306.04637	s2	Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection	Bai et al. (2023) Y. Bai, F. Chen, H. Wang, C. Xiong, and S. Mei Transformers as Statisticians: Provable In-Context Lear
+3	1505.05424	s2	Weight Uncertainty in Neural Networks	Blundell et al. (2015) C. Blundell, J. Cornebise, K. Kavukcuoglu, and D. Wierstra Weight Uncertainty in Neural Networks.
+4	2005.14165	s2	Language Models are Few-Shot Learners	Brown et al. (2020) T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sas
+5	2408.08944	s2	Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition	Clauw et al. (2024) K. Clauw, S. Stramaglia, and D. Marinazzo Information-Theoretic Progress Measures reveal Grokking is
+6	2106.14806	s2	Laplace Redux - Effortless Bayesian Deep Learning	Daxberger et al. (2021) E. Daxberger, A. Kristiadi, A. Immer, R. Eschenhagen, M. Bauer, and P. Hennig Laplace Redux - Ef
+7	1506.02142	s2	Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning	Gal & Ghahramani (2016) Y. Gal and Z. Ghahramani Dropout as a Bayesian Approximation: Representing Model Uncertainty in 
+8	2405.12755	s2	Progress Measures for Grokking on Real-world Tasks	Golechha (2024) S. Golechha Progress Measures for Grokking on Real-world Tasks. In ICML 2024 Workshop on High-dimensiona
+9		s2	Practical Variational Inference for Neural Networks	Graves (2011) A. Graves Practical Variational Inference for Neural Networks. In Advances in Neural Information Processin
+10	2406.02550	s2	Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks	He et al. (2024) T. He, D. Doshi, A. Das, and A. Gromov Learning to grok: Emergence of in-context learning and skill com
+11	1910.09457	s2	Aleatoric and epistemic uncertainty in machine learning: an introduction to concepts and methods	Hüllermeier & Waegeman (2021) E. **[p. 11]** Hüllermeier and W. Waegeman Aleatoric and epistemic uncertainty in machine 
+12	1806.04854	s2	Fast and Scalable Bayesian Deep Learning by Weight-Perturbation in Adam	Khan et al. (2018) M. E. Khan, D. Nielsen, V. Tangkaratt, W. Lin, Y. Gal, and A. Srivastava Fast and Scalable Bayesian D
+13	2505.22655	s2	Position: Uncertainty Quantification Needs Reassessment for Large-language Model Agents	Kirchhof et al. (2025) M. Kirchhof, G. Kasneci, and E. Kasneci Position: Uncertainty Quantification Needs Reassessment f
+14	1612.01474	s2	Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles	Lakshminarayanan et al. (2017) B. Lakshminarayanan, A. Pritzel, and C. Blundell Simple and Scalable Predictive Uncertain
+15	2205.15902	s2	Variational inference via Wasserstein gradient flows	Lambert et al. (2022) M. Lambert, S. Chewi, F. Bach, S. Bonnabel, and P. Rigollet Variational inference via Wasserstein 
+16	2310.16441	s2	Grokking in Linear Estimators - A Solvable Model that Groks without Understanding	Levi et al. (2024) N. I. Levi, A. Beck, and Y. Bar-Sinai Grokking in Linear Estimators – A Solvable Model that Groks wit
+17	2402.10189	s2	Uncertainty Quantification for In-Context Learning of Large Language Models	Ling et al. (2024) C. Ling, X. Zhao, X. Zhang, W. Cheng, Y. Liu, Y. Sun, M. Oishi, T. Osaki, K. Matsuda, J. Ji, G. Bai, 
+18	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu et al. (2022) Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams Towards understanding grokkin
+19	1902.02476	s2	A Simple Baseline for Bayesian Uncertainty in Deep Learning	Maddox et al. (2019) W. J. Maddox, P. Izmailov, T. Garipov, D. P. Vetrov, and A. G. Wilson A simple baseline for Bayesia
+20	2407.12332	s2	Why Do You Grok? A Theoretical Analysis of Grokking Modular Addition	Mohamadi et al. (2024) M. A. Mohamadi, Z. Li, L. Wu, and D. J. Sutherland Why Do You Grok? A Theoretical Analysis of Gro
+21	2402.19460	s2	Benchmarking Uncertainty Disentanglement: Specialized Uncertainties for Specialized Tasks	Mucsányi et al. (2024) B. Mucsányi, M. Kirchhof, and S. J. Oh Benchmarking uncertainty disentanglement: Specialized unce
+22	2402.00809	s2	Position: Bayesian Deep Learning is Needed in the Age of Large-Scale AI	Papamarkou et al. (2024) T. Papamarkou, M. Skoularidou, K. Palla, L. Aitchison, J. Arbel, D. Dunson, M. Filippone, V. Fo
+23	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Power et al. (2022) A. Power, Y. Burda, H. Edwards, I. **[p. 12]** Babuschkin, and V. Misra Grokking: Generalization Bey
+24		s2	A Scalable Laplace Approximation for Neural Networks	Ritter et al. (2018) H. Ritter, A. Botev, and D. Barber A scalable Laplace approximation for neural networks. In Interna
+25	2506.09648	id		Rosso et al. (2025) M. Rosso, S. Rossi, G. Franzese, M. Heinonen, and M. Filippone Scaling Laws for Uncertainty in Deep 
+26	2402.17641	s2	Variational Learning is Effective for Large Deep Networks	Shen et al. (2024) Y. Shen, N. Daheim, B. Cong, P. Nickl, G. M. Marconi, B. C. E. M. Raoul, R. Yokota, I. Gurevych, D. C
+27	2104.09864	s2	RoFormer: Enhanced Transformer with Rotary Position Embedding	Su et al. (2024) J. Su, M. Ahmed, Y. Lu, S. Pan, W. Bo, and Y. Liu Roformer: Enhanced transformer with rotary position e
+28	2212.07677	s2	Transformers learn in-context by gradient descent	Von Oswald et al. (2023) J. Von Oswald, E. Niklasson, E. Randazzo, J. Sacramento, A. Mordvintsev, A. Zhmoginov, and M. V
+29	2505.21003	s2	Uncertainty Unveiled: Can Exposure to More In-context Examples Mitigate Uncertainty for Large Langua	Wang et al. (2025) Y. Wang, Y. Sheng, L. Li, and D. D. Zeng Uncertainty Unveiled: Can Exposure to More In-context Exampl
+30	2209.03302	s2	Quantifying Aleatoric and Epistemic Uncertainty in Machine Learning: Are Conditional Entropy and Mut	Wimmer et al. (2023) L. Wimmer, Y. Sale, P. Hofman, B. Bischl, and E. Hüllermeier Quantifying aleatoric and epistemic un
+31	2111.02080	s2	An Explanation of In-context Learning as Implicit Bayesian Inference	Xie et al. (2022) S. M. Xie, A. Raghunathan, P. Liang, and T. Ma An Explanation of In-context Learning as Implicit Bayes
+32	2512.04268	s2	The Initialization Determines Whether In-Context Learning Is Gradient Descent	Xie et al. (2025) S. Xie, R. Yuan, S. Rossi, and T. Hannagan The Initialization Determines Whether In-Context Learning I
+33	2312.04021	s2	A Study on the Calibration of In-context Learning	Zhang et al. (2024) H. Zhang, Y. Zhang, Y. Yu, D. Madeka, D. Foster, E. Xing, H. Lakkaraju, and S. Kakade A Study on the
+34	2305.19420	s2	What and How does In-Context Learning Learn? Bayesian Model Averaging, Parameterization, and General	Zhang et al. (2025) Y. Zhang, F. Zhang, Z. Yang, and Z. Wang What and How Does In-Context Learning Learn? Bayesian Model

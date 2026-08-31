@@ -1,0 +1,49 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1711.08856	id		Achille, A., Rovere, M., and Soatto, S. Critical learning periods in deep networks. In *International Conference on Lear
+2	2304.01373	id		Biderman, S., Schoelkopf, H., Anthony, Q., Bradley, H., O’Brien, K., Hallahan, E., Khan, M. A., Purohit, S., Prashanth, 
+3		s2	Large Language Models in Machine Translation	Brants, T., Popat, A. C., Xu, P., Och, F. J., and Dean, J. Large language models in machine translation. In *Proceedings
+4	2110.02406	s2	Word Acquisition in Neural Language Models	Chang, T. A. and Bergen, B. K. Word acquisition in neural language models. *Transactions of the Association for Computat
+5	2308.15419	s2	Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stabili	Chang, T. A., Tu, Z., and Bergen, B. K. Characterizing learning curves during language model pre-training: Learning, for
+6	2309.07311	id		Chen, A., Shwartz-Ziv, R., Cho, K., Leavitt, M. L., and Saphra, N. Sudden drops in the loss: Syntax acquisition, phase t
+7	2109.06096	s2	The Grammar-Learning Trajectories of Neural Language Models	Choshen, L., Hacohen, G., Weinshall, D., and Abend, O. The grammar-learning trajectories of neural language models. In *
+8	2504.13161	id		Diao, S., Yang, Y., Fu, Y., Dong, X., Su, D., Kliegl, M., Chen, Z., Belcak, P., Suhara, Y., Yin, H., Patwary, M., Lin, Y
+9	2305.07759	id		Eldan, R. and Li, Y. Tinystories: How small can language models be and still speak coherent english? *arXiv preprint arX
+10		s2	A mathematical framework for transformer circuits	Elhage, N., Nanda, N., Olsson, C., Henighan, T., Joseph, N., Mann, B., Askell, A., Bai, Y., Chen, A., Conerly, T., et al
+11	2408.00118	id		Gemma Team, Rivière, M., Pathak, S., Sessa, P. G., Hardin, C., Bhupatiraju, S., Hussenot, L., Mesnard, T., Shahriari, B.
+12	2402.00838	id		Groeneveld, D., Beltagy, I., Walsh, P., Bhagia, A., Kinney, R., Tafjord, O., Jha, A. H., Ivison, H., Magnusson, I., Wang
+13	2203.15556	id		Hoffmann, J., Borgeaud, S., Mensch, A., Buchatskaya, E., Cai, T., Rutherford, E., de Las Casas, D., Hendricks, L. A., We
+14	2402.02364	id		Hoogland, J., Wang, G., Farrugia-Roberts, M., Carroll, L., Wei, S., and Murfet, D. The developmental landscape of in-con
+15	2207.00099	id		Jagielski, M., Thakkar, O., Tramèr, F., Ippolito, D., Lee, K., Carlini, N., Wallace, E., Song, S., Thakurta, A., Paperno
+16		s2	Muon: An optimizer for hidden layers in neural networks	Jordan, K., Jin, Y., Boza, V., You, J., Cesista, F., Newhouse, L., and Bernstein, J. Muon: An optimizer for hidden layer
+17	2211.08411	s2	Large Language Models Struggle to Learn Long-Tail Knowledge	Kandpal, N., Deng, H., Roberts, A., Wallace, E., and Raffel, C. Large language models struggle to learn long-tail knowle
+18		—		Karpathy, A. nanochat. https://github.com/karpathy/nanochat, 2025.
+19	1612.00796	id		Kirkpatrick, J., Pascanu, R., Rabinowitz, N., Veness, J., Desjardins, G., Rusu, A. A., Milan, K., Quan, J., Ramalho, T.,
+20		s2	Sparse crosscoders for cross-layer features and model diffing	Lindsey, J., Templeton, A., Marcus, J., Conerly, T., Batson, J., and Olah, C. Sparse crosscoders for cross-layer feature
+21	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N., Michaud, E. J., Tegmark, M., and Williams, M. Towards understanding grokking: An effect
+22	2210.01117	id		Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *International Conference on Lea
+23		s2	Decoupled Weight Decay Regularization	Loshchilov, I. and Hutter, F. Decoupled weight decay regularization. In *International Conference on Learning Representa
+24	1807.11714	s2	Gender Bias in Neural Natural Language Processing	Lu, K., Mardziel, P., Wu, F., Amancharla, P., and Datta, A. Gender bias in neural natural language processing. In *Logic
+25	2202.05262	s2	Locating and Editing Factual Associations in GPT	Meng, K., Bau, D., Andonian, A., and Belinkov, Y. Locating and editing factual associations in GPT. In *Advances in Neur
+26	2403.19827	id		Misra, K. and Mahowald, K. Language models learn rare phenomena from less rare phenomena: The case of the missing AANNs.
+27	2305.16264	id		Muennighoff, N., Rush, A. M., Barak, B., Le Scao, T., Piktus, A., Tazi, N., Pyysalo, S., Wolf, T., and Raffel, C. Scalin
+28	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Murty, S., Sharma, P., Andreas, J., and Manning, C. Grokking of hierarchical structure in vanilla transformers. In *Proc
+29	2301.05217	id		Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking via mechanistic interpre
+30	2209.11895	id		Olsson, C., Elhage, N., Nanda, N., Joseph, N., DasSarma, N., Henighan, T., Mann, B., Askell, A., Bai, Y., Chen, A., et a
+31	2405.15750	s2	Filtered Corpus Training (FiCT) Shows that Language Models Can Generalize from Indirect Evidence	Patil, A., Jumelet, J., Chiu, Y. Y., Lapastora, A., Shen, P., Wang, L., Willrich, C., and Steinert-Threlkeld, S. Filtere
+32	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+33	2304.15004	id		Schaeffer, R., Miranda, B., and Koyejo, S. Are emergent abilities of large language models a mirage? In *Advances in Neu
+34	1508.07909	s2	Neural Machine Translation of Rare Words with Subword Units	Sennrich, R., Haddow, B., and Birch, A. Neural machine translation of rare words with subword units. In *Proceedings of 
+35	2311.08360	id		Singh, A. K., Chan, S. C., Moskovitz, T., Grant, E., Saxe, A. M., and Hill, F. The transient nature of emergent in-conte
+36	2205.10770	id		Tirumala, K., Markosyan, A. H., Zettlemoyer, L., and Aghajanyan, A. Memorization without overfitting: Analyzing the trai
+37	1812.05159	id		Toneva, M., Sordoni, A., des Combes, R. T., Trischler, A., Bengio, Y., and Gordon, G. J. An empirical study of example f
+38	2309.02390	id		Varma, V., Shah, R., Kenton, Z., Kramár, J., and Kumar, R. Explaining grokking through circuit efficiency. *arXiv prepri
+39	1706.03762	s2	Attention is All you Need	Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., and Polosukhin, I. Attention i
+40		s2	Investigating Gender Bias in Language Models Using Causal Mediation Analysis	Vig, J., Gehrmann, S., Belinkov, Y., Qian, S., Nevo, D., Singer, Y., and Shieber, S. Investigating gender bias in langua
+41	2410.02984	id		Wang, G., Hoogland, J., van Wingerden, S., Furman, Z., and Murfet, D. Differentiation and specialization of attention he
+42	1912.00582	id		Warstadt, A., Parrish, A., Liu, H., Mohananey, A., Peng, W., Wang, S.-F., and Bowman, S. R. Blimp: The benchmark of ling
+43		s2	Learning which features matter: RoBERTa acquires a preference for linguistic generalizations (eventu	Warstadt, A., Zhang, Y., Li, X., Liu, H., and Bowman, S. R. Learning which features matter: RoBERTa acquires a preferenc
+44	2109.07020	s2	Frequency Effects on Syntactic Rule Learning in Transformers	Wei, J., Garrette, D., Linzen, T., and Pavlick, E. Frequency effects on syntactic rule learning in transformers. In *Pro
+45	2206.07682	id		Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi
+46	2305.10429	id		Xie, S. M., Pham, H., Dong, X., Du, N., Liu, H., Lu, Y., Liang, P., Le, Q. V., Ma, T., and Yu, A. W. Doremi: Optimizing 
+47	1804.06876	s2	Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods	Zhao, J., Wang, T., Yatskar, M., Ordonez, V., and Chang, K.-W. Gender bias in coreference resolution: Evaluation and deb
+48	2503.21676	id		Zucchet, N., Bornschein, J., Chan, S., Lampinen, A., Pascanu, R., and De, S. How do language models learn facts? dynamic

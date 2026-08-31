@@ -1,0 +1,28 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2504.20752	s2	Grokking in the Wild: Data Augmentation for Real-World Multi-Hop Reasoning with Transformers	Grokking in the wild: data augmentation for real-world multi-hop reasoning with transformers. In Forty-second Internatio
+2		—		Learning modular exponentiation with transformers. External Links: 2506.23679, Link Cited by: §1.
+3	2505.15624	s2	Mechanistic Insights into Grokking from the Embedding Layer	Mechanistic insights into grokking from the embedding layer. External Links: 2505.15624, Link Cited by: §1.
+4	2411.16353	s2	Lessons from Studying Two-Hop Latent Reasoning	Lessons from studying two-hop latent reasoning. External Links: 2411.16353, Link Cited by: §1.
+5	2303.08112	s2	Eliciting Latent Predictions from Transformers with the Tuned Lens	Eliciting latent predictions from transformers with the tuned lens. External Links: 2303.08112, Link Cited by: §3.
+6	2402.11917	s2	A Mechanistic Analysis of a Transformer Trained on a Symbolic Multi-Step Reasoning Task	A mechanistic analysis of a transformer trained on a symbolic multi-step reasoning task. External Links: 2402.11917, Lin
+7		—		Inducing grokking with distribution shifts. In 2025 IEEE 37th International Conference on Tools with Artificial Intellig
+8		—		To grok or not to grok: disentangling generalization and memorization on corrupted algorithmic datasets. External Links:
+9	2402.16726	s2	Towards Empirical Interpretation of Internal Circuits and Properties in Grokked Transformers on Modu	Towards empirical interpretation of internal circuits and properties in grokked transformers on modular polynomials. Tra
+10	2504.03162	s2	Beyond Progress Measures: Theoretical Insights into the Mechanism of Grokking	Beyond progress measures: theoretical insights into the mechanism of grokking. External Links: 2504.03162, Link Cited by
+11	2502.13913	s2	How Do LLMs Perform Two-Hop Reasoning in Context?	How do llms perform two-hop reasoning in context?. External Links: 2502.13913, Link Cited by: §2.
+12	2402.15175	s2	Unified View of Grokking, Double Descent and Emergent Abilities: A Perspective from Circuits Competi	Unified view of grokking, double descent and emergent abilities: a perspective from circuits competition. External Links
+13		—		Less is more: recursive reasoning with tiny networks. External Links: 2510.04871, Link Cited by: §1.
+14	2405.20233	s2	Grokfast: Accelerated Grokking by Amplifying Slow Gradients	Grokfast: accelerated grokking by amplifying slow gradients. External Links: 2405.20233, Link Cited by: §1.
+15		—		Identity bridge: enabling implicit reasoning via shared latent memory. External Links: 2509.24653, Link Cited by: §1.
+16		—		Language models “grok” to copy. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Asso
+17	2507.20057	id		What can grokking teach us about learning under nonstationarity?. arXiv preprint arXiv:2507.20057. Cited by: §1.
+18	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	A tale of two circuits: grokking as competition of sparse and dense subnetworks. In ICLR 2023 Workshop on Mathematical a
+19	2305.18741	s2	Grokking of Hierarchical Structure in Vanilla Transformers	Grokking of hierarchical structure in vanilla transformers. CoRR abs/2305.18741. External Links: Link, Document, 2305.18
+20	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Progress measures for grokking via mechanistic interpretability. External Links: 2301.05217, Link Cited by: §1.
+21	2405.16658	s2	Acceleration of Grokking in Learning Arithmetic Operations via Kolmogorov-Arnold Representation	Acceleration of grokking in learning arithmetic operations via kolmogorov-arnold representation. External Links: 2405.16
+22	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Grokking: generalization beyond overfitting on small algorithmic datasets. External Links: 2201.02177, Link Cited by: §1
+23		—		Explaining grokking through circuit efficiency. External Links: 2309.02390, Link Cited by: §1.
+24		s2	Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization	Grokking of implicit reasoning in transformers: a mechanistic journey to the edge of generalization. In Advances in Neur
+25	2504.13292	s2	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	Let me grok for you: accelerating grokking via embedding transfer from a weaker model. In The Thirteenth International C
+26	2505.23653	s2	How do Transformers Learn Implicit Reasoning?	How do transformers learn implicit reasoning?. In The Thirty-ninth Annual Conference on Neural Information Processing Sy
+27	2504.17243	s2	NeuralGrok: Accelerate Grokking by Neural Gradient Transformation	NeuralGrok: accelerate grokking by neural gradient transformation. External Links: 2504.17243, Link Cited by: §1.

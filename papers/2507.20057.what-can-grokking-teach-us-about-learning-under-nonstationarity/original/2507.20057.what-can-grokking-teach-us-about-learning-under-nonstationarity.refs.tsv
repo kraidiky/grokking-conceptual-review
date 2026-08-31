@@ -1,0 +1,62 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2303.07507	s2	Loss of Plasticity in Continual Deep Reinforcement Learning	Zaheer Abbas, Rosie Zhao, Joseph Modayil, Adam White, and Marlos C Machado. Loss of plasticity in continual deep reinfor
+2	1711.08856	id		Alessandro Achille, Matteo Rovere, and Stefano Soatto. Critical learning periods in deep neural networks. *arXiv preprin
+3	2210.04860	id		Atish Agarwala, Fabian Pedregosa, and Jeffrey Pennington. Second-order regression models exhibit progressive sharpening 
+4	1812.03981	s2	Theoretical Analysis of Auto Rate-Tuning by Batch Normalization	Sanjeev Arora, Zhiyuan Li, and Kaifeng Lyu. Theoretical analysis of auto rate-tuning by batch normalization. In *Interna
+5		s2	On Warm-Starting Neural Network Training	Jordan Ash and Ryan P Adams. On warm-starting neural network training. *Advances in Neural Information Processing System
+6	2009.11162	id		David GT Barrett and Benoit Dherin. Implicit gradient regularization. *arXiv preprint arXiv:2009.11162*, 2020.
+7		s2	Unveiling grokking: Analyzing feature learning dynamics during training	Javier Sanguino Bautiste, Gregor Bachmann, Bobby He, Lorenzo Noci, and Thomas Hofmann. Unveiling grokking: Analyzing fea
+8	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal. Reconciling modern machine-learning practice and the classical
+9	1207.4708	s2	The Arcade Learning Environment: An Evaluation Platform for General Agents	Marc G Bellemare, Yavar Naddaf, Joel Veness, and Michael Bowling. The arcade learning environment: An evaluation platfor
+10	2106.00042	id		Tudor Berariu, Wojciech Czarnecki, Soham De, Jorg Bornschein, Samuel Smith, Razvan Pascanu, and Claudia Clopath. A study
+11	2103.00065	id		Jeremy M Cohen, Simran Kaur, Yuanzhi Li, J Zico Kolter, and Ameet Talwalkar. Gradient descent on neural networks typical
+12	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+13	2108.06325	id		Shibhansh Dohare, A Rupam Mahmood, and Richard S Sutton. Continual backprop: Stochastic gradient descent with persistent
+14		s2	Loss of plasticity in deep continual learning	Shibhansh Dohare, Juan Hernandez-Garcia, Parash Rahman, Richard Sutton, and A Rupam Mahmood. Loss of plasticity in deep 
+15		s2	Loss of plasticity in deep continual learning	Shibhansh Dohare, J Fernando Hernandez-Garcia, Qingfeng Lan, Parash Rahman, A Rupam Mahmood, and Richard S Sutton. Loss 
+16	2407.01704	s2	Weight Clipping for Deep Continual and Reinforcement Learning	Mohamed Elsayed, Qingfeng Lan, Clare Lyle, and A Rupam Mahmood. Weight clipping for deep continual and reinforcement lea
+17	2407.05872	s2	Scaling Exponents Across Parameterizations and Optimizers	Katie E Everett, Lechao Xiao, Mitchell Wortsman, Alexander A Alemi, Roman Novak, Peter J Liu, Izzeddin Gur, Jascha Sohl-
+18	1807.02581	s2	The Goldilocks zone: Towards better understanding of neural network loss landscapes	Stanislav Fort and Adam Scherlis. The goldilocks zone: Towards better understanding of neural network loss landscapes. I
+19	2007.05520	s2	Representations for Stable Off-Policy Reinforcement Learning	Dibya Ghosh and Marc G Bellemare. Representations for stable off-policy reinforcement learning. In *International Confer
+20		s2	Shifting Regret, Mirror Descent, and Matrices	András György and Csaba Szepesvári. Shifting regret, mirror descent, and matrices. In *Proceedings of The 33rd Internati
+21	1502.01852	s2	Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification	Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Delving deep into rectifiers: Surpassing human-level performance 
+22	2007.10099	s2	Early Stopping in Deep Networks: Double Descent and How to Eliminate it	Reinhard Heckel and Fatih Furkan Yilmaz. Early stopping in deep networks: Double descent and how to eliminate it. In *In
+23	1710.02298	s2	Rainbow: Combining Improvements in Deep Reinforcement Learning	Matteo Hessel, Joseph Modayil, Hado Van Hasselt, Tom Schaul, Georg Ostrovski, Will Dabney, Dan Horgan, Bilal Piot, Moham
+24	2006.05826	s2	Transient Non-stationarity and Generalisation in Deep Reinforcement Learning	Maximilian Igl, Gregory Farquhar, Jelena Luketina, Wendelin Boehmer, and Shimon Whiteson. Transient non-stationarity and
+25	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural tangent kernel: Convergence and generalization in neural netwo
+26	2308.11958	id		Saurabh Kumar, Henrik Marklund, and Benjamin Van Roy. Maintaining plasticity via regenerative regularization. *arXiv pre
+27	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J. Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich tra
+28	2306.10711	s2	PLASTIC: Improving Input and Label Plasticity for Sample Efficient Reinforcement Learning	Hojoon Lee, Hanseul Cho, Hyunseung Kim, Daehoon Gwak, Joonkee Kim, Jaegul Choo, Se-Young Yun, and Chulhee Yun. Plastic: 
+29	2406.02596	s2	Slow and Steady Wins the Race: Maintaining Plasticity with Hare and Tortoise Networks	Hojoon Lee, Hyeonseo Cho, Hyunseung Kim, Donghu Kim, Dugki Min, Jaegul Choo, and Clare Lyle. Slow and steady wins the ra
+30	2312.00246	id		Alex Lewandowski, Haruto Tanaka, Dale Schuurmans, and Marlos C Machado. Curvature explains loss of plasticity. *arXiv pr
+31	2406.06811	s2	Learning Continually by Spectral Regularization	Alex Lewandowski, Michał Bortkiewicz, Saurabh Kumar, András György, Dale Schuurmans, Mateusz Ostaszewski, and Marlos C M
+32	2003.02218	id		Aitor Lewkowycz, Yasaman Bahri, Ethan Dyer, Jascha Sohl-Dickstein, and Guy Gur-Ari. The large learning rate phase of dee
+33	1910.07454	s2	An Exponential Learning Rate Schedule for Deep Learning	Zhiyuan Li and Sanjeev Arora. An exponential learning rate schedule for deep learning. In *8th International Conference 
+34	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+35	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *The Eleventh International 
+36	2204.09560	s2	Understanding and Preventing Capacity Loss in Reinforcement Learning	Clare Lyle, Mark Rowland, and Will Dabney. Understanding and preventing capacity loss in reinforcement learning. In *Int
+37		s2	Learning Dynamics and Generalization in Deep Reinforcement Learning	Clare Lyle, Mark Rowland, Will Dabney, Marta Kwiatkowska, and Yarin Gal. Learning dynamics and generalization in deep re
+38	2303.01486	s2	Understanding plasticity in neural networks	Clare Lyle, Zeyu Zheng, Evgenii Nikishin, Bernardo Avila Pires, Razvan Pascanu, and Will Dabney. Understanding plasticit
+39	2407.01800	s2	Normalization and effective learning rates in reinforcement learning	Clare Lyle, Zeyu Zheng, Khimya Khetarpal, James Martens, Hado van Hasselt, Razvan Pascanu, and Will Dabney. Normalizatio
+40	2402.18762	id		Clare Lyle, Zeyu Zheng, Khimya Khetarpal, Hado van Hasselt, Razvan Pascanu, James Martens, and Will Dabney. Disentanglin
+41	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon Shaolei Du, Jason D. Lee, and Wei Hu. Dichotomy of early and late phase implic
+42		s2	Human-level control through deep reinforcement learning	Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A Rusu, Joel Veness, Marc G Bellemare, Alex Graves, Martin Riedm
+43	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+44	2205.07802	s2	The Primacy Bias in Deep Reinforcement Learning	Evgenii Nikishin, Max Schwarzer, Pierluca D’Oro, Pierre-Luc Bacon, and Aaron Courville. The primacy bias in deep reinfor
+45	2305.15555	s2	Deep Reinforcement Learning with Plasticity Injection	Evgenii Nikishin, Junhyuk Oh, Georg Ostrovski, Clare Lyle, Razvan Pascanu, Will Dabney, and André Barreto. Deep reinforc
+46		s2	CONTINUOUS INSPECTION SCHEMES	Ewan S Page. Continuous inspection schemes. *Biometrika*, 41(1/2):100–115, 1954.
+47	1606.05340	s2	Exponential expressivity in deep neural networks through transient chaos	Ben Poole, Subhaneil Lahiri, Maithra Raghu, Jascha Sohl-Dickstein, and Surya Ganguli. Exponential expressivity in deep n
+48	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+49	2312.00209	s2	On the Interplay Between Stepsize Tuning and Progressive Sharpening	Vincent Roulet, Atish Agarwala, and Fabian Pedregosa. On the interplay between stepsize tuning and progressive sharpenin
+50	2305.19452	s2	Bigger, Better, Faster: Human-level Atari with human-level efficiency	Max Schwarzer, Johan Samir Obando Ceron, Aaron Courville, Marc G Bellemare, Rishabh Agarwal, and Pablo Samuel Castro. Bi
+51	1506.01186	s2	Cyclical Learning Rates for Training Neural Networks	Leslie N Smith. Cyclical learning rates for training neural networks. In *2017 IEEE winter conference on applications of
+52	2001.07301	id		Jascha Sohl-Dickstein, Roman Novak, Samuel S Schoenholz, and Jaehoon Lee. On the infinite width limit of neural networks
+53		—		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua M. Susskind. The slingshot mechanism: An
+54	1812.02648	id		Hado Van Hasselt, Yotam Doron, Florian Strub, Matteo Hessel, Nicolas Sonnerat, and Joseph Modayil. Deep reinforcement le
+55	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+56	2309.14322	id		Mitchell Wortsman, Peter J Liu, Lechao Xiao, Katie Everett, Alex Alemi, Ben Adlam, John D Co-Reyes, Izzeddin Gur, Abhish
+57		s2	Disentangling Trainability and Generalization in Deep Neural Networks	Lechao Xiao, Jeffrey Pennington, and Samuel Schoenholz. Disentangling trainability and generalization in deep neural net
+58	2310.02541	s2	Benign Overfitting and Grokking in ReLU Networks for XOR Cluster Data	Zhiwei Xu, Yutong Wang, Spencer Frei, Gal Vardi, and Wei Hu. Benign overfitting and grokking in relu networks for xor cl
+59		—		Greg Yang. Wide feedforward or recurrent neural networks of any architecture are gaussian processes. *Advances in Neural
+60	2203.03466	id		Greg Yang, Edward J Hu, Igor Babuschkin, Szymon Sidor, Xiaodong Liu, David Farhi, Nick Ryder, Jakub Pachocki, Weizhu Che
+61	1902.01996	s2	Are All Layers Created Equal?	Chiyuan Zhang, Samy Bengio, and Yoram Singer. Are all layers created equal? *Journal of Machine Learning Research*, 2021

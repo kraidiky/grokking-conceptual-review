@@ -1,0 +1,43 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2005.14165	s2	Language Models are Few-Shot Learners	[1] T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, 
+2	2001.08361	id		[2] J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei (2
+3	2010.14701	id		[3] T. Henighan, J. Kaplan, M. Katz, M. Chen, C. Hesse, J. Jackson, H. Jun, T. B. Brown, P. Dhariwal, S. Gray, et al. (2
+4	2203.15556	id		[4] J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai, E. Rutherford, D. d. L. Casas, L. A. Hendricks, J. Welb
+5	2206.07682	id		[5] J. Wei, Y. Tay, R. Bommasani, C. Raffel, B. Zoph, S. Borgeaud, D. Yogatama, M. Bosma, D. Zhou, D. Metzler, et al. (2
+6	2505.10465	id		[6] Y. Liu, Z. Liu, and J. Gore (2025) Superposition yields robust neural scaling. arXiv preprint arXiv:2505.10465. Cite
+7		s2	Do machine learning models memorize or generalize?	[7] A. Pearce, A. Ghandeharioun, N. Hussein, N. Thain, M. Wattenberg, and L. Dixon (2023) Do machine learning models mem
+8	2201.02177	id		[8] A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra (2022) Grokking: generalization beyond overfitting on sm
+9	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	[9] N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt (2023) Progress measures for grokking via mechanistic in
+10	2306.17844	s2	The Clock and the Pizza: Two Stories in Mechanistic Explanation of Neural Networks	[10] Z. Zhong, Z. Liu, M. Tegmark, and J. Andreas (2023) The clock and the pizza: two stories in mechanistic explanation
+11	2311.07568	s2	Feature emergence via margin maximization: case studies in algebraic tasks	[11] D. Morwani, B. L. Edelman, C. Oncescu, R. Zhao, and S. M. Kakade (2024) Feature emergence via margin maximization: 
+12	2509.21519	id		[12] Y. Tian (2025) Provable scaling laws of feature emergence from learning dynamics of grokking. arXiv preprint arXiv:
+13	1711.05101	id		[13] I. Loshchilov and F. Hutter (2017) Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101. Cited by
+14		s2	: An optimizer for hidden layers in neural networks	[14] K. Jordan, Y. Jin, V. Boza, Y. Jiacheng, F. Cecista, L. Newhouse, and J. Bernstein Muon: an optimizer for hidden la
+15	1912.02292	s2	Deep double descent: where bigger models and more data hurt	[15] P. Nakkiran, G. Kaplun, Y. Bansal, T. Yang, B. Barak, and I. **[p. 11]** Sutskever (2021) Deep double descent: wher
+16	2205.10770	s2	Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models	[16] K. Tirumala, A. Markosyan, L. Zettlemoyer, and A. Aghajanyan (2022) Memorization without overfitting: analyzing the
+17	1903.11680	s2	Gradient Descent with Early Stopping is Provably Robust to Label Noise for Overparameterized Neural 	[17] M. Li, M. Soltanolkotabi, and S. Oymak (2020) Gradient descent with early stopping is provably robust to label nois
+18	2301.02679	id		[18] A. Gromov (2023) Grokking modular arithmetic. arXiv preprint arXiv:2301.02679. Cited by: Appendix A, §4, §5.
+19	1505.06024	s2	Distinct types of eigenvector localization in networks	[19] R. Pastor-Satorras and C. Castellano (2016) Distinct types of eigenvector localization in networks. Scientific repo
+20		s2	Modern Condensed Matter Physics	[20] S. M. Girvin and K. Yang (2019) Modern condensed matter physics. Cambridge University Press. Cited by: §5.
+21	2310.13061	s2	To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datas	[21] D. Doshi, A. Das, T. He, and A. Gromov (2024) To grok or not to grok: disentangling generalization and memorization
+22	1812.11118	s2	Reconciling modern machine-learning practice and the classical bias–variance trade-off	[22] M. Belkin, D. Hsu, S. Ma, and S. Mandal (2019) Reconciling modern machine-learning practice and the classical bias–
+23	2002.11328	s2	Rethinking Bias-Variance Trade-off for Generalization of Neural Networks	[23] Z. Yang, Y. Yu, C. You, J. Steinhardt, and Y. Ma (2020) Rethinking bias-variance trade-off for generalization of ne
+24	1903.07571	s2	Two models of double descent for weak features	[24] M. Belkin, D. Hsu, and J. Xu (2020) Two models of double descent for weak features. SIAM Journal on Mathematics of 
+25	1710.03667	s2	High-dimensional dynamics of generalization error in neural networks	[25] M. S. Advani, A. M. Saxe, and H. Sompolinsky (2020) High-dimensional dynamics of generalization error in neural net
+26	2008.06786	s2	The Neural Tangent Kernel in High Dimensions: Triple Descent and a Multi-Scale Theory of Generalizat	[26] B. Adlam and J. Pennington (2020) The neural tangent kernel in high dimensions: triple descent and a multi-scale th
+27	1906.11300	s2	Benign overfitting in linear regression	[27] P. L. Bartlett, P. M. Long, G. Lugosi, and A. Tsigler (2020) Benign overfitting in linear regression. Proceedings o
+28	1908.05355	s2	The Generalization Error of Random Features Regression: Precise Asymptotics and the Double Descent C	[28] S. Mei and A. Montanari (2022) The generalization error of random features regression: precise asymptotics and the 
+29	1903.08560	s2	SURPRISES IN HIGH-DIMENSIONAL RIDGELESS LEAST SQUARES INTERPOLATION	[29] T. Hastie, A. Montanari, S. Rosset, and R. J. Tibshirani (2022) Surprises in high-dimensional ridgeless least squar
+30	1903.09139	s2	Harmless interpolation of noisy data in regression	[30] V. Muthukumar, K. Vodrahalli, V. Subramanian, and A. Sahai (2020) Harmless interpolation of noisy data in regressio
+31	2003.01897	id		[31] P. Nakkiran, P. Venkat, S. Kakade, and T. Ma (2020) Optimal regularization can mitigate double descent. arXiv prepr
+32	2510.06401	id		[32] A. H. Umar, F. K. N. Tezoh, J. Barbier, S. Acevedo, and A. Laio (2025) The effect of label noise on the information
+33	2209.10080	id		[33] M. Gamba, E. Englesson, M. Björkman, and H. **[p. 12]** Azizpour (2022) Deep double descent via smooth interpolatio
+34	2203.08124	s2	Can Neural Nets Learn the Same Model Twice? Investigating Reproducibility and Double Descent from th	[34] G. Somepalli, L. Fowl, A. Bansal, P. Yeh-Chiang, Y. Dar, R. Baraniuk, M. Goldblum, and T. Goldstein (2022) Can neur
+35	2303.06173	id		[35] X. Davies, L. Langosco, and D. Krueger (2023) Unifying grokking and double descent. arXiv preprint arXiv:2303.06173
+36	2402.15175	id		[36] Y. Huang, S. Hu, X. Han, Z. Liu, and M. Sun (2024) Unified view of grokking, double descent and emergent abilities:
+37	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	[37] Z. Liu, O. Kitouni, N. S. Nolte, E. Michaud, M. Tegmark, and M. Williams (2022) Towards understanding grokking: an 
+38	2407.20199	s2	Emergence in non-neural models: grokking modular arithmetic via average gradient outer product	[38] N. R. Mallinar, D. Beaglehole, L. Zhu, A. Radhakrishnan, P. Pandit, and M. Belkin (2025) Emergence in non-neural mo
+39	2505.18266	id		[39] G. McCracken, G. Moisescu-Pareja, V. Letourneau, D. Precup, and J. Love (2025) Uncovering a universal abstract algo
+40	2202.14026	s2	Robust Training under Label Noise by Over-parameterization	[40] S. Liu, Z. Zhu, Q. Qu, and C. You (2022) Robust training under label noise by over-parameterization. In Internation
+41	2007.08199	s2	Learning From Noisy Labels With Deep Neural Networks: A Survey	[41] H. Song, M. Kim, D. Park, Y. Shin, and J. Lee (2022) Learning from noisy labels with deep neural networks: a survey
+42	2310.02541	id		[42] Z. Xu, Y. Wang, S. Frei, G. Vardi, and W. Hu (2023) Benign overfitting and grokking in relu networks for xor cluste

@@ -1,0 +1,31 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2306.16921	s2	Provable Advantage of Curriculum Learning on Parity Targets with Mixed Inputs	Emmanuel Abbe, Elisabetta Cornacchia, and Aryo Lotfi. Provable advantage of curriculum learning on parity targets with m
+2	2104.14095	s2	Analyzing the Nuances of Transformers' Polynomial Simplification Abilities	Vishesh Agarwal, Somak Aditya, and Navin Goyal. Analyzing the nuances of transformers’ polynomial simplification abiliti
+3	2410.08304	s2	Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers	Alberto Alfarano, François Charton, and Amaury Hayat. Global lyapunov functions: a long-standing open problem in mathema
+4	2512.17351	s2	Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers	Zeyuan Allen-Zhu. Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers. *SSRN Electro
+5		s2	CRYSTALS-Kyber (version 3.02) – Submission to round 3 of the NIST post-quantum project	Roberto Avanzi, Joppe Bos, Léo Ducas, Eike Kiltz, Tancrède Lepoint, Vadim Lyubashevsky, John M. Schanck, Peter Schwabe, 
+6		s2	Curriculum learning	Yoshua Bengio, Jérôme Louradour, Ronan Collobert, and Jason Weston. Curriculum learning. *Proc. of ICML*, 2009.
+7	2204.06745	s2	GPT-NeoX-20B: An Open-Source Autoregressive Language Model	Sidney Black, Stella Biderman, Eric Hallahan, Quentin Anthony, Leo Gao, Laurence Golding, Horace He, Connor Leahy, Kyle 
+8		s2	Security Guidelines for Implementing Homomorphic Encryption	Jean-Philippe Bossuat, Rosario Cammarota, Jung Hee Cheon, Ilaria Chillotti, et al. Security guidelines for implementing 
+9	2112.01898	s2	Linear algebra with transformers	François Charton. Linear algebra with transformers. *Transactions in Machine Learning Research*, 2022.
+10	2308.15594	s2	Learning the greatest common divisor: explaining transformer predictions	François Charton. Learning the greatest common divisor: explaining transformer predictions. In *ICLR*, 2024.
+11	2410.07041	s2	Emergent properties with repeated examples	François Charton and Julia Kempe. Emergent properties with repeated examples. In *NeurIPS 2024 Workshop on Scientific Me
+12		s2	Learning advanced mathematical computations from examples	François Charton, Amaury Hayat, and Guillaume Lample. Learning advanced mathematical computations from examples. *Proc. 
+13		s2	PQC Standardization Process: Announcing Four Candidates to be Standardized, Plus Fourth Round Candid	Lily Chen, Dustin Moody, Yi-Kai Liu, et al. PQC Standardization Process: Announcing Four Candidates to be Standardized, 
+14	2406.03495	id		Darshil Doshi, Tianyu He, Aritra Das, and Andrey Gromov. Grokking modular polynomials. *arXiv preprint arXiv:2406.03495*
+15	1410.5401	id		Alex Graves. Neural turing machines. *arXiv preprint arXiv:1410.5401*, 2014.
+16	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+17	2312.00752	s2	Mamba: Linear-Time Sequence Modeling with Selective State Spaces	Albert Gu and Tri Dao. Mamba: Linear-time sequence modeling with selective state spaces. In *First Conference on Languag
+18	2306.15400	id		Samy Jelassi, Stéphane d’Ascoli, Carles Domingo-Enrich, Yuhuai Wu, Yuanzhi Li, and François Charton. Length generalizati
+19	2311.12904	s2	Learning to Compute Gröbner Bases	Hiroshi Kera, Yuki Ishihara, Yuta Kambe, Tristan Vaccon, and Kazuhiro Yokoyama. Learning to compute gröbner bases. *Adva
+20		s2	A method for stochastic optimization	Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. In *Proc. of ICLR*, 2015.
+21	2402.19254	s2	Machine learning for modular multiplication	Kristin Lauter, Cathy Yuanchen Li, Krystal Maughan, Rachel Newton, and Megha Srivastava. Machine learning for modular mu
+22		—		Cathy Yuanchen Li, Jana Sotáková, Emily Wenger, Mohamed Malhou, Evrard Garcelon, François Charton, and Kristin Lauter. S
+23		s2	SALSA VERDE: a machine learning attack on LWE with sparse small secrets	Cathy Yuanchen Li, Emily Wenger, Zeyuan Allen-Zhu, Francois Charton, and Kristin E Lauter. SALSA VERDE: a machine learni
+24		—		Mohamad Amin Mohamadi, Zhiyuan Li, Lei Wu, and Danica J Sutherland. Why do you grok? a theoretical analysis on grokking 
+25	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+26		s2	Investigating the ability of neural networks to learn simple modular arithmetic	Theodoros Palamas. Investigating the ability of neural networks to learn simple modular arithmetic. 2017. https://projec
+27	1703.07950	s2	Failures of Gradient-Based Deep Learning	Shai Shalev-Shwartz, Ohad Shamir, and Shaked Shammah. Failures of gradient-based deep learning. In *International Confer
+28	2402.01082	s2	Salsa Fresca: Angular Embeddings and Pre-Training for ML Attacks on Learning With Errors	Samuel Stevens, Emily Wenger, Cathy Yuanchen Li, Niklas Nolte, Eshika Saxena, Francois Charton, and Kristin E. Lauter. S
+29	2207.04785	s2	SALSA: Attacking Lattice Cryptography with Transformers	Emily Wenger, Mingjie Chen, Francois Charton, and Kristin Lauter. Salsa: Attacking lattice cryptography with transformer
+30	2408.00882	s2	Benchmarking Attacks on Learning with Errors	Emily Wenger, Eshika Saxena, Mohamed Malhou, Ellie Thieu, and Kristin Lauter. Benchmarking attacks on learning with erro

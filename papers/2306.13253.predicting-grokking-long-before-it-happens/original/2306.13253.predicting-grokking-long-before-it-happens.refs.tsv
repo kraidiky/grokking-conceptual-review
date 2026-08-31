@@ -1,0 +1,55 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	1811.04918	s2	Learning and Generalization in Overparameterized Neural Networks, Going Beyond Two Layers	Allen-Zhu, Z., Li, Y., and Liang, Y. Learning and generalization in overparameterized neural networks, going beyond two 
+2	1802.05296	s2	Stronger generalization bounds for deep nets via a compression approach	Arora, S., Ge, R., Neyshabur, B., and Zhang, Y. Stronger generalization bounds for deep nets via a compression approach.
+3		s2	Laplacian Eigenmaps and Spectral Techniques for Embedding and Clustering	Belkin, M. and Niyogi, P. Laplacian eigenmaps and spectral techniques for embedding and clustering. In Dietterich, T., B
+4	2105.04026	s2	The Modern Mathematics of Deep Learning	Berner, J., Grohs, P., Kutyniok, G., and Petersen, P. The modern mathematics of deep learning. *arXiv preprint arXiv: Ar
+5	1405.4980	s2	Convex Optimization: Algorithms and Complexity	Bubeck, S. et al. Convex optimization: Algorithms and complexity. *Foundations and Trends® in Machine Learning*, 8(3-4):
+6	2008.01036	s2	Multiple Descent: Design Your Own Generalization Curve	Chen, L., Min, Y., Belkin, M., and Karbasi, A. Multiple descent: Design your own generalization curve. *Advances in Neur
+7	1812.07956	s2	On Lazy Training in Differentiable Programming	Chizat, L., Oyallon, E., and Bach, F. On lazy training in differentiable programming. *Advances in Neural Information Pr
+8	2103.00065	s2	Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability	Cohen, J. M., Kaur, S., Li, Y., Kolter, J. Z., and Talwalkar, A. S. Gradient descent on neural networks typically occurs
+9		s2	Comments on ‘maximum likelihood estimation of intrinsic dimension’ by elizaveta levina and peter bic	David J.C., M. and Zoubin, G. Comments on ‘maximum likelihood estimation of intrinsic dimension’ by elizaveta levina and
+10	1703.04933	s2	Sharp Minima Can Generalize For Deep Nets	Dinh, L., Pascanu, R., Bengio, S., and Bengio, Y. Sharp minima can generalize for deep nets. In Precup, D. and Teh, Y. W
+11		s2	Hessian eigenmaps: Locally linear embedding techniques for high-dimensional data	Donoho, D. L. and Grimes, C. Hessian eigenmaps: Locally linear embedding techniques for high-dimensional data. *Proceedi
+12	1703.11008	s2	Computing Nonvacuous Generalization Bounds for Deep (Stochastic) Neural Networks with Many More Para	Dziugaite, G. K. and Roy, D. M. Computing nonvacuous generalization bounds for deep (stochastic) neural networks with ma
+13	1803.06992	s2	Estimating the intrinsic dimension of datasets by a minimal neighborhood information	Facco, E., d’Errico, M., Rodriguez, A., and Laio, A. Estimating the intrinsic dimension of datasets by a minimal neighbo
+14		s2	The inverse variance–flatness relation in stochastic gradient descent is critical for finding flat m	Feng, Y. and Tu, Y. **[p. 9]** The inverse variance–flatness relation in stochastic gradient descent is critical for fin
+15	1412.6544	s2	Qualitatively characterizing neural network optimization problems	Goodfellow, I. J. and Vinyals, O. Qualitatively characterizing neural network optimization problems. In Bengio, Y. and L
+16	1303.5778	s2	Speech recognition with deep recurrent neural networks	Graves, A., Mohamed, A., and Hinton, G. E. Speech recognition with deep recurrent neural networks. *CoRR*, abs/1303.5778
+17	1512.03385	s2	Deep Residual Learning for Image Recognition	He, K., Zhang, X., Ren, S., and Sun, J. Deep residual learning for image recognition. *CoRR*, abs/1512.03385, 2015. URL 
+18		s2	Chaotic Dynamics are Intrinsic to Neural Network Training with SGD	Herrmann, L., Granz, M., and Landgraf, T. Chaotic dynamics are intrinsic to neural network training with SGD. In Oh, A. 
+19		s2	Neural Networks for Machine Learning	Hinton, G. Neural networks for machine learning. coursera, video lectures, 2012.
+20		s2	EEG analysis based on time domain properties.	Hjorth, B. Eeg analysis based on time domain properties. *Electroencephalography and Clinical Neurophysiology*, 29(3):30
+21		—		Hochreiter, S. and Schmidhuber, J. Flat Minima. *Neural Computation*, 9(1):1–42, 01 1997. ISSN 0899-7667. doi: 10.1162/n
+22	1612.04010	s2	An empirical analysis of the optimization of deep network loss surfaces	Im, D. J., Tao, M., and Branson, K. An empirical analysis of the optimization of deep network loss surfaces. *arXiv prep
+23	1711.04623	s2	Three Factors Influencing Minima in SGD	Jastrzębski, S., Kenton, Z., Arpit, D., Ballas, N., Fischer, A., Bengio, Y., and Storkey, A. Three factors influencing m
+24	1912.02178	s2	Fantastic Generalization Measures and Where to Find Them	Jiang, Y., Neyshabur, B., Mobahi, H., Krishnan, D., and Bengio, S. Fantastic generalization measures and where to find t
+25	1609.04836	s2	On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima	Keskar, N. S., Mudigere, D., Nocedal, J., Smelyanskiy, M., and Tang, P. T. P. On large-batch training for deep learning:
+26	1412.6980	s2	Adam: A Method for Stochastic Optimization	Kingma, D. P. and Ba, J. Adam: A method for stochastic optimization. *International Conference On Learning Representatio
+27		s2	Locating and Characterizing the Stationary Points of the Extended Rosenbrock Function	Kok, S. and Sandrock, C. Locating and characterizing the stationary points of the extended rosenbrock function. *Evol. C
+28		s2	neurips.cc/paper/2012/file/ c399862d3b9d6b76c8436e924a68c45b-Paper pdf	Krizhevsky, A., Sutskever, I., and Hinton, G. E. Imagenet classification with deep convolutional neural networks. In Per
+29	1602.04915	s2	Gradient Descent Converges to Minimizers	Lee, J. D., Simchowitz, M., Jordan, M. I., and Recht, B. Gradient descent converges to minimizers. *arXiv preprint arXiv
+30		s2	Maximum Likelihood Estimation of Intrinsic Dimension	Levina, E. and Bickel, P. Maximum likelihood estimation of intrinsic dimension. In Saul, L., Weiss, Y., and Bottou, L. (
+31	2003.02218	s2	The large learning rate phase of deep learning: the catapult mechanism	Lewkowycz, A., Bahri, Y., Dyer, E., Sohl-Dickstein, J., and Gur-Ari, G. The large learning rate phase of deep learning: 
+32	1712.09913	s2	Visualizing the Loss Landscape of Neural Nets	Li, H., Xu, Z., Taylor, G., Studer, C., and Goldstein, T. Visualizing the loss landscape of neural nets. In Bengio, S., 
+33	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu, Z., Kitouni, O., Nolte, N. S., Michaud, E. J., Tegmark, M., and Williams, M. Towards understanding grokking: An eff
+34	1410.1141	s2	On the Computational Efficiency of Training Neural Networks	Livni, R., Shalev-Shwartz, S., and Shamir, O. On the computational efficiency of training neural networks. *CoRR*, abs/1
+35	2006.06958	s2	Understanding the Role of Training Regimes in Continual Learning	Mirzadeh, S. I., Farajtabar, M., Pascanu, R., and Ghasemzadeh, H. Understanding the role of training regimes in continua
+36	2110.11526	s2	Wide Neural Networks Forget Less Catastrophically	Mirzadeh, S. I., Chaudhry, A., Hu, H., Pascanu, R., Gorur, D., and Farajtabar, M. Wide neural networks forget less catas
+37	1912.02292	s2	Deep double descent: where bigger models and more data hurt	Nakkiran, P., Kaplun, G., Bansal, Y., Yang, T., Barak, B., and Sutskever, I. Deep double descent: Where bigger models an
+38		s2	A mechanistic interpretability analysis of grokking	Nanda, N. and Lieberum, T. A mechanistic interpretability analysis of grokking. *Alignment Forum*, Aug 2022.
+39	1706.08947	s2	Exploring Generalization in Deep Learning	Neyshabur, B., Bhojanapalli, S., McAllester, D., and Srebro, N. Exploring generalization in deep learning. In Guyon, I.,
+40	2011.09468	s2	Gradient Starvation: A Learning Proclivity in Neural Networks	Pezeshki, M., Kaba, O., Bengio, Y., Courville, A. C., Precup, D., and Lajoie, G. Gradient starvation: A learning procliv
+41	2112.03215	s2	Multi-scale Feature Learning Dynamics: Insights for Double Descent	Pezeshki, M., Mitra, A., Bengio, Y., and Lajoie, G. Multi-scale feature learning dynamics: Insights for double descent. 
+42		s2	Some methods of speeding up the convergence of iteration methods	Polyak, B. Some methods of speeding up the convergence of iteration methods. *USSR Computational Mathematics and Mathema
+43	2104.08894	id		Pope, P., Zhu, C., Abdelkader, A., Goldblum, M., and Goldstein, T. The intrinsic dimension of images and its impact on l
+44	2201.02177	id		Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond overfitting on small al
+45		s2	A direct adaptive method for faster backpropagation learning: the RPROP algorithm	Riedmiller, M. and Braun, H. A direct adaptive method for faster backpropagation learning: the rprop algorithm. In *IEEE
+46		s2	Nonlinear dimensionality reduction by locally linear embedding.	Roweis, S. T. and Saul, L. K. Nonlinear dimensionality reduction by locally linear embedding. *Science*, 290(5500):2323–
+47	1703.00810	s2	Opening the Black Box of Deep Neural Networks via Information	Shwartz-Ziv, R. and Tishby, N. Opening the black box of deep neural networks via information. *arXiv preprint arXiv: Arx
+48		s2	Mastering the game of Go with deep neural networks and tree search	Silver, D., Huang, A., Maddison, C. J., Guez, A., Sifre, L., van den Driessche, G., Schrittwieser, J., Antonoglou, I., P
+49	1702.04283	s2	Exploring loss function topology with cyclical learning rates	Smith, L. N. and Topin, N. Exploring loss function topology with cyclical learning rates. *arXiv preprint arXiv: Arxiv-1
+50		s2	A global geometric framework for nonlinear dimensionality reduction.	Tenenbaum, J. B., de Silva, V., and Langford, J. C. A global geometric framework for nonlinear dimensionality reduction.
+51	2206.04817	s2	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	Thilak, V., Littwin, E., Zhai, S., Saremi, O., Paiss, R., and Susskind, J. M. **[p. 11]** The slingshot mechanism: An em
+52	1706.03762	s2	Attention is All you Need	Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. Attention i
+53	1611.03530	s2	Understanding deep learning requires rethinking generalization	Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. Understanding deep learning requires rethinking generalizat
+54	2210.15435	s2	Grokking phase transitions in learning local rules with gradient descent	Žunkovič, B. and Ilievski, E. Grokking phase transitions in learning local rules with gradient descent. *arXiv preprint 

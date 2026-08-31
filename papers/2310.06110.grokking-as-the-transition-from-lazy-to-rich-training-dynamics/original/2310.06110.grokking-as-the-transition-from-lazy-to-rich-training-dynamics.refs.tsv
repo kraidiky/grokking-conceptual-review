@@ -1,0 +1,41 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+2	2301.05217	id		Neel Nanda, Lawrence Chan, Tom Liberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanistic
+3	2303.06173	id		Xander Davies, Lauro Langosco, and David Krueger. Unifying grokking and double descent. *arXiv preprint arXiv:2303.06173
+4	2206.04817	id		Vimal Thilak, Etai Littwin, Shuangfei Zhai, Omid Saremi, Roni Paiss, and Joshua Susskind. The slingshot mechanism: An em
+5	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+6	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+7	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas S Nolte, Eric Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+8	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+9	1812.07956	s2	On Lazy Training in Differentiable Programming	Lenaic Chizat, Edouard Oyallon, and Francis Bach. On lazy training in differentiable programming. *Advances in neural in
+10	1806.07572	s2	Neural Tangent Kernel: Convergence and Generalization in Neural Networks	Arthur Jacot, Franck Gabriel, and Clément Hongler. Neural tangent kernel: Convergence and generalization in neural netwo
+11	1902.06720	s2	Wide neural networks of any depth evolve as linear models under gradient descent	Jaehoon Lee, Lechao Xiao, Samuel Schoenholz, Yasaman Bahri, Roman Novak, Jascha Sohl-Dickstein, and Jeffrey Pennington. 
+12	1203.0550	s2	Algorithms for Learning Kernels Based on Centered Alignment	Corinna Cortes, Mehryar Mohri, and Afshin Rostamizadeh. Algorithms for learning kernels based on centered alignment. *Th
+13	2002.02561	s2	Spectrum Dependent Learning Curves in Kernel Regression and Wide Neural Networks	Blake Bordelon, Abdulkadir Canatar, and Cengiz Pehlevan. Spectrum dependent learning curves in kernel regression and wid
+14	2006.13198	s2	Spectral bias and task-model alignment explain generalization in kernel regression and infinitely wi	Abdulkadir Canatar, Blake Bordelon, and Cengiz Pehlevan. Spectral bias and task-model alignment explain generalization i
+15	1804.06561	s2	A mean field view of the landscape of two-layer neural networks	Song Mei, Andrea Montanari, and Phan-Minh Nguyen. A mean field view of the landscape of two-layer neural networks. *Proc
+16	2007.11471	s2	Geometric compression of invariant manifolds in neural networks	Jonas Paccolat, Leonardo Petrini, Mario Geiger, Kevin Tyloo, and Matthieu Wyart. Geometric compression of invariant mani
+17	2102.11742	s2	Classifying high-dimensional Gaussian mixtures: Where kernel methods fail and neural networks succee	Maria Refinetti, Sebastian Goldt, Florent Krzakala, and Lenka Zdeborová. Classifying high-dimensional gaussian mixtures:
+18	2205.01445	s2	High-dimensional Asymptotics of Feature Learning: How One Gradient Step Improves the Representation	Jimmy Ba, Murat A Erdogdu, Taiji Suzuki, Zhichao Wang, Denny Wu, and Greg Yang. High-dimensional asymptotics of feature 
+19	2302.05882	id		Luca Arnaboldi, Ludovic Stephan, Florent Krzakala, and Bruno Loureiro. From high-dimensional & mean-field dynamics to di
+20	2206.03688	s2	Identifying good directions to escape the NTK regime and efficiently learn low-degree plus sparse po	Eshaan Nichani, Yu Bai, and Jason D Lee. Identifying good directions to escape the ntk regime and efficiently learn low-
+21	2212.12147	id		Alexander Atanasov, Blake Bordelon, Sabarish Sainathan, and Cengiz Pehlevan. The onset of variance-limited behavior for 
+22	2303.00055	id		Raphaël Berthier, Andrea Montanari, and Kangjie Zhou. Learning time-scales in two-layers neural networks. *arXiv preprin
+23	2210.15651	s2	Learning Single-Index Models with Shallow Neural Networks	Alberto Bietti, Joan Bruna, Clayton Sanford, and Min Jae Song. Learning single-index models with shallow neural networks
+24		s2	Disentangling feature and lazy training in deep neural networks	Mario Geiger, Stefano Spigler, Arthur Jacot, and Matthieu Wyart. Disentangling feature and lazy training in deep neural 
+25	1906.08899	s2	Limitations of Lazy Training of Two-layers Neural Networks	Behrooz Ghorbani, Song Mei, Theodor Misiakiewicz, and Andrea Montanari. Limitations of lazy training of two-layers neura
+26	2305.10633	s2	Smoothing the Landscape Boosts the Signal for SGD: Optimal Sample Complexity for Learning Single Ind	Alex Damian, Eshaan Nichani, Rong Ge, and Jason D. Lee. Smoothing the landscape boosts the signal for sgd: Optimal sampl
+27		s2	Precise Learning Curves and Higher-Order Scalings for Dot-product Kernel Regression	Lechao Xiao, Hong Hu, Theodor Misiakiewicz, Yue Lu, and Jeffrey Pennington. Precise learning curves and higher-order sca
+28		s2	On-line learning in soft committee machines.	David Saad and Sara A Solla. On-line learning in soft committee machines. *Physical Review E*, 52(4):4225, 1995.
+29		s2	Statistical Mechanics of Learning	Andreas Engel. *Statistical mechanics of learning*. Cambridge University Press, 2001.
+30	1901.09085	id		Sebastian Goldt, Madhu S Advani, Andrew M Saxe, Florent Krzakala, and Lenka Zdeborová. Generalisation dynamics of online
+31	2006.15459	s2	Optimization and Generalization of Shallow Neural Networks with Quadratic Activation Functions	Stefano Sarao Mannelli, Eric Vanden-Eijnden, and Lenka Zdeborová. Optimization and generalization of shallow neural netw
+32		—		James B Simon, Madeline Dickens, Dhruva Karkada, and Michael Deweese. The eigenlearning framework: A conservation law pe
+33	2003.10409	s2	Online stochastic gradient descent on non-convex losses from high-dimensional inference	Gerard Ben Arous, Reza Gheissari, and Aukosh Jagannath. Online stochastic gradient descent on non-convex losses from hig
+34	1905.00414	s2	Similarity of Neural Network Representations Revisited	Simon Kornblith, Mohammad Norouzi, Honglak Lee, and Geoffrey Hinton. Similarity of neural network representations revisi
+35	1901.08584	s2	Fine-Grained Analysis of Optimization and Generalization for Overparameterized Two-Layer Neural Netw	Sanjeev Arora, Simon Du, Wei Hu, Zhiyuan Li, and Ruosong Wang. Fine-grained analysis of optimization and generalization 
+36		—		Aitor Lewkowycz and Guy Gur-Ari. On the training dynamics of deep networks with $l\_2$ regularization. *Advances in Neur
+37	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Boaz Barak, Benjamin Edelman, Surbhi Goel, Sham Kakade, Eran Malach, and Cyril Zhang. Hidden progress in deep learning: 
+38	2204.10425	id		Theodor Misiakiewicz. Spectrum of inner-product kernel matrices in the polynomial regime and multiple descent phenomenon
+39	2103.00065	id		Jeremy M Cohen, Simran Kaur, Yuanzhi Li, J Zico Kolter, and Ameet Talwalkar. Gradient descent on neural networks typical
+40	2304.15004	id		Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo. Are emergent abilities of large language models a mirage? *arXiv prep

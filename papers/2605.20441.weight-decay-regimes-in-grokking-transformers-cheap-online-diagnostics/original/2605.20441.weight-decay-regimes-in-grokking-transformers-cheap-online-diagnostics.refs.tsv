@@ -1,0 +1,69 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2603.15492	id		Pratyush Acharya and Habish Dhakal. Grokking as a variance-limited phase transition: Spectral gating and the epsilon-sta
+2	2605.04396	id		Sarwan Ali. Critical windows of complexity control: When transformers decide to reason or memorize. *arXiv preprint arXi
+3		s2	Statistical mechanics of deep learning	Yasaman Bahri, Jonathan Kadmon, Jeffrey Pennington, Sam S Schoenholz, Jascha Sohl-Dickstein, and Surya Ganguli. Statisti
+4	2603.24746	id		Yuda Bi, Chenyu Zhang, Qiheng Wang, and Vince D. Calhoun. Grokking as a falsifiable finite-size transition. *arXiv prepr
+5		—		Nacer Eddine Boukacem, Allen Leary, Robin Thériault, Felix Gottlieb, Madhav Mani, and Paul François. Waddington landscap
+6	2409.10559	s2	Unveiling Induction Heads: Provable Training Dynamics and Feature Learning in Transformers	Siyu Chen, Heejune Sheen, Tianhao Wang, and Zhuoran Yang. Unveiling induction heads: Provable training dynamics and feat
+7		s2	Mechanical signaling coordinates the embryonic heartbeat	Kevin K. Chiou, Jason W. Rocks, Christina Yingxian Chen, Sangkyun Cho, Koen E. Merkus, Anjali Rajaratnam, Patrick Robiso
+8	2310.04415	id		Francesco D’Angelo, Maksym Andriushchenko, Aditya Varre, and Nicolas Flammarion. Why do we need weight decay in modern d
+9	2209.10652	s2	Toy Models of Superposition	Nelson Elhage, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Rober
+10	1803.03635	s2	The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks	Jonathan Frankle and Michael Carbin. The lottery ticket hypothesis: Finding sparse, trainable neural networks. In *ICLR*
+11	2206.05794	id		Tomer Galanti, Zachary S. Siegel, Aparna Gupte, and Tomaso Poggio. SGD and weight decay secretly minimize the rank of yo
+12	2604.20923	id		Shreel Golwala. ILDR: Geometric early detection of grokking. *arXiv preprint arXiv:2604.20923*, 2026. URL https://arxiv.
+13	2604.13082	id		Laura Gomezjurado Gonzalez. The long delay to arithmetic generalization: When learned representations outrun behavior. *
+14	2312.00752	id		Albert Gu and Tri Dao. Mamba: Linear-time sequence modeling with selective state spaces. *arXiv preprint arXiv:2312.0075
+15	2602.14445	id		Hasi Hays. Selective synchronization attention. *arXiv preprint arXiv:2602.14445*, 2026. URL https://arxiv.org/abs/2602.
+16	2603.29805	id		Max Hennick and Guillaume Corlouer. From density matrices to phase transitions in deep learning: Spectral early warnings
+17		s2	A bioelectrical phase transition patterns the first vertebrate heartbeats	Bill Z Jia, Yitong Qi, J David Wong-Campos, Sean G Megason, and Adam E Cohen. A bioelectrical phase transition patterns 
+18	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Tanishq Kumar, Blake Bordelon, Samuel J Gershman, and Cengiz Pehlevan. Grokking as the transition from lazy to rich trai
+19	2210.01117	s2	Omnigrok: Grokking Beyond Algorithmic Data	Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. In *ICLR*, 2023.
+20	2507.20057	id		Clare Lyle, Gharda Sokar, Razvan Pascanu, and Andras Gyorgy. What can grokking teach us about learning under nonstationa
+21	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	Kaifeng Lyu, Jikai Jin, Zhiyuan Li, Simon S. Du, Jason D. Lee, and Wei Hu. Dichotomy of early and late phase implicit bi
+22	2603.25009	id		Shalima Binta Manir and Anamika Paul Rupa. A systematic empirical study of grokking: Depth, architecture, activation, an
+23	2002.06716	s2	Predicting trends in the quality of state-of-the-art neural networks without access to training or t	Charles H. Martin, Tongsu Peng, and Michael W. Mahoney. Predicting trends in the quality of state-of-the-art neural netw
+24	2303.13506	s2	The Quantization Model of Neural Scaling	Eric J Michaud, Ziming Liu, Uzay Girit, and Max Tegmark. The quantization model of neural scaling. In *NeurIPS*, 2023.
+25	1905.10650	s2	Are Sixteen Heads Really Better than One?	Paul Michel, Omer Levy, and Graham Neubig. Are sixteen heads really better than one? In *NeurIPS*, 2019.
+26	2410.13821	s2	Artificial Kuramoto Oscillatory Neurons	Takeru Miyato, Sindy Löwe, Andreas Geiger, and Max Welling. Artificial kuramoto oscillatory neurons. In *ICLR (Oral)*, 2
+27	2511.01938	id		Tiberiu Musat. The geometry of grokking: Norm minimization on the zero-loss manifold. *arXiv preprint arXiv:2511.01938*,
+28	2404.17563	s2	An exactly solvable model for emergence and scaling laws in the multitask sparse parity problem	Yoonsoo Nam, Nayara Fonseca, Seok Hyeong Lee, Chris Mingard, and Ard A. Louis. An exactly solvable model for emergence a
+29	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+30	2311.03260	s2	From Coupled Oscillators to Graph Neural Networks: Reducing Over-smoothing via a Kuramoto Model-base	Tuan Nguyen, Hirotada Honda, Takashi Sano, Vinh Nguyen, Shugo Nakamura, and Tan M. Nguyen. From coupled oscillators to g
+31		s2	Mechanical communication in cardiac cell synchronized beating	Ido Nitsan, Stavit Drori, Yair E. Lewis, Shlomi Cohen, and Shelly Tzlil. Mechanical communication in cardiac cell synchr
+32	2209.11895	s2	In-context Learning and Induction Heads	Catherine Olsson, Nelson Elhage, Neel Nanda, et al. In-context learning and induction heads. *Transformer Circuits Threa
+33	2008.08186	s2	Prevalence of neural collapse during the terminal phase of deep learning training	Vardan Papyan, X Y Han, and David L Donoho. Prevalence of neural collapse during the terminal phase of deep learning tra
+34	1606.05340	s2	Exponential expressivity in deep neural networks through transient chaos	Ben Poole, Subhaneil Lahiri, Maithra Raghu, Jascha Sohl-Dickstein, and Surya Ganguli. Exponential expressivity in deep n
+35	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+36	2602.02859	id		Hari K. Prakash and Charles H. Martin. Late-stage generalization collapse in grokking: Detecting anti-grokking with Weig
+37	2605.12394	id		Hari K. Prakash and Charles H. Martin. Detecting overfitting in neural networks during long-horizon grokking using rando
+38	2603.03993	id		M. Sagitova, O. Duranthon, and L. Zdeborová. Specialization of softmax attention heads: Insights from the high-dimension
+39	1312.6120	s2	Exact solutions to the nonlinear dynamics of learning in deep linear neural networks	Andrew M Saxe, James L McClelland, and Surya Ganguli. Exact solutions to the nonlinear dynamics of learning in deep line
+40	1810.10531	s2	A mathematical theory of semantic development in deep neural networks	Andrew M Saxe, James L McClelland, and Surya Ganguli. A mathematical theory of semantic development in deep neural netwo
+41	2304.15004	s2	Are Emergent Abilities of Large Language Models a Mirage?	Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo. Are emergent abilities of large language models a mirage? In *NeurIPS
+42	2604.21691	id		Jamie Simon, Daniel Kunin, Alexander Atanasov, Enric Boix-Adserà, Blake Bordelon, Jeremy Cohen, Nikhil Ghosh, Florentin 
+43	2602.06702	id		Jaisidh Singh, Diganta Misra, and Antonio Orvieto. Explaining grokking in transformers through the lens of inductive bia
+44	2605.09724	id		Yiding Song and Hanming Ye. Model capacity determines grokking through competing memorisation and generalisation speeds.
+45	2605.06352	id		Yifan Tang, Qiquan Wang, Inés García-Redondo, and Anthea Monod. Topological signatures of grokking. *arXiv preprint arXi
+46	2509.21519	id		Yuandong Tian. Provable scaling laws of feature emergence from learning dynamics of grokking. *arXiv preprint arXiv:2509
+47	2603.13331	id		Truong Xuan Khanh, Truong Quynh Hoa, Luu Duc Trung, and Phan Thanh Duc. The norm-separation delay law of grokking: A fir
+48	2604.13123	id		Truong Xuan Khanh, Truong Quynh Hoa, Luu Duc Trung, and Phan Thanh Duc. Spectral entropy collapse as a phase transition 
+49	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+50	1905.09418	s2	Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned	Elena Voita, David Talbot, Fedor Moiseev, Rico Sennrich, and Ivan Titov. Analyzing multi-head self-attention: Specialize
+51	2410.02984	id		George Wang, Jesse Hoogland, Stan van Wingerden, Zach Furman, and Daniel Murfet. Differentiation and specialization of a
+52	2604.04655	id		Ping Wang. Grokking as dimensional phase transition in neural networks. *arXiv preprint arXiv:2604.04655*, 2026a. URL ht
+53	2604.16431	id		Ping Wang. Dimensional criticality at grokking across MLPs and transformers. *arXiv preprint arXiv:2604.16431*, 2026b.
+54	2405.13698	id		Xi Wang and Laurence Aitchison. How to set adamw’s weight decay as you scale model and dataset size. *arXiv preprint arX
+55	2605.08237	id		Ziyue Wang, Yufeng Ying, and Takafumi Kanamori. Distributional spectral diagnostics for localizing grokking transitions.
+56	2206.07682	s2	Emergent Abilities of Large Language Models	Jason Wei, Yi Tay, Rishi Bommasani, et al. Emergent abilities of large language models. *TMLR*, 2022.
+57	2601.19791	id		Mingyue Xu, Gal Vardi, and Itay Safran. To grok grokking: Provable grokking in ridge regression. *arXiv preprint arXiv:2
+58	2602.16967	id		Yongzhong Xu. Early-warning signals of grokking via loss-landscape geometry. *arXiv preprint arXiv:2602.16967*, 2026a.
+59	2604.06256	id		Yongzhong Xu. Spectral edge dynamics reveal functional modes of learning. *arXiv preprint arXiv:2604.06256*, 2026b. URL 
+60	2602.16746	id		Yongzhong Xu. Low-dimensional and transversely curved optimization dynamics in grokking. *arXiv preprint arXiv:2602.1674
+61	2602.18523	id		Yongzhong Xu. The geometry of multi-task grokking: Transverse instability, superposition, and weight decay phase structu
+62	2603.28964	id		Yongzhong Xu. Spectral edge dynamics: An analytical-empirical study of phase transitions in neural network training. *ar
+63	2604.07380	id		Yongzhong Xu. The lifecycle of the spectral edge: From gradient learning to weight-decay compression. *arXiv preprint ar
+64	2603.05228	id		Alper Yıldırım. The geometric inductive bias of grokking: Bypassing phase transitions via architectural topology. *arXiv
+65	2603.29262	id		Junjie Zhang, Zhen Shen, Gang Xiong, and Xisong Dong. Grokking from abstraction to intelligence. *arXiv preprint arXiv:2
+66	2505.11411	id		Xiaotian Zhang, Yue Shang, Entao Yang, and Ge Zhang. Is grokking a computational glass relaxation? *arXiv preprint arXiv
+67		s2	Zeroth, first, and second-order phase transitions in deep neural networks	Liu Ziyin and Masahito Ueda. Zeroth, first, and second-order phase transitions in deep neural networks. *Physical Review
+68	2210.15435	s2	Grokking phase transitions in learning local rules with gradient descent	Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent. *Journal of 

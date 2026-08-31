@@ -1,0 +1,26 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2207.08799	s2	Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit	Barak et al. (2022) B. Barak, B. L. Edelman, S. Goel, S. Kakade, E. Malach, and C. Zhang Hidden progress in deep learnin
+2	2304.01373	s2	Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling	Biderman et al. (2023) S. Biderman, H. Schoelkopf, Q. Anthony, H. Bradley, K. O’Brien, E. Hallahan, M. A. Khan, S. Puroh
+3	2212.03827	s2	Discovering Latent Knowledge in Language Models Without Supervision	Burns et al. (2024) C. Burns, H. Ye, D. Klein, and J. Steinhardt Discovering latent knowledge in language models without
+4	2511.10811	s2	Transformers know more than they can tell - Learning the Collatz sequence	Charton & Narayanan (2025) F. Charton and A. Narayanan Transformers know more than they can tell – learning the collatz 
+5		—		Charton (2022) F. Charton Linear algebra with transformers. Note: TMLR External Links: 2112.01898, Link Cited by: §1, §5
+6	2308.15594	s2	Learning the greatest common divisor: explaining transformer predictions	Charton (2023) F. Charton Learning the greatest common divisor: explaining transformer predictions. External Links: 2308
+7	2302.03025	s2	A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations	Chughtai et al. (2023) B. Chughtai, L. Chan, and N. Nanda A toy model of universality: reverse engineering how networks 
+8	2306.15400	s2	Length Generalization in Arithmetic Transformers	Jelassi et al. (2023) S. Jelassi, S. d’Ascoli, C. Domingo-Enrich, Y. Wu, Y. Li, and F. Charton Length generalization in 
+9	2310.06110	s2	Grokking as the Transition from Lazy to Rich Training Dynamics	Kumar et al. (2023) T. Kumar, B. Bordelon, S. J. Gershman, and C. Pehlevan Grokking as the transition from lazy to rich 
+10	1912.01412	s2	Deep Learning for Symbolic Mathematics	Lample & Charton (2019) G. Lample and F. Charton Deep learning for symbolic mathematics. External Links: 1912.01412, Lin
+11	2310.03686	s2	DecoderLens: Layerwise Interpretation of Encoder-Decoder Transformers	Langedijk et al. (2024) A. Langedijk, H. Mohebbi, G. Sarti, W. Zuidema, and J. Jumelet DecoderLens: layerwise interpreta
+12	2307.03381	s2	Teaching Arithmetic to Small Transformers	Lee et al. (2023) N. Lee, K. Sreenivasan, J. D. Lee, K. Lee, and D. Papailiopoulos Teaching arithmetic to small transfor
+13	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Liu et al. (2022) Z. Liu, O. Kitouni, N. Nolte, E. J. Michaud, M. Tegmark, and M. Williams Towards understanding grokkin
+14		—		Liu et al. (2023) Z. Liu, E. J. Michaud, and M. Tegmark Omnigrok: grokking beyond algorithmic data. Note: ICLR 2023 Exte
+15	2407.20199	s2	Emergence in non-neural models: grokking modular arithmetic via average gradient outer product	Mallinar et al. (2024) N. Mallinar, D. Beaglehole, L. Zhu, A. Radhakrishnan, P. Pandit, and M. Belkin Emergence in non-n
+16	2303.11873	s2	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	Merrill et al. (2023) W. Merrill, N. Tsilivis, and A. Shukla A tale of two circuits: grokking as competition of sparse a
+17	2303.13506	s2	The Quantization Model of Neural Scaling	Michaud et al. (2023) E. J. Michaud, Z. Liu, U. Girit, and M. Tegmark The quantization model of neural scaling. External
+18	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Nanda et al. (2023) N. Nanda, L. Chan, T. Lieberum, J. Smith, and J. Steinhardt Progress measures for grokking via mecha
+19	2102.13019	s2	Investigating the Limitations of Transformers with Simple Arithmetic Tasks	Nogueira et al. (2021) R. Nogueira, Z. Jiang, and J. Lin Investigating the limitations of transformers with simple arith
+20	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	Power et al. (2022) A. Power, Y. Burda, H. Edwards, I. Babuschkin, and V. Misra Grokking: generalization beyond overfitt
+21	2310.13121	s2	Understanding Addition in Transformers	Quirke & Barez (2023) P. Quirke and F. Barez Understanding addition in transformers. External Links: 2310.13121, Link Ci
+22		s2	Positional description matters for transformers	Shen et al. (2023) R. Shen, S. Bubeck, R. Eldan, Y. T. Lee, Y. Li, and Y. Zhang Positional description matters for trans
+23	2507.12379	s2	Probing for Arithmetic Errors in Language Models	Sun et al. (2025) Y. Sun, A. Stolfo, and M. Sachan Probing for arithmetic errors in language models. In Proceedings of t
+24	2309.02390	s2	Explaining grokking through circuit efficiency	Varma et al. (2023) V. Varma, R. Shah, Z. Kenton, J. Kramár, and R. Kumar Explaining grokking through circuit efficiency
+25	2405.15071	s2	Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization	Wang et al. (2024) B. Wang, X. Yue, Y. Su, and H. Sun Grokked transformers are implicit reasoners: a mechanistic journey

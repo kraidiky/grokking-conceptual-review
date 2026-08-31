@@ -1,0 +1,40 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2209.04882	id		S Ariosto, R Pacelli, M Pastore, F Ginelli, M Gherardi, and P Rotondo. Statistical mechanics of deep learning beyond the
+2	2302.05882	id		Luca Arnaboldi, Ludovic Stephan, Florent Krzakala, and Bruno Loureiro. From high-dimensional & mean-field dynamics to di
+3	2003.10409	s2	Online stochastic gradient descent on non-convex losses from high-dimensional inference	Gerard Ben Arous, Reza Gheissari, and Aukosh Jagannath. Online stochastic gradient descent on non-convex losses from hig
+4	2210.15651	s2	Learning Single-Index Models with Shallow Neural Networks	Alberto Bietti, Joan Bruna, Clayton Sanford, and Min Jae Song. Learning single-index models with shallow neural networks
+5	2205.09653	s2	Self-consistent dynamical field theory of kernel evolution in wide neural networks	Blake Bordelon and Cengiz Pehlevan. Self-consistent dynamical field theory of kernel evolution in wide neural networks. 
+6		s2	Interpretability of deep learning models: A survey of results	Supriyo Chakraborty, Richard Tomsett, Ramya Raghavendra, Daniel Harborne, Moustafa Alzantot, Federico Cerutti, Mani Sriv
+7		s2	Learning curves for overparametrized deep neural networks: A field theory perspective	Omry Cohen, Or Malka, and Zohar Ringel. Learning curves for overparametrized deep neural networks: A field theory perspe
+8		—		Alain Durmus and Eric Moulines. Nonasymptotic convergence analysis for the unadjusted langevin algorithm. *The Annals of
+9	1912.01599	id		David Gamarnik, Eren C Kızıldağ, and Ilias Zadik. Stationary points of shallow neural networks with quadratic activation
+10		s2	Optimal storage properties of neural network models	E. Gardner and B. Derrida. Optimal storage properties of neural network models. *Journal of Physics A Mathematical Gener
+11	2301.02679	id		Andrey Gromov. Grokking modular arithmetic. *arXiv preprint arXiv:2301.02679*, 2023.
+12		s2	First-order transition to perfect generalization in a neural network with binary synapses.	Géza Györgyi. First-order transition to perfect generalization in a neural network with binary synapses. *Phys. Rev. A*,
+13		s2	Statistical Physics: Volume 5 , volume 5	Lev Davidovich Landau and Evgenii Mikhailovich Lifshitz. *Statistical Physics: Volume 5*, volume 5. Elsevier, 2013.
+14	2012.04030	s2	Statistical Mechanics of Deep Linear Neural Networks: The Backpropagating Kernel Renormalization	Qianyi Li and Haim Sompolinsky. Statistical mechanics of deep linear neural networks: The backpropagating kernel renorma
+15	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	Ziming Liu, Ouail Kitouni, Niklas Nolte, Eric J Michaud, Max Tegmark, and Mike Williams. Towards understanding grokking:
+16	2210.01117	id		Ziming Liu, Eric J Michaud, and Max Tegmark. Omnigrok: Grokking beyond algorithmic data. *arXiv preprint arXiv:2210.0111
+17	1804.06561	s2	A mean field view of the landscape of two-layer neural networks	Song Mei, Andrea Montanari, and Phan-Minh Nguyen. A mean field view of the landscape of two-layer neural networks. *Proc
+18	2209.14863	id		Alireza Mousavi-Hosseini, Sejun Park, Manuela Girotti, Ioannis Mitliagkas, and Murat A Erdogdu. Neural networks efficien
+19	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	Neel Nanda, Lawrence Chan, Tom Lieberum, Jess Smith, and Jacob Steinhardt. Progress measures for grokking via mechanisti
+20	2106.04110	s2	A self consistent theory of Gaussian Processes captures feature learning effects in finite CNNs	Gadi Naveh and Zohar Ringel. A self consistent theory of gaussian processes captures feature learning effects in finite 
+21	2004.01190	s2	Predicting the outputs of finite deep neural networks trained with noisy gradients.	Gadi Naveh, Oded Ben David, Haim Sompolinsky, and Zohar Ringel. Predicting the outputs of finite deep neural networks tr
+22		s2	Priors for Infinite Networks	Radford M Neal. Priors for infinite networks. In *Bayesian Learning for Neural Networks*, pp. 29–53. Springer, 1996.
+23	1206.1901	s2	Handbook of Markov Chain Monte Carlo	Radford M Neal et al. MCMC using hamiltonian dynamics. *Handbook of markov chain monte carlo*, 2(11):2, 2011.
+24	1810.05148	id		Roman Novak, Lechao Xiao, Jaehoon Lee, Yasaman Bahri, Greg Yang, Daniel A. Abolafia, Jeffrey Pennington, and Jascha Sohl
+25	2201.02177	id		Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra. Grokking: Generalization beyond overfitting
+26		s2	Gaussian Processes for Machine Learning (Adaptive Computation and Machine Learning)	Carl Edward Rasmussen and Christopher K. I. Williams. *Gaussian Processes for Machine Learning (Adaptive Computation and
+27		s2	Exact solution for on-line learning in multilayer neural networks.	David Saad and Sara A. Solla. Exact solution for on-line learning in multilayer neural networks. *Phys. Rev. Lett.*, 74:
+28	2006.15459	s2	Optimization and Generalization of Shallow Neural Networks with Quadratic Activation Functions	Stefano Sarao Mannelli, Eric Vanden-Eijnden, and Lenka Zdeborová. Optimization and generalization of shallow neural netw
+29	2112.15383	s2	Separation of scales and a thermodynamic description of feature learning in some CNNs	Inbar Seroussi, Gadi Naveh, and Zohar Ringel. Separation of scales and a thermodynamic description of feature learning i
+30		s2	Statistical mechanics of learning from examples.	H. S. Seung, H. Sompolinsky, and N. Tishby. Statistical mechanics of learning from examples. *Phys. Rev. A*, 45:6056–609
+31	1910.12837	id		Yan Shuo Tan and Roman Vershynin. Online stochastic gradient descent with arbitrary initialization solves non-smooth, no
+32	1503.02406	s2	Deep learning and the information bottleneck principle	Naftali Tishby and Noga Zaslavsky. Deep learning and the information bottleneck principle, 2015.
+33		—		David Tong. *Statistical physics*. University of Cambridge, 2011.
+34	2309.02390	id		Vikrant Varma, Rohin Shah, Zachary Kenton, János Kramár, and Ramana Kumar. Explaining grokking through circuit efficienc
+35	2210.15435	id		Bojan Žunkovič and Enej Ilievski. Grokking phase transitions in learning local rules with gradient descent. *arXiv e-pri
+36		—		Karl Weiss, Taghi M Khoshgoftaar, and DingDing Wang. A survey of transfer learning. *Journal of Big data*, 3(1):1–40, 20
+37		s2	Computing with Infinite Networks	Christopher Williams. Computing with infinite networks. *Advances in neural information processing systems*, 9, 1996.
+38		s2	Exploring one pass learning for deep neural network training with averaged stochastic gradient desce	Zhao You, Xiaorui Wang, and Bo Xu. Exploring one pass learning for deep neural network training with averaged stochastic
+39	1311.2901	s2	Visualizing and Understanding Convolutional Networks	Matthew D. Zeiler and Rob Fergus. Visualizing and understanding convolutional networks. In David Fleet, Tomas Pajdla, Be

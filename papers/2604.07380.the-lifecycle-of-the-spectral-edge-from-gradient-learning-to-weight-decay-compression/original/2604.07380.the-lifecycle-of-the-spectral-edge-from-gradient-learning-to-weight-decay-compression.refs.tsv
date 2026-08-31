@@ -1,0 +1,23 @@
+# номер	arxiv	источник	заголовок по Semantic Scholar	запись
+1	2103.00065	s2	Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability	**Cohen et al. [2021]** Cohen, J. M., Kaur, S., Li, Y., Kolter, J. Z., and Talwalkar, A. Gradient descent on neural netw
+2		s2	The Rotation of Eigenvectors by a Perturbation. III	**Davis and Kahan [1970]** Davis, C. and Kahan, W. M. The rotation of eigenvectors by a perturbation. III. *SIAM J. Nume
+3	1812.04754	id		**Gur-Ari et al. [2018]** Gur-Ari, G., Roberts, D. A., and Dyer, E. Gradient descent happens in a tiny subspace. *arXiv 
+4		—		**Hochreiter and Schmidhuber [1997]** Hochreiter, S. and Schmidhuber, J. Flat minima. *Neural Computation*, 9(1):1–42, 1
+5		s2	Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent 	**Lake and Baroni [2018]** Lake, B. M. and Baroni, M. Generalization without systematicity: On the compositional skills 
+6		s2	Grokking beyond algorithmic data	**Liu et al. [2023a]** Liu, Z., Michaud, E. J., and Tegmark, M. Omnigrok: Grokking beyond algorithmic data. In *ICLR*, 2
+7	2205.10343	s2	Towards Understanding Grokking: An Effective Theory of Representation Learning	**Liu et al. [2023b]** Liu, Z., Kitouni, O., Nolte, N., Michaud, E. J., Tegmark, M., and Williams, M. Towards understand
+8		s2	Decoupled Weight Decay Regularization	**Loshchilov and Hutter [2019]** Loshchilov, I. and Hutter, F. Decoupled weight decay regularization. In *ICLR*, 2019.
+9	1906.05890	s2	Gradient Descent Maximizes the Margin of Homogeneous Neural Networks	**Lyu and Li [2020]** Lyu, K. and Li, J. Gradient descent maximizes the margin of homogeneous neural networks. In *ICLR*
+10	2311.18817	s2	Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking	**Lyu et al. [2024]** Lyu, K., Jin, J., Li, Z., Du, S. S., Lee, J. D., and Hu, W. Dichotomy of early and late phase impl
+11	2301.05217	s2	Progress measures for grokking via mechanistic interpretability	**Nanda et al. [2023]** Nanda, N., Chan, L., Lieberum, T., Smith, J., and Steinhardt, J. Progress measures for grokking 
+12		s2	A toy model of interference weights	**Olah et al. [2025]** Olah, C., Batson, J., Templeton, A., Conerly, T., Henighan, T., and Carter, S. A toy model of int
+13	2201.02177	s2	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	**Power et al. [2022]** Power, A., Burda, Y., Edwards, H., Babuschkin, I., and Misra, V. Grokking: Generalization beyond
+14	1706.04454	id		**Sagun et al. [2017]** Sagun, L., Evci, U., Güney, V. U., Dauphin, Y., and Bottou, L. Empirical analysis of the Hessian
+15	2602.10496	id		**Xu [2026a]** Xu, Y. Low-dimensional execution manifolds in transformer learning dynamics: Evidence from modular arithm
+16	2602.16746	id		**Xu [2026b]** Xu, Y. Low-dimensional and transversely curved optimization dynamics in grokking. *arXiv preprint arXiv:2
+17	2602.16967	id		**Xu [2026c]** Xu, Y. Early-warning signals of grokking via loss-landscape geometry. *arXiv preprint arXiv:2602.16967*, 
+18	2602.18523	id		**Xu [2026d]** Xu, Y. The geometry of multi-task grokking: Transverse instability, superposition, and weight decay phase
+19	2602.18649	id		**Xu [2026e]** Xu, Y. Holographic encoding and spectral edge events in neural network training. *arXiv preprint arXiv:26
+20	2602.23696	id		**Xu [2026f]** Xu, Y. Backbone drift and phase transitions in transformer pretraining. *arXiv preprint arXiv:2602.23696*
+21	2603.28964	id		**Xu [2026g]** Xu, Y. The spectral edge thesis: A mathematical framework for intra-signal phase transitions in neural ne
+22	2604.06256	s2	Spectral Edge Dynamics Reveal Functional Modes of Learning	**Xu [2026h]** Xu, Y. Spectral edge dynamics reveal functional modes of learning. *arXiv preprint*, 2026.
