@@ -1,0 +1,18 @@
+arxiv-id: none
+work-key: 2412.-----
+license-url: none
+class: no-open-licence
+source: https://proceedings.mlr.press/v285/zheng24a.html
+source-file: https://raw.githubusercontent.com/mlresearch/v285/main/assets/zheng24a/zheng24a.pdf
+venue: Proceedings of UniReps: the Second Edition of the Workshop on Unifying
+  Representations in Neural Models, PMLR volume 285, pages 324-334; the workshop
+  was held in Vancouver on 14 December 2024, the volume was published 15 June 2024
+stated-terms: "Copyright (c) The authors and PMLR 2025" — that is all the serving
+  source states. Neither the volume page nor the PDF itself names an open licence
+  (CC BY or any other), in a running head or in the text.
+consequence: the work is stored in the corpus whole as a working copy, but only an
+  excerpt goes outside: the class no-open-licence belongs to both RESTRICTED_CLASSES
+  and NO_ORIGINAL_CLASSES of export_public.py, so the public snapshot receives an
+  excerpt card without original/ and without images/.
+checked: 2026-09-05 (the PMLR volume page and the paper's PDF, by hand; no arXiv
+  OAI-PMH request was made and none is possible — the work is not on arXiv)

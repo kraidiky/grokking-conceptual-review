@@ -12,7 +12,7 @@
 
 Феномен отложенной генерализации: сеть сначала почти идеально подгоняет обучающую выборку при низкой тестовой точности, а спустя на порядки более долгое обучение тестовая точность резко возрастает. Термин и явление введены Power et al. (2022).
 
-### [Фаза меморизации / плато](memorization-phase.md) (memorization phase / plateau) — 80 статей
+### [Фаза меморизации / плато](memorization-phase.md) (memorization phase / plateau) — 81 статей
 
 Начальный этап обучения при гроккинге: почти идеальная точность на обучающей выборке при низкой тестовой — затяжное плато, предшествующее резкому переходу к генерализации.
 
@@ -38,6 +38,11 @@
 
 Численная нестабильность: без регуляризации обучение выталкивает модель на край численной стабильности, ошибки плавающей точки в softmax останавливают обучение и препятствуют гроккингу. Введено Prieto et al. (2025).
 
+### [Унгрокинг](ungrokking.md) (ungrokking) — 11 статей
+
+Переход, обратный гроккингу: сеть, уже достигшая идеальной тестовой точности, при дальнейшем обучении регрессирует к низкой — от генерализации назад к запоминанию. Предсказан теорией эффективности контуров (Varma et al., 2023).
+
+
 ### [Анти-грокинг / коллапс генерализации](anti-grokking.md) (anti-grokking / generalization collapse) — 9 статей
 Слитые алиасы: anti-grokking / generalization-collapse.
 
@@ -46,11 +51,6 @@
 ### [Катастрофическое забывание](catastrophic-forgetting.md) (catastrophic forgetting) — 9 статей
 
 Резкая утрата ранее усвоенного при продолжении обучения на новых данных или изменённом распределении; в контексте гроккинга — объяснение потери уже достигнутого обобщающего решения.
-
-### [Унгрокинг](ungrokking.md) (ungrokking) — 9 статей
-
-Переход, обратный гроккингу: сеть, уже достигшая идеальной тестовой точности, при дальнейшем обучении регрессирует к низкой — от генерализации назад к запоминанию. Предсказан теорией эффективности контуров (Varma et al., 2023).
-
 
 ### [Полу-грокинг](semi-grokking.md) (semi-grokking) — 6 статей
 
@@ -76,7 +76,7 @@
 
 Объяснение гроккинга: генерализация возникает из постепенного формирования структурированных внутренних представлений, кодирующих устройство задачи, а не из самого запоминания примеров.
 
-### [Фурье-признаки и контуры](fourier-features-circuits.md) (Fourier features / circuits) — 49 статей
+### [Фурье-признаки и контуры](fourier-features-circuits.md) (Fourier features / circuits) — 50 статей
 
 Периодические представления входов на немногих ключевых частотах и подсети, складывающие числа через тригонометрические тождества, — язык описания решений модульной арифметики, идущий от разбора Nanda et al.
 
@@ -85,30 +85,30 @@
 
 Появление в ходе обучения признаков, кодирующих устройство задачи; генерализация совпадает с возникновением структуры в эмбеддингах, нарастающей всё время плато.
 
+### [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) (lazy-to-rich / kernel-to-feature-learning transition) — 33 статей
+Слитые алиасы: lazy-to-rich / kernel-to-feature-learning / lazy-learning-stage / lazy-rich-regime-transition.
+
+Трактовка гроккинга как смены режимов: сначала «ленивое» обучение около инициализации (ядерная регрессия с NTK, запоминание), затем переход в «богатый» режим обучения признаков, дающий генерализацию.
+
 ### [Ландшафт потерь / бассейны](loss-landscape-basins.md) (loss landscape / basins) — 32 статей
 
 Геометрия функции потерь над пространством весов: отложенная генерализация описывается как перемещение оптимизационной траектории между бассейнами — из запоминающего минимума в обобщающий.
 
 
-### [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) (lazy-to-rich / kernel-to-feature-learning transition) — 31 статей
-Слитые алиасы: lazy-to-rich / kernel-to-feature-learning / lazy-learning-stage / lazy-rich-regime-transition.
-
-Трактовка гроккинга как смены режимов: сначала «ленивое» обучение около инициализации (ядерная регрессия с NTK, запоминание), затем переход в «богатый» режим обучения признаков, дающий генерализацию.
-
-### [Эффективность контуров](circuit-efficiency.md) (circuit efficiency) — 28 статей
+### [Эффективность контуров](circuit-efficiency.md) (circuit efficiency) — 29 статей
 
 Свойство контура выдавать нужные логиты при меньшей норме параметров; когда несколько контуров одинаково решают обучающую выборку, weight decay отбирает более эффективный. Основа объяснений гроккинга, унгрокинга и полу-грокинга у Varma et al.
 
+
+### [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md) (sparse subnetwork / lottery ticket) — 26 статей
+
+Связывает гроккинг с выделением внутри плотной сети малой разрежённой подсети, реализующей обобщающий алгоритм и вытесняющей плотную запоминающую.
 
 ### [Сжатие многообразия представлений](manifold-representation-compression.md) (manifold / representation compression) — 25 статей
 
 Трактовка, в которой генерализация наступает, когда представления или траектория весов сжимаются из раздутой запоминающей конфигурации в компактное низкоразмерное многообразие.
 
-### [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md) (sparse subnetwork / lottery ticket) — 24 статей
-
-Связывает гроккинг с выделением внутри плотной сети малой разрежённой подсети, реализующей обобщающий алгоритм и вытесняющей плотную запоминающую.
-
-### [Нейронное касательное ядро](neural-tangent-kernel-ntk.md) (neural tangent kernel, NTK) — 20 статей
+### [Нейронное касательное ядро](neural-tangent-kernel-ntk.md) (neural tangent kernel, NTK) — 22 статей
 Слитые алиасы: neural-tangent-kernel / NTK-task-kernel-alignment.
 
 Ядро, к которому сводится обучение сети в ленивом (линеаризованном) режиме; в теории гроккинга задаёт начальную запоминающую фазу, из которой сеть выходит при переходе к обучению признаков.
@@ -188,15 +188,15 @@
 
 Экспериментальная постановка Power et al. (2022) — таблицы бинарных операций, малый трансформер, доля данных как управляющий параметр, — унаследованная большинством работ корпуса как стандартная площадка.
 
-### [Реальные данные и зрение](vision-real-world-data-mnist-cifar.md) (vision / real-world data: MNIST, CIFAR, ...) — 33 статей
+### [Реальные данные и зрение](vision-real-world-data-mnist-cifar.md) (vision / real-world data: MNIST, CIFAR, ...) — 34 статей
 
 Собирательное понятие для наблюдений гроккинга за пределами синтетических алгоритмических задач — на классификации изображений (MNIST, CIFAR, ImageNet), тексте и молекулах.
 
-### [Разрежённая чётность](sparse-parity.md) (sparse parity) — 22 статей
+### [Разрежённая чётность](sparse-parity.md) (sparse parity) — 23 статей
 
 Синтетическая задача бинарной классификации: метка — чётность (XOR) k скрытых битов из фиксированного секретного подмножества n-битной строки при k много меньше n; один из канонических полигонов гроккинга.
 
-### [Шум в метках / случайные метки](label-noise-random-labels.md) (label noise / random labels; у Power et al. — outliers) — 20 статей
+### [Шум в метках / случайные метки](label-noise-random-labels.md) (label noise / random labels; у Power et al. — outliers) — 21 статей
 
 Намеренная замена истинных обучающих меток случайными — у части примеров или у всех; введена в корпус Power et al. как «выбросы», числом которых измеряется влияние шума на наступление генерализации.
 
@@ -229,7 +229,7 @@
 Штраф, пропорциональный квадрату L2-нормы весов (эквивалент покомпонентного затухания весов на каждом шаге); главный регуляризатор корпуса — с ним связаны и скорость, и само наступление гроккинга в большинстве постановок.
 
 
-### [Доля данных / критический размер набора](data-fraction-critical-dataset-size.md) (data fraction / critical dataset size) — 63 статей
+### [Доля данных / критический размер набора](data-fraction-critical-dataset-size.md) (data fraction / critical dataset size) — 64 статей
 
 Порог объёма обучающей выборки, разделяющий два режима: выше него сеть в конце концов обобщает, ниже — остаётся на запоминании; удобно выражается долей всех допустимых примеров задачи.
 
@@ -246,7 +246,7 @@
 
 Начальная норма весов сети, задаваемая множителем к стандартной схеме; Omnigrok установил, что большой масштаб инициализации вызывает гроккинг, а малый его устраняет.
 
-### [Когда регуляризация необходима](regularization-necessity.md) (regularization necessity) — 33 статей
+### [Когда регуляризация необходима](regularization-necessity.md) (regularization necessity) — 34 статей
 
 Открытый спор корпуса: является ли регуляризация необходимым условием гроккинга; собраны прямо противоположные экспериментальные ответы, каждый честно полученный в своей постановке.
 
@@ -306,7 +306,7 @@
 
 Интервенция, удерживающая L2-норму весов или активаций фиксированной: параметры принудительно кладутся на сферу, масштабная степень свободы устраняется, и информация кодируется только направлением.
 
-### [Ускорение гроккинга](accelerated-grokking.md) (accelerated grokking) — 4 статей
+### [Ускорение гроккинга](accelerated-grokking.md) (accelerated grokking) — 5 статей
 
 Семейство вмешательств, сокращающих задержку: в градиент, в начальное вложение, в параметры по ходу, в норму. Общая слабость — выигрыш меряется в шагах, а не в секундах, и часто на одном семени.
 
@@ -314,7 +314,7 @@
 
 ## 6. Аналитические инструменты и метрики (Analytical tools & metrics)
 
-### [Меры прогресса](progress-measures.md) (progress measures) — 66 статей
+### [Меры прогресса](progress-measures.md) (progress measures) — 67 статей
 
 Непрерывные метрики внутреннего состояния сети, которые предшествуют резкому скачку способности и причинно с ним связаны, — способ увидеть за внешней внезапностью гроккинга постепенный скрытый процесс (Nanda et al., 2023).
 
@@ -334,13 +334,13 @@
 
 Задержка между подгонкой обучающей выборки и началом обобщения — величина, по которой корпус сравнивает вмешательства. Определяется операционально через пороги, и от выбора определения (первое касание против устойчивого грока) и единиц (шаги, секунды, FLOPs) зависит, какой метод окажется быстрее.
 
+### [Параметр порядка](order-parameter.md) (order parameter) — 13 статей
+
+Макроскопическая величина, резко меняющаяся при пересечении критического порога управляющим параметром, — канонический маркер фазового перехода, перенесённый в теории гроккинга из статистической физики.
+
 ### [Разброс по семенам и воспроизводимость](seed-variance-reproducibility.md) (seed variance / reproducibility) — 13 статей
 
 Расхождение исходов между прогонами, отличающимися только случайным семенем, и вопрос о том, что из сообщённого переживает его смену. Разброс входит в отчёт, служит порогом значимости для отрицательных результатов и определяет устройство опыта: парные ветви из одного состояния против сравнения средних.
-
-### [Параметр порядка](order-parameter.md) (order parameter) — 12 статей
-
-Макроскопическая величина, резко меняющаяся при пересечении критического порога управляющим параметром, — канонический маркер фазового перехода, перенесённый в теории гроккинга из статистической физики.
 
 ### [Тяжёлохвостовая саморегуляризация](heavy-tailed-self-regularization-htsr.md) (heavy-tailed self-regularization, HTSR) — 9 статей
 
@@ -596,7 +596,7 @@
 
 - 2403.03942: [`"evidence of a *heuristic core*: a set of attention heads that appear in all generalizing subnetworks but, on their own, do not generalize"`](../papers/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md#fig-1) — [в карточке](../papers/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models/2403.03942.the-heuristic-core-understanding-subnetwork-generalization-in-pretrained-language-models.card.md#fig-1)
 
-### Настройка гиперпараметров (hyperparameter tuning) — 8 статей
+### Настройка гиперпараметров (hyperparameter tuning) — 9 статей
 
 - 2601.19791: [`"through proper hyperparameter tuning"`](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/original/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.md#p1-2) — [в карточке](../papers/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression/2601.19791.to-grok-grokking-provable-grokking-in-ridge-regression.card.md#p1-2)
 
@@ -780,7 +780,7 @@
 
 - 2504.03162: [`"this optimization merely leads to token uniformity"`](../papers/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking.card.md#p1-2) — [в карточке](../papers/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking/2504.03162.beyond-progress-measures-theoretical-insights-into-the-mechanism-of-grokking.card.md#p1-2)
 
-### Эффект туннеля (tunnel effect) — 1 статей
+### Эффект туннеля (tunnel effect) — 2 статей
 
 - 2405.19454: [`"Emergence of *Tunnel* on various depth of models"`](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#fig-3) — [в карточке](../papers/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better/2405.19454.deep-grokking-would-deep-neural-networks-generalize-better.card.md#fig-3)
 

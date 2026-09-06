@@ -1,6 +1,6 @@
 # Полу-грокинг (semi-grokking)
 
-[Унгрокинг](ungrokking.md) ← предыдущая карточка, следующая → [behavioral-vs-true-grokking](behavioral-vs-true-grokking.md)
+[Катастрофическое забывание](catastrophic-forgetting.md) ← предыдущая карточка, следующая → [behavioral-vs-true-grokking](behavioral-vs-true-grokking.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

@@ -1,6 +1,6 @@
 # Анти-грокинг / коллапс генерализации (anti-grokking / generalization collapse)
 
-[Коллапс softmax](softmax-collapse.md) ← предыдущая карточка, следующая → [Катастрофическое забывание](catastrophic-forgetting.md)
+[Унгрокинг](ungrokking.md) ← предыдущая карточка, следующая → [Катастрофическое забывание](catastrophic-forgetting.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\

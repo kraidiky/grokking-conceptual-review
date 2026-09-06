@@ -1,6 +1,6 @@
 # Ландшафт потерь / бассейны (loss landscape / basins)
 
-[Возникновение признаков](feature-emergence-feature-learning.md) ← предыдущая карточка, следующая → [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md)
+[Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) ← предыдущая карточка, следующая → [Эффективность контуров](circuit-efficiency.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

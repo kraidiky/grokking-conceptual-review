@@ -1,6 +1,6 @@
 # Эффективность контуров (circuit efficiency)
 
-[Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md) ← предыдущая карточка, следующая → [Сжатие многообразия представлений](manifold-representation-compression.md)
+[Ландшафт потерь / бассейны](loss-landscape-basins.md) ← предыдущая карточка, следующая → [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\
@@ -137,9 +137,6 @@ et al. связывают эффективность контуров с кри�
   чтобы ускорить появление обобщающего контура. Источник различия: механизм
   используется как инженерный рычаг постановки эксперимента.
 
-###### ref-3-10
-**\[3.10\]** 2602.02859 — Prakash et al., «Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher». Нюанс: приближённая местная сложность контуров взята как мера продвижения — попытка измерить действенность схемы, не разбирая её. [`"Approximate Local Circuit Complexity, which capture broader"`](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/original/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.md#p2-2). *«[приближённую местную сложность контуров, схватывающие более широкие](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md#p2-2)»*
-
 ## Ссылки
 
 ###### ref-1-1
@@ -204,6 +201,9 @@ et al. связывают эффективность контуров с кри�
 
 ###### ref-3-9
 **\[3.9\]** 2606.26050 — Li, Sreedhar 2026, «Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining». Соревнование цепей, переведённое с эффективности на измеримые статистики данных и проверенное причинно в обе стороны: переворот поддержки в противосвидетельство на месте (числа токенов сохранены) убивает правило с точной дозовой монотонностью ($\rho_{\mathrm{kill}}=-1.00$, $\mathrm{CM}$ от $+3.68$ до $-2.99$) и воспроизводится на втором правиле пятью дозами внутри одного корпуса ($0.96\to0.00$ строго монотонно); обратная инъекция при отношении свидетельств до $3\,565$ против $7.9$ выживающего уровня не возвращает поведение ни при равномерном, ни при раннем, ни при позднем расписаниях — при частичной пересборке несущей головы (в выживающих прогонах маржу несёт одна голова последнего слоя, $0.75$–$0.90$ атрибуции; в обвалившихся носителя нет). Нюанс: асимметрия сравнивает неравные правки — убийство меняет ровно те токены, что тестирует батарея, а восстановление нарочно вливает непересекающиеся имена, так что провал возврата может быть свойством конструкции опыта. [`"No dose produces a control-valid recovery in any seed"`](../papers/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining/original/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining.md#p5-6). *«[Никакая доза не производит control-valid восстановления ни в одном семени](../papers/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining.card.md#p5-6)»*
+
+###### ref-3-10
+**\[3.10\]** 2602.02859 — Prakash et al., «Late-Stage Generalization Collapse in Grokking: Detecting anti-grokking with WeightWatcher». Нюанс: приближённая местная сложность контуров взята как мера продвижения — попытка измерить действенность схемы, не разбирая её. [`"Approximate Local Circuit Complexity, which capture broader"`](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/original/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.md#p2-2). *«[приближённую местную сложность контуров, схватывающие более широкие](../papers/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher/2602.02859.late-stage-generalization-collapse-in-grokking-detecting-anti-grokking-with-weightwatcher.card.md#p2-2)»*
 
 ## Цитирования
 

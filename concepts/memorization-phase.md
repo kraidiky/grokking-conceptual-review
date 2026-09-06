@@ -32,7 +32,11 @@
 способны **полностью устранить** фазу меморизации \[[2.1](#ref-2-1)\]; само
 «запоминание» в ленивом режиме (lazy/[NTK](neural-tangent-kernel-ntk.md): признаки почти не меняются) несовершенно \[[2.2](#ref-2-2)\]; а переобучение
 может наступать и вовсе **без** последующего гроккинга — из-за численных
-ошибок \[[2.3](#ref-2-3)\].
+ошибок \[[2.3](#ref-2-3)\]. Переход «запоминание → обобщение» наблюдают и там, где
+обучающего набора нет вовсе: при онлайн-обучении на формальном языке, где свежий
+батч сэмплируется каждый шаг, запоминаются не примеры, а виденные пары «сущность —
+свойство», и конец такой фазы авторы описывают как смену запоминающего решения
+обобщающим \[[5.2](#ref-5-2)\]↗.
 
 Ту же пору корпус называет и **пост-меморизационной динамикой** (post-memorization dynamics), когда речь идёт о том, что происходит внутри сети после подгонки.
 
@@ -254,6 +258,10 @@ Loss-Landscape Geometry». Нюанс: разложение интегрируе
 ###### ref-3-27
 **\[3.27\]** 2206.04817 — Thilak et al., «The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon». Нюанс: то же плато под именем «терминальная фаза обучения» (TPT) — термин, принесённый в корпус работой о слингшоте. [`"Terminal Phase of Training (TPT)"`](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-3). *«[терминальной фазе обучения* (Terminal Phase of Training, TPT)](../papers/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking/2206.04817.the-slingshot-mechanism-an-empirical-study-of-adaptive-optimizers-and-grokking.card.md#p1-3)»*
 
+
+###### ref-3-28
+**\[3.28\]** 2310.13061 — Doshi, Das, He, Gromov 2024, «To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datasets». Запоминание и обобщение здесь не сменяют друг друга во времени, а сосуществуют и разделяются по нейронам. Нюанс: запоминаются испорченные метки, а не обучающий набор целиком. [`"In the absence of explicit regularization the network generalizes on test data and memorizes the corrupted training data."`](../papers/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets/original/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets.md#p4-6). *«[В отсутствие явной регуляризации сеть обобщается на тестовых данных и запоминает испорченные обучающие данные](../papers/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets.card.md#p4-6)»*
+
 ## Цитирования
 
 Работы, лишь упоминающие явление (обзор литературы, связанные работы, попутное цитирование) без его подробного разбора.
@@ -324,3 +332,8 @@ Loss-Landscape Geometry». Нюанс: разложение интегрируе
 
 ###### ref-5-1
 **\[5.1\]** 2406.03999 — Внешняя работа (демотирована из корпуса): Song, Tan, Zou, Ma, Huang, «Unveiling the Dynamics of Information Interplay…». [`"in the early stages of training, the model quickly fits the training data and achieves 100% accuracy on the training set"`](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4). *«[на ранних порах обучения модель быстро подгоняется под обучающие данные и достигает 100 % точности на обучающей выборке](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#p6-4)»* По [рис. 7](../externals/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning/2406.03999.unveiling-the-dynamics-of-information-interplay-in-supervised-learning.card.md#fig-7) обучающая точность выходит на 100 % около 150 эпох, а MIR продолжает расти примерно до $10^{3}$ эпох и лишь затем поворачивает: внутри плато различимы две части, разделённые не точностью, а поворотом меры. Авторы этого разделения не проговаривают.
+
+
+###### ref-5-2
+**\[5.2\]** 2408.12578 — Внешняя работа (выдержка): Lubana, Kawaguchi, Dick & Tanaka 2024, «A Percolation Model of Emergence: Analyzing Transformers Trained on a Formal Language». Нюанс: обучающего набора в этой обстановке нет — данные сэмплируются заново каждую итерацию, — и запоминаются не примеры, а виденные пары «сущность — свойство»; довод против запоминания опирается на счёт достижимого качества: около 15 % в среднем и 20 % в лучшем случае против наблюдаемых 30–35 %. Рабочая карточка папки несёт полный перевод статьи. [`"This suggests a memorization effect is at play during Phase 2, and the end of this phase corresponds to a transition from a memorizing to a generalizing solution."`](../externals/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language.card.md#p8-1). *«[Это позволяет предположить, что во время Фазы 2 действует эффект запоминания, а конец этой фазы соответствует переходу от запоминающего решения к обобщающему](../externals/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language.card.md#p8-1)»*\
+Доп. (обстановка): [`"Data is sampled “online”, i.e., we sample a fresh batch of strings every iteration from $\mathcal{L}$."`](../externals/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language.card.md#p6-3). *«[Данные сэмплируются «онлайн», т. е. мы сэмплируем свежий батч строк из $\mathcal{L}$ на каждой итерации](../externals/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language/2408.12578.a-percolation-model-of-emergence-analyzing-transformers-trained-on-a-formal-language.card.md#p6-3)»*.

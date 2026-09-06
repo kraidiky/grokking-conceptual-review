@@ -1,6 +1,6 @@
 # Возникновение признаков (feature emergence / feature learning)
 
-[Фурье-признаки и контуры](fourier-features-circuits.md) ← предыдущая карточка, следующая → [Ландшафт потерь / бассейны](loss-landscape-basins.md)
+[Фурье-признаки и контуры](fourier-features-circuits.md) ← предыдущая карточка, следующая → [Переход lazy→rich](lazy-to-rich-kernel-to-feature-learning.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\

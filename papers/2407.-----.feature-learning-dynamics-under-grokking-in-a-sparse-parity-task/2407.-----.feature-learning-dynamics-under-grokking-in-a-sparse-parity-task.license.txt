@@ -1,0 +1,19 @@
+arxiv-id: none
+work-key: 2407.-----
+license-url: https://creativecommons.org/licenses/by/4.0/
+class: cc-by-4.0
+source: https://openreview.net/forum?id=gciHssAM8A
+source-file: Internet Archive snapshot of openreview.net/pdf?id=gciHssAM8A
+  (the live openreview.net answers this container with a 403 at every address)
+mirror: ETH Research Collection, handle 20.500.11850/714300, doi 10.3929/ethz-b-000714300
+  — the record declares the same PDF open under CC BY 4.0, but the live ETH site
+  answers 403 as well
+venue: HiLD (High-dimensional Learning Dynamics) workshop at ICML 2024, Vienna,
+  26 July 2024; publisher OpenReview; submission 72; student paper
+stated-terms: CC BY 4.0 — the licence is stated both on the OpenReview page and
+  in the ETH Research Collection record. Publishing excerpts and a translation is
+  permitted with attribution, so the paper has a single card and goes into the
+  public snapshot whole.
+checked: 2026-09-05 (the OpenReview page through the archive snapshot and the ETH
+  Research Collection record; no arXiv OAI-PMH request was made — the work is not
+  on arXiv)

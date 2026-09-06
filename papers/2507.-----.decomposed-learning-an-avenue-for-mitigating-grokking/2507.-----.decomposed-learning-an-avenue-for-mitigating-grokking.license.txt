@@ -1,0 +1,20 @@
+arxiv-id: none
+work-key: 2507.-----
+license-url: none
+class: no-open-licence
+source: https://openreview.net/forum?id=LVuzwpMovE
+source-file: Internet Archive snapshot of 2026-01-21 of the page
+  openreview.net/pdf?id=LVuzwpMovE; the snapshot is truncated by the crawler
+  (5,242,880 bytes of 6,303,912). The live OpenReview answers this container with
+  a 403 at every address, the attachment address included
+venue: MOSS (Methods and Opportunities at Small Scale) workshop at ICML 2025,
+  Vancouver; an earlier version of the work is an ICLR 2025 submission (OpenReview
+  7Cx05z4pUc, titled "Decomposed Learning and Grokking", status Reject)
+stated-terms: no licence is stated anywhere: not on the OpenReview page, not in a
+  running head of the PDF, not in the text of the work. Checked 2026-09-05.
+consequence: the work is stored in the corpus whole as a working copy, but only an
+  excerpt goes outside: the class no-open-licence belongs to both RESTRICTED_CLASSES
+  and NO_ORIGINAL_CLASSES of export_public.py, so the public snapshot receives an
+  excerpt card without original/ and without images/.
+checked: 2026-09-05 (the OpenReview page through the archive snapshot, the paper's
+  PDF; no arXiv OAI-PMH request was made — the work is not on arXiv)

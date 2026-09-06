@@ -1,6 +1,6 @@
 # Унгрокинг (ungrokking)
 
-[Катастрофическое забывание](catastrophic-forgetting.md) ← предыдущая карточка, следующая → [Полугроккинг](semi-grokking.md)
+[Коллапс softmax](softmax-collapse.md) ← предыдущая карточка, следующая → [Анти-грокинг / коллапс генерализации](anti-grokking.md)
 
 [Индекс карточек понятий](index.md), категория: [1. Явления](index.md#cat-1)\
 → Следующая категория: [2. Механизмы и представления](structured-representation-learning.md)\
@@ -112,6 +112,14 @@ D ≈ Dcrit сеть грокает с задержкой, но выходит �
 
 ###### ref-3-4
 **\[3.4\]** 2606.26050 — Li, Sreedhar 2026, «Natural Ungrokking: Asymmetric Control of Which Rules Survive Pretraining». Новый носитель обратного знака — «natural ungrokking»: модель на 11.5M параметров посреди обычного претрейна на стационарном вебе выучивает правило рода местоимения ($0.94$ на отложенных зондах к шагу 925) и теряет его к шагам 3 500–4 400 того же прогона, при остающихся в потоке свидетельствах; в отличие от ungrokking Varma et al., где генерализация отступает при ужатии датасета МЕЖДУ прогонами, здесь триггер — сама частотная структура корпуса, без правки данных; agree-контроль остаётся решённым — потеряно правило, не конструкция. Нюанс: возникновение правила посреди прогона нигде не показано как гроккинг (нет фазы запоминания при провальном обобщении) — корень заимствован ради обратного знака, а не обратного явления; заявка «нет следа в кривой потерь» повторена трижды, но ни одной кривой потерь в статье нет. [`"The model acquired the rule and then stopped applying it (Figure 1a). We call this within-run reversal *natural ungrokking*."`](../papers/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining/original/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining.md#p1-6). *«[Модель приобрела правило и затем перестала его применять (Рисунок 1a). Мы называем этот внутрипрогонный разворот *естественным ангроккингом*.](../papers/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining/2606.26050.natural-ungrokking-asymmetric-control-of-which-rules-survive-pretraining.card.md#p1-6)»*
+
+
+###### ref-3-5
+**\[3.5\]** 2310.13061 — Doshi, Das, He, Gromov 2024, «To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datasets». Фаза забывания: при очень большом weight decay точность рушится уже после того, как сеть обобщилась, а причина — схлопывание норм весов. Нюанс: забывание встречается исключительно у грокнувших сетей и получено силой регуляризации, а не расписанием. [`"we find that the accuracies plummet after the network has generalized!"`](../papers/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets/original/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets.md#p5-3). *«[точности резко падают после того, как сеть обобщилась!](../papers/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets/2310.13061.to-grok-or-not-to-grok-disentangling-generalization-and-memorization-on-corrupted-algorithmic-datasets.card.md#p5-3)»*
+
+
+###### ref-3-6
+**\[3.6\]** 2412.----- — Zheng, Daruwalla, Benjamin, Klindt 2024, «Delays in generalization match delayed changes in representational geometry» (UniReps 2024, PMLR 285; на arXiv работы нет). Меры геометрии представлений обнаруживают позднюю порчу уже выученных признаков у сетей, которые не грокают, тогда как изменение ядра её не показывает. Авторы соотносят наблюдение с поздним запоминанием у Stephenson et al. и с мисгроккингом у Lyu et al. [`"features learned during early training can deteriorate in later epochs"`](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p7-19). *«[признаки, выученные на раннем обучении, могут деградировать на поздних эпохах](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p7-19)»*
 
 ## Цитирования
 

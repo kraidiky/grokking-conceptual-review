@@ -1,5 +1,5 @@
 # Нейронное касательное ядро (neural tangent kernel, NTK)
-[Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md) ← предыдущая карточка, следующая → [Маршрутизация внимания](attention-routing-heads.md)
+[Сжатие многообразия представлений](manifold-representation-compression.md) ← предыдущая карточка, следующая → [Маршрутизация внимания](attention-routing-heads.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\
@@ -133,6 +133,12 @@ Cullen et al. подходят с третьей стороны — со сто�
 **\[1.3\]** 2406.06158 — Kunin et al., «Get rich quick: exact solutions reveal how unbalanced initializations promote rapid feature learning». Нюанс: динамика в пространстве функций записана как предобусловленный градиентный поток $\dot{\beta}=-MX^{\intercal}\rho$, где $M$ выражена через $\beta$ и $\delta$ в замкнутом виде и она же характеризует NTK-матрицу; три предела $M$ дают ленивый, богатый и отложенный богатый режимы. В кусочно-линейной сети NTK зависит уже и от матрицы активаций $C$, и именно это разведение позволяет показать, что раннее движение NTK связано с изменением образцов активации, а не с движением параметров. [`"Thus, understanding the evolution of $M$ along the trajectory $\beta_{0}$ to $\beta_{*}$ offers a method to discern between lazy and rich learning."`](../papers/2406.06158.get-rich-quick-exact-solutions-reveal-how-unbalanced-initializations-promote-rapid-feature-learning/2406.06158.get-rich-quick-exact-solutions-reveal-how-unbalanced-initializations-promote-rapid-feature-learning.card.md#p6-3). *«[Тем самым понимание эволюции $M$ вдоль траектории от $\beta_{0}$ к $\beta_{*}$ даёт способ различать ленивое и богатое обучение](../papers/2406.06158.get-rich-quick-exact-solutions-reveal-how-unbalanced-initializations-promote-rapid-feature-learning/2406.06158.get-rich-quick-exact-solutions-reveal-how-unbalanced-initializations-promote-rapid-feature-learning.card.md#p6-3)»*
 ## Ссылки на присоединившиеся работы
 
+### Оспаривают
+
+###### ref-2-1
+**\[2.1\]** 2412.----- — Zheng, Daruwalla, Benjamin, Klindt 2024, «Delays in generalization match delayed changes in representational geometry» (UniReps 2024, PMLR 285; на arXiv работы нет). Оспаривает пригодность движения ядра как признака перехода: блочная структура матрицы ядерных расстояний возникает и у грокающих, и у негрокающих сетей, поэтому авторы читают её как общее свойство оптимизации, а не как механизм задержки. Мерой служит ядерное расстояние Fort et al. на подвыборке 256 примеров, а не выравнивание ядра с метками. [`"Consistent with the predictions of Lyu et al. [20], we observed that the weight norms of the networks initially exhibit minimal change prior to grokking"`](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p4-1). *«[В согласии с предсказаниями Lyu et al. [20] мы наблюдали, что нормы весов сетей поначалу изменяются минимально до гроккинга](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p4-1)»*\
+Доп.: [`"networks that grok in an image classification setting show large changes in their NTK before delayed generalization"`](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p2-3) — *«[сети, у которых происходит гроккинг в постановке классификации изображений, демонстрируют большие изменения своего NTK до отложенной генерализации](../papers/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry/2412.-----.delays-in-generalization-match-delayed-changes-in-representational-geometry.card.md#p2-3)»*.
+
 ### Поддерживают
 
 ###### ref-3-1
@@ -186,3 +192,14 @@ Cullen et al. подходят с третьей стороны — со сто�
 
 ###### ref-3-9
 **\[3.9\]** 2505.20076 — Eichin, Du, Mondorf, Matveev, Plank & Hedderich 2025, «ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior». NTK как предельный случай измерительного средства: точное траекторное ядро (EPK) переформулирует обученную модель как ядерную машину и обобщает NTK по всей траектории обучения, с расширением на AdamW (мини-батчи, оба момента, расписание шага, развязанный weight decay). [`"This connects the EPK to the Neural Tangent Kernel (Jacot et al., 2018), which it generalizes over the training trajectory"`](../papers/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior.card.md#p2-7). *«[Это связывает EPK с нейронным касательным ядром (Jacot et al., 2018), которое оно обобщает по траектории обучения](../papers/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior/2505.20076.explaind-unifying-model-data-and-training-attribution-to-study-model-behavior.card.md#p2-7)»*.
+
+```
+concept:
+  category: 2                    # 2. Механизмы и представления (Mechanisms & representations)
+  papers_linked: 22             # различных статей в разделах ссылок карточки
+  counted_at: 2026-08-27
+```
+
+
+###### ref-3-10
+**\[3.10\]** 2407.----- — Sanguino Bautiste, Bachmann, He, Noci, Hofmann 2024, «Feature Learning Dynamics under Grokking in a Sparse Parity Task» (воркшоп HiLD на ICML 2024; на arXiv работы нет). Разбор идёт на уровне собственных функций ядра, а не ядра целиком: вводится коэффициент согласованности каждого собственного вектора с целями. Нюанс: в собственных функциях видна структура — полезны начальные и те, что около индекса, отвечающего размерности входа. [`"there is an emerging structure in the eigenfunctions as the network generalizes"`](../papers/2407.-----.feature-learning-dynamics-under-grokking-in-a-sparse-parity-task/original/2407.-----.feature-learning-dynamics-under-grokking-in-a-sparse-parity-task.md#p5-6). *«[по мере того, как сеть обобщает, в собственных функциях возникает структура](../papers/2407.-----.feature-learning-dynamics-under-grokking-in-a-sparse-parity-task/2407.-----.feature-learning-dynamics-under-grokking-in-a-sparse-parity-task.card.md#p5-6)»*

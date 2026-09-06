@@ -68,3 +68,14 @@
 
 ###### ref-3-5
 **\[3.5\]** 2504.17243 — Zhou et al., «NeuralGrok: Accelerate Grokking by Neural Gradient Transformation». Нюанс: преобразование градиента не задаётся вручную, а выучивается вспомогательным блоком совместно с моделью. [`"learns an optimal gradient transformation to accelerate"`](../papers/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/original/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.md#p1-2). *«[выучивающий оптимальное преобразование градиента ради ускорения](../papers/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation/2504.17243.neuralgrok-accelerate-grokking-by-neural-gradient-transformation.card.md#p1-2)»*
+
+```
+concept:
+  category: 5
+  papers_linked: 5               # различных статей в разделах ссылок карточки
+  counted_at: 2026-08-28
+```
+
+
+###### ref-3-6
+**\[3.6\]** 2507.----- — Mason-Williams & Mason-Williams 2025, «Decomposed Learning: An Avenue for Mitigating Grokking» (воркшоп MOSS при ICML 2025; на arXiv работы нет). Приём иного рода, чем прочие ускорители карточки: не фильтр градиента и не перенос вложений, а перепараметризация весовой матрицы усечённым сингулярным разложением. Нюанс: постановка одна — модульная арифметика на маленьком перцептроне, сравнения с другими ускорителями нет. [`"Decomposed Learning reduces and/or mitigates the grokking phenomena against the non-SVD representation provided by the baselines"`](../papers/2507.-----.decomposed-learning-an-avenue-for-mitigating-grokking/2507.-----.decomposed-learning-an-avenue-for-mitigating-grokking.card.md#p4-2). *«[Декомпозированное обучение снижает и/или смягчает феномен гроккинга по сравнению с представлением без SVD, которое дают базовые модели](../papers/2507.-----.decomposed-learning-an-avenue-for-mitigating-grokking/2507.-----.decomposed-learning-an-avenue-for-mitigating-grokking.card.md#p4-2)»*

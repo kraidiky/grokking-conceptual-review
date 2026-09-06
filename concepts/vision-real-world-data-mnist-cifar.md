@@ -110,9 +110,6 @@ MNIST), при продлённом обучении наступает позд
 масштабирование до ImageNet в задаче «раз-обучения» (unlearning)
 \[[3.6](#ref-3-6)\].
 
-###### ref-3-19
-**\[3.19\]** 2405.20233 — Lee et al., «Grokfast: Accelerated Grokking by Amplifying Slow Gradients». Нюанс: перечень областей, на которые переносят приём ускорения, и есть тот случай, когда гроккинг выходит за пределы алгоритмических наборов. [`"diverse tasks involving images, languages,"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2). *«[разнообразным задачам с изображениями, языками и графами](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2)»*
-
 ## Ссылки
 
 ###### ref-1-1
@@ -201,6 +198,10 @@ MNIST), при продлённом обучении наступает позд
 
 ###### ref-3-18
 **\[3.18\]** 2507.23346 — Pomarico et al. 2025, «Transfer entropy and O-information to detect grokking in tensor network multi-class classification problems». Трёхклассовый fashion MNIST, огрублённый до $6\times 6$ (платье/кроссовок/сумка, 10% выборки, 36 кубитов MPS-классификатора), с нарочно «сбивающим» классом; отрицательная сверка — гиперспектральные снимки PRISMA (43 признака после отбора Boruta: виноградник/олива/пашня), где та же модель переобучается. Нюанс: сумка на тесте систематически антипредсказывается — точность ниже 10% при случайных 33%, — а сравнение задач различает разом предмет, шум, число признаков и примеров, так что вывод «структура данных правит истолковываемой динамикой» не отделим от прочих различий. [`"Bag class performs poorly as a confounding case, with training accuracy around $25\%$, with oscillations, and test performance reaching a value even smaller than $10\%$."`](../papers/2507.23346.transfer-entropy-and-o-information-to-detect-grokking-in-tensor-network-multi-class-classification-problems/2507.23346.transfer-entropy-and-o-information-to-detect-grokking-in-tensor-network-multi-class-classification-problems.card.md#p7-10). *«[Класс сумки работает плохо как сбивающий случай: обучающая точность около $25\%$ с колебаниями, а тестовое качество достигает значения даже меньше $10\%$.](../papers/2507.23346.transfer-entropy-and-o-information-to-detect-grokking-in-tensor-network-multi-class-classification-problems/2507.23346.transfer-entropy-and-o-information-to-detect-grokking-in-tensor-network-multi-class-classification-problems.card.md#p7-10)»*
+
+###### ref-3-19
+**\[3.19\]** 2405.20233 — Lee et al., «Grokfast: Accelerated Grokking by Amplifying Slow Gradients». Нюанс: перечень областей, на которые переносят приём ускорения, и есть тот случай, когда гроккинг выходит за пределы алгоритмических наборов. [`"diverse tasks involving images, languages,"`](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2). *«[разнообразным задачам с изображениями, языками и графами](../papers/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients/2405.20233.grokfast-accelerated-grokking-by-amplifying-slow-gradients.card.md#p1-2)»*
+
 ### Наследуют
 
 ###### ref-3-9

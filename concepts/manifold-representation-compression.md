@@ -1,6 +1,6 @@
 # Сжатие многообразия представлений (manifold / representation compression)
 
-[Эффективность контуров](circuit-efficiency.md) ← предыдущая карточка, следующая → [Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md)
+[Разрежённая подсеть / lottery ticket](sparse-subnetwork-lottery-ticket.md) ← предыдущая карточка, следующая → [Нейронное касательное ядро](neural-tangent-kernel-ntk.md)
 
 [Индекс карточек понятий](index.md), категория: [2. Механизмы и представления](index.md#cat-2)\
 → Следующая категория: [3. Задачи и наборы данных](modular-arithmetic.md)\
