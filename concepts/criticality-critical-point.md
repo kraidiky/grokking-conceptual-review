@@ -42,7 +42,7 @@
 **\[1.1\]** 2410.04489 — Beck et al., «Grokking at the Edge of Linear Separability». [`"*grokking happens near a critical point*, similar to “critical slowing down” in the physics literature"`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p2-1). *«[*гроккинг случается вблизи критической точки* — подобно «критическому замедлению» в физической литературе](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p2-1)»*
 
 ###### ref-1-2
-**\[1.2\]** 2410.04489 — Beck et al., «Grokking at the Edge of Linear Separability». [`"We show that this happens because $\lambda=1/2$ is a *critical point*."`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-9). *«[Мы показываем, что так происходит потому, что $\lambda=1/2$ есть *критическая точка*.](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-9)»*
+**\[1.2\]** 2410.04489 — Beck et al., «Grokking at the Edge of Linear Separability». [`"We show that this happens because $\lambda=1/2$ is a *critical point*."`](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-9). <i>«[Мы показываем, что так происходит потому, что $\lambda=1/2$ есть *критическая точка*.](../papers/2410.04489.grokking-at-the-edge-of-linear-separability/2410.04489.grokking-at-the-edge-of-linear-separability.card.md#p1-9)»</i>
 
 ## Ссылки на присоединившиеся работы
 
