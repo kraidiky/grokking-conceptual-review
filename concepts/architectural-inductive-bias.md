@@ -1,6 +1,6 @@
 # Архитектурное индуктивное смещение (architectural inductive bias)
 
-[Переопараметризация и глубина](overparameterization-depth.md) ← предыдущая карточка, следующая → —
+[Направление влияния weight decay](weight-decay-direction.md) ← предыдущая карточка, следующая → [Переопараметризация и глубина](overparameterization-depth.md)
 
 [Индекс карточек понятий](index.md), категория: [4. Факторы обучения и оптимизации](index.md#cat-4)\
 → Следующая категория: [5. Интервенции и методы](gradient-low-pass-filtering.md)\
@@ -67,3 +67,7 @@
 
 ###### ref-3-2
 **\[3.2\]** 2604.13123 — Truong et al., «Spectral Entropy Collapse as a Phase Transition in Delayed Generalisation». Нюанс: понятие названо как остаток, не покрываемый единой мерой, — схлопывание энтропии случается и без гроккинга. [`"Entropy collapse is therefore **necessary but not sufficient** for generalisation in our setting; architectural inductive bias plays a role."`](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p5-1). *«[Оттого схлопывание энтропии в нашей постановке **необходимо, но недостаточно** для генерализации; своё дело делает и устройственное предпочтение.](../papers/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation/2604.13123.spectral-entropy-collapse-as-a-phase-transition-in-delayed-generalisation.card.md#p5-1)»*
+
+###### ref-3-3
+
+**\[3.3\]** 2609.07755 — Wang, Kevrekidis & Belkin 2026, «A Theoretical Analysis of Generalization Dynamics in Neural Networks under Gradient Descent with Weight Decay». Архитектура связана с геометрией данных через локальную приближённую однородность; это условная оценка, а не сравнение архитектур в опыте. [`"smaller diameters of the hidden nodes inside the cells generally lead to smaller approximate homogeneity errors, while more heterogeneous data require blocks with stronger local homogeneity."`](../papers/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay.card.md#p17-5). *«[меньшие диаметры скрытых узлов внутри ячеек обычно ведут к меньшим ошибкам приближённой однородности, а более неоднородные данные требуют блоков с более сильной локальной однородностью.](../papers/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay.card.md#p17-5)»*

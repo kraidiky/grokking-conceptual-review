@@ -37,7 +37,7 @@
 2306.17844	178	2026-08-14 05:25 UTC	=card	Clock/Pizza: механистический разбор сетей на модульном сложении, фазовые переходы алгоритмов	29
 2110.10090	173	2026-08-14 05:25 UTC	-	Теория индуктивных смещений self-attention; Power только в списке литературы	-
 2303.13506	167	2026-08-14 05:25 UTC	-	Quantization model скейлинга и эмерджентности; гроккинг не предмет статьи	-
-2302.03025	164	2026-08-14 05:25 UTC	=card	Реверс-инжиниринг сетей, гроккающих групповую композицию; отдельный разбор гроккинга и progress measures	34
+2302.03025	164	2026-08-14 05:25 UTC	=card	Реверс-инжиниринг сетей, гроккающих групповую композицию; отдельный разбор гроккинга и progress measures	35
 2502.17424	160	2026-08-14 05:24 UTC	-	Emergent misalignment; гроккинг — лишь контрольный эксперимент-исключение, сходство названо поверхностным	-
 2210.01117	159	2026-08-14 05:25 UTC	=card	Omnigrok: Grokking Beyond Algorithmic Data	119
 2210.03050	154	2026-08-14 05:25 UTC	-	Обзор-таксономия обобщения в NLP; Power не цитируется по существу, гроккинг не исследуется	-
@@ -50,20 +50,20 @@
 2404.07965	129	2026-08-14 05:25 UTC	-	Rho-1 и selective language modeling; гроккинг упомянут одной строкой в обзоре training dynamics	-
 2212.04458	122	2026-08-14 05:25 UTC	=ext	Исследует переход memorization→generalization и плато, отдельным приложением A.6 проверяет гроккинг	0
 2210.14891	117	2026-08-14 05:25 UTC	-	Broken neural scaling laws; задача Power упомянута как пример резкого перегиба кривой	-
-2310.06110	112	2026-08-14 05:25 UTC	=card	Grokking as the Transition from Lazy to Rich Training Dynamics	66
+2310.06110	112	2026-08-14 05:25 UTC	=card	Grokking as the Transition from Lazy to Rich Training Dynamics	67
 2406.11813	112	2026-08-14 05:25 UTC	-	Динамика усвоения фактических знаний при предобучении; Power только в списке литературы	-
 2303.07971	110	2026-08-14 05:25 UTC	-	Теория emergent ICL; гроккинг упомянут одной фразой как схожее явление	-
 2309.02390	110	2026-08-14 05:25 UTC	=card	Explaining grokking through circuit efficiency	85
 2310.09336	110	2026-08-14 05:25 UTC	-	Композиционные способности диффузионных моделей; Power - generic-ссылка на внезапную эмерджентность	-
 2403.15796	105	2026-08-14 05:25 UTC	-	Эмерджентные способности через призму pretraining loss; гроккинг лишь короткое сопоставление	-
 2206.04817	98	2026-08-14 05:25 UTC	=card	The Slingshot Mechanism: An Empirical Study of Adaptive Optimizers and the Grokking Phenomenon	69
-2303.11873	91	2026-08-14 05:25 UTC	=card	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	56
+2303.11873	91	2026-08-14 05:25 UTC	=card	A Tale of Two Circuits: Grokking as Competition of Sparse and Dense Subnetworks	57
 2311.08360	90	2026-08-14 05:25 UTC	-	Транзиентность ICL в трансформерах; Power присутствует только в библиографии	-
-2405.15071	90	2026-08-14 05:25 UTC	=card	Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization	16
+2405.15071	90	2026-08-14 05:25 UTC	=card	Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization	17
 2206.05862	86	2026-08-14 05:25 UTC	-	Гайд по анализу x-risk ИИ; Power - пример emergent functionality	-
 2301.02679	86	2026-08-14 05:25 UTC	=card	Grokking modular arithmetic	53
 2402.09371	86	2026-08-14 05:25 UTC	-	Length generalization в сложении; гроккинг упомянут разово как «Eureka moment», не исследуется	-
-2311.18817	85	2026-08-14 05:25 UTC	=card	Теория гроккинга: доказывает его через дихотомию ранних/поздних implicit biases	53
+2311.18817	85	2026-08-14 05:25 UTC	=card	Теория гроккинга: доказывает его через дихотомию ранних/поздних implicit biases	54
 2212.09803	82	2026-08-14 05:25 UTC	-	Траектории обучения LLM разных масштабов; Power процитирован попутно про фазовые переходы	-
 2506.11613	79	2026-08-14 05:24 UTC	-	Emergent misalignment; гроккинг лишь фоновый пример фазового перехода в related work	-
 2211.12316	78	2026-08-14 05:25 UTC	=card	Отдельный раздел с наблюдением гроккинга у трансформеров на булевых функциях (Fig. 18-19)	6
@@ -73,7 +73,7 @@
 2303.00055	62	2026-08-14 05:25 UTC	-	Тайм-скейлы обучения двухслойных сетей; Power только в списке литературы	-
 2305.08746	62	2026-08-14 05:25 UTC	-	BIMT для интерпретируемости; гроккинг лишь в обзоре related work	-
 2306.15400	62	2026-08-14 05:25 UTC	-	Length generalization в арифметике; Power цитируется как in-distribution prior work	-
-2402.15555	61	2026-08-14 05:25 UTC	=card	Показывает повсеместность гроккинга, вводит delayed robustness и объяснение через local complexity	29
+2402.15555	61	2026-08-14 05:25 UTC	=card	Показывает повсеместность гроккинга, вводит delayed robustness и объяснение через local complexity	30
 2207.04785	60	2026-08-14 05:25 UTC	-	Атака на LWE трансформерами; Power упомянут в обзоре работ по арифметике	-
 2407.15720	59	2026-08-14 05:25 UTC	-	Композициональность LLM в ICL; Power — фоновое упоминание в related work	-
 2309.13401	58	2026-08-14 05:25 UTC	-	Сегментация опухолей NPC, доменная адаптация; гроккинг не упоминается вовсе	-
@@ -94,7 +94,7 @@
 2412.03782	43	2026-08-14 05:24 UTC	-	Позиционная статья о спектре in-context learning; Power упомянут вскользь	-
 2405.20233	42	2026-08-14 05:25 UTC	=card	Grokfast: Accelerated Grokking by Amplifying Slow Gradients	27
 2410.02984	42	2026-08-14 05:25 UTC	-	rLLC и специализация голов внимания; гроккинг лишь в перечислении related work	-
-2310.02541	39	2026-08-14 05:25 UTC	=card	Доказывает гроккинг и benign overfitting в двухслойных ReLU-сетях на XOR-кластерах	22
+2310.02541	39	2026-08-14 05:25 UTC	=card	Доказывает гроккинг и benign overfitting в двухслойных ReLU-сетях на XOR-кластерах	23
 2311.07568	39	2026-08-14 05:25 UTC	=card	Аналитически объясняет Fourier-признаки, к которым приходит сеть в сеттинге гроккинга	13
 2406.07515	39	2026-08-14 05:25 UTC	-	Про model collapse и верификацию синтетики; Power упомянут как пример контролируемого сеттинга	-
 2310.18208	38	2026-08-14 05:25 UTC	-	Column type annotation через LLM; Power процитирован как пример резкого скачка способностей	-
@@ -104,11 +104,11 @@
 2501.04697	38	2026-08-14 05:24 UTC	=card	Grokking at the Edge of Numerical Stability	26
 2308.15594	37	2026-08-14 05:25 UTC	=card	Обучение НОД трансформером: наблюдения о гроккинге простых чисел и разбор «это ли гроккинг»	10
 2503.21676	37	2026-08-14 05:24 UTC	-	Динамика усвоения фактов и плато; гроккинг упомянут одной фразой в обсуждении	-
-2306.13253	36	2026-08-14 05:25 UTC	=card	Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok	25
+2306.13253	36	2026-08-14 05:25 UTC	=card	Predicting Grokking Long Before it Happens: A look into the loss landscape of models which grok	26
 2512.17351	36	2026-08-14 05:24 UTC	-	Дизайн архитектур и Canon-слои; Power только в библиографии	-
 2112.03215	35	2026-08-14 05:25 UTC	-	Теория epoch-wise double descent; гроккинг назван лишь как направление будущей работы	-
 2405.19121	35	2026-08-14 05:25 UTC	-	Спектрально-пространственные GNN; Power процитирован в перечне работ по интерпретируемости	-
-2407.12332	34	2026-08-14 05:25 UTC	=card	Why Do You Grok? A Theoretical Analysis of Grokking Modular Addition	23
+2407.12332	34	2026-08-14 05:25 UTC	=card	Why Do You Grok? A Theoretical Analysis of Grokking Modular Addition	24
 2210.15435	32	2026-08-14 05:25 UTC	=card	Решаемые модели гроккинга: фазовый переход, критические экспоненты, время гроккинга	26
 2509.23024	32	2026-08-14 05:24 UTC	-	Геометрия представлений LLM; гроккинг упомянут в related work как смежное явление	-
 2201.08924	31	2026-08-14 05:25 UTC	-	Neural Collapse в промежуточных слоях; Power в общей ссылке на обучение за порогом интерполяции	-
@@ -122,7 +122,7 @@
 2310.16441	28	2026-08-14 05:25 UTC	=card	Аналитическая модель гроккинга в линейных оценщиках, точные предсказания времени гроккинга	19
 2408.15417	28	2026-08-14 05:25 UTC	-	Геометрия представлений при next-token prediction; Power — попутная ссылка на пользу долгого обучения	-
 2212.13881	27	2026-08-14 05:25 UTC	-	Механизм feature learning и RFM; гроккинг только в списке литературы, не исследуется	-
-2401.10463	27	2026-08-14 05:25 UTC	=card	Критический размер данных через призму гроккинга, воспроизведение гроккинга в языковых моделях	12
+2401.10463	27	2026-08-14 05:25 UTC	=card	Критический размер данных через призму гроккинга, воспроизведение гроккинга в языковых моделях	13
 2402.15175	27	2026-08-14 05:25 UTC	=card	Unified View of Grokking, Double Descent and Emergent Abilities: A Perspective from Circuits Competition	19
 2412.12069	27	2026-08-14 05:24 UTC	-	Нейросети для LHC-амплитуд и неопределённости; Power только в библиографии	-
 2506.11015	27	2026-08-14 05:24 UTC	-	Глава по нейронауке образования; гроккинг лишь как аналогия интуитивного обучения	-
@@ -181,10 +181,10 @@
 2305.19901	12	2026-08-14 05:25 UTC	-	Конформная регрессия; Power упомянут только в списке литературы, гроккинг не исследуется	-
 2403.06925	12	2026-08-14 05:25 UTC	=ext	Показано, что sensitivity служит progress measure для гроккинга — новое наблюдение о нём	0
 2410.07041	12	2026-08-14 05:25 UTC	-	Изучает повтор примеров; авторы явно отделяют свой эффект от гроккинга, его не исследуют	-
-2504.13292	12	2026-08-14 05:24 UTC	=card	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	13
+2504.13292	12	2026-08-14 05:24 UTC	=card	Let Me Grok for You: Accelerating Grokking via Embedding Transfer from a Weaker Model	14
 2504.20752	12	2026-08-14 05:24 UTC	=card	Grokking in the Wild: Data Augmentation for Real-World Multi-Hop Reasoning with Transformers	6
 2510.17028	12	2026-08-14 05:24 UTC	-	Про prompt sensitivity и калибровку; Power — фоновая ссылка на переход memorization→generalization	-
-2311.06597	11	2026-08-14 05:25 UTC	=card	Understanding Grokking Through A Robustness Viewpoint	10
+2311.06597	11	2026-08-14 05:25 UTC	=card	Understanding Grokking Through A Robustness Viewpoint	11
 2403.03942	11	2026-08-14 05:25 UTC	=card	The Heuristic Core: Understanding Subnetwork Generalization in Pretrained Language Models	1
 2410.04489	11	2026-08-14 05:25 UTC	=card	Grokking at the Edge of Linear Separability	9
 2412.04619	11	2026-08-14 05:24 UTC	+	Исследует данные, вызывающие structural grokking, нестабильность отложенной генерализации	0
@@ -197,7 +197,7 @@
 2411.00247	10	2026-08-14 05:25 UTC	=card	Гроккинг — один из трёх кейсов; новые эмпирические метрики сложности объясняют его	4
 2412.11521	10	2026-08-14 05:24 UTC	-	Обучение симметриям, kernel theory; Power цитируется как пример simplicity bias	-
 2503.18114	10	2026-08-14 05:24 UTC	-	Геометрия представлений, lazy/rich; гроккинг лишь в обзоре немонотонного обучения	-
-2505.20172	10	2026-08-14 05:24 UTC	=card	Теоретическая модель гроккинга: weight decay, две фазы, риманова минимизация нормы — предмет статьи	6
+2505.20172	10	2026-08-14 05:24 UTC	=card	Теоретическая модель гроккинга: weight decay, две фазы, риманова минимизация нормы — предмет статьи	7
 2506.21551	10	2026-08-14 05:24 UTC	=card	Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test	3
 2602.16746	10	2026-08-14 05:24 UTC	=card	Low-Dimensional and Transversely Curved Optimization Dynamics in Grokking	8
 2211.14085	9	2026-08-14 05:25 UTC	-	Positive-unlabeled learning с тензорными сетями; Power только в списке литературы	-
@@ -318,7 +318,7 @@
 2510.00468	3	2026-08-14 05:24 UTC	=ext	Спектр eNTK применён для диагностики фазового перехода гроккинга	0
 2511.04808	3	2026-08-14 05:24 UTC	-	Объёмы минимумов и обобщение; гроккинг не изучается, Power лишь в ссылках	-
 2512.25060	3	2026-08-14 05:24 UTC	-	Геометрия представлений модульного сложения; гроккинг только фоновая ссылка	-
-2601.19791	3	2026-08-14 05:24 UTC	=card	To Grok Grokking: Provable Grokking in Ridge Regression	1
+2601.19791	3	2026-08-14 05:24 UTC	=card	To Grok Grokking: Provable Grokking in Ridge Regression	2
 2602.01992	3	2026-08-14 05:24 UTC	-	Эмерджентность аналогического рассуждения; Power — попутная ссылка	-
 2602.08907	3	2026-08-14 05:24 UTC	-	Теория положительного сдвига распределения; Power цитируется в приложении	-
 2602.23696	3	2026-08-14 05:24 UTC	-	Геометрия траекторий AdamW; гроккинг не предмет, ссылка попутная	-
@@ -597,10 +597,10 @@
 #   table's subject). Same columns, same count source (D1-A: S2 Graph API,
 #   /graph/v1/paper/batch, fetched 2026-08-24 13:07 UTC). This closes the gap
 #   where papers/index.md had no external count to show for these works.
-2201.02177	719	2026-08-24 13:07 UTC	=card	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	168
+2201.02177	719	2026-08-24 13:07 UTC	=card	Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets	169
 2310.17247	20	2026-08-24 13:07 UTC	=card	Grokking Beyond Neural Networks: An Empirical Exploration with Model Complexity	15
 2402.09469	22	2026-08-24 13:07 UTC	=card	Fourier Circuits in Neural Networks and Transformers: A Case Study of Modular Arithmetic with Multiple Inputs	1
-2405.19454	18	2026-08-24 13:07 UTC	=card	Deep Grokking: Would Deep Neural Networks Generalize Better?	11
+2405.19454	18	2026-08-24 13:07 UTC	=card	Deep Grokking: Would Deep Neural Networks Generalize Better?	12
 2406.05335	13	2026-08-24 13:07 UTC	=ext	Phase transition in large language models and the criticality of natural languages	-
 2408.08944	19	2026-08-24 13:07 UTC	=card	Information-Theoretic Progress Measures reveal Grokking is an Emergent Phase Transition	13
 2410.03569	4	2026-08-24 13:07 UTC	=card	Making Hard Problems Easier with Custom Data Distributions and Loss Regularization: A Case Study in Modular Arithmetic	0
@@ -635,3 +635,6 @@
 2505.18623	0	2026-09-04 15:10 UTC	-	Neural compilation для GNN на CLRS; «эксперимент с гроккингом» в прил. D.1 — лишь продлённое обучение BFS до 50k шагов без изменения точности (97.55% против 97.76%), отложенного обобщения не наблюдалось, гроккинг далее только в related work	-
 2408.12578	32	2026-09-04 18:05 UTC	=ext	A Percolation Model of Emergence (на OpenReview — The Concept Percolation Hypothesis): предмет — эмерджентность при масштабировании данных, не гроккинг; заведена во внешние 2026-09-04 ради размежевания с гроккингом в разделе 2 и перехода «запоминание → обобщение» в онлайн-обучении без обучающего набора	-
 2310.13061	31	2026-09-05 22:30 UTC	=card	To grok or not to grok: Disentangling generalization and memorization on corrupted algorithmic datasets — S2 НЕ числит её цитирующей Power, строки в основной части нет; работа найдена через библиографию обзора A Survey on Grokking (task-030) и заведена карточкой 2026-09-05	16
+
+# Добавление task-042: Semantic Scholar /paper/arXiv:2609.07755, 2026-10-02.
+2609.07755	1	2026-10-02	=card	A Theoretical Analysis of Generalization Dynamics in Neural Networks under Gradient Descent with Weight Decay	0
