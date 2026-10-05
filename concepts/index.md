@@ -8,7 +8,7 @@
 
 ## 1. Явления (Phenomena)
 
-### [Грокинг / отложенная генерализация](grokking.md) (grokking / delayed generalization) — 162 статей
+### [Грокинг / отложенная генерализация](grokking.md) (grokking / delayed generalization) — 163 статей
 
 Феномен отложенной генерализации: сеть сначала почти идеально подгоняет обучающую выборку при низкой тестовой точности, а спустя на порядки более долгое обучение тестовая точность резко возрастает. Термин и явление введены Power et al. (2022).
 
@@ -224,7 +224,7 @@
 
 ## 4. Факторы обучения и оптимизации (Training / optimization factors)
 
-### [Weight decay / L2-регуляризация](weight-decay.md) (weight decay) — 100 статей
+### [Weight decay / L2-регуляризация](weight-decay.md) (weight decay) — 101 статей
 
 Штраф, пропорциональный квадрату L2-нормы весов (эквивалент покомпонентного затухания весов на каждом шаге); главный регуляризатор корпуса — с ним связаны и скорость, и само наступление гроккинга в большинстве постановок.
 
@@ -250,7 +250,7 @@
 
 Открытый спор корпуса: является ли регуляризация необходимым условием гроккинга; собраны прямо противоположные экспериментальные ответы, каждый честно полученный в своей постановке.
 
-### [Скорость обучения](learning-rate.md) (learning rate) — 30 статей
+### [Скорость обучения](learning-rate.md) (learning rate) — 31 статей
 
 Масштаб шага обновления весов; один из управляющих параметров — наряду с weight decay, размером батча и долей данных, — от которых зависит, наступит ли отложенная генерализация и как быстро.
 
@@ -278,13 +278,13 @@
 
 Вопрос, в какую сторону и по какому закону сила weight decay сдвигает гроккинг, — одна из немногих точек корпуса, где эмпирические свидетельства формально противоречат друг другу.
 
+### [Архитектурное индуктивное смещение](architectural-inductive-bias.md) (architectural inductive bias) — 5 статей
+
+Предпочтение решений, заложенное устройством сети до обучения: топологией остаточного потока, нормировкой, способом смешивания токенов. Задержку удаётся обойти архитектурой, но лишь при согласии её предпочтений с симметрией задачи — отрицательный контроль на некоммутативной группе это и показывает.
+
 ### [Переопараметризация и глубина](overparameterization-depth.md) (overparameterization / depth) — 5 статей
 
 Избыток параметров относительно данных и число слоёв как управляющие величины. Глубина действует немонотонно: провал на средней глубине лечится не слоями, а стабилизацией; переопараметризация — обычное условие опытов, а не необходимая часть явления.
-
-### [Архитектурное индуктивное смещение](architectural-inductive-bias.md) (architectural inductive bias) — 4 статей
-
-Предпочтение решений, заложенное устройством сети до обучения: топологией остаточного потока, нормировкой, способом смешивания токенов. Задержку удаётся обойти архитектурой, но лишь при согласии её предпочтений с симметрией задачи — отрицательный контроль на некоммутативной группе это и показывает.
 
 ###### cat-5
 
@@ -330,7 +330,7 @@
 
 Методология установления каузальной, а не корреляционной роли компонентов: частоту, контур или признак целенаправленно удаляют или подменяют и измеряют эффект на поведение сети.
 
-### [Время гроккинга](grokking-time.md) (grokking time) — 18 статей
+### [Время гроккинга](grokking-time.md) (grokking time) — 19 статей
 
 Задержка между подгонкой обучающей выборки и началом обобщения — величина, по которой корпус сравнивает вмешательства. Определяется операционально через пороги, и от выбора определения (первое касание против устойчивого грока) и единиц (шаги, секунды, FLOPs) зависит, какой метод окажется быстрее.
 
@@ -374,7 +374,7 @@
 
 Неявное предпочтение градиентного спуска на разделимых данных: среди интерполирующих решений выбирается решение с максимальным зазором; в корпусе этим объясняют вторую, медленную пору обучения при гроккинге.
 
-### [Границы генерализации](generalization-bounds.md) (generalization bounds) — 18 статей
+### [Границы генерализации](generalization-bounds.md) (generalization bounds) — 19 статей
 
 Формально доказуемые оценки обобщающей способности: на ошибку генерализации, выборочную сложность или — в приложении к гроккингу — на длительность задержки до обобщения.
 
@@ -799,3 +799,11 @@
 ### Ограничение нулевой суммы градиентов (zero-sum gradient constraint) — 0 статей
 
 - 2605.06152: [`"This breaks the zero-sum constraint of gradients across classes"`](../papers/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes/original/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes.md#p1-2) — [в карточке](../papers/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes/2605.06152.grokking-or-glitching-how-low-precision-drives-slingshot-loss-spikes.card.md#p1-2)
+
+###### sec-local-approximate-homogeneity
+
+### Приближённая и локальная приближённая однородность (approximate homogeneity / local approximate homogeneity) — 1 статей
+
+Ограниченность остатка уравнения Эйлера вместо точной однородности; локальная степень может зависеть от области параметров и скрытых входов (определения 5–6 Wang et al.).
+
+- 2609.07755: [`"In some situations, a single global degree may be too restrictive. Hence, we localize the preceding condition by allowing the effective degree to depend on the region where the function is evaluated."`](../papers/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay.card.md#p15-11) — [в карточке](../papers/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay/2609.07755.a-theoretical-analysis-of-generalization-dynamics-in-neural-networks-under-gradient-descent-with-weight-decay.card.md#p15-11)
